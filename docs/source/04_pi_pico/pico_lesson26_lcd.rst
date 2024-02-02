@@ -1,0 +1,111 @@
+.. _pico_lesson26_lcd:
+
+Lesson 26: I2C LCD 1602
+==================================
+
+In this lesson, you will learn to connect an I2C LCD 1602 display to a Raspberry Pi Pico W. You'll understand how to set up I2C communication, display and clear messages on the LCD using MicroPython. 
+
+
+Required Components
+---------------------------
+
+* Raspberry Pi Pico W
+* :ref:`cpn_i2c_lcd1602`
+* :ref:`cpn_breadboard` 
+
+Wiring
+---------------------------
+
+.. note:: 
+   To ensure the LCD module operates normally, please power it using the VBUS pin on the Pico.
+
+.. image:: img/Lesson_26_LCD1602_Module_pico_bb.png
+    :width: 100%
+
+
+Code
+---------------------------
+
+.. code-block:: python
+
+   from machine import I2C, Pin
+   from lcd1602 import LCD
+   import time
+   
+   # Initialize I2C communication;
+   # Set SDA to pin 20, SCL to pin 21, and frequency to 400kHz
+   i2c = I2C(0, sda=Pin(20), scl=Pin(21), freq=400000)
+   
+   # Create an LCD object for interfacing with the LCD1602 display
+   lcd = LCD(i2c)
+   
+   # Display the first message on the LCD
+   # Use '\n' to create a new line.
+   string = "SunFounder\n    LCD Tutorial"
+   lcd.message(string)
+   # Wait for 2 seconds
+   time.sleep(2)
+   # Clear the display
+   lcd.clear()
+   
+   # Display the second message on the LCD
+   string = "Hello\n  World!"
+   lcd.message(string)
+   # Wait for 5 seconds
+   time.sleep(5)
+   # Clear the display before exiting
+   lcd.clear()
+
+
+Code Analysis
+---------------------------
+
+#. Setting up I2C Communication
+
+   The ``machine`` module is used to set up I2C communication. SDA (Serial Data) and SCL (Serial Clock) pins are defined (pin 20 and 21 respectively), along with the I2C frequency (400kHz).
+
+   .. code-block:: python
+      
+      from machine import I2C, Pin
+      i2c = I2C(0, sda=Pin(20), scl=Pin(21), freq=400000)
+
+#. Initializing the LCD Display
+
+   The ``LCD`` class from the ``lcd1602`` module is instantiated. This class handles the communication with the LCD display through I2C. An ``LCD`` object is created using the ``i2c`` object.
+
+   For more usage of the ``lcd1602`` library, please refer to ``lcd1602.py``.
+
+   .. code-block:: python
+      
+      from lcd1602 import LCD
+      lcd = LCD(i2c)
+
+#. Displaying Messages on the LCD
+
+   The ``message`` method of the ``LCD`` object is used to display text on the screen. The ``\n`` character creates a new line on the LCD. The ``time.sleep()`` function pauses execution for a specified number of seconds.
+
+   .. code-block:: python
+      
+      string = "SunFounder\n    LCD Tutorial"
+      lcd.message(string)
+      time.sleep(2)
+      lcd.clear()
+
+#. Clearing the Display
+
+   The ``clear`` method of the ``LCD`` object is called to clear the text from the display.
+
+   .. code-block:: python
+      
+      lcd.clear()
+
+#. Displaying a Second Message
+
+   A new message is displayed, followed by a delay and then clearing the screen again.
+
+   .. code-block:: python
+      
+      string = "Hello\n  World!"
+      lcd.message(string)
+      time.sleep(5)
+      lcd.clear()
