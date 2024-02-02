@@ -28,6 +28,17 @@ Pinout
 * **DAT**: Data pin 
 * **RST**: Reset pin
 
+Schematic diagram
+---------------------------
+
+.. image:: img/16_rtc_ds1302_module_schematic.png
+    :width: 100%
+    :align: center
+
+.. raw:: html
+
+   <br/>
+
 Example
 ---------------------------
 * :ref:`uno_lesson16_ds1306` (Arduino UNO)
