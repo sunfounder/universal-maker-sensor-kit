@@ -8,9 +8,20 @@ In this lesson, you will learn how to measure atmospheric pressure, temperature,
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_bmp280`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_bmp280`
+        - |link_bmp280_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

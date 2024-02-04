@@ -8,9 +8,20 @@ In this lesson, you'll learn how to connect a touch sensor to the Raspberry Pi P
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_touch`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_touch`
+        - |link_touch_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

@@ -8,8 +8,18 @@ In this lesson, you will learn how to set up and use a Real Time Clock (RTC) mod
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_rtc_ds1302`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_rtc_ds1302`
+        - |link_ds1302_module_buy|
+        
 
 Wiring
 ---------------------------

@@ -8,9 +8,20 @@ In this lesson, you will learn how to use a vibration sensor with the Raspberry 
 Required Components
 ---------------------------
 
-* Raspberry Pi 
-* :ref:`cpn_vibration`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_vibration`
+        - |link_sw420_vibration_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

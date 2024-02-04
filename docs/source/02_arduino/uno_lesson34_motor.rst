@@ -8,9 +8,20 @@ In this lesson, you will learn how to control a motor using an Arduino Uno R3 or
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_ttmotor`
-* :ref:`cpn_l9110`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_ttmotor`
+        - \-
+    *   - :ref:`cpn_l9110`
+        - \-
+
 
 Wiring
 ---------------------------

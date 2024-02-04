@@ -8,9 +8,20 @@ In this lesson, you will learn the basics of using a button with Raspberry Pi. W
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_button`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_button`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

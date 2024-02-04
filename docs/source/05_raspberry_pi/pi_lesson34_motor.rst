@@ -8,10 +8,20 @@ In this lesson, you will learn how to control the speed and direction of a motor
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_ttmotor`
-* :ref:`cpn_l9110`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_ttmotor`
+        - \-
+    *   - :ref:`cpn_l9110`
+        - \-
+
 
 Wiring
 ---------------------------

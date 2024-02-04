@@ -8,9 +8,20 @@ In this lesson, you will learn how to use a capacitive soil moisture sensor with
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_soil`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_soil`
+        - |link_soil_moisture_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

@@ -8,9 +8,20 @@ In this lesson, you will learn how to control a servo motor (SG90) using the Ras
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_servo`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_servo`
+        - |link_servo_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

@@ -8,8 +8,18 @@ In this lesson, you will learn how to use Arduino to control a servo motor and m
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_servo`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_servo`
+        - |link_servo_buy|
+
 
 Wiring
 ---------------------------

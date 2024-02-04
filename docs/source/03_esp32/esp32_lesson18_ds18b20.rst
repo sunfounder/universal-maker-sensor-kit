@@ -8,9 +8,20 @@ In this lesson, you will learn how to read temperature data from a DS18B20 tempe
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_ds18b20`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_ds18b20`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

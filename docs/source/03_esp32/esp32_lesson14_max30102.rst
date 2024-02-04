@@ -11,9 +11,20 @@ In this lesson, you will learn how to measure heart rate using an ESP32 Developm
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_max30102`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_max30102`
+        - |link_max30102_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

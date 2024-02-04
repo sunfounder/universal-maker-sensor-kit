@@ -8,9 +8,20 @@ In this lesson, you will learn to use the MQ2 gas sensor with Raspberry Pi for g
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_gas`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_gas`
+        - |link_mq2_gas_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

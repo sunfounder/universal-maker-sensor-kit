@@ -8,8 +8,18 @@ In this lesson, you will learn how a Hall sensor detects magnetic fields using A
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_hall`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_hall`
+        - \-
+        
 
 Wiring
 ---------------------------

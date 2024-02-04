@@ -8,9 +8,20 @@ In this lesson, you will learn how a button interacts with an LED using ESP32 De
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_button`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_button`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

@@ -8,9 +8,20 @@ In this lesson, you will learn how to use an ESP32 Development Board and a rotar
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_rotary_encoder`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_rotary_encoder`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+ 
 
 Wiring
 ---------------------------

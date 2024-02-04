@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use the Raspberry Pi Pico W to control a rot
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_rotary_encoder`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_rotary_encoder`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

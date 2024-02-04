@@ -8,9 +8,20 @@ In this lesson, you will learn how to detect obstacles using a sensor with the R
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_ir_obstacle`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_ir_obstacle`
+        - |link_obstacle_avoidance_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

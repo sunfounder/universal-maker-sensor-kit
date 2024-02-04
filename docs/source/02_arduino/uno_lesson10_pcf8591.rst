@@ -8,8 +8,18 @@ In this lesson, you'll learn how to connect the Arduino Uno R4 (or R3) with a PC
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_pcf8591`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+
 
 Wiring
 ---------------------------

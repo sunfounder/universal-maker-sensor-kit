@@ -9,8 +9,19 @@ In this lesson, you will learn how to set up and display messages on a 16x2 Liqu
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_i2c_lcd1602`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_i2c_lcd1602`
+        - |link_i2clcd1602_buy|
+
+
 
 Wiring
 ---------------------------

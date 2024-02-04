@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use a touch sensor with an ESP32 Development
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_touch`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_touch`
+        - |link_touch_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

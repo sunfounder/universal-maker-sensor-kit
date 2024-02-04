@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use a potentiometer with the Raspberry Pi Pi
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_potentiometer`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_potentiometer`
+        - |link_potentiometer_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

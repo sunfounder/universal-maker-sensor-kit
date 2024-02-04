@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use an ESP32 Development Board to control a 
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_traffic`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_traffic`
+        - |link_traffic_light_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

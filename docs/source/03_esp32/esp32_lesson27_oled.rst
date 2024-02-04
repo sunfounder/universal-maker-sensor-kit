@@ -8,9 +8,20 @@ In this lesson, you will learn how to set up and utilize an OLED display with an
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_oled`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_oled`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

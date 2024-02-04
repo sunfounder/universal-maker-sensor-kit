@@ -8,9 +8,20 @@ In this lesson, you will learn how to detect rain using a digital rain sensor wi
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_raindrop`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_raindrop`
+        - |link_raindrop_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

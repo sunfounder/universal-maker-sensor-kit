@@ -50,8 +50,6 @@ html_static_path = ['_static']
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-# html_theme = 'shibuya'
-
 # SunFounder logo
 
 html_js_files = [
@@ -338,6 +336,140 @@ rst_epilog = """
 
     <a href="https://colorzero.readthedocs.io/en/latest/api_color.html#colorzero.Color" target="_blank">colorzero.Color</a>
 
-    
+"""
+
+
+# Purchase links of components
+
+rst_epilog += """
+
+.. |link_Uno_R3_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/arduino-unor3-control-board" target="_blank">BUY</a>
+
+.. |link_esp8266_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/esp01-esp-01s-programmer-adapter-serial-high-speed-esp8266-ch340g-usb-to-esp8266-serial-wireless-wifi-developent-board" target="_blank">BUY</a>
+
+.. |link_picow_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w" target="_blank">BUY</a>
+
+.. |link_wires_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/560pcs-jumper-wire-kit-with-14-lengths" target="_blank">BUY</a>
+
+.. |link_breadboard_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-breadboard-kit" target="_blank">BUY</a>
+
+.. |link_i2clcd1602_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/i2c-lcd1602-module" target="_blank">BUY</a>
+
+.. |link_servo_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sf0180-servo-motor" target="_blank">BUY</a>
+
+.. |link_ultrasonic_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/5pcs-hc-sr04-ultrasonic-module-distance-sensor" target="_blank">BUY</a>
+
+.. |link_pir_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/hcsr501-infrared-sensor" target="_blank">BUY</a>
+
+.. |link_touch_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/ttp223-touch-sensor-module" target="_blank">BUY</a>
+
+.. |link_rotary_encoder_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/rotary-encoder-module" target="_blank">BUY</a>
+
+.. |link_dht11_humiture_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/dht11-temperature-and-humidity-sensor-module" target="_blank">BUY</a>
+
+.. |link_obstacle_avoidance_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/ir-obstacle-avoidance-sensor-module" target="_blank">BUY</a>
+
+.. |link_mpu6050_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/3pcs-gy-521-mpu-6050-mpu6050-3-axis-accelerometer-gyroscope-module-6-dof-6-axis-accelerometer-gyroscope-sensor-module-16-bit-ad-converter-data-output-iic-i2c-for-arduino" target="_blank">BUY</a>
+
+.. |link_soil_moisture_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/capacitive-soil-moisture-sensor-module" target="_blank">BUY</a>       
+
+.. |link_oled_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/0-96-oled-display-module-ssd1306-128x64-blue-display" target="_blank">BUY</a>   
+
+.. |link_joystick_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/dual-axis-button-joystick-module-ps2-game" target="_blank">BUY</a>
+
+.. |link_flame_sensor_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/flame-sensor-module-1" target="_blank">BUY</a>
+
+.. |link_mq2_gas_sensor_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/mq-2-gas-sensor-module" target="_blank">BUY</a>
+
+.. |link_speed_sensor_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/h2010-speed-ir-measuring-sensor-module" target="_blank">BUY</a>
+
+.. |link_pcf8591_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/pcf8591-converter-module" target="_blank">BUY</a>
+
+
+.. |link_photoresistor_sensor_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/photoresistor-sensor-module-1" target="_blank">BUY</a>
+
+.. |link_potentiometer_sensor_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/potentiometer-sensor-module" target="_blank">BUY</a>
+
+.. |link_max30102_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/max30102-heart-rate-sensor-module-pulse-detection-blood-oxygen-concentration-module" target="_blank">BUY</a>
+
+.. |link_raindrop_sensor_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/raindrop-detection-sensor-module" target="_blank">BUY</a>
+
+.. |link_ds1302_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/ds1302-rtc-real-time-clock-module" target="_blank">BUY</a>
+
+.. |link_bmp280_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/bmp280-high-precision-digital-atmospheric-barometric-pressure-module" target="_blank">BUY</a>
+
+.. |link_vl53l0x_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/vl53l0x-time-of-flight-distance-sensor-laser-ranging-module" target="_blank">BUY</a>
+
+.. |link_sw420_vibration_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sw-420-vibration-switch-sensor-module" target="_blank">BUY</a>
+
+.. |link_traffic_light_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/mini-traffic-light-led-5v-8mm-module" target="_blank">BUY</a>
+
+.. |link_passive_buzzer_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/3-3-5v-passive-low-level-trigger-buzzer-alarm-sound-module" target="_blank">BUY</a>
+
+.. |link_jdy31_bluetooth_module_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/jdy-31-bluetooth-wireless-communication-serial-pass-through-module-replace-hc-05-hc-06" target="_blank">BUY</a>
 
 """

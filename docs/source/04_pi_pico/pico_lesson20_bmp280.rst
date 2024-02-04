@@ -8,9 +8,20 @@ In this lesson, you'll learn how to connect the BMP280 temperature, humidity, an
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_bmp280`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_bmp280`
+        - |link_bmp280_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

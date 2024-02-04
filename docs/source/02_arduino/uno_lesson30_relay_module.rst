@@ -8,10 +8,21 @@ In this lesson, you will learn how to use a relay and an Arduino Uno to control 
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_breadboard`
-* :ref:`cpn_relay`
-* :ref:`cpn_traffic`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+    *   - :ref:`cpn_relay`
+        - \-
+    *   - :ref:`cpn_traffic`
+        - |link_traffic_light_module_buy|
 
 
 Wiring

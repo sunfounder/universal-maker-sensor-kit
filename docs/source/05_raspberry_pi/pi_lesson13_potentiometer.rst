@@ -11,10 +11,20 @@ In this lesson, we'll learn how to read from a potentiometer using a Raspberry P
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_potentiometer`
-* :ref:`cpn_pcf8591`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_potentiometer`
+        - |link_potentiometer_sensor_module_buy|
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+
 
 Wiring
 ---------------------------

@@ -8,9 +8,21 @@ In this lesson, you will learn how to measure rotational speed using a Raspberry
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_breadboard`
-* :ref:`cpn_speed`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_speed`
+        - |link_speed_sensor_module_buy|
+    *   - :ref:`cpn_ttmotor`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
 
 
 Wiring

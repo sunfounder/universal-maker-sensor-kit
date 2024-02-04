@@ -8,8 +8,18 @@ In this lesson, you'll learn how to interface the Raspberry Pi with the MPU6050,
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_mpu6050`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_mpu6050`
+        - |link_mpu6050_buy|
+
 
 Wiring
 ---------------------------

@@ -8,9 +8,20 @@ In this lesson, you will learn how to read values from a joystick module using t
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_joystick`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_joystick`
+        - |link_joystick_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

@@ -8,8 +8,18 @@ In this lesson, you will learn how to connect a capacitive soil moisture sensor 
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_soil`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_soil`
+        - |link_soil_moisture_buy|
+
 
 Wiring
 ---------------------------

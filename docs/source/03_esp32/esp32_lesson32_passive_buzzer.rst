@@ -8,9 +8,20 @@ In this lesson, you'll learn to play a melody on a passive buzzer module using a
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_buzzer`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_buzzer`
+        - |link_passive_buzzer_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

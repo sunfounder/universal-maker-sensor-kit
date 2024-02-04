@@ -8,8 +8,18 @@ In this lesson, you will learn how to use a Raindrop Detection Sensor Module wit
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_raindrop`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_raindrop`
+        - |link_raindrop_sensor_module_buy|
+
 
 Wiring
 ---------------------------

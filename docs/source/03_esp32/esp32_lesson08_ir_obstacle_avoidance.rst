@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use an Infrared obstacle avoidance sensor wi
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_ir_obstacle`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_ir_obstacle`
+        - |link_obstacle_avoidance_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

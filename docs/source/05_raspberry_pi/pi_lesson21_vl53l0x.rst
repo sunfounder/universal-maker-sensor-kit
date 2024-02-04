@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use the Raspberry Pi to connect with a Time 
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_VL53L0X`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_VL53L0X`
+        - |link_vl53l0x_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

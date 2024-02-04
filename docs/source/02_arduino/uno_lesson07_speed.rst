@@ -8,11 +8,24 @@ In this lesson, you will learn how to measure motor speed using a speed sensor m
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_breadboard`
-* :ref:`cpn_speed`
-* :ref:`cpn_ttmotor`
-* :ref:`cpn_l9110`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+    *   - :ref:`cpn_speed`
+        - |link_speed_sensor_module_buy|
+    *   - :ref:`cpn_ttmotor`
+        - \-
+    *   - :ref:`cpn_l9110`
+        - \-
+
 
 Wiring
 ---------------------------

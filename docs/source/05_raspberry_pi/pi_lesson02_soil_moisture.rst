@@ -11,10 +11,20 @@ In this tutorial, we'll explore how to monitor soil moisture levels using a Rasp
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_soil`
-* :ref:`cpn_pcf8591`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_soil`
+        - |link_soil_moisture_buy|
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+
 
 Wiring
 ---------------------------

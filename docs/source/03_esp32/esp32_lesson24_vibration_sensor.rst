@@ -8,9 +8,20 @@ In this lesson, you'll learn how to detect vibrations using an ESP32 Development
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_vibration`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_vibration`
+        - |link_sw420_vibration_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

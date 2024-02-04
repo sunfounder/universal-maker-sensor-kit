@@ -10,9 +10,20 @@ Firstly, we need to set up the circuit and use software serial communication. Co
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_jdy31`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_jdy31`
+        - |link_jdy31_bluetooth_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 1. Build the Circuit
 -----------------------------

@@ -8,9 +8,20 @@ In this lesson, you will learn to simulate traffic lights using a Raspberry Pi. 
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_traffic`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_traffic`
+        - |link_traffic_light_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

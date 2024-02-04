@@ -8,9 +8,20 @@ In this lesson, you will learn how to use a Hall sensor with an ESP32 Developmen
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_hall`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_hall`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

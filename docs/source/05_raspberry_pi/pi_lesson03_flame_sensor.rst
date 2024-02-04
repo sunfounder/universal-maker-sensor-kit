@@ -9,9 +9,20 @@ In this lesson, you will learn to use a flame sensor with Raspberry Pi for fire 
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_flame`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_flame`
+        - |link_flame_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

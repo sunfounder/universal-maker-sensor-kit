@@ -8,9 +8,20 @@ In this lesson, you'll learn how to interface with and read data from a joystick
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_joystick`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_joystick`
+        - |link_joystick_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

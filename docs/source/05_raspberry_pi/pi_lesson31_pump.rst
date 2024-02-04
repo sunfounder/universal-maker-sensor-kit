@@ -8,10 +8,19 @@ In this lesson, you will learn how to control a pump using a Raspberry Pi. You'l
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_pump`
-* :ref:`cpn_l9110`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_pump`
+        - \-
+    *   - :ref:`cpn_l9110`
+        - \-
 
 
 Wiring

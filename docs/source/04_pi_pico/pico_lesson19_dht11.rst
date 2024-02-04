@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use the Raspberry Pi Pico W to connect with 
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_dht11`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_dht11`
+        - |link_dht11_humiture_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

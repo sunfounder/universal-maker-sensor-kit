@@ -8,9 +8,20 @@ In this lesson, you'll learn how to use an ESP32 Development Board for measuring
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_ultrasonic`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_ultrasonic`
+        - |link_ultrasonic_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

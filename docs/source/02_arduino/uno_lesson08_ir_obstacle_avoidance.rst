@@ -8,8 +8,19 @@ In this lesson, you will learn how to use an Infrared obstacle avoidance sensor 
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_ir_obstacle`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_ir_obstacle`
+        - |link_obstacle_avoidance_module_buy|
+
+
 
 Wiring
 ---------------------------

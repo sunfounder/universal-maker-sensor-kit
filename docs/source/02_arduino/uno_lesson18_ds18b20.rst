@@ -8,8 +8,18 @@ In this lesson, you'll learn how to read temperature data from a DS18B20 sensor 
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_ds18b20`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_ds18b20`
+        - \-
+
 
 Wiring
 ---------------------------

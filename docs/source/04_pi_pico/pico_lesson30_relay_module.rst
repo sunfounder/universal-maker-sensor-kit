@@ -8,10 +8,21 @@ In this lesson, you will learn how to use the Raspberry Pi Pico W to control a r
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_breadboard`
-* :ref:`cpn_relay`
-* :ref:`cpn_rgb`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_relay`
+        - \-
+    *   - :ref:`cpn_rgb`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
 
 
 Wiring

@@ -8,8 +8,18 @@ In this lesson, you'll learn how to read the analog value of a potentiometer wit
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_potentiometer`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_potentiometer`
+        - |link_potentiometer_sensor_module_buy|
+
 
 Wiring
 ---------------------------

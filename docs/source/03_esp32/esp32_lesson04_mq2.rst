@@ -8,9 +8,21 @@ In this lesson, you will learn how to measure gas concentrations using an MQ-2 s
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_gas`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_gas`
+        - |link_mq2_gas_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
+
 
 Wiring
 ---------------------------

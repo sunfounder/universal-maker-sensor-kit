@@ -8,9 +8,20 @@ In this lesson, you will learn how to set up and use a Real Time Clock (RTC) mod
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_rtc_ds1302`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_rtc_ds1302`
+        - |link_ds1302_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

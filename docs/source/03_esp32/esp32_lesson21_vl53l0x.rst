@@ -8,9 +8,20 @@ In this lesson, you will learn how to use the Adafruit VL53L0X Time of Flight Di
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_VL53L0X`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_VL53L0X`
+        - |link_vl53l0x_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

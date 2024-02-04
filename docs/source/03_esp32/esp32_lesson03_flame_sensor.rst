@@ -8,9 +8,20 @@ In this lesson, you will learn how to connect a flame sensor to an ESP32 Develop
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_flame`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_flame`
+        - |link_flame_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

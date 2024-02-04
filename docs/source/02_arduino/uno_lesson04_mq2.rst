@@ -8,8 +8,18 @@ In this lesson, you will learn how to use the MQ-2 Gas Sensor with an Arduino Un
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_gas`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_gas`
+        - |link_mq2_gas_sensor_module_buy|
+
 
 Wiring
 ---------------------------

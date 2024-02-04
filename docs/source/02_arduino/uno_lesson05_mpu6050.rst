@@ -8,8 +8,18 @@ In this lesson, you will learn how to use the MPU6050 sensor with an Arduino to 
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_mpu6050`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_mpu6050`
+        - |link_mpu6050_buy|
+
 
 Wiring
 ---------------------------

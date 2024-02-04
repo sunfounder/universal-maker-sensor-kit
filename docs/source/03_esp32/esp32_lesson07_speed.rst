@@ -8,9 +8,19 @@ In this lesson, you'll learn how to use an ESP32 Development Board with a Speed 
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_breadboard`
-* :ref:`cpn_speed`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+    *   - :ref:`cpn_speed`
+        - |link_speed_sensor_module_buy|
 
 
 Wiring

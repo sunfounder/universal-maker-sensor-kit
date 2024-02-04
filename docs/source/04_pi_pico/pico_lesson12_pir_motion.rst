@@ -8,9 +8,20 @@ In this lesson, you'll learn how to connect a PIR Motion Sensor to the Raspberry
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_pir_motion`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_pir_motion`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

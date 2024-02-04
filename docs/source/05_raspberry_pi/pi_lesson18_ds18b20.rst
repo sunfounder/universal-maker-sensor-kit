@@ -8,9 +8,20 @@ In this lesson, you will learn how to use a Raspberry Pi to read temperature dat
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_ds18b20`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_ds18b20`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

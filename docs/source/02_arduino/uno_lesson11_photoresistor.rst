@@ -8,8 +8,18 @@ In this lesson, you will learn how to measure light intensity using a photoresis
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_photoresistor`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_photoresistor`
+        - |link_photoresistor_sensor_module_buy|
+
 
 Wiring
 ---------------------------

@@ -11,8 +11,18 @@ In this lesson, you'll learn how to measure heart rate using a MAX30102 sensor a
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_max30102`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_max30102`
+        - |link_max30102_module_buy|
+
 
 Wiring
 ---------------------------

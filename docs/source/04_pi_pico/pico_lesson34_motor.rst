@@ -8,10 +8,22 @@ In this lesson, you will learn how to operate a TT motor using the Raspberry Pi 
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_ttmotor`
-* :ref:`cpn_l9110`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_ttmotor`
+        - \-
+    *   - :ref:`cpn_l9110`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

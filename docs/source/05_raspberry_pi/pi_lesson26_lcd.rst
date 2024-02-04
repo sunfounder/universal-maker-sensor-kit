@@ -8,9 +8,18 @@ In this lesson, you will learn the basics of displaying text on an LCD screen us
 Required Components
 ---------------------------
 
-* Raspberry Pi
-* :ref:`cpn_i2c_lcd1602`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_i2c_lcd1602`
+        - |link_i2clcd1602_buy|
+
 
 Wiring
 ---------------------------

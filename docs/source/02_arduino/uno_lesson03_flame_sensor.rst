@@ -8,8 +8,18 @@ In this lesson, you will learn how to integrate a flame sensor with an Arduino b
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_flame`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_flame`
+        - |link_flame_sensor_module_buy|
+
 
 Wiring
 ---------------------------

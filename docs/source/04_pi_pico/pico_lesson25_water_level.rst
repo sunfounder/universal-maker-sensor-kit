@@ -8,9 +8,20 @@ In this lesson, you will learn how to use the Raspberry Pi Pico W to measure wat
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_water_level`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_water_level`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

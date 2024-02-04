@@ -8,8 +8,18 @@ In this lesson, you'll learn how to measure temperature and humidity, as well as
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_dht11`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_dht11`
+        - |link_dht11_humiture_buy|
+
 
 Wiring
 ---------------------------

@@ -8,8 +8,18 @@ In this lesson, you will learn how a button interacts with an LED using Arduino.
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_button`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_button`
+        - \-
+        
 
 Wiring
 ---------------------------

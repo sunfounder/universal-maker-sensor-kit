@@ -8,9 +8,20 @@ In this lesson, you will learn how to set up and use a motion sensor with the Ra
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_pir_motion`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_pir_motion`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

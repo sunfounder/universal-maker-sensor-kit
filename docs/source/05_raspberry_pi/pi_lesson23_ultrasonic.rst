@@ -8,9 +8,20 @@ In this lesson, you'll learn how to connect an ultrasonic distance sensor to a R
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_ultrasonic`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_ultrasonic`
+        - |link_ultrasonic_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

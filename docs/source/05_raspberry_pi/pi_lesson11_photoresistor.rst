@@ -11,10 +11,22 @@ In this lesson, we'll learn how to read from a photoresistor module using a Rasp
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_photoresistor`
-* :ref:`cpn_pcf8591`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_photoresistor`
+        - |link_photoresistor_sensor_module_buy|
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

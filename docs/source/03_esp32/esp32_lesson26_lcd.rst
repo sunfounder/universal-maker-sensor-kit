@@ -9,9 +9,20 @@ In this lesson, you'll learn how to set up and display messages on a 16x2 Liquid
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_i2c_lcd1602`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_i2c_lcd1602`
+        - |link_i2clcd1602_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

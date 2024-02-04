@@ -8,8 +8,19 @@ In this lesson, you will learn how to detect vibrations using a vibration sensor
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_vibration`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_vibration`
+        - |link_sw420_vibration_module_buy|
+
+
 
 Wiring
 ---------------------------

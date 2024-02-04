@@ -8,8 +8,18 @@ In this lesson, you will learn how to use the BMP280 sensor with an Arduino Uno 
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_bmp280`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_bmp280`
+        - |link_bmp280_module_buy|
+
 
 Wiring
 ---------------------------

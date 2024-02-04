@@ -11,10 +11,20 @@ In this lesson, we'll learn how to read from a water level sensor using a Raspbe
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_water_level`
-* :ref:`cpn_pcf8591`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_water_level`
+        - \-
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+
 
 Wiring
 ---------------------------

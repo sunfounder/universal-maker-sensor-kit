@@ -8,9 +8,20 @@ In this lesson, you will learn how to control an RGB LED using an ESP32 Developm
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_rgb`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_rgb`
+        - \-
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

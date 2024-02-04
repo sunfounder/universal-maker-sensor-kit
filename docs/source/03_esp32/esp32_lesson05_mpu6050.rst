@@ -8,9 +8,20 @@ In this lesson, you will learn how to connect the MPU6050 accelerometer and gyro
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_mpu6050`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_mpu6050`
+        - |link_mpu6050_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

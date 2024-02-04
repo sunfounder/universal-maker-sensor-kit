@@ -9,9 +9,20 @@ In this lesson, you will learn to connect an I2C LCD 1602 display to a Raspberry
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_i2c_lcd1602`
-* :ref:`cpn_breadboard` 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_i2c_lcd1602`
+        - |link_i2clcd1602_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

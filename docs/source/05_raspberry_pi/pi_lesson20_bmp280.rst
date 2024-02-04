@@ -8,9 +8,20 @@ In this lesson, you will learn how to connect and read data from a BMP280 sensor
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_bmp280`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_bmp280`
+        - |link_bmp280_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

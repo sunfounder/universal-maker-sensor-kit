@@ -11,10 +11,20 @@ In this lesson, you will learn how to use a Raspberry Pi to interface with a joy
 Required Components
 ---------------------------
 
-* Raspberry Pi 5
-* :ref:`cpn_joystick`
-* :ref:`cpn_pcf8591`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_joystick`
+        - |link_joystick_buy|
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+
 
 Wiring
 ---------------------------

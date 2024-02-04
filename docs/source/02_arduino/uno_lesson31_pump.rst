@@ -8,6 +8,20 @@ In this lesson, you'll learn how to control a centrifugal pump with an Arduino U
 Required Components
 ---------------------------
 
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_pump`
+        - \-
+    *   - :ref:`cpn_l9110`
+        - \-
+
 * Arduino UNO R3 or R4
 * :ref:`cpn_pump`
 * :ref:`cpn_l9110`

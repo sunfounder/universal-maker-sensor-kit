@@ -8,9 +8,20 @@ In this lesson, you will learn how to use a photoresistance sensor with an ESP32
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_photoresistor`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_photoresistor`
+        - |link_photoresistor_sensor_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

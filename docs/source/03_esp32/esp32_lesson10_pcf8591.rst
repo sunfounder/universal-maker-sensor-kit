@@ -8,9 +8,20 @@ In this lesson, you'll learn how to connect the ESP32 Development Board with a P
 Required Components
 ---------------------------
 
-* ESP32 Development Board
-* :ref:`cpn_pcf8591`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - ESP32 Development Board
+        - \-
+    *   - :ref:`cpn_pcf8591`
+        - |link_pcf8591_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------

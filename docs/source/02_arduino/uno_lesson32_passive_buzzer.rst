@@ -8,8 +8,18 @@ In this lesson, you will learn how to play a melody on a passive buzzer module u
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_buzzer`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_buzzer`
+        - |link_passive_buzzer_module_buy|
+
 
 Wiring
 ---------------------------

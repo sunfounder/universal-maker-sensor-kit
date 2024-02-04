@@ -8,8 +8,18 @@ In this lesson, you will learn how to use the VL53L0X Time of Flight Distance Se
 Required Components
 ---------------------------
 
-* Arduino UNO R3 or R4
-* :ref:`cpn_VL53L0X`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Arduino UNO R3 or R4
+        - |link_Uno_R3_buy|
+    *   - :ref:`cpn_VL53L0X`
+        - |link_vl53l0x_module_buy|
+
 
 Wiring
 ---------------------------

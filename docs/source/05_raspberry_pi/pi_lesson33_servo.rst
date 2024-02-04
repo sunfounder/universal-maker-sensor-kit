@@ -8,9 +8,18 @@ In this lesson, you will learn how to control a servo motor using a Raspberry Pi
 Required Components
 ---------------------------
 
-* Raspberry Pi
-* :ref:`cpn_servo`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 20
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi 5
+        - \-
+    *   - :ref:`cpn_servo`
+        - |link_servo_buy|
+
 
 Wiring
 ---------------------------

@@ -8,9 +8,20 @@ In this lesson, you will learn how to use the Raspberry Pi Pico W to interface w
 Required Components
 ---------------------------
 
-* Raspberry Pi Pico W
-* :ref:`cpn_max30102`
-* :ref:`cpn_breadboard`
+.. list-table::
+    :widths: 30 10
+    :header-rows: 1
+
+    *   - Component Introduction
+        - Purchase Link
+
+    *   - Raspberry Pi Pico W
+        - \-
+    *   - :ref:`cpn_max30102`
+        - |link_max30102_module_buy|
+    *   - :ref:`cpn_breadboard`
+        - |link_breadboard_buy|
+
 
 Wiring
 ---------------------------
