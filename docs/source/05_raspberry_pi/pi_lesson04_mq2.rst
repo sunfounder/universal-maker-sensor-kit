@@ -44,36 +44,39 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Modules
-
-   The ``machine`` and ``time`` modules are imported. ``machine`` is used for hardware interactions, and ``time`` is for handling time-related functions like delays.
+#. Importing Libraries
 
    .. code-block:: python
-
-      import machine
+      
+      from gpiozero import DigitalInputDevice
       import time
 
-#. Initializing the MQ-2 Sensor
+   This section imports necessary libraries. ``gpiozero`` is used for interacting with the GPIO pins of the Raspberry Pi, and ``time`` is used for handling time-related tasks such as delays.
 
-   An ADC object is created on GPIO pin 26, which connects to the MQ-2 gas sensor. This step is crucial for reading the analog signals from the sensor.
+#. Initializing the MQ2 Sensor
 
    .. code-block:: python
 
-      mq2_AO = machine.ADC(26)
+      mq2 = DigitalInputDevice(17)
 
-#. Reading Sensor Data in a Loop
+   Here, the MQ2 sensor is initialized as a digital input device on GPIO pin 17 of the Raspberry Pi. The ``DigitalInputDevice`` class from gpiozero is used for this purpose.
 
-   - The sensor value is read in a continuous loop. ``mq2_AO.read_u16()`` reads the analog value and converts it to a 16-bit integer.
-   - The value is then printed to the console. This loop will run indefinitely, continuously reading and displaying the sensor data.
-   - A delay of 200 milliseconds is introduced using ``time.sleep_ms(200)`` to prevent overwhelming the console with data.
-
-   .. note:: 
-   
-     MQ2 is a heating-driven sensor that usually requires preheating before use. During the preheating period, the sensor typically reads high and gradually decreases until it stabilizes.
+#. Infinite Loop for Sensor Reading
 
    .. code-block:: python
 
       while True:
-          value = mq2_AO.read_u16()  # Read and convert analog value to 16-bit integer
-          print("AO:", value)  # Print the analog value
-          time.sleep_ms(200)  # Wait for 200 milliseconds before the next read
+         if mq2.value == 0:
+            print("Gas detected!")
+         else:
+            print("No gas detected.")
+         time.sleep(1)
+
+   In this segment:
+
+   .. note::
+      The DO pin on the MQ-2 sensor module indicates the presence of combustible gases. When the gas concentration exceeds the threshold value (as set by the potentiometer on the module), D0 becomes LOW; otherwise, it remains HIGH.
+   
+   - An infinite loop is created using ``while True``. This loop will continue to run until the program is manually stopped.
+   - Inside the loop, the value of the MQ2 sensor is checked using ``mq2.value``. If the value is 0, it indicates the presence of gas, and "Gas detected!" is printed. Otherwise, "No gas detected." is printed.
+   - ``time.sleep(1)`` creates a delay of 1 second between each reading, reducing the frequency of the sensor checks and the output messages.
