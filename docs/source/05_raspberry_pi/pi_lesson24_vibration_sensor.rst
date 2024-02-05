@@ -35,26 +35,22 @@ Code
 
 .. code-block:: python
 
-   from gpiozero import Button
+   from gpiozero import InputDevice
    import time
-
-   # Initialize a Button object for the vibration sensor
-   # GPIO 17: pin connected to the sensor
-   # pull_up=None: disable internal pull-up/pull-down resistors
-   # active_state=True: high voltage is considered the active state
-   vibration_sensor = Button(17, pull_up=None, active_state=True)
-
-   # Continuously check the vibration sensor's state
+   
+   # Connect the digital output of the vibration sensor to GPIO17 on the Raspberry Pi
+   vibration_sensor = InputDevice(17)
+   
+   # Continuous loop to read from the sensor
    while True:
-       # If the sensor detects vibration (is pressed), print a message
-       if vibration_sensor.is_pressed:
+       # Check if the sensor is active (no vibration detected)
+       if vibration_sensor.is_active:
            print("Vibration detected!")
-       # If no vibration is detected, print ellipses
        else:
+           # When the sensor is inactive (vibration detected)
            print("...")
-
-       # Pause for 0.1 seconds to lower the demand on the CPU
-       time.sleep(0.1)
+       # Wait for 1 second before reading the sensor again
+       time.sleep(1)
 
 
 Code Analysis
