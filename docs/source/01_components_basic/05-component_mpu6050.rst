@@ -15,7 +15,7 @@ The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion
 
 Principle
 ---------------------------
-An MPU-650 sensor module consists of a 3-axis accelerometer and a 3-axis gyroscope.
+An MPU-6050 sensor module consists of a 3-axis accelerometer and a 3-axis gyroscope.
 
 Its three coordinate systems are defined as follows:
 
