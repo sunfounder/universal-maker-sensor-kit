@@ -1,4 +1,4 @@
-.. _pico_lesson06_hall_sensor:
+.. _pi_lesson06_hall_sensor:
 
 Lesson 06: Hall Sensor Module
 ==================================

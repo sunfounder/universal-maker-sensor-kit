@@ -107,6 +107,7 @@ Code Analysis
    The code begins by importing necessary libraries. ``time`` for handling delays, ``board`` for accessing Raspberry Pi GPIO pins, and ``adafruit_dht`` for interacting with the DHT11 sensor. For more detail about the ``adafruit_dht`` library, please refer to |Adafruit_CircuitPython_DHT|.
 
    .. code-block:: python
+    
       import time
       import board
       import adafruit_dht
