@@ -74,3 +74,7 @@ It perfectly matches the pins of the ESP8266 itself, and also adds a 5V pin to r
 The schematic diagram is as follows:
 
 .. image:: img/35_sch_esp8266adapter.png
+
+Example
+---------------------------
+* :ref:`uno_lesson35_esp8266` (Arduino UNO)

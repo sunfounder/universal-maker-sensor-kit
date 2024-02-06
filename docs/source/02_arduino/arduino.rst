@@ -47,4 +47,5 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson32_passive_buzzer.rst
     uno_lesson33_servo.rst
     uno_lesson34_motor.rst
+    uno_lesson35_esp8266
     uno_lesson36_bluetooth.rst
