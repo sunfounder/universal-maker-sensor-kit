@@ -100,7 +100,7 @@ rst_epilog = """
 
 .. |link_esp8266_at| raw:: html
 
-    <a href="/_static/pdf/esp8266_at_instruction_set_en.pdf" target="_blank">ESP8266 AT Instruction Set</a>
+    <a href="../_static/pdf/esp8266_at_instruction_set_en.pdf" target="_blank">ESP8266 AT Instruction Set</a>
 
 .. |link_blynk_lib| raw:: html
 
