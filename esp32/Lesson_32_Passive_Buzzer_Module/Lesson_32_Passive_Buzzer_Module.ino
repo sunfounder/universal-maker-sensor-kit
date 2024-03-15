@@ -9,7 +9,7 @@
 
 #include "pitches.h"
 
-const int buzzerPin = 25;
+const int buzzerPin = 19;
 
 // notes in the melody:
 int melody[] = {
