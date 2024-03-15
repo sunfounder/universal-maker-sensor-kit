@@ -127,7 +127,6 @@ In this project, we need the following components.
 
         Adafruit IO MQTTS (SSL/TLS) Example
 
-
         Connecting to xxxxx
         WiFi connected
         IP address: 
