@@ -336,6 +336,24 @@ rst_epilog = """
 
     <a href="https://colorzero.readthedocs.io/en/latest/api_color.html#colorzero.Color" target="_blank">colorzero.Color</a>
 
+.. |link_uuid| raw:: html
+
+    <a href="https://www.uuidgenerator.net/version4" target="_blank">Online UUID Generator</a>
+
+.. |link_openweather| raw:: html
+
+    <a href="https://openweathermap.org/" target="_blank">OpenWeather</a>
+
+
+.. |link_hivemq| raw:: html
+
+    <a href="https://www.hivemq.com/demos/websocket-client/" target="_blank">HiveMQ Web Client</a>
+
+.. |link_adafruit_io| raw:: html
+
+    <a href="https://io.adafruit.com/" target="_blank">Adafruit IO</a>
+
+
 """
 
 
@@ -473,3 +491,4 @@ rst_epilog += """
     <a href="https://www.sunfounder.com/products/jdy-31-bluetooth-wireless-communication-serial-pass-through-module-replace-hc-05-hc-06" target="_blank">BUY</a>
 
 """
+

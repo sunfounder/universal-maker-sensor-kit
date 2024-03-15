@@ -32,7 +32,9 @@ Embrace the world of electronic innovation today with our Universal Maker Sensor
 If you have any questions or other interesting ideas, please feel free to email us at service@sunfounder.com.
 
 .. * :ref:`About the display language`
+
 * :ref:`Table of contents`
+
 * :ref:`Copyright Notice`
 
 
