@@ -1,7 +1,7 @@
-For Raspberry Pi Pico
+For Raspberry Pi Pico W
 ==================================================
 
-Raspberry Pi Pico users, please check out the following tutorial. This tutorial is suitable for |link_pi_pico| We will use MicroPython to program the Pi Pico and write a simple code example for each component to help you get started quickly.
+Raspberry Pi Pico W users, please check out the following tutorial. This tutorial is suitable for |link_pi_pico| We will use MicroPython to program the Pi Pico W and write a simple code example for each component to help you get started quickly.
 
 MicroPython is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.
 
