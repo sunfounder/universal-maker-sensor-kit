@@ -81,5 +81,9 @@ The following is an introduction to each component, including its working princi
     35-component_esp8266
     36-component_jdy31
 
+**Power**
 
-
+.. toctree::
+    :maxdepth: 1
+    
+    39-component_power
