@@ -24,6 +24,8 @@ Required Components
         - |link_Uno_R3_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
+    *   - :ref:`cpn_power_module`
+        - \-
     *   - :ref:`cpn_i2c_lcd1602`
         - |link_i2clcd1602_buy|
     *   - :ref:`cpn_pump`

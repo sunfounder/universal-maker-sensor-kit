@@ -20,3 +20,11 @@ The breadboard power module provides 3.3V and 5V with a series diode and reverse
 #. On-board two groups of 3.3V, 5V DC output plug pin, convenient external lead use.
 #. USB device connector onboard for power output to external device.
 #. Size: 5.3cm x 3.5cm.
+
+Example
+---------------------------
+* :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
+* :ref:`esp32_soap_dispenser` (ESP32)
+
+* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`esp32_plant_monitor` (ESP32)

@@ -23,6 +23,8 @@ Required Components
         - \-
     *   - :ref:`cpn_l9110`
         - \-
+    *   - :ref:`cpn_power_module`
+        - \-
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
         
