@@ -74,6 +74,11 @@ gettext_compact = False # Support for generating the contents of the folders ins
 
 rst_epilog = """
 
+
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/3wGTU0R" target="_blank">here</a>
+
 .. |link_german_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/ultimate-sensor-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
