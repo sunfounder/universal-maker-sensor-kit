@@ -1,4 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/15-iot_Bluetooth_lcd.rst
 
 .. note::
 

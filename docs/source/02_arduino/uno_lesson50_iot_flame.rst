@@ -1,4 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/01-iot_Flame_alert_system.rst
 
 .. note::
 

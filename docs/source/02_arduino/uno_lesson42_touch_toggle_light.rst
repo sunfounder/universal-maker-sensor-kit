@@ -1,4 +1,3 @@
-.. https://docs.sunfounder.com/projects/ultimate-sensor-kit/en/latest/fun_project/08-fun-Touch_toggle_light.html
 
 .. note::
 

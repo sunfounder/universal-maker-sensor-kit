@@ -1,4 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/fun_project/10-fun-Potentiometer_scale_value.rst
 
 .. note::
 

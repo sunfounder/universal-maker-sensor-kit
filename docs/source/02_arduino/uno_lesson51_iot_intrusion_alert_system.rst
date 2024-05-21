@@ -1,6 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/02-iot_Intrusion_alert_system.rst
-
-
 
 .. note::
 

@@ -1,4 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/04-iot_Vibration_alert_system.rst
 
 .. note::
 

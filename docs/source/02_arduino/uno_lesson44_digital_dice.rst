@@ -1,4 +1,3 @@
-.. https://docs.sunfounder.com/projects/elite-explorer-kit/en/latest/fun_projects/05_fun_digital_dice.html
 
 .. note::
 

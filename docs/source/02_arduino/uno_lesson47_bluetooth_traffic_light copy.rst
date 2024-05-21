@@ -1,4 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/16-iot_Bluetooth_traffic_light.rst
 
 .. note::
 

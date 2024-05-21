@@ -1,4 +1,3 @@
-.. https://github.com/sunfounder/Elite-Explorer-Kit/blob/docs/docs/source/fun_projects/08_fun_plant_monitor.rst
 
 .. note::
 
