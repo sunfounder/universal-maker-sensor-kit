@@ -6,7 +6,24 @@ Lesson 10: PCF8591 ADC DAC Converter Module
 In this lesson, you'll learn how to connect the ESP32 Development Board with a PCF8591 ADC DAC Converter Module. We'll cover reading analog values from input AIN0, sending these values to the DAC(AOUT), and displaying both the raw and voltage-converted readings on the serial monitor. The module's potentiometer is connected to AIN0 using jumper caps, and the D2 LED on the module is connected to AOUT, so you can see that the brightness of D2 LED changes as you rotate the potentiometer.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_pcf8591`
         - |link_pcf8591_module_buy|
     *   - :ref:`cpn_breadboard`

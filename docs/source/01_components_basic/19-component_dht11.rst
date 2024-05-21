@@ -59,3 +59,6 @@ Example
 * :ref:`pico_lesson19_dht11` (Raspberry Pi Pico)
 * :ref:`pi_lesson19_dht11` (Raspberry Pi)
 
+* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`esp32_plant_monitor` (ESP32)
+* :ref:`esp32_adafruit_io` (ESP32)

@@ -6,7 +6,24 @@ Lesson 19: Temperature and Humidity Sensor Module (DHT11)
 In this lesson, you'll learn how to measure temperature and humidity, as well as calculate the heat index using a DHT11 sensor with an Arduino Uno. We'll cover reading and interpreting data from the DHT11 sensor, and displaying these values along with the heat index in both Celsius and Fahrenheit on the serial monitor. This project is perfect for Arduino beginners, providing hands-on experience with sensors and data handling in a simple yet engaging way.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10

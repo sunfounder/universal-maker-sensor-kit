@@ -6,7 +6,24 @@ Lesson 24: Vibration Sensor Module (SW-420)
 In this lesson, you will learn how to detect vibrations using a vibration sensor with an Arduino Uno. We'll explore how the sensor signals the presence of vibrations to the Arduino, triggering it to display a message. This project is perfect for beginners to understand digital input processing and serial communication in Arduino. You'll gain hands-on experience in reading sensor data and implementing conditional logic in your sketches.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

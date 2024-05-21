@@ -6,7 +6,24 @@ Lesson 17: Rotary Encoder Module
 In this lesson, you'll learn how to use the Raspberry Pi Pico W to control a rotary encoder. The rotary encoder is an advanced sensor that translates knob rotation into an output signal, indicating both the amount and direction of rotation. This project offers hands-on experience with digital input devices, enhancing your ability to work with more complex sensors. You'll configure the rotary encoder using specific GPIO pins, read its output to determine rotation direction and amount, and master using a button to trigger events.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -6,7 +6,24 @@ Lesson 12: PIR Motion Module (HC-SR501)
 In this lesson, you'll learn how to connect a PIR Motion Sensor to the Raspberry Pi Pico W. You'll discover how to configure the sensor for motion detection and use basic MicroPython code to react to movement. By monitoring the PIR sensor, you'll gain experience in managing digital inputs and creating a simple security measure or automation trigger.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

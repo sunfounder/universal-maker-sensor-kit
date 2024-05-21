@@ -9,7 +9,24 @@ Lesson 06: Hall Sensor Module
 In this lesson, we will learn how to use a Raspberry Pi to read from a hall sensor module. You will learn how to connect a photoresistor module to the PCF8591 for analog-to-digital conversion and monitor its output in real-time using Python. Additionally, you will explore reading analog values and interpreting them to detect the presence and type of magnetic poles.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

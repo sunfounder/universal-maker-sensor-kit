@@ -9,7 +9,24 @@ Lesson 02: Capacitive Soil Moisture Module
 In this tutorial, we'll explore how to monitor soil moisture levels using a Raspberry Pi. You'll learn to set up a Capacitive Soil Moisture Sensor with the PCF8591 module for analog-to-digital conversion and use Python to continuously track the soil's moisture content. This project is a hands-on introduction to sensors, ADCs (analog-to-digital converters), and real-time data monitoring on the Raspberry Pi.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

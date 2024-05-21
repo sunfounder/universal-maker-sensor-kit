@@ -6,7 +6,24 @@ Lesson 34: TT Motor
 In this lesson, you will learn how to control a motor using an Arduino Uno R3 or R4 and an L9110 motor control board. We'll cover defining motor pins and setting their speed through programming. This tutorial will walk you through the process of connecting and controlling a motor, demonstrating the basic principles of motor operation and control in Arduino projects. Geared towards beginners, this lesson provides a hands-on approach to understanding output operations on the Arduino platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

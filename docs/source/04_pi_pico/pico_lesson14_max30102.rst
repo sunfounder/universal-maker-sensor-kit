@@ -6,7 +6,24 @@ Lesson 14: Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
 In this lesson, you will learn how to use the Raspberry Pi Pico W to interface with the MAX30102 pulse oximeter and heart rate sensor. You will gain knowledge on setting up I2C communication, configuring the sensor, and reading raw data from the sensor. By observing changes in the data, you can obtain heartbeat information.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10

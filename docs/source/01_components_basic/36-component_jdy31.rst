@@ -75,4 +75,5 @@ AT Command Set
 Example
 ---------------------------
 * :ref:`uno_lesson36_bluetooth` (Arduino UNO)
-
+* :ref:`uno_bluetooth_lcd` (Arduino UNO)
+* :ref:`uno_bluetooth_traffic_light` (Arduino UNO)

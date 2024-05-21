@@ -6,7 +6,24 @@ Lesson 01: Button Module
 In this lesson, you will learn the basics of using a button with Raspberry Pi. We will show you how to connect a button to GPIO pin 17 and write a simple Python script to monitor its state. You'll learn how to program the Raspberry Pi to detect when the button is pressed and released, and respond with appropriate messages. This introductory project is an excellent way to get familiar with GPIO interaction and basic Python scripting, making it well-suited for beginners starting their journey in Raspberry Pi and hardware programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -53,3 +53,4 @@ Example
 * :ref:`esp32_lesson03_flame` (ESP32)
 * :ref:`pico_lesson03_flame` (Raspberry Pi Pico)
 * :ref:`pi_lesson03_flame` (Raspberry Pi)
+* :ref:`uno_iot_flame` (Arduino UNO)

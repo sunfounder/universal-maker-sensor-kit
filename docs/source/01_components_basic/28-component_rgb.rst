@@ -57,3 +57,12 @@ Example
 * :ref:`esp32_lesson30_relay_module` (ESP32)
 * :ref:`pico_lesson30_relay_module` (Raspberry Pi Pico)
 * :ref:`pi_lesson30_relay_module` (Raspberry Pi)
+
+* :ref:`uno_lesson38_gas_leak_alarm` (Arduino UNO)
+* :ref:`uno_lesson40_motion_triggered_relay` (Arduino UNO)
+* :ref:`esp32_gas_leak_alarm` (ESP32)
+* :ref:`esp32_motion_triggered_relay` (ESP32)
+* :ref:`esp32_bluetooth_led` (ESP32)
+* :ref:`esp32_iot_mqtt` (ESP32)
+* :ref:`esp32_adafruit_io` (ESP32)
+* :ref:`esp32_iot_bluetooth_app` (ESP32)

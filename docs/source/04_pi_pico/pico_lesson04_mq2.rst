@@ -6,7 +6,24 @@ Lesson 04: Gas Sensor Module (MQ-2)
 In this lesson, you'll learn how to use the Raspberry Pi Pico W to read data from a gas sensor module (MQ-2) using MicroPython. We'll guide you through setting up an ADC on GPIO pin 26 to process analog signals from the MQ-2 sensor. You'll gain practical experience in continuously monitoring and printing sensor data to understand the presence of gases in the environment.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

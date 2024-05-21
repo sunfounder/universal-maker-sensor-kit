@@ -6,7 +6,24 @@ Lesson 30: Relay Module
 In this lesson, you'll learn how to use an ESP32 Development Board to control a one-channel relay module. We'll cover turning the relay on and off in a loop, with a 3-second delay between each state change. This project provides hands-on experience with digital output operations in embedded systems, making it ideal for beginners entering the realm of ESP32 and relay modules.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
     *   - :ref:`cpn_relay`

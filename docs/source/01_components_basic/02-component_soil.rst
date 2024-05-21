@@ -48,3 +48,6 @@ Example
 * :ref:`esp32_lesson02_soil_moisture` (ESP32)
 * :ref:`pico_lesson02_soil_moisture` (Raspberry Pi Pico)
 * :ref:`pi_lesson02_soil_moisture` (Raspberry Pi Pi)
+
+* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`esp32_plant_monitor` (ESP32)

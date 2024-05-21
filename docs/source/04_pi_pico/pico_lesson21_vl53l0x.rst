@@ -6,7 +6,24 @@ Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
 In this lesson, you'll learn how to use the Raspberry Pi Pico W for measuring distances with the VL53L0X Time of Flight Micro-LIDAR Distance Sensor. We'll walk you through setting up I2C communication between the Raspberry Pi Pico W and the sensor, and then we'll explore configuring the sensor's settings for optimal performance. You will also learn how to adjust the measurement timing budget and VCSEL pulse periods to improve accuracy and range.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10

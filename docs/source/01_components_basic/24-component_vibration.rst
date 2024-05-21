@@ -38,3 +38,6 @@ Example
 * :ref:`pi_lesson24_vibration_sensor` (Raspberry Pi)
 
 
+* :ref:`uno_digital_dice` (Arduino UNO)
+* :ref:`uno_iot_vib_alert_system` (Arduino UNO)
+* :ref:`esp32_digital_dice` (ESP32)

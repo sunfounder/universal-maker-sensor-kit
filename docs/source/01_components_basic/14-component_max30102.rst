@@ -56,3 +56,6 @@ Example
 * :ref:`esp32_lesson14_max30102` (ESP32)
 * :ref:`pico_lesson14_max30102` (Raspberry Pi Pico)
 * :ref:`pi_lesson14_max30102` (Raspberry Pi)
+
+* :ref:`uno_lesson41_heartrate_monitor` (Arduino UNO)
+* :ref:`esp32_heartrate_monitor` (ESP32)

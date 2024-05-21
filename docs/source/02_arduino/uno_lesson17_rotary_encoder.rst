@@ -6,7 +6,24 @@ Lesson 17: Rotary Encoder Module
 In this lesson, you will learn how to monitor and control a rotary encoder with an Arduino Uno. We'll cover tracking the rotation direction (clockwise or counterclockwise), counting rotations, and detecting button presses on the encoder module. This project is ideal for those seeking to enhance their understanding of rotary encoders and input/output operations in Arduino, providing practical insight into physical control systems.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

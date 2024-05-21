@@ -6,7 +6,24 @@ Lesson 16: Real Time Clock Module (DS1302)
 In this lesson, you'll learn how to use the Raspberry Pi Pico W to interact with a DS1302 Real-Time Clock module. We'll start by setting up the DS1302 and connecting it to the Pico W using specific GPIO pins. You'll also learn how to retrieve and set the current date and time on the DS1302. Additionally, we'll explore continuously displaying the current datetime on your console, updating every half second.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

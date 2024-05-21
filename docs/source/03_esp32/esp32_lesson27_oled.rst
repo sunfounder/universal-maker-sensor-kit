@@ -6,7 +6,24 @@ Lesson 27: OLED Display Module (SSD1306)
 In this lesson, you will learn how to set up and utilize an OLED display with an ESP32 Development Board using the Adafruit SSD1306 and GFX libraries. We will cover displaying text in different sizes, inverting text colors, creating scrolling text animations, and rendering custom bitmap graphics. This project provides a thorough introduction to advanced display techniques, ideal for individuals seeking to improve their skills in developing interactive electronics with microcontrollers.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_oled`
         - \-
     *   - :ref:`cpn_breadboard`

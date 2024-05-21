@@ -6,7 +6,24 @@ Lesson 18: Temperature Sensor Module (DS18B20)
 In this lesson, you'll learn how to integrate and read temperature data from DS18B20 sensors using the Raspberry Pi Pico W. You'll begin by setting up a OneWire bus on the GPIO pin and scanning for DS18X20 devices. The main focus of the lesson is continuously reading and displaying temperature measurements from these sensors. 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

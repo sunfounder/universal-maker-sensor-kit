@@ -37,3 +37,8 @@ Example
 * :ref:`esp32_lesson31_pump` (ESP32)
 * :ref:`pico_lesson31_pump` (Raspberry Pi Pico)
 * :ref:`pi_lesson31_pump` (Raspberry Pi)
+
+* :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
+* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`esp32_soap_dispenser` (ESP32)
+* :ref:`esp32_plant_monitor` (ESP32)

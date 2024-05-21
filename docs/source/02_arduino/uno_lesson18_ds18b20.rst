@@ -6,7 +6,24 @@ Lesson 18: Temperature Sensor Module (DS18B20)
 In this lesson, you'll learn how to read temperature data from a DS18B20 sensor using Arduino. We'll cover using the DallasTemperature library to communicate with the sensor and display readings in both Celsius and Fahrenheit on the Serial Monitor. This project is ideal for Arduino beginners, providing practical experience with temperature sensors and data processing.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

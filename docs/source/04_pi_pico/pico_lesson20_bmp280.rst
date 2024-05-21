@@ -6,7 +6,24 @@ Lesson 20: Temperature, Humidity & Pressure Sensor (BMP280)
 In this lesson, you'll learn how to connect the BMP280 temperature, humidity, and pressure sensor to the Raspberry Pi Pico W using MicroPython. You'll get practical experience in setting up I2C communication, configuring the BMP280 sensor for weather monitoring, and obtaining temperature and pressure data. By the end of this tutorial, you'll be able to view real-time environmental data on your console.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10

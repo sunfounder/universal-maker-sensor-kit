@@ -490,5 +490,14 @@ rst_epilog += """
 
     <a href="https://www.sunfounder.com/products/jdy-31-bluetooth-wireless-communication-serial-pass-through-module-replace-hc-05-hc-06" target="_blank">BUY</a>
 
+.. |link_esp32_camera_pro_kit_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/esp-32-camera-pro-kit" target="_blank">BUY</a>    
+
+.. |link_umsk| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-universal-maker-sensor-kit?_pos=2&_sid=c060003fa&_ss=r" target="_blank">Universal Maker Sensor Kit</a>    
+    
+
 """
 

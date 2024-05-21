@@ -6,7 +6,24 @@ Lesson 03: Flame Sensor Module
 In this lesson, you will learn how to use the Raspberry Pi Pico W to detect fire using a flame sensor. When the sensor detects a flame, the onboard LED of the Raspberry Pi Pico W will turn on and display a message indicating fire detection. If no fire is detected, the LED remains off and shows a different message. This project introduces working with external sensors and provides practical experience in handling digital inputs and outputs on the Raspberry Pi Pico W using MicroPython.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

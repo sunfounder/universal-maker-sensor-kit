@@ -6,7 +6,24 @@ Lesson 32: Passive Buzzer Module
 In this lesson, you will learn how to play a melody on a passive buzzer module using Arduino. We'll cover programming the Arduino to control the buzzer and create various note durations. This project is ideal for beginners as it provides hands-on experience in producing sound and understanding musical notes within electronic components. You'll also gain practical insight into using the Arduino Uno board and the passive buzzer module.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

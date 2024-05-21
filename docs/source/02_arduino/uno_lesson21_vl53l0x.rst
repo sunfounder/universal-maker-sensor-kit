@@ -6,7 +6,24 @@ Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
 In this lesson, you will learn how to use the VL53L0X Time of Flight Distance Sensor with an Arduino Uno. We'll cover the basics of connecting the sensor to measure distances in millimeters and displaying the readings on the serial monitor. This project provides hands-on experience with advanced sensors and their real-world applications, enhancing your Arduino skills.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10

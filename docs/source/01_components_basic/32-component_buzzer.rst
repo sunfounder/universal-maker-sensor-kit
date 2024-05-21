@@ -36,3 +36,6 @@ Example
 * :ref:`esp32_lesson32_passive_buzzer` (ESP32)
 * :ref:`pico_lesson32_passive_buzzer` (Raspberry Pi Pico)
 * :ref:`pi_lesson32_passive_buzzer` (Raspberry Pi)
+
+* :ref:`uno_lesson38_gas_leak_alarm` (Arduino UNO)
+* :ref:`esp32_gas_leak_alarm` (ESP32)

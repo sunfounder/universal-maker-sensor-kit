@@ -6,7 +6,24 @@ Lesson 24: Vibration Sensor Module (SW-420)
 In this lesson, you'll learn how to detect vibrations using an ESP32 Development Board and a Vibration Sensor (SW-420). We'll cover reading digital output from the sensor and using conditional statements to display messages on the serial monitor. When the sensor detects vibration, it will display "Detected vibration..."; otherwise, it will output "...". This project provides a practical way to grasp digital inputs and serial communication, making it ideal for electronics and programming beginners.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_vibration`
         - |link_sw420_vibration_module_buy|
     *   - :ref:`cpn_breadboard`

@@ -6,7 +6,24 @@ Lesson 04: Gas Sensor Module (MQ-2)
 In this lesson, you will learn how to use the MQ-2 Gas Sensor with an Arduino Uno to measure gas concentrations. We'll explore how the sensor reads analog output values ranging from 0 to 1023, which represent the concentration of gases in the air. This project is essential for understanding environmental sensing and analog signal processing in Arduino, as well as a great introduction to working with sensors and interpreting their outputs. We'll discuss the importance of preheating the sensor for accurate readings and delve into the basics of serial communication for data visualization. This lesson is ideal for beginners interested in Arduino and environmental monitoring projects.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10

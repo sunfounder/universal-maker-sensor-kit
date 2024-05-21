@@ -6,7 +6,24 @@ Lesson 28: RGB Module
 In this lesson, you will learn how to control an RGB LED module with a Raspberry Pi. You'll learn how to use Python to change the LED's color to red, green, blue, and yellow, and then turn it off. This project is a straightforward introduction to working with RGB LEDs and GPIO interfacing, making it ideal for beginners starting with Raspberry Pi and Python programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

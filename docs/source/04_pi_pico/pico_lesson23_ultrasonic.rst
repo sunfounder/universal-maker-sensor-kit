@@ -6,7 +6,24 @@ Lesson 23: Ultrasonic Sensor Module (HC-SR04)
 In this lesson, you will learn how to measure distances using the Raspberry Pi Pico W and an HC-SR04 ultrasonic sensor. You'll find out how to connect the sensor to the Pico W and write a MicroPython script to control it. The lesson will cover calculating distances based on the time it takes for ultrasonic waves to reflect back from objects. This practical project provides insights into working with sensors, handling digital signals, and basic calculations in MicroPython, suitable for those interested in hardware interfacing with the Raspberry Pi Pico W.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

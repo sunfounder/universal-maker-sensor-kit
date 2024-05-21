@@ -6,7 +6,24 @@ Lesson 19: Temperature and Humidity Sensor Module (DHT11)
 In this lesson, you will learn how to read temperature and humidity from a DHT11 sensor using an ESP32 Development Board. We'll also cover interpreting these readings and calculating the heat index in both Celsius and Fahrenheit. This project is ideal for beginners in environmental sensing, providing hands-on experience with sensor data acquisition and basic concepts of climate monitoring on the ESP32 platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_dht11`
         - |link_dht11_humiture_buy|
     *   - :ref:`cpn_breadboard`

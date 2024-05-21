@@ -57,8 +57,8 @@ Example
 * :ref:`pico_lesson08_ir_obstacle_avoidance` (Raspberry Pi Pico)
 * :ref:`pi_lesson08_ir_obstacle_avoidance` (Raspberry Pi)
 
-
-
+* :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
+* :ref:`esp32_soap_dispenser` (ESP32)
 
 
 

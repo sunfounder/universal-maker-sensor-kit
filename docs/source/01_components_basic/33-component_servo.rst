@@ -65,3 +65,6 @@ Example
 * :ref:`esp32_lesson33_servo` (ESP32)
 * :ref:`pico_lesson33_servo` (Raspberry Pi Pico)
 * :ref:`pi_lesson33_servo` (Raspberry Pi)
+
+* :ref:`uno_lesson37_trashcan` (Arduino UNO)
+* :ref:`esp32_trashcan` (ESP32)

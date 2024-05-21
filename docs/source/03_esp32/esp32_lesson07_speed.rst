@@ -6,7 +6,24 @@ Lesson 07: Infrared Speed Sensor Module
 In this lesson, you'll learn how to use an ESP32 Development Board with a Speed Sensor Module to detect obstructions. We'll see how the sensor sends a high signal when there's an obstruction and a low signal when the path is clear. This project is ideal for those looking to grasp sensor integration and basic input/output operations in a practical setting using the ESP32 platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
     *   - :ref:`cpn_speed`

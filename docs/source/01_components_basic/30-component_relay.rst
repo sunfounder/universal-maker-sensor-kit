@@ -57,3 +57,5 @@ Example
 * :ref:`pico_lesson30_relay_module` (Raspberry Pi Pico)
 * :ref:`pi_lesson30_relay_module` (Raspberry Pi)
  
+* :ref:`uno_lesson40_motion_triggered_relay` (Arduino UNO)
+* :ref:`esp32_motion_triggered_relay` (ESP32)

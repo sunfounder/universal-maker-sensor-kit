@@ -6,7 +6,24 @@ Lesson 06: Hall Sensor Module
 In this lesson, you will learn how a Hall sensor detects magnetic fields using Arduino. We'll explore how to read the sensor's analog signal with Arduino Uno, interpreting the values to determine the polarity of a magnetic field. You'll understand the workings of the Hall sensor, and how the Arduino board processes and displays these readings in real-time. 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -6,7 +6,24 @@ Lesson 17: Rotary Encoder Module
 In this lesson, you will learn how to use an ESP32 Development Board and a rotary encoder module to detect rotation direction and count, as well as button presses. We'll explore how the encoder signals clockwise and counterclockwise rotations and increments or decrements a counter accordingly. Additionally, you'll understand how to detect button presses on the encoder module. This project offers hands-on experience in managing rotary encoders and reading digital inputs, enhancing your skills in working with the ESP32 and Arduino programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_rotary_encoder`
         - \-
     *   - :ref:`cpn_breadboard`

@@ -6,7 +6,24 @@ Lesson 15: Raindrop Detection Module
 In this lesson, you will learn how to use a Raindrop Detection Sensor Module with an Arduino. We will see how the sensor detects rain by measuring changes in resistance caused by raindrops completing circuits on its nickel-coated surface.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

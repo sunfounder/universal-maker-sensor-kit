@@ -9,7 +9,24 @@ Lesson 13: Potentiometer Module
 In this lesson, we'll learn how to read from a potentiometer using a Raspberry Pi. You'll find out how to connect a potentiometer module to the PCF8591 for analog-to-digital conversion and monitor its output in real-time with Python.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

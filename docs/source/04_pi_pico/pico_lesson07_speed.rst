@@ -6,7 +6,24 @@ Lesson 07: Infrared Speed Sensor Module
 In this lesson, you will learn how to use the Raspberry Pi Pico W to interface with an infrared speed sensor module. By connecting the sensor to GPIO 16, you will detect obstructions in real-time. The program monitors the sensor output, and when an obstruction is detected, it prints "Obstruction detected" to the console. If there's no obstruction, it prints "Unobstructed."
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

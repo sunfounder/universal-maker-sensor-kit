@@ -6,7 +6,24 @@ Lesson 29: Traffic Light Module
 In this lesson, you'll learn how to use an ESP32 Development Board to control a Mini Traffic Light Module. We'll cover setting up the board and writing code to create a traffic light sequence: 5 seconds of green light, blinking yellow light for 1.5 seconds, and 5 seconds of red light. This project is ideal for beginners in electronics and programming as it provides practical experience with output operations and basic timing control using the ESP32.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_traffic`
         - |link_traffic_light_module_buy|
     *   - :ref:`cpn_breadboard`

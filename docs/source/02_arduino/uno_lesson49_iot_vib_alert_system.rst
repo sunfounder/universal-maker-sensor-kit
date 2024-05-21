@@ -1,5 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/04-iot_Vibration_alert_system.rst
-
 .. _uno_iot_vib_alert_system:
 
 Lesson 49: Vibration Alert System with IFTTT
@@ -13,7 +11,24 @@ To avoid excessive alerts within a short timeframe, the system has been programm
 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

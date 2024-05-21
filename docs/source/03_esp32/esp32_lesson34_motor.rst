@@ -6,7 +6,24 @@ Lesson 34: TT Motor
 In this lesson, you'll learn how to control a motor with the ESP32 Development Board and an L9110 motor control board. We'll cover defining and initializing motor pins, setting them as outputs, and adjusting the motor's speed using the analogWrite function. This project is ideal for those seeking to grasp motor control and pulse-width modulation (PWM) on the ESP32 platform, providing a hands-on demonstration of output operations in a microcontroller environment.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_ttmotor`
         - \-
     *   - :ref:`cpn_l9110`

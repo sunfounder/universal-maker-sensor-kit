@@ -6,7 +6,24 @@ Lesson 17: Rotary Encoder Module
 In this lesson, you will learn how to connect and program a rotary encoder with a Raspberry Pi. We will provide step-by-step instructions on writing a Python script that monitors the encoder's position and button state, with outputs displayed in the console. 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

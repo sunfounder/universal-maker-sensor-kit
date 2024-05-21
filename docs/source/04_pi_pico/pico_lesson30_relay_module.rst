@@ -6,7 +6,24 @@ Lesson 30: Relay Module
 In this lesson, you will learn how to use the Raspberry Pi Pico W to control a relay module. We will set up a basic circuit connecting the relay to the Pi and write a MicroPython script to toggle the relay on and off at one-second intervals. This project introduces you to controlling external devices such as relays and demonstrates practical output operations using the GPIO pins on the Raspberry Pi Pico W. Ideal for those interested in delving into home automation or managing other high-power devices, this lesson offers fundamental insight into how microcontrollers can interact with and control external hardware.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

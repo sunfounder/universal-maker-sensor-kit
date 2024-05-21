@@ -51,3 +51,4 @@ Example
 * :ref:`eps32_lesson01_button` (ESP32)
 * :ref:`pico_lesson01_button` (Raspberry Pi Pico)
 * :ref:`pi_lesson01_button` (Raspberry Pi)
+* :ref:`esp32_iot_mqtt` (ESP32)

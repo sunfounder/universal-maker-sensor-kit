@@ -6,7 +6,24 @@ Lesson 13: Potentiometer Module
 In this lesson, you'll learn how to read the analog value of a potentiometer with an Arduino Uno. We'll connect the potentiometer to pin A0 and use the Arduino to measure its value from 0 to 1023. This tutorial will walk you through setting up the circuit, writing code to read the sensor, and displaying the readings on the serial monitor. It's a great project for beginners, providing hands-on experience with analog input and serial communication on the Arduino platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

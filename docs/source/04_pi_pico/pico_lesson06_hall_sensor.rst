@@ -6,7 +6,24 @@ Lesson 06: Hall Sensor Module
 In this lesson, you will learn how to use the Raspberry Pi Pico W to measure magnetic fields with a Hall effect sensor. By connecting the sensor to the Pico W, you'll discover how to read analog values and interpret them to detect the presence and type of magnetic poles. This engaging project is perfect for those starting out, as it provides practical experience with analog input processing on the Raspberry Pi Pico W using MicroPython. You'll understand how to set up the sensor, read its data, and apply conditional logic to determine the magnetic pole type, enhancing your skills in electronics and programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

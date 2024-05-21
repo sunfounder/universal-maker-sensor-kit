@@ -6,7 +6,24 @@ Lesson 07: Infrared Speed Sensor Module
 In this lesson, you will learn how to measure rotational speed using a Raspberry Pi and a simple sensor. We'll connect a digital input sensor to GPIO pin 17 and use Python to monitor its state changes. The focus will be on calculating revolutions per second by counting the sensor activations over a specific time period. You'll write a Python function to accurately capture this data and convert it into a measurable speed. This hands-on project is a straightforward yet practical introduction to real-world data collection and analysis with Raspberry Pi, ideal for beginners interested in applied Python programming and hardware interaction.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

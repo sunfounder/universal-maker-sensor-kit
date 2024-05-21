@@ -48,3 +48,6 @@ Example
 * :ref:`esp32_lesson04_mq2` (ESP32)
 * :ref:`pico_lesson04_mq2` (Raspberry Pi Pico)
 * :ref:`pi_lesson04_mq2` (Raspberry Pi)
+
+* :ref:`uno_lesson38_gas_leak_alarm` (Arduino UNO)
+* :ref:`esp32_gas_leak_alarm` (ESP32)

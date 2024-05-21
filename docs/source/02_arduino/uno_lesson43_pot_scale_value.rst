@@ -1,5 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/fun_project/10-fun-Potentiometer_scale_value.rst
-
 .. _uno_potentiometer_scale_value:
 
 Lesson 43: Potentiometer scale value
@@ -13,7 +11,24 @@ which is depicted as a variable-length bar proportional to the potentiometer's r
 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -7,7 +7,24 @@ Lesson 03: Flame Sensor Module
 In this lesson, you will learn to use a flame sensor with Raspberry Pi for fire detection. We'll show you how to connect the flame sensor to GPIO17 and write a Python script to read its output. You'll learn to identify when the sensor detects a flame, indicated by a change in the sensor's state. This practical project introduces you to the basics of sensor interfacing and Python coding on the Raspberry Pi, suitable for beginners interested in building safety-related projects.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

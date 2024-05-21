@@ -6,7 +6,24 @@ Lesson 11: Photoresistor Module
 In this lesson, you'll learn how to connect a photoresistor module to the Raspberry Pi Pico W in order to measure light intensity. By linking the photoresistor to the analog input, you can read different analog values that correspond to varying light levels. This project is ideal for beginners and provides hands-on experience in utilizing analog inputs on the Raspberry Pi Pico W with MicroPython.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

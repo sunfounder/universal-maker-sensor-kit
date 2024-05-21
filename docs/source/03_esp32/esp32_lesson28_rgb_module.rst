@@ -6,7 +6,24 @@ Lesson 28: RGB LED Module
 In this lesson, you will learn how to control an RGB LED using an ESP32 Development Board. We'll cover using different color channels to display primary colors and creating a sequence of rainbow colors. This project is ideal for beginners in electronics and programming, providing hands-on experience with output operations and color mixing using the ESP32 and RGB LED module.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_rgb`
         - \-
     *   - :ref:`cpn_breadboard`

@@ -106,3 +106,8 @@ Example
 
 * :ref:`uno_lesson07_speed` (Arduino UNO)
 * :ref:`pi_lesson07_speed` (Raspberry Pi)
+
+* :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
+* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`esp32_soap_dispenser` (ESP32)
+* :ref:`esp32_plant_monitor` (ESP32)

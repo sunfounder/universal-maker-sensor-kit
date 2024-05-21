@@ -54,3 +54,6 @@ Example
 * :ref:`pico_lesson23_ultrasonic` (Raspberry Pi Pico)
 * :ref:`pi_lesson23_ultrasonic` (Raspberry Pi)
 
+* :ref:`uno_lesson37_trashcan` (Arduino UNO)
+
+* :ref:`esp32_trashcan` (ESP32)

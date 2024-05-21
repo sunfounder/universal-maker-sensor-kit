@@ -6,7 +6,24 @@ Lesson 22: Touch Sensor Module
 In this lesson, you'll learn how to connect a touch sensor to the Raspberry Pi Pico W in order to control an onboard LED. By using straightforward Python code, you'll configure the touch sensor as an input device. When the sensor detects a touch, it will send a signal to turn on the LED, providing a visual indication that a touch has been detected. Conversely, when there's no touch, the LED stays off. 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

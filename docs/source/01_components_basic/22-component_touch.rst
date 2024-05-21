@@ -55,3 +55,6 @@ Example
 * :ref:`esp32_lesson22_touch_sensor` (ESP32)
 * :ref:`pico_lesson22_touch_sensor` (Raspberry Pi Pico)
 * :ref:`pi_lesson22_touch_sensor` (Raspberry Pi)
+
+* :ref:`uno_touch_toggle_light` (Arduino UNO)
+* :ref:`esp32_touch_toggle_light` (ESP32)

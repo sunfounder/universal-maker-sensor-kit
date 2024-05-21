@@ -6,7 +6,24 @@ Lesson 15: Raindrop Detection Module
 In this lesson, you will learn how to detect rain using a digital rain sensor with Raspberry Pi. We will guide you through connecting a rain sensor to GPIO pin 17 on your Raspberry Pi. You'll learn how to program the Raspberry Pi using Python to continuously monitor the sensor. The program will identify whether it's raining or not and display a message accordingly. This practical project is an excellent introduction to environmental sensing, GPIO interfacing, and Python programming, making it ideal for beginners interested in weather-related projects using Raspberry Pi.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

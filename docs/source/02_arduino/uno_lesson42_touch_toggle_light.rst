@@ -1,5 +1,3 @@
-.. https://docs.sunfounder.com/projects/ultimate-sensor-kit/en/latest/fun_project/08-fun-Touch_toggle_light.html
-
 .. _uno_touch_toggle_light:
 
 Lesson 42: Touch toggle light
@@ -11,7 +9,24 @@ Activating the touch sensor initiates a sequence where LEDs illuminate in the fo
 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

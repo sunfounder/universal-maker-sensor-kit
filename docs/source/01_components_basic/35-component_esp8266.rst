@@ -78,3 +78,7 @@ The schematic diagram is as follows:
 Example
 ---------------------------
 * :ref:`uno_lesson35_esp8266` (Arduino UNO)
+* :ref:`uno_iot_weather_monito` (Arduino UNO)
+* :ref:`uno_iot_vib_alert_system` (Arduino UNO)
+* :ref:`uno_iot_flame` (Arduino UNO)
+* :ref:`uno_iot_intrusion_alert_system` (Arduino UNO)

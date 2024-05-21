@@ -6,7 +6,24 @@ Lesson 24: Vibration Sensor Module (SW-420)
 In this lesson, you will learn to connect and use a SW-420 Vibration Sensor Module with a Raspberry Pi Pico W. The course guides you through setting up the vibration sensor on GPIO 16 and writing a MicroPython script to monitor vibrations. You will write a loop to continually check the sensor's output, displaying a message when vibrations are detected. This practical exercise introduces you to working with external sensors on the Raspberry Pi Pico W, enhancing your understanding of hardware interfacing and programming in MicroPython.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -6,7 +6,24 @@ Lesson 20: Temperature, Humidity & Pressure Sensor (BMP280)
 In this lesson, you will learn how to use the BMP280 sensor with an Arduino Uno to read atmospheric pressure, temperature, and approximate altitude. We'll cover integrating the sensor with Arduino using the Adafruit BMP280 library and displaying readings on the Serial Monitor. This session is ideal for beginners in electronics and programming who want to understand sensor interfacing and data acquisition on the Arduino platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

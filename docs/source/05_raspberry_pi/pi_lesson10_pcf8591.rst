@@ -9,7 +9,24 @@ Lesson 10: PCF8591 ADC DAC Converter Module
 In this lesson, you will learn how to use a Raspberry Pi to interact with the PCF8591 module for analog-to-digital and digital-to-analog conversion. We’ll cover reading analog values from input AIN0, sending these values to the DAC(AOUT). The module's potentiometer is connected to AIN0 using jumper caps, and the D2 LED on the module is connected to AOUT, so you can see that the brightness of D2 LED changes as you rotate the potentiometer.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

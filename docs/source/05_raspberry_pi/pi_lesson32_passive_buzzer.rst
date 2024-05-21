@@ -6,7 +6,24 @@ Lesson 32: Passive Buzzer Module
 In this lesson, you will learn how to create musical tones using a TonalBuzzer with a Raspberry Pi. You'll learn how to program the Raspberry Pi to play a sequence of musical notes using Python. The lesson includes defining a tune as a list of notes and durations, and writing a function to play these notes through the buzzer. This project offers a straightforward introduction to working with sound output and Python programming, making it a practical choice for beginners interested in exploring musical applications with the Raspberry Pi.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -6,7 +6,24 @@ Lesson 13: Potentiometer Module
 In this lesson, you'll learn how to read the analog value of a potentiometer with the ESP32 development board. We'll connect a potentiometer module to pin 25 and observe the changing analog values (0-4095) in the serial monitor. This project provides hands-on experience in understanding analog inputs and serial communication, making it an excellent exercise for beginners to explore the capabilities of the ESP32 board.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_potentiometer`
         - |link_potentiometer_sensor_module_buy|
     *   - :ref:`cpn_breadboard`

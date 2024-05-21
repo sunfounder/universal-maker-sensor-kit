@@ -6,7 +6,24 @@ Lesson 32: Passive Buzzer Module
 In this lesson, you will learn how to use the passive buzzer on Raspberry Pi Pico W to play single notes and perform music. You will understand how to use PWM (Pulse Width Modulation) to set up the buzzer on GPIO 16 and use the music class in the buzzer_music library to play complete songs. This course will guide you step by step through playing single notes, and then further execute full melodies such as "Happy Birthday". This project is very suitable for beginners, providing a practical way to understand musical tones and integrate external libraries in MicroPython on Raspberry Pi Pico W.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

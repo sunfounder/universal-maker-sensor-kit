@@ -1,7 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/02-iot_Intrusion_alert_system.rst
-
-
-
 .. _uno_iot_intrusion_alert_system:
 
 Lesson 51: Intrusion Alert System with Blynk
@@ -15,7 +11,24 @@ Any detected movement triggers a notification on the Blynk app, alerting the use
 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

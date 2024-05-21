@@ -6,7 +6,24 @@ Lesson 31: Centrifugal Pump
 In this lesson, you'll learn how to control a centrifugal pump with an Arduino Uno R3 or R4 and an L9110 motor control board. You'll discover how to set up and program the Arduino to start the pump in one direction, run it for a specific duration, and then stop it. This hands-on experience is ideal for beginners and offers fundamental insight into managing motor operations and understanding output controls in Arduino projects.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

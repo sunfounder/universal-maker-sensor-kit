@@ -6,7 +6,24 @@ Lesson 33: Servo Motor (SG90)
 In this lesson, you'll learn how to control a servo motor with an ESP32 Development Board. We'll cover the process of making the servo motor scan from 0 to 180 degrees and back, giving you hands-on experience in managing servo movements. This project is ideal for those seeking to grasp motor control and the use of pulse width modulation (PWM) in robotics, utilizing the versatile ESP32 board.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_servo`
         - |link_servo_buy|
     *   - :ref:`cpn_breadboard`

@@ -6,7 +6,24 @@ Lesson 15: Raindrop Detection Module
 In this lesson, you will learn how to use a raindrop detection sensor with an ESP32 Development Board. We'll cover reading digital signals from the sensor when it detects rainwater and displaying this information on the serial monitor. This project provides an engaging way to grasp digital input and output in microcontroller programming, making it ideal for beginners in electronics and coding with the ESP32 platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_raindrop`
         - |link_raindrop_sensor_module_buy|
     *   - :ref:`cpn_breadboard`

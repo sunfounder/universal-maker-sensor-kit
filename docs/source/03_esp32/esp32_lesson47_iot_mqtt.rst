@@ -11,7 +11,20 @@ In this project, we explore the implementation of MQTT by building a circuit tha
 
 In this project, we need the following components. 
 
+It's definitely convenient to buy a whole kit, here's the link: 
 
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -20,8 +33,8 @@ In this project, we need the following components.
     *   - COMPONENT INTRODUCTION
         - PURCHASE LINK
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_button`
         - \-
     *   - :ref:`cpn_breadboard`

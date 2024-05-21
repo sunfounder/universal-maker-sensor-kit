@@ -6,7 +6,24 @@ Lesson 02: Capacitive Soil Moisture Module
 In this lesson, you'll learn how to use the Raspberry Pi Pico W to measure soil moisture levels using a capacitive sensor and an ADC (Analog to Digital Converter). This beginner-friendly project will introduce you to handling analog signals in MicroPython. 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

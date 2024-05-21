@@ -6,7 +6,24 @@ Lesson 30: Relay Module
 In this lesson, you will learn how to use a relay and an Arduino Uno to control a traffic light module. We'll demonstrate how to turn the red light of the traffic module on and off using the relay. This project is ideal for beginners in Arduino, providing hands-on experience in controlling external modules and gaining a fundamental understanding of relay operations.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

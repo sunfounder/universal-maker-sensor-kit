@@ -36,4 +36,7 @@ Example
 * :ref:`pico_lesson27_oled` (Raspberry Pi Pico)
 * :ref:`pi_lesson27_oled` (Raspberry Pi)
 
-
+* :ref:`uno_lesson41_heartrate_monitor` (Arduino UNO)
+* :ref:`uno_digital_dice` (Arduino UNO)
+* :ref:`esp32_heartrate_monitor` (ESP32)
+* :ref:`esp32_digital_dice` (ESP32)

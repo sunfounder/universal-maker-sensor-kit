@@ -6,7 +6,24 @@ Lesson 28: RGB LED Module
 In this lesson, you will learn how to control an RGB LED with Arduino. We'll cover setting up the LED and then delve into displaying primary colors and creating a vibrant rainbow spectrum. This hands-on project is ideal for beginners, providing practical experience with output operations and color mixing in the Arduino environment.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

@@ -48,3 +48,4 @@ Example
 * :ref:`esp32_lesson20_bmp280` (ESP32)
 * :ref:`pico_lesson20_bmp280` (Raspberry Pi Pico)
 * :ref:`pi_lesson20_bmp280` (Raspberry Pi)
+* :ref:`uno_iot_weather_monito` (Arduino UNO)

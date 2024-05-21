@@ -6,7 +6,24 @@ Lesson 31: Centrifugal Pump
 In this lesson, you'll learn how to control a centrifugal pump with an ESP32 Development Board and an L9110 motor control board. We'll cover setting up and using two pins to operate the motor, causing the pump to spin in one direction for 5 seconds before shutting off. This project provides hands-on experience in managing motor operations and understanding digital signals in microcontroller programming, making it ideal for beginners in electronics and programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_pump`
         - \-
     *   - :ref:`cpn_l9110`

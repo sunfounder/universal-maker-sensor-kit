@@ -6,7 +6,24 @@ Lesson 25: Water Level Sensor Module
 In this lesson, you will learn how to use the Raspberry Pi Pico W to measure water levels with a water level sensor. You'll understand how to connect the sensor to the board, read its analog output using MicroPython, and interpret these readings to determine water levels. This practical session is aimed at developing your skills in sensor integration and data acquisition with the Raspberry Pi Pico W.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

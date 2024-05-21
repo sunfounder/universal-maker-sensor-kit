@@ -68,3 +68,8 @@ Example
 * :ref:`esp32_lesson12_pir_motion` (ESP32)
 * :ref:`pico_lesson12_pir_motion` (Raspberry Pi Pico)
 * :ref:`pi_lesson12_pir_motion` (Raspberry Pi)
+
+* :ref:`uno_lesson40_motion_triggered_relay` (Arduino UNO)
+* :ref:`uno_iot_intrusion_alert_system` (Arduino UNO)
+* :ref:`esp32_motion_triggered_relay` (ESP32)
+* :ref:`esp32_iot_intrusion_alert_system` (ESP32)

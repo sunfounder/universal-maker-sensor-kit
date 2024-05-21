@@ -6,7 +6,24 @@ Lesson 16: Real Time Clock Module (DS1302)
 In this lesson, you will learn how to set up and use a Real Time Clock (RTC) module with an Arduino. We'll cover initializing the RTC DS1302 module, displaying the current date and time on the serial monitor, and ensuring accurate timekeeping. This session is ideal for those interested in time-based operations in embedded systems, offering hands-on experience with managing date and time settings, using RTC libraries, and troubleshooting common issues. This project is suitable for intermediate learners familiar with Arduino basics.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

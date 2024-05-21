@@ -6,7 +6,24 @@ Lesson 11: Photoresistor Module
 In this lesson, you will learn how to use a photoresistance sensor with an ESP32 Development Board to measure light intensity. We'll explore how the sensor detects different light levels and processes and displays these readings on the serial monitor. This project is ideal for beginners as it provides hands-on experience with analog sensors and real-time data handling in Arduino programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_photoresistor`
         - |link_photoresistor_sensor_module_buy|
     *   - :ref:`cpn_breadboard`

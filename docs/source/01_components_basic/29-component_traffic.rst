@@ -36,3 +36,7 @@ Example
 * :ref:`pi_lesson30_relay_module` (Raspberry Pi)
 
 * :ref:`uno_lesson30_relay_module` (Arduino UNO)
+
+* :ref:`uno_touch_toggle_light` (Arduino UNO)
+* :ref:`uno_bluetooth_traffic_light` (Arduino UNO)
+* :ref:`esp32_touch_toggle_light` (ESP32)

@@ -6,7 +6,24 @@ Lesson 05: Gyroscope & Accelerometer Module (MPU6050)
 In this lesson, you will learn how to use the Raspberry Pi Pico W with the MPU6050 module, which combines a gyroscope and accelerometer. You'll discover how to connect the MPU6050 to the Raspberry Pi Pico W and read its acceleration and gyroscopic data using MicroPython. The lesson will guide you through writing a script to continuously display the X, Y, and Z values of both the accelerometer and gyroscope. 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

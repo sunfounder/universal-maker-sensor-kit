@@ -6,7 +6,24 @@ Lesson 25: Water Level Sensor Module
 In this lesson, you will learn how to measure water levels using Arduino. We'll look at how a water level sensor can produce different voltage levels based on the water height and how the Arduino reads these voltage levels. This project is ideal for beginners as it provides practical experience with analog sensors and introduces basic concepts of processing sensor data on the Arduino platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

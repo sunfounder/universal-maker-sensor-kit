@@ -6,7 +6,24 @@ Lesson 23: Ultrasonic Sensor Module (HC-SR04)
 In this lesson, you will learn how to use an ultrasonic sensor with Arduino to measure distances. We'll cover connecting the HC-SR04 sensor to the Arduino Uno R4 board and using it to calculate and display distance measurements in centimeters. This project is ideal for beginners, providing hands-on experience with Arduino's serial communication and sensor data processing. You'll gain valuable insights into working with digital signals and understanding the basics of ultrasonic sensing technology.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

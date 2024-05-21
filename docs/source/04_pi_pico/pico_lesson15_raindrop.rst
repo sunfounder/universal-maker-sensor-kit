@@ -6,7 +6,24 @@ Lesson 15: Raindrop Detection Module
 In this lesson, you'll learn how to use the Raspberry Pi Pico W to detect raindrops using a raindrop sensor connected to pin 16. The script continuously monitors for any indication of raindrops and prints "Raindrop detected!" when one is detected; otherwise, it displays "Monitoring..." as it waits for raindrops. This session offers hands-on experience in handling digital inputs with the Raspberry Pi Pico W and understanding environmental sensing in MicroPython, making it ideal for beginners in electronics and programming.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

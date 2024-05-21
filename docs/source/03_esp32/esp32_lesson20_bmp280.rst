@@ -6,7 +6,24 @@ Lesson 20: Temperature, Humidity & Pressure Sensor (BMP280)
 In this lesson, you will learn how to measure atmospheric pressure, temperature, and approximate altitude using the BMP280 sensor with an ESP32 Development Board. We will cover interfacing the sensor with the Adafruit BMP280 library and displaying readings on the Serial Monitor. This tutorial is ideal for those seeking to enhance their understanding of environmental sensing and data logging on the ESP32 platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_bmp280`
         - |link_bmp280_module_buy|
     *   - :ref:`cpn_breadboard`

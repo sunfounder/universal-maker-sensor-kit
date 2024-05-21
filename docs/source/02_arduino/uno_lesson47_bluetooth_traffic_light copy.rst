@@ -1,5 +1,3 @@
-.. https://github.com/sunfounder/ultimate-sensor-kit/blob/docs/docs/source/iot_project/16-iot_Bluetooth_traffic_light.rst
-
 .. _uno_bluetooth_traffic_light:
 
 Lesson 47: Bluetooth Traffic Light
@@ -9,7 +7,24 @@ This project is designed to control a traffic light (Red, Yellow, Green LEDs) us
 
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20

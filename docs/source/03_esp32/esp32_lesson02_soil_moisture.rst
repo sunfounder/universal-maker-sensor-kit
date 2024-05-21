@@ -6,7 +6,24 @@ Lesson 02: Capacitive Soil Moisture Module
 In this lesson, you will learn how to use a capacitive soil moisture sensor with an ESP32 Development Board to read the moisture level of soil. We'll cover connecting the sensor to pin 25, reading its analog value, and interpreting these readings to determine the soil's moisture level. This project is ideal for beginners as it provides hands-on experience in working with sensors and understanding analog input on the ESP32 platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_soil`
         - |link_soil_moisture_buy|
     *   - :ref:`cpn_breadboard`

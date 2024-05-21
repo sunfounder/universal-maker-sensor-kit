@@ -68,3 +68,10 @@ Example
 * :ref:`esp32_lesson26_lcd` (ESP32)
 * :ref:`pico_lesson26_lcd` (Raspberry Pi Pico)
 * :ref:`pico_lesson26_lcd` (Raspberry Pi)
+
+* :ref:`uno_potentiometer_scale_value` (Arduino UNO)
+* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`uno_bluetooth_lcd` (Arduino UNO)
+* :ref:`esp32_potentiometer_scale_value` (ESP32)
+* :ref:`esp32_plant_monitor` (ESP32)
+* :ref:`esp32_iot_owm` (ESP32)

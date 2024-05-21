@@ -6,7 +6,24 @@ Lesson 16: Real Time Clock Module (DS1302)
 In this lesson, you will learn how to set up and use a Real Time Clock (RTC) module with an ESP32 development board. We'll cover integrating the DS1302 RTC module, understanding its functions, and programming the ESP32 to display the current date and time. You'll also learn how to handle situations where the RTC has lost its date and time settings and automatically set it to the compile time of your sketch. This project is ideal for those seeking to enhance their comprehension of time-related functions in microcontroller projects.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 20
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_rtc_ds1302`
         - |link_ds1302_module_buy|
     *   - :ref:`cpn_breadboard`

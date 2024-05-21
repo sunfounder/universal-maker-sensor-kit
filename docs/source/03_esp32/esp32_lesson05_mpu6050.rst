@@ -6,7 +6,24 @@ Lesson 05: Gyroscope & Accelerometer Module (MPU6050)
 In this lesson, you will learn how to connect the MPU6050 accelerometer and gyroscope sensor to an ESP32 Development Board. We will go through setting up the Adafruit_MPU6050 library, initializing the sensor, and configuring its accelerometer and gyro ranges. You'll also learn how to read acceleration, rotation, and temperature data from the sensor and display these values on the serial monitor. This project is ideal for those interested in exploring motion tracking and orientation sensing in their projects, providing a practical experience in working with advanced sensors on the Arduino-compatible ESP32 platform.
 
 Required Components
----------------------------
+--------------------------
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+You can also buy them separately from the links below.
 
 .. list-table::
     :widths: 30 10
@@ -15,8 +32,8 @@ Required Components
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 Development Board
-        - \-
+    *   - ESP32 & Development Board
+        - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_mpu6050`
         - |link_mpu6050_buy|
     *   - :ref:`cpn_breadboard`
