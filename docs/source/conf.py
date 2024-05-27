@@ -358,6 +358,10 @@ rst_epilog = """
 
     <a href="https://io.adafruit.com/" target="_blank">Adafruit IO</a>
 
+.. |link_adafruit_gfx_graphics_library| raw:: html
+
+    <a href="https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives">Adafruit GFX Graphics Library</a>
+
 
 """
 
