@@ -61,6 +61,12 @@ The following tutorial is based on the :ref:`cpn_esp32_wroom_32e` development bo
     esp32_lesson32_passive_buzzer
     esp32_lesson33_servo
     esp32_lesson34_motor
+
+**Fun Project**
+
+.. toctree::
+    :maxdepth: 1
+
     esp32_lesson35_smart_trashcan 
     esp32_lesson36_gas_leak_alarm 
     esp32_lesson37_soap_dispenser 
@@ -72,6 +78,12 @@ The following tutorial is based on the :ref:`cpn_esp32_wroom_32e` development bo
     esp32_lesson43_plant_monitor 
     esp32_lesson44_bluetooth 
     esp32_lesson45_bluetooth_led 
+
+**IoT Project**
+
+.. toctree::
+    :maxdepth: 1
+
     esp32_lesson46_open_weather 
     esp32_lesson47_iot_mqtt 
     esp32_lesson48_iot_adafruitio 
