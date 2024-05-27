@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_flame:
 
-Flame Sensor Module
+火炎センサーモジュール
 ==========================
 
 .. image:: img/03_flame_module.png
@@ -26,30 +26,30 @@ Flame Sensor Module
    <br/>
 
 .. tip::
-   Keep a specific distance between the sensor and the flame to prevent damage from high temperatures. 
+   高温による損傷を防ぐため、センサーと炎の間に適切な距離を保ってください。 
 
-The Flame sensor is a sensor that can detect the presence of fire or flames. The flame sensor works based on infrared radiation. The IR photodiode will detect the IR radiation from any hot body. This value is then compared with a set value. Once the radiation reaches the threshold value, the sensor will change its output accordingly. It is widely used in fire detection systems in homes and industries.
+火炎センサーは、火や炎の存在を検出するセンサーです。火炎センサーは赤外線（IR）放射に基づいて動作します。IRフォトダイオードは、熱い物体からのIR放射を検出します。この値は設定値と比較されます。放射がしきい値に達すると、センサーは出力を適切に変更します。家庭や産業の火災検知システムで広く使用されています。
 
-The Flame sensor works on the principle of infrared (IR) detection. The sensor has an IR receiver that detects the IR radiation emitted by flames. When fire burns it emits a small amount of Infra-red light, this light will be received by the Photodiode (IR receiver) on the sensor module. Then we use an Op-Amp to check for a change in voltage across the IR Receiver, so that if a fire is detected the output pin (DO) will give 0V(LOW), and if the is no fire the output pin will be 5V(HIGH).
+火炎センサーは赤外線（IR）検出の原理で動作します。センサーには炎が放出するIR放射を検出するIR受信機が搭載されています。火が燃えると、少量の赤外線が放出され、この光がセンサーモジュールのフォトダイオード（IR受信機）に受信されます。その後、オペアンプを使用してIR受信機の電圧変化を検出し、火災が検出された場合、出力ピン（DO）は0V（LOW）を出力し、火災が検出されなかった場合、出力ピンは5V（HIGH）を出力します。
 
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 31 x 14mm
-* Output Signal Type: DO and AO
-* Detection Angle: 60 degrees
+* 供給電圧: 3.3V - 5V
+* PCBサイズ: 31 x 14mm
+* 出力信号タイプ: DOとAO
+* 検出角度: 60度
 
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **DO**: Digital output. It indicates the presence of a flame. When the infrared radiation exceeds the threshold value (set by the potentiometer), DO becomes LOW; otherwise, it remains HIGH.
-* **AO**: Analog output. It generates an output voltage that is inversely proportional to the intensity of infrared radiation (flame size). Therefore, higher infrared radiation will result in a lower voltage, while lower infrared radiation will result in a higher voltage.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **DO**: デジタル出力。炎の存在を示します。赤外線放射がしきい値（ポテンショメータで設定）を超えると、DOはLOWになり、それ以外の場合はHIGHのままです。
+* **AO**: アナログ出力。赤外線放射の強度（炎の大きさ）に反比例する出力電圧を生成します。したがって、赤外線放射が強いほど電圧は低くなり、赤外線放射が弱いほど電圧は高くなります。
 
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/03_flame_module_schematic.png
@@ -61,8 +61,10 @@ Schematic diagram
    <br/>
 
 
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson03_flame` (Arduino UNO)
 * :ref:`esp32_lesson03_flame` (ESP32)
 * :ref:`pico_lesson03_flame` (Raspberry Pi Pico)

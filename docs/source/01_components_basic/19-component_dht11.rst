@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_dht11:
 
-Temperature and Humidity Sensor Module (DHT11)
+温度湿度センサーモジュール (DHT11)
 ================================================
 
 .. image:: img/19_dht11_module.png
@@ -25,36 +25,36 @@ Temperature and Humidity Sensor Module (DHT11)
 
    <br/>
 
-The digital temperature and humidity sensor DHT11 is a composite sensor that contains a calibrated digital signal output of temperature and humidity. The technology of a dedicated digital modules collection and the temperature and humidity sensing technology are applied to ensure that the product has high reliability and excellent long-term stability.
+デジタル温度湿度センサーDHT11は、温度と湿度の校正されたデジタル信号出力を含む複合センサーです。専用のデジタルモジュール収集技術と温度湿度感知技術を適用することで、高い信頼性と優れた長期安定性を確保しています。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* Output Signal Type: Digital output
-* Temperature Measurement Range: 0-50℃ ± 2℃
-* Humidity Measurement Range: 20-90%RH ± 5%RH
-* Temperature Accuracy: ±2°C
-* Humidity Accuracy: ±5% RH
+* 供給電圧: 3.3V - 5V
+* 出力信号タイプ: デジタル出力
+* 温度測定範囲: 0-50℃ ± 2℃
+* 湿度測定範囲: 20-90%RH ± 5%RH
+* 温度精度: ±2°C
+* 湿度精度: ±5% RH
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **DO**: Digital output. 
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **DO**: デジタル出力。
 
-Principle
+原理
 ---------------------------
-Only three pins are available for use: VCC, GND, and DATA. The communication process begins with the DATA line sending start signals to DHT11, and DHT11 receives the signals and returns an answer signal. Then the host receives the answer signal and begins to receive 40-bit humidity and temperature data (8-bit humidity integer + 8-bit humidity decimal + 8-bit temperature integer + 8-bit temperature decimal + 8-bit checksum).
+使用できるピンはVCC、GND、およびDATAの3つのみです。通信プロセスは、DATAラインがDHT11にスタート信号を送信することから始まり、DHT11が信号を受信して応答信号を返します。その後、ホストが応答信号を受信し、40ビットの湿度と温度データ（8ビットの湿度整数 + 8ビットの湿度小数 + 8ビットの温度整数 + 8ビットの温度小数 + 8ビットのチェックサム）を受信し始めます。
 
 .. image:: img/19_dht11_module_2.png
     :width: 300
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/19_dht11_module_schematic.png
@@ -65,9 +65,10 @@ Schematic diagram
 
    <br/>
 
-
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson19_dht11` (Arduino UNO)
 * :ref:`esp32_lesson19_dht11` (ESP32)
 * :ref:`pico_lesson19_dht11` (Raspberry Pi Pico)

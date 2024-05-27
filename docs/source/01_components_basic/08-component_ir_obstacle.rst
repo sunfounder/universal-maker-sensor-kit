@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_ir_obstacle:
 
-IR Obstacle Avoidance Sensor Module
+赤外線障害物回避センサーモジュール
 =====================================
 
 .. image:: img/08_IR_obstacle_module.png
@@ -25,25 +25,25 @@ IR Obstacle Avoidance Sensor Module
 
    <br/>
 
-This module can adapt to ambient light and includes a pair of infrared emitting and receiving tubes. The emitting tube sends out infrared at a specific frequency, and when the detection direction encounters an obstacle (reflective surface), the receiving tube picks up the reflected infrared. After being processed by the comparator circuit, the green indicator light will turn on, and simultaneously, the signal output interface will produce a digital signal (a low level signal). The detection distance can be adjusted using a potentiometer knob.
+このモジュールは環境光に適応し、赤外線送信および受信チューブのペアを含んでいます。送信チューブは特定の周波数で赤外線を送信し、検出方向に障害物（反射面）があると、受信チューブが反射された赤外線を受信します。コンパレータ回路で処理された後、緑色のインジケーターライトが点灯し、同時に信号出力インターフェースがデジタル信号（低レベル信号）を生成します。検出距離はポテンショメータノブで調整できます。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 32 x 14mm
-* Output Signal Type: Digital Output
-* Detection Angle: 35°
-* Detection distance: 2～30cm
+* 供給電圧: 3.3V - 5V
+* PCBサイズ: 32 x 14mm
+* 出力信号タイプ: デジタル出力
+* 検出角度: 35°
+* 検出距離: 2～30cm
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **OUT**: Digital output. Outputs high level when there is no obstacle, and outputs low level when an obstacle is detected. The detection distance of obstacles can be adjusted by the potentiometer on the module.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **OUT**: デジタル出力。障害物がないときは高レベルを出力し、障害物が検出されると低レベルを出力します。障害物の検出距離はモジュールのポテンショメータで調整できます。
 
-Principle
+原理
 ---------------------------
-An obstacle avoidance sensor mainly consists of an infrared transmitter, an infrared receiver and a potentiometer. According to the reflecting character of an object, if there is no obstacle, the emitted infrared ray will weaken with the distance it spreads and finally disappear. If there is an obstacle, when the infrared ray encounters it, the ray will be reflected back to the infrared receiver. Then the infrared receiver detects this signal and confirms an obstacle in front. The detection range can be adjusted by the built-in potentiometer.
+障害物回避センサーは主に赤外線送信機、赤外線受信機、およびポテンショメータで構成されています。物体の反射特性に基づいて、障害物がない場合、送信された赤外線は距離が伸びるにつれて弱くなり、最終的に消えます。障害物がある場合、赤外線が障害物に当たると、その赤外線は赤外線受信機に反射されます。次に、赤外線受信機がこの信号を検出し、前方に障害物があることを確認します。検出範囲は内蔵のポテンショメータで調整できます。
 
 .. image:: img/08_IR_obstacle_module_1.png
     :width: 600
@@ -53,7 +53,7 @@ An obstacle avoidance sensor mainly consists of an infrared transmitter, an infr
 
    <br/>
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/08_ir_obstacle_module_schematic.png
@@ -64,8 +64,10 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson08_ir_obstacle_avoidance` (Arduino UNO)
 * :ref:`esp32_lesson08_ir_obstacle_avoidance` (ESP32)
 * :ref:`pico_lesson08_ir_obstacle_avoidance` (Raspberry Pi Pico)

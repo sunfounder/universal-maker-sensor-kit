@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_mpu6050:
 
-Gyroscope & Accelerometer Module (MPU6050)
+ジャイロスコープ & 加速度センサーモジュール (MPU6050)
 ===============================================================
 
 .. image:: img/05_mpu6050_1.png
@@ -25,64 +25,66 @@ Gyroscope & Accelerometer Module (MPU6050)
 
    <br/>
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices.Changes in motion, acceleration and rotation can be detected.It is commonly used in robotics, gaming controllers, and other electronic devices that require motion detection. Its high accuracy and cheap cost make it very popular among the DIY community.
+MPU-6050は、3軸ジャイロスコープと3軸加速度計を組み合わせた6軸の動き追跡デバイスです。動き、加速度、回転の変化を検出することができます。ロボティクス、ゲームコントローラー、その他のモーション検出を必要とする電子機器で一般的に使用されています。その高い精度と低コストから、DIYコミュニティで非常に人気があります。
 
-Principle
+原理
 ---------------------------
-An MPU-6050 sensor module consists of a 3-axis accelerometer and a 3-axis gyroscope.
+MPU-6050センサーモジュールは、3軸加速度計と3軸ジャイロスコープで構成されています。
 
-Its three coordinate systems are defined as follows:
+その三つの座標系は以下のように定義されます：
 
-Put MPU6050 flat on the table, assure that the face with label is upward and a dot on this surface is on the top left corner. Then the upright direction upward is the z-axis of the chip. The direction from left to right is regarded as the X-axis. Accordingly the direction from back to front is defined as the Y-axis.
+MPU6050をテーブルに平置きし、ラベルが上向きで、この面の左上隅にドットがあることを確認します。次に、上向きの方向がチップのZ軸です。左から右の方向がX軸と見なされます。同様に、後ろから前の方向がY軸と定義されます。
 
 .. image:: img/05_mpu_2.png
     :width: 300
     :align: center
 
-3-axis Accelerometer
+3軸加速度計
 ^^^^^^^^^^^^^^^^^^^^
-The accelerometer works on the principle of piezo electric effect, the ability of certain materials to generate an electric charge in response to applied mechanical stress.
+加速度計は、圧電効果の原理に基づいて動作します。これは、特定の材料が機械的応力に応じて電荷を生成する能力です。
 
-Here, imagine a cuboidal box, having a small ball inside it, like in the picture above. The walls of this box are made with piezo electric crystals. Whenever you tilt the box, the ball is forced to move in the direction of the inclination, due to gravity. The wall with which the ball collides, creates tiny piezo electric currents. There are totally, three pairs of opposite walls in a cuboid. Each pair corresponds to an axis in 3D space: X, Y and Z axes. Depending on the current produced from the piezo electric walls, we can determine the direction of inclination and its magnitude.
+ここで、上の図のように、小さな球が内部にある直方体の箱を想像してください。この箱の壁は圧電結晶でできています。箱を傾けると、重力によって球が傾斜方向に移動します。球が衝突する壁は、小さな圧電電流を生成します。直方体には全部で三対の対向する壁があります。各対は、3D空間の軸（X軸、Y軸、Z軸）に対応します。圧電壁から生成される電流に応じて、傾斜の方向とその大きさを判断できます。
 
 .. image:: img/05_mpu_3.png
     :width: 800
     :align: center
 
-We can use the MPU6050 to detect its acceleration on each coordinate axis (in the stationary desktop state, the Z-axis acceleration is 1 gravity unit, and the X and Y axes are 0). If it is tilted or in a weightless/overweight condition, the corresponding reading will change.
+MPU6050を使用して、各座標軸の加速度を検出できます（静止状態のデスクトップでは、Z軸の加速度は1重力単位で、X軸とY軸は0です）。傾斜または無重量/過重状態では、対応する読み取り値が変化します。
 
-There are four kinds of measuring ranges that can be selected programmatically: +/-2g, +/-4g, +/-8g, and +/-16g (2g by default) corresponding to each precision. Values range from -32768 to 32767.
+選択可能な測定範囲は4種類あり、プログラムで選択できます：±2g、±4g、±8g、および±16g（デフォルトは2g）で、各精度に対応します。値は-32768から32767の範囲です。
 
-The reading of accelerometer is converted to an acceleration value by mapping the reading from the reading range to the measuring range.
+加速度計の読み取り値は、読み取り範囲から測定範囲へのマッピングによって加速度値に変換されます。
 
-Acceleration = (Accelerometer axis raw data / 65536 * full scale Acceleration range) g
+加速度 = (加速度計軸の生データ / 65536 * フルスケール加速度範囲) g
 
-Take the X-axis as an example, when Accelerometer X axis raw data is 16384 and the range is selected as +/-2g:
+例えば、X軸の場合、加速度計X軸の生データが16384で、範囲が±2gの場合：
 
-Acceleration along the X axis = (16384 / 65536 * 4) g =1g
+X軸の加速度 = (16384 / 65536 * 4) g = 1g
 
-3-axis Gyroscope
+3軸ジャイロスコープ
 ^^^^^^^^^^^^^^^^^^^^
-Gyroscopes work on the principle of Coriolis acceleration. Imagine that there is a fork like structure, that is in constant back and forth motion. It is held in place using piezo electric crystals. Whenever, you try to tilt this arrangement, the crystals experience a force in the direction of inclination. This is caused as a result of the inertia of the moving fork. The crystals thus produce a current in consensus with the piezo electric effect, and this current is amplified.
+ジャイロスコープはコリオリ加速度の原理に基づいて動作します。常に前後に動いているフォークのような構造を想像してください。これは圧電結晶で固定されています。この構造を傾けようとすると、傾斜方向に力が加わります。これは動いているフォークの慣性の結果です。圧電結晶は圧電効果により電流を生成し、この電流は増幅されます。
 
 .. image:: img/05_mpu_4.png
     :width: 800
     :align: center
 
-The Gyroscope also has four kinds of measuring ranges: +/- 250, +/- 500, +/- 1000, +/- 2000. The calculation method and Acceleration are basically consistent.
+ジャイロスコープにも四種類の測定範囲があります：±250、±500、±1000、±2000。計算方法と加速度は基本的に一貫しています。
 
-The formula for converting the reading into angular velocity is as follows:
+読み取り値を角速度に変換する式は以下の通りです：
 
-Angular velocity = (Gyroscope axis raw data / 65536 * full scale Gyroscope range) °/s
+角速度 = (ジャイロスコープ軸の生データ / 65536 * フルスケールジャイロスコープ範囲) °/s
 
-The X axis, for example, the Accelerometer X axis raw data is 16384 and ranges + / - 250°/ s:
+例えば、X軸の場合、加速度計X軸の生データが16384で、範囲が±250°/sの場合：
 
-Angular velocity along the X axis = (16384 / 65536 * 500)°/s =125°/s
+X軸の角速度 = (16384 / 65536 * 500)°/s = 125°/s
 
 
 
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson05_mpu6050` (Arduino UNO)
 * :ref:`esp32_lesson05_mpu6050` (ESP32)
 * :ref:`pico_lesson05_mpu6050` (Raspberry Pi Pico)

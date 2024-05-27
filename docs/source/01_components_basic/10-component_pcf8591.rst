@@ -1,20 +1,19 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_pcf8591:
-
-PCF8591 ADC DAC Converter Module
+PCF8591 ADC DACコンバータモジュール
 =====================================
 
 .. image:: img/10_pcf8591_module.png
@@ -25,30 +24,30 @@ PCF8591 ADC DAC Converter Module
 
    <br/>
 
-The PCF8591 is a single-chip, single-supply low-power 8-bit CMOS data acquisition device with four analog inputs, one analog output and a serial I2C-bus interface. Three address pins A0, A1 and A2 are used for programming the hardware address, allowing the use of up to eight devices connected to the I2C-bus without additional hardware. Address, control and data to and from the device are transferred serially via the two-line bidirectional I2C-bus.
+PCF8591は、4つのアナログ入力、1つのアナログ出力、およびシリアルI2Cバスインターフェースを備えたシングルチップ、シングルサプライの低消費電力8ビットCMOSデータ取得デバイスです。ハードウェアアドレスをプログラムするためにA0、A1、A2の3つのアドレスピンが使用され、追加のハードウェアなしでI2Cバスに接続された最大8台のデバイスの使用を可能にします。アドレス、制御、データの送受信は、双方向の2線式I2Cバスを介してシリアルで行われます。
 
-The functions of the device include analog input multiplexing, on-chip track and hold function, 8-bit analog-to-digital conversion and an 8-bit digital-to-analog conversion. The maximum conversion rate is given by the maximum speed of the I2C-bus.
+このデバイスの機能には、アナログ入力の多重化、オンチップのトラックおよびホールド機能、8ビットのアナログ-デジタル変換および8ビットのデジタル-アナログ変換が含まれます。最大変換速度はI2Cバスの最大速度によって決まります。
 
-Principle
+原理
 ---------------------------
 
-**Addressing:**
+**アドレッシング:**
 
-Each PCF8591 device in an I2C-bus system is activated by sending a valid address to the device. The address consists of a fixed part and a programmable part. The programmable part must be set according to the address pins A0, A1 and A2. The address always has to be sent as the first byte after the start condition in the I2C-bus protocol. The last bit of the address byte is the read/write-bit which sets the direction of the following data transfer (see as below).
+I2Cバスシステム内の各PCF8591デバイスは、有効なアドレスをデバイスに送信することでアクティブになります。アドレスは固定部分とプログラム可能部分で構成されています。プログラム可能部分は、アドレスピンA0、A1、A2に従って設定する必要があります。アドレスは常にI2Cバスプロトコルの開始条件の後に最初のバイトとして送信されます。アドレスバイトの最後のビットは、データ転送の方向を設定する読み取り/書き込みビットです（下図参照）。
 
 .. image:: img/10_pcf8591_addressing.png
    :width: 60%
 
-**Control byte:**
+**制御バイト:**
 
-The second byte sent to a PCF8591 device will be stored in its control register and is required to control the device function. The upper nibble of the control register is used for enabling the analog output, and for programming the analog inputs as single-ended or differential inputs. The lower nibble selects one of the analog input channels defined by the upper nibble. If the auto-increment flag is set, the channel number is incremented automatically after each A/D conversion. See the figure below.
+PCF8591デバイスに送信される2番目のバイトは、その制御レジスタに保存され、デバイス機能を制御するために必要です。制御レジスタの上位ニブルはアナログ出力を有効にするため、およびアナログ入力をシングルエンドまたは差動入力としてプログラムするために使用されます。下位ニブルは、上位ニブルで定義されたアナログ入力チャネルの1つを選択します。自動インクリメントフラグが設定されている場合、各A/D変換後にチャネル番号が自動的にインクリメントされます。下図を参照してください。
 
 .. image:: img/10_pcf8591_byte.png
    :width: 80%
 
 .. _cpn_pcf8591_sch:
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/10_pcf8591_schematic.png
@@ -59,8 +58,9 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson10_pcf8591` (Arduino UNO)
 * :ref:`esp32_lesson10_pcf8591` (ESP32)
 * :ref:`pico_lesson10_pcf8591` (Raspberry Pi Pico)

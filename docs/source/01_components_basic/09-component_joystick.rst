@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_joystick:
 
-Joystick Module
+ジョイスティックモジュール
 ==========================
 
 .. image:: img/09_joystick.png
@@ -25,38 +25,38 @@ Joystick Module
 
    <br/>
 
-A joystick module is a device that can measure the movement of a knob in two directions: horizontal (X-axis) and vertical (Y-axis). A joystick module can be used to control various things such as games, robots, cameras, etc.
+ジョイスティックモジュールは、ノブの動きを水平方向（X軸）および垂直方向（Y軸）の二方向で測定できるデバイスです。ジョイスティックモジュールは、ゲーム、ロボット、カメラなどのさまざまなものを制御するために使用できます。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB Size: 34 x 26mm
-* Output Signal Type: DO and AO
-* Analog Output: X, Y, 2 Axis analog output
-* Digital Output: Z, digital output
+* 供給電圧: 3.3Vまたは5V
+* PCBサイズ: 34 x 26mm
+* 出力信号タイプ: DOとAO
+* アナログ出力: X、Y、2軸アナログ出力
+* デジタル出力: Z、デジタル出力
 
-Pinout
+ピン配置
 ---------------------------
-* **+5V**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **VRX**: Analog output. X-axis analog output voltage. Moving the joystick from left to right will cause the output voltage to change from 0 to VCC. When the joystick is in the center position (idle state), it will read about half of VCC.
-* **VRY**: Analog output. Y-axis analog output voltage. Moving the joystick up or down will cause the output voltage to change from 0 to VCC. When the joystick is in the center position (at rest), it will read approximately half of VCC.
-* **SW**: Digital output. The pushbutton switch outputs a floating signal by default. 
+* **+5V**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **VRX**: アナログ出力。X軸のアナログ出力電圧。ジョイスティックを左右に動かすと、出力電圧が0からVCCまで変化します。ジョイスティックが中央位置（アイドル状態）にあるとき、約VCCの半分を読み取ります。
+* **VRY**: アナログ出力。Y軸のアナログ出力電圧。ジョイスティックを上下に動かすと、出力電圧が0からVCCまで変化します。ジョイスティックが中央位置（休止状態）にあるとき、約VCCの半分を読み取ります。
+* **SW**: デジタル出力。プッシュボタンスイッチはデフォルトで浮動信号を出力します。
 
 .. tip::
-    To read the pushbutton switch, a pull-up resistor is needed. When the joystick knob is pressed, the switch output becomes LOW; otherwise, it remains HIGH. Ensure that the input pin connected to the switch has either internal pull-up enabled or an external pull-up resistor connected.
+    プッシュボタンスイッチを読み取るには、プルアップ抵抗が必要です。ジョイスティックのノブを押すと、スイッチ出力はLOWになり、押されていないときはHIGHのままです。スイッチに接続された入力ピンには、内部プルアップを有効にするか、外部プルアップ抵抗を接続してください。
 
-Principle
+原理
 ---------------------------
-Joystick operates based on the resistance change of two potentiometers (usually 10-kilo ohms). By changing resistance in x and y directions, Arduino receives varying voltages which are interpreted to x and y coordinates. The processor needs an ADC unit to change the joystick’s analog values into digital values and perform necessary processing.
+ジョイスティックは、二つのポテンショメータ（通常は10キロオーム）の抵抗変化に基づいて動作します。X方向およびY方向の抵抗を変えることで、Arduinoは異なる電圧を受信し、それをXおよびY座標として解釈します。プロセッサは、ジョイスティックのアナログ値をデジタル値に変換し、必要な処理を行うためにADCユニットを必要とします。
 
-Arduino boards have six 10-bits ADC channels. It means the Arduino’s reference voltage (5 volts) is divided to 1024 segments. When joystick moves along the x-axis, the ADC value rises from 0 to 1023, with the value 512 in the middle. The image below displays the ADC approximate value based on the joystick position.
+Arduinoボードには6つの10ビットADCチャネルがあります。これは、Arduinoの基準電圧（5ボルト）が1024セグメントに分割されることを意味します。ジョイスティックがX軸に沿って移動すると、ADC値は0から1023まで上昇し、中央値は512です。以下の画像は、ジョイスティックの位置に基づくADCの概算値を示しています。
 
 .. image:: img/09_joystick_xy.png
     :width: 400
     :align: center
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/09_joystick_schematic.png
@@ -67,8 +67,9 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson09_joystick` (Arduino UNO)
 * :ref:`esp32_lesson09_joystick` (ESP32)
 * :ref:`pico_lesson09_joystick` (Raspberry Pi Pico)

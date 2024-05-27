@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_VL53L0X:
 
-Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+Time of Flight マイクロLIDAR距離センサー (VL53L0X)
 ===============================================================
 
 .. image:: img/21_VL53L0X_module.png
@@ -25,27 +25,27 @@ Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
     
     <br/>
 
-The VL53L0X module is an advanced time-of-flight (ToF) ranging sensor that offers highly accurate distance measurement, regardless of the target's color and reflectance. Manufactured by STMicroelectronics, this sensor excels in measuring absolute distances up to 2 meters, making it well-suited for various applications in fields such as robotics, drones, and wearable devices.
+VL53L0Xモジュールは、ターゲットの色や反射率に関係なく、高精度な距離測定を提供する先進的な飛行時間（ToF）距離センサーです。STMicroelectronics社製のこのセンサーは、最大2メートルまでの絶対距離を測定することに優れており、ロボティクス、ドローン、ウェアラブルデバイスなどのさまざまな分野でのアプリケーションに適しています。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB Size: 11 x 25mm
-* Communication method: I2C
-* ToF ranging length: ≤2M
+* 供給電圧: 3.3Vまたは5V
+* PCBサイズ: 11 x 25mm
+* 通信方法: I2C
+* ToF測距範囲: ≤2M
 
-Pinout
+ピン配置
 ---------------------------
-* **VIN**: This is the power pin. 
-* **GND**: Common ground for power and logic.
-* **SCL**: I2C clock pin, connect to your microcontrollers I2C clock line.
-* **SDA**: I2C data pin, connect to your microcontrollers I2C data line.
-* **GPIO1**: Programmable interrupt output. This output is not level-shifted.
-* **XSHUT**: This pin is an active-low shutdown input; Driving this pin low puts the sensor into hardware standby. This input is not level-shifted.
+* **VIN**: 電源ピン。
+* **GND**: 電源とロジックの共通グランド。
+* **SCL**: I2Cクロックピン、マイクロコントローラーのI2Cクロックラインに接続。
+* **SDA**: I2Cデータピン、マイクロコントローラーのI2Cデータラインに接続。
+* **GPIO1**: プログラム可能な割り込み出力。この出力はレベルシフトされていません。
+* **XSHUT**: アクティブローのシャットダウン入力。このピンをローにすると、センサーがハードウェアスタンバイ状態になります。この入力はレベルシフトされていません。
 
-
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson21_vl53l0x` (Arduino UNO)
 * :ref:`esp32_lesson21_vl53l0x` (ESP32)
 * :ref:`pico_lesson21_vl53l0x` (Raspberry Pi Pico)

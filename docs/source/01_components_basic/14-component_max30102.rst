@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_max30102:
 
-Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
+パルスオキシメータおよび心拍センサーモジュール (MAX30102)
 ===============================================================
 
 .. image:: img/14_gy_max30102_module.png
@@ -25,47 +25,46 @@ Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
 
    <br/>
 
-The MAX30102 is an advanced sensor module designed for tracking heart rate and blood oxygen levels (SpO2). Manufactured by Maxim Integrated, it combines pulse oximetry and heart rate monitoring into a compact package, making it a popular choice for wearable health and fitness applications.
+MAX30102は、心拍数と血中酸素レベル（SpO2）を追跡するために設計された高度なセンサーモジュールです。Maxim Integrated社によって製造され、パルスオキシメトリと心拍数モニタリングをコンパクトなパッケージにまとめており、ウェアラブルヘルスおよびフィットネスアプリケーションにおいて人気があります。
 
-Specification
+仕様
 ---------------------------
-* Chip Type: MAX30102
-* LED Peak Wavelength: 660nm/880nm
-* Supply Voltage: 3.3V or 5V; 
-* Detection Signal Type: Optical Reflection Signal (PPG)
-* Output Signal Interface: I2C Interface
-* PCB size: 14 x 14mm
-* Working temperature: -40 ~ +85℃
+* チップタイプ: MAX30102
+* LEDピーク波長: 660nm/880nm
+* 供給電圧: 3.3Vまたは5V
+* 検出信号タイプ: 光反射信号 (PPG)
+* 出力信号インターフェース: I2Cインターフェース
+* PCBサイズ: 14 x 14mm
+* 動作温度: -40 ~ +85℃
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **SCL**: serial clock pin for the I2C interface.
-* **SDA**: serial data pin for the I2C interface.
-* **INT**: the Interrupt pin of the IC. 
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **SCL**: I2Cインターフェースのシリアルクロックピン。
+* **SDA**: I2Cインターフェースのシリアルデータピン。
+* **INT**: ICの割り込みピン。
 
-Principle
+原理
 ---------------------------
 
-MAX30102 is a sensor that combines a pulse oximeter and a heart rate monitor. It's an optical sensor that measures the absorbance of pulsating blood through a photodetector after emitting two wavelengths of light from two LEDs - a red and an infrared one. This particular LED colour combination is designed to allow data to be read with the tip of one's finger.
+MAX30102はパルスオキシメータと心拍数モニターを組み合わせたセンサーです。2つのLED（赤色と赤外線）の光を発し、フォトディテクタを通して脈動血液の吸収を測定する光学センサーです。この特定のLEDカラーの組み合わせは、指先でデータを読み取ることができるように設計されています。
 
-The MAX30102 works by shining both lights onto the finger or earlobe (or essentially anywhere where the skin isn’t too thick, so both lights can easily penetrate the tissue) and measuring the amount of reflected light using a photodetector. This method of pulse detection through light is called Photoplethysmogram.
+MAX30102は、指や耳たぶ（または皮膚があまり厚くない場所）に光を照射し、フォトディテクタを使用して反射光の量を測定します。この光による脈拍検出の方法は、フォトプレチスモグラムと呼ばれます。
 
-The working of MAX30102 can be divided into two parts: Heart Rate Measurement and Pulse Oximetry (measuring the oxygen level of the blood).
+MAX30102の動作は、心拍数測定とパルスオキシメトリ（血中酸素レベルの測定）の2つの部分に分けられます。
 
-Heart Rate Measurement
+心拍数測定
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The oxygenated hemoglobin (HbO2) in the arterial blood has the characteristic of absorbing IR light. The redder the blood (the higher the hemoglobin), the more IR light is absorbed. As the blood is pumped through the finger with each heartbeat, the amount of reflected light changes, creating a changing waveform at the output of the photodetector. As you continue to shine light and take photodetector readings, you quickly start to get a heart-beat (HR) pulse reading.
+動脈血中の酸素化ヘモグロビン（HbO2）はIR光を吸収する特性があります。血液が赤いほど（ヘモグロビンが多いほど）、IR光の吸収が多くなります。血液が各心拍で指を通過すると、反射光の量が変化し、フォトディテクタの出力で変化する波形が生成されます。光を照射し続けてフォトディテクタの読み取りを行うことで、心拍数（HR）のパルス読み取りが迅速に得られます。
 
-
-Pulse Oximetry
+パルスオキシメトリ
 ^^^^^^^^^^^^^^^^^^^^
-Pulse oximetry is based on the principle that the amount of RED and IR light absorbed varies depending on the amount of oxygen in your blood.    
+パルスオキシメトリは、血液中の酸素量に応じて吸収される赤色光とIR光の量が変化する原理に基づいています。
 
-
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson14_max30102` (Arduino UNO)
 * :ref:`esp32_lesson14_max30102` (ESP32)
 * :ref:`pico_lesson14_max30102` (Raspberry Pi Pico)

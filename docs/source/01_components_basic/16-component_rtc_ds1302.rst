@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_rtc_ds1302:
 
-Real Time Clock Module (DS1302)
+リアルタイムクロックモジュール (DS1302)
 =====================================
 
 .. image:: img/16_DS1302_module.png
@@ -25,24 +25,24 @@ Real Time Clock Module (DS1302)
 
    <br/>
 
-The DS1302 module is a Real-Time Clock (RTC) module that can track years, months, days, weekdays, hours, minutes, and seconds. It also has the ability to adjust for leap years. It is useful for creating projects requiring precise timing and scheduling.
+DS1302モジュールは、年、月、日、曜日、時、分、秒を追跡できるリアルタイムクロック（RTC）モジュールです。うるう年の調整機能も備えており、正確なタイミングとスケジューリングを必要とするプロジェクトに役立ちます。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 44 x 23mm
-* Clock IC: DS1302
-* Operating temperature: 0℃ - 70℃
+* 供給電圧: 3.3V - 5V
+* PCBサイズ: 44 x 23mm
+* クロックIC: DS1302
+* 動作温度: 0℃ - 70℃
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: Module power supply
-* **GND**: Ground 
-* **CLK**: Clock pin
-* **DAT**: Data pin 
-* **RST**: Reset pin
+* **VCC**: モジュールの電源供給
+* **GND**: グランド
+* **CLK**: クロックピン
+* **DAT**: データピン
+* **RST**: リセットピン
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/16_rtc_ds1302_module_schematic.png
@@ -53,8 +53,10 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson16_ds1306` (Arduino UNO)
 * :ref:`esp32_lesson16_ds1306` (ESP32)
 * :ref:`pico_lesson16_ds1306` (Raspberry Pi Pico)

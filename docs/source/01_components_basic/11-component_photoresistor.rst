@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_photoresistor:
 
-Photoresistor Module
+フォトレジスターモジュール
 ==========================
 
 .. image:: img/11_photoresistor_module.png
@@ -25,36 +25,36 @@ Photoresistor Module
 
    <br/>
 
-The photoresistor module is a device that can detect the intensity of light in the environment. It can be used for various purposes, such as adjusting the brightness of a device, detecting day and night, or activating a light switch.
+フォトレジスターモジュールは、環境の光の強さを検出できるデバイスです。デバイスの明るさを調整したり、昼夜を検出したり、ライトスイッチを作動させるなど、さまざまな目的に使用できます。
 
-An important component of the photoresistor module is the photoresistor. A photoresistor is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photo conductivity.
+フォトレジスターモジュールの重要なコンポーネントはフォトレジスターです。フォトレジスターは光制御可変抵抗器です。入射光強度が増加するとフォトレジスターの抵抗は減少します。つまり、光導電性を示します。
 
-A photoresistor can be applied in light-sensitive detector circuits and light-activated and dark-activated switching circuits acting as a resistance semiconductor. In the dark, a photoresistor can have a resistance as high as several megaohms (MΩ), while in the light, a photoresistor can have a resistance as low as a few hundred ohms.
+フォトレジスターは、光感知検出回路や光作動および暗作動スイッチング回路に抵抗半導体として適用できます。暗い場所では、フォトレジスターの抵抗は数メガオーム（MΩ）に達することがありますが、明るい場所では、抵抗は数百オームにまで低下することがあります。
 
-Here is the electronic symbol of photoresistor.
+以下はフォトレジスターの電子シンボルです。
 
 .. image:: img/11_photoresistor_symbol_2.png
     :width: 200
     :align: center
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 32 x 14mm
-* Output Signal Type: DO and AO
+* 供給電圧: 3.3V - 5V
+* PCBサイズ: 32 x 14mm
+* 出力信号タイプ: DOおよびAO
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **DO**: Digital output. When the intensity of the light exceeds the threshold value (set by the potentiometer), D0 becomes LOW; otherwise, it remains HIGH.
-* **AO**: Analog output. The stronger the light, the lower the output value; conversely, the weaker the light, the higher the output value.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **DO**: デジタル出力。光の強度がしきい値（ポテンショメータで設定）を超えると、D0はLOWになり、それ以外の場合はHIGHのままです。
+* **AO**: アナログ出力。光が強いほど出力値は低くなり、光が弱いほど出力値は高くなります。
 
-Principle
+原理
 ---------------------------
-The photoresistor module works on the principle of changing resistance in response to different light intensities. The sensor has a built-in potentiometer that adjusts the sensor's digital output (D0) threshold. 
+フォトレジスターモジュールは、異なる光強度に応じて抵抗を変化させる原理で動作します。センサーには、センサーのデジタル出力（D0）のしきい値を調整するための内蔵ポテンショメータがあります。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/11_photoresistor_module_schematic.png
@@ -65,8 +65,9 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson11_photoresistor` (Arduino UNO)
 * :ref:`esp32_lesson11_photoresistor` (ESP32)
 * :ref:`pico_lesson11_photoresistor` (Raspberry Pi Pico)

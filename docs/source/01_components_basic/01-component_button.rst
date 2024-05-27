@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_button:
 
-Button Module
+ボタンモジュール
 ==========================
 
 .. image:: img/01_button.png
@@ -27,19 +27,19 @@ Button Module
 
 .. _btn_intro:
 
-The button module is an electronic device that detects the state of a button.They are usually used as switches to connect or break circuits.Buttons are used in many scenarios, such as doorbells, desk lamps, remote controls, elevators, fire alarms, etc.
+ボタンモジュールは、ボタンの状態を検出する電子デバイスです。通常、回路を接続または切断するスイッチとして使用されます。ボタンは、ドアベル、デスクランプ、リモコン、エレベーター、火災報知器など多くの場面で使用されます。
 
-Principle
+原理
 ---------------------------
-The button module works on the principle of a switch. A switch is an electrical component that can be used to open or close a circuit. 
+ボタンモジュールはスイッチの原理で動作します。スイッチは、回路を開閉するために使用される電気部品です。
 
-The following is the internal structure of a button. The symbol on the right below is usually used to represent a button in circuits.
+以下はボタンの内部構造です。右下のシンボルは、回路内でボタンを表すためによく使用されます。
 
 .. image:: img/01_button_2.png
     :width: 400
     :align: center
 
-Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+ピン1がピン2に接続され、ピン3がピン4に接続されているため、ボタンを押すと4つのピンが接続され、回路が閉じます。
 
 .. image:: img/01_button_3.png
     :width: 700
@@ -47,7 +47,7 @@ Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pr
 
 .. _cpn_button_sch:
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/01_button_module_schematic.png
@@ -58,8 +58,7 @@ Schematic diagram
 
    <br/>
 
-
-Example
+例
 ---------------------------
 * :ref:`uno_lesson01_button` (Arduino UNO)
 * :ref:`eps32_lesson01_button` (ESP32)

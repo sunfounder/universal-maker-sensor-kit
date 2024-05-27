@@ -1,46 +1,46 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_raindrop:
 
-Raindrop Detection Module
+雨滴検知モジュール
 ==========================
 
 .. image:: img/15_raindrop_detection_module.png
     :width: 400
     :align: center
 
-The Raindrop Detection Sensor Module is a weather sensor that detects rainfall presence and intensity. It includes a raindrop sensor board with printed tracks, usually paired with a comparator module. When raindrops hit the sensor board, they create a conductive path between tracks, changing the resistance. This change is then converted into an analog or digital signal to show the rainfall intensity.
+雨滴検知センサーモジュールは、降雨の有無や強度を検出する気象センサーです。このモジュールは、通常、コンパレータモジュールとペアになったプリントトラック付きの雨滴センサーボードを含みます。雨滴がセンサーボードに当たると、トラック間に導電経路が形成され、抵抗が変化します。この変化はアナログまたはデジタル信号に変換され、降雨強度を示します。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 32 x 14mm
-* Output Signal Type: DO and AO
+* 供給電圧: 3.3V - 5V
+* PCBサイズ: 32 x 14mm
+* 出力信号タイプ: DOおよびAO
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **DO**: Digital output. Outputs a low level when raindrops are detected, and a high level when dry.
-* **AO**: Analog output. The more rainwater, the smaller the analog output value.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **DO**: デジタル出力。雨滴が検出されると低レベルを出力し、乾燥していると高レベルを出力します。
+* **AO**: アナログ出力。雨水が多いほど、アナログ出力値は小さくなります。
 
-Principle
+原理
 ---------------------------
-Raindrop sensor is basically a board on which nickel is coated in the form of lines. It works on the principal of resistance. When there is no rain drop on board. Resistance is high so we gets high voltage according to V=IR. When rain drop present it reduces the resistance because water is conductor of electricity and presence of water connects nickel lines in parallel so reduced resistance and reduced voltage drop across it. The more intense the rainfall the lower the resistance.
+雨滴センサーは基本的にライン状にニッケルがコーティングされたボードです。これは抵抗の原理で動作します。ボードに雨滴がない場合、抵抗は高くなるため、V=IRに従って高電圧が得られます。雨滴が存在すると、水は電気の導体であるため、抵抗が減少します。水の存在により、ニッケルラインが並列に接続されるため、抵抗が減少し、それに伴い電圧降下も減少します。降雨が激しいほど、抵抗は低くなります。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/15_raindrop_detection_module_schematic.png
@@ -51,8 +51,10 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson15_raindrop` (Arduino UNO)
 * :ref:`esp32_lesson15_raindrop` (ESP32)
 * :ref:`pico_lesson15_raindrop` (Raspberry Pi Pico)

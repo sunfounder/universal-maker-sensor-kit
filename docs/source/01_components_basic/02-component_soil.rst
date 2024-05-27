@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_soil:
 
-Capacitive Soil Moisture Module
+静電容量式土壌水分モジュール
 =====================================
 
 .. image:: img/02_soil_mositure_module.png
@@ -25,23 +25,23 @@ Capacitive Soil Moisture Module
 
    <br/> 
 
-The Soil Moisture Module is a sensor used in agriculture to measure the moisture content of soil, helping farmers monitor soil moisture levels and determine when to water their crops.
-This capacitive soil moisture sensor differs from the resistive sensors on the market, using the principle of capacitive induction to detect soil moisture. It avoids the problem of easy corrosion in resistive sensors and greatly extends its working life.
+土壌水分モジュールは、農業で使用されるセンサーで、土壌の水分含有量を測定し、農家が土壌の水分レベルを監視し、作物に水をやる時期を判断するのに役立ちます。
+この静電容量式土壌水分センサーは、市場に出回っている抵抗式センサーとは異なり、静電容量の誘導の原理を使用して土壌水分を検出します。これにより、抵抗式センサーの容易な腐食の問題を回避し、使用寿命を大幅に延ばします。
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **AUOT**: Analog output. The higher the soil moisture content, the lower the analog output value.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **AUOT**: アナログ出力。土壌水分量が多いほど、アナログ出力値は低くなります。
 
-Principle
+原理
 ---------------------------
 
-This capacitive soil moisture sensor is different from most of the resistive sensors on the market, using the principle of capacitive induction to detect soil moisture. It avoids the problem that resistive sensors are highly susceptible to corrosion and greatly extends its working life.
+この静電容量式土壌水分センサーは、市場に出回っているほとんどの抵抗式センサーとは異なり、静電容量の誘導の原理を使用して土壌水分を検出します。これにより、抵抗式センサーが非常に腐食しやすいという問題を回避し、使用寿命を大幅に延ばします。
 
-It is made of corrosion-resistant materials and has an excellent service life. Insert it into the soil around plants and monitor real-time soil moisture data. The module includes an on-board voltage regulator that allows it to operate over a voltage range of 3.3 ~ 5.5 V. It is ideal for low-voltage microcontrollers with 3.3 V and 5 V supplies.
+耐腐食性材料で作られており、優れた耐久性を持っています。植物の周りの土壌に挿入し、リアルタイムの土壌水分データを監視します。モジュールにはオンボードの電圧レギュレータが含まれており、3.3〜5.5Vの電圧範囲で動作します。3.3Vおよび5Vの低電圧マイクロコントローラに最適です。
 
-The hardware schematic of the capacitive soil moisture sensor is shown below.
+静電容量式土壌水分センサーのハードウェア回路図は以下の通りです。
 
 .. image:: img/02_soil_schematic_2.png
     :width: 90%
@@ -51,13 +51,15 @@ The hardware schematic of the capacitive soil moisture sensor is shown below.
 
    <br/> 
 
-There is a fixed frequency oscillator, which is built with a 555 timer IC. The generated square wave is then fed to the sensor like a capacitor. However, for the square wave signal, the capacitor has a certain reactance or, for the sake of argument, a resistor with a pure ohmic resistor (10k resistor on pin 3) to form a voltage divider.
+固定周波数発振器があり、555タイマーICで構成されています。生成された方形波は、コンデンサのようなセンサーに供給されます。ただし、方形波信号の場合、コンデンサには一定のリアクタンスがあり、純粋なオーミック抵抗（ピン3に10kΩの抵抗）と電圧分圧器を形成します。
 
-The higher the soil moisture, the higher the capacitance of the sensor. As a result, the square wave has less reactance, which reduces the voltage on the signal line, and the smaller the value of the analog input through the microcontroller.
+土壌水分が多いほど、センサーの静電容量が高くなります。その結果、方形波のリアクタンスが減少し、信号線の電圧が低下し、マイクロコントローラを介してアナログ入力の値が小さくなります。
 
 
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson02_soil_moisture` (Arduino UNO)
 * :ref:`esp32_lesson02_soil_moisture` (ESP32)
 * :ref:`pico_lesson02_soil_moisture` (Raspberry Pi Pico)

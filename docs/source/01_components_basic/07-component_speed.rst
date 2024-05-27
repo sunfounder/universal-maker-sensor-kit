@@ -1,47 +1,47 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_speed:
 
-Infrared Speed Sensor Module
+赤外線速度センサーモジュール
 =====================================
 
 .. image:: img/07_speed_sensor_module.png
     :width: 300
     :align: center
 
+赤外線速度センサーモジュールは、赤外線送信機と受信機を備えたIRカウンターです。これらのセンサーの間に障害物が置かれると、マイクロコントローラーに信号が送られます。このモジュールは、モーターの速度検出、パルスカウント、位置リミットなどにマイクロコントローラーと連携して使用できます。
 
-The Infrared Speed Sensor Module is an IR counter that has an IR transmitter and receiver. If any obstacle is placed between these sensors, a signal is sent to the microcontroller. The module can be used in association with a microcontroller for motor speed detection, pulse count, position limit, etc.
-
-Pinout
----------------------------
-* **VCC**: This is the positive power supply(3.3V or 5V) input from the main control.
-* **GND**: Ground connection.
-* **OUT**: Digital output. When the speed sensor is obstructed, it outputs a high level; when unobstructed, it outputs a low level.
-
-Principle
+ピン配置
 ---------------------------
 
-The speed sensor module is mainly used to detect changes in rotational speed or velocity. When an object passes by the H2010 sensor, it generates a pulse signal. The integrated LM393 comparator inside the module compares this pulse signal with a preset threshold, producing a stable high-level output signal.
+* **VCC**: メインコントローラからの正電源入力（3.3Vまたは5V）。
+* **GND**: グランド接続。
+* **OUT**: デジタル出力。速度センサーが遮断されると高レベルを出力し、遮断されていないと低レベルを出力します。
 
-The Infrared Speed Sensor Module has 1 H2010 photocell, which consists of a phototransistor and an infrared light emitter packaged in a 10 cm wide black plastic housing.
+原理
+---------------------------
+
+速度センサーモジュールは主に回転速度や速度の変化を検出するために使用されます。H2010センサーの近くを物体が通過すると、パルス信号が生成されます。モジュール内の統合されたLM393コンパレータがこのパルス信号を設定されたしきい値と比較し、安定した高レベルの出力信号を生成します。
+
+赤外線速度センサーモジュールには、フォトトランジスタと赤外線発光ダイオードを10 cm幅の黒いプラスチックハウジングにパッケージ化したH2010フォトセルが1つ含まれています。
 
 .. image:: img/07_speed_sensor_module_2.png
     :width: 200
     :align: center
 
-When operating, the infrared light-emitting diode continuously emits infrared light (invisible light), and the photosensitive triode will conduct if it receives it.
+動作中、赤外線発光ダイオードは赤外線（不可視光）を連続的に放出し、フォトトランジスタがそれを受信すると導通します。
 
 .. image:: img/07_speed_sensor_module_3.png
     :width: 900
@@ -51,7 +51,7 @@ When operating, the infrared light-emitting diode continuously emits infrared li
 
    <br/>
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/07_speed_sensor_module_schematic.png
@@ -62,9 +62,10 @@ Schematic diagram
 
    <br/>
 
-
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson07_speed` (Arduino UNO)
 * :ref:`esp32_lesson07_speed` (ESP32)
 * :ref:`pico_lesson07_speed` (Raspberry Pi Pico)

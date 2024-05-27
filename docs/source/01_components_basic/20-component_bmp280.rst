@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_bmp280:
 
-Temperature, Humidity & Pressure Sensor (BMP280)
+温度、湿度、気圧センサー (BMP280)
 ===============================================================
 
 .. image:: img/20_bmp280.png
@@ -25,26 +25,26 @@ Temperature, Humidity & Pressure Sensor (BMP280)
     
     <br/>
 
-The BMP280, developed by Bosch Sensortec, is a high-precision, low-power digital sensor module for measuring barometric pressure and temperature. It is widely used in mobile devices, weather monitoring, altitude estimations, and various other applications that require accurate atmospheric pressure and temperature data due to its small size and superior performance.
+BMP280は、Bosch Sensortecによって開発された高精度、低消費電力のデジタルセンサーモジュールで、気圧と温度を測定します。その小型サイズと優れた性能により、モバイルデバイス、気象監視、高度推定、その他のさまざまな用途で広く使用されています。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB size: 15 x 11mm
-* Working temperature range: -40 ~ +85℃
-* Air pressure measurement range: 300 ~ 1100hPa
-* Interface: I2C (up to 3.4MHz), SPI (up to 10MHz)
+* 供給電圧: 3.3Vまたは5V
+* PCBサイズ: 15 x 11mm
+* 動作温度範囲: -40 ~ +85℃
+* 気圧測定範囲: 300 ~ 1100hPa
+* インターフェース: I2C（最大3.4MHz）、SPI（最大10MHz）
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **SCL**: serial clock pin for the I2C interface.
-* **SDA**: serial data pin for the I2C interface.
-* **CSB**: the chip select pin of the module, if you are communicating with the device with SPI you can use this pin to communicate to select one if multiple devices are connected in the same bus.
-* **SDO**: Serial Data out pin of the module. An output signal on a device where data is sent out to another SPI device.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **SCL**: I2Cインターフェースのシリアルクロックピン。
+* **SDA**: I2Cインターフェースのシリアルデータピン。
+* **CSB**: モジュールのチップセレクトピン。SPIでデバイスと通信する場合、複数のデバイスが同じバスに接続されている場合にこのピンを使用して1つを選択して通信できます。
+* **SDO**: モジュールのシリアルデータ出力ピン。他のSPIデバイスにデータを送信するための出力信号。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/20_bmp280_module_schematic.png
@@ -55,9 +55,10 @@ Schematic diagram
 
    <br/>
 
-
-Example
+例
 ---------------------------
+
+
 * :ref:`uno_lesson20_bmp280` (Arduino UNO)
 * :ref:`esp32_lesson20_bmp280` (ESP32)
 * :ref:`pico_lesson20_bmp280` (Raspberry Pi Pico)

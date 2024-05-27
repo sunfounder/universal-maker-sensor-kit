@@ -1,83 +1,82 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_pir_motion:
 
-PIR Motion Module (HC-SR501)
+PIRモーションモジュール (HC-SR501)
 =====================================
 
 .. image:: img/12_pir_module.png
     :width: 300
     :align: center
 
+受動赤外線（PIR）モーションセンサーは、動きを検出するセンサーです。セキュリティシステムや自動照明システムで一般的に使用されています。センサーには赤外線を検出する2つのスロットがあります。人などの物体がセンサーの前を通過すると、赤外線の量の変化を検出し、出力信号をトリガーします。
 
-The Passive Infrared(PIR) Motion Sensor is a sensor that detects motion. It is commonly used in security systems and automatic lighting systems. The sensor has two slots that detect infrared radiation. When an object, such as a person, passes in front of the sensor, it detects a change in the amount of infrared radiation and triggers an output signal.
-
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 5V~20V; 
-* Output: Defaults to low; goes high when someone passes by.
-* Delay Time: 5~200s(adjustable)
-* Blocking Time: 8s
-* Sensing Range: <120°, within 7 meters(adjustable)
-* Trigger Mode: L Non-repeatable trigger mode, H Repeatable trigger mode
-* PCB size: 32 x 24mm
-* Lens size: 23mm
-* Working temperature: -15~+70℃
+* 供給電圧: 5V〜20V
+* 出力: デフォルトは低レベル; 誰かが通過すると高レベルになります。
+* 遅延時間: 5〜200秒（調整可能）
+* ブロッキング時間: 8秒
+* 検出範囲: <120°、7メートル以内（調整可能）
+* トリガーモード: L 非再トリガーモード、H 再トリガーモード
+* PCBサイズ: 32 x 24mm
+* レンズサイズ: 23mm
+* 動作温度: -15〜+70℃
 
-
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **DO**: Digital output. Defaults to low; goes high when someone passes by.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **DO**: デジタル出力。デフォルトは低レベル; 誰かが通過すると高レベルになります。
 
-Principle
+原理
 ---------------------------
-The PIR sensor is split into two slots that are connected to a differential amplifier. Whenever a stationary object is in front of the sensor, the two slots receive the same amount of radiation and the output is zero. Whenever a moving object is in front of the sensor, one of the slots receives more radiation than the other , which makes the output fluctuate high or low. This change in output voltage is a result of detection of motion.
+PIRセンサーは差動増幅器に接続された2つのスロットに分かれています。センサーの前に静止した物体がある場合、2つのスロットは同じ量の放射を受け取り、出力はゼロになります。センサーの前に動く物体がある場合、1つのスロットがもう1つより多くの放射を受け取り、出力が高低に変動します。この出力電圧の変化は、動きの検出結果です。
 
 .. image:: img/12_pir_working_principle.jpg
     :width: 500
     :align: center
 
-After the sensing module is wired, there is a one-minute initialization. During the initialization, module will output for 0~3 times at intervals. Then the module will be in the standby mode. Please keep the interference of light source and other sources away from the surface of the module so as to avoid the misoperation caused by the interfering signal. Even you’d better use the module without too much wind, because the wind can also interfere with the sensor.
+センサーモジュールが配線された後、1分間の初期化が行われます。初期化中、モジュールは0〜3回の間隔で出力します。その後、モジュールは待機モードになります。干渉信号による誤動作を避けるために、モジュールの表面から光源やその他の干渉源を遠ざけてください。風もセンサーに干渉する可能性があるため、できるだけ風の少ない環境でモジュールを使用してください。
 
 .. image:: img/12_pir_module_back.png
     :width: 350
     :align: center
 
 .. raw:: html
-    
-    <br/><br/> 
 
-Distance Adjustment
+    <br/><br/>
+
+距離調整
 ^^^^^^^^^^^^^^^^^^^^
-Turning the knob of the distance adjustment potentiometer clockwise, the range of sensing distance increases, and the maximum sensing distance range is about 0-7 meters. If turn it anticlockwise, the range of sensing distance is reduced, and the minimum sensing distance range is about 0-3 meters.
+距離調整用ポテンショメータのノブを時計回りに回すと、検出距離の範囲が広がり、最大検出距離は約0〜7メートルです。反時計回りに回すと、検出距離の範囲が狭まり、最小検出距離は約0〜3メートルです。
 
-Delay adjustment
+遅延調整
 ^^^^^^^^^^^^^^^^^^^^
-Rotate the knob of the delay adjustment potentiometer clockwise, you can also see the sensing delay increasing. The maximum of the sensing delay can reach up to 300s. On the contrary, if rotate it anticlockwise, you can shorten the delay with a minimum of 5s.
+遅延調整用ポテンショメータのノブを時計回りに回すと、検出遅延が増加します。最大遅延は300秒に達します。逆に反時計回りに回すと、最小5秒まで遅延を短縮できます。
 
-Two Trigger Modes
+二つのトリガーモード
 ^^^^^^^^^^^^^^^^^^^^
-Choosing different modes by using the jumper cap.
+ジャンパーキャップを使用して異なるモードを選択します。
 
-* H: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range,the output will keep being the high level.
-* L: Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically.
+* H: 再トリガーモード。人間の身体を検出すると、モジュールは高レベルを出力します。遅延期間中に誰かが検出範囲に入ると、出力は高レベルのまま維持されます。
+* L: 非再トリガーモード。人間の身体を検出すると、高レベルを出力します。遅延後、出力は自動的に高レベルから低レベルに変わります。
 
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson12_pir_motion` (Arduino UNO)
 * :ref:`esp32_lesson12_pir_motion` (ESP32)
 * :ref:`pico_lesson12_pir_motion` (Raspberry Pi Pico)

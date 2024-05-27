@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_rotary_encoder:
 
-Rotary Encoder Module
+ロータリーエンコーダーモジュール
 =====================================
 
 .. image:: img/17_rotary_encoder.png
@@ -25,31 +25,30 @@ Rotary Encoder Module
 
    <br/>
 
-A rotary encoder is a position sensor that converts the rotation of a knob into an output signal, indicating the direction in which the knob is turned.
+ロータリーエンコーダーは、ノブの回転を出力信号に変換し、ノブが回転した方向を示す位置センサーです。
 
-Rotary encoders are digital versions of potentiometers, offering greater versatility. They can rotate continuously, while potentiometers have limited rotation. Potentiometers indicate exact knob position, while rotary encoders show changes in position.
+ロータリーエンコーダーはポテンショメータのデジタル版であり、より多用途です。ポテンショメータは回転が制限されていますが、ロータリーエンコーダーは連続して回転できます。ポテンショメータはノブの正確な位置を示しますが、ロータリーエンコーダーは位置の変化を示します。
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **SW**: Digital output. 
-* **CLK**: is similar to CLK output, but it lags behind CLK by a 90° phase shift. This output is used to determine the direction of rotation.
-* **DT**: is the primary output pulse used to determine the amount of rotation. Each time the knob is turned in either direction by just one detent (click), the ‘CLK’ output goes through one cycle of going HIGH and then LOW.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **SW**: デジタル出力。
+* **CLK**: CLK出力に似ていますが、CLKに対して90°の位相差で遅れます。この出力は回転方向を決定するために使用されます。
+* **DT**: 回転量を決定するために使用される主要な出力パルスです。ノブがどちらの方向にでも一つのデテント（クリック）で回転するたびに、‘CLK’出力はHIGHからLOWに変化する1サイクルを経ます。
 
-Principle
+原理
 ---------------------------
 
-Incremental encoders produce two-phase square waves, with a 90-degree phase difference commonly referred to as the A and B channels.
+インクリメンタルエンコーダーは、AおよびBチャネルと呼ばれる90度の位相差を持つ2つの正方波を生成します。
 
-As illustrated below, when channel A transitions from a high level to a low level, if channel B is at a high level, it indicates that the rotary encoder is rotating clockwise (CW); if at that moment channel B is at a low level, it means the rotation is counterclockwise (CCW). Therefore, by reading the value of channel B when channel A is at a low level, we can determine the direction in which the rotary encoder rotates.
+下図のように、チャネルAが高レベルから低レベルに遷移する時、チャネルBが高レベルであれば、ロータリーエンコーダーは時計回り（CW）に回転していることを示します。一方、その時点でチャネルBが低レベルであれば、反時計回り（CCW）に回転していることを意味します。したがって、チャネルAが低レベルの時にチャネルBの値を読み取ることで、ロータリーエンコーダーの回転方向を判断できます。
 
 .. image:: img/17_rotary_encoder_wave.png
     :width: 60%
     :align: center
 
-
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/17_rotary_encoder_schematic.png
@@ -60,8 +59,9 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson17_rotary_encoder` (Arduino UNO)
 * :ref:`esp32_lesson17_rotary_encoder` (ESP32)
 * :ref:`pico_lesson17_rotary_encoder` (Raspberry Pi Pico)

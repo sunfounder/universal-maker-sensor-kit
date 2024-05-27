@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**：新製品発表や予告編に早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _cpn_ds18b20:
 
-Temperature Sensor Module (DS18B20)
+温度センサーモジュール (DS18B20)
 ===============================================
 
 .. image:: img/18_ds18b20_module.png
@@ -25,23 +25,23 @@ Temperature Sensor Module (DS18B20)
 
    <br/>
 
-The DS18B20 is a digital temperature sensor that can measure temperatures ranging from -67°F to +257°F with an accuracy of ±0.5°C. It follows the single wire protocol and can communicate with a microcontroller using only one pin. The sensor can be powered directly from the data line, eliminating the need for an external power supply. The applications of the DS18B20 temperature sensor include industrial systems, consumer products, systems which are sensitive thermally, thermostatic controls, and thermometers.
+DS18B20は、-67°Fから+257°Fの範囲で温度を測定でき、±0.5°Cの精度を持つデジタル温度センサーです。シングルワイヤープロトコルに従い、1つのピンだけでマイクロコントローラーと通信できます。データラインから直接電源供給が可能で、外部電源は不要です。DS18B20温度センサーの用途には、産業システム、消費者製品、温度に敏感なシステム、サーモスタット制御、温度計などがあります。
 
-Specification
+仕様
 ---------------------------
-* PCB Size: 13 x 27.9mm
-* Power Supply: 3V to 5.5V
-* Temperature Range: -55 to 125°C
-* Accuracy:	±0.5°C
-* Resolution: 9 to 12 bit (selectable)
+* PCBサイズ: 13 x 27.9mm
+* 電源: 3V〜5.5V
+* 温度範囲: -55〜125°C
+* 精度: ±0.5°C
+* 分解能: 9〜12ビット（選択可能）
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **OUT**: The 1-Wire Data Bus that should be connected to a digital pin on the microcontroller.
+* **VCC**: メインコントローラからの正電源入力。
+* **GND**: グランド接続。
+* **OUT**: デジタルピンに接続する1-Wireデータバス。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/18_ds18b20_module_schematic.png
@@ -52,8 +52,9 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
+
 * :ref:`uno_lesson18_ds18b20` (Arduino UNO)
 * :ref:`esp32_lesson18_ds18b20` (ESP32)
 * :ref:`pico_lesson18_ds18b20` (Raspberry Pi Pico)
