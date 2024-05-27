@@ -83,7 +83,7 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson44_digital_dice.rst 
     uno_lesson45_plant_monitor.rst 
     uno_lesson46_bluetooth_lcd.rst 
-    uno_lesson47_bluetooth_traffic_light copy.rst 
+    uno_lesson47_bluetooth_traffic_light.rst
 
 **IoT Config**
 
