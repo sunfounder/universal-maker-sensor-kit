@@ -1,31 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson03_flame:
 
-Lesson 03: Flame Sensor Module
+Lektion 03: Flammensensormodul
 ==================================
 
+In dieser Lektion lernen Sie, wie Sie einen Flammensensor mit dem Raspberry Pi zur Feuermeldung verwenden. Wir zeigen Ihnen, wie Sie den Flammensensor an GPIO17 anschließen und ein Python-Skript schreiben, um dessen Ausgabe zu lesen. Sie lernen, zu erkennen, wann der Sensor eine Flamme detektiert, was durch eine Änderung des Sensorzustands angezeigt wird. Dieses praktische Projekt führt Sie in die Grundlagen der Sensoranbindung und Python-Programmierung auf dem Raspberry Pi ein und ist für Anfänger geeignet, die sich für sicherheitsrelevante Projekte interessieren.
 
-In this lesson, you will learn to use a flame sensor with Raspberry Pi for fire detection. We'll show you how to connect the flame sensor to GPIO17 and write a Python script to read its output. You'll learn to identify when the sensor detects a flame, indicated by a change in the sensor's state. This practical project introduces you to the basics of sensor interfacing and Python coding on the Raspberry Pi, suitable for beginners interested in building safety-related projects.
-
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_03_flame_module_Pi_bb.png
@@ -85,33 +84,33 @@ Code
        time.sleep(1)
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
    
-   The script starts by importing the necessary classes from the gpiozero library and the time module from Python's standard library.
+   Das Skript beginnt mit dem Import der notwendigen Klassen aus der gpiozero-Bibliothek und dem time-Modul aus der Python-Standardbibliothek.
 
    .. code-block:: python
 
       from gpiozero import InputDevice
       import time
 
-#. Initializing the Flame Sensor
+#. Initialisierung des Flammensensors
    
-   An ``InputDevice`` object named ``flame_sensor`` is created, representing the flame sensor connected to GPIO pin 17 of the Raspberry Pi. This setup assumes that the digital output of the flame sensor is connected to GPIO17.
+   Ein ``InputDevice``-Objekt namens ``flame_sensor`` wird erstellt, das den an GPIO-Pin 17 des Raspberry Pi angeschlossenen Flammensensor repräsentiert. Diese Konfiguration geht davon aus, dass der digitale Ausgang des Flammensensors an GPIO17 angeschlossen ist.
 
    .. code-block:: python
 
       flame_sensor = InputDevice(17)
 
-#. Continuous Reading Loop
+#. Kontinuierliche Ausleseschleife
    
-   - The script uses a ``while True:`` loop to continuously read the sensor's data. This loop will run indefinitely.
-   - Inside the loop, an ``if`` statement checks the state of the flame sensor using the ``is_active`` property.
-   - If ``flame_sensor.is_active`` is ``True``, it indicates no flame is detected, and "No flame detected." is printed.
-   - If ``flame_sensor.is_active`` is ``False``, it indicates a flame is detected, and "Flame detected!" is printed.
-   - The ``time.sleep(1)`` command pauses the loop for 1 second between each sensor reading, preventing the script from overloading the CPU.
+   - Das Skript verwendet eine ``while True:``-Schleife, um die Daten des Sensors kontinuierlich auszulesen. Diese Schleife läuft unendlich.
+   - Innerhalb der Schleife überprüft eine ``if``-Anweisung den Zustand des Flammensensors mit der Eigenschaft ``is_active``.
+   - Wenn ``flame_sensor.is_active`` ``True`` ist, zeigt dies an, dass keine Flamme erkannt wurde, und es wird "Keine Flamme erkannt." ausgegeben.
+   - Wenn ``flame_sensor.is_active`` ``False`` ist, zeigt dies an, dass eine Flamme erkannt wurde, und es wird "Flamme erkannt!" ausgegeben.
+   - Der Befehl ``time.sleep(1)`` pausiert die Schleife für 1 Sekunde zwischen jeder Sensorablesung, um zu verhindern, dass das Skript die CPU überlastet.
 
    .. raw:: html
 

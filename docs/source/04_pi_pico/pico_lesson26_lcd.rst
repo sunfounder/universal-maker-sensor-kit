@@ -1,31 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson26_lcd:
-
 Lesson 26: I2C LCD 1602
 ==================================
 
-In this lesson, you will learn to connect an I2C LCD 1602 display to a Raspberry Pi Pico W. You'll understand how to set up I2C communication, display and clear messages on the LCD using MicroPython. 
+In dieser Lektion lernen Sie, wie Sie ein I2C LCD 1602 Display mit einem Raspberry Pi Pico W verbinden. Sie erfahren, wie Sie die I2C-Kommunikation einrichten, Nachrichten auf dem LCD mithilfe von MicroPython anzeigen und löschen.
 
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -55,11 +54,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. note:: 
-   To ensure the LCD module operates normally, please power it using the VBUS pin on the Pico.
+   Um sicherzustellen, dass das LCD-Modul ordnungsgemäß funktioniert, versorgen Sie es bitte mit dem VBUS-Pin am Pico.
 
 .. image:: img/Lesson_26_LCD1602_Module_pico_bb.png
     :width: 100%
@@ -98,33 +97,32 @@ Code
    # Clear the display before exiting
    lcd.clear()
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Setting up I2C Communication
+#. Einrichten der I2C-Kommunikation
 
-   The ``machine`` module is used to set up I2C communication. SDA (Serial Data) and SCL (Serial Clock) pins are defined (pin 20 and 21 respectively), along with the I2C frequency (400kHz).
+   Das ``machine``-Modul wird verwendet, um die I2C-Kommunikation einzurichten. Dabei werden die SDA (Serial Data) und SCL (Serial Clock) Pins definiert (Pin 20 und 21) sowie die I2C-Frequenz (400 kHz).
 
    .. code-block:: python
       
       from machine import I2C, Pin
       i2c = I2C(0, sda=Pin(20), scl=Pin(21), freq=400000)
 
-#. Initializing the LCD Display
+#. Initialisierung des LCD-Displays
 
-   The ``LCD`` class from the ``lcd1602`` module is instantiated. This class handles the communication with the LCD display through I2C. An ``LCD`` object is created using the ``i2c`` object.
+   Die Klasse ``LCD`` aus dem Modul ``lcd1602`` wird instanziiert. Diese Klasse übernimmt die Kommunikation mit dem LCD-Display über I2C. Ein ``LCD``-Objekt wird mithilfe des ``i2c``-Objekts erstellt.
 
-   For more usage of the ``lcd1602`` library, please refer to ``lcd1602.py``.
+   Für weitere Anwendungen der ``lcd1602``-Bibliothek siehe bitte ``lcd1602.py``.
 
    .. code-block:: python
       
       from lcd1602 import LCD
       lcd = LCD(i2c)
 
-#. Displaying Messages on the LCD
+#. Anzeigen von Nachrichten auf dem LCD
 
-   The ``message`` method of the ``LCD`` object is used to display text on the screen. The ``\n`` character creates a new line on the LCD. The ``time.sleep()`` function pauses execution for a specified number of seconds.
+   Die Methode ``message`` des ``LCD``-Objekts wird verwendet, um Text auf dem Bildschirm anzuzeigen. Das ``\n``-Zeichen erstellt eine neue Zeile auf dem LCD. Die Funktion ``time.sleep()`` pausiert die Ausführung für eine bestimmte Anzahl von Sekunden.
 
    .. code-block:: python
       
@@ -133,17 +131,17 @@ Code Analysis
       time.sleep(2)
       lcd.clear()
 
-#. Clearing the Display
+#. Löschen des Displays
 
-   The ``clear`` method of the ``LCD`` object is called to clear the text from the display.
+   Die Methode ``clear`` des ``LCD``-Objekts wird aufgerufen, um den Text vom Display zu löschen.
 
    .. code-block:: python
       
       lcd.clear()
 
-#. Displaying a Second Message
+#. Anzeigen einer zweiten Nachricht
 
-   A new message is displayed, followed by a delay and then clearing the screen again.
+   Eine neue Nachricht wird angezeigt, gefolgt von einer Verzögerung und anschließendem Löschen des Bildschirms erneut.
 
    .. code-block:: python
       

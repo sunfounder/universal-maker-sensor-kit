@@ -1,43 +1,43 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson29_traffic_light_module:
-
-Lesson 29: Traffic Light Module
+Lektion 29: Verkehrsampelmodul
 ==================================
 
-In this lesson, you will learn to create a traffic light system using the Raspberry Pi Pico W. You'll program the Pico W to control three LEDs – red, yellow, and green – mimicking a real traffic light. This project offers a practical introduction to using Pulse Width Modulation (PWM) for LED brightness control and basic control structures in MicroPython. It's ideal for beginners looking to explore digital signal processing and gain confidence in coding on the Raspberry Pi Pico W platform.
+In dieser Lektion lernst du, ein Verkehrsampelsystem mit dem Raspberry Pi Pico W zu erstellen. Du programmierst den Pico W, um drei LEDs - rot, gelb und grün - zu steuern, und simulierst damit eine echte Verkehrsampel. Dieses Projekt bietet eine praktische Einführung in die Verwendung von Pulsweitenmodulation (PWM) zur Steuerung der Helligkeit von LEDs und grundlegende Steuerstrukturen in MicroPython. Es ist ideal für Anfänger, die die digitale Signalverarbeitung erkunden und Selbstvertrauen beim Codieren auf der Plattform des Raspberry Pi Pico W gewinnen möchten.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name    
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_29_Traffic_Light_Module_pico_bb.png
@@ -117,21 +117,21 @@ Code
        set_brightness(green, 0)
 
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
 
-   The ``machine`` library is used for controlling hardware components, and ``time`` is used for creating delays.
+   Die Bibliothek ``machine`` wird zur Steuerung von Hardwarekomponenten verwendet, und ``time`` dient zur Erzeugung von Verzögerungen.
 
    .. code-block:: python
 
       from machine import Pin, PWM
       import time
 
-#. Initializing LED Pins
+#. Initialisierung der LED-Pins
 
-   Here, we initialize the pins connected to the LEDs. PWM is used to control the brightness of the LEDs.
+   Hier initialisieren wir die Pins, die mit den LEDs verbunden sind. PWM wird verwendet, um die Helligkeit der LEDs zu steuern.
 
    .. code-block:: python
 
@@ -139,12 +139,12 @@ Code Analysis
       yellow = PWM(Pin(27), freq=1000)  #  yellow LED
       green = PWM(Pin(28), freq=1000)  # green LED
 
-#. Defining the Set Brightness Function
+#. Definition der Funktion zur Einstellung der Helligkeit
 
    .. note::
-      Due to the fact that the pins of Raspberry Pi Pico can only output a maximum voltage of 3.3V, the green LED will appear dim.
+      Da die Pins des Raspberry Pi Pico nur eine maximale Spannung von 3,3V ausgeben können, erscheint die grüne LED gedimmt.
 
-   This function sets the brightness of the LEDs. It takes two parameters: the LED and the desired brightness level (0-100%). The ``duty_u16`` method is used to set the PWM duty cycle.
+   Diese Funktion setzt die Helligkeit der LEDs. Sie nimmt zwei Parameter an: die LED und den gewünschten Helligkeitswert (0-100%). Die Methode ``duty_u16`` wird verwendet, um den PWM-Tastgrad festzulegen.
 
    .. code-block:: python
 
@@ -153,9 +153,9 @@ Code Analysis
               raise ValueError("Brightness should be between 0 and 100")
           led.duty_u16(int(brightness / 100 * 65535))
 
-#. Main Loop and Traffic Light Sequence
+#. Hauptschleife und Verkehrsampelabfolge
 
-   The ``while True`` loop makes the code run continuously. It controls the sequence of the traffic light: green, yellow (blinking), and red.
+   Die Schleife ``while True`` lässt den Code kontinuierlich laufen. Sie steuert die Abfolge der Verkehrsampel: grün, gelb (blinkend) und rot.
 
    .. code-block:: python
 
@@ -167,9 +167,9 @@ Code Analysis
               set_brightness(green, 0)
               ...
 
-#. Handling Keyboard Interrupt
+#. Behandlung des Tastaturabbruchs
 
-   The ``except KeyboardInterrupt`` block is used to handle a manual interruption (like Ctrl+C). It turns off all LEDs when the script is interrupted.
+   Der Block ``except KeyboardInterrupt`` wird verwendet, um eine manuelle Unterbrechung (wie Ctrl+C) zu behandeln. Er schaltet alle LEDs aus, wenn das Skript unterbrochen wird.
 
    .. code-block:: python
 

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson01_button:
 
-Lesson 01: Button Module
+Lektion 01: Tastenmodul
 ==================================
 
-In this lesson, you will learn how a button interacts with an LED using Arduino. We'll see how pressing the button lights up the LED and releasing it turns off the LED. This project is ideal for beginners as it provides a practical understanding of input and output operations on the Arduino platform.
+In dieser Lektion lernen Sie, wie ein Taster mit einer LED über Arduino interagiert. Wir werden sehen, wie das Drücken des Tasters die LED einschaltet und das Loslassen sie ausschaltet. Dieses Projekt ist ideal für Anfänger, da es ein praktisches Verständnis der Ein- und Ausgangsoperationen auf der Arduino-Plattform vermittelt.
 
-Required Components
+Benötigte Komponenten
 ---------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -50,9 +50,8 @@ You can also buy them separately from the links below.
         - |link_Uno_R3_buy|
     *   - :ref:`cpn_button`
         - \-
-        
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_01_Button_Module_uno_bb.png
@@ -66,15 +65,15 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/2249707e-73aa-400b-8141-15424c291f44/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Initialization of Pins
+#. Initialisierung der Pins
 
-   The pins for the button and LED are defined and initialized. The ``buttonPin`` is set as an input to read the button's state, and ``ledPin`` is set as an output to control the LED.
+   Die Pins für den Taster und die LED werden definiert und initialisiert. Der ``buttonPin`` wird als Eingang gesetzt, um den Zustand des Tasters zu lesen, und der ``ledPin`` wird als Ausgang gesetzt, um die LED zu steuern.
 
    .. note::
-      Most Arduino boards have a pin connected to an on-board LED in series with a resistor. The constant ``LED_BUILTIN`` is the number of the pin to which the on-board LED is connected. Most boards have this LED connected to digital pin 13.
+      Die meisten Arduino-Boards haben einen Pin, der mit einer eingebauten LED in Reihe mit einem Widerstand verbunden ist. Die Konstante ``LED_BUILTIN`` ist die Nummer des Pins, an den die eingebaute LED angeschlossen ist. Die meisten Boards haben diese LED an den digitalen Pin 13 angeschlossen.
    
    .. code-block:: arduino
 
@@ -82,9 +81,9 @@ Code Analysis
       const int ledPin = LED_BUILTIN;  // Pin number for the LED
       int buttonState = 0;  // Variable to hold the current state of the button
 
-#. Setup Function
+#. Setup-Funktion
 
-   This function runs once and sets up the pin modes. ``pinMode(buttonPin, INPUT)`` configures the button pin as an input. ``pinMode(ledPin, OUTPUT)`` sets the LED pin as an output.
+   Diese Funktion läuft einmal und richtet die Pin-Modi ein. ``pinMode(buttonPin, INPUT)`` konfiguriert den Taster-Pin als Eingang. ``pinMode(ledPin, OUTPUT)`` setzt den LED-Pin als Ausgang.
    
    .. code-block:: arduino
 
@@ -93,11 +92,11 @@ Code Analysis
         pinMode(ledPin, OUTPUT);    // Initialize ledPin as an output pin
       }
 
-#. Main Loop Function
+#. Hauptschleifenfunktion
 
-   This is the core of the program where the button state is continuously read and the LED state is controlled. ``digitalRead(buttonPin)`` reads the button's state. If the button is pressed (state is LOW), the LED is turned on by ``digitalWrite(ledPin, HIGH)``. If not pressed, the LED is turned off (``digitalWrite(ledPin, LOW)``).
+   Dies ist der Kern des Programms, in dem der Tasterzustand kontinuierlich gelesen und der LED-Zustand gesteuert wird. ``digitalRead(buttonPin)`` liest den Zustand des Tasters. Wenn der Taster gedrückt wird (Zustand ist LOW), wird die LED mit ``digitalWrite(ledPin, HIGH)`` eingeschaltet. Wenn der Taster nicht gedrückt wird, wird die LED ausgeschaltet (``digitalWrite(ledPin, LOW)``).
 
-   The :ref:`button module<cpn_button>` used in this project has an internal pull-up resistor (see its :ref:`schematic diagram<cpn_button_sch>`), causing the button to be at a low level when pressed and remain at a high level when released.
+   Das in diesem Projekt verwendete :ref:`button module<cpn_button>` hat einen internen Pull-up-Widerstand (siehe sein :ref:`schematic diagram<cpn_button_sch>`), wodurch der Taster im gedrückten Zustand auf einem niedrigen Pegel ist und im nicht gedrückten Zustand auf einem hohen Pegel bleibt.
    
    .. code-block:: arduino
 

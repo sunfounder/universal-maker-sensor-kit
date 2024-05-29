@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_mpu6050:
 
-Gyroscope & Accelerometer Module (MPU6050)
+Gyroskop- und Beschleunigungssensormodul (MPU6050)
 ===============================================================
 
 .. image:: img/05_mpu6050_1.png
@@ -25,68 +25,67 @@ Gyroscope & Accelerometer Module (MPU6050)
 
    <br/>
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices.Changes in motion, acceleration and rotation can be detected.It is commonly used in robotics, gaming controllers, and other electronic devices that require motion detection. Its high accuracy and cheap cost make it very popular among the DIY community.
+Der MPU-6050 ist ein 6-Achsen-Bewegungssensor (kombiniert ein 3-Achsen-Gyroskop und einen 3-Achsen-Beschleunigungssensor). Änderungen in Bewegung, Beschleunigung und Rotation können erkannt werden. Er wird häufig in Robotik, Gaming-Controllern und anderen elektronischen Geräten verwendet, die eine Bewegungserkennung erfordern. Seine hohe Genauigkeit und die niedrigen Kosten machen ihn in der DIY-Community sehr beliebt.
 
-Principle
+Funktionsprinzip
 ---------------------------
-An MPU-6050 sensor module consists of a 3-axis accelerometer and a 3-axis gyroscope.
+Ein MPU-6050-Sensormodul besteht aus einem 3-Achsen-Beschleunigungssensor und einem 3-Achsen-Gyroskop.
 
-Its three coordinate systems are defined as follows:
+Seine drei Koordinatensysteme sind wie folgt definiert:
 
-Put MPU6050 flat on the table, assure that the face with label is upward and a dot on this surface is on the top left corner. Then the upright direction upward is the z-axis of the chip. The direction from left to right is regarded as the X-axis. Accordingly the direction from back to front is defined as the Y-axis.
+Legen Sie den MPU6050 flach auf den Tisch, stellen Sie sicher, dass die Seite mit dem Etikett nach oben zeigt und ein Punkt in der oberen linken Ecke dieser Oberfläche ist. Die aufrechte Richtung nach oben ist die Z-Achse des Chips. Die Richtung von links nach rechts wird als X-Achse betrachtet. Dementsprechend ist die Richtung von hinten nach vorne als Y-Achse definiert.
 
 .. image:: img/05_mpu_2.png
     :width: 300
     :align: center
 
-3-axis Accelerometer
-^^^^^^^^^^^^^^^^^^^^
-The accelerometer works on the principle of piezo electric effect, the ability of certain materials to generate an electric charge in response to applied mechanical stress.
+3-Achsen-Beschleunigungssensor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Der Beschleunigungssensor arbeitet nach dem Piezo-Effekt, der Fähigkeit bestimmter Materialien, eine elektrische Ladung als Reaktion auf mechanischen Stress zu erzeugen.
 
-Here, imagine a cuboidal box, having a small ball inside it, like in the picture above. The walls of this box are made with piezo electric crystals. Whenever you tilt the box, the ball is forced to move in the direction of the inclination, due to gravity. The wall with which the ball collides, creates tiny piezo electric currents. There are totally, three pairs of opposite walls in a cuboid. Each pair corresponds to an axis in 3D space: X, Y and Z axes. Depending on the current produced from the piezo electric walls, we can determine the direction of inclination and its magnitude.
+Stellen Sie sich hier einen quaderförmigen Kasten vor, der eine kleine Kugel darin enthält, wie im obigen Bild. Die Wände dieses Kastens bestehen aus piezoelektrischen Kristallen. Wann immer Sie den Kasten neigen, wird die Kugel aufgrund der Schwerkraft gezwungen, sich in Richtung der Neigung zu bewegen. Die Wand, mit der die Kugel kollidiert, erzeugt winzige piezoelektrische Ströme. Insgesamt gibt es drei Paare gegenüberliegender Wände in einem Quader. Jedes Paar entspricht einer Achse im 3D-Raum: X-, Y- und Z-Achsen. Abhängig vom erzeugten Strom der piezoelektrischen Wände können wir die Richtung der Neigung und deren Stärke bestimmen.
 
 .. image:: img/05_mpu_3.png
     :width: 800
     :align: center
 
-We can use the MPU6050 to detect its acceleration on each coordinate axis (in the stationary desktop state, the Z-axis acceleration is 1 gravity unit, and the X and Y axes are 0). If it is tilted or in a weightless/overweight condition, the corresponding reading will change.
+Wir können den MPU6050 verwenden, um seine Beschleunigung auf jeder Koordinatenachse zu erkennen (im stationären Zustand auf dem Schreibtisch beträgt die Z-Achsen-Beschleunigung 1 Gravitationskraft, und die X- und Y-Achsen sind 0). Wenn er geneigt ist oder sich in einem schwerelosen/übergewichtigen Zustand befindet, ändert sich die entsprechende Anzeige.
 
-There are four kinds of measuring ranges that can be selected programmatically: +/-2g, +/-4g, +/-8g, and +/-16g (2g by default) corresponding to each precision. Values range from -32768 to 32767.
+Es gibt vier wählbare Messbereiche, die programmgesteuert ausgewählt werden können: +/-2g, +/-4g, +/-8g und +/-16g (standardmäßig 2g) entsprechend jeder Genauigkeit. Die Werte reichen von -32768 bis 32767.
 
-The reading of accelerometer is converted to an acceleration value by mapping the reading from the reading range to the measuring range.
+Die Anzeige des Beschleunigungssensors wird in einen Beschleunigungswert umgewandelt, indem die Anzeige vom Anzeigebereich auf den Messbereich abgebildet wird.
 
-Acceleration = (Accelerometer axis raw data / 65536 * full scale Acceleration range) g
+Beschleunigung = (Beschleunigungssensor-Rohdaten / 65536 * Vollbereich-Beschleunigungsbereich) g
 
-Take the X-axis as an example, when Accelerometer X axis raw data is 16384 and the range is selected as +/-2g:
+Nehmen wir die X-Achse als Beispiel, wenn die Rohdaten der Beschleunigungssensor-X-Achse 16384 und der Bereich auf +/-2g eingestellt sind:
 
-Acceleration along the X axis = (16384 / 65536 * 4) g =1g
+Beschleunigung entlang der X-Achse = (16384 / 65536 * 4) g = 1g
 
-3-axis Gyroscope
+3-Achsen-Gyroskop
 ^^^^^^^^^^^^^^^^^^^^
-Gyroscopes work on the principle of Coriolis acceleration. Imagine that there is a fork like structure, that is in constant back and forth motion. It is held in place using piezo electric crystals. Whenever, you try to tilt this arrangement, the crystals experience a force in the direction of inclination. This is caused as a result of the inertia of the moving fork. The crystals thus produce a current in consensus with the piezo electric effect, and this current is amplified.
+Gyroskope arbeiten nach dem Prinzip der Coriolis-Beschleunigung. Stellen Sie sich vor, dass es eine gabelartige Struktur gibt, die sich ständig vor- und zurückbewegt. Diese wird durch piezoelektrische Kristalle in Position gehalten. Wann immer Sie versuchen, diese Anordnung zu neigen, erfahren die Kristalle eine Kraft in Richtung der Neigung. Dies wird durch die Trägheit der sich bewegenden Gabel verursacht. Die Kristalle erzeugen dann einen Strom im Einklang mit dem piezoelektrischen Effekt, und dieser Strom wird verstärkt.
 
 .. image:: img/05_mpu_4.png
     :width: 800
     :align: center
 
-The Gyroscope also has four kinds of measuring ranges: +/- 250, +/- 500, +/- 1000, +/- 2000. The calculation method and Acceleration are basically consistent.
+Das Gyroskop hat ebenfalls vier Messbereiche: +/- 250, +/- 500, +/- 1000, +/- 2000. Die Berechnungsmethode und die Beschleunigung sind im Wesentlichen gleich.
 
-The formula for converting the reading into angular velocity is as follows:
+Die Formel zur Umrechnung der Anzeige in die Winkelgeschwindigkeit lautet wie folgt:
 
-Angular velocity = (Gyroscope axis raw data / 65536 * full scale Gyroscope range) °/s
+Winkelgeschwindigkeit = (Gyroskop-Achsen-Rohdaten / 65536 * Vollbereich-Gyroskopbereich) °/s
 
-The X axis, for example, the Accelerometer X axis raw data is 16384 and ranges + / - 250°/ s:
+Die X-Achse zum Beispiel, die Rohdaten der Beschleunigungssensor-X-Achse sind 16384 und der Bereich beträgt +/- 250°/s:
 
-Angular velocity along the X axis = (16384 / 65536 * 500)°/s =125°/s
+Winkelgeschwindigkeit entlang der X-Achse = (16384 / 65536 * 500)°/s = 125°/s
 
-
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson05_mpu6050` (Arduino UNO)
 * :ref:`esp32_lesson05_mpu6050` (ESP32)
 * :ref:`pico_lesson05_mpu6050` (Raspberry Pi Pico)
 * :ref:`pi_lesson05_mpu6050` (Raspberry Pi Pi)
+
 
 
 

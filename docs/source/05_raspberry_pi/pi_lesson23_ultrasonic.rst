@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson23_ultrasonic:
 
-Lesson 23: Ultrasonic Sensor Module (HC-SR04)
+Lektion 23: Ultraschallsensor-Modul (HC-SR04)
 ================================================
 
-In this lesson, you'll learn how to connect an ultrasonic distance sensor to a Raspberry Pi and write a Python script for reading distance measurements. We'll guide you through the process of wiring the sensor's trigger pin to GPIO 17 and the echo pin to GPIO 27. The provided Python code will assist you in measuring distances and displaying them in centimeters. 
+In dieser Lektion lernen Sie, wie Sie einen Ultraschall-Entfernungssensor an einen Raspberry Pi anschließen und ein Python-Skript zum Auslesen von Abstandsmessungen schreiben. Wir führen Sie durch den Prozess, den Trigger-Pin des Sensors mit GPIO 17 und den Echo-Pin mit GPIO 27 zu verbinden. Der bereitgestellte Python-Code hilft Ihnen, Entfernungen zu messen und in Zentimetern anzuzeigen.
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,8 +53,7 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_23_ultrasonic_sensor_Pi_bb.png
@@ -86,33 +85,32 @@ Code
        pass
 
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
    
-   The script begins by importing ``DistanceSensor`` from the gpiozero library for the ultrasonic sensor, and ``sleep`` from the time module for timing control.
+   Das Skript beginnt mit dem Import von ``DistanceSensor`` aus der gpiozero-Bibliothek für den Ultraschallsensor und ``sleep`` aus dem time-Modul zur Steuerung der Zeit.
 
    .. code-block:: python
 
       from gpiozero import DistanceSensor
       from time import sleep
 
-#. Initializing the Distance Sensor
+#. Initialisierung des Entfernungssensors
    
-   A ``DistanceSensor`` object named ``sensor`` is created with ``echo`` and ``trigger`` pins connected to GPIO 27 and GPIO 17, respectively. These pins are used to send and receive the ultrasonic signals for distance measurement.
+   Ein ``DistanceSensor``-Objekt namens ``sensor`` wird erstellt, wobei die Pins ``echo`` und ``trigger`` mit GPIO 27 bzw. GPIO 17 verbunden sind. Diese Pins werden verwendet, um die Ultraschallsignale für die Abstandsmessung zu senden und zu empfangen.
 
    .. code-block:: python
 
       sensor = DistanceSensor(echo=27, trigger=17)
 
-#. Implementing the Continuous Monitoring Loop
+#. Implementierung der kontinuierlichen Überwachungsschleife
    
-   - A ``try`` block with an infinite loop (``while True:``) is used to continuously measure the distance.
-   - Within the loop, ``sensor.distance`` gives the measured distance in meters, which is then converted to centimeters and stored in ``dis``.
-   - The distance is printed with two decimal points of precision using the ``format`` method.
-   - ``sleep(0.3)`` adds a 0.3-second delay between each measurement to control the frequency of readings and reduce CPU load.
+   - Ein ``try``-Block mit einer Endlosschleife (``while True:``) wird verwendet, um kontinuierlich den Abstand zu messen.
+   - Innerhalb der Schleife gibt ``sensor.distance`` die gemessene Entfernung in Metern an, die dann in Zentimeter umgerechnet und in ``dis`` gespeichert wird.
+   - Die Entfernung wird mit zwei Dezimalstellen Präzision unter Verwendung der ``format``-Methode ausgegeben.
+   - ``sleep(0.3)`` fügt eine Verzögerung von 0,3 Sekunden zwischen jeder Messung hinzu, um die Frequenz der Messungen zu steuern und die CPU-Belastung zu reduzieren.
 
    .. raw:: html
 
@@ -126,9 +124,9 @@ Code Analysis
               print('Distance: {:.2f} cm'.format(dis))
               sleep(0.3)
 
-#. Handling KeyboardInterrupt for Graceful Exit
+#. Behandlung von KeyboardInterrupt für einen sauberen Abbruch
    
-   The ``except`` block is used to catch a KeyboardInterrupt (typically Ctrl+C). When this occurs, the script exits the loop gracefully without any additional actions.
+   Der ``except``-Block wird verwendet, um eine KeyboardInterrupt (typischerweise Strg+C) abzufangen. Wenn dies auftritt, beendet das Skript die Schleife sauber ohne zusätzliche Aktionen.
 
    .. code-block:: python
 

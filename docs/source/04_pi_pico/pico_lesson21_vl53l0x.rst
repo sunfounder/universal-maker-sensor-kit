@@ -1,30 +1,28 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-.. _pico_lesson21_vl53l0x:
-
-Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+Lesson 21: Time-of-Flight-Mikro-LIDAR-Entfernungssensor (VL53L0X)
 ====================================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W for measuring distances with the VL53L0X Time of Flight Micro-LIDAR Distance Sensor. We'll walk you through setting up I2C communication between the Raspberry Pi Pico W and the sensor, and then we'll explore configuring the sensor's settings for optimal performance. You will also learn how to adjust the measurement timing budget and VCSEL pulse periods to improve accuracy and range.
+In diesem Unterricht lernen Sie, wie Sie den Raspberry Pi Pico W verwenden, um Entfernungen mit dem VL53L0X Time-of-Flight-Mikro-LIDAR-Entfernungssensor zu messen. Wir führen Sie durch die Einrichtung der I2C-Kommunikation zwischen dem Raspberry Pi Pico W und dem Sensor, und dann werden wir die Konfiguration der Sensoreinstellungen für optimale Leistung erkunden. Sie lernen auch, wie Sie das Messzeitbudget und die VCSEL-Pulsperioden anpassen, um Genauigkeit und Reichweite zu verbessern.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv bequem, ein ganzes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +35,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 10
@@ -54,7 +52,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_21_vl53l0x_bb.png
@@ -109,14 +107,14 @@ Code
        time.sleep_ms(100)  # Short delay of 0.1 seconds to reduce CPU usage
 
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. **Setting up the I2C Interface**:
+#. **Einrichten der I2C-Schnittstelle**:
 
-   The code begins by importing necessary modules and initializing the I2C communication. The ``machine`` module is used to set up I2C with the correct pins of the Raspberry Pi Pico W.
+   Der Code beginnt mit dem Importieren erforderlicher Module und der Initialisierung der I2C-Kommunikation. Das ``machine``-Modul wird verwendet, um I2C mit den richtigen Pins des Raspberry Pi Pico W einzurichten.
 
-   For more information about the ``vl53l0x`` library, please visit |link_micropython_vl53l0x_driver|.
+   Weitere Informationen über die ``vl53l0x``-Bibliothek finden Sie unter |link_micropython_vl53l0x_driver|.
 
    .. code-block:: python
 
@@ -131,17 +129,17 @@ Code Analysis
       i2c = I2C(id=id, sda=sda, scl=scl)
       print(i2c.scan())
 
-#. **Creating VL53L0X Object**:
+#. **Erstellen des VL53L0X-Objekts**:
 
-   An object of ``VL53L0X`` class is created. This object will be used to interact with the VL53L0X sensor.
+   Es wird ein Objekt der Klasse ``VL53L0X`` erstellt. Dieses Objekt wird verwendet, um mit dem VL53L0X-Sensor zu interagieren.
 
    .. code-block:: python
 
       tof = VL53L0X(i2c)
 
-#. **Configuring Measurement Timing Budget**:
+#. **Konfiguration des Messzeitbudgets**:
 
-   The measurement timing budget is set up. This determines how long the sensor takes to perform a measurement. A longer timing budget allows for more accurate readings.
+   Das Messzeitbudget wird festgelegt. Dies bestimmt, wie lange der Sensor benötigt, um eine Messung durchzuführen. Ein längeres Zeitbudget ermöglicht genauere Messungen.
 
    .. code-block:: python
 
@@ -149,18 +147,18 @@ Code Analysis
       print("Budget was:", budget)
       tof.set_measurement_timing_budget(40000)
 
-#. **Setting VCSEL Pulse Periods**:
+#. **Einstellen der VCSEL-Pulsperioden**:
 
-   Here, the pulse periods for the VCSEL (Vertical Cavity Surface Emitting Laser) are set. This affects the range and accuracy of the sensor.
+   Hier werden die Pulsperioden für den VCSEL (Vertical Cavity Surface Emitting Laser) festgelegt. Dies beeinflusst die Reichweite und Genauigkeit des Sensors.
 
    .. code-block:: python
 
       tof.set_Vcsel_pulse_period(tof.vcsel_period_type[0], 12)
       tof.set_Vcsel_pulse_period(tof.vcsel_period_type[1], 8)
 
-#. **Continuous Measurement Loop**:
+#. **Kontinuierliche Messschleife**:
 
-   The sensor continuously measures the distance and prints it. The ``ping()`` method of ``VL53L0X`` class is used to get the distance in millimeters. A small delay is added to reduce CPU usage.
+   Der Sensor misst kontinuierlich die Entfernung und gibt sie aus. Die Methode ``ping()`` der Klasse ``VL53L0X`` wird verwendet, um die Entfernung in Millimetern zu erhalten. Eine kleine Verzögerung wird hinzugefügt, um die CPU-Auslastung zu reduzieren.
 
    .. code-block:: python
 

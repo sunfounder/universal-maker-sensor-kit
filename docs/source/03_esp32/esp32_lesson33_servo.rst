@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson33_servo:
 
-Lesson 33: Servo Motor (SG90)
+Lektion 33: Servomotor (SG90)
 ==================================
 
-In this lesson, you'll learn how to control a servo motor with an ESP32 Development Board. We'll cover the process of making the servo motor scan from 0 to 180 degrees and back, giving you hands-on experience in managing servo movements. This project is ideal for those seeking to grasp motor control and the use of pulse width modulation (PWM) in robotics, utilizing the versatile ESP32 board.
+In dieser Lektion lernen Sie, wie Sie einen Servomotor mit einem ESP32-Entwicklungsboard steuern. Wir werden den Prozess abdecken, den Servomotor von 0 auf 180 Grad und zurück zu bewegen, wodurch Sie praktische Erfahrungen in der Steuerung von Servobewegungen sammeln können. Dieses Projekt ist ideal für diejenigen, die die Motorsteuerung und die Verwendung der Pulsweitenmodulation (PWM) in der Robotik verstehen möchten, unter Verwendung des vielseitigen ESP32-Boards.
 
-Required Components
---------------------------
+Benötigte Komponenten
+-------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
----------------------------
+Verkabelung
+---------------
 
 .. image:: img/Lesson_33_Servo_esp32_bb.png
     :width: 100%
 
 
 Code
----------------------------
+-------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/877c9719-5f1b-4df1-9d3b-9e9500a5df08/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
----------------------------
+Code-Analyse
+---------------
 
-#. Including the Library
+#. Einbinden der Bibliothek
 
-   The ESP32Servo library is included to manage servo motor operations.
+   Die ESP32Servo-Bibliothek wird eingebunden, um die Servomotoroperationen zu verwalten.
 
    .. code-block:: arduino
 
      #include <ESP32Servo.h>
 
-#. Defining Servo and Pin
+#. Definition von Servo und Pin
 
-   A Servo object is created, and a pin is defined for servo control.
+   Ein Servo-Objekt wird erstellt, und ein Pin wird zur Steuerung des Servos definiert.
 
    .. raw:: html
       
@@ -92,9 +92,9 @@ Code Analysis
      Servo myServo;
      const int servoPin = 25;
 
-#. Setting Pulse Width Limits
+#. Festlegen der Pulsbreitengrenzen
 
-   Minimum and maximum pulse widths are defined for servo motion limits.
+   Minimale und maximale Pulsbreiten werden für die Bewegungsgrenzen des Servos definiert.
 
    .. raw:: html
       
@@ -107,8 +107,8 @@ Code Analysis
 
 #. Setup Function
 
-   - The servo is attached to the defined pin and its pulse width range is set.
-   - The PWM frequency is set to 50Hz, standard for servos.
+   - Der Servo wird an den definierten Pin angeschlossen und der Pulsbreitenbereich wird festgelegt.
+   - Die PWM-Frequenz wird auf 50Hz eingestellt, was für Servos standard ist.
 
    .. raw:: html
       
@@ -121,10 +121,10 @@ Code Analysis
        myServo.setPeriodHertz(50);
      }
 
-#. Loop Function
+#. Loop-Funktion
 
-   - Servo rotation is controlled in a loop, moving from 0 to 180 degrees, then back to 0 degrees.
-   - ``writeMicroseconds()`` is used to set the servo position based on pulse width.
+   - Die Drehung des Servos wird in einer Schleife gesteuert, die sich von 0 auf 180 Grad und dann wieder auf 0 Grad bewegt.
+   - ``writeMicroseconds()`` wird verwendet, um die Position des Servos basierend auf der Pulsbreite einzustellen.
 
    .. raw:: html
       

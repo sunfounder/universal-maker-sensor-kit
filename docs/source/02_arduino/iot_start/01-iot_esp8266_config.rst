@@ -1,33 +1,32 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _config_esp8266:
 
-1.1 Configuring the ESP8266
+1.1 Konfiguration des ESP8266
 ===============================
 
-The ESP8266 module that comes with the kit is already pre-burned with AT firmware, but you still need to modify its configuration by following the steps below.
+Das ESP8266-Modul, das mit dem Kit geliefert wird, ist bereits mit der AT-Firmware vorgeflasht, aber Sie müssen die Konfiguration dennoch gemäß den folgenden Schritten ändern.
 
-
-1. Build the circuit.
+1. Bauen Sie die Schaltung auf.
 
    .. image:: img/wiring_r4_configure.png
        :width: 800
 
-2. Open the ``00-Set_software_serial.ino`` file under the path of ``ultimate-sensor-kit\iot_project\wifi\00-Set_software_serial``. Or copy this code into Arduino IDE. And upload the code.
+2. Öffnen Sie die Datei ``00-Set_software_serial.ino`` unter dem Pfad ``ultimate-sensor-kit\iot_project\wifi\00-Set_software_serial`` oder kopieren Sie diesen Code in die Arduino IDE und laden Sie den Code hoch.
 
-   The code establishes a software serial communication using Arduino's SoftwareSerial library, allowing the Arduino to communicate with the ESP8266 module through its digital pins 2 and 3 (as Rx and Tx). It checks for data transfer between them, forwarding received messages from one to the other at a baud rate of 115200. **With this code, you can use the Arduino's serial monitor to send AT firmware commands to the ESP8266 module and receive its responses.**
+   Der Code stellt eine Software-Serielle Kommunikation mithilfe der SoftwareSerial-Bibliothek von Arduino her, wodurch der Arduino über die digitalen Pins 2 und 3 (als Rx und Tx) mit dem ESP8266-Modul kommunizieren kann. Es überprüft den Datentransfer zwischen ihnen und leitet empfangene Nachrichten vom einen zum anderen mit einer Baudrate von 115200 weiter. **Mit diesem Code können Sie den seriellen Monitor von Arduino verwenden, um AT-Firmware-Befehle an das ESP8266-Modul zu senden und dessen Antworten zu empfangen.**
 
    .. code-block:: Arduino
 
@@ -49,32 +48,31 @@ The ESP8266 module that comes with the kit is already pre-burned with AT firmwar
            }
        }
 
-
-3. Click the magnifying glass icon (Serial Monitor) in the upper right corner and set the baud rate to **115200**. (You may have some printed information like me, or you may not, it doesn’t matter, just go to the next step.)
+3. Klicken Sie auf das Lupensymbol (Serial Monitor) in der oberen rechten Ecke und stellen Sie die Baudrate auf **115200** ein. (Es kann sein, dass einige gedruckte Informationen wie bei mir erscheinen oder auch nicht, das spielt keine Rolle, gehen Sie einfach zum nächsten Schritt.)
 
    .. image:: img/esp01_configurie_1.png
 
    .. warning::
         
-        * If ``ready`` doesn't appear, you can try to reset the ESP8266 module(connect RST to GND) and re-open the Serial Monitor.
+        * Wenn ``ready`` nicht erscheint, können Sie versuchen, das ESP8266-Modul zurückzusetzen (RST mit GND verbinden) und den Serial Monitor erneut zu öffnen.
 
-        * In addition, if the result is ``OK``, you may need to re-burn the firmware, please refer to :ref:`burn_firmware` for details. If you still can't solve it, please take a screenshot of the serial monitor and send it to service@sunfounder.com, we will help you solve the problem as soon as possible.
+        * Wenn das Ergebnis ``OK`` lautet, müssen Sie möglicherweise die Firmware neu flashen. Weitere Informationen finden Sie unter :ref:`burn_firmware`. Wenn das Problem weiterhin besteht, machen Sie einen Screenshot des Serial Monitors und senden Sie ihn an service@sunfounder.com. Wir werden Ihnen so schnell wie möglich helfen.
 
-4. Click on **NEWLINE DROPDOWN BOX**, select ``both NL & CR`` in the drop down option, enter ``AT``, if it returns OK, it means ESP8266 has successfully established connection with R4 board.
+4. Klicken Sie auf das **NEWLINE DROPDOWN BOX**, wählen Sie im Dropdown-Menü die Option ``both NL & CR``, geben Sie ``AT`` ein, und wenn es ``OK`` zurückgibt, bedeutet dies, dass das ESP8266 erfolgreich eine Verbindung zum R4-Board hergestellt hat.
 
    .. image:: img/esp01_configurie_2.png
 
    .. image:: img/esp01_configurie_3.png
 
-5. Enter ``AT+CWMODE=3`` and the managed mode will be changed to **Station and AP** coexistence.
+5. Geben Sie ``AT+CWMODE=3`` ein, und der Betriebsmodus wird auf **Station und AP**-Koexistenz geändert.
 
    .. image:: img/esp01_configurie_4.png
 
-.. 6. In order to use the software serial later, you must input ``AT+UART=9600,8,1,0,0`` to modify the ESP8266's baud rate to 9600.
+.. 6. Um die Software-Serielle später verwenden zu können, müssen Sie ``AT+UART=9600,8,1,0,0`` eingeben, um die Baudrate des ESP8266 auf 9600 zu ändern.
 
-..    .. image:: img/esp01_configurie_5.png
+..   .. image:: img/esp01_configurie_5.png
 
 
-**Reference**
+**Referenz**
 
 * |link_esp8266_at|

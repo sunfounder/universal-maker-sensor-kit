@@ -1,30 +1,31 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson32_passive_buzzer:
 
-Lesson 32: Passive Buzzer Module
+Lektion 32: Passives Summermodul
 ==================================
 
-In this lesson, you will learn how to use the passive buzzer on Raspberry Pi Pico W to play single notes and perform music. You will understand how to use PWM (Pulse Width Modulation) to set up the buzzer on GPIO 16 and use the music class in the buzzer_music library to play complete songs. This course will guide you step by step through playing single notes, and then further execute full melodies such as "Happy Birthday". This project is very suitable for beginners, providing a practical way to understand musical tones and integrate external libraries in MicroPython on Raspberry Pi Pico W.
+In dieser Lektion lernen Sie, wie Sie den passiven Summer auf dem Raspberry Pi Pico W verwenden, um einzelne Noten abzuspielen und Musik auszuführen. Sie erfahren, wie Sie PWM (Pulsweitenmodulation) verwenden, um den Summer am GPIO 16 einzurichten, und die Musikklasse in der Buzzer-Musik-Bibliothek, um vollständige Lieder abzuspielen. Dieser Kurs führt Sie Schritt für Schritt durch das Abspielen einzelner Noten und führt dann weitere vollständige Melodien wie "Happy Birthday" aus. Dieses Projekt ist sehr gut für Anfänger geeignet und bietet einen praktischen Weg, um Musiknoten zu verstehen und externe Bibliotheken in MicroPython auf dem Raspberry Pi Pico W zu integrieren.
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_32_Passive_buzzer_pico_bb.png
@@ -107,12 +108,12 @@ Code
 
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Initialization
+#. Initialisierung
 
-   Import necessary modules and initialize the PWM on a specific GPIO pin to control the buzzer.
+   Importieren Sie die erforderlichen Module und initialisieren Sie die PWM an einem bestimmten GPIO-Pin, um den Summer zu steuern.
 
    .. code-block:: python
 
@@ -122,9 +123,9 @@ Code Analysis
        # Initialize the PWM on GPIO 16 for the buzzer
        buzzer = machine.PWM(machine.Pin(16))
 
-#. Defining the tone function
+#. Definition der Tonfunktion
 
-   This function allows playing a single tone at a specified frequency and duration. It sets the frequency and duty cycle (volume) of the PWM signal.
+   Diese Funktion ermöglicht das Abspielen einer einzelnen Note mit einer festgelegten Frequenz und Dauer. Sie legt die Frequenz und den Tastgrad (Lautstärke) des PWM-Signals fest.
 
    .. code-block:: python
 
@@ -135,9 +136,9 @@ Code Analysis
            time.sleep_ms(duration)
            pin.duty_u16(0)
 
-#. Playing individual notes
+#. Abspielen einzelner Noten
 
-   Here, the ``tone`` function is used to play individual notes. The parameters include the note's frequency (in Hz) and its duration (in milliseconds).
+   Hier wird die Funktion "ton" verwendet, um einzelne Noten abzuspielen. Die Parameter umfassen die Frequenz der Note (in Hz) und ihre Dauer (in Millisekunden).
 
    .. code-block:: python
 
@@ -149,13 +150,13 @@ Code Analysis
        tone(buzzer, 523, 250)  # C5
        time.sleep(1)
 
-#. Using the buzzer_music library
+#. Verwendung der Bibliothek "buzzer_music"
 
-   The ``buzzer_music`` library is imported, and a song string is prepared. 
+   Die Bibliothek ``buzzer_music`` wird importiert, und ein Lied-String wird vorbereitet.
 
-   You can find some music on onlinesequencer.net, click edit, select all notes with CTRL + A and then copy them with CTRL + C. Paste the string to ``song``, making sure to remove the "Online Sequencer:120233:" from the start and the ";:" from the end.
+   Sie können einige Musikstücke auf onlinesequencer.net finden, auf Bearbeiten klicken, alle Noten mit STRG + A auswählen und dann mit STRG + C kopieren. Fügen Sie den String in ``song`` ein und stellen Sie sicher, dass Sie "Online Sequencer:120233:" am Anfang und ";:" am Ende entfernen.
 
-   For more information about the ``buzzer_music`` library, please visit |link_buzzer_music|.
+   Für weitere Informationen zur Bibliothek ``buzzer_music`` besuchen Sie bitte |link_buzzer_music|.
 
    .. code-block:: python
 
@@ -165,9 +166,9 @@ Code Analysis
        # https://onlinesequencer.net/2474257 Happy Birthday (by Sudirth)
        song = "0 G4 3 0;3 G4 1 0;4 A4 4 0;8 G4 4 0;12 C5 4 0;16 B4 8 0;24 G4 3 0;27 G4 1 0;28 A4 4 0;32 G4 4 0;36 D5 4 0;40 C5 8 0;48 G4 3 0;51 G4 1 0;52 G5 4 0;56 E5 4 0;60 C5 4 0;64 B4 4 0;68 A4 4 0;72 F5 3 0;75 F5 1 0;76 E5 4 0;80 C5 4 0;84 D5 4 0;88 C5 8 0"
 
-#. Initializing and playing the song
+#. Initialisierung und Abspielen des Liedes
 
-   The ``music`` class is initialized with the song string and the GPIO pin for the buzzer. The music is played in a loop using the ``tick`` method of the ``music`` class.
+   Die Klasse ``music`` wird mit dem Lied-String und dem GPIO-Pin für den Summer initialisiert. Die Musik wird in einer Schleife mit der Methode ``tick`` der Klasse ``music`` abgespielt.
 
    .. code-block:: python
 

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson32_passive_buzzer:
 
-Lesson 32: Passive Buzzer Module
-==================================
+Lektion 32: Passiver Summer Modul
+====================================
 
-In this lesson, you will learn how to play a melody on a passive buzzer module using Arduino. We'll cover programming the Arduino to control the buzzer and create various note durations. This project is ideal for beginners as it provides hands-on experience in producing sound and understanding musical notes within electronic components. You'll also gain practical insight into using the Arduino Uno board and the passive buzzer module.
+In dieser Lektion lernen Sie, wie Sie mit einem passiven Summer-Modul und Arduino eine Melodie abspielen. Wir werden das Programmieren des Arduinos zur Steuerung des Summers und zur Erstellung verschiedener Notenlängen abdecken. Dieses Projekt ist ideal für Anfänger, da es praktische Erfahrungen im Erzeugen von Klängen und im Verständnis von Musiknoten innerhalb elektronischer Komponenten bietet. Außerdem erhalten Sie praktische Einblicke in die Verwendung des Arduino Uno-Boards und des passiven Summer-Moduls.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -52,7 +52,7 @@ You can also buy them separately from the links below.
         - |link_passive_buzzer_module_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_32_passive_buzzer_module_uno_bb.png
@@ -66,23 +66,23 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/eebc46ab-2a9d-4731-8778-3c8f07b0003b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-1. Including the pitches library:
-   This library provides the frequency values for various musical notes, allowing you to use musical notation in your code.
+1. Einbinden der Pitches-Bibliothek:
+   Diese Bibliothek stellt die Frequenzwerte für verschiedene Musiknoten bereit, sodass Sie musikalische Notation in Ihrem Code verwenden können.
 
    .. code-block:: arduino
        
       #include "pitches.h"
 
-2. Defining constants and arrays:
+2. Definition von Konstanten und Arrays:
 
-   * ``buzzerPin`` is the digital pin on the Arduino where the buzzer is connected.
+   * ``buzzerPin`` ist der digitale Pin am Arduino, an den der Summer angeschlossen ist.
 
-   * ``melody[]`` is an array that stores the sequence of notes to be played.
+   * ``melody[]`` ist ein Array, das die Sequenz der zu spielenden Noten speichert.
 
-   * ``noteDurations[]`` is an array that stores the duration of each note in the melody.
+   * ``noteDurations[]`` ist ein Array, das die Dauer jeder Note in der Melodie speichert.
 
    .. raw:: html
       
@@ -98,15 +98,16 @@ Code Analysis
         4, 8, 8, 4, 4, 4, 4, 4
       };
 
-3. Playing the melody:
 
-   * The ``for`` loop iterates over each note in the melody.
+3. Die Melodie abspielen:
 
-   * The ``tone()`` function plays a note on the buzzer for a specific duration.
+   * Die ``for``-Schleife iteriert über jede Note in der Melodie.
 
-   * A delay is added between notes to distinguish them.
+   * Die Funktion ``tone()`` spielt eine Note auf dem Summer für eine bestimmte Dauer.
 
-   * The ``noTone()`` function stops the sound.
+   * Eine Verzögerung wird zwischen den Noten hinzugefügt, um sie zu unterscheiden.
+
+   * Die Funktion ``noTone()`` stoppt den Ton.
 
    .. raw:: html
       
@@ -124,5 +125,6 @@ Code Analysis
         }
       }
 
-4. Empty loop function:
-   Since the melody is played only once in the setup, there's no code in the loop function.
+4. Leere Loop-Funktion:
+   Da die Melodie nur einmal im Setup abgespielt wird, gibt es keinen Code in der Loop-Funktion.
+

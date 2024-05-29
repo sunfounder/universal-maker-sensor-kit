@@ -1,33 +1,33 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson10_pcf8591:
 
-Lesson 10: PCF8591 ADC DAC Converter Module
+Lektion 10: PCF8591 ADC-DAC Konverter Modul
 ==============================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Der Raspberry Pi verfügt nicht über analoge Eingänge, daher benötigt er ein Modul wie das :ref:`cpn_pcf8591`, um analoge Signale zur Verarbeitung auszulesen.
 
-In this lesson, you will learn how to use a Raspberry Pi to interact with the PCF8591 module for analog-to-digital and digital-to-analog conversion. We’ll cover reading analog values from input AIN0, sending these values to the DAC(AOUT). The module's potentiometer is connected to AIN0 using jumper caps, and the D2 LED on the module is connected to AOUT, so you can see that the brightness of D2 LED changes as you rotate the potentiometer.
+In dieser Lektion lernen Sie, wie Sie einen Raspberry Pi verwenden, um mit dem PCF8591-Modul für Analog-Digital- und Digital-Analog-Umwandlung zu interagieren. Wir werden das Auslesen von analogen Werten vom Eingang AIN0 und das Senden dieser Werte an den DAC (AOUT) behandeln. Das Potentiometer des Moduls ist über Jumper-Kappen mit AIN0 verbunden, und die D2-LED auf dem Modul ist mit AOUT verbunden, sodass Sie sehen können, dass die Helligkeit der D2-LED sich ändert, wenn Sie das Potentiometer drehen.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+-----------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -56,16 +56,14 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. note::
-   In this project, we utilized the AIN0 pin of the PCF8591 module, which is linked to a potentiometer on the module through a jumper cap. **Please make sure that the jumper cap on the module is correctly placed.** For more details, please refer to the PCF8591 module :ref:`schematic <cpn_pcf8591_sch>`.
+   In diesem Projekt haben wir den AIN0-Pin des PCF8591-Moduls verwendet, der über einen Jumper-Kappen mit einem Potentiometer auf dem Modul verbunden ist. **Bitte stellen Sie sicher, dass der Jumper-Kappen korrekt auf dem Modul platziert ist.** Weitere Details finden Sie im :ref:`schematic <cpn_pcf8591_sch>`.
 
 .. image:: img/Lesson_10_PCF8591_pi_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -101,34 +99,33 @@ Code
        print("Exit")
 
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-1. **Importing Libraries**:
+1. **Bibliotheken importieren**:
 
-   The script starts by importing required libraries. The ``PCF8591`` library is used for interacting with the ADC/DAC module, and ``time`` is for creating delays.
+   Das Skript beginnt mit dem Import der erforderlichen Bibliotheken. Die ``PCF8591``-Bibliothek wird für die Interaktion mit dem ADC/DAC-Modul verwendet, und ``time`` dient zur Erstellung von Verzögerungen.
 
    .. code-block:: python
 
       import PCF8591 as ADC  # Import the library for the PCF8591 module
       import time  # Import the time library for adding delays
 
-2. **Initializing PCF8591 Module**:
+2. **PCF8591-Modul initialisieren**:
 
-   The PCF8591 module is initialized at the I²C address 0x48. This step is crucial for setting up communication between the Raspberry Pi and the module.
+   Das PCF8591-Modul wird an der I²C-Adresse 0x48 initialisiert. Dieser Schritt ist entscheidend, um die Kommunikation zwischen dem Raspberry Pi und dem Modul einzurichten.
 
    .. code-block:: python
 
       ADC.setup(0x48)  # Initialize the PCF8591 module at I2C address 0x48
 
-3. **Reading from Potentiometer and Writing to LED**:
+3. **Werte vom Potentiometer lesen und an die LED schreiben**:
 
-   Within a ``try`` block, a continuous ``while True`` loop reads the value from the potentiometer connected to AIN0 and writes this value to the DAC connected to AOUT. Jumper caps link the module's potentiometer to AIN0, and the D2 LED is connected to AOUT; please refer to the PCF8591 module :ref:`schematic <cpn_pcf8591_sch>` for details. The brightness of the LED changes as the potentiometer is rotated.
+   Innerhalb eines ``try``-Blocks liest eine kontinuierliche ``while True``-Schleife den Wert vom Potentiometer, das mit AIN0 verbunden ist, und schreibt diesen Wert an den DAC, der mit AOUT verbunden ist. Jumper-Kappen verbinden das Potentiometer des Moduls mit AIN0, und die D2-LED ist mit AOUT verbunden; weitere Details finden Sie im :ref:`Schaltplan des PCF8591-Moduls <cpn_pcf8591_sch>`. Die Helligkeit der LED ändert sich, wenn das Potentiometer gedreht wird.
 
-   - Use ``ADC.read(channel)`` to read the analog input of the specific channel. The channel range from 0 to 3 represents AIN0 to AIN3.
+   - Verwenden Sie ``ADC.read(channel)``, um den analogen Eingang des spezifischen Kanals auszulesen. Der Kanalbereich von 0 bis 3 repräsentiert AIN0 bis AIN3.
 
-   - Use ``ADC.write(Value)`` to set the analog output of the AOUT pin with a Value range from 0 to 255.
+   - Verwenden Sie ``ADC.write(Value)``, um den analogen Ausgang des AOUT-Pins mit einem Wertbereich von 0 bis 255 zu setzen.
 
    .. raw:: html
 
@@ -144,9 +141,9 @@ Code Analysis
               ADC.write(tmp)
               time.sleep(0.2)
 
-4. **Handling Keyboard Interrupts**:
+4. **Tastaturunterbrechungen behandeln**:
 
-   A ``KeyboardInterrupt`` (such as pressing CTRL+C) allows for a graceful exit from the loop without generating errors.
+   Eine ``KeyboardInterrupt`` (wie das Drücken von CTRL+C) ermöglicht einen ordnungsgemäßen Ausstieg aus der Schleife, ohne Fehler zu erzeugen.
 
    .. code-block:: python
 

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson26_lcd:
 
-Lesson 26: I2C LCD 1602
+Lektion 26: I2C LCD 1602
 ==================================
 
-In this lesson, you will learn the basics of displaying text on an LCD screen using a Raspberry Pi. We'll start by showing you how to connect a standard LCD to the Raspberry Pi using the I2C interface. You'll learn how to set up the LCD with simple parameters like the Raspberry Pi model and I2C address. Then, we'll walk you through writing a basic Python script to display messages like "Hello World!" on the screen. This straightforward project is aimed at beginners, offering a foundational introduction to interfacing hardware with the Raspberry Pi and basic Python programming.
+In dieser Lektion lernen Sie die Grundlagen der Textanzeige auf einem LCD-Bildschirm mithilfe eines Raspberry Pi. Wir beginnen damit, Ihnen zu zeigen, wie Sie ein standardmäßiges LCD über die I2C-Schnittstelle an den Raspberry Pi anschließen. Sie lernen, wie Sie das LCD mit einfachen Parametern wie dem Raspberry Pi-Modell und der I2C-Adresse einrichten. Anschließend führen wir Sie durch das Schreiben eines einfachen Python-Skripts, um Nachrichten wie „Hello World!“ auf dem Bildschirm anzuzeigen. Dieses unkomplizierte Projekt richtet sich an Anfänger und bietet eine grundlegende Einführung in die Hardware-Integration mit dem Raspberry Pi und die grundlegende Python-Programmierung.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+----------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -51,13 +51,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_i2c_lcd1602`
         - |link_i2clcd1602_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_26_LCD1602_Pi_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -80,49 +78,48 @@ Code
    # Clear the LCD display
    lcd.clear()
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Import Libraries
+#. Bibliotheken importieren
    
-   Import the ``time`` module for creating delays and the ``LCD`` module for controlling the LCD.
+   Importieren Sie das ``time``-Modul für Verzögerungen und das ``LCD``-Modul zur Steuerung des LCDs.
 
-   For more detail about the ``LCD`` library, please refer to |link_lcd1602_python_driver_pi|.
+   Weitere Informationen zur ``LCD``-Bibliothek finden Sie unter |link_lcd1602_python_driver_pi|.
 
    .. code-block:: python
 
       import time
       from LCD import LCD
 
-#. Initialize the LCD
+#. Initialisierung des LCD
    
-   Create an ``LCD`` object with specific parameters: the Raspberry Pi revision, the I2C address of the LCD, and the backlight status. In this case, Raspberry Pi revision 2(and higher version), I2C address 0x27, and backlight enabled.
+   Erstellen Sie ein ``LCD``-Objekt mit spezifischen Parametern: die Raspberry Pi-Revision, die I2C-Adresse des LCDs und den Hintergrundbeleuchtungsstatus. In diesem Fall Raspberry Pi-Revision 2 (und höher), I2C-Adresse 0x27 und Hintergrundbeleuchtung aktiviert.
 
    .. code-block:: python
 
       lcd = LCD(2, 0x27, True)
 
-#. Display Messages on the LCD
+#. Nachrichten auf dem LCD anzeigen
    
-   Use the ``message`` method of the ``LCD`` object to display text on the LCD. The first argument is the text, and the second argument is the line number.
+   Verwenden Sie die ``message``-Methode des ``LCD``-Objekts, um Text auf dem LCD anzuzeigen. Das erste Argument ist der Text und das zweite Argument die Zeilennummer.
 
    .. code-block:: python
 
       lcd.message("Hello World!", 1)
       lcd.message("    - Sunfounder", 2)
 
-#. Keep the Messages Displayed
+#. Nachrichten auf dem LCD anzeigen lassen
    
-   Pause the program for 5 seconds, keeping the messages on the LCD during this time.
+   Pausieren Sie das Programm für 5 Sekunden, um die Nachrichten während dieser Zeit auf dem LCD zu halten.
 
    .. code-block:: python
 
       time.sleep(5)
 
-#. Clear the LCD Display
+#. Das LCD-Display löschen
    
-   After the delay, clear the display using the ``clear`` method of the ``LCD`` object.
+   Löschen Sie nach der Verzögerung das Display mit der ``clear``-Methode des ``LCD``-Objekts.
 
    .. code-block:: python
 

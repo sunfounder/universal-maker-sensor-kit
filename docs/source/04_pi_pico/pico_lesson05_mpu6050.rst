@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson05_mpu6050:
 
-Lesson 05: Gyroscope & Accelerometer Module (MPU6050)
-==========================================================
+Lektion 05: Gyroskop- & Beschleunigungsmesser-Modul (MPU6050)
+=============================================================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W with the MPU6050 module, which combines a gyroscope and accelerometer. You'll discover how to connect the MPU6050 to the Raspberry Pi Pico W and read its acceleration and gyroscopic data using MicroPython. The lesson will guide you through writing a script to continuously display the X, Y, and Z values of both the accelerometer and gyroscope. 
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W mit dem MPU6050-Modul verwenden, das ein Gyroskop und einen Beschleunigungsmesser kombiniert. Sie werden erfahren, wie Sie das MPU6050 mit dem Raspberry Pi Pico W verbinden und seine Beschleunigungs- und gyroskopischen Daten unter Verwendung von MicroPython lesen. Die Lektion wird Sie durch das Schreiben eines Skripts führen, um kontinuierlich die X-, Y- und Z-Werte sowohl des Beschleunigungsmessers als auch des Gyroskops anzuzeigen.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+--------------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_05_mpu6050_circuit_bb.png
@@ -66,12 +66,11 @@ Code
 
 .. note::
 
-    * Open the ``05_mpu6050_module.py`` file under the path of ``universal-maker-sensor-kit-main/pico/Lesson_05_MPU6050_Module`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it. For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Öffnen Sie die Datei ``05_mpu6050_module.py`` im Pfad ``universal-maker-sensor-kit-main/pico/Lesson_05_MPU6050_Module`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen. Für detaillierte Anleitungen lesen Sie bitte :ref:`open_run_code_py`.
     
+    * Hier müssen Sie die Dateien ``imu.py`` und ``vector3d.py`` verwenden. Bitte überprüfen Sie, ob sie auf dem Pico W hochgeladen wurden. Für eine detaillierte Anleitung siehe :ref:`add_libraries_py`.
+    
+    * Vergessen Sie nicht, auf den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke zu klicken.
 
 .. code-block:: python
 
@@ -92,23 +91,22 @@ Code
        print("-" * 50)
        print("x: %s, y: %s, z: %s" % (mpu.accel.x, mpu.accel.y, mpu.accel.z))
        time.sleep(0.1)
-   
+       
        # Print gyroscope data (x, y, z)
        print("X: %s, Y: %s, Y: %s" % (mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
        time.sleep(0.1)
-   
+       
        # Delay between readings
        time.sleep(0.5)
-   
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Importing Libraries and Initializing I2C
+#. Bibliotheken importieren und I2C initialisieren
 
-   The code starts by importing necessary libraries. The ``imu`` library is used to read the values of the MPU6050 sensor, and ``machine`` allows controlling the hardware features of the Raspberry Pi Pico W. I2C is initialized using specific pins (SDA and SCL) for data communication.
+   Der Code beginnt mit dem Importieren der benötigten Bibliotheken. Die ``imu``-Bibliothek wird verwendet, um die Werte des MPU6050-Sensors zu lesen, und ``machine`` ermöglicht die Steuerung der Hardwarefunktionen des Raspberry Pi Pico W. I2C wird unter Verwendung spezifischer Pins (SDA und SCL) für die Datenkommunikation initialisiert.
 
-   For more information about the ``imu`` library, please visit |link_imu|.
+   Weitere Informationen zur ``imu``-Bibliothek finden Sie unter |link_imu|.
 
    .. code-block:: python
 
@@ -118,17 +116,17 @@ Code Analysis
 
       i2c = I2C(1, sda=Pin(20), scl=Pin(21), freq=400000)
 
-#. Creating MPU6050 Object
+#. Erstellen des MPU6050-Objekts
 
-   An object of the MPU6050 sensor is created by passing the initialized I2C. This object will be used to access sensor data.
+   Ein Objekt des MPU6050-Sensors wird erstellt, indem das initialisierte I2C übergeben wird. Dieses Objekt wird verwendet, um auf Sensordaten zuzugreifen.
 
    .. code-block:: python
 
       mpu = MPU6050(i2c)
 
-#. Reading and Printing Sensor Data in a Loop
+#. Lesen und Drucken der Sensordaten in einer Schleife
 
-   The code then enters an infinite loop where it continually reads and prints accelerometer and gyroscope data. ``time.sleep`` is used to create a delay between successive readings.
+   Der Code tritt dann in eine Endlosschleife ein, in der er kontinuierlich die Beschleunigungsmesser- und Gyroskopdaten liest und druckt. ``time.sleep`` wird verwendet, um eine Verzögerung zwischen aufeinanderfolgenden Messungen zu erzeugen.
 
    .. code-block:: python
 

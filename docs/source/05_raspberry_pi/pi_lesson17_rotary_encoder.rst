@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson17_rotary_encoder:
 
-Lesson 17: Rotary Encoder Module
+Lektion 17: Drehgeber-Modul
 ==================================
 
-In this lesson, you will learn how to connect and program a rotary encoder with a Raspberry Pi. We will provide step-by-step instructions on writing a Python script that monitors the encoder's position and button state, with outputs displayed in the console. 
+In dieser Lektion lernen Sie, wie Sie einen Drehgeber mit einem Raspberry Pi verbinden und programmieren. Wir bieten Ihnen Schritt-für-Schritt-Anleitungen zum Schreiben eines Python-Skripts, das die Position und den Tasterzustand des Drehgebers überwacht und die Ausgaben in der Konsole anzeigt.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+-----------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,8 +53,7 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_17_Rotary_encoder_Pi_bb.png
@@ -95,36 +94,35 @@ Code
        print("Program terminated")  # Print message when program is terminated via keyboard interrupt
 
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
    
-   The script starts with importing the ``RotaryEncoder`` and ``Button`` classes from gpiozero for interfacing with the rotary encode, respectively, and the ``sleep`` function from the time module for adding delays.
+   Das Skript beginnt mit dem Import der Klassen ``RotaryEncoder`` und ``Button`` aus der gpiozero-Bibliothek zur Ansteuerung des Drehgebers sowie der Funktion ``sleep`` aus dem time-Modul zur Implementierung von Verzögerungen.
 
    .. code-block:: python
 
       from gpiozero import RotaryEncoder, Button  
       from time import sleep  
 
-#. Initializing the Rotary Encoder and Button
+#. Initialisierung des Drehgebers und Tasters
    
-   - This line initializes a ``RotaryEncoder`` object from the ``gpiozero`` library. The encoder is connected to GPIO pins 17 and 27. 
-   - The ``wrap=True`` parameter means the encoder's value will reset after reaching ``max_steps`` (16 in this case), mimicking a circular dial behavior.
-   - Here, a ``Button`` object is created, connected to GPIO pin 22. This object will be used to detect when the rotary encoder is pressed.
+   - Diese Zeile initialisiert ein ``RotaryEncoder``-Objekt aus der ``gpiozero``-Bibliothek. Der Drehgeber ist mit den GPIO-Pins 17 und 27 verbunden. 
+   - Der Parameter ``wrap=True`` bedeutet, dass der Wert des Drehgebers nach Erreichen von ``max_steps`` (in diesem Fall 16) zurückgesetzt wird, was ein Verhalten wie bei einem kreisförmigen Zifferblatt nachahmt.
+   - Hier wird ein ``Button``-Objekt erstellt, das mit dem GPIO-Pin 22 verbunden ist. Dieses Objekt wird verwendet, um zu erkennen, wann der Drehgeber gedrückt wird.
 
    .. code-block:: python
 
       encoder = RotaryEncoder(a=17, b=27, wrap=True, max_steps=16)
       button = Button(22)
 
-#. Implementing the Monitoring Loop
+#. Implementierung der Überwachungsschleife
    
-   - An infinite loop (``while True:``) is used to continuously monitor the rotary encoder.
-   - The current value of the rotary encoder is read and compared with its last recorded value. If there's a change, the new value is printed.
-   - The script checks if the rotary encoder is pressed. On detection of a press, it prints a message and waits until the rotary encoder is released.
-   - A ``sleep(0.1)`` is included to add a brief delay, preventing excessive CPU usage.
+   - Eine Endlosschleife (``while True:``) wird verwendet, um den Drehgeber kontinuierlich zu überwachen.
+   - Der aktuelle Wert des Drehgebers wird ausgelesen und mit seinem zuletzt aufgezeichneten Wert verglichen. Bei einer Änderung wird der neue Wert ausgegeben.
+   - Das Skript überprüft, ob der Drehgeber gedrückt wird. Bei Erkennung eines Tastendrucks wird eine Nachricht ausgegeben und gewartet, bis der Drehgeber losgelassen wird.
+   - Ein ``sleep(0.1)`` wird eingefügt, um eine kurze Verzögerung hinzuzufügen und eine übermäßige CPU-Auslastung zu verhindern.
 
    .. raw:: html
 

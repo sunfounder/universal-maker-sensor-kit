@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_oled:
 
-OLED Display Module (SSD1306)
+OLED-Displaymodul (SSD1306)
 =================================
 
 .. image:: img/27_OLED.png
@@ -22,28 +22,27 @@ OLED Display Module (SSD1306)
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
-An OLED (Organic Light-Emitting Diode) display module is a device that can display text, graphics and images on a thin and flexible screen using organic materials that emit light when electric current is applied.
+Ein OLED (Organic Light-Emitting Diode) Displaymodul ist ein Gerät, das Text, Grafiken und Bilder auf einem dünnen und flexiblen Bildschirm anzeigen kann, wobei organische Materialien verwendet werden, die Licht emittieren, wenn elektrischer Strom angelegt wird.
 
-The SSD1306 I2C OLED display module operates by controlling an OLED (Organic Light-Emitting Diode) display using the powerful single-chip CMOS OLED driver controller, the SSD1306. This controller manages all RAM buffering and demands minimal effort from the connected microcontroller, such as an Arduino. OLED displays are renowned for their extremely light and potentially flexible nature, producing brighter and crisper images compared to traditional displays due to being almost paper-thin.
+Das SSD1306 I2C OLED-Displaymodul steuert ein OLED-Display (Organic Light-Emitting Diode) mit dem leistungsstarken CMOS-OLED-Treibercontroller SSD1306. Dieser Controller verwaltet das gesamte RAM-Buffering und erfordert nur minimalen Aufwand vom angeschlossenen Mikrocontroller, wie zum Beispiel einem Arduino. OLED-Displays sind für ihre extrem leichte und potenziell flexible Natur bekannt und erzeugen hellere und schärfere Bilder im Vergleich zu herkömmlichen Displays, da sie nahezu papierdünn sind.
 
-The main advantage of an OLED Display is that it emits its own light and doesn’t need another source of backlight. Due to this, OLED Displays often have better contrast, brightness and viewing angles when compared to LCD displays.
+Der Hauptvorteil eines OLED-Displays besteht darin, dass es sein eigenes Licht emittiert und keine zusätzliche Hintergrundbeleuchtung benötigt. Daher haben OLED-Displays oft besseren Kontrast, Helligkeit und Betrachtungswinkel im Vergleich zu LCD-Displays.
 
-Another important feature of OLED Displays is deep black levels. Since each pixel emits its own light in an OLED Display, to produce black color, the individual pixel can be turned OFF.
+Ein weiteres wichtiges Merkmal von OLED-Displays sind tiefschwarze Pegel. Da jedes Pixel in einem OLED-Display sein eigenes Licht emittiert, kann zur Erzeugung der schwarzen Farbe das einzelne Pixel ausgeschaltet werden.
 
-Due to lower power consumption (only pixels which are lit up draw current), OLED displays are also popular in battery operated devices like Smart Watches, Health Trackers and other wearables.
+Aufgrund des geringeren Stromverbrauchs (nur beleuchtete Pixel ziehen Strom) sind OLED-Displays auch in batteriebetriebenen Geräten wie Smartwatches, Gesundheitstrackern und anderen Wearables beliebt.
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VIN**: This is the power pin. 
-* **GND**: Common ground for power and logic.
-* **SCL**: The serial clock pin for the I2C interface.
-* **SDA**: The serial data pin for the I2C interface.
+* **VIN**: Dies ist der Stromversorgungspin.
+* **GND**: Gemeinsame Masse für Strom und Logik.
+* **SCL**: Der serielle Taktpin für die I2C-Schnittstelle.
+* **SDA**: Der serielle Datenpin für die I2C-Schnittstelle.
 
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson27_oled` (Arduino UNO)
 * :ref:`esp32_lesson27_oled` (ESP32)

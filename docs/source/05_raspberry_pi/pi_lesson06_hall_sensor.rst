@@ -1,33 +1,33 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson06_hall_sensor:
 
-Lesson 06: Hall Sensor Module
+Lektion 06: Hallsensormodul
 ==================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Der Raspberry Pi verfügt nicht über analoge Eingabemöglichkeiten, daher benötigt er ein Modul wie den :ref:`cpn_pcf8591`, um analoge Signale zur Verarbeitung zu lesen.
 
-In this lesson, we will learn how to use a Raspberry Pi to read from a hall sensor module. You will learn how to connect a photoresistor module to the PCF8591 for analog-to-digital conversion and monitor its output in real-time using Python. Additionally, you will explore reading analog values and interpreting them to detect the presence and type of magnetic poles.
+In dieser Lektion lernen wir, wie man mit einem Raspberry Pi von einem Hallsensormodul liest. Sie lernen, wie man ein Fotowiderstandsmodul an den PCF8591 für die Analog-Digital-Umwandlung anschließt und dessen Ausgang in Echtzeit mit Python überwacht. Außerdem werden Sie erkunden, wie man analoge Werte liest und interpretiert, um das Vorhandensein und die Art von Magnetpolen zu erkennen.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -59,7 +59,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_06_Hall_Sensor_Module_pi_bb.png
@@ -92,27 +92,27 @@ Code
    except KeyboardInterrupt:
        print("Exit")  # Exit on CTRL+C
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. **Import Libraries**:
+#. **Bibliotheken importieren**:
 
    .. code-block:: python
       
       import PCF8591 as ADC  # Import PCF8591 module
       import time  # Import time for delay
 
-   This imports necessary libraries. ``PCF8591`` is used to interact with the ADC module, and ``time`` is for implementing delays in the loop.
+   Diese Importe sind notwendig. ``PCF8591`` wird zur Interaktion mit dem ADC-Modul verwendet, und ``time`` dient zur Implementierung von Verzögerungen in der Schleife.
 
-#. **Initialize ADC Module**:
+#. **ADC-Modul initialisieren**:
 
    .. code-block:: python
       
       ADC.setup(0x48)  # Initialize PCF8591 at address 0x48
 
-   Sets up the PCF8591 module. ``0x48`` is the I2C address of the PCF8591 module. This line prepares the Raspberry Pi to communicate with the module.
+   Das PCF8591-Modul wird eingerichtet. ``0x48`` ist die I2C-Adresse des PCF8591-Moduls. Diese Zeile bereitet den Raspberry Pi auf die Kommunikation mit dem Modul vor.
 
-#. **Main Loop for Reading Sensor Data**:
+#. **Hauptschleife zur Sensorabfrage**:
 
    .. code-block:: python
 
@@ -121,9 +121,9 @@ Code Analysis
               sensor_value = ADC.read(1) # Read from hall sensor module at AIN1
               print(sensor_value, end="")  # Print the sensor raw data
 
-   In this loop, ``sensor_value`` is read continuously from the Hall sensor (connected to AIN1 on the PCF8591). The ``print`` statement outputs the raw sensor data.
+   In dieser Schleife wird ``sensor_value`` kontinuierlich vom Hallsensor (angeschlossen an AIN1 des PCF8591) gelesen. Die ``print``-Anweisung gibt die Rohdaten des Sensors aus.
 
-#. **Determine Magnet Polarity**:
+#. **Magnetpolarität bestimmen**:
 
    .. code-block:: python
       
@@ -132,12 +132,12 @@ Code Analysis
                   print(" - South pole detected")   # Determined as South pole.
               elif sensor_value <= 80:
                   print(" - North pole detected")   # Determined as North pole.
- 
-   Here, the code determines the polarity of the magnet. If ``sensor_value`` is 180 or higher, it is identified as the South pole. If it is 80 or lower, it is considered the North pole. You need to modify these two threshold values based on your actual measurement results.
 
-   The Hall sensor module is equipped with a 49E linear Hall effect sensor, which can measure the polarity of the magnetic field's north and south poles as well as the relative strength of the magnetic field. If you place a magnet's south pole near the side marked with 49E (the side with text engraved on it), the value read by the code will increase linearly in proportion to the applied magnetic field strength. Conversely, if you place a north pole near this side, the value read by the code will decrease linearly in proportion to that magnetic field strength. For more details, please refer to :ref:`cpn_hall`.
+   Hier bestimmt der Code die Polarität des Magneten. Wenn ``sensor_value`` 180 oder höher ist, wird er als Südpol identifiziert. Wenn er 80 oder niedriger ist, wird er als Nordpol betrachtet. Diese Schwellenwerte sollten basierend auf Ihren tatsächlichen Messergebnissen angepasst werden.
 
-#. **Delay and Exception Handling**:
+   Das Hallsensormodul ist mit einem 49E linearen Halleffekt-Sensor ausgestattet, der die Polarität der Magnetfeld-Nord- und Südpole sowie die relative Stärke des Magnetfelds messen kann. Wenn Sie den Südpol eines Magneten in die Nähe der mit 49E gekennzeichneten Seite (die Seite mit der Gravur) bringen, erhöht sich der vom Code gelesene Wert linear proportional zur angelegten Magnetfeldstärke. Umgekehrt sinkt der gelesene Wert linear proportional zur Magnetfeldstärke, wenn Sie einen Nordpol in die Nähe dieser Seite bringen. Weitere Details finden Sie unter :ref:`cpn_hall`.
+
+#. **Verzögerung und Ausnahmebehandlung**:
 
    .. code-block:: python
 
@@ -146,4 +146,4 @@ Code Analysis
       except KeyboardInterrupt:
           print("Exit")  # Exit on CTRL+C
 
-   ``time.sleep(0.2)`` creates a 0.2-second delay between each loop iteration to prevent excessive reading speed. The ``except`` block catches a keyboard interrupt (CTRL+C) to exit the program gracefully.
+   ``time.sleep(0.2)`` erzeugt eine Verzögerung von 0,2 Sekunden zwischen jeder Schleifeniteration, um eine übermäßige Abtastrate zu verhindern. Der ``except``-Block fängt eine Tastaturunterbrechung (STRG+C) ab, um das Programm sauber zu beenden.

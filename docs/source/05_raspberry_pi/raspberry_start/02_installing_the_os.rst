@@ -1,27 +1,28 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _install_os:
 
-Write Raspberry Pi OS to SD Card
+Raspberry Pi OS auf SD-Karte schreiben
 ========================================
 
-**Step 1**
+**Schritt 1**
 
-The Raspberry Pi team offers a user-friendly graphical SD card writing tool compatible with Mac OS, Ubuntu 18.04, and Windows. This is the most convenient option for most users, as it automatically downloads and installs the OS image to the SD card.
+Das Raspberry Pi-Team bietet ein benutzerfreundliches grafisches SD-Karten-Schreibprogramm an, das mit Mac OS, Ubuntu 18.04 und Windows kompatibel ist. Dies ist die bequemste Option für die meisten Benutzer, da es das Betriebssystemabbild automatisch herunterlädt und auf die SD-Karte installiert.
 
-Visit the download page: https://www.raspberrypi.org/software/. Choose the **Raspberry Pi Imager** for your operating system. Once downloaded, open it to begin the installation.
+Besuchen Sie die Download-Seite: https://www.raspberrypi.org/software/. Wählen Sie den **Raspberry Pi-Imager** für Ihr Betriebssystem aus. Sobald heruntergeladen, öffnen Sie es, um mit der Installation zu beginnen.
 
 .. image:: img/installing_01.png
     :align: center
@@ -30,9 +31,9 @@ Visit the download page: https://www.raspberrypi.org/software/. Choose the **Ras
 
     <br/>
 
-**Step 2**
+**Schritt 2**
 
-Upon launching the installer, your OS might prompt a security warning. For instance, Windows may show this message:
+Beim Starten des Installationsprogramms kann Ihr Betriebssystem eine Sicherheitswarnung anzeigen. Zum Beispiel zeigt Windows möglicherweise diese Meldung an:
 
 .. image:: img/installing_02.png
     :align: center
@@ -41,12 +42,12 @@ Upon launching the installer, your OS might prompt a security warning. For insta
 
     <br/>
 
-If you see this warning, click on **More info** and then choose **Run anyway**. Continue by following the instructions on your screen to complete the installation of the Raspberry Pi Imager.
+Wenn Sie diese Warnung sehen, klicken Sie auf **Weitere Informationen** und wählen Sie dann **Trotzdem ausführen**. Fahren Sie fort, indem Sie den Anweisungen auf Ihrem Bildschirm folgen, um die Installation des Raspberry Pi-Imagers abzuschließen.
 
 
-**Step 3**
+**Schritt 3**
 
-After installing the Imager, open the application by clicking the **Raspberry Pi Imager** icon or executing ``rpi-imager``.
+Nach der Installation des Imagers öffnen Sie die Anwendung, indem Sie auf das Symbol **Raspberry Pi-Imager** klicken oder ``rpi-imager`` ausführen.
 
 .. image:: img/installing_03.png
     :align: center
@@ -55,9 +56,9 @@ After installing the Imager, open the application by clicking the **Raspberry Pi
 
     <br/>
 
-**Step 4**
+**Schritt 4**
 
-Click **Choose device** and select your Raspberry Pi model from the list.
+Klicken Sie auf **Gerät auswählen** und wählen Sie Ihr Raspberry Pi-Modell aus der Liste aus.
 
 .. image:: img/installing_04.png
     :align: center
@@ -66,9 +67,9 @@ Click **Choose device** and select your Raspberry Pi model from the list.
 
     <br/>
 
-**Step 5**
+**Schritt 5**
 
-Next, click **Choose OS** and pick an operating system to install. 
+Klicken Sie anschließend auf **Betriebssystem auswählen** und wählen Sie ein Betriebssystem zur Installation aus.
 
 .. image:: img/installing_05.png
     :align: center
@@ -77,13 +78,13 @@ Next, click **Choose OS** and pick an operating system to install.
 
     <br/>
 
-**Step 6**
+**Schritt 6**
 
-Insert your preferred storage medium, such as a microSD card, into an external or integrated SD card reader. Next, click "Choose Storage" and select your device.
+Legen Sie Ihr bevorzugtes Speichermedium, wie z. B. eine microSD-Karte, in ein externes oder integriertes SD-Kartenlesegerät ein. Klicken Sie anschließend auf "Speicher auswählen" und wählen Sie Ihr Gerät aus.
 
 .. note:: 
 
-   **Ensure you select the correct storage device when multiple devices are connected**; they can often be distinguished by their capacity. If uncertain, disconnect the other devices. **Be aware that installing the system on the chosen storage device will erase all data on it.**
+   Stellen Sie sicher, dass Sie das richtige Speichergerät auswählen, wenn mehrere Geräte verbunden sind; sie können oft anhand ihrer Kapazität unterschieden werden. Wenn Sie unsicher sind, trennen Sie die anderen Geräte. Seien Sie sich bewusst, dass das Installieren des Systems auf dem ausgewählten Speichergerät alle Daten darauf löschen wird.
 
 .. image:: img/installing_06.png
     :align: center
@@ -92,9 +93,9 @@ Insert your preferred storage medium, such as a microSD card, into an external o
 
     <br/>
 
-**Step 7**
+**Schritt 7**
 
-Press the **NEXT** button and choose **EDIT SETTINGS** to access the OS Customization page.
+Drücken Sie die **WEITER**-Taste und wählen Sie **EINSTELLUNGEN BEARBEITEN**, um auf die OS-Anpassungsseite zuzugreifen.
 
 .. image:: img/installing_07.png
     :align: center
@@ -103,13 +104,13 @@ Press the **NEXT** button and choose **EDIT SETTINGS** to access the OS Customiz
 
     <br/>
 
-**Step 8**
+**Schritt 8**
 
-Set the **hostname**.
+Legen Sie den **Hostname** fest.
 
 .. note::
 
-   The hostname option defines the hostname your Raspberry Pi broadcasts to the network using mDNS. By connecting your Raspberry Pi to the network, it allows other devices to interact with it using ``<hostname>.local`` or ``<hostname>.lan``.
+   Die Hostname-Option definiert den Hostnamen, den Ihr Raspberry Pi über mDNS im Netzwerk aussendet. Durch die Verbindung Ihres Raspberry Pi mit dem Netzwerk ermöglicht es anderen Geräten, über ``<hostname>.local`` oder ``<hostname>.lan`` mit ihm zu interagieren.
 
 .. image:: img/installing_08.png
     :align: center
@@ -118,10 +119,10 @@ Set the **hostname**.
 
     <br/>
 
-Set the **username** and **password** for the Raspberry Pi's administrator account.
+Legen Sie den **Benutzernamen** und das **Passwort** für das Administrator-Konto des Raspberry Pi fest.
 
 .. note::
-   The Raspberry Pi does not come with a default password, making it crucial to set one. Additionally, you have the option to personalize the username.
+   Das Raspberry Pi wird ohne Standardpasswort geliefert, daher ist es wichtig, eins festzulegen. Außerdem haben Sie die Möglichkeit, den Benutzernamen zu personalisieren.
 
 .. image:: img/installing_09.png
     :align: center
@@ -129,12 +130,12 @@ Set the **username** and **password** for the Raspberry Pi's administrator accou
 .. raw:: html
 
     <br/>
-
-Configure wireless LAN by entering your network's **SSID** and **password**.
+    
+Konfigurieren Sie das drahtlose LAN, indem Sie den **SSID** und das **Passwort** Ihres Netzwerks eingeben.
 
 .. note::
 
-   Configure the "Wireless LAN country" using your nation's two-letter |link_alpha2_code|.
+   Konfigurieren Sie das "Land des drahtlosen LAN" mit dem Zwei-Buchstaben-|link_alpha2_code| Ihres Landes.
 
 .. image:: img/installing_10.png
     :align: center
@@ -143,9 +144,9 @@ Configure wireless LAN by entering your network's **SSID** and **password**.
 
     <br/>
 
-**Step 9**
+**Schritt 9**
 
-Navigate to the **SERVICES** page, choose **Enable SSH option** to turn on SSH, and select “Use password authentication” (recommended for beginners). Click **Save** to apply your changes.
+Navigieren Sie zur **DIENSTE**-Seite, wählen Sie die Option **SSH aktivieren**, um SSH einzuschalten, und wählen Sie "Passwortauthentifizierung verwenden" (empfohlen für Anfänger). Klicken Sie auf **Speichern**, um Ihre Änderungen anzuwenden.
 
 .. image:: img/installing_11.png
     :align: center
@@ -154,9 +155,9 @@ Navigate to the **SERVICES** page, choose **Enable SSH option** to turn on SSH, 
 
     <br/>
 
-**Step 10**
+**Schritt 10**
 
-Click the **Yes** button.
+Klicken Sie auf die Schaltfläche **Ja**.
 
 .. image:: img/installing_12.png
     :align: center
@@ -165,9 +166,9 @@ Click the **Yes** button.
 
     <br/>
 
-**Step 11**
+**Schritt 11**
 
-If your SD card contains files, consider backing them up to avoid permanent loss. If no backup is needed, click **Yes**.
+Wenn sich Dateien auf Ihrer SD-Karte befinden, sollten Sie in Betracht ziehen, diese zu sichern, um einen dauerhaften Verlust zu vermeiden. Wenn kein Backup erforderlich ist, klicken Sie auf **Ja**.
 
 .. image:: img/installing_13.png
     :align: center
@@ -176,9 +177,9 @@ If your SD card contains files, consider backing them up to avoid permanent loss
 
     <br/>
 
-**Step 12**
+**Schritt 12**
 
-The window below will appear once the writing process is complete. Writing process takes some time and varies based on the SD card's read-write performance; please be patient.
+Das folgende Fenster wird angezeigt, sobald der Schreibvorgang abgeschlossen ist. Der Schreibvorgang dauert einige Zeit und variiert je nach Lese-Schreib-Leistung der SD-Karte; bitte haben Sie Geduld.
 
 .. image:: img/installing_14.png
     :align: center

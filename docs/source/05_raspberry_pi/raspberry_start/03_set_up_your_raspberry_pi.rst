@@ -1,28 +1,28 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _set_up_your_raspberry_pi:
 
-Set up Your Raspberry Pi
-============================
+Richten Sie Ihren Raspberry Pi ein
+======================================
 
-If You Have a Screen
--------------------------
+Wenn Sie einen Bildschirm haben
+-----------------------------------
 
-If you have a screen, it will be easy for you to operate on the Raspberry Pi.
+Wenn Sie einen Bildschirm haben, ist es einfach, auf dem Raspberry Pi zu arbeiten.
 
-**Required Components**
+**Benötigte Komponenten**
 
 * Any Raspberry Pi   
 * 1 * Power Adapter
@@ -33,17 +33,17 @@ If you have a screen, it will be easy for you to operate on the Raspberry Pi.
 * 1 * Mouse
 * 1 * Keyboard
 
-#. Insert the SD card you’ve set up with Raspberry Pi OS into the micro SD card slot on the underside of your Raspberry Pi.
+#. Stecken Sie die SD-Karte, die Sie mit Raspberry Pi OS eingerichtet haben, in den Micro-SD-Kartensteckplatz an der Unterseite Ihres Raspberry Pi.
 
-#. Plug in the Mouse and Keyboard.
+#. Schließen Sie die Maus und die Tastatur an.
 
-#. Connect the screen to Raspberry Pi’s HDMI port and make sure your screen is plugged into a wall socket and switched on.
+#. Verbinden Sie den Bildschirm mit dem HDMI-Anschluss des Raspberry Pi und stellen Sie sicher, dass Ihr Bildschirm an eine Steckdose angeschlossen und eingeschaltet ist.
 
    .. note::
    
-      If you use a Raspberry Pi 4, you need to connect the screen to the HDMI0 (nearest the power in port).
+      Wenn Sie einen Raspberry Pi 4 verwenden, müssen Sie den Bildschirm an den HDMI0 (am nächsten am Stromanschluss) anschließen.
 
-#. Use the power adapter to power the Raspberry Pi. After a few seconds, the Raspberry Pi OS desktop will be displayed.
+#. Verwenden Sie das Netzteil, um den Raspberry Pi mit Strom zu versorgen. Nach wenigen Sekunden wird der Desktop des Raspberry Pi OS angezeigt.
 
    .. image:: img/set_up_01.png
        :align: center
@@ -52,7 +52,7 @@ If you have a screen, it will be easy for you to operate on the Raspberry Pi.
    
        <br/>
 
-#. You can launch a web browser on your Raspberry Pi system and access this tutorial page. This makes it convenient to copy instructions and execute them in the Terminal.
+#. Sie können einen Webbrowser auf Ihrem Raspberry Pi-System starten und diese Anleitung aufrufen. Dadurch können Sie Anweisungen bequem kopieren und im Terminal ausführen.
 
    .. image:: img/set_up_02.png
        :align: center
@@ -63,22 +63,22 @@ If you have a screen, it will be easy for you to operate on the Raspberry Pi.
 
 .. _no_screen:
 
-If You Have No Screen
---------------------------
+Wenn Sie keinen Bildschirm haben
+-------------------------------------
 
-If you don't have a monitor, you can remotely log into your Raspberry Pi.
+Wenn Sie keinen Monitor haben, können Sie sich remote bei Ihrem Raspberry Pi anmelden.
 
-**Required Components**
+**Benötigte Komponenten**
 
-* Any Raspberry Pi   
-* 1 * Power Adapter
-* 1 * Micro SD card
+* Jeder Raspberry Pi   
+* 1 * Netzteil
+* 1 * Micro-SD-Karte
 
-You can use the SSH command to access the Raspberry Pi's Bash shell, which is Linux's default interface. The shell lets you perform most tasks with simple commands on Unix/Linux systems.
+Sie können das SSH-Kommando verwenden, um die Bash-Shell des Raspberry Pi zu öffnen, die die Standardoberfläche von Linux ist. Die Shell ermöglicht es Ihnen, die meisten Aufgaben mit einfachen Befehlen auf Unix/Linux-Systemen auszuführen.
 
-If you'd rather not use the command line for your Raspberry Pi, you can utilize the remote desktop feature to operate the Raspberry Pi's desktop environment without a dedicated screen.
+Wenn Sie die Befehlszeile für Ihren Raspberry Pi lieber nicht verwenden möchten, können Sie die Remote-Desktop-Funktion nutzen, um die Desktop-Umgebung des Raspberry Pi ohne dedizierten Bildschirm zu bedienen.
 
-See below for detailed tutorials for each system.
+Siehe unten für detaillierte Anleitungen für jedes System.
 
 
 .. toctree::

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson12_pir_motion:
 
-Lesson 12: PIR Motion Module (HC-SR501)
-============================================
+Lektion 12: PIR-Bewegungssensormodul (HC-SR501)
+==================================================
 
-In this lesson, you will learn how to use a PIR (Passive Infrared) motion sensor with an Arduino Uno. We'll see how the sensor detects movement and sends a signal to the Arduino, which then triggers a response. This project is ideal for beginners as it provides hands-on experience with digital inputs, serial communication, and conditional programming on the Arduino platform.
+In dieser Lektion lernen Sie, wie Sie einen PIR (Passiv-Infrarot) Bewegungssensor mit einem Arduino Uno verwenden. Wir werden sehen, wie der Sensor Bewegung erkennt und ein Signal an den Arduino sendet, der daraufhin eine Reaktion auslöst. Dieses Projekt ist ideal für Anfänger, da es praktische Erfahrungen mit digitalen Eingängen, serieller Kommunikation und bedingter Programmierung auf der Arduino-Plattform bietet.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können die Komponenten auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -51,8 +51,7 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_pir_motion`
         - \-
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_12_pir_module_uno_bb.png
@@ -66,17 +65,17 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/75947bcf-8e55-4737-b1b7-f17b4a28e775/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-1. Setting up the PIR Sensor Pin. The pin for the PIR sensor is defined as pin 2. 
+1. Einrichtung des PIR-Sensorpins. Der Pin für den PIR-Sensor ist als Pin 2 definiert.
 
    .. code-block:: arduino
 
       const int pirPin = 2;
       int state = 0;
 
-2. Initializing the PIR Sensor. In the ``setup()`` function, the PIR sensor pin is set as an input. This allows the Arduino to read the state of the PIR sensor.
+2. Initialisierung des PIR-Sensors. In der ``setup()``-Funktion wird der PIR-Sensorpin als Eingang festgelegt. Dies ermöglicht es dem Arduino, den Zustand des PIR-Sensors zu lesen.
 
    .. code-block:: arduino
 
@@ -85,7 +84,7 @@ Code Analysis
         Serial.begin(9600);
       }
 
-3. Reading from the PIR Sensor and Displaying the Results. In the ``loop()`` function, the state of the PIR sensor is continuously read. 
+3. Lesen vom PIR-Sensor und Anzeigen der Ergebnisse. In der ``loop()``-Funktion wird der Zustand des PIR-Sensors kontinuierlich gelesen.
 
    .. code-block:: arduino
 
@@ -99,4 +98,4 @@ Code Analysis
         }
       }
 
-   If the state is ``HIGH``, meaning motion is detected, a message "Somebody here!" is printed to the serial monitor. Otherwise, "Monitoring..." is printed.
+   Wenn der Zustand ``HIGH`` ist, was bedeutet, dass eine Bewegung erkannt wurde, wird die Nachricht "Jemand ist hier!" auf dem seriellen Monitor ausgegeben. Andernfalls wird "Überwachen..." ausgegeben.

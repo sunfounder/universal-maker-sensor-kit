@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson27_oled:
 
-Lesson 27: OLED Display Module (SSD1306)
+Lektion 27: OLED-Display-Modul (SSD1306)
 ============================================
 
-In this lesson, you will learn how to connect a Raspberry Pi with an OLED Display Module (SSD1306) using Python. You'll learn how to establish I2C communication between the Raspberry Pi and the OLED display, and use the Python Imaging Library (PIL) for creating graphics and text. The lesson will guide you through drawing shapes and text on the OLED screen, providing a practical example with the message "Hello World!".
+In dieser Lektion lernen Sie, wie Sie ein Raspberry Pi mit einem OLED-Display-Modul (SSD1306) unter Verwendung von Python verbinden. Sie lernen, wie Sie eine I2C-Kommunikation zwischen dem Raspberry Pi und dem OLED-Display herstellen und die Python Imaging Library (PIL) für die Erstellung von Grafiken und Text verwenden. Die Lektion führt Sie durch das Zeichnen von Formen und Texten auf dem OLED-Bildschirm und bietet ein praktisches Beispiel mit der Nachricht "Hello World!".
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,44 +53,41 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_27_oled_pi_bb.png
     :width: 100%
 
-
-Install Library
+Bibliothek installieren
 ---------------------------
 
 .. note::
-    The adafruit-circuitpython-ssd1306 library relies on Blinka, so please ensure that Blinka has been installed. To install libraries, refer to :ref:`install_blinka`.
+    Die adafruit-circuitpython-ssd1306-Bibliothek basiert auf Blinka. Stellen Sie daher sicher, dass Blinka installiert ist. Anweisungen zur Installation der Bibliotheken finden Sie unter :ref:`install_blinka`.
 
-Before installing the library, please make sure that the virtual Python environment is activated:
+Bevor Sie die Bibliothek installieren, stellen Sie sicher, dass die virtuelle Python-Umgebung aktiviert ist:
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Install adafruit-circuitpython-ssd1306 library:
+Installieren Sie die adafruit-circuitpython-ssd1306-Bibliothek:
 
 .. code-block:: bash
 
    pip install adafruit-circuitpython-ssd1306
-
-Run the Code
+Code ausführen
 ---------------------------
 
 .. note::
-   - Please ensure that you have installed the Python library required for running the code according to the "Install Library" steps.
-   - Before running the code, please make sure that you have activated the virtual Python environment with blinka installed. You can activate the virtual environment using a command like this:
+   - Bitte stellen Sie sicher, dass Sie die Python-Bibliothek installiert haben, die für die Ausführung des Codes gemäß den Schritten unter "Bibliothek installieren" erforderlich ist.
+   - Bevor Sie den Code ausführen, stellen Sie sicher, dass Sie die virtuelle Python-Umgebung mit installiertem Blinka aktiviert haben. Sie können die virtuelle Umgebung mit folgendem Befehl aktivieren:
 
      .. code-block:: bash
   
         source ~/env/bin/activate
 
-   - Find the code for this lesson in ``universal-maker-sensor-kit-main/pi/`` directory, or directly copy and paste the code below. Execute the code by running the following commands in terminal:
+   - Finden Sie den Code für diese Lektion im Verzeichnis ``universal-maker-sensor-kit-main/pi/`` oder kopieren Sie den untenstehenden Code direkt und führen Sie ihn im Terminal aus:
 
      .. code-block:: bash
   
@@ -158,14 +155,14 @@ Run the Code
    oled.show()
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Necessary Libraries
+#. Notwendige Bibliotheken importieren
 
-   Here, we import the libraries needed for the project. ``board`` is for interfacing with the Raspberry Pi hardware, ``PIL`` for image processing, and ``adafruit_ssd1306`` for controlling the OLED display.
+   Hier importieren wir die für das Projekt benötigten Bibliotheken. ``board`` dient zur Schnittstelle mit der Raspberry Pi-Hardware, ``PIL`` zur Bildverarbeitung und ``adafruit_ssd1306`` zur Steuerung des OLED-Displays.
 
-   For more detail about the ``adafruit_ssd1306`` library, please refer to |Adafruit_Adafruit_CircuitPython_SSD1306|.
+   Weitere Informationen zur ``adafruit_ssd1306``-Bibliothek finden Sie unter |Adafruit_Adafruit_CircuitPython_SSD1306|.
 
    .. code-block:: python
 
@@ -174,9 +171,9 @@ Code Analysis
       from PIL import Image, ImageDraw, ImageFont
       import adafruit_ssd1306
 
-#. Initializing the OLED Display
+#. Initialisierung des OLED-Displays
 
-   The OLED display dimensions are set, and I2C communication is established. The ``adafruit_ssd1306.SSD1306_I2C`` object is created to interact with the OLED.
+   Die Abmessungen des OLED-Displays werden festgelegt und die I2C-Kommunikation wird eingerichtet. Das ``adafruit_ssd1306.SSD1306_I2C``-Objekt wird erstellt, um mit dem OLED zu interagieren.
 
    .. code-block:: python
 
@@ -188,9 +185,9 @@ Code Analysis
       i2c = board.I2C()
       oled = adafruit_ssd1306.SSD1306_I2C(WIDTH, HEIGHT, i2c, addr=0x3C)
 
-#. Clearing the Display
+#. Löschen des Displays
 
-   The OLED display is cleared by filling it with zeros (black).
+   Das OLED-Display wird durch Füllen mit Nullen (schwarz) gelöscht.
 
    .. code-block:: python
 
@@ -198,11 +195,11 @@ Code Analysis
       oled.fill(0)
       oled.show()
 
-#. Creating an Image Buffer
+#. Erstellen eines Bildpuffers
 
-   An image buffer is created using PIL. This is where the graphics are drawn before being displayed on the screen.
+   Ein Bildpuffer wird mithilfe von PIL erstellt. Hier werden die Grafiken gezeichnet, bevor sie auf dem Bildschirm angezeigt werden.
 
-   The PIL(Python Imaging Library) adds image processing capabilities to your Python interpreter. For more detail, please refer to |link_pil_handbook|.
+   Die PIL (Python Imaging Library) fügt Ihrem Python-Interpreter Bildverarbeitungsfunktionen hinzu. Weitere Informationen finden Sie im |link_pil_handbook|.
 
    .. code-block:: python
 
@@ -212,9 +209,9 @@ Code Analysis
       # Obtain a drawing object to manipulate the image
       draw = ImageDraw.Draw(image)
 
-#. Drawing Graphics
+#. Zeichnen von Grafiken
 
-   Here, a white rectangle (background) and a smaller black rectangle (border effect) are drawn on the image buffer.
+   Hier werden ein weißes Rechteck (Hintergrund) und ein kleineres schwarzes Rechteck (Randeffekt) auf den Bildpuffer gezeichnet.
 
    .. code-block:: python
 
@@ -230,9 +227,9 @@ Code Analysis
           fill=0,
       )
 
-#. Adding Text
+#. Hinzufügen von Text
 
-   The default font is loaded, and a function to calculate the text size is defined. Then, "Hello World!" is centered and drawn on the image buffer.
+   Die Standardschriftart wird geladen und eine Funktion zur Berechnung der Textgröße definiert. Anschließend wird "Hello World!" zentriert und auf den Bildpuffer gezeichnet.
 
    .. code-block:: python
 
@@ -256,9 +253,9 @@ Code Analysis
           fill=255,
       )
 
-#. Displaying the Image
+#. Bild anzeigen
 
-   Finally, the image buffer is sent to the OLED display for visualization.
+   Schließlich wird der Bildpuffer zur Visualisierung an das OLED-Display gesendet.
 
    .. code-block:: python
 

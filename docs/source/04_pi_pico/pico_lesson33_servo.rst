@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson33_servo:
-
-Lesson 33: Servo Motor (SG90)
+Lektion 33: Servomotor (SG90)
 ==================================
 
-In this lesson, you will learn how to control a servo motor (SG90) using the Raspberry Pi Pico W. You will be introduced to the concepts of Pulse Width Modulation (PWM) for controlling the angle of the servo motor. The lesson includes writing a MicroPython script to make the servo sweep smoothly through its entire range of motion, from 0 to 180 degrees and back. 
+In dieser Lektion lernen Sie, wie Sie einen Servomotor (SG90) mit dem Raspberry Pi Pico W steuern können. Sie werden mit den Konzepten der Pulsweitenmodulation (PWM) zur Steuerung des Winkels des Servomotors vertraut gemacht. Die Lektion beinhaltet das Schreiben eines MicroPython-Skripts, um den Servo sanft durch seinen gesamten Bewegungsbereich von 0 bis 180 Grad und zurück zu bewegen. 
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_33_Servo_pico_bb.png
@@ -109,12 +109,12 @@ Code
            time.sleep_ms(20)  # Short delay for smooth movement
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Modules and Initializing Servo:
+#. Importieren von Modulen und Initialisierung des Servos:
 
-   The ``machine`` module is crucial for accessing the PWM functionality needed to control the servo, and ``time`` is used for implementing delays. The servo is initialized on pin 16 of the Raspberry Pi Pico W, setting its frequency to 50Hz, a typical value for servo control.
+   Das Modul ``machine`` ist entscheidend für den Zugriff auf die PWM-Funktionalität, die zur Steuerung des Servos benötigt wird, und ``time`` wird für die Implementierung von Verzögerungen verwendet. Der Servo wird an Pin 16 des Raspberry Pi Pico W initialisiert und seine Frequenz auf 50 Hz eingestellt, ein typischer Wert für die Servosteuerung.
 
    .. code-block:: python
 
@@ -123,11 +123,11 @@ Code Analysis
       servo = machine.PWM(machine.Pin(16))
       servo.freq(50)
 
-#. Mapping and Servo Control Functions:
+#. Funktionen für Zuordnung und Servosteuerung:
 
-   The ``interval_mapping`` function translates the desired servo angle into a PWM pulse width. The ``servo_write`` function then converts this pulse width into a duty cycle, which is used to set the servo's position. These functions are central to converting the angular position into an appropriate PWM signal.
+   Die Funktion ``interval_mapping`` übersetzt den gewünschten Servowinkel in eine PWM-Pulsbreite. Die Funktion ``servo_write`` wandelt diese Pulsbreite dann in einen Tastgrad um, der verwendet wird, um die Position des Servos festzulegen. Diese Funktionen sind entscheidend, um die Winkelposition in ein geeignetes PWM-Signal umzuwandeln.
 
-   Please refer to :ref:`Work Pulse <cpn_servo_pulse>` for information about the work pulse of the servo.
+   Bitte beachten Sie :ref:`Work Pulse <cpn_servo_pulse>` für Informationen über den Arbeitspuls des Servos.
 
    .. code-block:: python
 
@@ -139,9 +139,9 @@ Code Analysis
           duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))
           pin.duty_u16(duty)
 
-#. Main Loop for Continuous Movement:
+#. Hauptschleife für kontinuierliche Bewegung:
 
-   The main loop is where the servo is controlled to sweep from 0 to 180 degrees and back. This is achieved by looping through the range of angles and calling ``servo_write`` for each angle, with a short delay to ensure smooth movement.
+   Die Hauptschleife ist der Ort, an dem der Servo gesteuert wird, um von 0 bis 180 Grad und zurück zu schwenken. Dies wird erreicht, indem der Bereich der Winkel durchlaufen wird und für jeden Winkel ``servo_write`` aufgerufen wird, mit einer kurzen Verzögerung, um eine reibungslose Bewegung zu gewährleisten.
 
    .. code-block:: python
 

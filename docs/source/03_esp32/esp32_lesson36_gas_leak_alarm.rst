@@ -1,49 +1,49 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_gas_leak_alarm:
 
-Lesson 36: Gas leak alarm
+Lektion 36: Gasleck-Alarm
 ==================================
 
-This project revolves around simulating a gas leak detection scenario using an ESP32 board. 
-By incorporating an MQ-2 gas sensor and an RGB LED, this demonstration continuously reads the gas concentration. 
-If this concentration surpasses a predefined threshold, 
-it activates an alarm (buzzer) and illuminates the RGB LED in red. 
-Conversely, if the concentration remains below this threshold, 
-the alarm remains inactive and the LED shines green. 
-It's crucial to note that this demo is purely illustrative and shouldn't replace real gas leak detection systems.
+Dieses Projekt dreht sich um die Simulation eines Gasleck-Erkennungsszenarios mit einem ESP32-Board. 
+Durch den Einsatz eines MQ-2-Gassensors und einer RGB-LED wird kontinuierlich die Gaskonzentration gemessen. 
+Überschreitet diese Konzentration einen vordefinierten Schwellenwert, 
+wird ein Alarm (Summer) ausgelöst und die RGB-LED leuchtet rot. 
+Bleibt die Konzentration unter diesem Schwellenwert, 
+bleibt der Alarm inaktiv und die LED leuchtet grün. 
+Es ist wichtig zu betonen, dass diese Demonstration rein illustrativ ist und nicht als Ersatz für echte Gasleck-Erkennungssysteme dienen sollte.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name    
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_36_Gas_leak_alarm_esp32_bb.png
@@ -78,14 +78,14 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/3c24f636-7411-4d3d-8d2e-ac4400084a93/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
-Code Analysis
+Code-Analyse
 ---------------------------
 
-The core principle of the project revolves around continuously monitoring the gas concentration. When the detected gas concentration surpasses a certain threshold, it sets off an alarm and changes the LED's color to red. This serves as a simulated warning mechanism, indicative of potentially hazardous conditions. If the concentration drops below the threshold, the alarm is deactivated and the LED switches to green, indicating a safe environment.
+Das Kernprinzip des Projekts besteht darin, kontinuierlich die Gaskonzentration zu überwachen. Wenn die ermittelte Gaskonzentration einen bestimmten Schwellenwert überschreitet, wird ein Alarm ausgelöst und die LED wechselt die Farbe zu Rot. Dies dient als simuliertes Warnsignal, das auf potenziell gefährliche Bedingungen hinweist. Sinkt die Konzentration unter den Schwellenwert, wird der Alarm deaktiviert und die LED wechselt zu Grün, was auf eine sichere Umgebung hinweist.
 
-1. Defining Constants and Variables
+1. Definition von Konstanten und Variablen
 
-    These lines declare and initialize the pin numbers for various components. The ``sensorPin`` denotes the analog pin where the MQ-2 gas sensor is connected. ``sensorValue`` is an integer variable storing the sensor's analog output. The ``buzzerPin`` indicates the digital pin to which the buzzer is connected. Finally, the ``RPin`` and ``GPin`` are the pins for the red and green channels of the RGB LED, respectively.
+    Diese Zeilen deklarieren und initialisieren die Pinnummern für verschiedene Komponenten. Der ``sensorPin`` bezeichnet den analogen Pin, an dem der MQ-2-Gassensor angeschlossen ist. ``sensorValue`` ist eine Ganzzahlvariable, die den analogen Ausgang des Sensors speichert. Der ``buzzerPin`` gibt den digitalen Pin an, an dem der Summer angeschlossen ist. Schließlich sind der ``RPin`` und der ``GPin`` die Pins für die roten und grünen Kanäle der RGB-LED.
 
     .. code-block:: arduino
    
@@ -102,9 +102,9 @@ The core principle of the project revolves around continuously monitoring the ga
 
    
 
-2. Initialization in ``setup()``
+2. Initialisierung in ``setup()``
 
-    The ``setup()`` function initializes the required settings. Serial communication begins at a baud rate of 9600, allowing us to view sensor readings on the Serial Monitor. Pins for the buzzer and RGB LED are set as ``OUTPUT``, meaning they'll send signals out to external components.
+    Die ``setup()``-Funktion initialisiert die erforderlichen Einstellungen. Die serielle Kommunikation beginnt mit einer Baudrate von 9600, sodass wir die Sensorwerte im seriellen Monitor anzeigen können. Die Pins für den Summer und die RGB-LED werden als ``OUTPUT`` gesetzt, was bedeutet, dass sie Signale an externe Komponenten senden.
 
     .. code-block:: arduino
    
@@ -118,14 +118,14 @@ The core principle of the project revolves around continuously monitoring the ga
         }
    
 
-3. Main Loop: Reading Sensor and Triggering Alarm
+3. Hauptschleife: Sensorlesen und Alarmauslösung
 
-    The ``loop()`` function continually reads the gas sensor's output. The reading is then displayed on the Serial Monitor for observation. Depending on the sensor value, two scenarios can occur:
+    Die ``loop()``-Funktion liest kontinuierlich den Ausgang des Gassensors. Der Messwert wird dann im seriellen Monitor zur Beobachtung angezeigt. Abhängig vom Sensorwert können zwei Szenarien auftreten:
     
-    - If the value exceeds 300, the buzzer is activated using ``tone()``, and the RGB LED turns red.
-    - If the value is below 300, the buzzer is silenced using ``noTone()``, and the LED turns green.
+    - Wenn der Wert 300 überschreitet, wird der Summer mit ``tone()`` aktiviert und die RGB-LED wird rot.
+    - Wenn der Wert unter 300 liegt, wird der Summer mit ``noTone()`` stummgeschaltet und die LED wird grün.
     
-    Lastly, a delay of 50 milliseconds is introduced before the next loop iteration to manage the read frequency and reduce the CPU load.
+    Schließlich wird eine Verzögerung von 50 Millisekunden eingeführt, bevor die nächste Schleifeniteration beginnt, um die Lesefrequenz zu steuern und die CPU-Last zu reduzieren.
 
     .. code-block:: arduino
    

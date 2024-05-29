@@ -1,79 +1,76 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_servo:
 
-Servo Motor (SG90)
+Servomotor (SG90)
 ==========================
 
 .. image:: img/33_servo.png
     :width: 300
     :align: center
 
-Servo motors are devices that can rotate to a specific angle or position. They can be used to move robotic arms, steering wheels, camera gimbals, etc. Servo motors have three wires: power, ground and signal. The power wire is usually red and should be connected to the 5V pin on the Arduino board. The ground wire is usually black or brown and should be connected to a ground pin on the board. The signal wire is usually yellow or orange and should be connected to a PWM pin on the board.
+Servomotoren sind Geräte, die sich auf einen bestimmten Winkel oder eine bestimmte Position drehen können. Sie können verwendet werden, um Roboterarme, Lenkräder, Kameragimbals usw. zu bewegen. Servomotoren haben drei Drähte: Stromversorgung, Masse und Signal. Der Stromversorgungsdraht ist normalerweise rot und sollte mit dem 5V-Pin des Arduino-Boards verbunden werden. Der Masse-Draht ist normalerweise schwarz oder braun und sollte mit einem Masse-Pin des Boards verbunden werden. Der Signaldraht ist normalerweise gelb oder orange und sollte mit einem PWM-Pin des Boards verbunden werden.
 
-Pinout
+Pinbelegung
 ---------------------------
-* Brown wire: GND
-* Orange wire: Signal pin, connect to the PWM pin of main board.
-* Red wire: VCC
+* Brauner Draht: GND
+* Oranger Draht: Signaldraht, verbunden mit dem PWM-Pin der Hauptplatine.
+* Roter Draht: VCC
 
-Principle
+Prinzip
 ---------------------------
-A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board.
+Ein Servo besteht im Allgemeinen aus folgenden Teilen: Gehäuse, Welle, Getriebesystem, Potentiometer, Gleichstrommotor und eingebetteter Platine.
 
-It works like this: 
+So funktioniert es:
 
-* The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. 
-* As a result, the motor drives the gear system and then motivates the shaft after deceleration. 
-* The shaft and potentiometer of the servo are connected together. 
-* When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. 
-* Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there.
-
+* Der Mikrocontroller sendet PWM-Signale an das Servo, und die eingebettete Platine im Servo empfängt die Signale über den Signaldraht und steuert den Motor im Inneren, damit dieser sich dreht.
+* Dadurch treibt der Motor das Getriebesystem an, das die Welle nach der Reduzierung der Geschwindigkeit bewegt.
+* Die Welle und das Potentiometer des Servos sind miteinander verbunden.
+* Wenn sich die Welle dreht, treibt sie das Potentiometer an, sodass das Potentiometer ein Spannungssignal an die eingebaute Platine ausgibt.
+* Die Platine bestimmt dann die Drehrichtung und -geschwindigkeit basierend auf der aktuellen Position, sodass sie genau an der definierten Position stoppen und dort halten kann.
 
 .. image:: img/33_servo_internal.png
     :width: 450
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
 .. _cpn_servo_pulse:
 
-**Work Pulse**
+**Arbeitsimpuls**
 
-The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. 
+Der Winkel wird durch die Dauer eines Impulses bestimmt, der auf den Steuerdraht angewendet wird. Dies wird als Pulsweitenmodulation bezeichnet.
 
-* The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the servo turns. 
-* For example, a 1.5ms pulse will make the servo turn to the 90 degree position (neutral position).
-* When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point.
-* When the pulse is wider than 1.5 ms the opposite occurs. 
-* The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo.
-*  Generally the pulse will be about 0.5 ms ~ 2.5 ms wide.
+* Das Servo erwartet alle 20 ms einen Impuls. Die Länge des Impulses bestimmt, wie weit sich das Servo dreht.
+* Beispielsweise bewirkt ein 1,5 ms Impuls, dass das Servo in die 90-Grad-Position (Neutralstellung) dreht.
+* Wenn ein Impuls an ein Servo gesendet wird, der kürzer als 1,5 ms ist, dreht sich das Servo in eine Position und hält seine Ausgangswelle um einige Grad gegen den Uhrzeigersinn von der Neutralstellung.
+* Wenn der Impuls breiter als 1,5 ms ist, tritt das Gegenteil ein.
+* Die minimale und maximale Impulsbreite, die das Servo in eine gültige Position bringt, sind von jedem Servo abhängig.
+* Im Allgemeinen beträgt die Impulsbreite etwa 0,5 ms ~ 2,5 ms.
 
 .. image:: img/33_servo_duty.png
     :width: 90%
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
-
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson33_servo` (Arduino UNO)
 * :ref:`esp32_lesson33_servo` (ESP32)

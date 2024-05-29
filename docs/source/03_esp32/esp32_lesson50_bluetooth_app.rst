@@ -1,32 +1,31 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_iot_bluetooth_app:
 
-Lesson 50: Android Application - RGB LED Operation via Arduino and Bluetooth
+Lektion 50: Android-Anwendung – RGB-LED-Betrieb über Arduino und Bluetooth
 ==================================================================================
 
-The objective of this project is to develop an Android application capable of manipulating the hue of an RGB LED through a smartphone using Bluetooth technology.
+Ziel dieses Projekts ist es, eine Android-Anwendung zu entwickeln, mit der die Farbe einer RGB-LED über ein Smartphone mithilfe der Bluetooth-Technologie gesteuert werden kann.
 
-This Android application will be constructed utilizing a complimentary web-based platform known as MIT App Inventor 2. The project presents an excellent opportunity to gain familiarity with the interfacing of an Arduino with a smartphone.
+Diese Android-Anwendung wird mithilfe einer kostenlosen webbasierten Plattform namens MIT App Inventor 2 erstellt. Das Projekt bietet eine hervorragende Gelegenheit, sich mit der Schnittstelle eines Arduino und einem Smartphone vertraut zu machen.
 
+**Erforderliche Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -55,55 +54,51 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_rgb`
         - \-
 
-**1. Creation of the Android Application**
+**1. Erstellung der Android-Anwendung**
 
-The Android application will be fashioned using a free web application known as |link_appinventor|. 
-MIT App Inventor serves as an excellent starting point for Android development, owing to its intuitive drag-and-drop 
-features allowing for the creation of simplistic applications.
+Die Android-Anwendung wird mithilfe einer kostenlosen Webanwendung namens |link_appinventor| erstellt. MIT App Inventor ist ein hervorragender Ausgangspunkt für die Android-Entwicklung, da seine intuitive Drag-and-Drop-Funktionalität die Erstellung einfacher Anwendungen ermöglicht.
 
-Now, let's begin.
+Lassen Sie uns beginnen.
 
-#. Here is the login page: http://ai2.appinventor.mit.edu. You will require a Google account to register with MIT App Inventor.
+#. Hier ist die Login-Seite: http://ai2.appinventor.mit.edu. Sie benötigen ein Google-Konto, um sich bei MIT App Inventor zu registrieren.
 
-#. After logging in, navigate to **Projects** -> **Import project (.aia) from my computer**. Subsequently, upload the ``control_rgb_led.aia`` file located in the path ``esp32-starter-kit-main\c\codes\iot_10_bluetooth_app_inventor``.
+#. Nach dem Einloggen navigieren Sie zu **Projects** -> **Import project (.aia) from my computer**. Laden Sie anschließend die Datei ``control_rgb_led.aia`` hoch, die sich im Pfad ``esp32-starter-kit-main\c\codes\iot_10_bluetooth_app_inventor`` befindet.
 
    .. image:: img/10_ble_app_inventor1.png
 
-#. Upon uploading the ``.aia`` file, you will see the application on the **MIT App Inventor** software. This is a pre-configured template. You can modify this template after you have familiarized yourself with **MIT App Inventor** through the following steps.
+#. Nach dem Hochladen der ``.aia``-Datei sehen Sie die Anwendung in der **MIT App Inventor**-Software. Dies ist eine vorgefertigte Vorlage. Sie können diese Vorlage nach Belieben ändern, sobald Sie sich mit **MIT App Inventor** vertraut gemacht haben.
 
    .. image:: img/10_ble_app_inventor2.png
 
-#. In **MIT App Inventor**, you have 2 primary sections: the **Designer** and the **Blocks**.
+#. In **MIT App Inventor** gibt es zwei Hauptbereiche: den **Designer** und die **Blocks**.
 
    .. image:: img/10_ble_app_inventor3.png
 
-#. The **Designer** allows you to add buttons, text, screens, and modify the overall aesthetic of your application.
+#. Der **Designer** ermöglicht es Ihnen, Schaltflächen, Texte, Bildschirme hinzuzufügen und das gesamte Erscheinungsbild Ihrer Anwendung zu ändern.
 
    .. image:: img/10_ble_app_inventor2.png
    
 
-#. Subsequently, you have the **Blocks** section. The **Blocks** section facilitates the creation of bespoke functions for your application.
+#. Anschließend gibt es den Bereich **Blocks**. Der Bereich **Blocks** ermöglicht die Erstellung benutzerdefinierter Funktionen für Ihre Anwendung.
 
    .. image:: img/10_ble_app_inventor5.png
 
-#. To install the application on a smartphone, navigate to the **Build** tab.
+#. Um die Anwendung auf einem Smartphone zu installieren, navigieren Sie zum **Build**-Tab.
 
    .. image:: img/10_ble_app_inventor6.png
 
-   * You can generate a ``.apk`` file. After selecting this option, a page will appear allowing you to choose between downloading a ``.apk`` file or scanning a QR code for installation. Follow the installation guide to complete the application installation.
-   * If you wish to upload this app to **Google Play** or another app marketplace, you can generate a ``.aab`` file.
+   * Sie können eine ``.apk``-Datei generieren. Nach Auswahl dieser Option erscheint eine Seite, auf der Sie zwischen dem Herunterladen einer ``.apk``-Datei oder dem Scannen eines QR-Codes zur Installation wählen können. Befolgen Sie die Installationsanleitung, um die Installation der Anwendung abzuschließen.
+   * Wenn Sie diese App auf **Google Play** oder einem anderen App-Marktplatz hochladen möchten, können Sie eine ``.aab``-Datei generieren.
 
+**2. Hochladen des Codes**
 
-**2. Upload the code**
-
-#. Build the circuit.
+#. Bauen Sie die Schaltung auf.
 
    .. image:: img/Lesson_28_RGB_LED_Module_esp32_bb.png
 
-#. Subsequently, connect the ESP32 to your computer using a USB cable.
+#. Anschließend verbinden Sie das ESP32 mit Ihrem Computer über ein USB-Kabel.
 
-
-#. Open the ``Lesson_50_Bluetooth_app_inventor.ino`` file situated in the ``universal-maker-sensor-kit\esp32\Lesson_50_Bluetooth_app_inventor`` directory, or copy the code into the Arduino IDE.
+#. Öffnen Sie die Datei ``Lesson_50_Bluetooth_app_inventor.ino``, die sich im Verzeichnis ``universal-maker-sensor-kit\esp32\Lesson_50_Bluetooth_app_inventor`` befindet, oder kopieren Sie den Code in die Arduino IDE.
 
    .. raw:: html
 
@@ -111,73 +106,70 @@ Now, let's begin.
 
 
 
+#. Sobald Sie die entsprechende Platine (**ESP32 Dev Module**) und den Port ausgewählt haben, klicken Sie auf die Schaltfläche **Upload**.
 
+**3. Verbindung zwischen App und ESP32**
 
-#. Upon selecting the appropriate board (**ESP32 Dev Module**) and port, click the **Upload** button.
+Stellen Sie sicher, dass die zuvor erstellte Anwendung auf Ihrem Smartphone installiert ist.
 
-**3. App and ESP32 Connection**
-
-Ensure that the application created earlier is installed on your smartphone.
-
-#. Initially, activate **Bluetooth** on your smartphone.
+#. Aktivieren Sie zunächst **Bluetooth** auf Ihrem Smartphone.
 
    .. image:: img/10_ble_mobile1.png
       :width: 500
       :align: center
 
-#. Navigate to the **Bluetooth settings** on your smartphone and find **ESP32RGB**.
+#. Gehen Sie zu den **Bluetooth-Einstellungen** auf Ihrem Smartphone und suchen Sie nach **ESP32RGB**.
 
    .. image:: img/10_ble_mobile2.png
       :width: 500
       :align: center
 
-
-#. After clicking it, agree to the **Pair** request in the pop-up window.
+#. Klicken Sie darauf und stimmen Sie der **Pairing**-Anfrage im Pop-up-Fenster zu.
 
    .. image:: img/10_ble_mobile3.png
       :width: 500
       :align: center
 
-#. Now open the recently installed **Control_RGB_LED** APP.
+#. Öffnen Sie nun die kürzlich installierte **Control_RGB_LED**-App.
 
    .. image:: img/10_ble_mobile4.png
       :align: center
 
-#. In the APP, click on **Connect Bluetooth** to establish a connection between the APP and ESP32.
+#. Klicken Sie in der App auf **Connect Bluetooth**, um eine Verbindung zwischen der App und dem ESP32 herzustellen.
 
    .. image:: img/10_ble_mobile5.png
       :width: 500
       :align: center
 
-#. Select the ``xx.xx.xx.xx.xx.xx ESP32RGB`` that comes up. if you changed ``SerialBT.begin("ESP32RGB");`` in the code, then just select the name of your setting.
+#. Wählen Sie das angezeigte ``xx.xx.xx.xx.xx.xx ESP32RGB`` aus. Wenn Sie ``SerialBT.begin("ESP32RGB");`` im Code geändert haben, wählen Sie den von Ihnen eingestellten Namen aus.
 
    .. image:: img/10_ble_mobile6.png
       :width: 500
       :align: center
 
-#. If you have been waiting for a while and still can't see any device names, it may be that this APP is not allowed to scan surrounding devices. In this case, you need to adjust the settings manually.
+#. Wenn Sie eine Weile gewartet haben und keinen Gerätenamen sehen können, kann es sein, dass diese App nicht berechtigt ist, nach umliegenden Geräten zu suchen. In diesem Fall müssen Sie die Einstellungen manuell anpassen.
 
-   * Long press the APP icon and click on the resulting **APP Info**. If you have another method to access this page, follow that.
+   * Drücken Sie lange auf das App-Symbol und klicken Sie auf die erscheinende **App-Info**. Wenn Sie eine andere Methode haben, um diese Seite zu erreichen, folgen Sie dieser.
 
       .. image:: img/10_ble_mobile8.png
          :width: 500
          :align: center
 
-   * Navigate to the **Permissions** page.
+   * Gehen Sie zur Seite **Berechtigungen**.
 
       .. image:: img/10_ble_mobile9.png
          :width: 500
          :align: center
 
-   * Locate **Nearby devices**, and select **Always** to allow this APP to scan for nearby devices.
+   * Suchen Sie **Nahegelegene Geräte** und wählen Sie **Immer zulassen**, damit diese App nach nahegelegenen Geräten suchen kann.
 
       .. image:: img/10_ble_mobile10.png
          :width: 500
          :align: center
 
-   * Now, restart the APP and repeat steps 5 and 6 to successfully connect to Bluetooth.
+   * Starten Sie nun die App neu und wiederholen Sie die Schritte 5 und 6, um erfolgreich eine Bluetooth-Verbindung herzustellen.
 
-#. Upon successful connection, you will automatically return to the main page, where it will display connected. Now you can adjust the RGB values and change the color of the RGB display by pressing the **Change Color** button.
+#. Nach erfolgreicher Verbindung kehren Sie automatisch zur Hauptseite zurück, wo die Verbindung angezeigt wird. Jetzt können Sie die RGB-Werte anpassen und die Farbe der RGB-Anzeige durch Drücken der Schaltfläche **Change Color** ändern.
 
    .. image:: img/10_ble_mobile7.png
       :width: 500

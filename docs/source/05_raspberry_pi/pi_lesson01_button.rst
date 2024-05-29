@@ -1,30 +1,31 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson01_button:
 
-Lesson 01: Button Module
+Lektion 01: Tastenmodul
 ==================================
 
-In this lesson, you will learn the basics of using a button with Raspberry Pi. We will show you how to connect a button to GPIO pin 17 and write a simple Python script to monitor its state. You'll learn how to program the Raspberry Pi to detect when the button is pressed and released, and respond with appropriate messages. This introductory project is an excellent way to get familiar with GPIO interaction and basic Python scripting, making it well-suited for beginners starting their journey in Raspberry Pi and hardware programming.
+In dieser Lektion lernen Sie die Grundlagen der Verwendung eines Tasters mit dem Raspberry Pi. Wir zeigen Ihnen, wie Sie einen Taster an GPIO-Pin 17 anschließen und ein einfaches Python-Skript schreiben, um dessen Zustand zu überwachen. Sie lernen, wie Sie den Raspberry Pi so programmieren, dass er erkennt, wenn der Taster gedrückt und losgelassen wird, und mit entsprechenden Meldungen reagiert. Dieses Einführungsprojekt ist eine ausgezeichnete Möglichkeit, sich mit der GPIO-Interaktion und grundlegenden Python-Skripten vertraut zu machen, und eignet sich gut für Anfänger, die ihre Reise in die Welt des Raspberry Pi und der Hardware-Programmierung beginnen.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_01_Button_Module_Pi_bb.png
@@ -79,28 +80,28 @@ Code
          print("Button is not pressed")  # Print when button is not pressed
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Import Library
+#. Bibliothek importieren
    
-   Import the ``Button`` class from the ``gpiozero`` library for button control.
+   Importieren der Klasse ``Button`` aus der Bibliothek ``gpiozero`` für die Tastersteuerung.
 
    .. code-block:: python
 
       from gpiozero import Button
 
-#. Initialize the Button
+#. Taster initialisieren
    
-   Create a ``Button`` object connected to GPIO pin 17.
+   Erstellen eines ``Button``-Objekts, das mit GPIO-Pin 17 verbunden ist.
 
    .. code-block:: python
 
       button = Button(17)
 
-#. Monitor Button State Continuously
+#. Tasterzustand kontinuierlich überwachen
    
-   Use a ``while True`` loop to continuously check the state of the button. If the button is pressed (``button.is_pressed``), it prints "Button is pressed". Otherwise, it prints "Button is not pressed".
+   Verwenden einer ``while True``-Schleife, um den Zustand des Tasters kontinuierlich zu überprüfen. Wenn der Taster gedrückt wird (``button.is_pressed``), wird "Button is pressed" ausgegeben. Andernfalls wird "Button is not pressed" ausgegeben.
 
    .. code-block:: python
 

@@ -1,47 +1,31 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson02_soil_moisture:
 
-Lesson 02: Capacitive Soil Moisture Module
+Lektion 02: Kapazitives Bodenfeuchtemodul
 ============================================
 
-In this lesson, you will learn how to connect a capacitive soil moisture sensor to an Arduino and interpret its readings. The project includes reading the sensor's analog output with the Arduino and understanding that lower readings indicate higher soil moisture levels. You'll gain practical experience in handling analog input and serial communication with the Arduino by using the provided code as a hands-on example.
+In dieser Lektion lernen Sie, wie Sie einen kapazitiven Bodenfeuchtesensor an ein Arduino anschließen und seine Messwerte interpretieren. Das Projekt umfasst das Auslesen des analogen Ausgangs des Sensors mit dem Arduino und das Verständnis, dass niedrigere Messwerte höhere Bodenfeuchtigkeitswerte anzeigen. Sie sammeln praktische Erfahrungen im Umgang mit analogen Eingängen und der seriellen Kommunikation mit dem Arduino, indem Sie den bereitgestellten Code als praktisches Beispiel verwenden.
 
-Required Components
+Benötigte Komponenten
 ---------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
-
-.. list-table::
-    :widths: 20 20 20
-    :header-rows: 1
-
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Universal Maker Sensor Kit
-        - 94
-        - |link_umsk|
-
-You can also buy them separately from the links below.
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -54,11 +38,11 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -71,7 +55,25 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
+
+Für dieses Projekt benötigen wir die folgenden Komponenten.
+
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+
+
+Sie können die Komponenten auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -85,13 +87,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_soil`
         - |link_soil_moisture_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_02_Capacitive_Soil_Moisture_Module_uno_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -100,20 +100,20 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/fa2c3492-576b-4039-bbfe-891ed87e72c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Defining the sensor pin:
+#. Definition des Sensorpins:
 
-   This line of code declares a constant integer ``sensorPin`` and assigns it the value of ``A0``, which is the analog input pin the sensor is connected to.
+   Diese Codezeile deklariert eine Konstante vom Typ Integer ``sensorPin`` und weist ihr den Wert ``A0`` zu, der dem analogen Eingangspin entspricht, an den der Sensor angeschlossen ist.
 
    .. code-block:: arduino
 
       const int sensorPin = A0;
 
-#. Setup function:
+#. Setup-Funktion:
 
-   The ``setup()`` function is executed once when the program starts. It initializes serial communication at 9600 baud rate. This setup is necessary for sending data to the serial monitor.
+   Die Funktion ``setup()`` wird einmal ausgeführt, wenn das Programm startet. Sie initialisiert die serielle Kommunikation mit einer Baudrate von 9600. Diese Einrichtung ist notwendig, um Daten an den seriellen Monitor zu senden.
 
    .. code-block:: arduino
 
@@ -121,9 +121,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-#. Loop function:
+#. Loop-Funktion:
 
-   The ``loop()`` function runs continuously after ``setup()``. It reads the sensor value from pin A0 using ``analogRead()`` and prints this value to the serial monitor. The ``delay(500)`` statement pauses the loop for 500 milliseconds before the next reading, thus controlling the rate of data acquisition.
+   Die Funktion ``loop()`` wird nach ``setup()`` kontinuierlich ausgeführt. Sie liest den Sensorwert vom Pin A0 mit ``analogRead()`` und gibt diesen Wert auf dem seriellen Monitor aus. Die Anweisung ``delay(500)`` pausiert die Schleife für 500 Millisekunden vor der nächsten Messung und steuert so die Datenaufnahmefrequenz.
 
    .. code-block:: arduino
 
@@ -131,4 +131,5 @@ Code Analysis
         Serial.println(analogRead(A0));
         delay(500);
       }
+
 

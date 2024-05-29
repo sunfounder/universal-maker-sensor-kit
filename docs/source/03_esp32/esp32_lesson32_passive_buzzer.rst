@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson32_passive_buzzer:
 
-Lesson 32: Passive Buzzer Module
-==================================
+Lektion 32: Passives Summermodul
+====================================
 
-In this lesson, you'll learn to play a melody on a passive buzzer module using an ESP32 Development Board. We'll cover programming the ESP32 to control the buzzer and create musical notes with varying durations. This project is ideal for beginners in electronics and programming, providing hands-on experience in sound generation and basic digital sound principles. You'll develop practical skills in utilizing the ESP32 board and integrating simple components like the passive buzzer.
+In dieser Lektion lernen Sie, wie Sie eine Melodie auf einem passiven Summermodul mit einem ESP32-Entwicklungsboard abspielen. Wir behandeln die Programmierung des ESP32 zur Steuerung des Summers und zur Erzeugung von Musiktönen mit unterschiedlichen Dauern. Dieses Projekt ist ideal für Anfänger in Elektronik und Programmierung, da es praktische Erfahrungen in der Klangerzeugung und den grundlegenden digitalen Klangprinzipien bietet. Sie entwickeln praktische Fähigkeiten im Umgang mit dem ESP32-Board und der Integration einfacher Komponenten wie dem passiven Summer.
 
-Required Components
---------------------------
+Benötigte Komponenten
+-------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,38 +54,38 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
----------------------------
+Verkabelung
+--------------
 
 .. image:: img/Lesson_32_Passive_buzzer_esp32_bb.png
     :width: 100%
 
 
 Code
----------------------------
+-------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f3f8514-29eb-491f-b40f-0d808ef0aaac/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
----------------------------
+Code-Analyse
+---------------
 
-1. Including the pitches library:
+1. Einbinden der Pitches-Bibliothek:
 
-   This library provides the frequency values for various musical notes, allowing you to use musical notation in your code.
+   Diese Bibliothek stellt die Frequenzwerte für verschiedene Musiktöne bereit, sodass Sie musikalische Notationen in Ihrem Code verwenden können.
 
    .. code-block:: arduino
        
       #include "pitches.h"
 
-2. Defining constants and arrays:
+2. Definieren von Konstanten und Arrays:
 
-   * ``buzzerPin`` is the digital pin on the ESP32 Development Board where the buzzer is connected.
+   * ``buzzerPin`` ist der digitale Pin auf dem ESP32-Entwicklungsboard, an den der Summer angeschlossen ist.
 
-   * ``melody[]`` is an array that stores the sequence of notes to be played.
+   * ``melody[]`` ist ein Array, das die Abfolge der abzuspielenden Noten speichert.
 
-   * ``noteDurations[]`` is an array that stores the duration of each note in the melody.
+   * ``noteDurations[]`` ist ein Array, das die Dauer jeder Note in der Melodie speichert.
 
    .. raw:: html
       
@@ -101,15 +101,15 @@ Code Analysis
         4, 8, 8, 4, 4, 4, 4, 4
       };
 
-3. Playing the melody:
+3. Abspielen der Melodie:
 
-   * The ``for`` loop iterates over each note in the melody.
+   * Die ``for``-Schleife iteriert über jede Note in der Melodie.
 
-   * The ``tone()`` function plays a note on the buzzer for a specific duration.
+   * Die ``tone()``-Funktion spielt eine Note auf dem Summer für eine bestimmte Dauer.
 
-   * A delay is added between notes to distinguish them.
+   * Eine Verzögerung wird zwischen den Noten hinzugefügt, um sie zu unterscheiden.
 
-   * The ``noTone()`` function stops the sound.
+   * Die ``noTone()``-Funktion stoppt den Ton.
 
    .. raw:: html
       
@@ -127,6 +127,7 @@ Code Analysis
         }
       }
 
-4. Empty loop function:
+4. Leere Loop-Funktion:
 
-   Since the melody is played only once in the setup, there's no code in the loop function.
+   Da die Melodie nur einmal im Setup abgespielt wird, gibt es keinen Code in der Loop-Funktion.
+

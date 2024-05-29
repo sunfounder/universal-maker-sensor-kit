@@ -1,34 +1,33 @@
 
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_touch_toggle_light:
 
-Lesson 42: Touch toggle light
-==================================
+Lektion 42: Touch-Schalter für Licht
+========================================
 
 
-This project is a simple implementation of a traffic light control system utilizing a touch sensor and a traffic light LED module. 
-Activating the touch sensor initiates a sequence where LEDs illuminate in the following order: Red -> Yellow -> Green.
+Dieses Projekt ist eine einfache Umsetzung eines Verkehrslichtsteuerungssystems unter Verwendung eines Berührungssensors und eines Verkehrslicht-LED-Moduls. Die Aktivierung des Berührungssensors löst eine Sequenz aus, in der die LEDs in folgender Reihenfolge leuchten: Rot -> Gelb -> Grün.
 
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -41,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -60,7 +59,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_42_Touch_toggle_light_uno_bb.png
@@ -74,12 +73,11 @@ Code
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/f53d6cf6-ed27-49d3-b4d3-12f29b417a89/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-The operation of this project is straightforward: a touch detection on the sensor triggers the illumination of the next LED in the sequence (Red -> Yellow -> Green), controlled by the ``currentLED`` variable.
-
-1. Define pins and initial values
+Die Funktionsweise dieses Projekts ist unkompliziert: Eine Berührungserkennung am Sensor löst die Beleuchtung der nächsten LED in der Sequenz (Rot -> Gelb -> Grün) aus, gesteuert durch die Variable ``currentLED``.
+1. Pins und Startwerte definieren
 
    .. code-block:: arduino
    
@@ -91,9 +89,9 @@ The operation of this project is straightforward: a touch detection on the senso
       int currentTouchState;         // Current touch sensor state
       int currentLED = 0;            // Current LED: 0->Red, 1->Yellow, 2->Green
    
-   These lines establish the pin connections for the Arduino board components and initialize the touch sensor and LED states.
+   Diese Zeilen definieren die Pin-Verbindungen für die Komponenten des Arduino-Boards und initialisieren die Zustände des Berührungssensors und der LEDs.
 
-2. setup() function
+2. setup() Funktion
 
    .. code-block:: arduino
    
@@ -107,9 +105,9 @@ The operation of this project is straightforward: a touch detection on the senso
          currentTouchState = digitalRead(touchSensorPin); // Read initial touch state
        }
    
-   This function configures the initial setup for the Arduino, defining input and output modes and starting serial communication for debugging.
+   Diese Funktion konfiguriert das initiale Setup für den Arduino, definiert Eingangs- und Ausgangsmodi und startet die serielle Kommunikation zum Debuggen.
 
-3. loop() function
+3. loop() Funktion
 
    .. code-block:: arduino
    
@@ -137,9 +135,9 @@ The operation of this project is straightforward: a touch detection on the senso
          }
        }
 
-   The loop continuously monitors the touch sensor, cycling through the LEDs when a touch is detected, ensuring only one LED is on at any given time.
+   Die Schleife überwacht kontinuierlich den Berührungssensor, durchläuft die LEDs, wenn eine Berührung erkannt wird, und stellt sicher, dass jeweils nur eine LED eingeschaltet ist.
 
-4. Turn off LEDs function
+4. LEDs ausschalten Funktion
 
    .. code-block:: arduino
       
@@ -150,4 +148,4 @@ The operation of this project is straightforward: a touch detection on the senso
          digitalWrite(gledPin, LOW);
        }
 
-   This auxiliary function turns off all LEDs, aiding in the cycling process.
+   Diese Hilfsfunktion schaltet alle LEDs aus und hilft beim Durchlaufen des Zyklus.

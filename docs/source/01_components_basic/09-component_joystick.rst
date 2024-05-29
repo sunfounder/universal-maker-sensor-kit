@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_joystick:
 
-Joystick Module
+Joystick-Modul
 ==========================
 
 .. image:: img/09_joystick.png
@@ -25,38 +25,38 @@ Joystick Module
 
    <br/>
 
-A joystick module is a device that can measure the movement of a knob in two directions: horizontal (X-axis) and vertical (Y-axis). A joystick module can be used to control various things such as games, robots, cameras, etc.
+Ein Joystick-Modul ist ein Gerät, das die Bewegung eines Knopfes in zwei Richtungen messen kann: horizontal (X-Achse) und vertikal (Y-Achse). Ein Joystick-Modul kann zur Steuerung verschiedener Dinge wie Spiele, Roboter, Kameras usw. verwendet werden.
 
-Specification
+Spezifikation
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB Size: 34 x 26mm
-* Output Signal Type: DO and AO
-* Analog Output: X, Y, 2 Axis analog output
-* Digital Output: Z, digital output
+* Versorgungsspannung: 3,3V oder 5V
+* PCB-Größe: 34 x 26mm
+* Ausgangssignaltyp: DO und AO
+* Analoger Ausgang: X-, Y-, 2-Achsen-Analogausgang
+* Digitaler Ausgang: Z, digitaler Ausgang
 
-Pinout
+Pinbelegung
 ---------------------------
-* **+5V**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **VRX**: Analog output. X-axis analog output voltage. Moving the joystick from left to right will cause the output voltage to change from 0 to VCC. When the joystick is in the center position (idle state), it will read about half of VCC.
-* **VRY**: Analog output. Y-axis analog output voltage. Moving the joystick up or down will cause the output voltage to change from 0 to VCC. When the joystick is in the center position (at rest), it will read approximately half of VCC.
-* **SW**: Digital output. The pushbutton switch outputs a floating signal by default. 
+* **+5V**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **VRX**: Analogausgang. X-Achsen-Analogausgangsspannung. Das Bewegen des Joysticks von links nach rechts führt dazu, dass sich die Ausgangsspannung von 0 auf VCC ändert. Wenn sich der Joystick in der Mittelstellung (Ruhezustand) befindet, wird etwa die Hälfte von VCC gelesen.
+* **VRY**: Analogausgang. Y-Achsen-Analogausgangsspannung. Das Bewegen des Joysticks nach oben oder unten führt dazu, dass sich die Ausgangsspannung von 0 auf VCC ändert. Wenn sich der Joystick in der Mittelstellung (Ruhezustand) befindet, wird etwa die Hälfte von VCC gelesen.
+* **SW**: Digitalausgang. Der Drucktastenschalter gibt standardmäßig ein schwebendes Signal aus.
 
 .. tip::
-    To read the pushbutton switch, a pull-up resistor is needed. When the joystick knob is pressed, the switch output becomes LOW; otherwise, it remains HIGH. Ensure that the input pin connected to the switch has either internal pull-up enabled or an external pull-up resistor connected.
+    Zum Lesen des Drucktastenschalters wird ein Pull-up-Widerstand benötigt. Wenn der Joystick-Knopf gedrückt wird, wird der Schaltausgang LOW; andernfalls bleibt er HIGH. Stellen Sie sicher, dass der Eingangspin, der mit dem Schalter verbunden ist, entweder intern aktiviert oder ein externer Pull-up-Widerstand angeschlossen ist.
 
-Principle
+Funktionsprinzip
 ---------------------------
-Joystick operates based on the resistance change of two potentiometers (usually 10-kilo ohms). By changing resistance in x and y directions, Arduino receives varying voltages which are interpreted to x and y coordinates. The processor needs an ADC unit to change the joystick’s analog values into digital values and perform necessary processing.
+Ein Joystick arbeitet basierend auf der Widerstandsänderung von zwei Potentiometern (normalerweise 10 Kiloohm). Durch Ändern des Widerstands in x- und y-Richtungen erhält das Arduino unterschiedliche Spannungen, die in x- und y-Koordinaten umgewandelt werden. Der Prozessor benötigt eine ADC-Einheit, um die analogen Werte des Joysticks in digitale Werte umzuwandeln und die notwendigen Berechnungen durchzuführen.
 
-Arduino boards have six 10-bits ADC channels. It means the Arduino’s reference voltage (5 volts) is divided to 1024 segments. When joystick moves along the x-axis, the ADC value rises from 0 to 1023, with the value 512 in the middle. The image below displays the ADC approximate value based on the joystick position.
+Arduino-Boards haben sechs 10-Bit-ADC-Kanäle. Das bedeutet, dass die Referenzspannung des Arduino (5 Volt) in 1024 Segmente unterteilt ist. Wenn sich der Joystick entlang der X-Achse bewegt, steigt der ADC-Wert von 0 auf 1023, wobei der Wert 512 in der Mitte liegt. Das folgende Bild zeigt den ungefähren ADC-Wert basierend auf der Position des Joysticks.
 
 .. image:: img/09_joystick_xy.png
     :width: 400
     :align: center
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/09_joystick_schematic.png
@@ -67,11 +67,9 @@ Schematic diagram
 
    <br/>
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson09_joystick` (Arduino UNO)
 * :ref:`esp32_lesson09_joystick` (ESP32)
 * :ref:`pico_lesson09_joystick` (Raspberry Pi Pico)
 * :ref:`pi_lesson09_joystick` (Raspberry)
-
-

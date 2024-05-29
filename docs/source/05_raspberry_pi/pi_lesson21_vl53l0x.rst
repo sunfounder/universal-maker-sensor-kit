@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson21_vl53l0x:
 
-Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
-====================================================================
+Lektion 21: Time-of-Flight Micro-LIDAR Entfernungssensor (VL53L0X)
+======================================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi to connect with a Time of Flight Micro-LIDAR Distance Sensor (VL53L0X). You'll be guided through setting up the sensor, initializing I2C communication, and measuring distances in real-time. This project will enhance your comprehension of connecting hardware with the Raspberry Pi and utilizing Python for practical applications. Additionally, you'll delve into adjusting measurement parameters to meet varying accuracy and speed needs.
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi verwenden, um einen Time-of-Flight Micro-LIDAR Entfernungssensor (VL53L0X) anzuschließen. Sie werden durch die Einrichtung des Sensors, die Initialisierung der I2C-Kommunikation und die Echtzeitmessung von Entfernungen geführt. Dieses Projekt verbessert Ihr Verständnis für die Verbindung von Hardware mit dem Raspberry Pi und die Nutzung von Python für praktische Anwendungen. Zusätzlich werden Sie lernen, Messparameter anzupassen, um unterschiedliche Anforderungen an Genauigkeit und Geschwindigkeit zu erfüllen.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+-----------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 10
@@ -53,45 +53,42 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_21_vl53l0x_pi_bb.png
     :width: 100%
 
-
-Install Library
+Bibliothek installieren
 ---------------------------
 
 .. note::
-    The adafruit-circuitpython-vl53l0x library relies on Blinka, so please ensure that Blinka has been installed. To install libraries, refer to :ref:`install_blinka`.
+    Die adafruit-circuitpython-vl53l0x-Bibliothek hängt von Blinka ab, stellen Sie also sicher, dass Blinka installiert ist. Um Bibliotheken zu installieren, siehe :ref:`install_blinka`.
 
-Before installing the library, please make sure that the virtual Python environment is activated:
+Bevor Sie die Bibliothek installieren, stellen Sie bitte sicher, dass die virtuelle Python-Umgebung aktiviert ist:
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Install adafruit-circuitpython-vl53l0x library:
+Installieren Sie die adafruit-circuitpython-vl53l0x-Bibliothek:
 
 .. code-block:: bash
 
    pip3 install adafruit-circuitpython-vl53l0x
 
-
 Code
 ---------------------------
 
 .. note::
-   - Please ensure that you have installed the Python library required for running the code according to the "Install Library" steps.
-   - Before running the code, please make sure that you have activated the virtual Python environment with blinka installed. You can activate the virtual environment using a command like this:
+   - Stellen Sie sicher, dass die Python-Bibliothek gemäß den Schritten in "Bibliothek installieren" installiert ist.
+   - Bevor Sie den Code ausführen, aktivieren Sie bitte die virtuelle Python-Umgebung mit installiertem Blinka. Sie können die virtuelle Umgebung mit folgendem Befehl aktivieren:
 
      .. code-block:: bash
   
         source ~/env/bin/activate
 
-   - Find the code for this lesson in ``universal-maker-sensor-kit-main/pi/`` directory, or directly copy and paste the code below. Execute the code by running the following commands in terminal:
+   - Sie finden den Code für diese Lektion im Verzeichnis ``universal-maker-sensor-kit-main/pi/`` oder kopieren Sie den untenstehenden Code direkt und führen Sie ihn im Terminal mit folgenden Befehlen aus:
 
      .. code-block:: bash
   
@@ -133,10 +130,10 @@ Code
    except KeyboardInterrupt:
        print("Exit")  # Exit on CTRL+C
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. **Importing Libraries**
+#. **Bibliotheken importieren**
 
    .. code-block:: python
    
@@ -145,16 +142,16 @@ Code Analysis
        import busio
        import adafruit_vl53l0x
 
-   - ``time``: Used for implementing delays.
-   - ``board``: Provides access to the physical pins on the Raspberry Pi.
-   - ``busio``: Manages I2C communication between the Pi and the sensor.
-   - ``adafruit_vl53l0x``: The specific library for the VL53L0X sensor. For more detail about the ``adafruit_vl53l0x`` library, please refer to |link_Adafruit_CircuitPython_VL53L0X|.
+   - ``time``: Wird für die Implementierung von Verzögerungen verwendet.
+   - ``board``: Bietet Zugriff auf die physischen Pins des Raspberry Pi.
+   - ``busio``: Verwalten die I2C-Kommunikation zwischen dem Pi und dem Sensor.
+   - ``adafruit_vl53l0x``: Die spezifische Bibliothek für den VL53L0X-Sensor. Weitere Informationen zur ``adafruit_vl53l0x``-Bibliothek finden Sie unter |link_Adafruit_CircuitPython_VL53L0X|.
 
    .. raw:: html
       
       <br/>
 
-#. **Initializing the Sensor**
+#. **Sensor initialisieren**
 
    .. code-block:: python
    
@@ -162,14 +159,14 @@ Code Analysis
        i2c = busio.I2C(board.SCL, board.SDA)
        vl53 = adafruit_vl53l0x.VL53L0X(i2c)
 
-   - This sets up the I2C communication using SCL (clock line) and SDA (data line) pins.
-   - The VL53L0X sensor is then initialized with this I2C bus.
+   - Dies richtet die I2C-Kommunikation über die SCL (Taktleitung) und SDA (Datenleitung) Pins ein.
+   - Der VL53L0X-Sensor wird dann mit diesem I2C-Bus initialisiert.
 
    .. raw:: html
       
       <br/>
 
-#. **Configuration (Optional)**
+#. **Konfiguration (Optional)**
 
    .. code-block:: python
    
@@ -177,9 +174,9 @@ Code Analysis
        # vl53.measurement_timing_budget = 20000
        # ...
 
-   This part of the code, which is commented out, allows for adjusting the sensor's timing budget, affecting the balance between speed and accuracy.
+   Dieser Teil des Codes, der auskommentiert ist, ermöglicht die Anpassung des Messzeitbudgets des Sensors, was das Gleichgewicht zwischen Geschwindigkeit und Genauigkeit beeinflusst.
 
-#. **Main Loop**
+#. **Hauptschleife**
 
    .. code-block:: python
       
@@ -189,6 +186,5 @@ Code Analysis
                time.sleep(1.0)
        except KeyboardInterrupt:
            print("Exit")
-
-   - In an infinite loop, the sensor's range is read and printed every second.
+- In an infinite loop, the sensor's range is read and printed every second.
    - The loop can be exited with a CTRL+C interrupt, which is handled by the KeyboardInterrupt exception.

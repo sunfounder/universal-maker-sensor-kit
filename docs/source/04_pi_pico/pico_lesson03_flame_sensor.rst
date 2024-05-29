@@ -1,30 +1,29 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson03_flame:
-
-Lesson 03: Flame Sensor Module
+Lektion 03: Flammensensor-Modul
 ==================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to detect fire using a flame sensor. When the sensor detects a flame, the onboard LED of the Raspberry Pi Pico W will turn on and display a message indicating fire detection. If no fire is detected, the LED remains off and shows a different message. This project introduces working with external sensors and provides practical experience in handling digital inputs and outputs on the Raspberry Pi Pico W using MicroPython.
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W verwenden, um mit einem Flammensensor Feuer zu erkennen. Wenn der Sensor eine Flamme erkennt, wird die integrierte LED des Raspberry Pi Pico W eingeschaltet und eine Meldung zur Feuererkennung angezeigt. Wenn kein Feuer erkannt wird, bleibt die LED aus und zeigt eine andere Meldung an. Dieses Projekt führt in die Arbeit mit externen Sensoren ein und bietet praktische Erfahrungen im Umgang mit digitalen Ein- und Ausgängen am Raspberry Pi Pico W mit MicroPython.
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_03_flame_module_circuit_bb.png
@@ -85,32 +84,31 @@ Code
    
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
-
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Importing Required Modules
+#. Importieren der benötigten Module
 
-   This part of the code imports necessary modules. ``machine`` is used for interacting with GPIO pins, and ``time`` provides functionality for delays.
+   Dieser Teil des Codes importiert die erforderlichen Module. ``machine`` wird für die Interaktion mit den GPIO-Pins verwendet, und ``time`` bietet Funktionen für Verzögerungen.
    
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Initializing the Flame Sensor and LED
+#. Initialisieren des Flammensensors und der LED
 
-   Sets up the flame sensor and onboard LED. Pin 16 is configured as an input to read the flame sensor, and the onboard LED is set as an output.
+   Konfiguriert den Flammensensor und die integrierte LED. Pin 16 wird als Eingang zum Lesen des Flammensensors konfiguriert, und die integrierte LED wird als Ausgang festgelegt.
    
    .. code-block:: python
 
       flame_sensor = Pin(16, Pin.IN)
       led = Pin("LED", Pin.OUT)
 
-#. The Main Loop
+#. Die Haupt-Schleife
 
-   - An infinite loop checks the state of the flame sensor. If the sensor detects a flame (value 0), it turns on the LED and prints a message. Otherwise, it turns off the LED and prints a different message.
-   - A delay of 0.1 seconds reduces CPU usage.
+   - Eine Endlosschleife überprüft den Zustand des Flammensensors. Wenn der Sensor eine Flamme erkennt (Wert 0), wird die LED eingeschaltet und eine Meldung ausgegeben. Andernfalls wird die LED ausgeschaltet und eine andere Meldung ausgegeben.
+   - Eine Verzögerung von 0,1 Sekunden reduziert die CPU-Auslastung.
 
    .. raw :: html
       

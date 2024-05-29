@@ -1,35 +1,35 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Data Types
+Datentypen
 ===========
 
-Built-in Data Types
+Eingebaute Datentypen
 ---------------------
-MicroPython has the following data types:
+MicroPython hat folgende Datentypen:
 
-* Text Type: str
-* Numeric Types: int, float, complex
-* Sequence Types: list, tuple, range
-* Mapping Type: dict
-* Set Types: set, frozenset
-* Boolean Type: bool
-* Binary Types: bytes, bytearray, memoryview
+* Texttyp: str
+* Numerische Typen: int, float, complex
+* Sequenztypen: list, tuple, range
+* Zuordnungstyp: dict
+* Mengentypen: set, frozenset
+* Boolescher Typ: bool
+* Binäre Typen: bytes, bytearray, memoryview
 
-Getting the Data Type
+Abrufen des Datentyps
 -----------------------------
-You can get the data type of any object by using the ``type()`` function:
+Sie können den Datentyp eines beliebigen Objekts mit der Funktion ``type()`` erhalten:
 
 
 
@@ -41,9 +41,9 @@ You can get the data type of any object by using the ``type()`` function:
 >>> %Run -c $EDITOR_CONTENT
 <class 'float'>
 
-Setting the Data Type
-----------------------
-MicroPython does not need to set the data type specifically, it has been determined when you assign a value to the variable.
+Festlegen des Datentyps
+---------------------------
+MicroPython muss den Datentyp nicht speziell festlegen, er wird bestimmt, wenn Sie einen Wert der Variable zuweisen.
 
 
 
@@ -63,10 +63,10 @@ MicroPython does not need to set the data type specifically, it has been determi
 <class 'list'>
 >>> 
 
-Setting the Specific Data Type
-----------------------------------
+Bestimmten des spezifischen Datentyps
+-----------------------------------------
 
-If you want to specify the data type, you can use the following constructor functions:
+Wenn Sie den Datentyp angeben möchten, können Sie die folgenden Konstruktoren verwenden:
 
 .. list-table:: 
     :widths: 25 10
@@ -103,9 +103,7 @@ If you want to specify the data type, you can use the following constructor func
     *   - x = memoryview(bytes(5))
         - memoryview
 
-You can print some of them to see the result.
-
-
+Sie können einige davon ausdrucken, um das Ergebnis zu sehen.
 
 .. code-block:: python
 
@@ -123,14 +121,14 @@ You can print some of them to see the result.
 True
 >>> 
 
-Type Conversion
+Typumwandlung
 ----------------
-You can convert from one type to another with the int(), float(), and complex() methods:
-Casting in python is therefore done using constructor functions:
+Sie können von einem Typ in einen anderen mit den Methoden int(), float() und complex() konvertieren:
+Das Umwandeln in Python erfolgt daher unter Verwendung von Konstruktorfunktionen:
 
-* int() - constructs an integer number from an integer literal, a float literal (by removing all decimals), or a string literal (providing the string represents a whole number)
-* float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)
-* str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals
+* int() - konstruiert eine ganze Zahl aus einer ganzen Zahlen-Literal, einer Fließkommazahlen-Literal (indem alle Dezimalstellen entfernt werden) oder einer Zeichenfolgen-Literal (sofern die Zeichenfolge eine ganze Zahl darstellt)
+* float() - konstruiert eine Fließkommazahl aus einer ganzen Zahlen-Literal, einer Fließkommazahlen-Literal oder einer Zeichenfolgen-Literal (sofern die Zeichenfolge eine Fließkommazahl oder eine ganze Zahl darstellt)
+* str() - konstruiert eine Zeichenfolge aus einer Vielzahl von Datentypen, einschließlich Zeichenfolgen, ganzen Zahlen-Literalen und Fließkommazahlen-Literalen
 
 
 
@@ -144,4 +142,4 @@ Casting in python is therefore done using constructor functions:
     print(b)
     print(c)
 
-Note: You cannot convert complex numbers into another number type.
+Hinweis: Sie können komplexe Zahlen nicht in einen anderen Zahlentyp konvertieren.

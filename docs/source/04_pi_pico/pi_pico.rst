@@ -1,23 +1,23 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-For Raspberry Pi Pico W
+Für Raspberry Pi Pico W
 ==================================================
 
-Raspberry Pi Pico W users, please check out the following tutorial. This tutorial is suitable for |link_pi_pico| We will use MicroPython to program the Pi Pico W and write a simple code example for each component to help you get started quickly.
+Benutzer des Raspberry Pi Pico W sollten sich bitte das folgende Tutorial ansehen. Dieses Tutorial ist für |link_pi_pico| geeignet. Wir werden MicroPython verwenden, um den Pi Pico W zu programmieren, und für jedes Bauteil ein einfaches Codebeispiel schreiben, um Ihnen den Einstieg zu erleichtern.
 
-MicroPython is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.
+MicroPython ist eine Version der Python-Programmiersprache für Mikrocontroller, wie Ihren Raspberry Pi Pico W. Mit MicroPython können Sie Ihr Python-Wissen nutzen, um Code zu schreiben, um mit elektronischen Bauteilen zu interagieren.
 
 .. toctree::
     :maxdepth: 1

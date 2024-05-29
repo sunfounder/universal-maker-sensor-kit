@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson30_relay_module:
-
-Lesson 30: Relay Module
+Lektion 30: Relaismodul
 ==================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to control a relay module. We will set up a basic circuit connecting the relay to the Pi and write a MicroPython script to toggle the relay on and off at one-second intervals. This project introduces you to controlling external devices such as relays and demonstrates practical output operations using the GPIO pins on the Raspberry Pi Pico W. Ideal for those interested in delving into home automation or managing other high-power devices, this lesson offers fundamental insight into how microcontrollers can interact with and control external hardware.
+In dieser Lektion lernen Sie, wie Sie das Raspberry Pi Pico W verwenden, um ein Relaismodul zu steuern. Wir werden eine grundlegende Schaltung einrichten, die das Relais mit dem Pi verbindet, und ein MicroPython-Skript schreiben, um das Relais in Ein-Sekunden-Intervallen ein- und auszuschalten. Dieses Projekt führt Sie in die Steuerung externer Geräte wie Relais ein und demonstriert praktische Ausgabeoperationen unter Verwendung der GPIO-Pins des Raspberry Pi Pico W. Ideal für diejenigen, die sich für Heimautomatisierung interessieren oder andere Hochleistungsgeräte verwalten möchten, bietet diese Lektion grundlegende Einblicke, wie Mikrocontroller mit externer Hardware interagieren und diese steuern können.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv bequem, ein ganzes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -56,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_30_Relay_Module_pico_bb.png
@@ -92,30 +92,29 @@ Code
        relay_off()  # Ensure the relay is turned off in case of an exception
        print("Program interrupted, relay turned off.")
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
    
-   The ``machine`` and ``time`` libraries are imported to interact with GPIO pins and handle time-related functions, respectively.
+   Die Bibliotheken ``machine`` und ``time`` werden importiert, um mit GPIO-Pins zu interagieren und zeitbezogene Funktionen zu handhaben.
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Initializing Relay Pin
+#. Initialisierung des Relais-Pins
 
-   A GPIO pin is set up as an output pin to control the relay. The ``relay_pin`` variable represents the GPIO pin connected to the relay.
+   Ein GPIO-Pin wird als Ausgangspin konfiguriert, um das Relais zu steuern. Die Variable ``relay_pin`` repräsentiert den mit dem Relais verbundenen GPIO-Pin.
 
    .. code-block:: python
 
       relay_pin = Pin(16, Pin.OUT)
 
-#. Defining Relay Control Functions
+#. Definition von Relaisschaltfunktionen
    
-   Two functions, ``relay_on`` and ``relay_off``, are defined to turn the relay on and off, respectively. These functions change the GPIO pin's value to high (1) or low (0).
+   Zwei Funktionen, ``relay_on`` und ``relay_off``, werden definiert, um das Relais jeweils ein- und auszuschalten. Diese Funktionen ändern den Wert des GPIO-Pins auf hoch (1) oder niedrig (0).
 
    .. code-block:: python
 
@@ -125,9 +124,9 @@ Code Analysis
       def relay_off():
           relay_pin.value(0)  # Set relay to OFF state
 
-#. Main Loop and Exception Handling
+#. Hauptschleife und Ausnahmebehandlung
    
-   A continuous loop is created using ``while True``. Inside this loop, the relay is turned on and off with a 1-second delay between each state. If an interruption occurs (like a keyboard interruption), the relay is turned off for safety, and a message is printed.
+   Eine kontinuierliche Schleife wird mit ``while True`` erstellt. Innerhalb dieser Schleife wird das Relais ein- und ausgeschaltet, jeweils mit einer 1-sekündigen Verzögerung zwischen jedem Zustand. Wenn eine Unterbrechung auftritt (wie eine Tastaturunterbrechung), wird das Relais aus Sicherheitsgründen ausgeschaltet, und eine Nachricht wird ausgegeben.
 
    .. code-block:: python
 

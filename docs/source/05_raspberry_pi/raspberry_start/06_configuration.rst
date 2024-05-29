@@ -1,30 +1,31 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Configuring Your Raspberry Pi
-=================================
+ 
+Konfiguration Ihres Raspberry Pi
+====================================
 
 .. _pi_enable_i2c:
 
-I2C Configuration
------------------------
+I2C-Konfiguration
+------------------------
 
-To enable the I2C port on your Raspberry Pi, follow these steps (skip if already enabled; if unsure, proceed with the instructions).
+Um den I2C-Port auf Ihrem Raspberry Pi zu aktivieren, befolgen Sie diese Schritte (überspringen Sie diesen Schritt, wenn er bereits aktiviert ist; wenn Sie sich unsicher sind, folgen Sie den Anweisungen).
 
-1. Log into your Raspberry Pi, open the Terminal, and enter the command below to access the Raspberry Pi Software Configuration Tool. (You can also access the terminal using SSH.)
+1. Melden Sie sich bei Ihrem Raspberry Pi an, öffnen Sie das Terminal und geben Sie den folgenden Befehl ein, um das Raspberry Pi Software-Konfigurationstool zu starten. (Sie können das Terminal auch über SSH aufrufen.)
 
-   .. code-block:: 
+   .. code-block::
 
        sudo raspi-config
 
@@ -35,10 +36,10 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-2. Go to **Interfacing options**.
+2. Gehen Sie zu **Interfacing options**.
 
    .. note::
-      Use the ``up`` and ``down`` arrow keys to move the highlighted selection between the options available. Pressing the ``right`` arrow key will jump out of the Options menu and take you to the ``<Select>`` and ``<Finish>`` buttons. Pressing ``left`` will take you back to the options. Alternatively, you can use the ``Tab`` key to switch between these.
+      Verwenden Sie die Pfeiltasten ``up`` und ``down``, um die Auswahl zwischen den verfügbaren Optionen zu bewegen. Mit der rechten Pfeiltaste gelangen Sie aus dem Optionsmenü zu den Tasten ``<Select>`` und ``<Finish>``. Mit der linken Pfeiltaste kehren Sie zu den Optionen zurück. Alternativ können Sie die ``Tab``-Taste verwenden, um zwischen den Optionen zu wechseln.
 
    .. image:: img/configuration_02.png
        :width: 100%
@@ -47,7 +48,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-3. Select **I2C**.
+3. Wählen Sie **I2C**.
 
    .. image:: img/configuration_03.png
        :width: 100%
@@ -56,7 +57,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-4. Choose **<Yes>** to activate the I2C interface, then choose **<Ok>**.
+4. Wählen Sie **<Yes>**, um die I2C-Schnittstelle zu aktivieren, und dann **<Ok>**.
 
    .. image:: img/configuration_04.png
        :width: 100%
@@ -65,7 +66,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-5. Select **<Finish>** to exit the Raspberry Pi Software Configuration Tool.
+5. Wählen Sie **<Finish>**, um das Raspberry Pi Software-Konfigurationstool zu verlassen.
 
    .. image:: img/configuration_05.png
        :width: 100%
@@ -74,16 +75,16 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-6. Verify the address of the connected I2C device using the following command.
+6. Überprüfen Sie die Adresse des angeschlossenen I2C-Geräts mit dem folgenden Befehl.
 
-   .. code-block:: 
+   .. code-block::
 
        i2cdetect -y 1      
 
    .. image:: img/configuration_06.png
        :width: 100%
 
-   Addresses of any connected I2C devices will be shown.
+   Die Adressen aller angeschlossenen I2C-Geräte werden angezeigt.
 
    .. image:: img/configuration_07.png
        :width: 100%
@@ -96,15 +97,15 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
 .. _pi_enable_1wire:
 
-1-Wire Configuration
+1-Wire-Konfiguration
 -----------------------
 
-To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if already enabled; if unsure, proceed with the instructions).
+Um den 1-Wire-Port auf Ihrem Raspberry Pi zu aktivieren, befolgen Sie diese Schritte (überspringen Sie diesen Schritt, wenn er bereits aktiviert ist; wenn Sie sich unsicher sind, folgen Sie den Anweisungen).
 
 
-1. Log into your Raspberry Pi, open the Terminal, and enter this command to access the Raspberry Pi Software Configuration Tool. (You can also access the terminal using SSH.)
+1. Melden Sie sich bei Ihrem Raspberry Pi an, öffnen Sie das Terminal und geben Sie diesen Befehl ein, um das Raspberry Pi Software-Konfigurationstool zu starten. (Sie können das Terminal auch über SSH aufrufen.)
 
-   .. code-block:: 
+   .. code-block::
 
        sudo raspi-config
 
@@ -115,10 +116,10 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-2. Go to **Interfacing options**.
+2. Gehen Sie zu **Interfacing options**.
 
    .. note::
-      Use the ``up`` and ``down`` arrow keys to move the highlighted selection between the options available. Pressing the ``right`` arrow key will jump out of the Options menu and take you to the ``<Select>`` and ``<Finish>`` buttons. Pressing ``left`` will take you back to the options. Alternatively, you can use the ``Tab`` key to switch between these.
+      Verwenden Sie die Pfeiltasten ``up`` und ``down``, um die Auswahl zwischen den verfügbaren Optionen zu bewegen. Mit der rechten Pfeiltaste gelangen Sie aus dem Optionsmenü zu den Tasten ``<Select>`` und ``<Finish>``. Mit der linken Pfeiltaste kehren Sie zu den Optionen zurück. Alternativ können Sie die ``Tab``-Taste verwenden, um zwischen den Optionen zu wechseln.
 
    .. image:: img/configuration_09.png
        :width: 100%
@@ -127,7 +128,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-3. Select **1-Wire**.
+3. Wählen Sie **1-Wire**.
 
    .. image:: img/configuration_10.png
        :width: 100%
@@ -136,7 +137,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-4. Choose **<Yes>** to activate the 1-Wire interface, then choose **<Ok>**.
+4. Wählen Sie **<Yes>**, um die 1-Wire-Schnittstelle zu aktivieren, und dann **<Ok>**.
 
    .. image:: img/configuration_11.png
        :width: 100%
@@ -145,7 +146,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-5. Select **<Finish>** to exit the Raspberry Pi Software Configuration Tool.
+5. Wählen Sie **<Finish>**, um das Raspberry Pi Software-Konfigurationstool zu verlassen.
 
    .. image:: img/configuration_12.png
        :width: 100%
@@ -154,7 +155,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-6. Select **<yes>** to reboot the Raspberry Pi.
+6. Wählen Sie **<Yes>**, um den Raspberry Pi neu zu starten.
 
    .. image:: img/configuration_13.png
        :width: 100%

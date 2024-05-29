@@ -1,30 +1,31 @@
-.. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+ .. note::
 
-    **Why Join?**
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    **Warum beitreten?**
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
+
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson02_soil_moisture:
 
-Lesson 02: Capacitive Soil Moisture Module
-============================================
+Lektion 02: Kapazitiver Bodenfeuchtesensor
+===================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to measure soil moisture levels using a capacitive sensor and an ADC (Analog to Digital Converter). This beginner-friendly project will introduce you to handling analog signals in MicroPython. 
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W verwenden, um die Bodenfeuchtigkeit mithilfe eines kapazitiven Sensors und eines ADC (Analog-Digital-Wandlers) zu messen. Dieses für Anfänger geeignete Projekt führt Sie in die Handhabung analoger Signale in MicroPython ein.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+------------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_02_Capacitive_Soil_Moisture_Module_bb.png
@@ -80,7 +81,7 @@ Code
    
        time.sleep_ms(200)  # Wait for 200 milliseconds before the next read
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
 #. Importing Libraries:
@@ -90,15 +91,15 @@ Code Analysis
       from machine import ADC
       import time
 
-#. ADC Setup:
+#. ADC-Konfiguration:
 
    .. code-block:: python
 
       sensor_AO = ADC(26)
 
-   This code initializes an ADC object on GPIO pin 26. ADC is used to convert analog signals (from analog sensors) to digital data that the microcontroller can process.
+   Dieser Code initialisiert ein ADC-Objekt am GPIO-Pin 26. ADC wird verwendet, um analoge Signale (von analogen Sensoren) in digitale Daten umzuwandeln, die der Mikrocontroller verarbeiten kann.
 
-#. Reading Sensor Data in a Loop:
+#. Lesen der Sensordaten in einer Schleife:
 
    .. code-block:: python
     

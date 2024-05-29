@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson07_speed:
 
-Lesson 07: Infrared Speed Sensor Module
+Lektion 07: Infrarot-Geschwindigkeitssensormodul
 ==========================================
 
-In this lesson, you'll learn how to use an ESP32 Development Board with a Speed Sensor Module to detect obstructions. We'll see how the sensor sends a high signal when there's an obstruction and a low signal when the path is clear. This project is ideal for those looking to grasp sensor integration and basic input/output operations in a practical setting using the ESP32 platform.
+In dieser Lektion lernen Sie, wie Sie ein ESP32-Entwicklungsboard mit einem Geschwindigkeitssensormodul verwenden, um Hindernisse zu erkennen. Wir werden sehen, wie der Sensor ein hohes Signal sendet, wenn ein Hindernis vorhanden ist, und ein niedriges Signal, wenn der Weg frei ist. Dieses Projekt ist ideal für diejenigen, die das Verständnis der Sensorintegration und grundlegender Ein-/Ausgabeoperationen in einem praktischen Umfeld mit der ESP32-Plattform vertiefen möchten.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_speed`
         - |link_speed_sensor_module_buy|
 
-
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_07_Speed_esp32_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -68,20 +66,20 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/bdf494c6-c0b1-4dbd-89bc-ce671db41bbb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Define the sensor pin
+#. Definition des Sensorpins
 
-   The sensor pin is declared as a constant integer and is assigned pin number 25 of the ESP32.
+   Der Sensorpin wird als konstante Ganzzahl deklariert und auf Pin Nummer 25 des ESP32 gesetzt.
 
    .. code-block:: arduino
 
       const int sensorPin = 25;
 
-#. Setup function
+#. Setup-Funktion
 
-   This function initializes the serial communication at 9600 baud rate and sets the sensorPin as an input.
+   Diese Funktion initialisiert die serielle Kommunikation mit einer Baudrate von 9600 und setzt den Sensorpin als Eingang.
 
    .. code-block:: arduino
     
@@ -90,11 +88,11 @@ Code Analysis
         pinMode(sensorPin, INPUT);
       }
 
-#. Loop function
+#. Loop-Funktion
 
-   The loop function continuously checks the sensor pin's status.
-   If the sensor pin reads HIGH, it prints "Obstruction detected" to the Serial Monitor.
-   If the sensor pin is LOW, it prints "Unobstructed".
+   Die Loop-Funktion prüft kontinuierlich den Status des Sensorpins.
+   Wenn der Sensorpin HIGH liest, wird "Obstruktion erkannt" auf dem seriellen Monitor ausgegeben.
+   Wenn der Sensorpin LOW ist, wird "Keine Obstruktion" ausgegeben.
 
    .. code-block:: arduino
 
@@ -106,9 +104,9 @@ Code Analysis
         }
       }
 
-#. More
+#. Zusätzliche Informationen
 
-   If an encoder is mounted on the motor, the rotational speed of the motor can be calculated by counting the number of times an obstruction passes the sensor within a specific period.
+   Wenn ein Encoder am Motor montiert ist, kann die Drehzahl des Motors berechnet werden, indem die Anzahl der Male gezählt wird, die eine Obstruktion innerhalb eines bestimmten Zeitraums am Sensor vorbeigeht.
 
    .. image:: img/Lesson_07_Encoder_Disk.png
       :align: center

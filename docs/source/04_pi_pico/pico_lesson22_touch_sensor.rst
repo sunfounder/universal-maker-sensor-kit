@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson22_touch_sensor:
-
-Lesson 22: Touch Sensor Module
+Lektion 22: Touch-Sensor-Modul
 ==================================
 
-In this lesson, you'll learn how to connect a touch sensor to the Raspberry Pi Pico W in order to control an onboard LED. By using straightforward Python code, you'll configure the touch sensor as an input device. When the sensor detects a touch, it will send a signal to turn on the LED, providing a visual indication that a touch has been detected. Conversely, when there's no touch, the LED stays off. 
+In dieser Lektion lernen Sie, wie Sie einen Touch-Sensor mit dem Raspberry Pi Pico W verbinden, um eine LED an Bord zu steuern. Mit einfachem Python-Code konfigurieren Sie den Touch-Sensor als Eingabegerät. Wenn der Sensor eine Berührung erkennt, sendet er ein Signal, um die LED einzuschalten und signalisiert so visuell, dass eine Berührung erkannt wurde. Im Gegensatz dazu bleibt die LED aus, wenn keine Berührung erfolgt.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_22_touch_bb.png
@@ -86,12 +86,12 @@ Code
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. **Setting up the pins**:
+#. **Einrichten der Pins**:
 
-   Here, we import necessary libraries and set up GPIO pins. The touch sensor is connected to GPIO 16 as an input, and the onboard LED is configured as an output.
+   Hier importieren wir die erforderlichen Bibliotheken und richten die GPIO-Pins ein. Der Touch-Sensor ist mit GPIO 16 als Eingang verbunden, und die eingebaute LED ist als Ausgang konfiguriert.
 
    .. code-block:: python
 
@@ -101,9 +101,9 @@ Code Analysis
       touch_sensor = Pin(16, Pin.IN)
       led = Pin("LED", Pin.OUT)
 
-#. **Main loop and touch detection**:
+#. **Hauptschleife und Berührungserkennung**:
 
-   In an infinite loop, the code constantly checks the state of the touch sensor. If a touch is detected (value equals 1), the LED is turned on and a message is printed. Otherwise, the LED remains off, and a different message is printed. A short delay is added to reduce CPU usage.
+   In einer Endlosschleife überprüft der Code ständig den Zustand des Touch-Sensors. Wenn eine Berührung erkannt wird (Wert gleich 1), wird die LED eingeschaltet und eine Nachricht wird gedruckt. Andernfalls bleibt die LED aus, und eine andere Nachricht wird gedruckt. Eine kurze Verzögerung wird hinzugefügt, um die CPU-Nutzung zu reduzieren.
 
    .. code-block:: python
 

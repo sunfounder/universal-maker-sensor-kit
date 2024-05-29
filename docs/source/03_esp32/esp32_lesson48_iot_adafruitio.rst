@@ -1,31 +1,31 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_adafruit_io:
 
-Lesson 48: Temperature and Humidity Monitoring with Adafruit IO
-===========================================================================
+Lesson 48: Temperatur- und Feuchtigkeitsüberwachung mit Adafruit IO
+============================================================================
 
-In this project, we will guide you on how to use a popular IoT platform. There are many free (or low-cost) platforms available online for programming enthusiasts. Some examples are Adafruit IO, Blynk, Arduino Cloud, ThingSpeak, and so on. The usage of these platforms is quite similar. Here, we will be focusing on Adafruit IO.
+In diesem Projekt zeigen wir Ihnen, wie Sie eine beliebte IoT-Plattform nutzen können. Es gibt viele kostenlose (oder kostengünstige) Plattformen, die online für Programmierbegeisterte verfügbar sind. Einige Beispiele sind Adafruit IO, Blynk, Arduino Cloud, ThingSpeak und so weiter. Die Nutzung dieser Plattformen ist ziemlich ähnlich. Hier werden wir uns auf Adafruit IO konzentrieren.
 
-We will write an Arduino program that uses the DHT11 sensor to send temperature and humidity readings to Adafruit IO's dashboard. You can also control an LED on the circuit through a switch on the dashboard.
+Wir schreiben ein Arduino-Programm, das den DHT11-Sensor verwendet, um Temperatur- und Feuchtigkeitswerte an das Dashboard von Adafruit IO zu senden. Außerdem können Sie eine LED auf der Schaltung über einen Schalter auf dem Dashboard steuern.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,82 +54,80 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_dht11`
         - |link_dht11_humiture_buy|
 
-**Setting up the Dashboard**
+**Einrichtung des Dashboards**
 
-#. Visit |link_adafruit_io|, then click on **Start for free** to create a free account.
+#. Besuchen Sie |link_adafruit_io| und klicken Sie auf **Start for free**, um ein kostenloses Konto zu erstellen.
 
     .. image:: img/sp230516_102503.png
 
-#. Fill out the form to create an account.
+#. Füllen Sie das Formular aus, um ein Konto zu erstellen.
 
     .. image:: img/sp230516_102629.png
 
-#. After creating an Adafruit account, you'll need to reopen Adafruit io. Click on the **Dashboards**, then click on **New Dashboard**.
+#. Nachdem Sie ein Adafruit-Konto erstellt haben, müssen Sie Adafruit IO erneut öffnen. Klicken Sie auf **Dashboards** und dann auf **New Dashboard**.
 
     .. image:: img/sp230516_103347.png
 
-#. Create a **New Dashboard**.
+#. Erstellen Sie ein **New Dashboard**.
 
     .. image:: img/sp230516_103744.png
 
-#. Enter the newly created **Dashboard** and create a new block.
+#. Geben Sie das neu erstellte **Dashboard** ein und erstellen Sie einen neuen Block.
 
     .. image:: img/sp230516_104234.png
 
-#. Create 1 **Toggle** block.
+#. Erstellen Sie einen **Toggle**-Block.
 
     .. image:: img/sp230516_105727.png
-
-#. Next, you'll need to create a new feed here. This toggle will be used to control the LED, and we'll name this feed "LED".
+#. Als nächstes müssen Sie hier einen neuen Feed erstellen. Dieser Toggle wird verwendet, um die LED zu steuern, und wir nennen diesen Feed "LED".
 
     .. image:: img/sp230516_105641.png
 
-#. Check the **LED** feed, then move to the next step.
+#. Überprüfen Sie den **LED**-Feed und gehen Sie zum nächsten Schritt.
 
     .. image:: img/sp230516_105925.png
 
-#. Complete the block settings (mainly Block Title, On Text, and Off Text), then click on the **Create block** button at the bottom right to finish.
+#. Vervollständigen Sie die Blockeinstellungen (hauptsächlich Blocktitel, Ein-Text und Aus-Text), und klicken Sie dann unten rechts auf die Schaltfläche **Create block**, um den Vorgang abzuschließen.
 
     .. image:: img/sp230516_110124.png
 
-#. We also need to create two **Text Blocks** next. They will be used to display temperature and humidity. So, create two feeds named **temperature** and **humidity**.
+#. Als nächstes müssen wir zwei **Textblöcke** erstellen. Diese werden verwendet, um Temperatur und Luftfeuchtigkeit anzuzeigen. Erstellen Sie daher zwei Feeds mit den Namen **temperature** und **humidity**.
 
     .. image:: img/sp230516_110657.png
 
-#. After creation, your Dashboard should look something like this:
+#. Nach der Erstellung sollte Ihr Dashboard ungefähr so aussehen:
 
     .. image:: img/sp230516_111134.png
 
-#. You can adjust the layout by using the **Edit Layout** option on the Dashboard.
+#. Sie können das Layout mithilfe der Option **Edit Layout** auf dem Dashboard anpassen.
 
     .. image:: img/sp230516_111240.png
 
-#. Click on **API KEY**, and you will see your username and **API KEY** displayed. Note these down as you'll need them for your code.
+#. Klicken Sie auf **API KEY**, und Sie sehen Ihren Benutzernamen und den **API KEY**. Notieren Sie sich diese, da Sie sie für Ihren Code benötigen.
 
     .. image:: img/sp230516_111641.png
 
-**Running the Code**
+**Code ausführen**
 
-#. Build the circuit. 
+#. Bauen Sie die Schaltung auf.
 
     .. image:: img/Lesson_48_iot_adafruitio_bb.png
 
-#. Then, connect ESP32 to the computer using the USB cable.
+#. Verbinden Sie dann das ESP32 mit dem USB-Kabel mit dem Computer.
 
+#. Öffnen Sie den Code.
 
-#. Open the code.
-
-    * Open the ``Lesson_48_Adafruit_IO.ino`` file located in the ``universal-maker-sensor-kit\esp32\Lesson_48_Adafruit_IO`` directory, or copy the code into the Arduino IDE.
-    * After selecting the board (ESP32 Dev Module) and the appropriate port, click the **Upload** button.
+    * Öffnen Sie die Datei ``Lesson_48_Adafruit_IO.ino`` im Verzeichnis ``universal-maker-sensor-kit\esp32\Lesson_48_Adafruit_IO``, oder kopieren Sie den Code in die Arduino IDE.
+    * Nachdem Sie das Board (ESP32 Dev Module) und den entsprechenden Port ausgewählt haben, klicken Sie auf die Schaltfläche **Upload**.
     * :ref:`unknown_com_port`
-    * The ``Adafruit_MQTT Library`` and ``DHT sensor library`` are used here, you can install them from the **Library Manager**.
+    * Die ``Adafruit_MQTT Library`` und die ``DHT sensor library`` werden hier verwendet, Sie können sie im **Library Manager** installieren.
 
     .. raw:: html
 
         <iframe src=https://create.arduino.cc/editor/sunfounder01/987fb2fd-47e9-4a73-9020-6b2111eadd9c/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-#. Find the following lines and replace ``<SSID>`` and ``<PASSWORD>`` with the specific details of your WiFi network.
+#. Finden Sie die folgenden Zeilen und ersetzen Sie ``<SSID>`` und ``<PASSWORD>`` durch die spezifischen Details Ihres WiFi-Netzwerks.
 
     .. code-block::  Arduino
 
@@ -138,7 +136,7 @@ You can also buy them separately from the links below.
         #define WLAN_SSID "<SSID>"
         #define WLAN_PASS "<PASSWORD>"
 
-#. Then replace ``<YOUR_ADAFRUIT_IO_USERNAME>`` with your Adafruit IO username and ``<YOUR_ADAFRUIT_IO_KEY>`` with the **API KEY** you just copied.
+#. Ersetzen Sie dann ``<YOUR_ADAFRUIT_IO_USERNAME>`` durch Ihren Adafruit IO Benutzernamen und ``<YOUR_ADAFRUIT_IO_KEY>`` durch den **API KEY**, den Sie gerade kopiert haben.
 
     .. code-block::  Arduino
 
@@ -147,10 +145,10 @@ You can also buy them separately from the links below.
         #define AIO_USERNAME "<YOUR_ADAFRUIT_IO_USERNAME>"
         #define AIO_KEY      "<YOUR_ADAFRUIT_IO_KEY>"
 
-#. After selecting the correct board (ESP32 Dev Module) and port, click the **Upload** button.
+#. Wählen Sie das richtige Board (ESP32 Dev Module) und den entsprechenden Port aus und klicken Sie auf die Schaltfläche **Upload**.
 
-#. Once the code is successfully uploaded, you will observe the following message in the serial monitor, indicating successful communication with Adafruit IO.
-    
+#. Sobald der Code erfolgreich hochgeladen wurde, sehen Sie die folgende Meldung im seriellen Monitor, die eine erfolgreiche Kommunikation mit Adafruit IO anzeigt.
+
     .. code-block::
 
         Adafruit IO MQTTS (SSL/TLS) Example
@@ -163,6 +161,6 @@ You can also buy them separately from the links below.
         Temperature: 27.10
         Humidity: 61.00
 
-#. Navigate back to Adafruit IO. Now you can observe the temperature and humidity readings on the dashboard, or utilize the LED toggle switch to control the on/off state of the external LED connected to the circuit.
+#. Navigieren Sie zurück zu Adafruit IO. Jetzt können Sie die Temperatur- und Luftfeuchtigkeitsmessungen auf dem Dashboard beobachten oder den LED-Umschalter verwenden, um den Ein-/Ausschaltzustand der externen LED zu steuern, die an die Schaltung angeschlossen ist.
 
     .. image:: img/sp230516_143220.png

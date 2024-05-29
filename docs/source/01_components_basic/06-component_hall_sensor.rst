@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_hall:
 
-Hall Sensor Module
+Hallsensor-Modul
 =====================================
 
 .. image:: img/06_hall_sensor_module.png
@@ -25,14 +25,14 @@ Hall Sensor Module
 
    <br/>
 
-The Hall Sensor module is a magnetic non-contact sensor that produces an electrical signal proportional to the applied magnetic field. It can measure both north and south polarity of a magnetic field and the relative strength of the field. It's used for detecting magnetic fields, acting like a magnet detector that can identify nearby magnets. This sensor is useful in various projects, such as developing door alarm systems or measuring the speed of rotating objects.
+Das Hallsensor-Modul ist ein berührungsloser Magnetsensor, der ein elektrisches Signal proportional zum angelegten Magnetfeld erzeugt. Es kann sowohl die Nord- als auch die Südpolung eines Magnetfelds sowie die relative Stärke des Feldes messen. Es wird zur Erkennung von Magnetfeldern verwendet und fungiert wie ein Magnetdetektor, der nahegelegene Magnete identifizieren kann. Dieser Sensor ist in verschiedenen Projekten nützlich, wie z.B. beim Entwickeln von Türalarmsystemen oder beim Messen der Geschwindigkeit rotierender Objekte.
 
-Principle
+Funktionsprinzip
 ---------------------------
 
-The working principle of the Hall Sensor module is based on the |link_hall_effect|, discovered by Edwin Hall. Here's how it works in simple terms: when electricity flows through a conductor (like a wire), and there's a magnetic field around it, the magnetic field pushes the moving electrons in the conductor to one side. This creates a voltage difference across the conductor - this is the Hall Effect.
+Das Funktionsprinzip des Hallsensor-Moduls basiert auf dem |link_hall_effect|, entdeckt von Edwin Hall. Einfach ausgedrückt: Wenn Strom durch einen Leiter (wie einen Draht) fließt und sich ein Magnetfeld darum befindet, drückt das Magnetfeld die beweglichen Elektronen im Leiter zur Seite. Dadurch entsteht ein Spannungsunterschied über den Leiter - dies ist der Hall-Effekt.
 
-In the Hall Sensor module, when a magnet comes close, the magnetic field affects the electrons in the semiconductor material inside the sensor. This changes the voltage across the sensor, which the sensor detects. The Arduino can read this voltage change and understand whether there's a magnet nearby and how strong its magnetic field is.
+Im Hallsensor-Modul beeinflusst das Magnetfeld die Elektronen im Halbleitermaterial im Inneren des Sensors, wenn sich ein Magnet nähert. Dies ändert die Spannung über den Sensor, die der Sensor erkennt. Der Arduino kann diese Spannungsänderung lesen und verstehen, ob sich ein Magnet in der Nähe befindet und wie stark sein Magnetfeld ist.
 
 .. image:: img/06_hall_49e.jpg
     :width: 60%
@@ -42,12 +42,11 @@ In the Hall Sensor module, when a magnet comes close, the magnetic field affects
 
    <br/>
 
+Das Hallsensor-Modul ist mit einem 49E-Linearen Hall-Effekt-Sensor ausgestattet, der sowohl die Nord- als auch die Südpolung eines Magnetfelds sowie die relative Stärke des Feldes messen kann. Der Ausgangspin liefert eine analoge Darstellung, die das Vorhandensein und die Stärke eines Magnetfelds sowie dessen Polarität (Nord oder Süd) anzeigt. Wenn kein Magnetfeld vorhanden ist, gibt der 49E eine Spannung von etwa der Hälfte der Versorgungsspannung aus. Wenn der Südpol eines Magneten nahe der beschrifteten Seite des 49E (die Seite mit dem Text) platziert wird, steigt die Ausgangsspannung proportional zur Stärke des angelegten Magnetfelds linear an. Umgekehrt sinkt die Ausgangsspannung linear, wenn ein Nordpol in der Nähe dieser Seite platziert wird.
 
-The Hall Sensor module is equipped with a 49E Linear Hall-Effect Sensor, capable of measuring both the north and south polarity of a magnetic field as well as the relative strength of the field. The output pin provides an analog representation indicating the presence and strength of a magnetic field, along with its polarity (north or south). When no magnetic field is present, the 49E outputs a voltage around half of the source voltage. If the south pole of a magnet is placed near the labeled side of the 49E (the side with text etched on it), then the output voltage will linearly increase towards the source voltage in proportion to the strength of the applied magnetic field. Conversely, if you place a north pole near this side, then there will be a linear decrease in output voltage relative to the strength of that magnetic field. 
+Beispielsweise beträgt die Ausgangsspannung des 49E bei einer Versorgungsspannung von 5V und ohne Magnetfeld etwa 2,5V. In diesem Szenario würde das Platzieren des Südpols eines starken Magneten in der Nähe die Ausgangsspannung auf etwa 4,2V erhöhen; während das Platzieren des Nordpols in der Nähe die Spannung je nach Stärke des Magnetfelds auf etwa 0,86V senken würde.
 
-For instance, when powering 49E with 5V and no magnetic field present, its output will be approximately 2.5V. In this scenario, placing a strong magnet's south pole near it would cause an increase in output voltage up to around 4.2V; while placing its north pole nearby would result in dropping down to about 0.86V from source based on their respective strengths.
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson06_hall_sensor` (Arduino UNO)
 * :ref:`esp32_lesson06_hall_sensor` (ESP32)

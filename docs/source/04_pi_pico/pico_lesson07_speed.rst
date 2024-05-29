@@ -1,30 +1,31 @@
-.. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+ .. note::
 
-    **Why Join?**
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    **Warum beitreten?**
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
+
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson07_speed:
 
-Lesson 07: Infrared Speed Sensor Module
-==========================================
+Lektion 07: Infrarot-Geschwindigkeitssensor-Modul
+==============================================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to interface with an infrared speed sensor module. By connecting the sensor to GPIO 16, you will detect obstructions in real-time. The program monitors the sensor output, and when an obstruction is detected, it prints "Obstruction detected" to the console. If there's no obstruction, it prints "Unobstructed."
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W mit einem Infrarot-Geschwindigkeitssensor-Modul verbinden. Indem Sie den Sensor mit GPIO 16 verbinden, erkennen Sie Hindernisse in Echtzeit. Das Programm überwacht die Ausgabe des Sensors, und wenn ein Hindernis erkannt wird, wird "Hindernis erkannt" in die Konsole gedruckt. Wenn kein Hindernis vorhanden ist, wird "Ungehinderter Zustand" gedruckt.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+---------------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_07_Speed_pico_bb.png
@@ -81,31 +82,31 @@ Code
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. **Import Libraries**:
+#. **Bibliotheken importieren**:
 
-   This code begins by importing necessary libraries. The ``machine`` library is used to interact with the GPIO pins, and the ``time`` library is for adding delays in the program.
+   Der Code beginnt mit dem Importieren der erforderlichen Bibliotheken. Die ``machine``-Bibliothek wird verwendet, um mit den GPIO-Pins zu interagieren, und die ``time``-Bibliothek dient dazu, Verzögerungen im Programm hinzuzufügen.
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. **Sensor Configuration**:
+#. **Sensor-Konfiguration**:
 
-   The infrared speed sensor is connected to GPIO 16. It's set as an input, meaning the Pi Pico W will read data from this pin.
+   Der Infrarot-Geschwindigkeitssensor ist mit GPIO 16 verbunden. Er wird als Eingang eingestellt, was bedeutet, dass der Pi Pico W Daten von diesem Pin liest.
 
    .. code-block:: python
 
       speed_sensor = Pin(16, Pin.IN)
 
-#. **Main Loop**:
+#. **Hauptschleife**:
 
-   The ``while True:`` loop creates an infinite loop. Inside this loop, the program continuously checks the sensor's value.
+   Die ``while True:``-Schleife erzeugt eine Endlosschleife. Innerhalb dieser Schleife überprüft das Programm kontinuierlich den Wert des Sensors.
    
-   If ``speed_sensor.value()`` is 1, it means the sensor detects an obstruction. If it is 0, then there is no obstruction.
+   Wenn ``speed_sensor.value()`` 1 ist, bedeutet dies, dass der Sensor ein Hindernis erkennt. Ist er 0, dann gibt es kein Hindernis.
 
    .. code-block:: python
 
@@ -115,17 +116,17 @@ Code Analysis
           else:
               print("Unobstructed")
 
-#. **Delay to Reduce CPU Usage**:
+#. **Verzögerung zur Reduzierung der CPU-Auslastung**:
 
-   A short delay of 0.1 seconds is introduced in each iteration of the loop. This reduces the CPU usage by preventing the loop from running too rapidly.
+   In jeder Iteration der Schleife wird eine kurze Verzögerung von 0,1 Sekunden eingeführt. Dies verringert die CPU-Auslastung, indem verhindert wird, dass die Schleife zu schnell läuft.
 
    .. code-block:: python
      
       time.sleep(0.1)
 
-#. **More**
+#. **Mehr**
 
-   If an encoder is mounted on the motor, the rotational speed of the motor can be calculated by counting the number of times an obstruction passes the sensor within a specific period.
+   Falls ein Encoder am Motor angebracht ist, kann die Drehzahl des Motors berechnet werden, indem die Anzahl der Male gezählt wird, die ein Hindernis den Sensor innerhalb eines bestimmten Zeitraums passiert.
 
    .. image:: img/Lesson_07_Encoder_Disk.png
       :align: center

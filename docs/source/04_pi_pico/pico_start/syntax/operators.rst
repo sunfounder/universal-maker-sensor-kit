@@ -1,38 +1,38 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Operators
-============
-Operators are used to perform operations on variables and values.
+Operatoren
+=================
+Operatoren werden verwendet, um Operationen auf Variablen und Werten durchzuführen.
 
-* :ref:`Arithmetic operators`
+* :ref:`Arithmetische Operatoren`
 
-* :ref:`Assignment operators`
+* :ref:`Zuweisungsoperatoren`
 
-* :ref:`Comparison operators`
+* :ref:`Vergleichsoperatoren`
 
-* :ref:`Logical operators`
+* :ref:`Logische Operatoren`
 
-* :ref:`Identity operators`
+* :ref:`Identitätsoperatoren`
 
-* :ref:`Membership operators`
+* :ref:`Zugehörigkeitsoperatoren`
 
-* :ref:`Bitwise operators`
+* :ref:`Bitweise Operatoren`
 
-Arithmetic Operators
-----------------------
-You can use arithmetic operators to do some common mathematical operations.
+Arithmetische Operatoren
+----------------------------------
+Mit arithmetischen Operatoren können Sie einige gängige mathematische Operationen durchführen.
 
 .. list-table:: 
     :widths: 10 30
@@ -91,10 +91,10 @@ You can use arithmetic operators to do some common mathematical operations.
 15
 >>> 
 
-Assignment operators
+Zuweisungsoperatoren
 ---------------------
 
-Assignment operators can used to assign values to variables.
+Zuweisungsoperatoren können verwendet werden, um Werte Variablen zuzuweisen.
 
 .. list-table:: 
     :widths: 10 30 30
@@ -156,9 +156,9 @@ Assignment operators can used to assign values to variables.
 36
 >>> 
 
-Comparison Operators
+Vergleichsoperatoren
 ------------------------
-Comparison operators are used to compare two values.
+Vergleichsoperatoren werden verwendet, um zwei Werte zu vergleichen.
 
 .. list-table:: 
     :widths: 10 30
@@ -193,12 +193,12 @@ Comparison operators are used to compare two values.
 False
 >>> 
 
-Return **False**, because the **a** is less than the **b**.
+Gibt **False** zurück, da **a** kleiner als **b** ist.
 
-Logical Operators
+Logische Operatoren
 -----------------------
 
-Logical operators are used to combine conditional statements.
+Logische Operatoren werden verwendet, um bedingte Aussagen zu kombinieren.
 
 .. list-table:: 
     :widths: 10 30
@@ -221,11 +221,10 @@ Logical operators are used to combine conditional statements.
 >>> %Run -c $EDITOR_CONTENT
 True
 >>> 
-
-Identity Operators
+Identitätsoperatoren
 ------------------------
 
-Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location.
+Identitätsoperatoren werden verwendet, um die Objekte zu vergleichen, nicht ob sie gleich sind, sondern ob sie tatsächlich dasselbe Objekt sind, mit derselben Speicherposition.
 
 .. list-table:: 
     :widths: 10 30
@@ -259,9 +258,9 @@ False
 True
 >>> 
 
-Membership Operators
-----------------------
-Membership operators are used to test if a sequence is presented in an object.
+Mitgliedschaftsoperatoren
+--------------------------------
+Mitgliedschaftsoperatoren werden verwendet, um zu testen, ob eine Sequenz in einem Objekt vorhanden ist.
 
 .. list-table:: 
     :widths: 10 30
@@ -284,10 +283,10 @@ Membership operators are used to test if a sequence is presented in an object.
 True
 >>> 
 
-Bitwise Operators
+Bitweise Operatoren
 ------------------------
 
-Bitwise operators are used to compare (binary) numbers.
+Bitweise Operatoren werden verwendet, um (binäre) Zahlen zu vergleichen.
 
 .. list-table:: 
     :widths: 10 20 50

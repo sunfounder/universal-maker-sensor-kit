@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson17_rotary_encoder:
 
-Lesson 17: Rotary Encoder Module
+Lektion 17: Drehgeber-Modul
 ==================================
 
-In this lesson, you will learn how to use an ESP32 Development Board and a rotary encoder module to detect rotation direction and count, as well as button presses. We'll explore how the encoder signals clockwise and counterclockwise rotations and increments or decrements a counter accordingly. Additionally, you'll understand how to detect button presses on the encoder module. This project offers hands-on experience in managing rotary encoders and reading digital inputs, enhancing your skills in working with the ESP32 and Arduino programming.
+In dieser Lektion lernen Sie, wie Sie ein ESP32-Entwicklungsboard und ein Drehgeber-Modul verwenden, um die Drehrichtung und -anzahl sowie Tastendrücke zu erkennen. Wir werden untersuchen, wie der Encoder die Drehungen im Uhrzeigersinn und gegen den Uhrzeigersinn signalisiert und den Zähler entsprechend erhöht oder verringert. Zusätzlich erfahren Sie, wie man Tastendrücke am Encoder-Modul erkennt. Dieses Projekt bietet praktische Erfahrungen im Umgang mit Drehgebern und dem Lesen digitaler Eingänge, wodurch Ihre Fähigkeiten im Umgang mit dem ESP32 und der Arduino-Programmierung verbessert werden.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -52,14 +52,12 @@ You can also buy them separately from the links below.
         - \-
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
- 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_17_Rotary_Encoder_Module_esp32_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -68,10 +66,10 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0ba81725-2139-4c8c-9575-c4d343be6708/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. **Setup and Initialization**
+#. **Setup und Initialisierung**
 
    .. code-block:: arduino
 
@@ -83,9 +81,9 @@ Code Analysis
         lastStateCLK = digitalRead(CLK);
       }
 
-   In the setup function, the digital pins connected to the encoder's CLK and DT are set as inputs. The SW pin, which is connected to the button, is set as an input with an internal pull-up resistor. This setup prevents the need for an external pull-up resistor. The Serial communication is started at a baud rate of 9600 to enable data visualization on the Serial Monitor. The initial state of the CLK pin is read and stored.
+   In der Setup-Funktion werden die digitalen Pins, die mit dem CLK und DT des Encoders verbunden sind, als Eingänge festgelegt. Der SW-Pin, der mit dem Taster verbunden ist, wird als Eingang mit internem Pull-up-Widerstand festgelegt. Diese Einstellung erspart die Notwendigkeit eines externen Pull-up-Widerstands. Die serielle Kommunikation wird mit einer Baudrate von 9600 gestartet, um die Datenvisualisierung im seriellen Monitor zu ermöglichen. Der Anfangszustand des CLK-Pins wird gelesen und gespeichert.
 
-#. **Main Loop: Reading Encoder and Button State**
+#. **Hauptschleife: Lesen des Encoders und Tasterzustands**
 
    .. code-block:: arduino
 
@@ -115,6 +113,6 @@ Code Analysis
         delay(1);
       }
 
-   In the loop function, the program continually reads the current state of the CLK pin. If there's a change in the state, it implies a rotation has occurred. The direction of rotation is determined by comparing the states of CLK and DT pins. If they are different, it indicates counterclockwise (CCW) rotation; otherwise, it's clockwise (CW). The encoder's count is incremented or decremented accordingly. This information is then sent to the Serial Monitor.
+   In der Loop-Funktion liest das Programm kontinuierlich den aktuellen Zustand des CLK-Pins. Wenn sich der Zustand ändert, bedeutet dies, dass eine Drehung stattgefunden hat. Die Drehrichtung wird durch den Vergleich der Zustände der CLK- und DT-Pins bestimmt. Wenn sie unterschiedlich sind, zeigt dies eine Drehung gegen den Uhrzeigersinn (CCW) an; andernfalls im Uhrzeigersinn (CW). Der Zähler des Encoders wird entsprechend erhöht oder verringert. Diese Informationen werden dann an den seriellen Monitor gesendet.
 
-   The button state is read from the SW pin. If it's LOW (pressed), a debounce mechanism is implemented by checking the time elapsed since the last button press. If more than 50 milliseconds have passed, it's considered a valid press, and a message is sent to the Serial Monitor. The `delay(1)` at the end helps in debouncing.
+   Der Tasterzustand wird vom SW-Pin gelesen. Wenn er LOW (gedrückt) ist, wird ein Entprellmechanismus implementiert, indem die seit dem letzten Tastendruck vergangene Zeit überprüft wird. Wenn mehr als 50 Millisekunden vergangen sind, wird dies als gültiger Druck betrachtet und eine Nachricht an den seriellen Monitor gesendet. Das `delay(1)` am Ende hilft beim Entprellen.

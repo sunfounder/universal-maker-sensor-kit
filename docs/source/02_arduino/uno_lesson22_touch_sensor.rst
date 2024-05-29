@@ -1,30 +1,30 @@
-.. note::
+ .. _uno_lesson22_touch_sensor: .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-.. _uno_lesson22_touch_sensor:
 
-Lesson 22: Touch Sensor Module
-==================================
 
-In this lesson, you will learn how to integrate a touch sensor with an Arduino Uno. We'll focus on reading inputs from the touch sensor connected to the Arduino and how these inputs affect the program's flow. You'll discover how to use conditional statements to detect touch events and respond with appropriate actions and messages. This project is excellent for beginners, providing a clear understanding of working with digital inputs and basic Arduino programming concepts.
+Lektion 22: Berührungssensor-Modul
+======================================
 
-Required Components
+In dieser Lektion lernen Sie, wie Sie einen Berührungssensor mit einem Arduino Uno integrieren. Wir konzentrieren uns darauf, Eingaben vom Berührungssensor zu lesen, der mit dem Arduino verbunden ist, und wie diese Eingaben den Programmablauf beeinflussen. Sie erfahren, wie Sie bedingte Anweisungen verwenden, um Berührungsereignisse zu erkennen und mit entsprechenden Aktionen und Nachrichten zu reagieren. Dieses Projekt ist hervorragend für Anfänger geeignet und bietet ein klares Verständnis für die Arbeit mit digitalen Eingängen und grundlegenden Arduino-Programmierkonzepten.
+
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -52,12 +52,11 @@ You can also buy them separately from the links below.
         - |link_touch_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_22_touch_sensor_moudle_circuit_uno_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -66,16 +65,16 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a0d962e5-5d21-4f26-88db-c38f8e9fb90c/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Setting up the necessary variables. We start by defining the pin number where the touch sensor is connected.
+#. Festlegen der erforderlichen Variablen. Wir beginnen mit der Definition der Pinnummer, an die der Berührungssensor angeschlossen ist.
 
    .. code-block:: arduino
 
       const int sensorPin = 7;
 
-#. Initialization in the ``setup()`` function. Here, we specify that the sensor pin will be used for input, the built-in LED will be used for output, and we start the serial communication to allow messages to be sent to the serial monitor.
+#. Initialisierung in der ``setup()``-Funktion. Hier geben wir an, dass der Sensorpin als Eingang verwendet wird, die integrierte LED als Ausgang verwendet wird und wir die serielle Kommunikation starten, um Nachrichten an den seriellen Monitor zu senden.
 
    .. code-block:: arduino
 
@@ -85,7 +84,7 @@ Code Analysis
         Serial.begin(9600);
       }
 
-#. Continuously, the Arduino checks if the touch sensor is activated. If touched, it turns on the LED and sends a "Touch detected!" message. If not touched, it turns off the LED and sends a "No touch detected..." message. A delay is introduced to prevent the sensor from being read too quickly.
+#. Kontinuierlich prüft der Arduino, ob der Berührungssensor aktiviert ist. Bei Berührung wird die LED eingeschaltet und eine "Touch detected!"-Nachricht gesendet. Bei keiner Berührung wird die LED ausgeschaltet und eine "No touch detected..."-Nachricht gesendet. Eine Verzögerung wird eingeführt, um zu verhindern, dass der Sensor zu schnell ausgelesen wird.
 
    .. code-block:: arduino
 

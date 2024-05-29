@@ -1,30 +1,29 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson09_joystick:
-
-Lesson 09: Joystick Module
+Lesson 09: Joystick-Modul
 ==================================
 
-In this lesson, you'll learn how to interface with and read data from a joystick module using the Raspberry Pi Pico W. You'll explore initializing and reading analog values from the X and Y axes of the joystick, as well as handling digital input from its switch using MicroPython. This lesson is ideal for beginners, offering practical experience in reading and interpreting analog and digital inputs on the Raspberry Pi Pico W.
+In dieser Lektion lernst du, wie du mit dem Raspberry Pi Pico W ein Joystick-Modul verbindest und dessen Daten ausliest. Du wirst lernen, wie man analoge Werte der X- und Y-Achsen des Joysticks initialisiert und ausliest sowie digitale Eingaben von seinem Schalter mit MicroPython verarbeitet. Diese Lektion ist ideal für Anfänger und bietet praktische Erfahrung im Lesen und Interpretieren analoger und digitaler Eingaben auf dem Raspberry Pi Pico W.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Du kannst sie auch separat von den unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_09_Jostick_Module_bb.png
@@ -87,42 +86,41 @@ Code
    
        time.sleep_ms(200)  # Loop every 200 milliseconds
 
-
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Import Libraries
+#. Bibliotheken importieren
 
-   The ``machine`` and ``time`` modules are imported for hardware control and time functions.
+   Die Module ``machine`` und ``time`` werden für die Hardwaresteuerung und Zeitfunktionen importiert.
 
    .. code-block:: python
 
       import machine  # Import hardware control module
       import time  # Import time module
 
-#. Initialize Joystick Axes
+#. Initialisiere Joystick-Achsen
 
-   The joystick's X and Y axes are connected to analog pins (27 and 26 respectively). These pins are initialized as ADC (Analog to Digital Converter) objects.
+   Die X- und Y-Achsen des Joysticks sind an die analogen Pins (27 bzw. 26) angeschlossen. Diese Pins werden als ADC (Analog-Digital-Umsetzer)-Objekte initialisiert.
 
    .. code-block:: python
 
       x_joystick = machine.ADC(27)
       y_joystick = machine.ADC(26)
 
-#. Initialize Joystick Switch
+#. Initialisiere Joystick-Schalter
 
-   The joystick's switch is connected to pin 22. It's set as an input with a pull-up resistor. When the button is not pressed, it reads high (1), and when pressed, it reads low (0).
+   Der Joystick-Schalter ist an Pin 22 angeschlossen. Er wird als Eingang mit einem Pull-up-Widerstand konfiguriert. Wenn die Taste nicht gedrückt ist, liest sie hoch (1), und wenn sie gedrückt ist, liest sie niedrig (0).
 
    .. code-block:: python
 
       z_switch = machine.Pin(22, machine.Pin.IN, machine.Pin.PULL_UP)
 
-#. Main Loop
+#. Hauptschleife
 
-   - An infinite loop continuously reads values from the joystick. 
-   - ``read_u16`` method is used to read 16-bit values from the X and Y axes.
-   - ``value()`` method is used to read the state of the switch.
-   - The values are then printed, and the loop pauses for 200 milliseconds.
+   - Eine Endlosschleife liest kontinuierlich Werte vom Joystick.
+   - Die Methode ``read_u16`` wird verwendet, um 16-Bit-Werte von den X- und Y-Achsen zu lesen.
+   - Die Methode ``value()`` wird verwendet, um den Zustand des Schalters zu lesen.
+   - Die Werte werden dann gedruckt, und die Schleife pausiert für 200 Millisekunden.
 
    .. raw:: html
 

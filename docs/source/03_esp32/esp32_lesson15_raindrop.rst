@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson15_raindrop:
 
-Lesson 15: Raindrop Detection Module
-=======================================
+Lektion 15: Regentropfen-Erkennungsmodul
+=============================================
 
-In this lesson, you will learn how to use a raindrop detection sensor with an ESP32 Development Board. We'll cover reading digital signals from the sensor when it detects rainwater and displaying this information on the serial monitor. This project provides an engaging way to grasp digital input and output in microcontroller programming, making it ideal for beginners in electronics and coding with the ESP32 platform.
+In dieser Lektion lernen Sie, wie Sie einen Regentropfen-Erkennungssensor mit einem ESP32-Entwicklungsboard verwenden. Wir werden das Auslesen digitaler Signale vom Sensor, wenn er Regenwasser erkennt, und die Anzeige dieser Informationen im seriellen Monitor behandeln. Dieses Projekt bietet eine spannende Möglichkeit, digitale Eingaben und Ausgaben in der Mikrocontroller-Programmierung zu verstehen und ist ideal für Anfänger in Elektronik und Programmierung mit der ESP32-Plattform.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_15_Raindrop_Detection_Module_esp32_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -68,20 +66,20 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/5aff47ab-22c5-4500-bbe3-fefc55f6e40f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-1. Defining sensor pin
+1. Definition des Sensor-Pins
 
-   Here, a constant integer named ``sensorPin`` is defined and assigned the value 25. This corresponds to the digital pin on the ESP32 Development Board where the raindrops detection sensor is connected.
+   Hier wird ein konstanter Integer namens ``sensorPin`` definiert und der Wert 25 zugewiesen. Dies entspricht dem digitalen Pin auf dem ESP32-Entwicklungsboard, an dem der Regentropfen-Erkennungssensor angeschlossen ist.
 
    .. code-block:: arduino
    
        const int sensorPin = 25;
 
-2. Setting up the pin mode and initiating serial communication.
+2. Einstellen des Pin-Modus und Initialisierung der seriellen Kommunikation.
 
-   In the ``setup()`` function, two essential steps are performed. Firstly, ``pinMode()`` is used to set the ``sensorPin`` as an input, enabling us to read digital values from the raindrops sensor. Secondly, serial communication is initialized with a baud rate of 9600.
+   In der ``setup()``-Funktion werden zwei wesentliche Schritte ausgeführt. Erstens wird mit ``pinMode()`` der ``sensorPin`` als Eingang festgelegt, wodurch wir digitale Werte vom Regentropfen-Sensor lesen können. Zweitens wird die serielle Kommunikation mit einer Baudrate von 9600 initialisiert.
 
    .. code-block:: arduino
    
@@ -90,9 +88,9 @@ Code Analysis
          Serial.begin(9600);
        }
 
-3. Reading the digital value and sending it to the serial monitor. 
+3. Auslesen des digitalen Wertes und Senden an den seriellen Monitor.
 
-   The ``loop()`` function reads the digital value from the raindrops sensor using ``digitalRead()``. This value (either HIGH or LOW) is printed to the Serial Monitor. When raindrops are detected, the serial monitor will display 0; when no raindrops are detected, it will display 1. The program then waits for 50 milliseconds before the next reading.
+   Die ``loop()``-Funktion liest den digitalen Wert vom Regentropfen-Sensor mit ``digitalRead()``. Dieser Wert (entweder HIGH oder LOW) wird im seriellen Monitor ausgegeben. Wenn Regentropfen erkannt werden, zeigt der serielle Monitor 0 an; wenn keine Regentropfen erkannt werden, zeigt er 1 an. Das Programm wartet dann 50 Millisekunden, bevor die nächste Messung durchgeführt wird.
 
    .. code-block:: arduino
    
@@ -100,3 +98,4 @@ Code Analysis
          Serial.println(digitalRead(sensorPin));
          delay(50);
        }
+

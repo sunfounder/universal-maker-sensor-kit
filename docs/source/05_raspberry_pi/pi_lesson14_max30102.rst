@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson14_max30102:
 
-Lesson 14: Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
-====================================================================
+Lektion 14: Pulsoximeter und Herzfrequenzsensor-Modul (MAX30102)
+=====================================================================
 
-In this tutorial, you'll learn to operate the MAX30102 sensor using a Raspberry Pi, streamlined through the use of the open-source MAX30102 Python driver available on GitHub. This approach makes it easier to interface with the module, allowing you to focus on understanding the basics of sensor data collection and analysis. Ideal for novices, the project provides hands-on experience with sensor implementation and Python coding on the Raspberry Pi platform.
+In diesem Tutorial lernen Sie, wie Sie den MAX30102-Sensor mit einem Raspberry Pi betreiben, vereinfacht durch die Nutzung des Open-Source MAX30102 Python-Treibers, der auf GitHub verfügbar ist. Dieser Ansatz erleichtert die Schnittstelle mit dem Modul und ermöglicht es Ihnen, sich auf das Verständnis der Grundlagen der Sensordatenerfassung und -analyse zu konzentrieren. Ideal für Anfänger bietet dieses Projekt praktische Erfahrungen mit der Implementierung von Sensoren und der Python-Programmierung auf der Raspberry Pi-Plattform.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+---------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 10
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_14_MAX30102_pi_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -95,14 +93,13 @@ Code
    print('sensor stopped!')
 
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Modules
+#. Module importieren
 
-   - The ``heartrate_monitor`` module is used to interface with the sensor. For more information about the ``heartrate_monitor`` library, please visit |link_max30102_python_driver| .
-   - The ``time`` module helps in managing the duration of the sensor data collection.
+   - Das Modul ``heartrate_monitor`` wird zur Schnittstelle mit dem Sensor verwendet. Für weitere Informationen über die Bibliothek ``heartrate_monitor`` besuchen Sie bitte |link_max30102_python_driver|.
+   - Das Modul ``time`` hilft bei der Verwaltung der Dauer der Sensordatenerfassung.
 
    .. raw:: html
 
@@ -113,11 +110,11 @@ Code Analysis
       from heartrate_monitor import HeartRateMonitor
       import time
 
-#. Initializing the Heart Rate Monitor
+#. Initialisierung des Herzfrequenzmonitors
 
-   - A ``HeartRateMonitor`` object is created with specific print options.
-   - ``print_raw`` controls whether raw sensor data is printed.
-   - ``print_result`` controls the printing of processed results (heart rate and SpO2).
+   - Ein ``HeartRateMonitor``-Objekt wird mit spezifischen Druckoptionen erstellt.
+   - ``print_raw`` steuert, ob Rohsensordaten gedruckt werden.
+   - ``print_result`` steuert den Druck der verarbeiteten Ergebnisse (Herzfrequenz und SpO2).
 
    .. raw:: html
 
@@ -127,18 +124,18 @@ Code Analysis
 
       hrm = HeartRateMonitor(print_raw=False, print_result=True)
 
-#. Starting the Sensor
+#. Sensor starten
 
-   The ``start_sensor`` method activates the heart rate sensor.
+   Die Methode ``start_sensor`` aktiviert den Herzfrequenzsensor.
 
    .. code-block:: python
 
       hrm.start_sensor()
 
-#. Running the Sensor for a Set Duration
+#. Sensor für eine bestimmte Dauer laufen lassen
 
-   - The program sleeps for a specified duration, during which the sensor collects data.
-   - ``time.sleep(duration)`` halts the program for the given number of seconds.
+   - Das Programm schläft für eine festgelegte Dauer, während der der Sensor Daten sammelt.
+   - ``time.sleep(duration)`` hält das Programm für die angegebene Anzahl von Sekunden an.
 
    .. raw:: html
 
@@ -151,17 +148,17 @@ Code Analysis
       except KeyboardInterrupt:
           print('keyboard interrupt detected, exiting...')
 
-#. Stopping the Sensor
+#. Sensor stoppen
 
-   After the duration, the ``stop_sensor`` method is called to stop data collection.
+   Nach der festgelegten Dauer wird die Methode ``stop_sensor`` aufgerufen, um die Datenerfassung zu stoppen.
 
    .. code-block:: python
 
       hrm.stop_sensor()
 
-#. Finalizing the Program
+#. Programm abschließen
 
-   Prints a message when the sensor stops.
+   Gibt eine Nachricht aus, wenn der Sensor gestoppt wird.
 
    .. code-block:: python
 

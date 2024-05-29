@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson15_raindrop:
 
-Lesson 15: Raindrop Detection Module
+Lektion 15: Regensensor-Modul
 =======================================
 
-In this lesson, you will learn how to detect rain using a digital rain sensor with Raspberry Pi. We will guide you through connecting a rain sensor to GPIO pin 17 on your Raspberry Pi. You'll learn how to program the Raspberry Pi using Python to continuously monitor the sensor. The program will identify whether it's raining or not and display a message accordingly. This practical project is an excellent introduction to environmental sensing, GPIO interfacing, and Python programming, making it ideal for beginners interested in weather-related projects using Raspberry Pi.
+In dieser Lektion lernen Sie, wie Sie mit einem digitalen Regensensor und einem Raspberry Pi Regen erkennen können. Wir führen Sie durch den Anschluss eines Regensensors an GPIO-Pin 17 Ihres Raspberry Pi. Sie lernen, wie Sie den Raspberry Pi mit Python programmieren, um den Sensor kontinuierlich zu überwachen. Das Programm erkennt, ob es regnet oder nicht, und zeigt entsprechend eine Nachricht an. Dieses praktische Projekt ist eine hervorragende Einführung in die Umweltsensorik, die GPIO-Interfacing und die Python-Programmierung und eignet sich ideal für Anfänger, die sich für wetterbezogene Projekte mit dem Raspberry Pi interessieren.
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_15_raindrop_detection_module_Pi_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -79,34 +77,33 @@ Code
            print("Rain detected!")  # Print message for rain detected
        sleep(1)  # Wait for 1 second before next check
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
    
-   The script starts with importing ``DigitalInputDevice`` from gpiozero for interfacing with the rain sensor, and ``sleep`` from the time module for implementing delays.
+   Das Skript beginnt mit dem Import von ``DigitalInputDevice`` aus der gpiozero-Bibliothek zur Ansteuerung des Regensensors und ``sleep`` aus dem time-Modul zur Implementierung von Verzögerungen.
 
    .. code-block:: python
 
       from gpiozero import DigitalInputDevice  
       from time import sleep  
 
-#. Initializing the Rain Sensor
+#. Regensensor initialisieren
    
-   A ``DigitalInputDevice`` object named ``rain_sensor`` is created, connected to GPIO pin 17. This line configures the rain sensor to communicate with the Raspberry Pi through this GPIO pin.
+   Ein ``DigitalInputDevice``-Objekt namens ``rain_sensor`` wird erstellt und mit GPIO-Pin 17 verbunden. Diese Zeile konfiguriert den Regensensor für die Kommunikation mit dem Raspberry Pi über diesen GPIO-Pin.
 
    .. code-block:: python
 
       rain_sensor = DigitalInputDevice(17)
 
-#. Implementing Continuous Monitoring Loop
+#. Kontinuierliche Überwachungsschleife implementieren
    
-   - An infinite loop (``while True:``) is set up to continuously monitor the rain sensor.
-   - Inside the loop, an ``if`` statement checks the ``is_active`` property of the ``rain_sensor``.
-   - If ``is_active`` is ``True``, it indicates no rain is detected, and "No rain detected." is printed.
-   - If ``is_active`` is ``False``, it indicates rain is detected, and "Rain detected!" is printed.
-   - ``sleep(1)`` pauses the loop for 1 second between each check, controlling the frequency of sensor polling and reducing CPU usage.
+   - Eine Endlosschleife (``while True:``) wird eingerichtet, um den Regensensor kontinuierlich zu überwachen.
+   - Innerhalb der Schleife prüft eine ``if``-Anweisung die Eigenschaft ``is_active`` des ``rain_sensor``.
+   - Wenn ``is_active`` ``True`` ist, bedeutet dies, dass kein Regen erkannt wird, und "Kein Regen erkannt." wird ausgegeben.
+   - Wenn ``is_active`` ``False`` ist, bedeutet dies, dass Regen erkannt wird, und "Regen erkannt!" wird ausgegeben.
+   - ``sleep(1)`` pausiert die Schleife für 1 Sekunde zwischen den Überprüfungen, was die Häufigkeit der Sensorabfragen steuert und die CPU-Auslastung reduziert.
 
    .. raw:: html
 

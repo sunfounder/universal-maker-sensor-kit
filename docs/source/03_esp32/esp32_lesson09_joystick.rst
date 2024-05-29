@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson09_joystick:
 
-Lesson 09: Joystick Module
+Lektion 09: Joystick-Modul
 ==================================
 
-In this lesson, you will learn how to read values from a joystick module using the ESP32 Development Board. We'll cover measuring the X and Y axis movements of the joystick and interpreting the switch position. By integrating these inputs with the ESP32, you'll gain insights into handling analog and digital signals. This project is perfect for beginners, providing hands-on experience in reading and processing data from interactive hardware components.
+In dieser Lektion lernen Sie, wie Sie Werte von einem Joystick-Modul mit dem ESP32-Entwicklungsboard auslesen. Wir werden die Messung der X- und Y-Achsenbewegungen des Joysticks und die Interpretation der Schalterposition behandeln. Durch die Integration dieser Eingaben mit dem ESP32 erhalten Sie Einblicke in die Handhabung von analogen und digitalen Signalen. Dieses Projekt ist perfekt für Anfänger und bietet praktische Erfahrungen im Lesen und Verarbeiten von Daten interaktiver Hardwarekomponenten.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_09_Jostick_Module_esp32_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -68,10 +66,10 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6a9f54fb-a117-48f2-bca0-fd43bdd45b51/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Pin Definitions:
+#. Pin-Definitionen:
    
    .. code-block:: arduino
    
@@ -81,7 +79,7 @@ Code Analysis
 
    Constants for the joystick pins are defined. ``xPin`` and ``yPin`` are analog pins for the joystick's X and Y axes. ``swPin`` is a digital pin for the joystick's switch.
 
-#. Setup Function:
+#. Setup-Funktion:
 
    .. code-block:: arduino
    
@@ -90,9 +88,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-   Initializes ``swPin`` as an input with a pull-up resistor, essential for the switch's functionality. Starts serial communication at 9600 baud.
+   Initialisiert ``swPin`` als Eingang mit einem Pull-up-Widerstand, was für die Funktion des Schalters notwendig ist. Startet die serielle Kommunikation mit 9600 Baud.
 
-#. Main Loop:
+#. Hauptschleife:
 
    .. code-block:: arduino
    
@@ -106,4 +104,4 @@ Code Analysis
         delay(50);
       }
 
-   Continuously reads and prints the values from the joystick's axes and switch to the Serial Monitor, with a delay of 50 ms between readings.
+   Liest kontinuierlich die Werte der Achsen und des Schalters des Joysticks aus und gibt sie auf dem seriellen Monitor aus, mit einer Verzögerung von 50 ms zwischen den Ausgaben.

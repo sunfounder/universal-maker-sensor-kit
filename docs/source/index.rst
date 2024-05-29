@@ -1,49 +1,49 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 Universal Maker Sensor Kit
 ==================================================
 
-Thanks for choosing our Universal Maker Sensor Kit.
+Vielen Dank, dass Sie sich für unser Universal Maker Sensor Kit entschieden haben.
 
 .. .. note::
-..     This document is available in the following languages.
+..     Dieses Dokument ist in den folgenden Sprachen verfügbar.
 
 ..         * |link_german_tutorials|
 ..         * |link_jp_tutorials|
 ..         * |link_en_tutorials |
     
-..     Please click on the respective links to access the document in your preferred language.
+..     Bitte klicken Sie auf die entsprechenden Links, um das Dokument in Ihrer bevorzugten Sprache zu lesen.
 
 .. image:: img/universal-maker-sensor-kit-cover.png
     :width: 100%
 
-Have you ever ordered an electronic kit online, only to find it came with a basic PDF or a limited booklet that barely scratches the surface of your project's potential? Or are you eager to build your own smart devices but feel daunted by the complexity and high costs of available kits? Maybe you've admired the advanced projects others have created but didn't know where to start?
+Haben Sie schon einmal ein Elektronik-Kit online bestellt und festgestellt, dass es nur mit einem einfachen PDF oder einem begrenzten Heft geliefert wurde, das kaum das Potenzial Ihres Projekts ausschöpft? Oder möchten Sie Ihre eigenen Smart-Geräte bauen, fühlen sich aber von der Komplexität und den hohen Kosten der verfügbaren Kits abgeschreckt? Vielleicht haben Sie die fortschrittlichen Projekte anderer bewundert, wussten aber nicht, wo Sie anfangen sollen?
 
-Introducing our "Universal Maker Sensor Kit" – the solution to all these challenges and the gateway to mastering modern electronics.
+Wir präsentieren unser "Universal Maker Sensor Kit" – die Lösung für all diese Herausforderungen und der Schlüssel zur Beherrschung moderner Elektronik.
 
-Within the Universal Maker Sensor Kit, you'll find an extensive range of components, from basic breadboards to intricate sensors like flame detectors, gas sensors, and much more – over 25 sensors, actuators, and display modules in total. Each component comes with an easy-to-follow tutorial supporting Arduino Uno, ESP32 modules, Raspberry Pi Pico, and Raspberry Pi, making your learning journey smooth and engaging.
+Im Universal Maker Sensor Kit finden Sie eine umfangreiche Auswahl an Komponenten, von einfachen Steckbrettern bis hin zu komplexen Sensoren wie Flammendetektoren, Gassensoren und vieles mehr – insgesamt über 25 Sensoren, Aktoren und Displaymodule. Jede Komponente wird mit einer leicht verständlichen Anleitung geliefert, die Arduino Uno, ESP32-Module, Raspberry Pi Pico und Raspberry Pi unterstützt und Ihren Lernprozess angenehm und spannend gestaltet.
 
-Our kit proudly supports the latest in the Arduino UNO series, the UNO R4, as well as the latest Raspberry Pi release, the Raspberry Pi 5, ensuring you stay at the forefront of technological advancements. Whether you're a beginner or an experienced maker, our kit can enhance your skills through cutting-edge components.
+Unser Kit unterstützt stolz die neuesten Modelle der Arduino UNO-Serie, den UNO R4, sowie die neueste Veröffentlichung von Raspberry Pi, den Raspberry Pi 5, und stellt sicher, dass Sie immer auf dem neuesten Stand der Technik sind. Ob Anfänger oder erfahrener Maker, unser Kit kann Ihre Fähigkeiten durch modernste Komponenten verbessern.
 
-This kit isn't just about assembling parts; it's about unleashing your creativity. You'll learn to write your own code, develop unique projects, and understand the intricacies of each component. Whether you're a beginner or an experienced maker, our kit is tailored to elevate your skills in electronics.
+Dieses Kit geht nicht nur darum, Teile zusammenzubauen; es geht darum, Ihre Kreativität zu entfalten. Sie lernen, Ihren eigenen Code zu schreiben, einzigartige Projekte zu entwickeln und die Feinheiten jeder Komponente zu verstehen. Ob Anfänger oder erfahrener Maker, unser Kit ist darauf ausgelegt, Ihre Fähigkeiten in der Elektronik zu erweitern.
 
-And for those just starting, we offer a range of engaging projects, perfect for easing into the world of programming and electronics. You'll gain the knowledge and confidence to progress from a beginner to an expert, creating your own smart devices and electronic projects.
+Und für alle, die gerade erst anfangen, bieten wir eine Reihe von spannenden Projekten an, die perfekt sind, um in die Welt der Programmierung und Elektronik einzutauchen. Sie erwerben das Wissen und das Selbstvertrauen, um vom Anfänger zum Experten zu avancieren und Ihre eigenen Smart-Geräte und Elektronikprojekte zu erstellen.
 
-Embrace the world of electronic innovation today with our Universal Maker Sensor Kit. Transform your ideas into reality, and evolve from zero to hero in the realm of electronics and programming!
+Tauchen Sie noch heute in die Welt der elektronischen Innovation ein mit unserem Universal Maker Sensor Kit. Verwandeln Sie Ihre Ideen in Realität und entwickeln Sie sich von null zum Helden in der Welt der Elektronik und Programmierung!
 
-If you have any questions or other interesting ideas, please feel free to email us at service@sunfounder.com.
+Wenn Sie Fragen oder andere interessante Ideen haben, senden Sie uns bitte eine E-Mail an service@sunfounder.com.
 
 .. * :ref:`About the display language`
 
@@ -51,18 +51,16 @@ If you have any questions or other interesting ideas, please feel free to email 
 
 * :ref:`Copyright Notice`
 
-
-.. About the display language
+.. Über die Anzeigesprache
 .. --------------------------------
 
 .. .. note::
 
-..     In addition to English, we are working on other languages for this course. 
-..     Please contact service@sunfounder.com if you are interested in helping, 
-..     and we will give you a free product in return. 
+..     Neben Englisch arbeiten wir an weiteren Sprachen für diesen Kurs. 
+..     Bitte kontaktieren Sie service@sunfounder.com, wenn Sie interessiert sind, 
+..     und wir werden Ihnen im Gegenzug ein kostenloses Produkt zukommen lassen. 
 
-
-.. Currently the online tutorial supports English, German and Japanese. Please click the **Read the Docs** icon in the lower left corner of the page to change the display language.
+.. Derzeit unterstützt das Online-Tutorial Englisch, Deutsch und Japanisch. Bitte klicken Sie auf das **Read the Docs**-Symbol in der unteren linken Ecke der Seite, um die Anzeigesprache zu ändern.
 
 .. .. image:: img/translation.png
 ..     :align: center
@@ -71,8 +69,7 @@ If you have any questions or other interesting ideas, please feel free to email 
 
 ..     <br/>
 
-
-Table of contents
+Inhaltsverzeichnis
 --------------------------------
 
 .. toctree:: 
@@ -89,7 +86,7 @@ Table of contents
     07_appendix/appendix
     thank-learning
 
-Copyright Notice
+Copyright-Hinweis
 -----------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study, investigation, enjoyment, or other non-commercial or nonprofit purposes, under the related regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Alle Inhalte, einschließlich, aber nicht beschränkt auf Texte, Bilder und Code in diesem Handbuch, sind Eigentum der SunFounder Company. Sie dürfen diese nur für persönliche Studien, Untersuchungen, Freizeit oder andere nicht-kommerzielle oder gemeinnützige Zwecke verwenden, gemäß den einschlägigen Vorschriften und Urheberrechtsgesetzen, ohne die gesetzlichen Rechte des Autors und der entsprechenden Rechteinhaber zu verletzen. Für jede Person oder Organisation, die diese Inhalte ohne Genehmigung für kommerzielle Zwecke nutzt, behält sich das Unternehmen das Recht vor, rechtliche Schritte einzuleiten.

@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_button:
 
-Button Module
+Tastenmodul
 ==========================
 
 .. image:: img/01_button.png
@@ -27,19 +27,19 @@ Button Module
 
 .. _btn_intro:
 
-The button module is an electronic device that detects the state of a button.They are usually used as switches to connect or break circuits.Buttons are used in many scenarios, such as doorbells, desk lamps, remote controls, elevators, fire alarms, etc.
+Das Tastenmodul ist ein elektronisches Gerät, das den Zustand einer Taste erkennt. Es wird üblicherweise als Schalter verwendet, um Stromkreise zu verbinden oder zu unterbrechen. Tasten werden in vielen Szenarien eingesetzt, wie z.B. bei Türklingeln, Schreibtischlampen, Fernbedienungen, Aufzügen, Feueralarmen usw.
 
-Principle
+Funktionsprinzip
 ---------------------------
-The button module works on the principle of a switch. A switch is an electrical component that can be used to open or close a circuit. 
+Das Tastenmodul arbeitet nach dem Prinzip eines Schalters. Ein Schalter ist ein elektrisches Bauteil, das zum Öffnen oder Schließen eines Stromkreises verwendet werden kann.
 
-The following is the internal structure of a button. The symbol on the right below is usually used to represent a button in circuits.
+Das folgende Bild zeigt den inneren Aufbau einer Taste. Das Symbol unten rechts wird üblicherweise verwendet, um eine Taste in Schaltkreisen darzustellen.
 
 .. image:: img/01_button_2.png
     :width: 400
     :align: center
 
-Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+Da Pin 1 mit Pin 2 und Pin 3 mit Pin 4 verbunden ist, sind bei gedrückter Taste alle vier Pins verbunden, wodurch der Stromkreis geschlossen wird.
 
 .. image:: img/01_button_3.png
     :width: 700
@@ -47,7 +47,7 @@ Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pr
 
 .. _cpn_button_sch:
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/01_button_module_schematic.png
@@ -58,8 +58,7 @@ Schematic diagram
 
    <br/>
 
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson01_button` (Arduino UNO)
 * :ref:`eps32_lesson01_button` (ESP32)

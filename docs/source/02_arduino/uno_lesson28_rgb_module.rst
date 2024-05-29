@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson28_rgb_module:
 
-Lesson 28: RGB LED Module
+Lektion 28: RGB-LED-Modul
 ==================================
 
-In this lesson, you will learn how to control an RGB LED with Arduino. We'll cover setting up the LED and then delve into displaying primary colors and creating a vibrant rainbow spectrum. This hands-on project is ideal for beginners, providing practical experience with output operations and color mixing in the Arduino environment.
+In dieser Lektion lernen Sie, wie Sie eine RGB-LED mit Arduino steuern. Wir werden die Einrichtung der LED behandeln und dann primäre Farben anzeigen und ein lebendiges Regenbogenspektrum erstellen. Dieses praktische Projekt ist ideal für Anfänger und bietet praktische Erfahrung mit Ausgabeoperationen und Farbmischung in der Arduino-Umgebung.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -52,7 +52,7 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_28_rgb_module_circuit_uno_bb.png
@@ -66,10 +66,10 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/69d51b96-ad16-4c16-aa97-6dab559929d3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-1. The first segment of the code declares and initializes the pins to which each color channel of the RGB LED module is connected.
+1. Im ersten Abschnitt des Codes werden die Pins deklariert und initialisiert, an die jeder Farbkanal des RGB-LED-Moduls angeschlossen ist.
 
    .. code-block:: arduino
        
@@ -77,7 +77,7 @@ Code Analysis
       const int gledPin = 10;   // pin connected to the green color channel
       const int bledPin = 11;  // pin connected to the blue color channel
 
-2. The ``setup()`` function initializes these pins as OUTPUT. This means we are sending signals OUT from these pins to the RGB LED module.
+2. Die Funktion ``setup()`` initialisiert diese Pins als OUTPUT. Das bedeutet, dass wir Signale von diesen Pins zum RGB-LED-Modul senden.
 
    .. code-block:: arduino
    
@@ -87,7 +87,7 @@ Code Analysis
         pinMode(bledPin, OUTPUT);
       }
 
-3. In the ``loop()`` function, the ``setColor()`` function is called with different parameters to display different colors. The ``delay()`` function is used after setting each color to pause for 1000 milliseconds (or 1 second) before moving on to the next color.
+3. In der Funktion ``loop()`` wird die Funktion ``setColor()`` mit verschiedenen Parametern aufgerufen, um unterschiedliche Farben anzuzeigen. Die Funktion ``delay()`` wird nach jeder Farbänderung verwendet, um für 1000 Millisekunden (oder 1 Sekunde) zu pausieren, bevor die nächste Farbe eingestellt wird.
 
    .. code-block:: arduino
    
@@ -99,7 +99,7 @@ Code Analysis
         // The rest of the color sequence...
       }
 
-4. The ``setColor()`` function uses the ``analogWrite()`` function to adjust the brightness of each color channel on the RGB LED module. The ``analogWrite()`` function employs Pulse Width Modulation (PWM) to simulate varying voltage outputs. By controlling the PWM duty cycle (the percentage of time a signal is HIGH within a fixed period), the brightness of each color channel can be controlled, allowing the mixing of various colors.
+4. Die Funktion ``setColor()`` verwendet die Funktion ``analogWrite()``, um die Helligkeit jedes Farbkanals des RGB-LED-Moduls anzupassen. Die Funktion ``analogWrite()`` nutzt Pulsweitenmodulation (PWM), um verschiedene Spannungspegel zu simulieren. Durch die Steuerung des PWM-Duty-Cycles (der Prozentsatz der Zeit, in der ein Signal innerhalb einer festen Periode HIGH ist) kann die Helligkeit jedes Farbkanals gesteuert werden, was die Mischung verschiedener Farben ermöglicht.
 
    .. code-block:: arduino
 

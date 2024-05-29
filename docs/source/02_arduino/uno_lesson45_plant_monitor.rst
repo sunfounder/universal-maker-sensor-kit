@@ -1,34 +1,34 @@
+ .. note::
 
-.. note::
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_plant_monitor:
 
-Lesson 45: Plant Monitor
+Lektion 45: Pflanzenüberwachung
 =============================================================
 
 
-This project intelligently automates plant watering by triggering a water pump whenever the soil's moisture level dips below a predetermined threshold. 
-It also features an LCD display that showcases the temperature, humidity, 
-and soil moisture levels, offering users valuable insights into the plant's environmental conditions.
+Dieses Projekt automatisiert die Bewässerung von Pflanzen intelligent, indem es eine Wasserpumpe auslöst, 
+wann immer der Feuchtigkeitsgehalt des Bodens unter einen vorbestimmten Schwellenwert fällt. 
+Es verfügt außerdem über ein LCD-Display, das die Temperatur, Luftfeuchtigkeit und Bodenfeuchtigkeit anzeigt 
+und den Benutzern wertvolle Einblicke in die Umgebungsbedingungen der Pflanze bietet.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -41,7 +41,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -67,7 +67,7 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_dht11`
         - \-
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_45_Plant_monitor_uno_bb.png
@@ -83,32 +83,30 @@ Code
 
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
 
 
-The code is structured to seamlessly manage plant watering by monitoring environmental parameters:
+Der Code ist strukturiert, um die Bewässerung von Pflanzen nahtlos zu verwalten, indem er Umgebungsparameter überwacht:
 
-1. Library Inclusions and Constants/Variables:
+1. Bibliothekseinbindungen und Konstanten/Variablen:
 
-   Incorporate ``Wire.h``, ``LiquidCrystal_I2C.h``, and ``DHT.h`` libraries for functionality.
-   Specify pin assignments and settings for the DHT11 sensor, soil moisture sensor, and water pump.
+   Integrieren Sie die Bibliotheken ``Wire.h``, ``LiquidCrystal_I2C.h`` und ``DHT.h`` für die Funktionalität.
+   Geben Sie Pin-Belegungen und Einstellungen für den DHT11-Sensor, den Bodenfeuchtigkeitssensor und die Wasserpumpe an.
 
 2. ``setup()``:
 
-   Configure pin modes for the moisture sensor and pump.
-   Initially deactivate the pump.
-   Initialize and backlight the LCD.
-   Activate the DHT sensor.
+   Konfigurieren Sie die Pin-Modi für den Feuchtigkeitssensor und die Pumpe.
+   Deaktivieren Sie zunächst die Pumpe.
+   Initialisieren und beleuchten Sie das LCD.
+   Aktivieren Sie den DHT-Sensor.
 
 3. ``loop()``:
 
-   Measure humidity and temperature via the DHT sensor.
-   Gauge soil moisture through the soil moisture sensor.
-   Display the temperature and humidity on the LCD, then show soil moisture levels.
-   Assess soil moisture to decide on water pump activation; if soil moisture is under 500 (adjustable threshold), run the pump for 1 second.
-
-
+   Messen Sie Luftfeuchtigkeit und Temperatur über den DHT-Sensor.
+   Schätzen Sie die Bodenfeuchtigkeit durch den Bodenfeuchtigkeitssensor ein.
+   Zeigen Sie die Temperatur und Luftfeuchtigkeit auf dem LCD an und zeigen Sie dann die Bodenfeuchtigkeit an.
+   Bewertung der Bodenfeuchtigkeit, um über die Aktivierung der Wasserpumpe zu entscheiden; wenn die Bodenfeuchtigkeit unter 500 liegt (einstellbarer Schwellenwert), lassen Sie die Pumpe 1 Sekunde lang laufen.
 
 

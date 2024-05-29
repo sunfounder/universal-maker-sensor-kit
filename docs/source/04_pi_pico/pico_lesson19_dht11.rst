@@ -1,43 +1,43 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson19_dht11:
-
-Lesson 19: Temperature and Humidity Sensor Module (DHT11)
+Lektion 19: Temperatur- und Feuchtigkeitssensor-Modul (DHT11)
 ====================================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to connect with a DHT11 temperature and humidity sensor. You'll explore accurate measurement of environmental conditions by recording temperature and humidity data. This tutorial offers practical guidance on using digital sensors with the Raspberry Pi Pico W, programming with MicroPython, and managing real-time data processing. 
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W mit einem DHT11-Temperatur- und Feuchtigkeitssensor verbinden. Sie werden die genaue Messung der Umgebungsbedingungen durch Aufzeichnung von Temperatur- und Feuchtigkeitsdaten erkunden. Dieses Tutorial bietet praktische Anleitungen zur Verwendung digitaler Sensoren mit dem Raspberry Pi Pico W, zum Programmieren mit MicroPython und zur Verwaltung der Echtzeitdatenverarbeitung.
 
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name    
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 10
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_19_dht11_module_bb.png
@@ -80,12 +80,12 @@ Code
        print("Humidity:" ,d.humidity())  # Print humidity
        time.sleep_ms(1000)  # Read every second
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries:
+#. Bibliotheken importieren:
 
-   The code begins by importing necessary libraries. ``dht`` is for the DHT11 sensor, ``machine`` is for interacting with the hardware, and ``time`` is for adding delays in the loop.
+   Der Code beginnt mit dem Importieren der erforderlichen Bibliotheken. ``dht`` ist für den DHT11-Sensor, ``machine`` für die Interaktion mit der Hardware und ``time`` für Verzögerungen in der Schleife zuständig.
 
    .. code-block:: python
       
@@ -93,17 +93,17 @@ Code Analysis
       import machine
       import time
 
-#. Initializing the DHT11 Sensor:
+#. Initialisierung des DHT11-Sensors:
 
-   The DHT11 sensor is initialized by specifying its connected GPIO pin. Here, it's connected to GPIO 16 on the Raspberry Pi Pico W. This is done using the ``machine.Pin`` function.
+   Der DHT11-Sensor wird initialisiert, indem der verbundene GPIO-Pin angegeben wird. Hier ist er mit GPIO 16 am Raspberry Pi Pico W verbunden. Dies geschieht mithilfe der Funktion ``machine.Pin``.
 
    .. code-block:: python
 
       d = dht.DHT11(machine.Pin(16))
 
-#. Reading and Printing Data in a Loop:
+#. Datenkontinuierlich lesen und ausgeben:
 
-   The ``while True`` loop enables the program to continuously read temperature and humidity data. Inside the loop, ``d.measure()`` is called to take a new measurement. ``d.temperature()`` and ``d.humidity()`` are used to retrieve the temperature and humidity data, respectively. These values are then printed. The loop pauses for one second (``1000`` milliseconds) using ``time.sleep_ms(1000)``, ensuring the data is read and printed every second.
+   Die Schleife ``while True`` ermöglicht es dem Programm, kontinuierlich Temperatur- und Luftfeuchtigkeitsdaten zu lesen. Innerhalb der Schleife wird ``d.temperature()`` aufgerufen, um eine neue Messung durchzuführen. ``d.measure()`` und ``d.humidity()`` werden verwendet, um die Temperatur- und Luftfeuchtigkeitsdaten abzurufen. Diese Werte werden dann ausgegeben. Die Schleife pausiert für eine Sekunde (``1000`` milliseconds) mithilfe von ``time.sleep_ms(1000)``, um sicherzustellen, dass die Daten jede Sekunde gelesen und ausgegeben werden.
 
    .. code-block:: python
 

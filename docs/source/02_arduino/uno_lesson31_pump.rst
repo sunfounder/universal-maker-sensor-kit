@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson31_pump:
 
-Lesson 31: Centrifugal Pump
+Lektion 31: Kreiselpumpe
 ==================================
 
-In this lesson, you'll learn how to control a centrifugal pump with an Arduino Uno R3 or R4 and an L9110 motor control board. You'll discover how to set up and program the Arduino to start the pump in one direction, run it for a specific duration, and then stop it. This hands-on experience is ideal for beginners and offers fundamental insight into managing motor operations and understanding output controls in Arduino projects.
+In dieser Lektion lernen Sie, wie Sie eine Kreiselpumpe mit einem Arduino Uno R3 oder R4 und einer L9110-Motorsteuerplatine steuern. Sie erfahren, wie Sie den Arduino so einrichten und programmieren, dass die Pumpe in eine Richtung startet, für eine bestimmte Dauer läuft und dann stoppt. Diese praktische Erfahrung ist ideal für Anfänger und bietet grundlegende Einblicke in die Verwaltung von Motoroperationen und das Verständnis von Ausgangssteuerungen in Arduino-Projekten.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -58,12 +58,11 @@ You can also buy them separately from the links below.
 * :ref:`cpn_l9110`
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_31_pump_uno_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -72,21 +71,21 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f5fad7fa-4b2c-4630-a832-d3a5e077d9fa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-1. Two pins are defined for controlling the motor, specifically ``motorB_1A`` and ``motorB_2A``. These pins will connect to the L9110 motor control board to control the direction and speed of the motor.
+1. Zwei Pins werden zur Steuerung des Motors definiert, nämlich ``motorB_1A`` und ``motorB_2A``. Diese Pins werden mit der L9110-Motorsteuerplatine verbunden, um die Richtung und Geschwindigkeit des Motors zu steuern.
   
    .. code-block:: arduino
    
       const int motorB_1A = 9;
       const int motorB_2A = 10;
 
-2. Configuring the pins and controlling the motor:
+2. Konfigurieren der Pins und Steuern des Motors:
 
-   - The ``setup()`` function initializes the pins as ``OUTPUT`` which means they can send signals to the motor control board.
+   - Die Funktion ``setup()`` initialisiert die Pins als ``OUTPUT``, was bedeutet, dass sie Signale an die Motorsteuerplatine senden können.
 
-   - The ``analogWrite()`` function is used to set the motor speed. Here, setting one pin to ``HIGH`` and the other to ``LOW`` makes the pump spin in one direction. After a 5-second delay, both pins are set to 0, turning off the motor.
+   - Die Funktion ``analogWrite()`` wird verwendet, um die Motordrehzahl einzustellen. Hier führt das Setzen eines Pins auf ``HIGH`` und des anderen auf ``LOW`` dazu, dass die Pumpe in eine Richtung dreht. Nach einer Verzögerung von 5 Sekunden werden beide Pins auf 0 gesetzt, wodurch der Motor ausgeschaltet wird.
 
    .. raw:: html
 

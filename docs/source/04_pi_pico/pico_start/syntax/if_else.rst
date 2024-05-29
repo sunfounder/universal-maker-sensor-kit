@@ -1,21 +1,21 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 If Else
 =============
 
-Decision making is required when we want to execute a code only if a certain condition is satisfied.
+Entscheidungen sind erforderlich, wenn wir einen Code nur ausführen möchten, wenn eine bestimmte Bedingung erfüllt ist.
 
 if
 --------------------
@@ -24,19 +24,19 @@ if
     if test expression:
         statement(s)
 
-Here, the program evaluates the ``test expression`` and executes the ``statement`` only when the ``test expression`` is True.
+Hier bewertet das Programm den ``Testausdruck`` und führt die ``Anweisung`` nur aus, wenn der ``Testausdruck`` True ist.
 
-If ``test expression`` is False, then ``statement(s)`` will not be executed.
+Wenn ``Testausdruck`` False ist, werden ``Anweisung(en)`` nicht ausgeführt.
 
-In MicroPython, indentation means the body of the ``if`` statement. The body starts with an indentation and ends with the first unindented line.
+In MicroPython bedeutet Einrückung den Körper der ``if``-Anweisung. Der Körper beginnt mit einer Einrückung und endet mit der ersten nicht eingerückten Zeile.
 
-Python interprets non-zero values ​​as "True". None and 0 are interpreted as "False".
+Python interpretiert Nicht-Null-Werte als "True". None und 0 werden als "False" interpretiert.
 
-**if Statement Flowchart**
+**if-Anweisungsflussdiagramm**
 
 .. image:: img/if_statement.png
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
@@ -65,11 +65,11 @@ The ``if..else`` statement evaluates ``test expression`` and will execute the bo
 
 If the condition is ``False``, the body of ``else`` is executed. Indentation is used to separate the blocks.
 
-**if...else Statement Flowchart**
+**if...else-Anweisungsflussdiagramm**
 
 .. image:: img/if_else.png
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
@@ -92,25 +92,25 @@ if...elif...else
     if test expression:
         Body of if
     elif test expression:
-        Body of elif
+        Rumpf von elif
     else: 
         Body of else
 
-``Elif`` is short for ``else if``. It allows us to check multiple expressions.
+``Elif`` ist die Abkürzung für ``else if``. Es ermöglicht uns, mehrere Ausdrücke zu überprüfen.
 
-If the condition of the ``if`` is False, the condition of the next elif block is checked, and so on.
+Wenn die Bedingung des ``if`` False ist, wird die Bedingung des nächsten elif-Blocks überprüft und so weiter.
 
-If all conditions are ``False``, the body of ``else`` is executed.
+Wenn alle Bedingungen ``False`` sind, wird der Rumpf von ``else`` ausgeführt.
 
-Only one of several ``if...elif...else`` blocks is executed according to the conditions.
+Nur einer von mehreren ``if...elif...else``-Blöcken wird je nach Bedingungen ausgeführt.
 
-The ``if`` block can only have one ``else`` block. But it can have multiple ``elif`` blocks.
+Der ``if``-Block kann nur einen ``else``-Block haben. Aber er kann mehrere ``elif``-Blöcke haben.
 
-**if...elif...else Statement Flowchart**
+**if...elif...else-Anweisungsflussdiagramm**
 
 .. image:: img/if_elif_else.png
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
@@ -128,12 +128,12 @@ The ``if`` block can only have one ``else`` block. But it can have multiple ``el
 x is greater than y
 
 
-Nested if
+Verschachteltes if
 ---------------------
 
-We can embed an if statement into another if statement, and then call it a nested if statement.
+Wir können eine if-Anweisung in eine andere if-Anweisung einbetten und sie dann als verschachtelte if-Anweisung bezeichnen.
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 

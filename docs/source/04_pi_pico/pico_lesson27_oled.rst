@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson27_oled:
-
-Lesson 27: OLED Display Module (SSD1306)
+Lektion 27: OLED-Display-Modul (SSD1306)
 ============================================
 
-In this lesson, you will learn how to connect and display text and graphics on an OLED display module (SSD1306) using the Raspberry Pi Pico W. You'll set up the I2C communication, use MicroPython to program the Pico W to control the OLED display, and practice displaying simple text messages.
+In dieser Lektion lernen Sie, wie Sie ein OLED-Display-Modul (SSD1306) mit dem Raspberry Pi Pico W verbinden und Text und Grafiken darauf anzeigen können. Sie richten die I2C-Kommunikation ein, verwenden MicroPython, um den Pico W zur Steuerung des OLED-Displays zu programmieren, und üben das Anzeigen einfacher Textnachrichten.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,11 +54,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. note:: 
-   To ensure the OLED module operates normally, please power it using the VBUS pin on the Pico.
+   Um sicherzustellen, dass das OLED-Modul normal funktioniert, verwenden Sie bitte den VBUS-Pin am Pico, um es mit Strom zu versorgen.
 
 .. image:: img/Lesson_27_oled_pico_bb.png
     :width: 100%
@@ -97,35 +97,34 @@ Code
    
    # The following line sends what to show to the display
    oled.show()
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Initializing the I2C communication:
+#. Initialisierung der I2C-Kommunikation:
 
-   This code segment sets up the I2C communication protocol. I2C is a standard protocol for communication between devices. It uses two lines: SDA (data line) and SCL (clock line).
+   Dieser Codeabschnitt richtet die I2C-Kommunikationsprotokolle ein. I2C ist ein Standardprotokoll für die Kommunikation zwischen Geräten. Es verwendet zwei Leitungen: SDA (Datenleitung) und SCL (Taktleitung).
    
    .. code-block:: python
 
       from machine import Pin, I2C
       i2c = I2C(0, sda=Pin(20), scl=Pin(21))
 
-#. Setting up the OLED display:
+#. Einrichten des OLED-Displays:
 
-   Here, we initialize the SSD1306 OLED display with the I2C protocol. The parameters 128 and 64 define the width and height of the display in pixels, respectively.
+   Hier initialisieren wir das SSD1306 OLED-Display mit dem I2C-Protokoll. Die Parameter 128 und 64 definieren die Breite und Höhe des Displays in Pixeln.
 
-   For more information about the ``ssd1306`` library, please visit |link_micropython_ssd1306_driver|.
+   Für weitere Informationen zur ``ssd1306``-Bibliothek besuchen Sie bitte |link_micropython_ssd1306_driver|.
 
    .. code-block:: python
 
       import ssd1306
       oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
-#. Clearing the display:
+#. Löschen des Displays:
 
-   The display is cleared by filling it with white (1) and then updating the display with ``oled.show()``. The ``time.sleep(1)`` command adds a one-second delay. Then, the display is cleared again by filling it with black (0).
+   Das Display wird gelöscht, indem es mit Weiß (1) gefüllt und dann das Display mit ``oled.show()`` aktualisiert wird. Der Befehl ``time.sleep(1)`` fügt eine Verzögerung von einer Sekunde hinzu. Dann wird das Display erneut gelöscht, indem es mit Schwarz (0) gefüllt wird.
 
-   SSD1306_I2C is a subclass of FrameBuffer, which supports graphics primitives. If you want to display other patterns, please refer to |link_FrameBuffer_doc|.
+   SSD1306_I2C ist eine Unterklasse von FrameBuffer, die Grafikprimitive unterstützt. Wenn Sie andere Muster anzeigen möchten, lesen Sie bitte |link_FrameBuffer_doc|.
 
    .. code-block:: python
       
@@ -136,9 +135,9 @@ Code Analysis
       oled.show()
       time.sleep(1)
 
-#. Displaying text:
+#. Anzeigen von Text:
 
-   The ``oled.text`` method is used to display text on the screen. The parameters are the text to display and the x, y coordinates on the screen. Finally, ``oled.show()`` updates the display to show the text.
+   Die Methode ``oled.text`` wird verwendet, um Text auf dem Bildschirm anzuzeigen. Die Parameter sind der anzuzeigende Text und die x-, y-Koordinaten auf dem Bildschirm. Schließlich aktualisiert ``oled.show()`` das Display, um den Text anzuzeigen.
 
    .. code-block:: python
 

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson16_ds1306:
 
-Lesson 16: Real Time Clock Module (DS1302)
+Lektion 16: Echtzeituhrmodul (DS1302)
 ==================================================
 
-In this lesson, you will learn how to set up and use a Real Time Clock (RTC) module with an ESP32 development board. We'll cover integrating the DS1302 RTC module, understanding its functions, and programming the ESP32 to display the current date and time. You'll also learn how to handle situations where the RTC has lost its date and time settings and automatically set it to the compile time of your sketch. This project is ideal for those seeking to enhance their comprehension of time-related functions in microcontroller projects.
+In dieser Lektion lernen Sie, wie Sie ein Echtzeituhrmodul (RTC) mit einem ESP32-Entwicklungsboard einrichten und verwenden. Wir werden die Integration des DS1302 RTC-Moduls, das Verständnis seiner Funktionen und die Programmierung des ESP32 zur Anzeige des aktuellen Datums und der Uhrzeit behandeln. Außerdem erfahren Sie, wie Sie Situationen handhaben, in denen das RTC-Modul seine Datums- und Uhrzeiteinstellungen verloren hat und automatisch auf die Kompilierungszeit Ihres Sketches eingestellt wird. Dieses Projekt ist ideal für diejenigen, die ihr Verständnis für zeitbezogene Funktionen in Mikrocontroller-Projekten erweitern möchten.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_16_DS1302_esp32_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -68,24 +66,24 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/12a5464b-7a6e-48e1-b43e-ca585cb9e310/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Initialization and library inclusion
+#. Initialisierung und Bibliotheks-Einbindung
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Rtc by Makuna"** and install it. 
+      Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"Rtc by Makuna"** und installieren Sie sie.
 
-   Here, necessary libraries are included for the DS1302 RTC module.
+   Hier werden die notwendigen Bibliotheken für das DS1302 RTC-Modul eingebunden.
 
    .. code-block:: arduino
 
       #include <ThreeWire.h>
       #include <RtcDS1302.h>
 
-#. Define pins and create RTC instance
+#. Pins definieren und RTC-Instanz erstellen
 
-   Pins for communication are defined and an instance of the RTC is created.
+   Pins für die Kommunikation werden definiert und eine Instanz der RTC erstellt.
 
    .. code-block:: arduino
 
@@ -96,10 +94,9 @@ Code Analysis
       ThreeWire myWire(IO, SCLK, CE));
       RtcDS1302<ThreeWire> Rtc(myWire);
 
+#. ``setup()``-Funktion
 
-#. ``setup()`` function
-
-   This function initializes the serial communication and sets up the RTC module. Various checks are made to ensure the RTC is running correctly.
+   Diese Funktion initialisiert die serielle Kommunikation und richtet das RTC-Modul ein. Verschiedene Überprüfungen werden durchgeführt, um sicherzustellen, dass die RTC korrekt läuft.
 
    .. code-block:: arduino
 
@@ -146,10 +143,9 @@ Code Analysis
         }
       }
 
+#. ``loop()``-Funktion
 
-#. ``loop()`` function
-
-   This function periodically fetches the current date and time from the RTC and prints it on the serial monitor. It also checks if the RTC is still maintaining a valid date and time.
+   Diese Funktion holt periodisch das aktuelle Datum und die Uhrzeit von der RTC und gibt sie im seriellen Monitor aus. Es wird auch überprüft, ob die RTC weiterhin ein gültiges Datum und eine gültige Uhrzeit beibehält.
 
    .. code-block:: arduino
 
@@ -168,10 +164,9 @@ Code Analysis
         delay(5000);  // five seconds
       }
 
+#. Datum- und Uhrzeitausgabe-Funktion
 
-#. Date and time printing function
-
-   A helper function that takes a ``RtcDateTime`` object and prints the formatted date and time to the serial monitor.
+   Eine Hilfsfunktion, die ein ``RtcDateTime``-Objekt entgegennimmt und das formatierte Datum und die Uhrzeit im seriellen Monitor ausgibt.
 
    .. code-block:: arduino
 

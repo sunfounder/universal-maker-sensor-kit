@@ -1,45 +1,45 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _iot_add_library:
 
-1.3 Adding the required libraries
-===================================
+1.3 Hinzufügen der erforderlichen Bibliotheken
+==============================================
 
-You need to add the correct libraries for the Arduino IDE to use Blynk.
+Sie müssen die richtigen Bibliotheken zur Arduino IDE hinzufügen, um Blynk verwenden zu können.
 
-#. Click |link_blynk_lib|, scroll down to **"Assets"** and download the first ``.zip`` file. 
+#. Klicken Sie auf |link_blynk_lib|, scrollen Sie nach unten zu **"Assets"** und laden Sie die erste ``.zip``-Datei herunter. 
 
    .. note::
-    Please note that the version number shown in the image below may be outdated. We highly recommend downloading and installing the latest version available.
+    Bitte beachten Sie, dass die unten gezeigte Versionsnummer veraltet sein kann. Wir empfehlen dringend, die neueste verfügbare Version herunterzuladen und zu installieren.
 
    .. image:: img/new/add_lib_shadow.png
 
-#. Unzip this file and then enter the ``libraries`` folder to see the following folders.
+#. Entpacken Sie diese Datei und gehen Sie dann in den Ordner ``libraries``, um die folgenden Ordner zu sehen.
 
    .. image:: img/new/add_lib_0_shadow.png
     
-#. Copy them all and add them to the ``libraries`` folder of your sketchbook.
+#. Kopieren Sie alle Ordner und fügen Sie sie in den Ordner ``libraries`` Ihres Sketchbooks ein.
 
-   **Step 1:** You can find or change the location of your libraries folder at ``File > Preferences > Sketchbook location``.
+   **Schritt 1:** Sie können den Speicherort Ihres Bibliothekenordners unter ``Datei > Voreinstellungen > Speicherort des Sketchbooks`` finden oder ändern.
 
    .. image:: img/new/add_lib_1_shadow.png
 
-   **Step 2:** Go to the location of your Sketchbook location(find from Arduino IDE). And find ``libraries`` folder, click to open it.
+   **Schritt 2:** Gehen Sie zum Speicherort Ihres Sketchbooks (den Sie in der Arduino IDE gefunden haben). Suchen Sie den Ordner ``libraries`` und öffnen Sie ihn.
 
    .. image:: img/new/add_lib_2_shadow.png
 
-   **Step 3:** Paste all the unzipped folders of ``Blynk_Release_vx.x.x\libraries`` into the libraries folder.
+   **Schritt 3:** Fügen Sie alle entpackten Ordner von ``Blynk_Release_vx.x.x\libraries`` in den Ordner ``libraries`` ein.
 
    .. image:: img/new/add_lib_3_shadow.png

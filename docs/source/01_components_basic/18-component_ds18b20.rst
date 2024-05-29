@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_ds18b20:
 
-Temperature Sensor Module (DS18B20)
+Temperatursensormodul (DS18B20)
 ===============================================
 
 .. image:: img/18_ds18b20_module.png
@@ -25,23 +25,23 @@ Temperature Sensor Module (DS18B20)
 
    <br/>
 
-The DS18B20 is a digital temperature sensor that can measure temperatures ranging from -67°F to +257°F with an accuracy of ±0.5°C. It follows the single wire protocol and can communicate with a microcontroller using only one pin. The sensor can be powered directly from the data line, eliminating the need for an external power supply. The applications of the DS18B20 temperature sensor include industrial systems, consumer products, systems which are sensitive thermally, thermostatic controls, and thermometers.
+Der DS18B20 ist ein digitaler Temperatursensor, der Temperaturen im Bereich von -55°C bis +125°C mit einer Genauigkeit von ±0,5°C messen kann. Er verwendet das Single-Wire-Protokoll und kann mit nur einem Pin mit einem Mikrocontroller kommunizieren. Der Sensor kann direkt über die Datenleitung mit Strom versorgt werden, wodurch eine externe Stromversorgung überflüssig wird. Anwendungsbereiche des DS18B20-Temperatursensors umfassen Industriesysteme, Verbraucherprodukte, thermisch empfindliche Systeme, thermostatische Steuerungen und Thermometer.
 
-Specification
+Spezifikation
 ---------------------------
-* PCB Size: 13 x 27.9mm
-* Power Supply: 3V to 5.5V
-* Temperature Range: -55 to 125°C
-* Accuracy:	±0.5°C
-* Resolution: 9 to 12 bit (selectable)
+* PCB-Größe: 13 x 27,9mm
+* Stromversorgung: 3V bis 5,5V
+* Temperaturbereich: -55 bis 125°C
+* Genauigkeit: ±0,5°C
+* Auflösung: 9 bis 12 Bit (wählbar)
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **OUT**: The 1-Wire Data Bus that should be connected to a digital pin on the microcontroller.
+* **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **OUT**: Der 1-Wire-Datenbus, der mit einem digitalen Pin des Mikrocontrollers verbunden werden sollte.
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/18_ds18b20_module_schematic.png
@@ -52,7 +52,7 @@ Schematic diagram
 
    <br/>
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson18_ds18b20` (Arduino UNO)
 * :ref:`esp32_lesson18_ds18b20` (ESP32)

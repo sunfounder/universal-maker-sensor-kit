@@ -1,43 +1,43 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson27_oled:
 
-Lesson 27: OLED Display Module (SSD1306)
-============================================
+Lektion 27: OLED Display Modul (SSD1306)
+===========================================
 
-In this lesson, you will learn how to set up and utilize an OLED display with an ESP32 Development Board using the Adafruit SSD1306 and GFX libraries. We will cover displaying text in different sizes, inverting text colors, creating scrolling text animations, and rendering custom bitmap graphics. This project provides a thorough introduction to advanced display techniques, ideal for individuals seeking to improve their skills in developing interactive electronics with microcontrollers.
+In dieser Lektion lernen Sie, wie Sie ein OLED-Display mit einem ESP32-Entwicklungsboard und den Adafruit SSD1306 und GFX Bibliotheken einrichten und nutzen. Wir werden die Anzeige von Text in verschiedenen Größen, das Invertieren der Textfarben, das Erstellen von scrollenden Textanimationen und das Rendern von benutzerdefinierten Bitmap-Grafiken behandeln. Dieses Projekt bietet eine gründliche Einführung in fortgeschrittene Display-Techniken und ist ideal für Personen, die ihre Fähigkeiten in der Entwicklung interaktiver Elektronik mit Mikrocontrollern verbessern möchten.
 
-Required Components
---------------------------
+Benötigte Komponenten
+-------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,33 +53,30 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
----------------------------
+Verdrahtung
+---------------
 
 .. image:: img/Lesson_27_oled_esp32_bb.png
     :width: 100%
 
-
 Code
----------------------------
+-------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/33f2fdd0-af4e-4438-bacf-982894bb8ac4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
----------------------------
+Code-Analyse
+---------------
 
-1. **Library Inclusion and Initial Definitions**:
-   The necessary libraries for interfacing with the OLED are included. Following that, definitions regarding the OLED's dimensions and I2C address are provided.
+#. **Bibliothekseinbindung und Initiale Definitionen**:
+   Die notwendigen Bibliotheken für die Schnittstelle mit dem OLED-Display werden eingebunden. Danach werden Definitionen bezüglich der Abmessungen des OLEDs und der I2C-Adresse bereitgestellt.
 
-
-   - **Adafruit SSD1306**: This library is designed to help with the interfacing of the SSD1306 OLED display. It provides methods to initialize the display, control its settings, and display content.
-   - **Adafruit GFX Library**: This is a core graphics library for displaying text, producing colors, drawing shapes, etc., on various screens including OLEDs.
+   - **Adafruit SSD1306**: Diese Bibliothek ist für die Schnittstelle mit dem SSD1306 OLED-Display konzipiert. Sie bietet Methoden zur Initialisierung des Displays, Steuerung seiner Einstellungen und Anzeige von Inhalten.
+   - **Adafruit GFX Bibliothek**: Dies ist eine grundlegende Grafikbibliothek zur Anzeige von Text, Erzeugung von Farben, Zeichnen von Formen usw. auf verschiedenen Bildschirmen, einschließlich OLEDs.
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit SSD1306"** and **"Adafruit GFX"** and install it. 
+      Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager, suchen Sie nach **"Adafruit SSD1306"** und **"Adafruit GFX"** und installieren Sie sie.
 
    .. code-block:: arduino
     
@@ -94,19 +91,19 @@ Code Analysis
       #define OLED_RESET -1
       #define SCREEN_ADDRESS 0x3C
 
-2. **Bitmap Data**:
-   Bitmap data for displaying a custom icon on the OLED screen. This data represents an image in a format that the OLED can interpret.
+#. **Bitmap-Daten**:
+   Bitmap-Daten zur Anzeige eines benutzerdefinierten Icons auf dem OLED-Bildschirm. Diese Daten stellen ein Bild in einem Format dar, das das OLED interpretieren kann.
 
-   You can use this online tool called |link_image2cpp| that can turn your image into an array. 
+   Sie können dieses Online-Tool namens |link_image2cpp| verwenden, das Ihr Bild in ein Array umwandeln kann.
 
-   The ``PROGMEM`` keyword denotes that the array is stored in the program memory of the Arduino microcontroller. Storing data in program memory(PROGMEM) instead of RAM can be helpful for large amounts of data, which would otherwise take up too much space in RAM.
+   Das ``PROGMEM``-Schlüsselwort zeigt an, dass das Array im Programmspeicher des Arduino-Mikrocontrollers gespeichert wird. Das Speichern von Daten im Programmspeicher (PROGMEM) anstelle von RAM kann bei großen Datenmengen hilfreich sein, die sonst zu viel Platz im RAM einnehmen würden.
 
    .. code-block:: arduino
 
       static const unsigned char PROGMEM sunfounderIcon[] = {...};
 
-3. **Setup Function (Initialization and Display)**:
-   The ``setup()`` function initializes the OLED and displays a series of patterns, texts, and animations.
+#. **Setup-Funktion (Initialisierung und Anzeige)**:
+   Die ``setup()``-Funktion initialisiert das OLED und zeigt eine Reihe von Mustern, Texten und Animationen an.
 
    .. code-block:: arduino
 

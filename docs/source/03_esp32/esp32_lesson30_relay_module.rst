@@ -1,43 +1,43 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson30_relay_module:
 
-Lesson 30: Relay Module
-==================================
+Lektion 30: Relaismodul
+==========================
 
-In this lesson, you'll learn how to use an ESP32 Development Board to control a one-channel relay module. We'll cover turning the relay on and off in a loop, with a 3-second delay between each state change. This project provides hands-on experience with digital output operations in embedded systems, making it ideal for beginners entering the realm of ESP32 and relay modules.
+In dieser Lektion lernen Sie, wie Sie ein Ein-Kanal-Relaismodul mit einem ESP32-Entwicklungsboard steuern. Wir werden das Ein- und Ausschalten des Relais in einer Schleife behandeln, wobei zwischen jedem Zustandswechsel eine Verzögerung von 3 Sekunden liegt. Dieses Projekt bietet praktische Erfahrungen mit digitalen Ausgangsoperationen in eingebetteten Systemen und ist ideal für Anfänger, die sich mit dem ESP32 und Relaismodulen vertraut machen möchten.
 
-Required Components
---------------------------
+Benötigte Komponenten
+------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -55,27 +55,25 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_rgb`
         - \-
 
-
-Wiring
----------------------------
+Verdrahtung
+--------------
 
 .. image:: img/Lesson_30_Relay_esp32_bb.png
     :width: 100%
 
-
 Code
----------------------------
+--------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a0035890-76ca-4a85-9f21-9df01717d906/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
----------------------------
+Code-Analyse
+----------------
 
-#. Setting up the relay pin:
+#. Einrichtung des Relais-Pins:
 
-   - The relay module is connected to pin 25 of the ESP32 Development Board. This pin is defined as ``relayPin`` for ease of reference in the code.
+   - Das Relaismodul ist an Pin 25 des ESP32-Entwicklungsboards angeschlossen. Dieser Pin wird als ``relayPin`` definiert, um die Referenz im Code zu erleichtern.
 
    .. raw:: html
 
@@ -85,9 +83,9 @@ Code Analysis
     
       const int relayPin = 25;
 
-#. Configuring the relay pin as an output:
+#. Konfiguration des Relais-Pins als Ausgang:
 
-   - In the ``setup()`` function, the relay pin is set as an OUTPUT using the ``pinMode()`` function. This means the Arduino will send signals (either HIGH or LOW) to this pin.
+   - In der ``setup()``-Funktion wird der Relais-Pin mit der Funktion ``pinMode()`` als ``OUTPUT`` festgelegt. Dies bedeutet, dass das Arduino Signale (entweder HIGH oder LOW) an diesen Pin sendet.
 
    .. raw:: html
 
@@ -99,11 +97,11 @@ Code Analysis
         pinMode(relayPin, OUTPUT);
       }
 
-#. Toggling the relay ON and OFF:
+#. Umschalten des Relais EIN und AUS:
 
-   - In the ``loop()`` function, the relay is first set to the OFF state using ``digitalWrite(relayPin, LOW)``. It remains in this state for 3 seconds (``delay(3000)``).
-   - Then, the relay is set to the ON state using ``digitalWrite(relayPin, HIGH)``. Again, it remains in this state for 3 seconds.
-   - This cycle repeats indefinitely.
+   - In der ``loop()``-Funktion wird das Relais zuerst mit ``digitalWrite(relayPin, LOW)`` in den AUS-Zustand versetzt. Es verbleibt 3 Sekunden in diesem Zustand (``delay(3000)``).
+   - Dann wird das Relais mit ``digitalWrite(relayPin, HIGH)`` in den EIN-Zustand versetzt. Auch hier verbleibt es 3 Sekunden in diesem Zustand.
+   - Dieser Zyklus wiederholt sich unendlich.
 
    .. raw:: html
 

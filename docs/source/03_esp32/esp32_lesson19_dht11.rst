@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_lesson19_dht11:
 
-Lesson 19: Temperature and Humidity Sensor Module (DHT11)
+Lektion 19: Temperatur- und Feuchtigkeitssensormodul (DHT11)
 ====================================================================
 
-In this lesson, you will learn how to read temperature and humidity from a DHT11 sensor using an ESP32 Development Board. We'll also cover interpreting these readings and calculating the heat index in both Celsius and Fahrenheit. This project is ideal for beginners in environmental sensing, providing hands-on experience with sensor data acquisition and basic concepts of climate monitoring on the ESP32 platform.
+In dieser Lektion lernen Sie, wie Sie Temperatur und Feuchtigkeit mit einem DHT11-Sensor und einem ESP32-Entwicklungsboard auslesen. Wir werden auch besprechen, wie diese Messwerte interpretiert und der Hitzeindex sowohl in Celsius als auch in Fahrenheit berechnet werden. Dieses Projekt eignet sich ideal für Anfänger im Bereich der Umweltsensorik und bietet praktische Erfahrung im Erfassen von Sensordaten sowie grundlegende Konzepte der Klimamessung auf der ESP32-Plattform.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 10
@@ -52,33 +52,31 @@ You can also buy them separately from the links below.
         - |link_dht11_humiture_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
- 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_19_DHT11_esp32_bb.png
     :width: 100%
 
-
 Code
 ---------------------------
 
 .. note:: 
-   To install the library, use the Arduino Library Manager and search for **"DHT sensor library"** and install it. 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"DHT sensor library"** und installieren Sie sie.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/926830ca-9421-4852-ad72-ff75c1f10174/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Inclusion of necessary libraries and definition of constants.
-   This part of the code includes the DHT sensor library and defines the pin number and sensor type used in this project.
+#. Einbindung der notwendigen Bibliotheken und Definition der Konstanten.
+   Dieser Teil des Codes beinhaltet die DHT-Sensorbibliothek und definiert die verwendete Pinnummer und den Sensortyp für dieses Projekt.
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"DHT sensor library"** and install it. 
+      Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"DHT sensor library"** und installieren Sie sie.
 
    .. code-block:: arduino
     
@@ -86,14 +84,14 @@ Code Analysis
       #define DHTPIN 25       // Define the pin used to connect the sensor
       #define DHTTYPE DHT11  // Define the sensor type
 
-#. Creation of DHT object.
-   Here we create a DHT object using the defined pin number and sensor type.
+#. Erstellung des DHT-Objekts.
+   Hier erstellen wir ein DHT-Objekt mit der definierten Pinnummer und dem Sensortyp.
 
    .. code-block:: arduino
 
       DHT dht(DHTPIN, DHTTYPE);  // Create a DHT object
 
-#. This function is executed once when the ESP32 Development Board starts. We initialize the serial communication and the DHT sensor in this function.
+#. Diese Funktion wird einmal ausgeführt, wenn das ESP32-Entwicklungsboard startet. Wir initialisieren die serielle Kommunikation und den DHT-Sensor in dieser Funktion.
 
    .. code-block:: arduino
 
@@ -103,12 +101,12 @@ Code Analysis
         dht.begin();  // Initialize the DHT sensor
       }
 
-#. Main loop.
-   The ``loop()`` function runs continuously after the setup function. Here, we read the humidity and temperature values, calculate the heat index, and print these values to the serial monitor.  If the sensor read fails (returns NaN), it prints an error message.
+#. Hauptschleife.
+   Die ``loop()``-Funktion läuft kontinuierlich nach der Setup-Funktion. Hier lesen wir die Feuchtigkeits- und Temperaturwerte aus, berechnen den Hitzeindex und geben diese Werte im seriellen Monitor aus. Wenn das Auslesen des Sensors fehlschlägt (NaN zurückgibt), wird eine Fehlermeldung ausgegeben.
 
    .. note::
     
-      The |link_heat_index| is a way to measure how hot it feels outside by combining the air temperature and the humidity. It is also called the "felt air temperature" or "apparent temperature".
+      Der |link_heat_index| ist eine Methode zur Messung, wie heiß es draußen durch die Kombination von Lufttemperatur und Feuchtigkeit ist. Er wird auch als "gefühlte Temperatur" oder "scheinbare Temperatur" bezeichnet.
 
    .. code-block:: arduino
 

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson15_raindrop:
 
-Lesson 15: Raindrop Detection Module
+Lektion 15: Regensensor-Modul
 =======================================
 
-In this lesson, you will learn how to use a Raindrop Detection Sensor Module with an Arduino. We will see how the sensor detects rain by measuring changes in resistance caused by raindrops completing circuits on its nickel-coated surface.
+In dieser Lektion lernen Sie, wie Sie ein Regensensor-Modul mit einem Arduino verwenden. Wir werden sehen, wie der Sensor Regen erkennt, indem er Änderungen im Widerstand misst, die durch Regentropfen verursacht werden, die auf seiner nickelbeschichteten Oberfläche Schaltkreise schließen.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können die Komponenten auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -51,8 +51,7 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_raindrop`
         - |link_raindrop_sensor_module_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_15_raindrop_detection_module_uno_bb.png
@@ -66,20 +65,20 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/856a64c8-ecb6-455e-97e6-186cb8d159ea/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-1. Defining sensor pin
+1. Definition des Sensorpins
 
-   Here, a constant integer named ``sensorPin`` is defined and assigned the value 7. This corresponds to the digital pin on the Arduino board where the raindrops detection sensor is connected.
+   Hier wird ein konstanter Integer namens ``sensorPin`` definiert und mit dem Wert 7 belegt. Dies entspricht dem digitalen Pin auf dem Arduino-Board, an dem der Regensensor angeschlossen ist.
 
    .. code-block:: arduino
    
        const int sensorPin = 7;
 
-2. Setting up the pin mode and initiating serial communication.
+2. Einstellen des Pin-Modus und Initialisierung der seriellen Kommunikation.
 
-   In the ``setup()`` function, two essential steps are performed. Firstly, ``pinMode()`` is used to set the ``sensorPin`` as an input, enabling us to read digital values from the raindrops sensor. Secondly, serial communication is initialized with a baud rate of 9600.
+   In der ``setup()``-Funktion werden zwei wesentliche Schritte durchgeführt. Erstens wird mit ``pinMode()`` der ``sensorPin`` als Eingang festgelegt, um digitale Werte vom Regensensor lesen zu können. Zweitens wird die serielle Kommunikation mit einer Baudrate von 9600 initialisiert.
 
    .. code-block:: arduino
    
@@ -88,9 +87,9 @@ Code Analysis
          Serial.begin(9600);
        }
 
-3. Reading the digital value and sending it to the serial monitor. 
+3. Lesen des digitalen Wertes und Senden an den seriellen Monitor. 
 
-   The ``loop()`` function reads the digital value from the raindrops sensor using ``digitalRead()``. This value (either HIGH or LOW) is printed to the Serial Monitor. When raindrops are detected, the serial monitor will display 0; when no raindrops are detected, it will display 1. The program then waits for 50 milliseconds before the next reading.
+   Die ``loop()``-Funktion liest den digitalen Wert vom Regensensor mit ``digitalRead()``. Dieser Wert (entweder HIGH oder LOW) wird auf dem seriellen Monitor angezeigt. Wenn Regentropfen erkannt werden, zeigt der serielle Monitor 0 an; wenn keine Regentropfen erkannt werden, zeigt er 1 an. Das Programm wartet dann 50 Millisekunden, bevor die nächste Messung durchgeführt wird.
 
    .. code-block:: arduino
    
@@ -98,3 +97,4 @@ Code Analysis
          Serial.println(digitalRead(sensorPin));
          delay(50);
        }
+

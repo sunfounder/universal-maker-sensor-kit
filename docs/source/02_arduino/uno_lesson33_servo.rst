@@ -1,30 +1,31 @@
-.. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+ .. note::
 
-    **Why Join?**
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    **Warum beitreten?**
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
+
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson33_servo:
 
-Lesson 33: Servo Motor (SG90)
+Lektion 33: Servomotor (SG90)
 ==================================
 
-In this lesson, you will learn how to use Arduino to control a servo motor and make it rotate from 0 to 180 degrees and back. We will cover the usage of the Servo library, defining and using variables for servo control, as well as implementing a for loop for gradual movement. This project is ideal for beginners as it provides hands-on experience with motor control and basic programming principles in Arduino.
+In dieser Lektion lernen Sie, wie Sie mit Arduino einen Servomotor steuern und ihn von 0 bis 180 Grad und wieder zurück drehen lassen. Wir werden die Verwendung der Servo-Bibliothek, die Definition und Verwendung von Variablen zur Servosteuerung sowie die Implementierung einer For-Schleife für eine schrittweise Bewegung behandeln. Dieses Projekt ist ideal für Anfänger, da es praktische Erfahrungen in der Motorsteuerung und den grundlegenden Programmierprinzipien von Arduino vermittelt.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist auf jeden Fall praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -52,12 +53,11 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_33_servo_uno_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -66,10 +66,10 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/12bb5427-6260-4b46-88a7-4b98f9db3ace/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code Analyse
 ---------------------------
 
-1. Here, the ``Servo`` library is included which allows for easy control of the servo motor. The pin connected to the servo and the initial angle of the servo are also defined.
+1. Hier wird die ``Servo``-Bibliothek eingebunden, die eine einfache Steuerung des Servomotors ermöglicht. Der Pin, der mit dem Servo verbunden ist, sowie der anfängliche Winkel des Servos werden ebenfalls definiert.
 
    .. code-block:: arduino
 
@@ -78,7 +78,7 @@ Code Analysis
       int angle = 0;           // Initialize the angle variable to 0 degrees
       Servo servo;             // Create a servo object
 
-2. The ``setup()`` function runs once when the Arduino starts. The servo is attached to the defined pin using the ``attach()`` function.
+2. Die ``setup()``-Funktion läuft einmal, wenn das Arduino startet. Der Servo wird mit der Funktion ``attach()`` an den definierten Pin angeschlossen.
 
    .. code-block:: arduino
 
@@ -86,7 +86,7 @@ Code Analysis
         servo.attach(servoPin);
       }
 
-3. The main loop has two ``for`` loops. The first loop increases the angle from 0 to 180 degrees, and the second loop decreases the angle from 180 to 0 degrees. The ``servo.write(angle)`` command sets the servo to the specified angle. The ``delay(15)`` causes the servo to wait for 15 milliseconds before moving to the next angle, controlling the speed of the scanning movement.
+3. Die Hauptschleife enthält zwei ``for``-Schleifen. Die erste Schleife erhöht den Winkel von 0 auf 180 Grad, und die zweite Schleife verringert den Winkel von 180 auf 0 Grad. Der Befehl ``servo.write(angle)`` setzt den Servo auf den angegebenen Winkel. Der Befehl ``delay(15)`` bewirkt, dass der Servo 15 Millisekunden wartet, bevor er sich zum nächsten Winkel bewegt, was die Geschwindigkeit der Scanbewegung steuert.
 
    .. code-block:: arduino
 

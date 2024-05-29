@@ -1,37 +1,37 @@
 
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_digital_dice:
 
-Lesson 44: Digital Dice
+Lektion 44: Digitales Würfelspiel
 =============================================================
 
 
-This program simulates a dice roll using an OLED display. 
-The simulation is triggered by shaking the vibration switch, causing the display to cycle through numbers 1 to 6, 
-akin to rolling a dice. 
-The display halts after a short duration, revealing a randomly selected number that represents the dice roll outcome.
+Dieses Programm simuliert das Würfeln mit einem OLED-Display. 
+Die Simulation wird durch Schütteln des Erschütterungsschalters ausgelöst, was dazu führt, dass das Display die Zahlen 1 bis 6 durchläuft, 
+ähnlich wie beim Würfeln mit einem Würfel. 
+Das Display stoppt nach kurzer Zeit und zeigt eine zufällig ausgewählte Zahl an, die das Ergebnis des Würfelwurfs darstellt.
 
 
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -44,7 +44,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_44_Digital_dice_uno_bb.png
@@ -78,33 +78,33 @@ Code
     <iframe src=https://create.arduino.cc/editor/sunfounder01/70e73ef9-2968-4845-befd-23185286fd93/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-A comprehensive breakdown of the code:
+Eine umfassende Analyse des Codes:
 
-1. Initialization of variables:
+1. Initialisierung von Variablen:
 
-   ``vibPin``: Digital pin connected to the vibration sensor.
+   ``vibPin``: Digitaler Pin, der mit dem Erschütterungssensor verbunden ist.
 
-2. Volatile variables:
+2. Volatile Variablen:
 
-   ``rolling``: A volatile flag that indicates the dice's rolling status. It is volatile as it is accessed within both the interrupt service routine and the main program.
+   ``rolling``: Eine volatile Flagge, die den Würfelstatus anzeigt. Sie ist als volatile gekennzeichnet, da sie sowohl im Interrupt-Service-Routine als auch im Hauptprogramm verwendet wird.
 
 3. ``setup()``:
 
-   Configures the vibration sensor's input mode.
-   Assigns an interrupt to the sensor to trigger the rollDice function upon state change.
-   Initializes the OLED display.
+   Konfiguriert den Eingangsmodus des Erschütterungssensors.
+   Weist dem Sensor einen Interrupt zu, um die Funktion rollDice bei Zustandsänderung auszulösen.
+   Initialisiert das OLED-Display.
 
 4. ``loop()``:
 
-   Continuously checks if ``rolling`` is true, displaying a random number between 1 and 6 during this state. The rolling ceases if the sensor has been shaken for over 500 milliseconds.
+   Überprüft kontinuierlich, ob ``rolling`` wahr ist, und zeigt während dieses Zustands eine zufällige Zahl zwischen 1 und 6 an. Das Würfeln endet, wenn der Sensor länger als 500 Millisekunden geschüttelt wurde.
 
 5. ``rollDice()``:
 
-   The interrupt service routine for the vibration sensor. It initiates the dice roll when the sensor is shaken by recording the current time.
+   Die Interrupt-Service-Routine für den Erschütterungssensor. Sie initiiert den Würfelwurf, wenn der Sensor geschüttelt wird, indem sie die aktuelle Zeit aufzeichnet.
 
 6. ``displayNumber()``:
 
-   Displays a selected number on the OLED screen.
+   Zeigt eine ausgewählte Zahl auf dem OLED-Bildschirm an.

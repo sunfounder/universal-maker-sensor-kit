@@ -1,30 +1,31 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _remote_windows:
 
-Windows Users
+Windows-Benutzer
 =======================
 
-If you're a Windows user, you can use Windows PowerShell to login Raspberry Pi remotely.
+Als Windows-Benutzer können Sie Windows PowerShell verwenden, um sich remote beim Raspberry Pi anzumelden.
 
-#. Press the ``windows`` + ``R`` shortcut key in your keyboard to open the **Run** program. Then type **powershell** in the input box. 
+#. Drücken Sie die Tastenkombination ``windows`` + ``R`` auf Ihrer Tastatur, um das **Ausführen**-Programm zu öffnen. Geben Sie dann **powershell** in das Eingabefeld ein. 
 
    .. image:: img/windows_01.png
        :align: center
 
-#. Check if your Raspberry Pi is on the same network by type in ``ping <hostname>.local``. 
+#. Überprüfen Sie, ob Ihr Raspberry Pi im selben Netzwerk ist, indem Sie ``ping <hostname>.local`` eingeben. 
 
    .. code-block:: shell
 
@@ -34,22 +35,22 @@ If you're a Windows user, you can use Windows PowerShell to login Raspberry Pi r
        :width: 550
        :align: center
 
-   * If terminal prompts ``Ping request could not find host <hostname>.local``, it is possible that the Raspberry Pi failed to connect to the network.lease check the network.
-   * If you really can't ping ``<hostname>.local``, try to :ref:`get_ip`  and ``ping <IP address>`` instead. (e.g., ``ping 192.168.6.116``)
-   * If multiple prompts like "Reply from <IP address>: bytes=32 time<1ms TTL=64" appear, it means your computer can access the Raspberry Pi.
+   * Wenn das Terminal die Meldung ``Ping request could not find host <hostname>.local`` anzeigt, besteht die Möglichkeit, dass der Raspberry Pi keine Verbindung zum Netzwerk herstellen konnte. Bitte überprüfen Sie das Netzwerk.
+   * Wenn Sie wirklich nicht ``<hostname>.local`` pingen können, versuchen Sie stattdessen :ref:`die IP-Adresse zu erhalten <get_ip>` und ``ping <IP address>`` (z.B. ``ping 192.168.6.116``).
+   * Wenn mehrere Meldungen wie "Antwort von <IP-Adresse>: Bytes=32 Zeit<1ms TTL=64" angezeigt werden, bedeutet dies, dass Ihr Computer auf den Raspberry Pi zugreifen kann.
 
    .. raw:: html
 
       <br/>
 
-#. Type in ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``).
+#. Geben Sie ``ssh <username>@<hostname>.local`` ein (oder ``ssh <username>@<IP address>``).
 
    .. code-block:: shell
 
        ssh pi@raspberrypi.local
 
 
-#. The following message may appear.
+#. Es kann folgende Meldung erscheinen.
 
    .. code-block::
 
@@ -57,14 +58,14 @@ If you're a Windows user, you can use Windows PowerShell to login Raspberry Pi r
        ECDSA key fingerprint is SHA256:7ggckKZ2EEgS76a557cddfxFNDOBBuzcJsgaqA/igz4.
        Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 
-   Input \"yes\".
+   Geben Sie "Ja" ein.
 
-#. Input the password you set before. (Mine is ``raspberry``.)
+#. Geben Sie das zuvor festgelegte Passwort ein. (Mine is ``raspberry``.)
 
    .. note::
-       When you input the password, the characters do not display on window accordingly, which is normal. What you need is to input the correct password.
+       Wenn Sie das Passwort eingeben, werden die Zeichen im Fenster nicht angezeigt, was normal ist. Geben Sie einfach das korrekte Passwort ein.
 
-#. We now get the Raspberry Pi connected and are ready to go to the next step.
+#. Wir haben jetzt eine Verbindung zum Raspberry Pi hergestellt und sind bereit für den nächsten Schritt.
 
    .. image:: img/windows_03.png
        :width: 550
@@ -75,16 +76,15 @@ If you're a Windows user, you can use Windows PowerShell to login Raspberry Pi r
 Remote Desktop
 ------------------
 
-If you're not satisfied with using the command window to access your Raspberry Pi, you can also use the remote desktop feature to easily manage files on your Raspberry Pi using a GUI.
+Wenn Sie mit der Verwendung des Befehlsfensters zum Zugriff auf Ihren Raspberry Pi nicht zufrieden sind, können Sie auch die Remote-Desktop-Funktion verwenden, um Dateien auf Ihrem Raspberry Pi einfach über eine grafische Benutzeroberfläche zu verwalten.
 
-Here we use `VNC® Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_.
+Hier verwenden wir `VNC® Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_.
 
-**Enable VNC service**
+**VNC-Dienst aktivieren**
 
-The VNC service has been installed in the system. By default, VNC is
-disabled. You need to enable it in config.
+Der VNC-Dienst wurde im System installiert. Standardmäßig ist VNC deaktiviert. Sie müssen es in der Konfiguration aktivieren.
 
-#. Input the following command:
+#. Geben Sie den folgenden Befehl ein:
 
    .. raw:: html
 
@@ -95,36 +95,36 @@ disabled. You need to enable it in config.
        sudo raspi-config
 
 
-#. Choose **3** **Interfacing Options** by press the down arrow key on your keyboard, then press the **Enter** key.
+#. Wählen Sie durch Drücken der Pfeiltaste nach unten auf Ihrer Tastatur **3 Interfacing-Optionen** aus und drücken Sie dann die **Eingabetaste**.
 
    .. image:: img/windows_04.png
        :align: center
 
-#. Then **VNC**. 
+#. Wählen Sie dann **VNC** aus.
 
    .. image:: img/windows_05.png
        :align: center
 
-#. Use the arrow keys on the keyboard to select **<Yes>** -> **<OK>** -> **<Finish>** to complete the setup.
+#. Verwenden Sie die Pfeiltasten auf der Tastatur, um **<Yes>** -> **<OK>** -> **<Finish>** auszuwählen, um die Einrichtung abzuschließen.
 
    .. image:: img/windows_06.png
        :align: center
 
-**Login to VNC**
+**Anmeldung bei VNC**
 
-#. You need to download and install the `VNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ on personal computer.
+#. Sie müssen den `VNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ auf Ihrem Personalcomputer herunterladen und installieren.
 
-#. Open it once the installation is complete. Then, enter the host name or IP address and press Enter.
+#. Öffnen Sie ihn, sobald die Installation abgeschlossen ist. Geben Sie dann den Hostnamen oder die IP-Adresse ein und drücken Sie die Eingabetaste.
 
    .. image:: img/windows_07.png
        :align: center
 
-#. After entering your Raspberry Pi name and password, click **OK**.
+#. Geben Sie nach Eingabe des Namens und des Passworts Ihres Raspberry Pi auf **OK**.
 
    .. image:: img/windows_08.png
        :align: center
 
-#. Now you can see the desktop of the Raspberry Pi.
+#. Jetzt können Sie den Desktop des Raspberry Pi sehen.
 
    .. image:: img/windows_09.png
        :align: center

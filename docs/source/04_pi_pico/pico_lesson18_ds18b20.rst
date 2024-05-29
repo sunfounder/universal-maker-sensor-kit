@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson18_ds18b20:
-
-Lesson 18: Temperature Sensor Module (DS18B20)
+Lektion 18: Temperatursensor-Modul (DS18B20)
 ================================================
 
-In this lesson, you'll learn how to integrate and read temperature data from DS18B20 sensors using the Raspberry Pi Pico W. You'll begin by setting up a OneWire bus on the GPIO pin and scanning for DS18X20 devices. The main focus of the lesson is continuously reading and displaying temperature measurements from these sensors. 
+In dieser Lektion lernst du, wie du Temperaturdaten von DS18B20-Sensoren mit dem Raspberry Pi Pico W integrieren und auslesen kannst. Du beginnst damit, einen OneWire-Bus am GPIO-Pin einzurichten und nach DS18X20-Geräten zu suchen. Der Schwerpunkt der Lektion liegt darauf, kontinuierlich Temperaturmessungen von diesen Sensoren zu lesen und anzuzeigen.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+----------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_18_DS18B20_bb.png
@@ -96,14 +96,15 @@ Code
 
 
 
-Code Analysis
+
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
 
-   The code begins by importing necessary libraries. ``machine`` is used for controlling GPIO pins, ``onewire`` for the OneWire communication protocol, ``ds18x20`` for the specific temperature sensor, and ``time`` for delays.
+   Der Code beginnt mit dem Importieren der benötigten Bibliotheken. ``machine`` wird zur Steuerung der GPIO-Pins verwendet, ``onewire`` für das OneWire-Kommunikationsprotokoll, ``ds18x20`` für den spezifischen Temperatursensor und ``time`` für Verzögerungen.
 
-   Regarding OneWire in MicroPython, you can refer to |link_micropython_onewire_driver|.
+   Bezüglich OneWire in MicroPython kannst du |link_micropython_onewire_driver| nachschlagen.
 
    .. code-block:: python
 
@@ -111,37 +112,37 @@ Code Analysis
       import onewire
       import time, ds18x20
 
-#. Initializing OneWire Bus
+#. Initialisierung des OneWire-Busses
 
-   A OneWire bus is initialized on GPIO pin 12. This sets up the communication between the Raspberry Pi Pico W and the DS18B20 sensor.
+   Ein OneWire-Bus wird am GPIO-Pin 12 initialisiert. Dadurch wird die Kommunikation zwischen dem Raspberry Pi Pico W und dem DS18B20-Sensor eingerichtet.
 
    .. code-block:: python
 
       ow = onewire.OneWire(Pin(12))
 
-#. Creating DS18X20 Instance
+#. Erstellen einer DS18X20-Instanz
 
-   A DS18X20 instance is created using the OneWire bus. This instance is used to interact with the temperature sensor.
+   Eine DS18X20-Instanz wird unter Verwendung des OneWire-Busses erstellt. Diese Instanz wird verwendet, um mit dem Temperatursensor zu interagieren.
 
    .. code-block:: python
 
       ds = ds18x20.DS18X20(ow)
 
-#. Scanning for Devices
+#. Geräte suchen
 
-   The code scans for DS18X20 devices on the OneWire bus and prints their addresses. This is important for identifying the connected sensors.
+   Der Code sucht nach DS18X20-Geräten auf dem OneWire-Bus und gibt ihre Adressen aus. Dies ist wichtig, um die angeschlossenen Sensoren zu identifizieren.
 
    .. code-block:: python
 
       roms = ds.scan()
       print('found devices:', roms)
 
-#. Reading Temperature Data
+#. Temperaturdaten lesen
 
-   - The main loop of the program continuously reads temperature data from the sensor.
-   - It starts the temperature conversion process and waits for it to complete, which takes about 750 milliseconds.
-   - It then reads and prints the temperature from each sensor found on the bus.
-   - The loop pauses for 1000 milliseconds before repeating.
+   - Die Hauptschleife des Programms liest kontinuierlich Temperaturdaten vom Sensor.
+   - Sie startet den Temperaturumwandlungsprozess und wartet darauf, dass er abgeschlossen ist, was etwa 750 Millisekunden dauert.
+   - Dann liest und gibt sie die Temperatur von jedem auf dem Bus gefundenen Sensor aus.
+   - Die Schleife pausiert für 1000 Millisekunden, bevor sie wiederholt wird.
 
    .. raw:: html
 

@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_ttmotor:
 
-TT Motor
+TT-Motor
 ==========================
 
 .. image:: img/34_tt_motor.png
@@ -22,41 +22,38 @@ TT Motor
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
+Ein TT-Motor ist ein Gleichstrommotor, der ein Getriebe angebracht hat. Das Getriebe reduziert die Drehzahl des Motors und erhöht dessen Drehmoment. Ein TT-Motor wird häufig in Anwendungen wie dem Antrieb von Rädern, Propellern, Lüftern und ähnlichem eingesetzt. Ein TT-Motor hat zwei Drähte: einen positiven Draht und einen negativen Draht. Der positive Draht ist normalerweise rot und der negative Draht ist normalerweise schwarz.
 
-A TT motor is a type of DC motor that has a gearbox attached to it. The gearbox reduces the speed of the motor and increases its torque. A TT motor is commonly used in applications such as driving wheels, propellers, fans, among others. A TT motor has two wires: a positive wire and a negative wire. The positive wire is usually red and the negative wire is usually black.
+Ein TT-Gleichstromgetriebemotor mit einem Übersetzungsverhältnis von 1:48 wird in diesem Produkt verwendet. Er wird mit 2 x 200 mm Drähten mit 0,1-Zoll-Männchenanschlüssen geliefert, die in ein Steckbrett passen. Perfekt zum Einstecken in ein Steckbrett oder eine Klemmenleiste.
 
-A TT DC gearbox motor with a 1:48 gear ratio is used in the product, it comes with 2 x 200mm wires with 0.1” male connectors that fit into a breadboard. Perfect for plugging into a breadboard or terminal block.
+Diese Motoren können mit 3 ~ 6VDC betrieben werden, laufen jedoch bei höheren Spannungen etwas schneller.
 
-You can power these motors with 3 ~ 6VDC, but of course, they will go a little faster at higher voltages.
+**Technische Details**
 
+* Nennspannung: 3~6V
+* Kontinuierlicher Leerlaufstrom: 150mA +/- 10%
+* Min. Betriebsdrehzahl (3V): 90+/- 10% U/min
+* Min. Betriebsdrehzahl (6V): 200+/- 10% U/min
+* Stillstandsdrehmoment (3V): 0.4kg.cm
+* Stillstandsdrehmoment (6V): 0.8kg.cm
+* Übersetzungsverhältnis: 1:48
+* Abmessungen des Gehäuses: 70 x 22 x 18mm
+* Kabellänge: 200mm & 28 AWG
+* Gewicht: 30.6g
 
-**Technical Details** 
-
-* Rated Voltage: 3~6V
-* Continuous No-Load Current: 150mA +/- 10%
-* Min. Operating Speed (3V): 90+/- 10% RPM
-* Min. Operating Speed (6V): 200+/- 10% RPM
-* Stall Torque (3V): 0.4kg.cm
-* Stall Torque (6V): 0.8kg.cm
-* Gear Ratio: 1:48
-* Body Dimensions: 70 x 22 x 18mm
-* Wires Length: 200mm & 28 AWG
-* Weight: 30.6g
-
-**Dimensional Drawing**
+**Abmessungszeichnung**
 
 .. image:: img/34_motor_size.png
     :width: 65%
 
 .. raw:: html
-    
+
     <br/>
 
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson34_motor` (Arduino UNO)
 * :ref:`esp32_lesson34_motor` (ESP32)

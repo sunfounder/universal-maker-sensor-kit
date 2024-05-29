@@ -1,25 +1,26 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _py_syntax_while:
 
-While Loops
+
+While-Schleifen
 ====================
 
-The ``while`` statement is used to execute a program in a loop, that is, to execute a program in a loop under certain conditions to handle the same task that needs to be processed repeatedly. 
+Die ``while``-Anweisung wird verwendet, um ein Programm in einer Schleife auszuführen, das heißt, ein Programm unter bestimmten Bedingungen in einer Schleife auszuführen, um dieselbe Aufgabe zu verarbeiten, die wiederholt bearbeitet werden muss.
 
-Its basic form is:
+Ihre grundlegende Form ist:
 
 .. code-block:: python
 
@@ -27,15 +28,15 @@ Its basic form is:
         Body of while
 
 
-In the ``while`` loop, first check the ``test expression``. Only when ``test expression`` evaluates to ``True``, enter the body of the while. After one iteration, check the ``test expression`` again. This process continues until ``test expression`` evaluates to ``False``.
+In der ``while``-Schleife wird zuerst der ``Testausdruck`` überprüft. Nur wenn der ``Testausdruck`` als ``True`` ausgewertet wird, tritt der Schleifenkörper ein. Nach einer Iteration wird der ``Testausdruck`` erneut überprüft. Dieser Vorgang wird fortgesetzt, bis der ``Testausdruck`` als ``False`` ausgewertet wird.
 
-In MicroPython, the body of the ``while`` loop is determined by indentation.
+In MicroPython wird der Körper der ``while``-Schleife durch Einrückung bestimmt.
 
-The body starts with an indentation and ends with the first unindented line.
+Der Körper beginnt mit einer Einrückung und endet mit der ersten nicht eingerückten Zeile.
 
-Python interprets any non-zero value as ``True``. None and 0 are interpreted as ``False``.
+Python interpretiert jeden nicht-null-Wert als ``True``. None und 0 werden als ``False`` interpretiert.
 
-**while Loop Flowchart**
+**Flussdiagramm der while-Schleife**
 
 .. image:: img/while_loop.png
 
@@ -62,10 +63,10 @@ Python interprets any non-zero value as ``True``. None and 0 are interpreted as 
 1
 
 
-Break Statement
+Break-Anweisung
 --------------------
 
-With the break statement we can stop the loop even if the while condition is true:
+Mit der Break-Anweisung können wir die Schleife stoppen, auch wenn die Bedingung der while-Schleife wahr ist:
 
 
 
@@ -86,11 +87,11 @@ With the break statement we can stop the loop even if the while condition is tru
 7
 6
 
-While Loop with Else
-----------------------
-Like the ``if`` loop, the ``while`` loop can also have an optional ``else`` block.
+While-Schleife mit Else
+---------------------------
+Wie bei der ``if``-Schleife kann die ``while``-Schleife auch einen optionalen ``else``-Block haben.
 
-If the condition in the ``while`` loop is evaluated as ``False``, the ``else`` part is executed.
+Wenn die Bedingung in der ``while``-Schleife als ``False`` ausgewertet wird, wird der ``else``-Teil ausgeführt.
 
 
 

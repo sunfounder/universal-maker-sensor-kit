@@ -1,23 +1,24 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _syntax_list:
 
-Lists
+
+Listen
 ===================
 
-Lists are used to store multiple items in a single variable, and are created using square brackets:
+Listen werden verwendet, um mehrere Elemente in einer einzelnen Variablen zu speichern, und werden mit eckigen Klammern erstellt:
 
 .. code-block:: python
 
@@ -25,8 +26,8 @@ Lists are used to store multiple items in a single variable, and are created usi
     print(B_list)
 
 
-List items are changeable, ordered, and allow duplicate values.
-The list items are indexed, with the first item having index [0], the second item having index [1], and so on.
+Listenelemente sind veränderbar, geordnet und erlauben doppelte Werte.
+Die Listenelemente sind indiziert, wobei das erste Element den Index [0], das zweite Element den Index [1] usw. hat.
 
 .. code-block:: python
 
@@ -44,7 +45,7 @@ Blue
 ['Red', 'Blue', 'Purple', 'Blue']
 
 
-A list can contain different data types:
+Eine Liste kann verschiedene Datentypen enthalten:
 
 .. code-block:: python
 
@@ -55,9 +56,9 @@ A list can contain different data types:
 ['Banana', 255, False, 3.14]
 
 
-List Length
+Listenlänge
 ------------------
-To determine how many items are in the list, use the len() function.
+Um festzustellen, wie viele Elemente sich in der Liste befinden, verwenden Sie die len() Funktion.
 
 .. code-block:: python
 
@@ -66,11 +67,10 @@ To determine how many items are in the list, use the len() function.
 
 >>> %Run -c $EDITOR_CONTENT
 4
-
-Check List items
+Listenpunkte überprüfen
 -----------------------
 
-Print the second item of the list:
+Drucken Sie das zweite Element der Liste:
 
 .. code-block:: python
 
@@ -80,7 +80,7 @@ Print the second item of the list:
 >>> %Run -c $EDITOR_CONTENT
 [255]
 
-Print the last one item of the list:
+Drucken Sie das letzte Element der Liste:
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ Print the last one item of the list:
 >>> %Run -c $EDITOR_CONTENT
 [3.14]
 
-Print the second, third item:
+Drucken Sie das zweite und dritte Element:
 
 .. code-block:: python
 
@@ -101,9 +101,9 @@ Print the second, third item:
 [255, False]
 
 
-Change List Items
+Listenpunkte ändern
 ----------------------
-Change the second, third item:
+Ändern Sie das zweite und dritte Element:
 
 .. code-block:: python
 
@@ -112,9 +112,9 @@ Change the second, third item:
     print(A_list)
 
 >>> %Run -c $EDITOR_CONTENT
-['Banana', True, 'Orange', 3.14]
+['Banane', True, 'Orange', 3.14]
 
-Change the second value by replacing it with two values:
+Ändern Sie den zweiten Wert, indem Sie ihn durch zwei Werte ersetzen:
 
 .. code-block:: python
 
@@ -126,10 +126,10 @@ Change the second value by replacing it with two values:
 ['Banana', True, 'Orange', False, 3.14]
 
 
-Add List Items
--------------------
+Listenelemente hinzufügen
+---------------------------------
 
-Using the append() method to add an item:
+Verwenden Sie die append() Methode, um ein Element hinzuzufügen:
 
 .. code-block:: python
 
@@ -140,7 +140,7 @@ Using the append() method to add an item:
 >>> %Run -c $EDITOR_CONTENT
 ['Red', 'Blue', 'Green', 'Orange']
 
-Insert an item as the second position:
+Fügen Sie ein Element an der zweiten Position ein:
 
 .. code-block:: python
 
@@ -153,10 +153,10 @@ Insert an item as the second position:
 
 
 
-Remove List Items
------------------------
+Listenelemente entfernen
+---------------------------------
 
-The remove() method removes the specified item.
+Die Methode remove() entfernt das angegebene Element.
 
 .. code-block:: python
 
@@ -183,7 +183,7 @@ The pop() method removes the specified index. If you do not specify the index, t
 'Orange'
 ['Banana', False, 3.14, True]
 
-The ``del`` keyword also removes the specified index:
+Das Schlüsselwort ``del`` entfernt ebenfalls den angegebenen Index:
 
 .. code-block:: python
 
@@ -194,7 +194,7 @@ The ``del`` keyword also removes the specified index:
 >>> %Run -c $EDITOR_CONTENT
 ['Red', 'Green']
 
-The clear() method empties the list. The list still remains, but it has no content.
+Die Methode clear() leert die Liste. Die Liste bleibt jedoch erhalten, hat jedoch keinen Inhalt mehr.
 
 .. code-block:: python
 

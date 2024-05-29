@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson20_bmp280:
+Lektion 20: Temperatur-, Luftfeuchtigkeits- und Drucksensor (BMP280)
+========================================================================
 
-Lesson 20: Temperature, Humidity & Pressure Sensor (BMP280)
-====================================================================
+In dieser Lektion lernst du, wie du den Temperatur-, Luftfeuchtigkeits- und Drucksensor BMP280 mit dem Raspberry Pi Pico W unter Verwendung von MicroPython verbindest. Du erhältst praktische Erfahrung in der Einrichtung der I2C-Kommunikation, der Konfiguration des BMP280-Sensors für die Wetterüberwachung sowie dem Abrufen von Temperatur- und Druckdaten. Am Ende dieses Tutorials kannst du Umweltdaten in Echtzeit auf deiner Konsole anzeigen.
 
-In this lesson, you'll learn how to connect the BMP280 temperature, humidity, and pressure sensor to the Raspberry Pi Pico W using MicroPython. You'll get practical experience in setting up I2C communication, configuring the BMP280 sensor for weather monitoring, and obtaining temperature and pressure data. By the end of this tutorial, you'll be able to view real-time environmental data on your console.
-
-Required Components
+Erforderliche Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Du kannst sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 10
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_20_bmp280_bb.png
@@ -88,15 +88,14 @@ Code
        # Read data every second
        time.sleep_ms(1000)
 
-
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. **Importing Libraries and Initializing I2C Communication**:
+#. **Importieren von Bibliotheken und Initialisieren der I2C-Kommunikation**:
 
-   This code segment imports necessary libraries and initializes I2C communication. The ``machine`` module is used to interact with the hardware components like I2C and pins. The ``bmp280`` library is imported to interact with the BMP280 sensor.
+   Dieser Abschnitt des Codes importiert erforderliche Bibliotheken und initialisiert die I2C-Kommunikation. Das Modul ``machine`` wird verwendet, um mit Hardwarekomponenten wie I2C und Pins zu interagieren. Die Bibliothek ``bmp280`` wird importiert, um mit dem BMP280-Sensor zu interagieren.
 
-   For more information about the ``bmp280`` library, please visit |link_micropython_bmp280_driver|.
+   Weitere Informationen zur Bibliothek ``bmp280`` finden Sie unter |link_micropython_bmp280_driver|.
 
    .. code-block:: python
 
@@ -107,9 +106,9 @@ Code Analysis
       # Initialize I2C communication
       i2c = I2C(0, sda=Pin(20), scl=Pin(21), freq=100000)
 
-#. **Configuring the BMP280 Sensor**:
+#. **Konfigurieren des BMP280-Sensors**:
 
-   Here, the BMP280 sensor is configured. An object ``bmp`` is created to interact with the sensor. The oversampling setting is adjusted for higher accuracy.
+   Hier wird der BMP280-Sensor konfiguriert. Ein Objekt ``bmp`` wird erstellt, um mit dem Sensor zu interagieren. Die Oversampling-Einstellung wird für eine höhere Genauigkeit angepasst.
 
    .. code-block:: python
 
@@ -117,9 +116,9 @@ Code Analysis
       bmp = bmp280.BMP280(i2c)
       bmp.oversample(bmp280.BMP280_OS_HIGH)
 
-#. **Reading and Displaying Sensor Data in a Loop**:
+#. **Lesen und Anzeigen von Sensordaten in einer Schleife**:
 
-   The sensor is continuously read in an infinite loop. Each iteration sets the sensor to weather monitoring mode, reads the temperature and pressure, and prints them. The ``time.sleep_ms(1000)`` ensures the loop runs once every second.
+   Der Sensor wird in einer Endlosschleife kontinuierlich gelesen. In jeder Iteration wird der Sensor auf den Wetterüberwachungsmodus eingestellt, die Temperatur und der Druck werden gelesen und gedruckt. Das ``time.sleep_ms(1000)`` stellt sicher, dass die Schleife einmal pro Sekunde ausgeführt wird.
 
    .. code-block:: python
 

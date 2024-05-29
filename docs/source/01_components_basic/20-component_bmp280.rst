@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_bmp280:
 
-Temperature, Humidity & Pressure Sensor (BMP280)
+Temperatur-, Feuchtigkeits- und Drucksensor (BMP280)
 ===============================================================
 
 .. image:: img/20_bmp280.png
@@ -22,29 +22,29 @@ Temperature, Humidity & Pressure Sensor (BMP280)
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
-The BMP280, developed by Bosch Sensortec, is a high-precision, low-power digital sensor module for measuring barometric pressure and temperature. It is widely used in mobile devices, weather monitoring, altitude estimations, and various other applications that require accurate atmospheric pressure and temperature data due to its small size and superior performance.
+Der BMP280, entwickelt von Bosch Sensortec, ist ein hochpräzises, energiesparendes digitales Sensormodul zur Messung von barometrischem Druck und Temperatur. Aufgrund seiner geringen Größe und überlegenen Leistung wird er häufig in mobilen Geräten, zur Wetterüberwachung, Höhenabschätzungen und in verschiedenen anderen Anwendungen eingesetzt, die genaue atmosphärische Druck- und Temperaturdaten erfordern.
 
-Specification
+Spezifikation
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB size: 15 x 11mm
-* Working temperature range: -40 ~ +85℃
-* Air pressure measurement range: 300 ~ 1100hPa
-* Interface: I2C (up to 3.4MHz), SPI (up to 10MHz)
+* Versorgungsspannung: 3,3V oder 5V
+* PCB-Größe: 15 x 11mm
+* Betriebstemperaturbereich: -40 ~ +85℃
+* Luftdruckmessbereich: 300 ~ 1100hPa
+* Schnittstelle: I2C (bis zu 3,4MHz), SPI (bis zu 10MHz)
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **SCL**: serial clock pin for the I2C interface.
-* **SDA**: serial data pin for the I2C interface.
-* **CSB**: the chip select pin of the module, if you are communicating with the device with SPI you can use this pin to communicate to select one if multiple devices are connected in the same bus.
-* **SDO**: Serial Data out pin of the module. An output signal on a device where data is sent out to another SPI device.
+* **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **SCL**: Serieller Taktpin für die I2C-Schnittstelle.
+* **SDA**: Serieller Datenpin für die I2C-Schnittstelle.
+* **CSB**: Der Chip-Select-Pin des Moduls. Wenn Sie mit dem Gerät über SPI kommunizieren, können Sie diesen Pin verwenden, um eines der verbundenen Geräte auszuwählen, wenn mehrere Geräte im selben Bus verbunden sind.
+* **SDO**: Serieller Datenausgangspin des Moduls. Ein Ausgangssignal an einem Gerät, bei dem Daten an ein anderes SPI-Gerät gesendet werden.
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/20_bmp280_module_schematic.png
@@ -55,8 +55,7 @@ Schematic diagram
 
    <br/>
 
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson20_bmp280` (Arduino UNO)
 * :ref:`esp32_lesson20_bmp280` (ESP32)

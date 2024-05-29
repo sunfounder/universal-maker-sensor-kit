@@ -1,23 +1,23 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Check the ``GPIO Zero``
-=================================
+Überprüfen Sie das ``GPIO Zero``
+=====================================
 
-``GPIO Zero`` is a module for controlling Raspberry Pi GPIO pins. This package provides a range of user-friendly classes and functions to control GPIO on a Raspberry Pi. For examples and documentation, visit: https://gpiozero.readthedocs.io/en/latest/.
+``GPIO Zero`` ist ein Modul zur Steuerung der GPIO-Pins des Raspberry Pi. Dieses Paket bietet eine Reihe benutzerfreundlicher Klassen und Funktionen zur Steuerung der GPIO auf einem Raspberry Pi. Für Beispiele und Dokumentation besuchen Sie: https://gpiozero.readthedocs.io/en/latest/.
 
-The latest Raspberry Pi OS includes GPIO Zero by default. To verify its installation, open the Terminal and enter:
+Das neueste Raspberry Pi OS enthält standardmäßig GPIO Zero. Um die Installation zu überprüfen, öffnen Sie das Terminal und geben Sie ein:
 
 .. code-block::
 
@@ -27,7 +27,7 @@ The latest Raspberry Pi OS includes GPIO Zero by default. To verify its installa
     :width: 100%
 
 
-Next, type ``import gpiozero`` within the Python CLI. If no errors appear, GPIO Zero is successfully installed.
+Geben Sie anschließend ``import gpiozero`` innerhalb der Python-CLI ein. Wenn keine Fehlermeldungen erscheinen, ist GPIO Zero erfolgreich installiert.
 
 .. code-block::
 
@@ -37,7 +37,7 @@ Next, type ``import gpiozero`` within the Python CLI. If no errors appear, GPIO 
     :width: 100%
 
 
-If you want to quit python CLI, type in:
+Wenn Sie die Python-CLI beenden möchten, geben Sie ein:
 
 .. code-block::
 

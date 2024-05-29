@@ -1,43 +1,43 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson29_traffic_light_module:
 
-Lesson 29: Traffic Light Module
+Lektion 29: Ampelmodul
 ==================================
 
-In this lesson, you will learn to simulate traffic lights using a Raspberry Pi. You'll program the Raspberry Pi to control these LEDs in a sequence that resembles traffic lights: the red LED will be active for 3 seconds, the yellow LED will blink in a specific pattern, and then the green LED will turn on for 3 seconds. This project is a practical way to get started with GPIO interfacing and Python programming, suitable for those new to combining hardware and software with the Raspberry Pi.
+In dieser Lektion lernen Sie, wie man eine Ampel mit einem Raspberry Pi simuliert. Sie werden den Raspberry Pi so programmieren, dass er diese LEDs in einer Abfolge steuert, die einer Ampel ähnelt: Die rote LED wird für 3 Sekunden aktiv sein, die gelbe LED wird in einem bestimmten Muster blinken und dann wird die grüne LED für 3 Sekunden eingeschaltet. Dieses Projekt ist eine praktische Möglichkeit, mit der GPIO-Schnittstelle und der Python-Programmierung zu beginnen, und eignet sich für diejenigen, die neu in der Kombination von Hardware und Software mit dem Raspberry Pi sind.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist auf jeden Fall praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -53,13 +53,11 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_29_Traffic_Light_Module_Pi_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -109,21 +107,21 @@ Code
 
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Import Libraries
+#. Bibliotheken importieren
    
-   The ``gpiozero`` library is imported to control the GPIO pins, and the ``time`` library's ``sleep`` function is used for timing delays.
+   Die Bibliothek ``gpiozero`` wird importiert, um die GPIO-Pins zu steuern, und die ``sleep``-Funktion der ``time``-Bibliothek wird für zeitliche Verzögerungen verwendet.
 
    .. code-block:: python
 
       from gpiozero import LED
       from time import sleep
 
-#. Initialize LED pins
+#. LED-Pins initialisieren
    
-   Here, each LED is associated with a specific GPIO pin on the Raspberry Pi using the ``LED`` class from the ``gpiozero`` library.
+   Hier wird jede LED einem spezifischen GPIO-Pin des Raspberry Pi zugeordnet, indem die ``LED``-Klasse der ``gpiozero``-Bibliothek verwendet wird.
 
    .. code-block:: python
 
@@ -131,13 +129,13 @@ Code Analysis
       yellow = LED(27) # Yellow LED connected to GPIO pin 27
       green = LED(17)  # Green LED connected to GPIO pin 17
 
-#. LED Control Loop
+#. LED-Steuerungsschleife
    
-   The ``while True:`` loop runs continuously, cycling through each LED. It turns each LED on and off in a specific pattern, using ``on()``, ``off()``, and ``sleep()`` functions.
+   Die Schleife ``while True:`` läuft kontinuierlich und schaltet jede LED in einem spezifischen Muster ein und aus, wobei die Funktionen ``on()``, ``off()`` und ``sleep()`` verwendet werden.
 
-   - Red LED is turned on for 3 seconds.
-   - Yellow LED blinks: 0.5 seconds on, 0.5 seconds off, repeated three times.
-   - Green LED is turned on for 3 seconds.
+   - Die rote LED wird für 3 Sekunden eingeschaltet.
+   - Die gelbe LED blinkt: 0,5 Sekunden ein, 0,5 Sekunden aus, dreimal wiederholt.
+   - Die grüne LED wird für 3 Sekunden eingeschaltet.
 
    .. code-block:: python
 
@@ -156,9 +154,9 @@ Code Analysis
               sleep(3)
               green.off()
 
-#. Exception Handling
+#. Ausnahmebehandlung
    
-   The ``except`` block catches a ``KeyboardInterrupt`` (usually generated by pressing Ctrl+C). It ensures all LEDs are turned off before the program exits, preventing the LEDs from being left in an undefined state.
+   Der ``except``-Block fängt eine ``KeyboardInterrupt``-Ausnahme ab (normalerweise durch Drücken von Strg+C erzeugt). Er stellt sicher, dass alle LEDs ausgeschaltet werden, bevor das Programm beendet wird, um zu verhindern, dass die LEDs in einem undefinierten Zustand bleiben.
 
    .. code-block:: python
 

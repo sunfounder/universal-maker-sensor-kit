@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_ir_obstacle:
 
-IR Obstacle Avoidance Sensor Module
+IR-Hinderniserkennungssensor-Modul
 =====================================
 
 .. image:: img/08_IR_obstacle_module.png
@@ -25,25 +25,25 @@ IR Obstacle Avoidance Sensor Module
 
    <br/>
 
-This module can adapt to ambient light and includes a pair of infrared emitting and receiving tubes. The emitting tube sends out infrared at a specific frequency, and when the detection direction encounters an obstacle (reflective surface), the receiving tube picks up the reflected infrared. After being processed by the comparator circuit, the green indicator light will turn on, and simultaneously, the signal output interface will produce a digital signal (a low level signal). The detection distance can be adjusted using a potentiometer knob.
+Dieses Modul kann sich an Umgebungslicht anpassen und enthält ein Paar Infrarot-Sende- und Empfangsröhren. Die Senderröhre sendet Infrarotlicht mit einer bestimmten Frequenz aus, und wenn die Erkennungsrichtung auf ein Hindernis (reflektierende Oberfläche) trifft, nimmt die Empfangsröhre das reflektierte Infrarotlicht auf. Nach der Verarbeitung durch die Vergleicherschaltung leuchtet die grüne Anzeige auf, und gleichzeitig erzeugt die Signalausgabeschnittstelle ein digitales Signal (ein Niedrigpegelsignal). Die Erkennungsentfernung kann mit einem Potentiometerknopf eingestellt werden.
 
-Specification
+Spezifikation
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 32 x 14mm
-* Output Signal Type: Digital Output
-* Detection Angle: 35°
-* Detection distance: 2～30cm
+* Versorgungsspannung: 3,3V - 5V
+* PCB-Größe: 32 x 14mm
+* Ausgangssignaltyp: Digitalausgang
+* Erkennungswinkel: 35°
+* Erkennungsentfernung: 2～30cm
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **OUT**: Digital output. Outputs high level when there is no obstacle, and outputs low level when an obstacle is detected. The detection distance of obstacles can be adjusted by the potentiometer on the module.
+* **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **OUT**: Digitalausgang. Gibt ein hohes Signal aus, wenn kein Hindernis vorhanden ist, und ein niedriges Signal, wenn ein Hindernis erkannt wird. Die Erkennungsentfernung der Hindernisse kann durch das Potentiometer am Modul eingestellt werden.
 
-Principle
+Funktionsprinzip
 ---------------------------
-An obstacle avoidance sensor mainly consists of an infrared transmitter, an infrared receiver and a potentiometer. According to the reflecting character of an object, if there is no obstacle, the emitted infrared ray will weaken with the distance it spreads and finally disappear. If there is an obstacle, when the infrared ray encounters it, the ray will be reflected back to the infrared receiver. Then the infrared receiver detects this signal and confirms an obstacle in front. The detection range can be adjusted by the built-in potentiometer.
+Ein Hinderniserkennungssensor besteht hauptsächlich aus einem Infrarotsender, einem Infrarotempfänger und einem Potentiometer. Entsprechend der reflektierenden Eigenschaft eines Objekts schwächt sich der ausgesendete Infrarotstrahl ohne Hindernis mit zunehmender Entfernung ab und verschwindet schließlich. Wenn ein Hindernis vorhanden ist, wird der Strahl bei Kontakt mit dem Hindernis zum Infrarotempfänger zurück reflektiert. Der Infrarotempfänger erkennt dieses Signal und bestätigt ein Hindernis davor. Der Erkennungsbereich kann durch das eingebaute Potentiometer angepasst werden.
 
 .. image:: img/08_IR_obstacle_module_1.png
     :width: 600
@@ -53,7 +53,7 @@ An obstacle avoidance sensor mainly consists of an infrared transmitter, an infr
 
    <br/>
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/08_ir_obstacle_module_schematic.png
@@ -64,7 +64,7 @@ Schematic diagram
 
    <br/>
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson08_ir_obstacle_avoidance` (Arduino UNO)
 * :ref:`esp32_lesson08_ir_obstacle_avoidance` (ESP32)
@@ -73,6 +73,3 @@ Example
 
 * :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
 * :ref:`esp32_soap_dispenser` (ESP32)
-
-
-

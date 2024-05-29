@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_traffic:
 
-Traffic Light Module
+Ampelmodul
 ==========================
 
 .. image:: img/29_traffic_light.png
@@ -22,16 +22,16 @@ Traffic Light Module
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
-The traffic light module is a small device that can display red, yellow and green lights, just like a real traffic light. It can be used to make a traffic light system model or to learn how to control LEDs with Arduino. It is featured with its small size, simple wiring, targeted, and custom installation. It can be connected PWM pin to control the brightness of the LED.
+Das Ampelmodul ist ein kleines Gerät, das rote, gelbe und grüne Lichter anzeigen kann, genau wie eine echte Ampel. Es kann verwendet werden, um ein Ampelsystemmodell zu erstellen oder um zu lernen, wie man LEDs mit Arduino steuert. Es zeichnet sich durch seine geringe Größe, einfache Verdrahtung, gezielte und kundenspezifische Installation aus. Es kann mit einem PWM-Pin verbunden werden, um die Helligkeit der LED zu steuern.
 
-Principle
+Funktionsprinzip
 ---------------------------
-The traffic light module can be controlled in two primary ways. The more straightforward method involves using digital inputs from the Arduino, where a HIGH or LOW signal directly turns the corresponding LED on or off. Alternatively, PWM (pulse-width modulation) can be used, especially when varying the brightness of the LED is desired. PWM is a technique where the duty cycle of a digital signal is changed to modulate the brightness of the LED. A duty cycle represents the percentage of time that a signal remains on during a specific period. For instance, a 50% duty cycle implies the signal is active for half the duration and inactive for the remainder. Adjusting the duty cycle allows for the LED's brightness modulation.
+Das Ampelmodul kann auf zwei Hauptarten gesteuert werden. Die einfachere Methode beinhaltet die Verwendung digitaler Eingänge vom Arduino, bei denen ein HIGH- oder LOW-Signal die entsprechende LED direkt ein- oder ausschaltet. Alternativ kann PWM (Pulsweitenmodulation) verwendet werden, insbesondere wenn die Helligkeit der LED variiert werden soll. PWM ist eine Technik, bei der das Tastverhältnis eines digitalen Signals geändert wird, um die Helligkeit der LED zu modulieren. Ein Tastverhältnis gibt an, wie lange ein Signal während einer bestimmten Periode eingeschaltet bleibt. Ein Tastverhältnis von 50% bedeutet beispielsweise, dass das Signal für die Hälfte der Dauer aktiv und für die andere Hälfte inaktiv ist. Durch Anpassen des Tastverhältnisses kann die Helligkeit der LED moduliert werden.
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/29_traffic_light_schematic.png
@@ -42,7 +42,7 @@ Schematic diagram
 
    <br/>
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson29_traffic_light_module` (Arduino UNO)
 * :ref:`esp32_lesson29_traffic_light_module` (ESP32)

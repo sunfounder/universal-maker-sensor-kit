@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson08_ir_obstacle_avoidance:
 
-Lesson 08: IR Obstacle Avoidance Sensor Module
+Lektion 08: IR-Hindernisvermeidungssensor-Modul
 ====================================================
 
-In this lesson, you will learn how to detect obstacles using a sensor with the Raspberry Pi. We will guide you through connecting a digital input sensor to GPIO pin 17. You'll learn how to write a Python script that continuously monitors the sensor to determine the presence of an obstacle. The program will output a message indicating whether an obstacle is detected or not. This straightforward yet practical project is an excellent way to get started with GPIO interfacing and Python programming, making it ideal for beginners interested in exploring sensor integration with the Raspberry Pi.
+In dieser Lektion lernen Sie, wie Sie mit einem Sensor und dem Raspberry Pi Hindernisse erkennen. Wir führen Sie durch den Anschluss eines digitalen Eingabesensors an GPIO-Pin 17. Sie lernen, wie Sie ein Python-Skript schreiben, das den Sensor kontinuierlich überwacht, um das Vorhandensein eines Hindernisses festzustellen. Das Programm gibt eine Meldung aus, die angibt, ob ein Hindernis erkannt wurde oder nicht. Dieses einfache, aber praktische Projekt ist eine hervorragende Möglichkeit, mit der GPIO-Interaktion und der Python-Programmierung zu beginnen, und eignet sich ideal für Anfänger, die sich für die Integration von Sensoren mit dem Raspberry Pi interessieren.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_08_Obstacle_Avoidance_Sensor_Pi_bb.png
@@ -79,33 +79,33 @@ Code
          print("Obstacle detected")     # Prints when an obstacle is detected
       sleep(0.5)
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
-   
-   The script begins by importing the ``InputDevice`` class from the gpiozero library for interacting with the sensor, and the ``sleep`` function from Python's time module for pausing execution.
+#. Bibliotheken importieren
+
+   Das Skript beginnt mit dem Import der Klasse ``InputDevice`` aus der gpiozero-Bibliothek zur Interaktion mit dem Sensor und der Funktion ``sleep`` aus dem Zeitmodul von Python, um die Ausführung zu pausieren.
 
    .. code-block:: python
 
       from gpiozero import InputDevice
       from time import sleep
 
-#. Initializing the Sensor
-   
-   An ``InputDevice`` object named ``sensor`` is created, connected to GPIO pin 17. This line assumes that the obstacle sensor is connected to this specific GPIO pin.
+#. Sensor initialisieren
+
+   Ein ``InputDevice``-Objekt namens ``sensor`` wird erstellt und mit GPIO-Pin 17 verbunden. Diese Zeile geht davon aus, dass der Hindernissensor mit diesem spezifischen GPIO-Pin verbunden ist.
 
    .. code-block:: python
 
       sensor = InputDevice(17)
 
-#. Implementing the Continuous Monitoring Loop
-   
-   - The script uses a ``while True:`` loop to continuously check the sensor's state. This loop will run indefinitely until the program is stopped.
-   - Inside the loop, an ``if`` statement checks the ``is_active`` property of the ``sensor``. 
-   - If ``is_active`` is ``True``, it indicates no obstacle is detected, and "No obstacle detected" is printed.
-   - If ``is_active`` is ``False``, indicating an obstacle is detected, "Obstacle detected" is printed.
-   - ``sleep(0.5)`` pauses the loop for 0.5 seconds between each check, which helps in reducing the script's processing demand and provides a delay between consecutive sensor readings.
+#. Implementierung der kontinuierlichen Überwachungsschleife
+
+   - Das Skript verwendet eine ``while True:``-Schleife, um den Zustand des Sensors kontinuierlich zu überprüfen. Diese Schleife läuft unendlich, bis das Programm gestoppt wird.
+   - Innerhalb der Schleife überprüft eine ``if``-Anweisung die Eigenschaft ``is_active`` des ``sensor``.
+   - Wenn ``is_active`` ``True`` ist, bedeutet das, dass kein Hindernis erkannt wird, und "Kein Hindernis erkannt" wird ausgegeben.
+   - Wenn ``is_active`` ``False`` ist, was bedeutet, dass ein Hindernis erkannt wird, wird "Hindernis erkannt" ausgegeben.
+   - ``sleep(0.5)`` pausiert die Schleife für 0,5 Sekunden zwischen den Überprüfungen, was dazu beiträgt, die Verarbeitungslast des Skripts zu reduzieren und eine Verzögerung zwischen aufeinanderfolgenden Sensorabfragen bereitzustellen.
 
    .. raw:: html
 
@@ -122,4 +122,4 @@ Code Analysis
 
    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+      Wenn der Sensor nicht richtig funktioniert, richten Sie den IR-Sender und -Empfänger parallel aus. Zusätzlich können Sie die Erkennungsreichweite mit dem eingebauten Potentiometer einstellen.

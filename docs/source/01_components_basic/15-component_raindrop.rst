@@ -1,46 +1,46 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_raindrop:
 
-Raindrop Detection Module
+Regensensor-Modul
 ==========================
 
 .. image:: img/15_raindrop_detection_module.png
     :width: 400
     :align: center
 
-The Raindrop Detection Sensor Module is a weather sensor that detects rainfall presence and intensity. It includes a raindrop sensor board with printed tracks, usually paired with a comparator module. When raindrops hit the sensor board, they create a conductive path between tracks, changing the resistance. This change is then converted into an analog or digital signal to show the rainfall intensity.
+Das Regensensor-Modul ist ein Wettersensor, der das Vorhandensein und die Intensität von Regen erkennt. Es besteht aus einer Regensensorplatine mit gedruckten Leiterbahnen, die normalerweise mit einem Komparatormodul gekoppelt ist. Wenn Regentropfen auf die Sensorplatine treffen, entsteht ein leitender Pfad zwischen den Leiterbahnen, der den Widerstand verändert. Diese Änderung wird dann in ein analoges oder digitales Signal umgewandelt, um die Regenintensität anzuzeigen.
 
-Specification
+Spezifikation
 ---------------------------
-* Supply Voltage: 3.3V - 5V
-* PCB Size: 32 x 14mm
-* Output Signal Type: DO and AO
+* Versorgungsspannung: 3,3V - 5V
+* PCB-Größe: 32 x 14mm
+* Ausgangssignaltyp: DO und AO
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **DO**: Digital output. Outputs a low level when raindrops are detected, and a high level when dry.
-* **AO**: Analog output. The more rainwater, the smaller the analog output value.
+* **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **DO**: Digitalausgang. Gibt ein niedriges Signal aus, wenn Regentropfen erkannt werden, und ein hohes Signal, wenn es trocken ist.
+* **AO**: Analogausgang. Je mehr Regenwasser, desto kleiner der Analogausgangswert.
 
-Principle
+Funktionsprinzip
 ---------------------------
-Raindrop sensor is basically a board on which nickel is coated in the form of lines. It works on the principal of resistance. When there is no rain drop on board. Resistance is high so we gets high voltage according to V=IR. When rain drop present it reduces the resistance because water is conductor of electricity and presence of water connects nickel lines in parallel so reduced resistance and reduced voltage drop across it. The more intense the rainfall the lower the resistance.
+Ein Regensensor ist im Grunde eine Platine, auf der Nickel in Form von Linien aufgetragen ist. Er funktioniert nach dem Prinzip des Widerstands. Wenn kein Regentropfen auf der Platine ist, ist der Widerstand hoch, sodass wir eine hohe Spannung gemäß V=IR erhalten. Wenn ein Regentropfen vorhanden ist, verringert sich der Widerstand, da Wasser ein Leiter für Elektrizität ist und das Vorhandensein von Wasser die Nickellinien parallel verbindet, wodurch der Widerstand und der Spannungsabfall über die Platine verringert werden. Je intensiver der Regen, desto niedriger der Widerstand.
 
-Schematic diagram
+Schaltplan
 ---------------------------
 
 .. image:: img/15_raindrop_detection_module_schematic.png
@@ -51,7 +51,7 @@ Schematic diagram
 
    <br/>
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson15_raindrop` (Arduino UNO)
 * :ref:`esp32_lesson15_raindrop` (ESP32)

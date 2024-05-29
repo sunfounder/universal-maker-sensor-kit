@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson04_mq2:
 
-Lesson 04: Gas Sensor Module (MQ-2)
+Lektion 04: Gassensor-Modul (MQ-2)
 ============================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to read data from a gas sensor module (MQ-2) using MicroPython. We'll guide you through setting up an ADC on GPIO pin 26 to process analog signals from the MQ-2 sensor. You'll gain practical experience in continuously monitoring and printing sensor data to understand the presence of gases in the environment.
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W verwenden, um Daten von einem Gassensor-Modul (MQ-2) unter Verwendung von MicroPython zu lesen. Wir werden Sie durch die Einrichtung eines ADC am GPIO-Pin 26 führen, um analoge Signale vom MQ-2-Sensor zu verarbeiten. Sie werden praktische Erfahrungen im kontinuierlichen Überwachen und Drucken von Sensordaten sammeln, um das Vorhandensein von Gasen in der Umgebung zu verstehen.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+------------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_04_mq2_sensor_circuit_bb.png
@@ -80,33 +80,33 @@ Code
    
        utime.sleep_ms(200)  # Wait for 200 milliseconds before the next read
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Importing Libraries:
+#. Bibliotheken importieren:
 
-   The code begins by importing necessary libraries: ``machine`` for hardware interactions, and ``utime`` for handling time-related tasks.
+   Der Code beginnt mit dem Importieren der benötigten Bibliotheken: ``machine`` für Hardware-Interaktionen und ``utime`` für zeitbezogene Aufgaben.
 
    .. code-block:: python
 
       import machine
       import utime
 
-#. Initializing the MQ-2 Sensor:
+#. Initialisierung des MQ-2-Sensors:
 
-   An ADC object is created on GPIO pin 26 to read analog signals from the MQ-2 sensor. The MQ-2 sensor outputs an analog signal which varies with the concentration of gas in the air.
+   Ein ADC-Objekt wird am GPIO-Pin 26 erstellt, um analoge Signale vom MQ-2-Sensor zu lesen. Der MQ-2-Sensor gibt ein analoges Signal aus, das mit der Konzentration von Gas in der Luft variiert.
 
    .. code-block:: python
 
       mq2_AO = machine.ADC(26)
 
-#. Reading Sensor Data in a Loop:
+#. Lesen der Sensordaten in einer Schleife:
 
-   The main loop of the program continuously reads the analog value from the sensor. The ``read_u16`` method is used to read the analog value and convert it to a 16-bit integer. This value is then printed out. The loop includes a delay (``utime.sleep_ms(200)``) to wait for 200 milliseconds before reading the sensor value again. This delay is crucial to prevent overwhelming the sensor and the microcontroller with rapid readings.
+   Die Hauptschleife des Programms liest kontinuierlich den analogen Wert vom Sensor. Die Methode ``read_u16`` wird verwendet, um den analogen Wert zu lesen und in eine 16-Bit-Ganzzahl zu konvertieren. Dieser Wert wird dann ausgegeben. Die Schleife enthält eine Verzögerung (``utime.sleep_ms(200)``), um 200 Millisekunden zu warten, bevor der Sensorwert erneut gelesen wird. Diese Verzögerung ist wichtig, um den Sensor und den Mikrocontroller vor übermäßig schnellen Messungen zu schützen.
 
    .. note:: 
-   
-     MQ2 is a heating-driven sensor that usually requires preheating before use. During the preheating period, the sensor typically reads high and gradually decreases until it stabilizes.
+
+      MQ2 ist ein heizgetriebener Sensor, der normalerweise vorgeheizt werden muss, bevor er verwendet wird. Während der Vorheizperiode liest der Sensor in der Regel hoch und nimmt allmählich ab, bis er stabilisiert ist.
 
    .. code-block:: python
 

@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson17_rotary_encoder:
 
-Lesson 17: Rotary Encoder Module
-==================================
+Lesson 17: Drehgebermodul
+====================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to control a rotary encoder. The rotary encoder is an advanced sensor that translates knob rotation into an output signal, indicating both the amount and direction of rotation. This project offers hands-on experience with digital input devices, enhancing your ability to work with more complex sensors. You'll configure the rotary encoder using specific GPIO pins, read its output to determine rotation direction and amount, and master using a button to trigger events.
+In diesem Lektion lernst du, wie du den Raspberry Pi Pico W verwendest, um einen Drehgeber zu steuern. Der Drehgeber ist ein fortschrittlicher Sensor, der die Drehung eines Knopfes in ein Ausgangssignal übersetzt, das sowohl die Menge als auch die Richtung der Drehung angibt. Dieses Projekt bietet praktische Erfahrung mit digitalen Eingabegeräten und verbessert deine Fähigkeit, mit komplexeren Sensoren zu arbeiten. Du wirst den Drehgeber mit spezifischen GPIO-Pins konfigurieren, seine Ausgabe lesen, um Drehrichtung und -menge zu bestimmen, und das Auslösen von Ereignissen mit einem Knopfmechanismus beherrschen.
 
-Required Components
---------------------------
+Benötigte Komponenten
+----------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Du kannst sie auch separat von den unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_17_Rotary_encoder_bb.png
@@ -108,15 +108,14 @@ Code
        # Short delay to prevent debouncing issues
        time.sleep_ms(50)
 
-
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. **Importing Libraries**
+#. **Bibliotheken importieren**
 
-   First, the necessary libraries are imported. ``rotary_irq_rp2`` is for the rotary encoder, ``time`` for delays, and ``machine`` for hardware control.
+   Zuerst werden die benötigten Bibliotheken importiert. ``rotary_irq_rp2`` ist für den Drehgeber, ``time`` für Verzögerungen und ``machine`` für die Hardwaresteuerung.
 
-   For more information about the ``rotary_irq_rp2`` library, please visit |link_rotary_irq_rp2_library|.
+   Weitere Informationen zur Bibliothek ``rotary_irq_rp2`` findest du unter |link_rotary_irq_rp2_library|.
 
    .. code-block:: python
 
@@ -124,17 +123,17 @@ Code Analysis
       import time
       from machine import Pin
 
-#. **Setting up the Button Pin**
+#. **Konfiguration des Tastenpins**
 
-   The GPIO pin connected to the SW pin is configured as an input with a pull-up resistor. This ensures a stable HIGH signal when the button is not pressed.
+   Der GPIO-Pin, der mit dem SW-Pin verbunden ist, wird als Eingang mit einem Pull-up-Widerstand konfiguriert. Dies gewährleistet ein stabiles HIGH-Signal, wenn die Taste nicht gedrückt ist.
 
    .. code-block:: python
 
       button_pin = Pin(20, Pin.IN, Pin.PULL_UP)
 
-#. **Initializing the Rotary Encoder**
+#. **Initialisierung des Drehgebers**
 
-   The encoder is set up with specified GPIO pins for CLK and DT. ``min_val`` and ``max_val`` define the range of values, and ``range_mode`` sets how the value behaves at limits (wraps around in this case).
+   Der Drehgeber wird mit spezifischen GPIO-Pins für CLK und DT eingerichtet. ``min_val`` und ``max_val`` definieren den Wertebereich, und ``range_mode`` legt fest, wie sich der Wert an den Grenzen verhält (hier umwickelt).
 
    .. code-block:: python
 
@@ -147,18 +146,18 @@ Code Analysis
           range_mode=RotaryIRQ.RANGE_WRAP,
       )
 
-#. **Storing Initial Values**
+#. **Speichern von Anfangswerten**
 
-   The initial values of the rotary encoder and the button are stored to detect changes in their states later.
+   Die Anfangswerte des Drehgebers und der Taste werden gespeichert, um spätere Änderungen ihrer Zustände zu erkennen.
 
    .. code-block:: python
 
       last_rotary_value = rotary_encoder.value()
       last_button_state = button_pin.value()
 
-#. **Main Loop**
+#. **Hauptschleife**
 
-   The loop continuously checks for changes in the rotary encoder value and button state. If the rotary value changes, it prints the new value. If the button state changes from unpressed to pressed, it prints "Button pressed!".
+   Die Schleife überprüft kontinuierlich Änderungen des Drehgeberwerts und des Tastenzustands. Wenn sich der Drehwert ändert, wird der neue Wert ausgegeben. Wenn sich der Zustand der Taste von ungedrückt auf gedrückt ändert, wird "Taste gedrückt!" ausgegeben.
 
    .. code-block:: python
 
@@ -176,4 +175,4 @@ Code Analysis
           last_button_state = current_button_state
           time.sleep_ms(50)
 
-   The ``time.sleep_ms(50)`` at the end of the loop is to prevent debouncing issues, which can cause erratic readings.
+   Das ``time.sleep_ms(50)`` am Ende der Schleife dient dazu, Prellprobleme zu verhindern, die zu unregelmäßigen Messwerten führen können.

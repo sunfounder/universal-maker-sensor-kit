@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_VL53L0X:
 
-Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+Time-of-Flight-Micro-LIDAR-Entfernungssensor (VL53L0X)
 ===============================================================
 
 .. image:: img/21_VL53L0X_module.png
@@ -22,29 +22,28 @@ Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
     :align: center
 
 .. raw:: html
-    
+
     <br/>
 
-The VL53L0X module is an advanced time-of-flight (ToF) ranging sensor that offers highly accurate distance measurement, regardless of the target's color and reflectance. Manufactured by STMicroelectronics, this sensor excels in measuring absolute distances up to 2 meters, making it well-suited for various applications in fields such as robotics, drones, and wearable devices.
+Das VL53L0X-Modul ist ein fortschrittlicher Time-of-Flight (ToF)-Entfernungssensor, der hochpräzise Abstandsmesungen ermöglicht, unabhängig von der Farbe und Reflektivität des Ziels. Hergestellt von STMicroelectronics, eignet sich dieser Sensor hervorragend für die Messung absoluter Distanzen bis zu 2 Metern und ist somit ideal für Anwendungen in den Bereichen Robotik, Drohnen und tragbare Geräte.
 
-Specification
+Spezifikation
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB Size: 11 x 25mm
-* Communication method: I2C
-* ToF ranging length: ≤2M
+* Versorgungsspannung: 3,3V oder 5V
+* PCB-Größe: 11 x 25mm
+* Kommunikationsmethode: I2C
+* ToF-Messreichweite: ≤2M
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VIN**: This is the power pin. 
-* **GND**: Common ground for power and logic.
-* **SCL**: I2C clock pin, connect to your microcontrollers I2C clock line.
-* **SDA**: I2C data pin, connect to your microcontrollers I2C data line.
-* **GPIO1**: Programmable interrupt output. This output is not level-shifted.
-* **XSHUT**: This pin is an active-low shutdown input; Driving this pin low puts the sensor into hardware standby. This input is not level-shifted.
+* **VIN**: Dies ist der Stromversorgungs-Pin.
+* **GND**: Gemeinsame Masse für Strom und Logik.
+* **SCL**: I2C-Taktpin, verbinden Sie diesen mit der I2C-Taktleitung Ihres Mikrocontrollers.
+* **SDA**: I2C-Datenpin, verbinden Sie diesen mit der I2C-Datenleitung Ihres Mikrocontrollers.
+* **GPIO1**: Programmierbarer Interrupt-Ausgang. Dieser Ausgang ist nicht pegelgewandelt.
+* **XSHUT**: Dieser Pin ist ein aktiv-low Shutdown-Eingang; durch Anlegen eines niedrigen Pegels wird der Sensor in den Hardware-Standby-Modus versetzt. Dieser Eingang ist nicht pegelgewandelt.
 
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson21_vl53l0x` (Arduino UNO)
 * :ref:`esp32_lesson21_vl53l0x` (ESP32)

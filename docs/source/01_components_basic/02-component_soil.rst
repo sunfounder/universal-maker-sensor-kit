@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_soil:
 
-Capacitive Soil Moisture Module
+Kapazitiver Bodenfeuchtesensor
 =====================================
 
 .. image:: img/02_soil_mositure_module.png
@@ -23,25 +23,25 @@ Capacitive Soil Moisture Module
 
 .. raw:: html
 
-   <br/> 
+   <br/>
 
-The Soil Moisture Module is a sensor used in agriculture to measure the moisture content of soil, helping farmers monitor soil moisture levels and determine when to water their crops.
-This capacitive soil moisture sensor differs from the resistive sensors on the market, using the principle of capacitive induction to detect soil moisture. It avoids the problem of easy corrosion in resistive sensors and greatly extends its working life.
+Der Bodenfeuchtesensor ist ein Sensor, der in der Landwirtschaft zur Messung des Feuchtigkeitsgehalts des Bodens verwendet wird. Er hilft Landwirten, die Bodenfeuchtigkeit zu überwachen und den optimalen Zeitpunkt zur Bewässerung ihrer Pflanzen zu bestimmen.
+Dieser kapazitive Bodenfeuchtesensor unterscheidet sich von den auf dem Markt erhältlichen resistiven Sensoren, indem er das Prinzip der kapazitiven Induktion zur Erkennung der Bodenfeuchtigkeit nutzt. Dadurch wird das Problem der leichten Korrosion bei resistiven Sensoren vermieden und die Lebensdauer des Sensors erheblich verlängert.
 
-Pinout
+Pinbelegung
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **AUOT**: Analog output. The higher the soil moisture content, the lower the analog output value.
+* **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **AUOT**: Analogausgang. Je höher der Feuchtigkeitsgehalt des Bodens, desto niedriger der Analogausgangswert.
 
-Principle
+Funktionsprinzip
 ---------------------------
 
-This capacitive soil moisture sensor is different from most of the resistive sensors on the market, using the principle of capacitive induction to detect soil moisture. It avoids the problem that resistive sensors are highly susceptible to corrosion and greatly extends its working life.
+Dieser kapazitive Bodenfeuchtesensor unterscheidet sich von den meisten resistiven Sensoren auf dem Markt, da er das Prinzip der kapazitiven Induktion zur Erkennung der Bodenfeuchtigkeit nutzt. Dadurch wird das Problem der hohen Korrosionsanfälligkeit resistiver Sensoren vermieden und die Lebensdauer erheblich verlängert.
 
-It is made of corrosion-resistant materials and has an excellent service life. Insert it into the soil around plants and monitor real-time soil moisture data. The module includes an on-board voltage regulator that allows it to operate over a voltage range of 3.3 ~ 5.5 V. It is ideal for low-voltage microcontrollers with 3.3 V and 5 V supplies.
+Er besteht aus korrosionsbeständigen Materialien und hat eine hervorragende Lebensdauer. Stecken Sie ihn in den Boden um die Pflanzen und überwachen Sie die Bodenfeuchtigkeit in Echtzeit. Das Modul enthält einen integrierten Spannungsregler, der den Betrieb in einem Spannungsbereich von 3,3 bis 5,5 V ermöglicht. Es ist ideal für Mikrocontroller mit 3,3 V und 5 V Versorgungsspannung.
 
-The hardware schematic of the capacitive soil moisture sensor is shown below.
+Das Hardware-Schaltbild des kapazitiven Bodenfeuchtesensors ist unten dargestellt.
 
 .. image:: img/02_soil_schematic_2.png
     :width: 90%
@@ -49,14 +49,13 @@ The hardware schematic of the capacitive soil moisture sensor is shown below.
 
 .. raw:: html
 
-   <br/> 
+   <br/>
 
-There is a fixed frequency oscillator, which is built with a 555 timer IC. The generated square wave is then fed to the sensor like a capacitor. However, for the square wave signal, the capacitor has a certain reactance or, for the sake of argument, a resistor with a pure ohmic resistor (10k resistor on pin 3) to form a voltage divider.
+Es gibt einen festen Frequenzoszillator, der mit einem 555-Timer-IC gebaut ist. Das erzeugte Rechtecksignal wird dann an den Sensor wie ein Kondensator angelegt. Für das Rechtecksignal hat der Kondensator jedoch eine bestimmte Reaktanz oder, um es einfach auszudrücken, einen Widerstand mit einem rein ohmschen Widerstand (10k-Widerstand an Pin 3), um einen Spannungsteiler zu bilden.
 
-The higher the soil moisture, the higher the capacitance of the sensor. As a result, the square wave has less reactance, which reduces the voltage on the signal line, and the smaller the value of the analog input through the microcontroller.
+Je höher die Bodenfeuchtigkeit, desto höher die Kapazität des Sensors. Dadurch hat das Rechtecksignal eine geringere Reaktanz, was die Spannung auf der Signalleitung reduziert, und der Wert des analogen Eingangs durch den Mikrocontroller wird kleiner.
 
-
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson02_soil_moisture` (Arduino UNO)
 * :ref:`esp32_lesson02_soil_moisture` (ESP32)

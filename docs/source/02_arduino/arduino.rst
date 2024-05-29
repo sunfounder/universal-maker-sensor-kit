@@ -1,32 +1,32 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-For Arduino Uno
+Für Arduino Uno
 ==================================================
 
-Arduino users, please refer to the following tutorial.
+Arduino-Nutzer, bitte beachten Sie das folgende Tutorial.
 
-The following tutorial uses Arduino UNO R3 as example, but it also applies to Arduino UNO R4.
+Das folgende Tutorial verwendet Arduino UNO R3 als Beispiel, es gilt jedoch auch für Arduino UNO R4.
 
-**Arduino Config**
+**Arduino Konfiguration**
 
 .. toctree::
     :maxdepth: 1
 
     arduino_start/00_get_start
 
-**Basic Project**
+**Basisprojekte**
 
 .. toctree::
     :maxdepth: 1
@@ -68,7 +68,7 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson35_esp8266
     uno_lesson36_bluetooth
 
-**Fun Project**
+**Spaßprojekte**
 
 .. toctree::
     :maxdepth: 1
@@ -85,15 +85,14 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson46_bluetooth_lcd.rst 
     uno_lesson47_bluetooth_traffic_light copy.rst 
 
-**IoT Config**
+**IoT Konfiguration**
 
 .. toctree::
     :maxdepth: 1
 
     iot_start/00-blynk_start
 
-**IoT Project**
-
+**IoT Projekte**
 
 .. toctree::
     :maxdepth: 1

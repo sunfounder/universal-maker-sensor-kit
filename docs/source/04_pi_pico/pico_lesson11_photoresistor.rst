@@ -1,30 +1,30 @@
-.. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+ .. note::
 
-    **Why Join?**
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    **Warum beitreten?**
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
+
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson11_photoresistor:
+Lektion 11: Fotowiderstand-Modul
+=========================================
 
-Lesson 11: Photoresistor Module
-==================================
+In dieser Lektion lernen Sie, wie Sie ein Fotowiderstand-Modul mit dem Raspberry Pi Pico W verbinden, um die Lichtintensität zu messen. Durch die Verbindung des Fotowiderstands mit dem Analogeingang können Sie verschiedene Analogwerte lesen, die verschiedenen Lichtstufen entsprechen. Dieses Projekt eignet sich ideal für Anfänger und bietet praktische Erfahrungen in der Verwendung von Analogeingängen auf dem Raspberry Pi Pico W mit MicroPython.
 
-In this lesson, you'll learn how to connect a photoresistor module to the Raspberry Pi Pico W in order to measure light intensity. By linking the photoresistor to the analog input, you can read different analog values that correspond to varying light levels. This project is ideal for beginners and provides hands-on experience in utilizing analog inputs on the Raspberry Pi Pico W with MicroPython.
+Erforderliche Komponenten
+----------------------------
 
-Required Components
---------------------------
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_11_photoresistor_module_bb.png
@@ -78,29 +78,29 @@ Code
        time.sleep_ms(200)  # Delay of 200 ms between reads
 
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-1. **Importing Libraries**:
+1. **Importieren der Bibliotheken**:
 
-   The code begins by importing necessary libraries. The ``machine`` library is used for controlling hardware components, and the ``time`` library is used for managing time-related tasks such as delays.
+   Der Code beginnt mit dem Importieren der benötigten Bibliotheken. Die ``machine``-Bibliothek wird zur Steuerung von Hardwarekomponenten verwendet, und die ``time``-Bibliothek wird für die Verwaltung zeitbezogener Aufgaben wie Verzögerungen verwendet.
 
    .. code-block:: python
 
       import machine  # Hardware control library
       import time  # Time control library
 
-2. **Initializing the Photoresistor**:
+2. **Initialisierung des Fotowiderstands**:
 
-   Here, we initialize the photoresistor. We use the ``machine.ADC`` class to create an ADC object on pin 26, where the photoresistor is connected. The ADC object will be used to read the analog values from the photoresistor.
+   Hier initialisieren wir den Fotowiderstand. Wir verwenden die Klasse ``machine.ADC``, um ein ADC-Objekt am Pin 26 zu erstellen, an dem der Fotowiderstand angeschlossen ist. Das ADC-Objekt wird verwendet, um die analogen Werte vom Fotowiderstand zu lesen.
 
    .. code-block:: python
 
       photoresistor = machine.ADC(26)  # Initialize ADC on pin 26
 
-3. **Reading from the Photoresistor**:
+3. **Lesen vom Fotowiderstand**:
 
-   In this loop, the code continuously reads the analog value from the photoresistor using ``photoresistor.read_u16()``. This method reads the value as a 16-bit unsigned integer. The value is then printed to the console.
+   In dieser Schleife liest der Code kontinuierlich den analogen Wert vom Fotowiderstand mit ``photoresistor.read_u16()``. Diese Methode liest den Wert als 16-Bit-Unsigned-Integer. Der Wert wird dann in der Konsole ausgegeben.
 
    .. code-block:: python
 
@@ -108,9 +108,9 @@ Code Analysis
           value = photoresistor.read_u16()  # Read analog value
           print(value)  # Print the value
 
-4. **Adding a Delay**:
+4. **Hinzufügen einer Verzögerung**:
 
-   To prevent the code from running too quickly and flooding the console with data, a delay of 200 milliseconds is introduced after each read using ``time.sleep_ms(200)``.
+   Um zu verhindern, dass der Code zu schnell ausgeführt wird und die Konsole mit Daten überflutet, wird nach jeder Messung eine Verzögerung von 200 Millisekunden mit ``time.sleep_ms(200)`` eingefügt.
 
    .. code-block:: python
 

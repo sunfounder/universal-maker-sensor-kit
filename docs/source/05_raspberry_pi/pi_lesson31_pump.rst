@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson31_pump:
 
-Lesson 31: Centrifugal Pump
+Lektion 31: Zentrifugalpumpe
 ==================================
 
-In this lesson, you will learn how to control a pump using a Raspberry Pi. You'll learn how to write a Python script to activate the pump, control its speed, and then stop it after a set period. This project provides a basic understanding of pump control through GPIO interfacing and Python programming, making it a suitable starting point for beginners interested in Raspberry Pi and simple pump applications.
+In dieser Lektion lernen Sie, wie man eine Pumpe mit einem Raspberry Pi steuert. Sie werden lernen, wie man ein Python-Skript schreibt, um die Pumpe zu aktivieren, ihre Geschwindigkeit zu steuern und sie nach einer festgelegten Zeit zu stoppen. Dieses Projekt vermittelt ein grundlegendes Verständnis der Pumpensteuerung über GPIO-Schnittstellen und Python-Programmierung und eignet sich daher hervorragend für Anfänger, die sich für den Raspberry Pi und einfache Pumpenanwendungen interessieren.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist auf jeden Fall praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,12 +54,11 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_31_Pump_Pi_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -81,38 +80,38 @@ Code
 
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Import Libraries
+#. Bibliotheken importieren
    
-   The ``gpiozero`` library is used for controlling the motor, and the ``time`` library's ``sleep`` function is for delays.
+   Die Bibliothek ``gpiozero`` wird zur Steuerung des Motors verwendet, und die Funktion ``sleep`` aus der ``time``-Bibliothek dient zur Implementierung von Verzögerungen.
 
    .. code-block:: python
 
       from gpiozero import Motor
       from time import sleep
 
-#. Define Pump Pins
+#. Pumpenpins definieren
    
-   A ``Motor`` object is created with two GPIO pins: one for forward and one for backward operation. In this case, GPIO 17 and 27 are used.
+   Ein ``Motor``-Objekt wird mit zwei GPIO-Pins erstellt: einer für den Vorwärts- und einer für den Rückwärtsbetrieb. In diesem Fall werden GPIO 17 und 27 verwendet.
 
    .. code-block:: python
 
       pump = Motor(forward=17, backward=27)
 
-#. Activate the pump
+#. Pumpe aktivieren
    
-   The motor is activated in the forward direction with a specified speed using ``pump.forward(speed=1)``. The speed parameter ranges from 0 (stopped) to 1 (full speed). The motor runs for 5 seconds, as defined by ``sleep(5)``.
+   Der Motor wird in Vorwärtsrichtung mit einer festgelegten Geschwindigkeit über ``pump.forward(speed=1)`` aktiviert. Der Geschwindigkeitsparameter reicht von 0 (gestoppt) bis 1 (volle Geschwindigkeit). Der Motor läuft für 5 Sekunden, wie durch ``sleep(5)`` definiert.
 
    .. code-block:: python
 
       pump.forward(speed=1)
       sleep(5)
 
-#. Deactivate the pump
+#. Pumpe deaktivieren
    
-   The motor is stopped using ``pump.stop()``. This is essential for safely halting the motor's operation after the required duration.
+   Der Motor wird mit ``pump.stop()`` gestoppt. Dies ist entscheidend, um den Betrieb des Motors nach der erforderlichen Dauer sicher zu beenden.
 
    .. code-block:: python
 

@@ -1,31 +1,31 @@
-.. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+ .. note::
 
-    **Why Join?**
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    **Warum beitreten?**
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
+
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _uno_lesson37_trashcan:
 
-Lesson 37: Smart trashcan
-==================================
+Lesson 37: Intelligenter Mülleimer
+=======================================
 
-This project revolves around the concept of a smart trash can. The primary aim is to have the trash can's lid automatically open when an object approaches within a set distance (20cm in this case). The functionality is achieved by using an ultrasonic distance sensor paired with a servo motor. The distance between the object and the sensor is continually measured. If the object is close enough, the servo motor is triggered to open the lid. 
+In diesem Projekt dreht sich alles um das Konzept eines intelligenten Mülleimers. Das Hauptziel ist es, dass sich der Deckel des Mülleimers automatisch öffnet, wenn sich ein Objekt auf eine festgelegte Entfernung (in diesem Fall 20 cm) nähert. Diese Funktionalität wird durch die Verwendung eines Ultraschall-Abstandssensors in Kombination mit einem Servomotor erreicht. Der Abstand zwischen dem Objekt und dem Sensor wird kontinuierlich gemessen. Wenn das Objekt nahe genug ist, wird der Servomotor aktiviert, um den Deckel zu öffnen.
 
-
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+In diesem Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Man kann sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -57,7 +57,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_37_smart_trashcan_uno_bb.png
@@ -71,14 +71,14 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f9aacc6c-809f-4fd2-9246-23bb4bdf78a2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-The project is based on real-time monitoring of the distance between an object and a trash can. An ultrasonic sensor continuously measures this distance, and if an object approaches within 20cm, the trash can interprets it as an intention to dispose of waste and automatically opens its lid. This automation adds smartness and convenience to a regular trash can.
+Das Projekt basiert auf der Echtzeitüberwachung des Abstands zwischen einem Objekt und einem Mülleimer. Ein Ultraschallsensor misst kontinuierlich diesen Abstand, und wenn sich ein Objekt auf weniger als 20 cm nähert, interpretiert der Mülleimer dies als Absicht, Abfall zu entsorgen, und öffnet automatisch seinen Deckel. Diese Automatisierung verleiht einem gewöhnlichen Mülleimer Intelligenz und Bequemlichkeit.
 
-#. Initial Setup and Variable Declaration
+#. Erste Einrichtung und Variablendeklaration
 
-   Here, we're including the ``Servo`` library and defining the constants and variables we'll use. The pins for the servo and the ultrasonic sensor are declared. We also have an array ``averDist`` to hold the three distance measurements.
+   Hier binden wir die ``Servo``-Bibliothek ein und definieren die Konstanten und Variablen, die wir verwenden werden. Die Pins für den Servo und den Ultraschallsensor werden deklariert. Außerdem haben wir ein Array ``averDist``, um die drei Distanzmessungen zu speichern.
 
    .. code-block:: arduino
        
@@ -93,9 +93,10 @@ The project is based on real-time monitoring of the distance between an object a
       long averDist[3];
       const int distanceThreshold = 20;
 
-#. ``setup()`` Function
 
-   The ``setup()`` function initializes serial communication, configures the ultrasonic sensor's pins, and sets the initial position of the servo to the closed position.
+#. ``setup()``-Funktion
+
+   Die ``setup()``-Funktion initialisiert die serielle Kommunikation, konfiguriert die Pins des Ultraschallsensors und stellt die Anfangsposition des Servos auf die geschlossene Position ein.
 
    .. code-block:: arduino
    
@@ -108,11 +109,9 @@ The project is based on real-time monitoring of the distance between an object a
         delay(100);
       }
 
-   
+#. ``loop()``-Funktion
 
-#. ``loop()`` Function
-
-   The ``loop()`` function is responsible for continuously measuring the distance, computing its average, and then making a decision whether to open or close the trash can's lid based on this averaged distance.
+   Die ``loop()``-Funktion ist dafür verantwortlich, kontinuierlich den Abstand zu messen, dessen Durchschnitt zu berechnen und dann zu entscheiden, ob der Deckel des Mülleimers basierend auf diesem durchschnittlichen Abstand geöffnet oder geschlossen wird.
 
    .. code-block:: arduino
    
@@ -132,14 +131,12 @@ The project is based on real-time monitoring of the distance between an object a
           delay(1000);
         }
       }
-   
-   
 
-#. Distance Reading Function
+#. Abstandsmessfunktion
 
-   This function, ``readDistance()``, is what actually interacts with the ultrasonic sensor. It sends a pulse and waits for an echo. The time taken for the echo is then used to calculate the distance between the sensor and any object in front of it.
+   Diese Funktion, ``readDistance()``, interagiert tatsächlich mit dem Ultraschallsensor. Sie sendet einen Impuls und wartet auf ein Echo. Die Zeit, die für das Echo benötigt wird, wird dann verwendet, um den Abstand zwischen dem Sensor und einem Objekt davor zu berechnen.
 
-   You can refer to the :ref:`cpn_ultrasonic_principle` of the ultrasonic sensor.
+   Sie können sich auf das :ref:`cpn_ultrasonic_principle` des Ultraschallsensors beziehen.
 
    .. code-block:: arduino
    

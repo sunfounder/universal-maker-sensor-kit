@@ -1,32 +1,28 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-.. _uno_iot_weather_monito:
-
-Lesson 48: Weather Monitor with ThingSpeak
+Lesson 48: Wetterüberwachung mit ThingSpeak
 =============================================================
 
+Dieses Projekt sammelt Temperatur- und Druckdaten mithilfe eines atmosphärischen Drucksensors. Die gesammelten Daten werden dann in regelmäßigen Zeitintervallen über ein ESP8266-Modul und ein Wi-Fi-Netzwerk an die ThingSpeak-Cloud-Plattform übertragen.
 
-
-This project collects temperature and pressure data using an Atmospheric Pressure Sensor. The collected data is then transmitted to the ThingSpeak cloud platform via an ESP8266 module and Wi-Fi network at regular time intervals.
-
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +35,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -58,7 +54,7 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_48_Iot_weather_monitor_uno_bb.png
@@ -66,10 +62,10 @@ Wiring
 
 
 
-Configure ThingSpeak
+Konfiguration von ThingSpeak
 -----------------------------
 
-|link_thingspeak| ™ is an IoT analytics platform service that allows you to aggregate, visualize and analyze live data streams in the cloud. ThingSpeak provides instant visualizations of data posted by your devices to ThingSpeak. With the ability to execute MATLAB® code in ThingSpeak you can perform online analysis and processing of the data as it comes in. ThingSpeak is often used for prototyping and proof of concept IoT systems that require analytics.
+|link_thingspeak| ™ ist ein IoT-Analyseplattformdienst, der es Ihnen ermöglicht, Live-Datenströme in der Cloud zu aggregieren, zu visualisieren und zu analysieren. ThingSpeak bietet sofortige Visualisierungen von Daten, die von Ihren Geräten an ThingSpeak gesendet werden. Mit der Möglichkeit, MATLAB®-Code in ThingSpeak auszuführen, können Sie eine Online-Analyse und Verarbeitung der Daten durchführen, während sie eintreffen. ThingSpeak wird häufig für die Prototypenerstellung und die Nachweisführung von IoT-Systemen verwendet, die Analyse erfordern.
 
 .. image:: img/signup_tsp_ml.png
     :width: 80% 
@@ -79,28 +75,27 @@ Configure ThingSpeak
     
     <br/>  
 
-**1) Creating ThingSpeak Account**
+**1) Erstellung eines ThingSpeak-Kontos**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing you need to do is to create an account with ThingSpeak. Since the collaboration with MATLAB, you can use your MathWorks credentials to login to |link_thingspeak|.
+Das erste, was Sie tun müssen, ist ein Konto bei ThingSpeak zu erstellen. Seit der Zusammenarbeit mit MATLAB können Sie Ihre MathWorks-Anmeldeinformationen verwenden, um sich bei |link_thingspeak| anzumelden.
 
-If you do not have one, you need to create an account with MathWorks and login to ThingSpeak Application.
+Wenn Sie noch keine haben, müssen Sie ein Konto bei MathWorks erstellen und sich bei der ThingSpeak-Anwendung anmelden.
 
 .. image:: img/05-thingspeak_signup_shadow.png
     :width: 50%
     :align: center
 
-
-**2) Creating the channel**
+**2) Erstellung des Kanals**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After logging in, create a new channel to store the data by going to "Channels" > "My Channels" and clicking on "New Channel".
+Nach dem Anmelden erstellen Sie einen neuen Kanal, um die Daten zu speichern, indem Sie zu "Channels" > "My Channels" gehen und auf "New Channel" klicken.
 
 .. image:: img/05-thingspeak_channel_1_shadow.png
     :width: 95%
     :align: center
 
-For this project, we need to create a channel called "**Weather Monitor**" with two fields: **Field 1** for "**Temperature**" and **Field 2** for "**Atmospheric Pressure**".
+Für dieses Projekt müssen wir einen Kanal namens "**Weather Monitor**" mit zwei Feldern erstellen: **Feld 1** für "**Temperatur**" und **Feld 2** für "**Atmosphärischen Druck**".
 
 .. image:: img/05-thingspeak_channel_2_shadow.png
     :width: 95%
@@ -115,24 +110,24 @@ Code
 --------------------------- 
 
 
-#. Open the ``Lesson_48_Iot_Weather_Monitor.ino`` file under the path of ``universal-maker-sensor-kit\arduino_uno\Lesson_48_Iot_Weather_Monitor``, or copy this code into **Arduino IDE**.
+#. Öffnen Sie die Datei ``Lesson_48_Iot_Weather_Monitor.ino`` im Pfad ``universal-maker-sensor-kit\arduino_uno\Lesson_48_Iot_Weather_Monitor``, oder kopieren Sie diesen Code in **Arduino IDE**.
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit BMP280"** and install it. 
+      Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"Adafruit BMP280"** und installieren Sie sie. 
 
    .. raw:: html
       
       <iframe src=https://create.arduino.cc/editor/sunfounder01/59eeae43-5dcc-46d7-833f-65fd2bdb3603/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-#. You need to enter the ``mySSID`` and ``myPWD`` of the WiFi you are using. 
+#. Sie müssen die ``mySSID`` und ``myPWD`` des WLANs eingeben, das Sie verwenden. 
 
    .. code-block:: arduino
 
     String mySSID = "your_ssid";     // WiFi SSID
     String myPWD = "your_password";  // WiFi Password
 
-#. You also need to modify the ``myAPI`` with your ThingSpeak Channel API key.
+#. Sie müssen auch das ``myAPI`` mit Ihrem ThingSpeak Channel API-Schlüssel ändern.
 
    .. code-block:: arduino
     
@@ -143,11 +138,11 @@ Code
        :align: center
    
    
-   Here you can find **your unique API KEY that you must keep private**. 
+   Hier finden Sie **Ihren einzigartigen API-SCHLÜSSEL, den Sie privat halten müssen**. 
 
-#. After selecting the correct board and port, click the **Upload** button.
+#. Nach Auswahl des richtigen Boards und Ports klicken Sie auf die **Upload**-Schaltfläche.
 
-#. Open the Serial monitor(set baudrate to **9600**) and wait for a prompt such as a successful connection to appear.
+#. Öffnen Sie den Seriellen Monitor (stellen Sie die Baudrate auf **9600**) und warten Sie auf eine Meldung wie eine erfolgreiche Verbindung.
 
    .. image:: img/05-ready_1_shadow.png
           :width: 95%
@@ -155,11 +150,11 @@ Code
    .. image:: img/05-ready_2_shadow.png
           :width: 95%
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
 
-#. Initialization and Bluetooth setup
+#. Initialisierung und Bluetooth-Einrichtung
 
    .. code-block:: arduino
 
@@ -169,9 +164,8 @@ Code Analysis
       const int bluetoothRx = 4;
       SoftwareSerial bleSerial(bluetoothTx, bluetoothRx);
    
-   We begin by including the SoftwareSerial library to help us with Bluetooth communication. The Bluetooth module's TX and RX pins are then defined and associated with pins 3 and 4 on the Arduino. Finally, we initialize the ``bleSerial`` object for Bluetooth communication.
-
-#. LED Pin Definitions
+   Wir beginnen damit, die SoftwareSerial-Bibliothek einzuschließen, um uns bei der Bluetooth-Kommunikation zu helfen. Die TX- und RX-Pins des Bluetooth-Moduls werden dann definiert und mit den Pins 3 und 4 auf dem Arduino verbunden. Schließlich initialisieren wir das Objekt ``bleSerial`` für die Bluetooth-Kommunikation.
+#. LED Pin-Definitionen
 
    .. code-block:: arduino
 
@@ -180,9 +174,9 @@ Code Analysis
       const int yledPin = 11;  //yellow
       const int gledPin = 12;  //green
 
-   Here, we're defining which Arduino pins our LEDs are connected to. The red LED is on pin 10, yellow on 11, and green on 12.
+   Hier definieren wir, an welchen Arduino-Pins unsere LEDs angeschlossen sind. Die rote LED ist an Pin 10, die gelbe an Pin 11 und die grüne an Pin 12.
 
-#. setup() Function
+#. setup() Funktion
 
    .. code-block:: arduino
 
@@ -195,9 +189,9 @@ Code Analysis
          bleSerial.begin(9600);
       }
 
-   In the ``setup()`` function, we set the LED pins as ``OUTPUT``. We also start serial communication for both the Bluetooth module and the default serial (connected to the computer) at a baud rate of 9600.
+   In der ``setup()`` Funktion setzen wir die LED-Pins auf ``OUTPUT``. Wir starten auch die serielle Kommunikation für sowohl das Bluetooth-Modul als auch die Standard-Serielle (die mit dem Computer verbunden ist) mit einer Baudrate von 9600.
 
-#. Main loop() for Bluetooth Communication
+#. Hauptschleife() für die Bluetooth-Kommunikation
 
    .. code-block:: arduino
 
@@ -216,9 +210,9 @@ Code Analysis
          }
       }
 
-   Inside our main ``loop()``, we continuously check if data is available from the Bluetooth module. If we receive data, we read the character and display it in the serial monitor. Depending on the character received (R, Y, or G), we toggle the respective LED using the ``toggleLights()`` function.
+   In unserer Hauptschleife ``loop()``, überprüfen wir kontinuierlich, ob Daten vom Bluetooth-Modul verfügbar sind. Wenn wir Daten empfangen, lesen wir das Zeichen und zeigen es im Seriellen Monitor an. Abhängig vom empfangenen Zeichen (R, Y oder G) schalten wir die entsprechende LED mit der ``toggleLights()`` Funktion um.
 
-#. Toggle Lights Function
+#. Funktion zum Umschalten der Lichter
 
    .. code-block:: arduino
 
@@ -230,4 +224,4 @@ Code Analysis
          digitalWrite(targetLight, HIGH);
       }
 
-   This function, ``toggleLights()``, turns off all the LEDs first. After ensuring they are all off, it turns on the specified target LED. This ensures that only one LED is on at a time.
+   Diese Funktion, ``toggleLights()``, schaltet zuerst alle LEDs aus. Nachdem sichergestellt wurde, dass alle aus sind, schaltet sie die angegebene Ziel-LED ein. Dies stellt sicher, dass immer nur eine LED eingeschaltet ist.

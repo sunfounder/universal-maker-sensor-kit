@@ -1,30 +1,29 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson15_raindrop:
+Lektion 15: Regentropfen-Erkennungsmodul
+===============================================
 
-Lesson 15: Raindrop Detection Module
-=======================================
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W verwenden, um mithilfe eines an Pin 16 angeschlossenen Regentropfensensors Regentropfen zu erkennen. Das Skript überwacht kontinuierlich jegliche Anzeichen von Regentropfen und gibt "Regentropfen erkannt!" aus, wenn einer erkannt wird; ansonsten zeigt es "Überwachung..." an, während es auf Regentropfen wartet. Diese Sitzung bietet praktische Erfahrungen im Umgang mit digitalen Eingängen mit dem Raspberry Pi Pico W und im Verständnis der Umgebungssensorik in MicroPython, was sie ideal für Anfänger in Elektronik und Programmierung macht.
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to detect raindrops using a raindrop sensor connected to pin 16. The script continuously monitors for any indication of raindrops and prints "Raindrop detected!" when one is detected; otherwise, it displays "Monitoring..." as it waits for raindrops. This session offers hands-on experience in handling digital inputs with the Raspberry Pi Pico W and understanding environmental sensing in MicroPython, making it ideal for beginners in electronics and programming.
+Erforderliche Komponenten
+-------------------------------
 
-Required Components
---------------------------
+Für dieses Projekt benötigen wir folgende Komponenten. 
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_15_raindrop_detection_module_bb.png
@@ -81,21 +80,21 @@ Code
    
        time.sleep(0.1)  # Short delay of 0.1 seconds to reduce CPU usage
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Initializing the Raindrop Sensor:
+#. Initialisierung des Regentropfen-Sensors:
 
-   The raindrop sensor is initialized using the ``Pin`` class from the ``machine`` module, set to pin 16 in input mode. This allows the Raspberry Pi Pico W to read the sensor output.
+   Der Regentropfen-Sensor wird unter Verwendung der Klasse ``Pin`` aus dem Modul ``machine`` initialisiert und auf Pin 16 im Eingangsmodus eingestellt. Dadurch kann der Raspberry Pi Pico W das Ausgangssignal des Sensors lesen.
 
    .. code-block:: python
    
        from machine import Pin
        raindrop_sensor = Pin(16, Pin.IN)
 
-#. Continuous Monitoring Loop:
+#. Kontinuierliche Überwachungsschleife:
 
-   A continuous while loop is used to monitor the sensor. Inside the loop, the sensor value is checked. If the value is 0, it indicates raindrops are detected and prints "Raindrop detected!" Otherwise, it prints "Monitoring..." to indicate the absence of raindrops.
+   Eine kontinuierliche ``while``-Schleife wird verwendet, um den Sensor zu überwachen. Innerhalb der Schleife wird der Sensorkennwert überprüft. Wenn der Wert 0 ist, deutet dies darauf hin, dass Regentropfen erkannt wurden, und es wird "Regentropfen erkannt!" ausgegeben. Andernfalls wird "Überwachung..." ausgegeben, um das Fehlen von Regentropfen anzuzeigen.
 
    .. code-block:: python
    
@@ -105,9 +104,9 @@ Code Analysis
            else:
                print("Monitoring...")
 
-#. Introducing a Delay:
+#. Einführung einer Verzögerung:
 
-   To reduce CPU usage, a delay of 0.1 seconds is introduced in each iteration of the loop using ``time.sleep(0.1)``. This prevents the loop from executing too rapidly.
+   Um die CPU-Nutzung zu reduzieren, wird in jeder Iteration der Schleife eine Verzögerung von 0,1 Sekunden eingeführt, indem ``time.sleep(0.1)`` verwendet wird. Dies verhindert, dass die Schleife zu schnell ausgeführt wird.
 
    .. code-block:: python
    

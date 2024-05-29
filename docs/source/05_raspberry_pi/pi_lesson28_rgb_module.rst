@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pi_lesson28_rgb_module:
 
-Lesson 28: RGB Module
+Lektion 28: RGB-Modul
 ==================================
 
-In this lesson, you will learn how to control an RGB LED module with a Raspberry Pi. You'll learn how to use Python to change the LED's color to red, green, blue, and yellow, and then turn it off. This project is a straightforward introduction to working with RGB LEDs and GPIO interfacing, making it ideal for beginners starting with Raspberry Pi and Python programming.
+In dieser Lektion lernen Sie, wie Sie ein RGB-LED-Modul mit einem Raspberry Pi steuern können. Sie erfahren, wie Sie mit Python die Farbe der LED auf Rot, Grün, Blau und Gelb ändern und sie dann ausschalten können. Dieses Projekt ist eine einfache Einführung in die Arbeit mit RGB-LEDs und die GPIO-Schnittstelle, ideal für Anfänger, die mit dem Raspberry Pi und der Python-Programmierung beginnen.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_28_RGB_LED_Module_Pi_bb.png
@@ -99,12 +99,12 @@ Code
 
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
    
-   The script starts with importing the ``RGBLED`` class from gpiozero for controlling the RGB LED and the ``sleep`` function from the time module for delays. It also imports the ``Color`` class from colorzero for color definitions.
+   Das Skript beginnt mit dem Import der Klasse ``RGBLED`` aus gpiozero zur Steuerung der RGB-LED und der Funktion ``sleep`` aus dem Modul time für Verzögerungen. Es importiert auch die Klasse ``Color`` aus colorzero für Farbbestimmungen.
 
    .. code-block:: python
 
@@ -112,10 +112,10 @@ Code Analysis
       from time import sleep  
       from colorzero import Color  
 
-#. Initializing the RGB LED
+#. Initialisierung der RGB-LED
    
-   - GPIO pins for each color component of the RGB LED are defined. 
-   - The RGB LED is initialized with its red, green, and blue components connected to GPIO pins 22, 27, and 17 respectively.
+   - GPIO-Pins für jede Farbkomponente der RGB-LED werden definiert. 
+   - Die RGB-LED wird mit ihren roten, grünen und blauen Komponenten, die mit den GPIO-Pins 22, 27 und 17 verbunden sind, initialisiert.
 
    .. code-block:: python
 
@@ -124,10 +124,10 @@ Code Analysis
       blue_pin = 17
       led = RGBLED(red=red_pin, green=green_pin, blue=blue_pin)
 
-#. Setting LED Colors
+#. Farben der LED einstellen
    
-   - The color of the LED is set to red, green, and blue in sequence, each followed by a 1-second pause. 
-   - Colors are represented by tuples (red, green, blue), where each value is between 0 and 1, indicating the intensity.
+   - Die Farbe der LED wird nacheinander auf Rot, Grün und Blau gesetzt, jeweils gefolgt von einer 1-sekündigen Pause. 
+   - Farben werden durch Tupel (rot, grün, blau) dargestellt, wobei jeder Wert zwischen 0 und 1 liegt und die Intensität angibt.
 
    .. code-block:: python
 
@@ -138,20 +138,20 @@ Code Analysis
       led.color = (0, 0, 1)
       sleep(1)
 
-#. Using the Color Class
+#. Verwendung der Color-Klasse
    
-   The script demonstrates how to use the ``Color`` class from colorzero to set the LED to a named color (``yellow``) and then waits for 1 second.
+   Das Skript zeigt, wie die Klasse ``Color`` aus colorzero verwendet wird, um die LED auf eine benannte Farbe (``yellow``) zu setzen und dann 1 Sekunde zu warten.
 
-   In addition to using the pre-defined colors directly, you can also define colors in various ways. For more details, please refer to |link_gpiozero_color|.
+   Zusätzlich zur Verwendung der vordefinierten Farben direkt, können Sie auch Farben auf verschiedene Weise definieren. Weitere Details finden Sie unter |link_gpiozero_color|.
 
    .. code-block:: python
 
       led.color = Color('yellow')
       sleep(1)
 
-#. Turning the LED Off
+#. Ausschalten der LED
    
-   Finally, the script turns off the LED using ``led.off()``.
+   Schließlich schaltet das Skript die LED mit ``led.off()`` aus.
 
    .. code-block:: python
 

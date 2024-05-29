@@ -1,58 +1,59 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Introduce of Arduino IDE
+Einführung in die Arduino IDE
 =================================
 
 .. image:: img/ide_2_intro.png
 
-1. **Verify**: Compile your code. Any syntax problem will be prompted with errors.
+1. **Verify**: Kompiliert Ihren Code. Bei Syntaxfehlern werden entsprechende Fehler angezeigt.
 
-2. **Upload**: Upload the code to your board. When you click the button, the RX and TX LEDs on the board will flicker fast and won't stop until the upload is done.
+2. **Upload**: Lädt den Code auf Ihr Board hoch. Beim Klicken auf den Button blinken die RX- und TX-LEDs auf dem Board schnell und stoppen erst, wenn der Upload abgeschlossen ist.
 
-3. **Debug**: For line-by-line error checking.
+3. **Debug**: Für zeilenweises Fehlerprüfen.
 
-4. **Select Board**: Quick setup board and port.
+4. **Select Board**: Schnelle Einrichtung von Board und Port.
 
-5. **Serial Plotter**: Check the change of reading value.
+5. **Serial Plotter**: Überprüft die Änderung des Messwerts.
 
-6. **Serial Monitor**: Click the button and a window will appear. It receives the data sent from your control board. It is very useful for debugging.
+6. **Serial Monitor**: Klicken Sie auf den Button, und ein Fenster erscheint. Es empfängt die vom Steuerboard gesendeten Daten und ist sehr nützlich für die Fehlersuche.
 
-7. **File**: Click the menu and a drop-down list will appear, including file creating, opening, saving, closing, some parameter configuring, etc.
+7. **File**: Klicken Sie auf das Menü und eine Dropdown-Liste erscheint, die Datei-Erstellung, -Öffnung, -Speicherung, -Schließung sowie einige Parameterkonfigurationen umfasst.
 
-8. **Edit**: Click the menu. On the drop-down list, there are some editing operations like **Cut**, **Copy**, **Paste**, **Find**, and so on, with their corresponding shortcuts.
+8. **Edit**: Klicken Sie auf das Menü. In der Dropdown-Liste befinden sich Bearbeitungsfunktionen wie **Ausschneiden**, **Kopieren**, **Einfügen**, **Suchen** usw. mit den entsprechenden Tastenkürzeln.
 
-9. **Sketch**: Includes operations like **Verify**, **Upload**, **Add** files, etc. More important function is **Include Library** - where you can add libraries.
+9. **Sketch**: Beinhaltet Funktionen wie **Verify**, **Upload**, **Add** Dateien usw. Wichtige Funktion ist **Include Library** - hier können Sie Bibliotheken hinzufügen.
 
-10. **Tool**: Includes some tools - the most frequently used Board (the board you use) and Port (the port your board is at). Every time you want to upload the code, you need to select or check them.
+10. **Tool**: Beinhaltet Werkzeuge - am häufigsten verwendet werden Board (das verwendete Board) und Port (der Port, an dem Ihr Board angeschlossen ist). Jedes Mal, wenn Sie den Code hochladen möchten, müssen Sie diese auswählen oder überprüfen.
 
-11. **Help**: If you're a beginner, you may check the options under the menu and get the help you need, including operations in IDE, introduction information, troubleshooting, code explanation, etc.
+11. **Help**: Wenn Sie ein Anfänger sind, können Sie die Optionen unter diesem Menü überprüfen und die benötigte Hilfe erhalten, einschließlich der Bedienung in der IDE, Einführungsinformationen, Fehlerbehebung, Codeerklärung usw.
 
-12. **Output Bar**: Switch the output tab here.
+12. **Output Bar**: Wechselt den Ausgabe-Tab.
 
-13. **Output Window**: Print information.
+13. **Output Window**: Gibt Informationen aus.
 
-14. **Board and Port**: Here you can preview the board and port selected for code upload. You can select them again by **Tools** -> **Board** / **Port** if any is incorrect.
+14. **Board and Port**: Hier können Sie das ausgewählte Board und den Port für den Code-Upload einsehen. Sie können sie erneut über **Tools** -> **Board** / **Port** auswählen, falls etwas falsch ist.
 
-15. The editing area of the IDE. You can write code here.
+15. Der Bearbeitungsbereich der IDE. Hier können Sie den Code schreiben.
 
-16. **Sketchbook**: For managing sketch files.
+16. **Sketchbook**: Zum Verwalten von Sketch-Dateien.
 
-17. **Board Manager**: For managing board driver.
+17. **Board Manager**: Zum Verwalten der Board-Treiber.
 
-18. **Library Manager**: For managing your library files.
+18. **Library Manager**: Zum Verwalten Ihrer Bibliotheksdateien.
 
-19. **Debug**: Help debugging code.
+19. **Debug**: Hilft beim Debuggen des Codes.
 
-20. **Search**: Search the codes from your sketches.
+20. **Search**: Durchsucht den Code in Ihren Sketchen.
+

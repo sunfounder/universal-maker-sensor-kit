@@ -1,48 +1,46 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_potentiometer_scale_value:
 
-Lesson 41: Potentiometer scale value
+Lektion 41: Potentiometer-Wert skalieren
 =============================================================
 
+Dieses Projekt konzentriert sich auf das Auslesen des Potentiometerwerts und dessen Anzeige auf einem LCD 1602 mit I2C-Schnittstelle. 
+Zusätzlich wird der Wert an den seriellen Monitor übertragen, um eine Echtzeitüberwachung zu ermöglichen. 
+Ein besonderes Merkmal dieses Projekts ist die grafische Darstellung des Potentiometerwerts auf dem LCD, 
+die als variabel lange Leiste proportional zum Potentiometerwert angezeigt wird.
 
-This project focuses on reading a potentiometer's value and displaying it on an LCD 1620 equipped with an I2C interface. 
-Additionally, the value is transmitted to the serial monitor for live monitoring. 
-A distinctive aspect of this project is the graphical representation of the potentiometer's value on the LCD, 
-which is depicted as a variable-length bar proportional to the potentiometer's reading.
-
-
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name    
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -61,7 +59,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+Verdrahtung
 ---------------------------
 
 .. image:: img/Lesson_41_Potentiometer_scale_value_esp32_bb.png
@@ -76,12 +74,12 @@ Code
    <iframe src=https://create.arduino.cc/editor/sunfounder01/407cf491-e932-4334-a3f3-e04f7309c941/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
    
-Code Analysis
+Code-Analyse
 ---------------------------
 
-The core functionality of this project is to consistently read the potentiometer's value, map it to a scaled range (0-16), and display the result both numerically and graphically on the LCD. The implementation minimizes jitter by updating the display only when significant changes in the reading occur, thus maintaining a smooth visual experience.
+Die Kernfunktionalität dieses Projekts besteht darin, den Potentiometerwert kontinuierlich zu lesen, ihn auf einen skalierten Bereich (0-16) zu übertragen und das Ergebnis sowohl numerisch als auch grafisch auf dem LCD anzuzeigen. Die Implementierung minimiert das Flimmern, indem das Display nur bei signifikanten Änderungen des Werts aktualisiert wird, um eine reibungslose visuelle Darstellung zu gewährleisten.
 
-1. **Library Inclusion and Initialization**:
+1. **Einbindung der Bibliotheken und Initialisierung**:
 
    .. code-block:: arduino
    
@@ -92,19 +90,19 @@ The core functionality of this project is to consistently read the potentiometer
       // Initialize LCD at I2C address 0x27 with 16 columns and 2 rows
       LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-   This segment incorporates the necessary libraries for I2C communication and LCD control. It then initializes an LCD instance with the I2C address of ``0x27``, specifying its dimensions as ``16 columns`` and ``2 rows``.
+   Dieser Abschnitt bindet die erforderlichen Bibliotheken für die I2C-Kommunikation und die Steuerung des LCDs ein. Anschließend wird eine LCD-Instanz mit der I2C-Adresse ``0x27`` und den Abmessungen ``16 Spalten`` und ``2 Zeilen`` initialisiert.
 
-2. **Variable Declaration**:
+2. **Variablendeklaration**:
 
    .. code-block:: arduino
    
       // Variables to hold the potentiometer readings
       int lastRead = 0;     // Previous potentiometer value
       int currentRead = 0;  // Current potentiometer value
+      
+   Die Variablen ``lastRead`` und ``currentRead`` werden verwendet, um die Potentiometerwerte zu verschiedenen Zeitpunkten zu verfolgen.
 
-   Variables ``lastRead`` and ``currentRead`` are used to keep track of the potentiometer's readings across different moments.
-
-3. **setup() Function**:
+3. **setup() Funktion**:
 
    .. code-block:: arduino
    
@@ -114,9 +112,9 @@ The core functionality of this project is to consistently read the potentiometer
         Serial.begin(9600);  // Commences serial communication at 9600 baud
       }
 
-   This function prepares the LCD and starts serial communication, setting up the environment for the project's operation.
+   Diese Funktion bereitet das LCD vor und startet die serielle Kommunikation, um die Umgebung für den Betrieb des Projekts einzurichten.
 
-4. **Main Loop**:
+4. **Hauptschleife**:
 
    .. code-block:: arduino
    
@@ -149,8 +147,7 @@ The core functionality of this project is to consistently read the potentiometer
          delay(200);
       }
 
-   * Reads the potentiometer and converts its value to a scale suitable for visual representation.
-   * Updates the LCD only when a meaningful change is detected, displaying the numeric value and a corresponding bar graph.
-   * Also sends the reading to the serial monitor for external observation.
-   * Ensures stability and responsiveness by introducing a brief delay between iterations.
-
+   * Liest den Potentiometerwert und wandelt ihn in eine für die visuelle Darstellung geeignete Skala um.
+   * Aktualisiert das LCD nur bei einer signifikanten Änderung des Werts und zeigt den numerischen Wert sowie eine entsprechende Leiste an.
+   * Sendet den Wert auch an den seriellen Monitor zur externen Beobachtung.
+   * Gewährleistet Stabilität und Reaktionsfähigkeit durch eine kurze Verzögerung zwischen den Iterationen.

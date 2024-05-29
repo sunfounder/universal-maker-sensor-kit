@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson08_ir_obstacle_avoidance:
 
-Lesson 08: IR Obstacle Avoidance Sensor Module
-====================================================
+Lektion 08: IR Hindernisvermeidungs-Sensor Modul
+=====================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W with an IR Obstacle Avoidance Sensor Module. We'll walk you through setting up the sensor and writing a MicroPython script that continuously reads its value to detect obstacles. By monitoring changes in the sensor data, you'll grasp how to use it for basic obstacle detection.
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W mit einem IR-Hindernisvermeidungs-Sensor-Modul verwenden. Wir führen Sie durch die Einrichtung des Sensors und das Schreiben eines MicroPython-Skripts, das kontinuierlich dessen Wert liest, um Hindernisse zu erkennen. Durch die Überwachung von Änderungen der Sensordaten werden Sie verstehen, wie Sie ihn zur grundlegenden Hinderniserkennung verwenden können.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+----------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist auf jeden Fall praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,12 +54,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_08_Obstacle_Avoidance_Sensor_Module_bb.png
     :width: 100%
-
 
 Code
 ---------------------------
@@ -80,29 +79,29 @@ Code
        time.sleep(0.1)
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Libraries
+#. Importieren von Bibliotheken
 
-   The ``machine`` module is imported to interact with the GPIO pins, and the ``time`` module is used for adding delays.
+   Das ``machine``-Modul wird importiert, um mit den GPIO-Pins zu interagieren, und das ``time``-Modul wird verwendet, um Verzögerungen hinzuzufügen.
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Setting Up the Sensor
+#. Einrichten des Sensors
    
-   The obstacle avoidance sensor is set up as an input device on GPIO pin 16. The ``Pin.IN`` parameter configures the pin as an input.
+   Der Hindernisvermeidungssensor wird als Eingabegerät am GPIO-Pin 16 konfiguriert. Der Parameter ``Pin.IN`` konfiguriert den Pin als Eingang.
 
    .. code-block:: python
 
       obstacle_avoidance_sensor = Pin(16, Pin.IN)
 
-#. Reading Sensor Data in a Loop
+#. Lesen der Sensordaten in einer Schleife
 
-   The ``while True:`` loop continuously checks the sensor's output. If the sensor detects an obstacle, it returns ``0``, which is printed out. The ``time.sleep(0.1)`` adds a small delay to make the readings more manageable.
+   Die ``while True:``-Schleife überprüft kontinuierlich die Ausgabe des Sensors. Wenn der Sensor ein Hindernis erkennt, gibt er ``0`` zurück, was ausgegeben wird. Mit ``time.sleep(0.1)`` wird eine kleine Verzögerung hinzugefügt, um die Messungen handhabbarer zu machen.
 
    .. code-block:: python
 
@@ -112,4 +111,5 @@ Code Analysis
 
    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+      Wenn der Sensor nicht ordnungsgemäß funktioniert, justieren Sie den IR-Sender und -Empfänger, um sie parallel zueinander auszurichten. Darüber hinaus können Sie den Erfassungsbereich mit dem eingebauten Potentiometer anpassen.
+

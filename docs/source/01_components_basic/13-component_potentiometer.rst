@@ -1,20 +1,20 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_potentiometer:
 
-Potentiometer Module
+Potentiometermodul
 ==========================
 
 .. image:: img/13_potentiomete_module.png
@@ -25,43 +25,43 @@ Potentiometer Module
 
    <br/>
 
-The potentiometer module is an electronic component that changes its resistance depending on the position of the twist knob.It can be used for various purposes, such as controlling the volume of a speaker, the brightness of a LED, or the speed of a motor.
+Das Potentiometermodul ist ein elektronisches Bauteil, dessen Widerstand sich je nach Position des Drehknopfes ändert. Es kann für verschiedene Zwecke verwendet werden, wie z.B. zur Lautstärkeregelung eines Lautsprechers, zur Helligkeitssteuerung einer LED oder zur Geschwindigkeitsregelung eines Motors.
 
-
-Pinout
+Pinbelegung
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **AO**: Analog output. 
+* **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
+* **GND**: Masseanschluss.
+* **AO**: Analogausgang.
 
-Principle
+Funktionsprinzip
 ---------------------------
-Potentiometer is also a resistance component with 3 terminals and its resistance value can be adjusted according to some regular variation.
+Ein Potentiometer ist ebenfalls ein Widerstandselement mit drei Anschlüssen, dessen Widerstandswert entsprechend einer regelmäßigen Variation angepasst werden kann.
 
-Potentiometers come in various shapes, sizes, and values, but they all have the following things in common:
+Potentiometer gibt es in verschiedenen Formen, Größen und Werten, aber sie haben alle folgende Gemeinsamkeiten:
 
-- They have three terminals (or connection points).
-- They have a knob, screw, or slider that can be moved to vary the resistance between the middle terminal and either one of the outer terminals.
-- The resistance between the middle terminal and either one of the outer terminals varies from 0 Ω to the maximum resistance of the pot as the knob, screw, or slider is moved.
+- Sie haben drei Anschlüsse (oder Verbindungspunkte).
+- Sie verfügen über einen Knopf, eine Schraube oder einen Schieber, der bewegt werden kann, um den Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse zu variieren.
+- Der Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse variiert von 0 Ω bis zum maximalen Widerstand des Potentiometers, je nachdem wie der Knopf, die Schraube oder der Schieber bewegt wird.
 
-Here is the circuit symbol of potentiometer.
+Hier ist das Schaltsymbol des Potentiometers.
 
 .. image:: img/13_potentiometer_symbol_2.png
     :width: 200
     :align: center
 
-The functions of the potentiometer in the circuit are as follows:
+Die Funktionen des Potentiometers in der Schaltung sind wie folgt:
 
-#. Serving as a voltage divider
-    Potentiometer is a continuously adjustable resistor. When you adjust the shaft or sliding handle of the potentiometer, the movable contact will slide on the resistor. At this point, a voltage can be output depending on the voltage applied onto the potentiometer and the angle the movable arm has rotated to or the travel it has made.
+#. Als Spannungsteiler
+    Ein Potentiometer ist ein kontinuierlich verstellbarer Widerstand. Wenn Sie die Achse oder den Schieber des Potentiometers verstellen, wird der bewegliche Kontakt auf dem Widerstand gleiten. In diesem Fall kann eine Spannung abhängig von der an das Potentiometer angelegten Spannung und dem Winkel, um den sich der bewegliche Arm gedreht hat, oder der zurückgelegten Strecke ausgegeben werden.
 
-#. Serving as a rheostat
-    When the potentiometer is used as a rheostat, connect the middle pin and one of the other 2 pins in the circuit. Thus you can get a smoothly and continuously changed resistance value within the travel of the moving contact.
+#. Als veränderbarer Widerstand (Rheostat)
+    Wenn das Potentiometer als veränderbarer Widerstand verwendet wird, verbinden Sie den mittleren Anschluss und einen der anderen beiden Anschlüsse in der Schaltung. Auf diese Weise erhalten Sie einen sanft und kontinuierlich veränderbaren Widerstandswert innerhalb des Verstellbereichs des beweglichen Kontakts.
 
-#. Serving as a current controller
-    When the potentiometer acts as a current controller, the sliding contact terminal must be connected as one of the output terminals.
+#. Als Stromregler
+    Wenn das Potentiometer als Stromregler fungiert, muss der Schiebekontaktanschluss als einer der Ausgangsanschlüsse verbunden sein.
 
-Schematic diagram
+
+Schaltplan
 ---------------------------
 
 .. image:: img/13_potentiomete_module_schematic.png
@@ -72,7 +72,7 @@ Schematic diagram
 
    <br/>
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson13_potentiometer` (Arduino UNO)
 * :ref:`esp32_lesson13_potentiometer` (ESP32)

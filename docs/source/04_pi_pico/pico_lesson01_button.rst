@@ -1,30 +1,30 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson01_button:
 
-Lesson 01: Button Module
-==================================
+Lektion 01: Tastermodul
+====================================
 
-In this lesson, you will learn how to use Raspberry Pi Pico W to interact with the onboard LED using a button. Pressing the button will light up the LED, and releasing the button will turn it off. This project is ideal for beginners as it offers hands-on experience with input and output operations on Raspberry Pi Pico W using MicroPython.
+In dieser Lektion lernen Sie, wie Sie den Raspberry Pi Pico W verwenden, um mit der integrierten LED mithilfe eines Tasters zu interagieren. Durch Drücken des Tasters wird die LED eingeschaltet, und durch Loslassen des Tasters wird sie ausgeschaltet. Dieses Projekt eignet sich besonders für Anfänger, da es praktische Erfahrungen mit Ein- und Ausgabevorgängen am Raspberry Pi Pico W unter Verwendung von MicroPython bietet.
 
-Required Components
---------------------------
+Erforderliche Komponenten
+-----------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_01_Button_Module_bb.png
@@ -84,41 +84,41 @@ Code
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
 
-Code Analysis
+Code-Analyse
 ---------------------------
 
-#. Importing Modules
+#. Importieren von Modulen
 
-   The ``machine`` module is imported to interact with the GPIO pins, and the ``time`` module is for handling timing.
+   Das ``machine``-Modul wird importiert, um mit den GPIO-Pins zu interagieren, und das ``time``-Modul dient der Zeithandhabung.
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Setting up the Button
+#. Konfigurieren des Tasters
 
-   GPIO 2 is configured as an input pin. This will read the state of the push button connected to it.
+   GPIO 2 wird als Eingangspin konfiguriert. Dies liest den Zustand des daran angeschlossenen Drucktasters.
 
    .. code-block:: python
 
       button = Pin(2, Pin.IN)
 
-#. Setting up the LED
+#. Einrichten der LED
 
-   The onboard LED is set up as an output pin, enabling us to turn it on or off programmatically.
+   Die integrierte LED wird als Ausgangspin konfiguriert, um sie programmgesteuert ein- oder auszuschalten.
 
    .. code-block:: python
 
       led = Pin('LED', Pin.OUT)
 
-#. Main Loop
+#. Hauptschleife
 
-   - An infinite loop is used to continuously check the state of the button. 
-   - If the button is pressed (``button.value() == 0``), the LED is turned on. Otherwise, it's turned off.
-   - A short delay of 0.1 seconds is added to reduce CPU usage.
+   - Eine Endlosschleife wird verwendet, um kontinuierlich den Zustand des Tasters zu überprüfen.
+   - Wenn der Taster gedrückt wird (``button.value() == 0``), wird die LED eingeschaltet. Andernfalls wird sie ausgeschaltet.
+   - Eine kurze Verzögerung von 0,1 Sekunden wird hinzugefügt, um die CPU-Auslastung zu reduzieren.
    
-   The :ref:`button module<cpn_button>` used in this project has an internal pull-up resistor (see its :ref:`schematic diagram<cpn_button_sch>`), causing the button to be at a low level when pressed and remain at a high level when released.
+   Das in diesem Projekt verwendete :ref:`button module<cpn_button>` verfügt über einen internen Pull-up-Widerstand (siehe :ref:`schematic diagram<cpn_button_sch>`), der dazu führt, dass der Taster bei Betätigung auf einem niedrigen Pegel bleibt und bei Loslassen auf einem hohen Pegel bleibt.
 
    .. code-block:: python
 

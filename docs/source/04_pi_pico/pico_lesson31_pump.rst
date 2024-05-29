@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson31_pump:
-
-Lesson 31: Centrifugal Pump
+Lesson 31: Zentrifugalpumpe
 ==================================
 
-In this lesson, you will learn how to operate a centrifugal pump using the Raspberry Pi Pico W and an L9110 motor control board. We'll guide you through the process of configuring two PWM (Pulse Width Modulation) pins to control the motor. You'll set up the pump to run for 5 seconds and then turn off. This practical exercise offers a valuable opportunity to delve into motor control mechanisms and PWM signals, crucial in microcontroller programming. 
+In dieser Lektion lernen Sie, wie Sie eine Zentrifugalpumpe mit dem Raspberry Pi Pico W und einem L9110-Motorsteuerungsboard betreiben. Wir führen Sie durch den Prozess der Konfiguration von zwei PWM (Pulsweitenmodulation) Pins zur Steuerung des Motors. Sie richten die Pumpe ein, um für 5 Sekunden zu laufen und dann auszuschalten. Diese praktische Übung bietet eine wertvolle Gelegenheit, sich mit Motorsteuerungsmechanismen und PWM-Signalen vertraut zu machen, die in der Mikrocontroller-Programmierung entscheidend sind. 
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -56,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_31_Pump_pico_bb.png
@@ -85,13 +85,13 @@ Code
    pump_b.duty_u16(0)
 
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Importing Libraries
+#. Bibliotheken importieren
 
-   - The ``machine`` module is imported to interact with the GPIO pins and PWM functionalities of the Raspberry Pi Pico W.
-   - The ``time`` module is used for creating delays in the code.
+   - Das Modul ``machine`` wird importiert, um mit den GPIO-Pins und den PWM-Funktionen des Raspberry Pi Pico W zu interagieren.
+   - Das Modul ``time`` wird verwendet, um Verzögerungen im Code zu erzeugen.
 
    .. raw:: html
 
@@ -102,10 +102,10 @@ Code Analysis
       from machine import Pin, PWM
       import time
 
-#. Initializing PWM Objects
+#. Initialisierung von PWM-Objekten
 
-   - Two PWM objects, ``pump_a`` and ``pump_b``, are created. They correspond to GPIO pins 26 and 27, respectively.
-   - The frequency for PWM is set to 1000 Hz, a common frequency for motor control.
+   - Zwei PWM-Objekte, ``pump_a`` und ``pump_b``, werden erstellt. Sie entsprechen den GPIO-Pins 26 und 27.
+   - Die Frequenz für PWM wird auf 1000 Hz eingestellt, eine gängige Frequenz für die Motorsteuerung.
 
    .. raw:: html
 
@@ -116,10 +116,10 @@ Code Analysis
       pump_a = PWM(Pin(26), freq=1000)
       pump_b = PWM(Pin(27), freq=1000)
 
-#. Turning on the Pump
+#. Einschalten der Pumpe
 
-   - ``pump_a.duty_u16(0)`` sets the duty cycle of ``pump_a`` pin to 0, while ``pump_b.duty_u16(65535)`` sets the duty cycle of ``pump_b`` pin to 65535, running the motor at full speed. For more details, please refer to :ref:`the working principle of L9110 <cpn_l9110_principle>`.
-   - The pump runs for 5 seconds, controlled by ``time.sleep(5)``.
+   - ``pump_a.duty_u16(0)`` setzt die Tastverhältnis des Pins ``pump_a`` auf 0, während ``pump_b.duty_u16(65535)`` das Tastverhältnis des Pins ``pump_b`` auf 65535 setzt und den Motor mit voller Geschwindigkeit laufen lässt. Für weitere Details siehe :ref:`the working principle of L9110 <cpn_l9110_principle>`.
+   - Die Pumpe läuft für 5 Sekunden, gesteuert durch ``time.sleep(5)``.
 
    .. raw:: html
 
@@ -132,9 +132,9 @@ Code Analysis
       pump_b.duty_u16(65535)  # speed(0-65535)
       time.sleep(5)
 
-#. Turning off the Pump
+#. Ausschalten der Pumpe
 
-   Both ``pump_a`` and ``pump_b`` are set to a duty cycle of 0, stopping the motor.
+   Sowohl ``pump_a`` als auch ``pump_b`` werden auf ein Tastverhältnis von 0 gesetzt, wodurch der Motor gestoppt wird.
 
    .. code-block:: python
 

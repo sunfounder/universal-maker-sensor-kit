@@ -1,36 +1,35 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _esp32_trashcan:
 
-Lesson 35: Smart trashcan
-==================================
+Lektion 35: Intelligenter Mülleimer
+=======================================
 
-This project revolves around the concept of a smart trash can. 
-The primary aim is to have the trash can's lid automatically open 
-when an object approaches within a set distance (20cm in this case). 
-The functionality is achieved by using an ultrasonic distance sensor paired with a servo motor. 
-The distance between the object and the sensor is continually measured. 
-If the object is close enough, the servo motor is triggered to open the lid. 
+Dieses Projekt dreht sich um das Konzept eines intelligenten Mülleimers. 
+Das Hauptziel besteht darin, dass sich der Deckel des Mülleimers automatisch öffnet, 
+wenn sich ein Objekt auf eine festgelegte Entfernung (in diesem Fall 20 cm) nähert. 
+Diese Funktion wird durch die Verwendung eines Ultraschallsensors in Kombination mit einem Servomotor erreicht. 
+Der Abstand zwischen dem Objekt und dem Sensor wird kontinuierlich gemessen. 
+Wenn das Objekt nah genug ist, wird der Servomotor ausgelöst, um den Deckel zu öffnen.
 
+Benötigte Komponenten
+-------------------------
 
-Required Components
---------------------------
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -43,7 +42,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die unten stehenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -60,31 +59,28 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
-        
 
-Wiring
----------------------------
+Verkabelung
+--------------
 
 .. image:: img/Lesson_35_smart_trashcan_esp32_bb.png
     :width: 100%
 
-
 Code
----------------------------
+-------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a4b1e0f2-4e01-4adc-9cb9-f984ca76dbfa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    
-Code Analysis
----------------------------
+Code-Analyse
+---------------
 
-The project is based on real-time monitoring of the distance between an object and a trash can. An ultrasonic sensor continuously measures this distance, and if an object approaches within 20cm, the trash can interprets it as an intention to dispose of waste and automatically opens its lid. This automation adds smartness and convenience to a regular trash can.
+Das Projekt basiert auf der Echtzeitüberwachung des Abstands zwischen einem Objekt und einem Mülleimer. Ein Ultraschallsensor misst diesen Abstand kontinuierlich, und wenn sich ein Objekt auf 20 cm nähert, interpretiert der Mülleimer dies als Absicht, Abfall zu entsorgen, und öffnet automatisch den Deckel. Diese Automatisierung verleiht einem herkömmlichen Mülleimer Intelligenz und Komfort.
 
-#. Initial Setup and Variable Declaration
+#. Initiale Einrichtung und Variablendeklaration
 
-   Here, we're including the ``ESP32Servo`` library and defining the constants and variables we'll use. The pins for the servo and the ultrasonic sensor are declared. We also have an array ``averDist`` to hold the three distance measurements.
+   Hier binden wir die Bibliothek ``ESP32Servo`` ein und definieren die Konstanten und Variablen, die wir verwenden werden. Die Pins für das Servo und den Ultraschallsensor werden deklariert. Wir haben auch ein Array ``averDist``, um die drei Distanzmessungen zu speichern.
 
    .. code-block:: arduino
        
@@ -110,9 +106,9 @@ The project is based on real-time monitoring of the distance between an object a
         // Distance threshold in centimeters
         const int distanceThreshold = 20;
 
-#. ``setup()`` Function
+#. Funktion ``setup()``
 
-   The ``setup()`` function initializes serial communication, configures the ultrasonic sensor's pins, and sets the initial position of the servo to the closed position.
+   Die Funktion ``setup()`` initialisiert die serielle Kommunikation, konfiguriert die Pins des Ultraschallsensors und setzt die Ausgangsposition des Servos auf die geschlossene Position.
 
    .. code-block:: arduino
    
@@ -125,11 +121,9 @@ The project is based on real-time monitoring of the distance between an object a
         delay(100);
       }
 
-   
+#. Funktion ``loop()``
 
-#. ``loop()`` Function
-
-   The ``loop()`` function is responsible for continuously measuring the distance, computing its average, and then making a decision whether to open or close the trash can's lid based on this averaged distance.
+   Die Funktion ``loop()`` ist dafür verantwortlich, kontinuierlich den Abstand zu messen, den Durchschnitt zu berechnen und dann zu entscheiden, ob der Deckel des Mülleimers basierend auf diesem Durchschnittsabstand geöffnet oder geschlossen wird.
 
    .. code-block:: arduino
    
@@ -157,13 +151,12 @@ The project is based on real-time monitoring of the distance between an object a
                 servo.detach();  // Detach the servo to save power when not in use
             }
         }
-        
 
-#. Distance Reading Function
+#. Funktion zur Abstandsmessung
 
-   This function, ``readDistance()``, is what actually interacts with the ultrasonic sensor. It sends a pulse and waits for an echo. The time taken for the echo is then used to calculate the distance between the sensor and any object in front of it.
+   Diese Funktion, ``readDistance()``, interagiert tatsächlich mit dem Ultraschallsensor. Sie sendet einen Impuls und wartet auf ein Echo. Die Zeit, die für das Echo benötigt wird, wird dann verwendet, um den Abstand zwischen dem Sensor und einem Objekt davor zu berechnen.
 
-   You can refer to the :ref:`cpn_ultrasonic_principle` of the ultrasonic sensor.
+   Sie können sich auf das :ref:`cpn_ultrasonic_principle` des Ultraschallsensors beziehen.
 
    .. code-block:: arduino
    
@@ -180,9 +173,9 @@ The project is based on real-time monitoring of the distance between an object a
             return distance;
         }
 
-#. Servo Write Function
+#. Servo-Schreibfunktion
 
-    This function maps the angle value to pulse width and calls the ``writeMicroseconds(pulseWidth)`` function to deflect the servo to a specific angle.
+    Diese Funktion ordnet den Winkelwert der Pulsbreite zu und ruft die Funktion ``writeMicroseconds(pulseWidth)`` auf, um das Servo auf einen bestimmten Winkel zu bewegen.
 
     .. code-block:: arduino
         

@@ -1,33 +1,34 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _thonny_ide:
 
-Install Thonny IDE
+Thonny-IDE installieren
 =======================================
 
-Before you can start to program Pico with MicroPython, you need an integrated development environment (IDE), here we recommend Thonny. Thonny comes with Python 3.10 built in, just one simple installer is needed and you're ready to learn programming.
+Bevor Sie mit MicroPython auf dem Pico programmieren können, benötigen Sie eine integrierte Entwicklungsumgebung (IDE), hier empfehlen wir Thonny. Thonny wird mit Python 3.10 geliefert, es ist nur ein einfacher Installer erforderlich, und Sie sind bereit, das Programmieren zu erlernen.
 
 
 .. note::
 
-    If you already have Thonny installed, make sure it is version 3.3.3 or later, as the Raspberry Pi Pico interpreter is only compatible with these versions; if not, please update or install the appropriate version.
+    Wenn Sie Thonny bereits installiert haben, stellen Sie sicher, dass es Version 3.3.3 oder neuer ist, da der Raspberry Pi Pico Interpreter nur mit diesen Versionen kompatibel ist; falls nicht, aktualisieren Sie bitte oder installieren Sie die entsprechende Version.
 
-#. You can download it by visiting the |link_thonny| website. Once open the page, you will see a light gray box in the upper right corner, click on the link that applies to your operating system.
+#. Sie können es herunterladen, indem Sie die Website |link_thonny| besuchen. Sobald die Seite geöffnet ist, sehen Sie eine hellgraue Box oben rechts, klicken Sie auf den Link, der für Ihr Betriebssystem gilt.
 
    .. image:: img/download_thonny.png
 
-#. After downloading, run the installer to begin the installation process. Then click "Next" followed by "Install" to complete the Thonny installation.
+#. Nach dem Herunterladen führen Sie den Installer aus, um den Installationsprozess zu starten. Klicken Sie dann auf "Weiter", gefolgt von "Installieren", um die Installation von Thonny abzuschließen.
 
     .. image:: img/install_thonny6.png
+

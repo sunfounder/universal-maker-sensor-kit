@@ -1,30 +1,30 @@
-.. note::
+ 
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson24_vibration_sensor:
-
-Lesson 24: Vibration Sensor Module (SW-420)
+Lektion 24: Vibrationsensorsmodul (SW-420)
 ==============================================
 
-In this lesson, you will learn to connect and use a SW-420 Vibration Sensor Module with a Raspberry Pi Pico W. The course guides you through setting up the vibration sensor on GPIO 16 and writing a MicroPython script to monitor vibrations. You will write a loop to continually check the sensor's output, displaying a message when vibrations are detected. This practical exercise introduces you to working with external sensors on the Raspberry Pi Pico W, enhancing your understanding of hardware interfacing and programming in MicroPython.
+In dieser Lektion lernen Sie, wie Sie ein SW-420 Vibrationsensorsmodul mit einem Raspberry Pi Pico W verbinden und verwenden. Der Kurs führt Sie durch die Einrichtung des Vibrationsensors am GPIO 16 und das Schreiben eines MicroPython-Skripts zur Überwachung von Vibrationen. Sie werden eine Schleife schreiben, um kontinuierlich den Ausgang des Sensors zu überprüfen, und eine Meldung anzeigen, wenn Vibrationen erkannt werden. Diese praktische Übung führt Sie in die Arbeit mit externen Sensoren am Raspberry Pi Pico W ein und vertieft Ihr Verständnis für die Hardware-Interaktion und Programmierung in MicroPython.
 
-Required Components
+Benötigte Komponenten
 --------------------------
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat von den folgenden Links kaufen.
 
 .. list-table::
     :widths: 30 20
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+Verkabelung
 ---------------------------
 
 .. image:: img/Lesson_24_vibration_module_bb.png
@@ -85,37 +85,37 @@ Code
        time.sleep(0.1)
 
 
-Code Analysis
+Codeanalyse
 ---------------------------
 
-#. Importing Required Libraries
+#. Importieren der benötigten Bibliotheken
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-   This imports the ``machine`` module for hardware related operations and ``time`` module for handling time-related tasks.
+   Dies importiert das Modul ``machine``für hardwarebezogene Operationen und das Modul ``time`` für die Handhabung zeitbezogener Aufgaben.
 
-#. Initializing the Vibration Sensor
+#. Initialisierung des Vibrationsensors
 
    .. code-block:: python
  
       # Initialize GPIO 16 as an input pin for the vibration sensor
       vibration_sensor = Pin(16, Pin.IN)
  
-   Here, GPIO 16 is set up as an input pin. The ``Pin`` class from the ``machine`` module is used to interact with the GPIO pins. ``Pin.IN`` configures it as an input.
+   Hier wird GPIO 16 als Eingangspin eingerichtet. Die Klasse ``Pin`` aus dem Modul ``machine`` wird verwendet, um mit den GPIO-Pins zu interagieren. "Pin.IN" konfiguriert ihn als Eingang.
 
-#. Continuous Sensor Monitoring
+#. Kontinuierliche Überwachung des Sensors
 
    .. code-block:: python
 
       # Continuously check the vibration sensor's state
       while True:
 
-   A ``while True`` loop is used to create an endless loop for continuously checking the sensor's state.
+   Eine ``while True`` -Schleife wird verwendet, um eine endlose Schleife zu erstellen, die den Zustand des Sensors kontinuierlich überprüft.
 
-#. Checking Sensor State and Responding
+#. Überprüfung des Sensorzustands und Reaktion
 
    .. code-block:: python
 
@@ -126,13 +126,13 @@ Code Analysis
           else:
               print("...")
 
-   Within the loop, ``vibration_sensor.value()`` checks the current state of the sensor. If it returns ``1``, it indicates vibration is detected, and a message is printed. Otherwise, ellipses are printed.
+   Innerhalb der Schleife überprüft ``vibration_sensor.value()`` den aktuellen Zustand des Sensors. Wenn er ``1`` zurückgibt, deutet dies darauf hin, dass Vibrationen erkannt wurden, und es wird eine Nachricht ausgegeben. Andernfalls werden Auslassungspunkte gedruckt.
 
-#. Managing CPU Usage
+#. Verwaltung der CPU-Auslastung
 
    .. code-block:: python
 
           # Pause for 0.1 seconds to lower the demand on the CPU
           time.sleep(0.1)
 
-   ``time.sleep(0.1)`` pauses the loop for 0.1 seconds. This is important to prevent the script from consuming too much CPU time.
+   ``time.sleep(0.1)`` pausiert die Schleife für 0,1 Sekunden. Dies ist wichtig, um zu verhindern, dass das Skript zu viel CPU-Zeit verbraucht.

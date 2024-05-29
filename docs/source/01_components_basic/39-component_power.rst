@@ -1,41 +1,41 @@
-.. note::
+ .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _cpn_power_module:
 
-Power Supply Module
-===================
+Stromversorgungsmodul
+==============================
 
-The breadboard power module provides 3.3V and 5V with a series diode and reverse polarity protection. It accepts input from 6.5V to 12V and outputs 3.3V and +5V. This power supply module is essential for experimenters who need to test electronic circuits on breadboards or perforated/veroboards.
+Das Steckbrett-Stromversorgungsmodul liefert 3,3V und 5V mit einer Reihendiode und Verpolungsschutz. Es akzeptiert Eingänge von 6,5V bis 12V und gibt 3,3V und +5V aus. Dieses Stromversorgungsmodul ist unerlässlich für Experimentatoren, die elektronische Schaltungen auf Steckbrettern oder Lochrasterplatinen testen müssen.
 
 .. image:: img/39_power_module.png
     :width: 60%
     :align: center
 
-**Features**
+**Eigenschaften**
 
-#. Plug directly to MB102 Standard breadboard.
-#. Input voltage: 6.5-12 V (DC) or 5V USB power supply.
-#. Output voltage: 3.3V and 5V can switch over.
-#. Maximum output current: <700 mA.
-#. External Input voltage ON/OFF switch.
-#. Independent control of upper and Lower Bread Board Power Rails. Can switch over to 0V, 3.3V, 5V using jumpers on any rail.
-#. On-board two groups of 3.3V, 5V DC output plug pin, convenient external lead use.
-#. USB device connector onboard for power output to external device.
-#. Size: 5.3cm x 3.5cm.
+#. Direkter Anschluss an MB102 Standard-Steckbrett.
+#. Eingangsspannung: 6.5-12 V (DC) oder 5V USB-Stromversorgung.
+#. Ausgangsspannung: Umschaltbar zwischen 3.3V und 5V.
+#. Maximale Ausgangsstromstärke: <700 mA.
+#. Ein-/Ausschalter für externe Eingangsspannung.
+#. Unabhängige Steuerung der oberen und unteren Stromschienen des Steckbretts. Umschaltbar auf 0V, 3.3V, 5V mithilfe von Jumpern auf jeder Schiene.
+#. Zwei Gruppen von 3.3V und 5V DC-Ausgangsstiftleisten an Bord, bequem für die externe Nutzung.
+#. USB-Geräteanschluss an Bord für Stromausgang zu externen Geräten.
+#. Größe: 5.3cm x 3.5cm.
 
-Example
+Beispiel
 ---------------------------
 * :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
 * :ref:`esp32_soap_dispenser` (ESP32)
