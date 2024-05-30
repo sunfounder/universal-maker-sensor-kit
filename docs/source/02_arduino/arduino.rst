@@ -85,6 +85,7 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson46_bluetooth_lcd.rst 
     uno_lesson47_bluetooth_traffic_light.rst
     uno_lesson52_tilt_direction_indicator.rst
+    uno_lesson53_direction_indicator
 
 **IoT Config**
 
