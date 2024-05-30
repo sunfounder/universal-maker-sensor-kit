@@ -7,6 +7,9 @@
 
   Board: Arduino Uno R3 (or R4)
   Component: MPU6050 Module and OLED Module
+  Library: https://github.com/adafruit/Adafruit_SSD1306 (Adafruit SSD1306 by Adafruit)  
+           https://github.com/adafruit/Adafruit-GFX-Library (Adafruit GFX Library by Adafruit)
+           https://github.com/adafruit/Adafruit_MPU6050  (Adafruit MPU6050 by Adafruit)
 */
 
 // Import the necessary libraries for MPU6050 Module and OLED Module
