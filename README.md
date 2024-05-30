@@ -1,5 +1,5 @@
 # Universal Maker Sensor Kit
-This repository is for SunFounder Universal Maker Sensor Kit. You can buy it on [our website](https://www.sunfounder.com/), or search sunfounder in Amazon.
+This repository is for SunFounder Universal Maker Sensor Kit. You can [buy it on our website](https://www.sunfounder.com/products/sunfounder-universal-maker-sensor-kit) or search for "Sunfounder" on [Amazon](https://www.amazon.com/SunFounder-Sensor-Kit-Compatible-MicroPython/dp/B0D3GWJK82).
 
 Quick Links:
 
