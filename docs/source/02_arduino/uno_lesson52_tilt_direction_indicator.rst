@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_iot_intrusion_alert_system:
+.. _uno_fun_tilt_direction_indicator:
 
 Lesson 52: Tilt Direction Indicator
 ===========================================
