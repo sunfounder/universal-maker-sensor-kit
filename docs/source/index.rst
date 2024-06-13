@@ -17,14 +17,14 @@ Universal Maker Sensor Kit
 
 Vielen Dank, dass Sie sich für unser Universal Maker Sensor Kit entschieden haben.
 
-.. .. note::
-..     Dieses Dokument ist in den folgenden Sprachen verfügbar.
+ .. note::
+     Dieses Dokument ist in den folgenden Sprachen verfügbar.
 
-..         * |link_german_tutorials|
-..         * |link_jp_tutorials|
-..         * |link_en_tutorials |
+        * |link_german_tutorials|
+        * |link_jp_tutorials|
+        * |link_en_tutorials |
     
-..     Bitte klicken Sie auf die entsprechenden Links, um das Dokument in Ihrer bevorzugten Sprache zu lesen.
+     Bitte klicken Sie auf die entsprechenden Links, um das Dokument in Ihrer bevorzugten Sprache zu lesen.
 
 .. image:: img/universal-maker-sensor-kit-cover.png
     :width: 100%
