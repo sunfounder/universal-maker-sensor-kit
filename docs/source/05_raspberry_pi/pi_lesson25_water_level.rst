@@ -11,23 +11,22 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson25_water_level:
 
-Lesson 25: Water Level Sensor Module
+レッスン25: 水位センサーモジュール
 =========================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Raspberry Piにはアナログ入力機能がないため、アナログ信号を処理するためには :ref:`cpn_pcf8591` のようなモジュールが必要です。
 
-In this lesson, we'll learn how to read from a water level sensor using a Raspberry Pi. You'll find out how to connect a water level sensor module to the PCF8591 for analog-to-digital conversion and monitor its output in real-time with Python.
+このレッスンでは、水位センサーを使用してRaspberry Piから読み取る方法を学びます。水位センサーモジュールをPCF8591に接続してアナログからデジタルへの変換を行い、Pythonを使ってリアルタイムでその出力を監視する方法を説明します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +39,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -57,14 +56,14 @@ You can also buy them separately from the links below.
         - |link_pcf8591_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_25_Water_Level_Sensor_Module_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -82,30 +81,30 @@ Code
        print("Exit")  # Exit on CTRL+C
 
 
-Code Analysis
+コード解析
 ---------------------------
 
 
-1. **Import Libraries**:
+1. **ライブラリのインポート**:
 
-   This section imports necessary Python libraries. The ``PCF8591`` library is used for interacting with the PCF8591 module, and ``time`` is for implementing delays in the code.
+   このセクションでは、必要なPythonライブラリをインポートします。 ``PCF8591`` ライブラリはPCF8591モジュールとの対話に使用され、 ``time`` ライブラリはコード内の遅延を実装するために使用されます。
 
    .. code-block:: python
 
       import PCF8591 as ADC  # Import PCF8591 module
       import time  # Import time for delay
 
-2. **Initialize PCF8591 Module**:
+2. **PCF8591モジュールの初期化**:
 
-   Here, the PCF8591 module is initialized. The address ``0x48`` is the I²C address of the PCF8591 module. This is necessary for the Raspberry Pi to communicate with the module.
+   ここでは、PCF8591モジュールを初期化します。アドレス ``0x48`` はPCF8591モジュールのI²Cアドレスです。これにより、Raspberry Piがモジュールと通信できるようになります。
 
    .. code-block:: python
 
       ADC.setup(0x48)  # Initialize PCF8591 at address 0x48
 
-3. **Main Loop and Reading Data**:
+3. **メインループとデータ読み取り**:
 
-   The ``try`` block includes a continuous loop that consistently reads data from the water level sensor module. The ``ADC.read(1)`` function captures the analog input from the sensor connected to channel 1 (AIN1) of the PCF8591 module. Incorporating a ``time.sleep(0.2)`` creates a 0.2-second pause between each reading. This not only helps in reducing CPU usage on the Raspberry Pi by avoiding excessive data processing demands, but also prevents the terminal from being overrun with rapidly scrolling information, making it easier to monitor and analyze the output.
+   ``try``ブロックには、連続的に水位センサーモジュールからデータを読み取るループが含まれています。 ``ADC.read(1)`` 関数は、PCF8591モジュールのチャネル1（AIN1）に接続されたセンサーからアナログ入力をキャプチャします。 ``time.sleep(0.2)`` を取り入れることで、各読み取りの間に0.2秒の一時停止が作成されます。これにより、Raspberry PiのCPU使用率が低減され、過剰なデータ処理の負担を避けるとともに、端末が急速にスクロールする情報で溢れるのを防ぎ、出力の監視と分析が容易になります。
 
    .. code-block:: python
 
@@ -114,9 +113,9 @@ Code Analysis
               print(ADC.read(1))  # Read from Water level sensor module at AIN1
               time.sleep(0.2)  # Delay of 0.2 seconds
 
-4. **Handling Keyboard Interrupt**:
+4. **キーボード割り込みの処理**:
 
-   The ``except`` block is designed to catch a KeyboardInterrupt (like pressing CTRL+C). When this interrupt occurs, the script prints "exit" and stops running. This is a common way to gracefully exit a continuously running script in Python.
+   ``except``ブロックは、キーボード割り込み（CTRL+Cなど）をキャッチするように設計されています。この割り込みが発生すると、スクリプトは「exit」と表示して実行を停止します。これは、Pythonで連続実行するスクリプトを正常に終了する一般的な方法です。
 
    .. code-block:: python
 

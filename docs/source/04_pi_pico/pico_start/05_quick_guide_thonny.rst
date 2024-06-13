@@ -11,98 +11,96 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 Quick Guide on Thonny
 ==================================
 
 .. _open_run_code_py:
 
-Open and Run Code Directly
+コードを直接開いて実行する
 ---------------------------------------------
 
-In each project we provide, the specific code used is clearly identified. You can find the corresponding code for each project in the ``universal-maker-sensor-kit-main/pico/`` directory.
+各プロジェクトで使用される特定のコードは明確に識別されています。各プロジェクトに対応するコードは、 ``universal-maker-sensor-kit-main/pico/`` ディレクトリにあります。
 
-However, you must first download the package and upload the library, as described in :ref:`add_libraries_py`.
+ただし、最初にパッケージをダウンロードし、ライブラリをアップロードする必要があります。詳細は :ref:`add_libraries_py` を参照してください。
 
-#. Open code.
+#. コードを開く。
 
-   For example, ``Lesson_01_Button_Module\01_button_module.py``.
+   例えば、 ``Lesson_01_Button_Module\01_button_module.py`` 。
 
-   If you double click on it, a new window will open on the right. You can open more than one code at the same time.
+   ダブルクリックすると、右側に新しいウィンドウが開きます。同時に複数のコードを開くことができます。
 
    .. image:: img/05_open_code.png
 
-#. Select correct interpreter
+#. 正しいインタープリタを選択する
 
-   Use a micro USB cable to connect the Pico W to your computer and select the "MicroPython (Raspberry Pi Pico)" interpreter.
+   Micro USBケーブルを使用してPico Wをコンピュータに接続し、「MicroPython (Raspberry Pi Pico)」インタープリタを選択します。
 
    .. image:: img/05_sec_inter.png
 
-#. Run the code
+#. コードを実行する
 
-   To run the script, click the **Run current script** button or press F5.
+   スクリプトを実行するには、 **現在のスクリプトを実行** ボタンをクリックするか、F5キーを押します。
 
    .. image:: img/05_run_it.png
 
-   If the code contains any information that needs to be printed, it will appear in the Shell; otherwise, only the following information will appear.
+   コードに印刷する必要のある情報が含まれている場合は、Shellに表示されます。そうでない場合は、次の情報だけが表示されます。
 
    .. code-block:: shell
 
       >>> %Run -c $EDITOR_CONTENT
 
-   Click **View** -> **Shell** to open the Shell window if it doesn't appear on your Thonny.
+   ThonnyにShellウィンドウが表示されていない場合は、 **表示** -> **Shell** をクリックして開きます。
 
-   * ``%Run -c $EDITOR_CONTENT`` is a command from Thonny telling the MicroPython interpreter on your Pico W to run the contents of the script area - "EDITOR_CONTENT".
-   * If there is any message after that, it is usually the message that you tell MicroPython to print, or an error message for the code.
+   * ``%Run -c $EDITOR_CONTENT`` は、ThonnyからPico W上のMicroPythonインタープリタにスクリプトエリアの内容 - "EDITOR_CONTENT" - を実行するよう指示するコマンドです。
+   * その後にメッセージが表示される場合、それは通常、MicroPythonに印刷するよう指示したメッセージか、コードのエラーメッセージです。
 
    .. raw:: html
 
       <br/>
 
-#. Stop running
+#. 実行を停止する
 
    .. image:: img/05_stop_it.png
 
-   To stop the running code, click the **Stop/Restart backend** button. The **%RUN -c $EDITOR_CONTENT** command will disappear after stopping.
+   実行中のコードを停止するには、 **バックエンドを停止/再起動** ボタンをクリックします。停止後、 **%RUN -c $EDITOR_CONTENT** コマンドは消えます。
 
-#. Save or save as
+#. 保存または名前を付けて保存
 
-   You can save changes made to the open example by pressing **Ctrl+S** or clicking the **Save** button on Thonny.
+   開いている例に加えた変更は、 **Ctrl+S** を押すかThonnyの **保存** ボタンをクリックすることで保存できます。
 
-   The code can be saved as a separate file within the Raspberry Pi Pico W by clicking on **File** -> **Save As**.
+   **ファイル** -> **名前を付けて保存** をクリックすることで、Raspberry Pi Pico W内の別ファイルとしてコードを保存できます。
 
    .. image:: img/05_save_as.png
 
-   Select **Raspberry Pi Pico**.
+   **Raspberry Pi Pico** を選択します。
 
    .. image:: img/05_sec_pico.png
 
-   Then click **OK** after entering the file name and extension **.py**. On the Raspberry Pi Pico W drive, you will see your saved file.
+   ファイル名と拡張子 **.py** を入力した後、**OK** をクリックします。Raspberry Pi Pico Wドライブに保存されたファイルが表示されます。
 
    .. image:: img/05_sec_name.png
 
    .. note::
-       Regardless of what name you give your code, it's best to describe what type of code it is, and not give it a meaningless name like ``abc.py``.
-       When you save the code as ``main.py``, it will run automatically when the power is turned on.
+       コードに名前を付ける際には、そのコードの種類を説明する名前にするのが最良です。 ``abc.py`` のような意味のない名前を付けないようにしましょう。
+       コードを ``main.py`` として保存すると、電源を入れたときに自動的に実行されます。
 
 
-Create File and Run it
+ファイルの作成と実行
 ---------------------------
 
+コードはコードセクションに直接表示されています。Thonnyにコピーして、次の手順で実行できます。
 
-The code is shown directly in the code section. You can copy it to Thonny and run it as follows.
+#. 新しいファイルを作成する
 
-#. Create a new file
-
-   Open Thonny IDE, click **New** button to create a new blank file.
+   Thonny IDEを開き、 **New** ボタンをクリックして新しい空のファイルを作成します。
 
    .. image:: img/new_file.png
 
-#. Copy code
+#. コードをコピーする
 
-   Copy the code from the project to the Thonny IDE.
+   プロジェクトからThonny IDEにコードをコピーします。
 
-   For example:
+   例えば：
 
    .. code:: python
 
@@ -118,53 +116,52 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
    .. image:: img/05_2_copy_file.png
 
-#. Select correct interpreter
+#. 正しいインタープリタを選択する
 
-   Plug the Pico W into your computer with a micro USB cable and select the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+   Micro USBケーブルを使用してPico Wをコンピュータに接続し、右下の「MicroPython (Raspberry Pi Pico)」インタープリタを選択します。
 
    .. image:: img/05_2_sec_inter.png
 
-#. Run the code
+#. コードを実行する
 
-   You can click **Run Current Script** or simply press F5 to run it. 
+   **Run Current Script** をクリックするか、F5キーを押して実行します。
 
-   This code is designed to toggle the onboard LED of the Pico on and off every two seconds, creating a blinking effect. Once the code is executed, you will observe the corresponding blinking phenomenon.
+   このコードは、PicoのオンボードLEDを2秒ごとに点滅させるように設計されています。コードが実行されると、対応する点滅現象が観察されます。
 
    .. image:: img/05_2_run_it.png
 
-#. Stop running
+#. 実行を停止する
 
-   To stop the code, click the **Stop/Restart backend** button. 
-   
+   コードを停止するには、 **Stop/Restart backend** ボタンをクリックします。
+
    .. image:: img/05_2_stop_it.png
 
-#. Save the code
+#. コードを保存する
 
-   You can click the **Save** button to save the code.
+   **Save** ボタンをクリックしてコードを保存できます。
 
    .. image:: img/05_2_save_code.png
 
-   Next, Thonny will ask you where to save the code. You can choose to save the code directly to Pico.
+   次に、Thonnyはコードの保存場所を尋ねてきます。コードを直接Picoに保存することができます。
 
    .. image:: img/05_sec_pico.png
 
-   Then click OK after entering the file name and extension .py. 
+   ファイル名と拡張子 .py を入力した後、OKをクリックします。
 
    .. image:: img/05_2_save_code_2.png
 
    .. note::
-       Regardless of what name you give your code, it's best to describe what type of code it is, and not give it a meaningless name like ``abc.py``.
-       When you save the code as ``main.py``, it will run automatically when the power is turned on.
+       コードに名前を付ける際には、そのコードの種類を説明する名前にするのが最良です。 ``abc.py`` のような意味のない名前を付けないようにしましょう。
+       コードを ``main.py`` として保存すると、電源を入れたときに自動的に実行されます。
 
-#. Open file
+#. ファイルを開く
 
-   Here are two ways to open a saved code file.
+   保存したコードファイルを開く方法は2つあります。
 
-   * The first method is to click the open icon on the Thonny toolbar, just like when you save a program, you will be asked if you want to open it from **this computer** or **Raspberry Pi Pico**, for example, click **Raspberry Pi Pico** and you will see a list of all the programs you have saved on the Pico W.
+   * 最初の方法は、Thonnyのツールバーにある開くアイコンをクリックすることです。プログラムを保存するときと同様に、 **this computer** または **Raspberry Pi Pico** から開くかどうかを尋ねられます。例えば、 **Raspberry Pi Pico** をクリックすると、Pico Wに保存されているすべてのプログラムのリストが表示されます。
 
      .. image:: img/05_2_open_file.png
 
-   * The second is to open the file preview directly by clicking **View**-> **File**-> and then double-clicking on the corresponding ``.py`` file to open it.
+   * 2つ目の方法は、 **View**-> **File** をクリックしてファイルプレビューを直接開き、対応する ``.py`` ファイルをダブルクリックして開くことです。
 
      .. image:: img/05_2_file_view.png
-

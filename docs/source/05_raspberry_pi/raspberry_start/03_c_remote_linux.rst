@@ -12,29 +12,29 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-For Linux/Unix Users
+Linux/Unixユーザー向け
 ==========================
 
-#. Locate and open the **Terminal** on your Linux/Unix system.
+#. Linux/Unixシステムで**ターミナル**を見つけて開きます。
 
-#. Ensure your Raspberry Pi is connected to the same network. Verify this by typing ``ping <hostname>.local``. For example:
+#. Raspberry Piが同じネットワークに接続されていることを確認します。次のコマンドを入力して確認します： ``ping <hostname>.local``。例：
 
    .. code-block::
 
        ping raspberrypi.local
 
-   You should see the Raspberry Pi's IP address if it's connected to the network.
+   ネットワークに接続されている場合、Raspberry PiのIPアドレスが表示されます。
 
-   * If the terminal shows a message like ``Ping request could not find host pi.local. Please check the name and try again.``, double-check the hostname you've entered.
-   * If you're unable to retrieve the IP address, inspect your network or WiFi settings on the Raspberry Pi.
+   * ターミナルが ``Ping request could not find host pi.local. Please check the name and try again.``のようなメッセージを表示する場合、入力したホスト名を再確認してください。
+   * IPアドレスを取得できない場合は、Raspberry PiのネットワークまたはWiFi設定を確認してください。
 
-#. Initiate an SSH connection by typing ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``. For instance:
+#. ``ssh <username>@<hostname>.local`` または ``ssh <username>@<IP address>`` と入力してSSH接続を開始します。例：
 
    .. code-block::
 
        ssh pi@raspberrypi.local
 
-#. On your first login, you'll encounter a security message. Type ``yes`` to proceed.
+#. 初回ログイン時にセキュリティメッセージが表示されます。続行するには ``yes`` と入力します。
 
    .. code-block::
 
@@ -42,9 +42,10 @@ For Linux/Unix Users
        ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
        Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that for security reasons, the password won't be visible as you type.
+#. 以前に設定したパスワードを入力します。セキュリティ上の理由から、パスワードは入力中に表示されません。
 
    .. note::
-       It's normal for the password characters not to display in the terminal. Just ensure to enter the correct password.
+       ターミナルにパスワードの文字が表示されないのは正常です。正しいパスワードを入力してください。
 
-#. Once you've successfully logged in, your Raspberry Pi is now connected, and you're ready to proceed to the next step.
+#. 正常にログインできれば、Raspberry Piに接続され、次のステップに進む準備が整いました。
+

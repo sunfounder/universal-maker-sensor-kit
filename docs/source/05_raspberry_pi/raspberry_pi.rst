@@ -15,11 +15,11 @@
 For Raspberry Pi
 ==================================================
 
-Raspberry Pi users, please refer to the following tutorial. This tutorial is based on Raspberry Pi 5 as an example and has been verified on Raspberry Pi 4 and Raspberry Pi 5, but may also be applicable to other versions of Raspberry Pi (not guaranteed).
+Raspberry Piユーザーの皆様、以下のチュートリアルをご参照ください。このチュートリアルはRaspberry Pi 5を例に基づいており、Raspberry Pi 4およびRaspberry Pi 5で検証されていますが、他のバージョンのRaspberry Piにも適用できる可能性があります（保証はありません）。
 
-We will program the Raspberry Pi using the ``GPIO Zero`` library in Python, providing simple code examples for each component to help you get started quickly.
+このチュートリアルでは、Pythonの ``GPIO Zero`` ライブラリを使用してRaspberry Piをプログラムします。各コンポーネントの簡単なコード例を提供し、迅速に始められるように支援します。
 
-The ``GPIO Zero`` library is a remarkable tool in Python designed for interfacing with the GPIO (General Purpose Input/Output) pins on a Raspberry Pi. It offers a straightforward and intuitive API, making it exceptionally accessible for beginners in electronics and programming. The library simplifies tasks such as reading sensors, controlling motors, and activating LEDs, allowing for seamless interaction with a wide array of hardware components. Its user-friendly nature encourages experimentation and learning, making it a popular choice in educational environments and DIY projects.
+``GPIO Zero`` ライブラリは、Raspberry PiのGPIO（汎用入出力）ピンとインターフェースするために設計されたPythonの優れたツールです。シンプルで直感的なAPIを提供し、エレクトロニクスやプログラミングの初心者にとって非常に使いやすいです。このライブラリは、センサーの読み取り、モーターの制御、LEDの点灯などのタスクを簡素化し、幅広いハードウェアコンポーネントとのシームレスな相互作用を可能にします。その使いやすさから、教育環境やDIYプロジェクトで広く使用されています。
 
 
 .. toctree::

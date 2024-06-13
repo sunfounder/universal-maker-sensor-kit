@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson30_relay_module:
 
-Lesson 30: Relay Module
+レッスン30: リレーモジュール
 ==================================
 
-In this lesson, you will learn how to use a relay and an Arduino Uno to control a traffic light module. We'll demonstrate how to turn the red light of the traffic module on and off using the relay. This project is ideal for beginners in Arduino, providing hands-on experience in controlling external modules and gaining a fundamental understanding of relay operations.
+このレッスンでは、リレーとArduino Unoを使用して交通信号モジュールを制御する方法を学びます。リレーを使って交通信号モジュールの赤色ライトをオン・オフする方法を紹介します。このプロジェクトは、Arduino初心者に最適で、外部モジュールの制御とリレー操作の基本的な理解を得るための実践的な経験を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -55,27 +54,26 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_traffic`
         - |link_traffic_light_module_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_30_relay_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/304bb1cc-7b9e-4290-b63a-baec5ed90521/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up the relay pin:
+#. リレーピンの設定:
 
-   - The relay module is connected to pin 6 of the Arduino. This pin is defined as ``relayPin`` for ease of reference in the code.
+   - リレーモジュールはArduinoのピン6に接続されます。このピンはコード内で ``relayPin`` として定義されています。
 
    .. raw:: html
 
@@ -85,9 +83,9 @@ Code Analysis
     
       const int relayPin = 6;
 
-#. Configuring the relay pin as an output:
+#. リレーピンを出力として設定:
 
-   - In the ``setup()`` function, the relay pin is set as an OUTPUT using the ``pinMode()`` function. This means the Arduino will send signals (either HIGH or LOW) to this pin.
+   - ``setup()``関数内で、リレーピンは ``pinMode()`` 関数を使用してOUTPUTとして設定されます。これにより、ArduinoはこのピンにHIGHまたはLOWの信号を送ることができます。
 
    .. raw:: html
 
@@ -99,11 +97,11 @@ Code Analysis
         pinMode(relayPin, OUTPUT);
       }
 
-#. Toggling the relay ON and OFF:
+#. リレーのオン・オフ切り替え:
 
-   - In the ``loop()`` function, the relay is first set to the OFF state using ``digitalWrite(relayPin, LOW)``. It remains in this state for 3 seconds (``delay(3000)``).
-   - Then, the relay is set to the ON state using ``digitalWrite(relayPin, HIGH)``. Again, it remains in this state for 3 seconds.
-   - This cycle repeats indefinitely.
+   - ``loop()``関数内で、リレーは最初に ``digitalWrite(relayPin, LOW)`` を使用してオフの状態に設定されます。この状態で3秒間（ ``delay(3000)`` ）維持されます。
+   - 次に、リレーは ``digitalWrite(relayPin, HIGH)`` を使用してオンの状態に設定されます。この状態も3秒間維持されます。
+   - このサイクルは無限に繰り返されます。
 
    .. raw:: html
 

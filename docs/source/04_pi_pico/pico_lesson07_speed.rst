@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_lesson07_speed:
 
-Lesson 07: Infrared Speed Sensor Module
+レッスン 07: 赤外線速度センサーモジュール
 ==========================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to interface with an infrared speed sensor module. By connecting the sensor to GPIO 16, you will detect obstructions in real-time. The program monitors the sensor output, and when an obstruction is detected, it prints "Obstruction detected" to the console. If there's no obstruction, it prints "Unobstructed."
+このレッスンでは、Raspberry Pi Pico W を使用して赤外線速度センサーモジュールとインターフェースする方法を学びます。センサーを GPIO 16 に接続することで、リアルタイムで障害物を検出します。プログラムはセンサーの出力を監視し、障害物が検出されると「障害物検出」とコンソールに表示します。障害物がない場合は「障害なし」と表示します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべてのキットを購入するのは非常に便利です。リンクはこちらです。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_07_Speed_pico_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -81,31 +79,31 @@ Code
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Import Libraries**:
+#. **ライブラリのインポート**:
 
-   This code begins by importing necessary libraries. The ``machine`` library is used to interact with the GPIO pins, and the ``time`` library is for adding delays in the program.
+   このコードは、必要なライブラリをインポートすることから始まります。 ``machine``ライブラリはGPIOピンと対話するために使用され、 ``time``ライブラリはプログラムに遅延を追加するために使用されます。
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. **Sensor Configuration**:
+#. **センサーの設定**:
 
-   The infrared speed sensor is connected to GPIO 16. It's set as an input, meaning the Pi Pico W will read data from this pin.
+   赤外線速度センサーはGPIO 16に接続されています。これは入力として設定されており、Pi Pico Wがこのピンからデータを読み取ります。
 
    .. code-block:: python
 
       speed_sensor = Pin(16, Pin.IN)
 
-#. **Main Loop**:
+#. **メインループ**:
 
-   The ``while True:`` loop creates an infinite loop. Inside this loop, the program continuously checks the sensor's value.
+   ``while True:``ループは無限ループを作成します。このループの中で、プログラムはセンサーの値を継続的にチェックします。
    
-   If ``speed_sensor.value()`` is 1, it means the sensor detects an obstruction. If it is 0, then there is no obstruction.
+   ``speed_sensor.value()``が1である場合、それはセンサーが障害物を検出したことを意味します。0の場合、障害物はありません。
 
    .. code-block:: python
 
@@ -115,17 +113,17 @@ Code Analysis
           else:
               print("Unobstructed")
 
-#. **Delay to Reduce CPU Usage**:
+#. **CPU使用率を減らすための遅延**:
 
-   A short delay of 0.1 seconds is introduced in each iteration of the loop. This reduces the CPU usage by preventing the loop from running too rapidly.
+   ループの各反復で0.1秒の短い遅延が導入されています。これにより、ループが急速に実行されるのを防ぎ、CPUの使用率を低減します。
 
    .. code-block:: python
      
       time.sleep(0.1)
 
-#. **More**
+#. **補足情報**:
 
-   If an encoder is mounted on the motor, the rotational speed of the motor can be calculated by counting the number of times an obstruction passes the sensor within a specific period.
+   モーターにエンコーダーが取り付けられている場合、特定の期間内にセンサーを通過する障害物の数をカウントすることで、モーターの回転速度を計算できます。
 
    .. image:: img/Lesson_07_Encoder_Disk.png
       :align: center

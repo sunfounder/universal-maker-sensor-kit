@@ -14,8 +14,8 @@
 
 .. _cpn_oled:
 
-OLED Display Module (SSD1306)
-=================================
+OLEDディスプレイモジュール (SSD1306)
+======================================
 
 .. image:: img/27_OLED.png
     :width: 300
@@ -25,25 +25,26 @@ OLED Display Module (SSD1306)
     
     <br/>
 
-An OLED (Organic Light-Emitting Diode) display module is a device that can display text, graphics and images on a thin and flexible screen using organic materials that emit light when electric current is applied.
+OLED（有機発光ダイオード）ディスプレイモジュールは、有機材料に電流を通すことで発光し、薄くて柔軟な画面にテキスト、グラフィックス、画像を表示できるデバイスです。
 
-The SSD1306 I2C OLED display module operates by controlling an OLED (Organic Light-Emitting Diode) display using the powerful single-chip CMOS OLED driver controller, the SSD1306. This controller manages all RAM buffering and demands minimal effort from the connected microcontroller, such as an Arduino. OLED displays are renowned for their extremely light and potentially flexible nature, producing brighter and crisper images compared to traditional displays due to being almost paper-thin.
+SSD1306 I2C OLEDディスプレイモジュールは、強力なシングルチップCMOS OLEDドライバコントローラであるSSD1306を使用してOLEDディスプレイを制御します。このコントローラはすべてのRAMバッファリングを管理し、Arduinoなどの接続されたマイクロコントローラからの最小限の労力で動作します。OLEDディスプレイは、非常に軽量で柔軟性があるため、従来のディスプレイと比べて明るく鮮明な画像を生成できることで知られています。
 
-The main advantage of an OLED Display is that it emits its own light and doesn’t need another source of backlight. Due to this, OLED Displays often have better contrast, brightness and viewing angles when compared to LCD displays.
+OLEDディスプレイの主な利点は、自ら発光するため、バックライトを必要としないことです。これにより、OLEDディスプレイはLCDディスプレイと比較してコントラスト、明るさ、視野角が優れています。
 
-Another important feature of OLED Displays is deep black levels. Since each pixel emits its own light in an OLED Display, to produce black color, the individual pixel can be turned OFF.
+OLEDディスプレイのもう一つの重要な特徴は、深い黒レベルです。OLEDディスプレイでは各ピクセルが独自に発光するため、黒色を表示するには個々のピクセルをオフにするだけで済みます。
 
-Due to lower power consumption (only pixels which are lit up draw current), OLED displays are also popular in battery operated devices like Smart Watches, Health Trackers and other wearables.
+消費電力が低いこと（点灯しているピクセルだけが電流を消費する）ため、OLEDディスプレイはスマートウォッチ、ヘルストラッカー、その他のウェアラブルデバイスなどのバッテリー駆動のデバイスでも人気があります。
 
-Pinout
+
+ピン配置
 ---------------------------
-* **VIN**: This is the power pin. 
-* **GND**: Common ground for power and logic.
-* **SCL**: The serial clock pin for the I2C interface.
-* **SDA**: The serial data pin for the I2C interface.
+* **VIN**: 電源ピンです。
+* **GND**: 電源とロジックの共通グランド。
+* **SCL**: I2Cインターフェースのシリアルクロックピン。
+* **SDA**: I2Cインターフェースのシリアルデータピン。
 
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson27_oled` (Arduino UNO)
 * :ref:`esp32_lesson27_oled` (ESP32)

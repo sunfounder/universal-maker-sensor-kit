@@ -14,17 +14,17 @@
 
 .. _pi_lesson01_button:
 
-Lesson 01: Button Module
+レッスン 01: ボタンモジュール
 ==================================
 
-In this lesson, you will learn the basics of using a button with Raspberry Pi. We will show you how to connect a button to GPIO pin 17 and write a simple Python script to monitor its state. You'll learn how to program the Raspberry Pi to detect when the button is pressed and released, and respond with appropriate messages. This introductory project is an excellent way to get familiar with GPIO interaction and basic Python scripting, making it well-suited for beginners starting their journey in Raspberry Pi and hardware programming.
+このレッスンでは、Raspberry Piでボタンを使用する基本を学びます。ボタンをGPIOピン17に接続し、その状態を監視する簡単なPythonスクリプトを書く方法を紹介します。ボタンが押された時と離された時を検出し、適切なメッセージを表示するようにRaspberry Piをプログラムする方法を学びます。この入門プロジェクトは、GPIOの操作や基本的なPythonスクリプトに慣れるのに最適で、Raspberry Piとハードウェアプログラミングを始める初心者に適しています。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_01_Button_Module_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -79,28 +79,28 @@ Code
          print("Button is not pressed")  # Print when button is not pressed
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Library
+#. ライブラリのインポート
    
-   Import the ``Button`` class from the ``gpiozero`` library for button control.
+   ``gpiozero``ライブラリから ``Button`` クラスをインポートします。
 
    .. code-block:: python
 
       from gpiozero import Button
 
-#. Initialize the Button
+#. ボタンの初期化
    
-   Create a ``Button`` object connected to GPIO pin 17.
+   GPIOピン17に接続された ``Button`` オブジェクトを作成します。
 
    .. code-block:: python
 
       button = Button(17)
 
-#. Monitor Button State Continuously
+#. ボタンの状態を継続的に監視
    
-   Use a ``while True`` loop to continuously check the state of the button. If the button is pressed (``button.is_pressed``), it prints "Button is pressed". Otherwise, it prints "Button is not pressed".
+   ``while True``ループを使用して、ボタンの状態を継続的にチェックします。ボタンが押されている場合（ ``button.is_pressed`` ）、"Button is pressed"と表示します。それ以外の場合は、"Button is not pressed"と表示します。
 
    .. code-block:: python
 

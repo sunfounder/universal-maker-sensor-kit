@@ -14,22 +14,22 @@
 
 .. _esp32_potentiometer_scale_value:
 
-Lesson 41: Potentiometer scale value
+レッスン41: ポテンショメータのスケール値
 =============================================================
 
+このプロジェクトでは、ポテンショメータの値を読み取り、I2Cインターフェースを備えたLCD 1620に表示することに焦点を当てます。
+さらに、その値はシリアルモニタにも送信され、リアルタイムで監視できます。
+このプロジェクトの特徴的な側面は、ポテンショメータの値をLCDに可変長バーとして表示することです。
+バーの長さはポテンショメータの読み取り値に比例します。
 
-This project focuses on reading a potentiometer's value and displaying it on an LCD 1620 equipped with an I2C interface. 
-Additionally, the value is transmitted to the serial monitor for live monitoring. 
-A distinctive aspect of this project is the graphical representation of the potentiometer's value on the LCD, 
-which is depicted as a variable-length bar proportional to the potentiometer's reading.
 
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちらです:
 
 .. list-table::
     :widths: 20 20 20
@@ -42,7 +42,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -59,29 +59,26 @@ You can also buy them separately from the links below.
         - \-
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
-        
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_41_Potentiometer_scale_value_esp32_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/407cf491-e932-4334-a3f3-e04f7309c941/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-   
-Code Analysis
+   コード解析
 ---------------------------
 
-The core functionality of this project is to consistently read the potentiometer's value, map it to a scaled range (0-16), and display the result both numerically and graphically on the LCD. The implementation minimizes jitter by updating the display only when significant changes in the reading occur, thus maintaining a smooth visual experience.
+このプロジェクトの核心機能は、ポテンショメータの値を継続的に読み取り、その値をスケール範囲（0-16）にマップし、結果を数値およびグラフィカルにLCDに表示することです。実装では、読み取りの大きな変化が発生した場合にのみ表示を更新することで、表示の揺れを最小限に抑え、スムーズなビジュアル体験を維持します。
 
-1. **Library Inclusion and Initialization**:
+1. **ライブラリのインクルードと初期化**：
 
    .. code-block:: arduino
    
@@ -92,19 +89,18 @@ The core functionality of this project is to consistently read the potentiometer
       // Initialize LCD at I2C address 0x27 with 16 columns and 2 rows
       LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-   This segment incorporates the necessary libraries for I2C communication and LCD control. It then initializes an LCD instance with the I2C address of ``0x27``, specifying its dimensions as ``16 columns`` and ``2 rows``.
+   このセグメントでは、I2C通信とLCD制御に必要なライブラリを組み込みます。次に、I2Cアドレスが ``0x27`` で、 ``16列``と ``2行``の寸法を指定したLCDインスタンスを初期化します。
 
-2. **Variable Declaration**:
+2. **変数の宣言**：
 
    .. code-block:: arduino
-   
       // Variables to hold the potentiometer readings
       int lastRead = 0;     // Previous potentiometer value
       int currentRead = 0;  // Current potentiometer value
 
-   Variables ``lastRead`` and ``currentRead`` are used to keep track of the potentiometer's readings across different moments.
+   変数 ``lastRead`` と ``currentRead`` は、異なる時点でのポテンショメータの読み取り値を追跡するために使用されます。
 
-3. **setup() Function**:
+3. **setup()関数**：
 
    .. code-block:: arduino
    
@@ -114,9 +110,9 @@ The core functionality of this project is to consistently read the potentiometer
         Serial.begin(9600);  // Commences serial communication at 9600 baud
       }
 
-   This function prepares the LCD and starts serial communication, setting up the environment for the project's operation.
+   この関数は、LCDを準備し、シリアル通信を開始して、プロジェクトの動作環境を整えます。
 
-4. **Main Loop**:
+4. **メインループ**：
 
    .. code-block:: arduino
    
@@ -149,8 +145,7 @@ The core functionality of this project is to consistently read the potentiometer
          delay(200);
       }
 
-   * Reads the potentiometer and converts its value to a scale suitable for visual representation.
-   * Updates the LCD only when a meaningful change is detected, displaying the numeric value and a corresponding bar graph.
-   * Also sends the reading to the serial monitor for external observation.
-   * Ensures stability and responsiveness by introducing a brief delay between iterations.
-
+   * ポテンショメータを読み取り、その値を視覚的表現に適したスケールに変換します。
+   * 意味のある変化が検出されたときにのみLCDを更新し、数値と対応するバーグラフを表示します。
+   * 読み取り値をシリアルモニタにも送信して外部から観察できるようにします。
+   * 安定性と応答性を確保するために、繰り返し間に短い遅延を導入します。

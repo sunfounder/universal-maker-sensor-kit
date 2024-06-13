@@ -14,17 +14,17 @@
 
 .. _esp32_lesson21_vl53l0x:
 
-Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+Lesson 21: タイムオブフライトマイクロLIDAR距離センサー (VL53L0X)
 ====================================================================
 
-In this lesson, you will learn how to use the Adafruit VL53L0X Time of Flight Distance Sensor with an ESP32 Development Board. We'll cover initializing the sensor, reading distance measurements, and displaying them in millimeters on the serial monitor.
+このレッスンでは、Adafruit VL53L0Xタイムオブフライト距離センサーをESP32開発ボードで使用する方法を学びます。センサーの初期化、距離測定の読み取り、シリアルモニタにミリメートル単位で表示する方法を説明します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_21_VL53L0X_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/2f8bf48c-e404-4a3d-a9ac-eb1878f54017/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Including the necessary library and initializing the sensor object. We start by including the library for the VL53L0X sensor and creating an instance of the Adafruit_VL53L0X class.
+#. 必要なライブラリのインクルードとセンサーオブジェクトの初期化。まず、VL53L0Xセンサー用のライブラリをインクルードし、Adafruit_VL53L0Xクラスのインスタンスを作成します。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit_VL53L0X"** and install it.  
+      ライブラリをインストールするには、Arduino Library Managerを使用して **"Adafruit_VL53L0X"**を検索し、インストールしてください。  
 
    .. code-block:: arduino
 
       #include <Adafruit_VL53L0X.h>
       Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 
-#. Initialization in the ``setup()`` function. Here, we set up serial communication and initialize the distance sensor. If the sensor can't be initialized, the program halts.
+#. ``setup()`` 関数での初期化。ここでは、シリアル通信を設定し、距離センサーを初期化します。センサーの初期化に失敗した場合、プログラムは停止します。
 
    .. code-block:: arduino
 
@@ -99,7 +99,7 @@ Code Analysis
         Serial.println(F("VL53L0X API Simple Ranging example\n\n"));
       }
 
-#. Capturing and displaying the measurements in the ``loop()`` function. Continuously, the ESP32 Development Board captures a distance measurement using the ``rangingTest()`` method. If the measurement is valid, it's printed to the serial monitor.
+#. ``loop()`` 関数での測定値の取得と表示。ESP32開発ボードは、 ``rangingTest()`` メソッドを使用して継続的に距離測定を行います。測定が有効な場合、その結果をシリアルモニタに表示します。
 
    .. code-block:: arduino
        

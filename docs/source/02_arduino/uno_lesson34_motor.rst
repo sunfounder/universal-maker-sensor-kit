@@ -17,14 +17,14 @@
 Lesson 34: TT Motor
 ==================================
 
-In this lesson, you will learn how to control a motor using an Arduino Uno R3 or R4 and an L9110 motor control board. We'll cover defining motor pins and setting their speed through programming. This tutorial will walk you through the process of connecting and controlling a motor, demonstrating the basic principles of motor operation and control in Arduino projects. Geared towards beginners, this lesson provides a hands-on approach to understanding output operations on the Arduino platform.
+このレッスンでは、Arduino Uno R3またはR4とL9110モーター制御ボードを使用してモーターを制御する方法を学びます。モーターピンを定義し、プログラミングを通じてその速度を設定する方法を説明します。このチュートリアルでは、モーターの接続と制御のプロセスを段階的に説明し、Arduinoプロジェクトにおけるモーターの基本的な操作と制御の原理を示します。初心者向けに設計されており、Arduinoプラットフォームでの出力操作を理解するための実践的なアプローチを提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,24 +54,24 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_34_tt_motor_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/89894de5-2114-4056-a064-0c495c6de447/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first part of the code defines the motor control pins. These are connected to the L9110 motor control board.
+1. コードの最初の部分では、モーター制御ピンが定義されています。これらはL9110モーター制御ボードに接続されています。
 
    .. code-block:: arduino
    
@@ -79,7 +79,7 @@ Code Analysis
       const int motorB_1A = 9;
       const int motorB_2A = 10;
 
-2. The ``setup()`` function initializes the motor control pins as output using the ``pinMode()`` function. Then it uses ``analogWrite()`` to set the speed of the motor. The value passed to ``analogWrite()`` can range from 0 (off) to 255 (full speed). A ``delay()`` function is then used to pause the code for 5000 milliseconds (or 5 seconds), after which the motor speed is set to 0 (off).
+2. ``setup()``関数は、 ``pinMode()`` 関数を使用してモーター制御ピンを出力として初期化します。その後、 ``analogWrite()`` を使用してモーターの速度を設定します。 ``analogWrite()`` に渡される値は0（オフ）から255（全速）までの範囲です。その後、 ``delay()`` 関数を使用してコードを5000ミリ秒（5秒）一時停止し、その後モーター速度を0（オフ）に設定します。
 
    .. code-block:: arduino
    

@@ -12,20 +12,20 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-How to download and run the Code
+コードのダウンロードと実行方法
 =================================
 
-Downloading Code to Your Raspberry Pi
+コードをRaspberry Piにダウンロードする
 -------------------------------------
 
-Before downloading the code, please be aware that the example code has been tested **ONLY** on the latest version of **Raspberry Pi OS**. We offer two download methods:
+コードをダウンロードする前に、例示されたコードは最新バージョンの **Raspberry Pi OS**でのみテストされていることをご理解ください。ダウンロード方法は2つあります。
 
-If you're not accessing your Raspberry Pi with a direct screen connection, consider utilizing remote access options. For detailed guidance, refer to the instructions in :ref:`no_screen`.
+Raspberry Piに直接画面を接続せずにアクセスしている場合は、リモートアクセスオプションを利用することを検討してください。詳細なガイダンスについては、:ref:`no_screen`の指示を参照してください。
 
 
-**Method 1: Using Git Clone (Recommended)**
+**方法1: Git Cloneを使用（推奨）**
 
-1. Log into your Raspberry Pi, open Terminal, and navigate to the home directory (``~``). (You can also access the terminal using SSH.)
+1. Raspberry Piにログインし、ターミナルを開いてホームディレクトリ（ ``~`` ）に移動します。（SSHを使用してターミナルにアクセスすることもできます。）
 
    .. code-block:: bash
 
@@ -36,9 +36,9 @@ If you're not accessing your Raspberry Pi with a direct screen connection, consi
 
    .. note::
 
-      Use the ``cd`` command to change directories. Here, ``~/`` denotes the home directory.
+      ディレクトリを変更するには ``cd`` コマンドを使用します。ここでの ``~/`` はホームディレクトリを示します。
 
-2. Clone the GitHub repository.
+2. GitHubリポジトリをクローンします。
 
    .. code-block:: bash
 
@@ -51,62 +51,62 @@ If you're not accessing your Raspberry Pi with a direct screen connection, consi
 
       <br/><br/>
 
-3. Use File Manager to access the downloaded code files.
+3. ファイルマネージャーを使用して、ダウンロードしたコードファイルにアクセスします。
 
    .. image:: img/quick_guide_03.png
        :width: 100%
 
-**Method 2: Downloading Code Directly from GitHub**
+**方法2: GitHubから直接コードをダウンロード**
 
-1. Open a web browser and go to https://github.com/sunfounder/universal-maker-sensor-kit, then click on the download button.
+1. ウェブブラウザーを開き、https://github.com/sunfounder/universal-maker-sensor-kit にアクセスし、ダウンロードボタンをクリックします。
 
    .. image:: img/quick_guide_04.png
 
-2. Once downloaded, locate the code file in ``File Manager > Downloads`` and unzip it into the ``/home/pi`` directory.
+2. ダウンロードが完了したら、 ``File Manager > Downloads`` でコードファイルを見つけ、それを ``/home/pi`` ディレクトリに解凍します。
 
    .. image:: img/quick_guide_05.png
 
-3. Navigate to the ``/home/pi`` directory to access the extracted code files.
+3. ``/home/pi``ディレクトリに移動して、解凍されたコードファイルにアクセスします。
 
    .. image:: img/quick_guide_06.png
 
 
-Opening and Running Code
+コードの開き方と実行方法
 ------------------------
 
-You can find the code for each project in its respective code section. Alternatively, you can locate the code in the provided code directory. For instance, in ``universal-maker-sensor-kit/raspberry_pi/``, you will find Lesson 1's code named ``01_button_module.py``.
+各プロジェクトのコードは、それぞれのコードセクションで見つけることができます。また、提供されたコードディレクトリにもコードがあります。例えば、 ``universal-maker-sensor-kit/raspberry_pi/`` には、レッスン1のコードが ``01_button_module.py`` という名前であります。
 
-There are two ways to run Python code below：
+以下にPythonコードを実行する2つの方法を示します：
 
-**Method 1: Using Geany**
+**方法1: Geanyを使用**
 
-1. Open the code file by double-clicking on it.
+1. コードファイルをダブルクリックして開きます。
 
    .. image:: img/quick_guide_07.png
 
-   Alternatively, right-click the file and select **Open With...**.
+   あるいは、ファイルを右クリックして **Open With...** を選択します。
 
    .. image:: img/quick_guide_08.png
 
-   Choose **Programming > Geany Programmer's Editor** and click **OK**.
+   **Programming > Geany Programmer's Editor**を選び、 **OK** をクリックします。
 
    .. image:: img/quick_guide_09.png
 
-   The code will be displayed for editing or review.
+   コードが表示され、編集や確認ができます。
 
    .. image:: img/quick_guide_10.png
 
-2. Click **Run** in the window and the following contents will appear.
+2. ウィンドウで**Run**をクリックすると、次の内容が表示されます。
    
    .. image:: img/quick_guide_11.png
 
-3. To stop it from running, just click the X button in the top right corner to close it and you'll return to the code. Alternatively, you can terminate the program by typing ctrl+c.
+3. 実行を停止するには、右上のXボタンをクリックしてウィンドウを閉じるか、Ctrl+Cを入力してプログラムを終了します。
    
    .. image:: img/quick_guide_12.png
 
-**Method 2: Using Terminal**
+**方法2: ターミナルを使用**
 
-1. Log into your Raspberry Pi, open Terminal, and navigate to the home directory (``~``). (You can also access the terminal using SSH.)
+1. Raspberry Piにログインし、ターミナルを開いてホームディレクトリ（ ``~`` ）に移動します。（SSHを使用してターミナルにアクセスすることもできます。）
 
    .. code-block::
 
@@ -115,9 +115,9 @@ There are two ways to run Python code below：
    .. image:: img/quick_guide_13.png
 
    .. note::
-       Use the ``cd`` command to navigate to the experiment's code directory.
+       ``cd``コマンドを使用して実験のコードディレクトリに移動します。
 
-2. Execute the code:
+2. コードを実行します：
 
    .. code-block::
 
@@ -125,12 +125,11 @@ There are two ways to run Python code below：
 
    .. image:: img/quick_guide_14.png
 
-
-3. Upon running the code, the output will indicate whether the Button is pressed or not.
+3. コードを実行すると、ボタンが押されているかどうかが出力されます。
 
    .. image:: img/quick_guide_15.png
 
-4. To edit the ``Lesson_01_Button_Module/01_button_module.py`` file, stop the code by pressing ``Ctrl + C``. Then, open the file with:
+4. ``Lesson_01_Button_Module/01_button_module.py``ファイルを編集するには、 ``Ctrl + C`` を押してコードを停止します。その後、以下のコマンドでファイルを開きます：
 
    .. code-block::
 
@@ -138,11 +137,10 @@ There are two ways to run Python code below：
 
    .. image:: img/quick_guide_16.png
 
-
-5. ``nano`` is a text editor. This command opens ``nano Lesson_01_Button_Module/01_button_module.py`` for editing.
+5. ``nano``はテキストエディタです。このコマンドで ``nano Lesson_01_Button_Module/01_button_module.py``が開きます。
 
    .. image:: img/quick_guide_17.png
 
-6. To exit nano, press ``Ctrl+X``. If you've made changes, a prompt will ask whether to save them. Respond with ``Y`` (yes) to save or ``N`` (no) to discard. Press ``Enter`` to confirm and exit. Reopen the file with ``nano Lesson_01_Button_Module/nano 01_button_module.py`` to view your changes.
+6. nanoを終了するには、 ``Ctrl+X`` を押します。変更を加えた場合、保存するかどうかのプロンプトが表示されます。 ``Y`` （はい）を選んで保存し、 ``N`` （いいえ）を選んで破棄します。 ``Enter`` を押して確定し、終了します。変更を確認するには、 ``nano Lesson_01_Button_Module/nano 01_button_module.py``でファイルを再度開きます。
 
    .. image:: img/quick_guide_18.png

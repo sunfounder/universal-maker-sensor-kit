@@ -12,19 +12,19 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-.. _esp32_lesson07_speed:
+... _esp32_lesson07_speed:
 
-Lesson 07: Infrared Speed Sensor Module
+Lesson 07: 赤外線速度センサーモジュール
 ==========================================
 
-In this lesson, you'll learn how to use an ESP32 Development Board with a Speed Sensor Module to detect obstructions. We'll see how the sensor sends a high signal when there's an obstruction and a low signal when the path is clear. This project is ideal for those looking to grasp sensor integration and basic input/output operations in a practical setting using the ESP32 platform.
+このレッスンでは、ESP32開発ボードと速度センサーモジュールを使用して障害物を検出する方法を学びます。センサーが障害物を検出すると高信号を送り、道がクリアになると低信号を送る仕組みを見ていきます。このプロジェクトは、ESP32プラットフォームを使用して、センサーの統合と基本的な入出力操作を実践的に理解するための理想的なものです。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+部品一式を購入するのが便利です。こちらのリンクをご利用ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_speed_sensor_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_07_Speed_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/bdf494c6-c0b1-4dbd-89bc-ce671db41bbb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Define the sensor pin
+#. センサーピンの定義
 
-   The sensor pin is declared as a constant integer and is assigned pin number 25 of the ESP32.
+   センサーピンは定数整数として宣言され、ESP32のピン番号25に設定されます。
 
    .. code-block:: arduino
 
       const int sensorPin = 25;
 
-#. Setup function
+#. セットアップ関数
 
-   This function initializes the serial communication at 9600 baud rate and sets the sensorPin as an input.
+   この関数はシリアル通信を9600ボーレートで初期化し、sensorPinを入力として設定します。
 
    .. code-block:: arduino
     
@@ -90,11 +90,11 @@ Code Analysis
         pinMode(sensorPin, INPUT);
       }
 
-#. Loop function
+#. ループ関数
 
-   The loop function continuously checks the sensor pin's status.
-   If the sensor pin reads HIGH, it prints "Obstruction detected" to the Serial Monitor.
-   If the sensor pin is LOW, it prints "Unobstructed".
+   ループ関数はセンサーピンの状態を継続的にチェックします。
+   センサーピンがHIGHを読み取ると、シリアルモニタに「障害物検出」と表示します。
+   センサーピンがLOWの場合、「障害物なし」と表示します。
 
    .. code-block:: arduino
 
@@ -106,9 +106,9 @@ Code Analysis
         }
       }
 
-#. More
+#. さらに
 
-   If an encoder is mounted on the motor, the rotational speed of the motor can be calculated by counting the number of times an obstruction passes the sensor within a specific period.
+   モーターにエンコーダーが取り付けられている場合、特定の期間内にセンサーを通過する障害物の回数を数えることで、モーターの回転速度を計算することができます。
 
    .. image:: img/Lesson_07_Encoder_Disk.png
       :align: center

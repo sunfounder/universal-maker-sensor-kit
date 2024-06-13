@@ -11,7 +11,7 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _cpn_pico_w:
 
 Raspberry Pi Pico W
@@ -21,36 +21,35 @@ Raspberry Pi Pico W
     :width: 60%
     :align: center
 
-Raspberry Pi Pico W brings wireless connectivity to the best-selling Raspberry Pi Pico product line. Built around our RP2040 silicon platform, Pico products bring our signature values of high performance, low cost, and ease of use to the microcontroller space.
+Raspberry Pi Pico Wは、ベストセラーのRaspberry Pi Pico製品ラインにワイヤレス接続をもたらします。RP2040シリコンプラットフォームを基盤とし、高性能、低コスト、使いやすさをマイクロコントローラー分野に提供します。
 
-Raspberry Pi Pico W offers 2.4GHz 802.11 b/g/n wireless LAN support, with an on-board antenna, and modular compliance certification. It is able to operate in both station and access-point modes. Full access to network functionality is available to both C and MicroPython developers.
+Raspberry Pi Pico Wは、2.4GHz 802.11 b/g/nワイヤレスLANサポート、オンボードアンテナ、およびモジュールコンプライアンス認証を提供します。ステーションモードとアクセスポイントモードの両方で動作可能です。ネットワーク機能へのフルアクセスは、CおよびMicroPython開発者の両方に利用可能です。
 
-Raspberry Pi Pico W pairs RP2040 with 2MB of flash memory, and a power supply chip supporting input voltages from 1.8–5.5V. It provides 26 GPIO pins, three of which can function as analogue inputs, on 0.1”-pitch through-hole pads with castellated edges.
-Raspberry Pi Pico W is available as an individual unit, or in 480-unit reels for automated assembly.
+Raspberry Pi Pico Wは、RP2040と2MBのフラッシュメモリ、および1.8〜5.5Vの入力電圧をサポートする電源チップを組み合わせています。0.1インチピッチのスルーホールパッドとキャステレートエッジ上に26のGPIOピンを提供し、そのうち3つはアナログ入力として機能します。Raspberry Pi Pico Wは、個別のユニットとして、または自動組立用の480ユニットのリールとして入手可能です。
 
-Features
+特徴
 --------------
 
-* 21 mm x 51 mm form factor
-* RP2040 microcontroller chip designed by Raspberry Pi in the UK
-* Dual-core Arm Cortex-M0+ processor, flexible clock running up to 133 MHz
-* 264kB on-chip SRAM
-* 2MB on-board QSPI flash
-* 2.4GHz 802.11n wireless LAN
-* 26 multifunction GPIO pins, including 3 analogue inputs
-* 2 x UART, 2 x SPI controllers, 2 x I2C controllers, 16 x PWM channels
-* 1 x USB 1.1 controller and PHY, with host and device support
-* 8 x Programmable I/O (PIO) state machines for custom peripheral support
-* Supported input power 1.8-5.5V DC
-* Operating temperature -20°C to +70°C
-* Castellated module allows soldering direct to carrier boards
-* Drag-and-drop programming using mass storage over USB
-* Low-power sleep and dormant modes
-* Accurate on-chip clock
-* Temperature sensor
-* Accelerated integer and floating-point libraries on-chip
+* 21 mm x 51 mmのフォームファクター
+* 英国のRaspberry Piによって設計されたRP2040マイクロコントローラーチップ
+* デュアルコアArm Cortex-M0+プロセッサ、最大133 MHzで動作する柔軟なクロック
+* 264kBオンチップSRAM
+* 2MBオンボードQSPIフラッシュ
+* 2.4GHz 802.11nワイヤレスLAN
+* 3つのアナログ入力を含む26の多機能GPIOピン
+* 2 x UART、2 x SPIコントローラー、2 x I2Cコントローラー、16 x PWMチャンネル
+* ホストおよびデバイスサポートを備えた1 x USB 1.1コントローラーおよびPHY
+* カスタムペリフェラルサポート用の8 x プログラム可能I/O (PIO)ステートマシン
+* 1.8-5.5V DCの入力電力をサポート
+* 動作温度 -20°C〜+70°C
+* キャステレートモジュールにより、キャリアボードへの直接はんだ付けが可能
+* USB経由でのマスストレージを使用したドラッグアンドドロッププログラミング
+* 低消費電力のスリープおよびドーマントモード
+* 正確なオンチップクロック
+* 温度センサー
+* オンチップの整数および浮動小数点ライブラリのアクセラレーション
 
-Pico's Pins
+Picoのピン
 ------------
 
 .. image:: img/pico_pin.jpg
@@ -69,47 +68,47 @@ Pico's Pins
         - Description
         - Function
     *   - GP0-GP28
-        - General-purpose input/output pins
-        - Act as either input or output and have no fixed purpose of their own
+        - 汎用入力/出力ピン
+        - 入力または出力として機能し、特定の目的はありません
     *   - GND
-        - 0 volts ground
-        - Several GND pins around Pico W to make wiring easier.
+        - 0ボルトのグラウンド
+        - Pico Wの周りにいくつかのGNDピンがあり、配線を容易にします。
     *   - RUN
-        - Enables or disables your Pico
-        - Start and stop your Pico W from another microcontroller.
+        - Picoの有効/無効を切り替え
+        - 別のマイクロコントローラーからPico Wを起動および停止できます。
     *   - GPxx_ADCx
-        - General-purpose input/output or analog input
-        - Used as an analog input as well as a digital input or output – but not both at the same time.
+        - 汎用入力/出力またはアナログ入力
+        - アナログ入力として使用されるだけでなく、デジタル入力または出力としても機能しますが、同時に使用することはできません。
     *   - ADC_VREF
-        - Analog-to-digital converter (ADC) voltage reference
-        - A special input pin which sets a reference voltage for any analog inputs.
+        - アナログ-デジタルコンバータ(ADC)の電圧リファレンス
+        - アナログ入力の基準電圧を設定する特別な入力ピンです。
     *   - AGND
-        - Analog-to-digital converter (ADC) 0 volts ground
-        - A special ground connection for use with the ADC_VREF pin.
+        - アナログ-デジタルコンバータ(ADC)の0ボルトグラウンド
+        - ADC_VREFピンと一緒に使用する特別なグラウンド接続です。
     *   - 3V3(O)
-        - 3.3 volts power
-        - A source of 3.3V power, the same voltage your Pico W runs at internally, generated from the VSYS input.
+        - 3.3ボルトの電源
+        - Pico W内部で生成される3.3V電力の供給源で、VSYS入力から生成されます。
     *   - 3v3(E)
-        - Enables or disables the power
-        - Switch on or off the 3V3(O) power, can also switches your Pico W off.
+        - 電源の有効/無効を切り替え
+        - 3V3(O)電力をオンまたはオフにし、Pico Wをオフにすることもできます。
     *   - VSYS
-        - 2-5 volts power
-        - A pin directly connected to your Pico's internal power supply, which cannot be switched off without also switching Pico W off.
+        - 2-5ボルトの電源
+        - Pico内部の電源に直接接続されているピンで、Pico Wをオフにしない限りオフにすることはできません。
     *   - VBUS
-        - 5 volts power
-        - A source of 5 V power taken from your Pico's micro USB port, and used to power hardware which needs more than 3.3 V.
+        - 5ボルトの電源
+        - PicoのマイクロUSBポートから取り出された5V電力の供給源で、3.3V以上の電力を必要とするハードウェアに電力を供給します。
 
-The best place to find everything you need to get started with your Raspberry Pi Pico W is `here <https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html>`_.
+Raspberry Pi Pico Wの使用を始めるために必要なすべての情報は `こちら <https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html>`_ にあります。
 
-Or you can click on the links below: 
+または、以下のリンクをクリックしてください:
 
-* `Raspberry Pi Pico W product brief <https://datasheets.raspberrypi.com/picow/pico-w-product-brief.pdf>`_
-* `Raspberry Pi Pico W datasheet <https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf>`_
-* `Getting started with Raspberry Pi Pico: C/C++ development <https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf>`_
+* `Raspberry Pi Pico W製品概要 <https://datasheets.raspberrypi.com/picow/pico-w-product-brief.pdf>`_
+* `Raspberry Pi Pico Wデータシート <https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf>`_
+* `Raspberry Pi Picoの始め方: C/C++開発 <https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf>`_
 * `Raspberry Pi Pico C/C++ SDK <https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf>`_
-* `API-level Doxygen documentation for the Raspberry Pi Pico C/C++ SDK <https://raspberrypi.github.io/pico-sdk-doxygen/>`_
+* `Raspberry Pi Pico C/C++ SDKのAPIレベルドキュメント <https://raspberrypi.github.io/pico-sdk-doxygen/>`_
 * `Raspberry Pi Pico Python SDK <https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-python-sdk.pdf>`_
-* `Raspberry Pi RP2040 datasheet <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>`_
-* `Hardware design with RP2040 <https://datasheets.raspberrypi.org/rp2040/hardware-design-with-rp2040.pdf>`_
-* `Raspberry Pi Pico W design files <https://datasheets.raspberrypi.com/picow/RPi-PicoW-PUBLIC-20220607.zip>`_
-* `Raspberry Pi Pico W STEP file <https://datasheets.raspberrypi.com/picow/PicoW-step.zip>`_
+* `Raspberry Pi RP2040データシート <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>`_
+* `RP2040を使用したハードウェア設計 <https://datasheets.raspberrypi.org/rp2040/hardware-design-with-rp2040.pdf>`_
+* `Raspberry Pi Pico W設計ファイル <https://datasheets.raspberrypi.com/picow/RPi-PicoW-PUBLIC-20220607.zip>`_
+* `Raspberry Pi Pico W STEPファイル <https://datasheets.raspberrypi.com/picow/PicoW-step.zip>`_

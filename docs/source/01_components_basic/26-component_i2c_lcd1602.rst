@@ -25,15 +25,15 @@ I2C LCD 1602
 
    <br/>
 
-An I2C LCD1602 is a device that can display text and characters on a 16x2 (16 columns and 2 rows) liquid crystal display (LCD) using the I2C protocol. You can use an I2C LCD1602 to show information from your Arduino projects, such as sensor readings, messages, menus, etc. The I2C module has a built-in PCF8574 I2C chip that converts I2C serial data to parallel data for the LCD display.        
+I2C LCD1602は、I2Cプロトコルを使用して16x2（16列と2行）の液晶ディスプレイ（LCD）にテキストや文字を表示できるデバイスです。Arduinoプロジェクトからのセンサーの読み取り値、メッセージ、メニューなどの情報を表示するためにI2C LCD1602を使用できます。I2Cモジュールには、I2CシリアルデータをLCDディスプレイ用の並列データに変換するPCF8574 I2Cチップが内蔵されています。
 
 * |link_PCF8574_Datasheet|
 
-Principle
+原理
 ---------------------------
-An I2C LCD1602 consists of a normal LCD1602 and an I2C module that is attached to the back of the LCD. The I2C module is a chip that can expand the I/O ports of the Arduino using the I2C protocol. The I2C protocol is a serial communication protocol that uses two wires: SDA (serial data) and SCL (serial clock). The I2C protocol allows multiple devices to communicate with each other using only two wires and unique addresses.
+I2C LCD1602は、通常のLCD1602とその背面に取り付けられたI2Cモジュールで構成されています。I2Cモジュールは、I2Cプロトコルを使用してArduinoのI/Oポートを拡張できるチップです。I2Cプロトコルは、SDA（シリアルデータ）とSCL（シリアルクロック）の2本のワイヤーを使用するシリアル通信プロトコルです。I2Cプロトコルを使用すると、2本のワイヤーと固有のアドレスを使用して複数のデバイスが相互に通信できます。
 
-The I2C module converts the signals from the Arduino into commands for the LCD. The LCD has 16x2 cells that can display characters or symbols. Each cell consists of 5x8 dots that can be turned on or off by applying voltage. The LCD can display different characters or symbols by turning on or off different combinations of dots.
+I2Cモジュールは、Arduinoからの信号をLCD用のコマンドに変換します。LCDには文字や記号を表示できる16x2のセルがあります。各セルは、電圧をかけることでオンまたはオフにできる5x8のドットで構成されています。LCDは、異なるドットの組み合わせをオンまたはオフにすることで、異なる文字や記号を表示できます。
 
 .. image:: img/26_ic2_lcd_2.png
     :width: 500
@@ -43,11 +43,11 @@ The I2C module converts the signals from the Arduino into commands for the LCD. 
     
     <br/><br/> 
 
-**I2C Address**
+**I2Cアドレス**
 
-The default address is basically 0x27, in a few cases it may be 0x3F.
+デフォルトアドレスは基本的に0x27ですが、場合によっては0x3Fになることもあります。
 
-Taking the default address of 0x27 as an example, the device address can be modified by shorting the A0/A1/A2 pads; in the default state, A0/A1/A2 is 1, and if the pad is shorted, A0/A1/A2 is 0.
+デフォルトアドレス0x27を例にとると、A0/A1/A2パッドを短絡させることでデバイスアドレスを変更できます。デフォルト状態では、A0/A1/A2は1であり、パッドを短絡させるとA0/A1/A2は0になります。
 
 .. image:: img/26_i2c_address.jpg
     :width: 600
@@ -57,9 +57,9 @@ Taking the default address of 0x27 as an example, the device address can be modi
     
     <br/>
 
-**Backlight/Contrast**
+**バックライト/コントラスト**
 
-Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back is used to adjust the contrast (the ratio of brightness between the brightest white and the darkest black).
+ジャンパーキャップでバックライトを有効にできます。ジャンパーキャップを取り外すとバックライトが無効になります。背面の青いポテンショメーターはコントラスト（最も明るい白と最も暗い黒の間の明るさの比率）を調整するために使用されます。
 
 .. image:: img/26_back_lcd1602.jpg
     :width: 600
@@ -69,14 +69,14 @@ Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the ba
     
     <br/> 
 
-* **Shorting Cap**: Backlight can be enabled by this cap，unplugg this cap to disable the backlight.
-* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
+* **ジャンパーキャップ**: バックライトはこのキャップで有効にでき、キャップを取り外すとバックライトが無効になります。
+* **ポテンショメーター**: コントラスト（表示されるテキストの明瞭さ）を調整するために使用され、時計回りに回すと明瞭さが増し、反時計回りに回すと減少します。
 
 .. note::
-    After wiring the LCD, you should turn on the Arduino and adjust the contrast by rotating the potentiometer on the I2C module until the first row of rectangles appear to ensure proper LCD operation.
+    LCDの配線後、Arduinoの電源を入れ、I2Cモジュール上のポテンショメーターを回して最初の行の矩形が表示されるまでコントラストを調整してください。これでLCDが正常に動作することを確認できます。
 
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson26_lcd` (Arduino UNO)
 * :ref:`esp32_lesson26_lcd` (ESP32)

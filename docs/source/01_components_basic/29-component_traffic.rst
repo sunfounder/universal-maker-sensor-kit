@@ -14,7 +14,7 @@
 
 .. _cpn_traffic:
 
-Traffic Light Module
+信号機モジュール
 ==========================
 
 .. image:: img/29_traffic_light.png
@@ -25,13 +25,15 @@ Traffic Light Module
     
     <br/>
 
-The traffic light module is a small device that can display red, yellow and green lights, just like a real traffic light. It can be used to make a traffic light system model or to learn how to control LEDs with Arduino. It is featured with its small size, simple wiring, targeted, and custom installation. It can be connected PWM pin to control the brightness of the LED.
+信号機モジュールは、赤、黄、緑のライトを表示できる小型のデバイスで、実際の信号機のように動作します。交通信号システムモデルを作成したり、ArduinoでLEDを制御する方法を学んだりするのに使用できます。小型、簡単な配線、ターゲット、カスタムインストールが特徴です。PWMピンに接続してLEDの明るさを制御できます。
 
-Principle
+
+原理
 ---------------------------
-The traffic light module can be controlled in two primary ways. The more straightforward method involves using digital inputs from the Arduino, where a HIGH or LOW signal directly turns the corresponding LED on or off. Alternatively, PWM (pulse-width modulation) can be used, especially when varying the brightness of the LED is desired. PWM is a technique where the duty cycle of a digital signal is changed to modulate the brightness of the LED. A duty cycle represents the percentage of time that a signal remains on during a specific period. For instance, a 50% duty cycle implies the signal is active for half the duration and inactive for the remainder. Adjusting the duty cycle allows for the LED's brightness modulation.
+信号機モジュールは、主に2つの方法で制御できます。簡単な方法は、Arduinoからのデジタル入力を使用し、HIGHまたはLOW信号で対応するLEDを直接オンまたはオフにする方法です。もう一つの方法は、PWM（パルス幅変調）を使用する方法で、特にLEDの明るさを調整する場合に適しています。PWMは、デジタル信号のデューティサイクルを変化させることでLEDの明るさを調整する技術です。デューティサイクルは、特定の期間内で信号がオンのままの時間の割合を示します。例えば、50%のデューティサイクルは、信号が半分の時間オンで、残りの時間オフであることを意味します。デューティサイクルを調整することで、LEDの明るさを調節できます。
 
-Schematic diagram
+
+回路図
 ---------------------------
 
 .. image:: img/29_traffic_light_schematic.png
@@ -42,7 +44,7 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson29_traffic_light_module` (Arduino UNO)
 * :ref:`esp32_lesson29_traffic_light_module` (ESP32)

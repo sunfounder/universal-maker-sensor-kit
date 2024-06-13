@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson12_pir_motion:
 
-Lesson 12: PIR Motion Module (HC-SR501)
-============================================
+レッスン 12: PIRモーションモジュール (HC-SR501)
+===============================================
 
-In this lesson, you will learn how to set up and use a motion sensor with the Raspberry Pi. We'll walk you through connecting a digital motion sensor to GPIO pin 17. You'll write a Python script to continually check the sensor's state, printing a message when motion is detected and another when the area is clear. This hands-on tutorial is focused on practical skills in electronic circuitry and Python programming, making it perfect for beginners who want to explore real-world applications of the Raspberry Pi in monitoring and automation projects.
+このレッスンでは、Raspberry Piを使用してモーションセンサーを設定し、使用する方法を学びます。デジタルモーションセンサーをGPIOピン17に接続する手順を説明します。Pythonスクリプトを作成してセンサーの状態を継続的にチェックし、動きを検知したときとエリアがクリアなときにメッセージを表示します。この実践的なチュートリアルは、電子回路とPythonプログラミングの実践的なスキルに焦点を当てており、Raspberry Piを使用したモニタリングおよび自動化プロジェクトの現実世界の応用を探求したい初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべてのキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_12_pir_module_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -82,34 +81,33 @@ Code
        # Wait for 0.5 seconds before the next sensor check
        sleep(0.5)
 
-
-Code Analysis
+コード分析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts by importing the ``DigitalInputDevice`` class from the gpiozero library for interfacing with the motion sensor, and the ``sleep`` function from the time module to introduce delays.
+   スクリプトは、モーションセンサーとのインターフェースに使用するgpiozeroライブラリの ``DigitalInputDevice`` クラスと、遅延を導入するためのtimeモジュールから ``sleep`` 関数をインポートすることから始まります。
 
    .. code-block:: python
 
       from gpiozero import DigitalInputDevice
       from time import sleep
 
-#. Initializing the Motion Sensor
+#. モーションセンサーの初期化
    
-   A ``DigitalInputDevice`` object named ``motion_sensor`` is created, connected to GPIO pin 17. This assumes that the motion sensor is connected to this GPIO pin on the Raspberry Pi.
+   ``DigitalInputDevice`` オブジェクトに名前 ``motion_sensor`` を付け、GPIOピン17に接続します。これは、モーションセンサーがRaspberry PiのこのGPIOピンに接続されていることを前提としています。
 
    .. code-block:: python
 
       motion_sensor = DigitalInputDevice(17)
 
-#. Implementing Continuous Monitoring Loop
+#. 継続的な監視ループの実装
    
-   - The script employs a ``while True:`` loop for continuous monitoring.
-   - Inside the loop, an ``if`` statement checks the ``is_active`` property of the ``motion_sensor``. 
-   - If ``is_active`` is ``True``, it suggests that motion is detected, and "Somebody here!" is printed.
-   - If ``is_active`` is ``False``, suggesting no motion is detected, "Monitoring..." is printed.
-   - The ``sleep(0.5)`` function is used to pause the loop for 0.5 seconds between each sensor check, reducing the processing demand and controlling the frequency of sensor polling.
+   - スクリプトは ``while True:`` ループを使用して継続的に監視します。
+   - ループ内では、 ``if`` 文で``motion_sensor ``の`` is_active``プロパティをチェックします。
+   - ``is_active``が ``True`` の場合、動きが検出されたことを示し、「誰かがいます！」と表示されます。
+   - ``is_active``が ``False`` の場合、動きが検出されなかったことを示し、「監視中...」と表示されます。
+   - ``sleep(0.5)``関数は、各センサーのチェックの間にループを0.5秒間一時停止させ、処理負荷を軽減し、センサーのポーリング頻度を制御します。
 
    .. raw:: html
 

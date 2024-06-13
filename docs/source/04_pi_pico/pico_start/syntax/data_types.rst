@@ -12,26 +12,24 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Data Types
+データ型
 ===========
 
-Built-in Data Types
+組み込みデータ型
 ---------------------
-MicroPython has the following data types:
+MicroPythonには以下のデータ型があります：
 
-* Text Type: str
-* Numeric Types: int, float, complex
-* Sequence Types: list, tuple, range
-* Mapping Type: dict
-* Set Types: set, frozenset
-* Boolean Type: bool
-* Binary Types: bytes, bytearray, memoryview
+* テキスト型: str
+* 数値型: int, float, complex
+* シーケンス型: list, tuple, range
+* マッピング型: dict
+* セット型: set, frozenset
+* ブール型: bool
+* バイナリ型: bytes, bytearray, memoryview
 
-Getting the Data Type
+データ型の取得
 -----------------------------
-You can get the data type of any object by using the ``type()`` function:
-
-
+オブジェクトのデータ型を取得するには、 ``type()`` 関数を使用します：
 
 .. code-block:: python
 
@@ -41,11 +39,9 @@ You can get the data type of any object by using the ``type()`` function:
 >>> %Run -c $EDITOR_CONTENT
 <class 'float'>
 
-Setting the Data Type
+データ型の設定
 ----------------------
-MicroPython does not need to set the data type specifically, it has been determined when you assign a value to the variable.
-
-
+MicroPythonでは、データ型を特に設定する必要はなく、変数に値を割り当てると自動的に決定されます。
 
 .. code-block:: python
 
@@ -63,10 +59,10 @@ MicroPython does not need to set the data type specifically, it has been determi
 <class 'list'>
 >>> 
 
-Setting the Specific Data Type
+特定のデータ型の設定
 ----------------------------------
 
-If you want to specify the data type, you can use the following constructor functions:
+特定のデータ型を指定したい場合、次のコンストラクタ関数を使用できます：
 
 .. list-table:: 
     :widths: 25 10
@@ -103,9 +99,7 @@ If you want to specify the data type, you can use the following constructor func
     *   - x = memoryview(bytes(5))
         - memoryview
 
-You can print some of them to see the result.
-
-
+いくつかの結果を表示するために、いくつかの値を印刷してみます。
 
 .. code-block:: python
 
@@ -123,16 +117,13 @@ You can print some of them to see the result.
 True
 >>> 
 
-Type Conversion
+型変換
 ----------------
-You can convert from one type to another with the int(), float(), and complex() methods:
-Casting in python is therefore done using constructor functions:
+int(), float(), complex() メソッドを使用して、一つの型から別の型に変換できます。Pythonではコンストラクタ関数を使用してキャスティングを行います：
 
-* int() - constructs an integer number from an integer literal, a float literal (by removing all decimals), or a string literal (providing the string represents a whole number)
-* float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)
-* str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals
-
-
+* int() - 整数リテラル、浮動小数点リテラル（小数をすべて削除）、または文字列リテラル（文字列が整数を表す場合）から整数を構築します。
+* float() - 整数リテラル、浮動小数点リテラル、または文字列リテラル（文字列が浮動小数点または整数を表す場合）から浮動小数点数を構築します。
+* str() - 文字列、整数リテラル、浮動小数点リテラルなど、さまざまなデータ型から文字列を構築します。
 
 .. code-block:: python
 
@@ -144,4 +135,4 @@ Casting in python is therefore done using constructor functions:
     print(b)
     print(c)
 
-Note: You cannot convert complex numbers into another number type.
+注: 複素数を他の数値型に変換することはできません。

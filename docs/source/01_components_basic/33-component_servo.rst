@@ -14,33 +14,32 @@
 
 .. _cpn_servo:
 
-Servo Motor (SG90)
+サーボモーター (SG90)
 ==========================
 
 .. image:: img/33_servo.png
     :width: 300
     :align: center
 
-Servo motors are devices that can rotate to a specific angle or position. They can be used to move robotic arms, steering wheels, camera gimbals, etc. Servo motors have three wires: power, ground and signal. The power wire is usually red and should be connected to the 5V pin on the Arduino board. The ground wire is usually black or brown and should be connected to a ground pin on the board. The signal wire is usually yellow or orange and should be connected to a PWM pin on the board.
+サーボモーターは、特定の角度や位置に回転できるデバイスです。ロボットアームの移動、ステアリングホイールの操作、カメラジンバルの動作などに使用できます。サーボモーターには3本のワイヤーがあります：電源、グランド、信号。電源ワイヤーは通常赤色で、Arduinoボードの5Vピンに接続します。グランドワイヤーは通常黒色または茶色で、ボードのグランドピンに接続します。信号ワイヤーは通常黄色またはオレンジ色で、ボードのPWMピンに接続します。
 
-Pinout
+ピン配置
 ---------------------------
-* Brown wire: GND
-* Orange wire: Signal pin, connect to the PWM pin of main board.
-* Red wire: VCC
+* 茶色のワイヤー: GND
+* オレンジ色のワイヤー: 信号ピン、メインボードのPWMピンに接続します。
+* 赤色のワイヤー: VCC
 
-Principle
+原理
 ---------------------------
-A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board.
+サーボは一般的に次の部品で構成されています：ケース、シャフト、ギアシステム、ポテンショメーター、DCモーター、組み込みボード。
 
-It works like this: 
+動作の仕組みは以下の通りです：
 
-* The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. 
-* As a result, the motor drives the gear system and then motivates the shaft after deceleration. 
-* The shaft and potentiometer of the servo are connected together. 
-* When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. 
-* Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there.
-
+* マイクロコントローラーがPWM信号をサーボに送信し、サーボ内の組み込みボードが信号ピンを通じて信号を受信し、内部のモーターを制御します。
+* モーターがギアシステムを駆動し、減速後にシャフトを動かします。
+* サーボのシャフトとポテンショメーターは連結されています。
+* シャフトが回転すると、ポテンショメーターを駆動し、ポテンショメーターが電圧信号を組み込みボードに出力します。
+* 組み込みボードは現在の位置に基づいて回転方向と速度を決定し、正確に定義された位置で停止し、その位置を保持します。
 
 .. image:: img/33_servo_internal.png
     :width: 450
@@ -52,16 +51,16 @@ It works like this:
 
 .. _cpn_servo_pulse:
 
-**Work Pulse**
+**作業パルス**
 
-The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. 
+角度は制御ワイヤーに適用されるパルスの持続時間によって決定されます。これはパルス幅変調と呼ばれます。
 
-* The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the servo turns. 
-* For example, a 1.5ms pulse will make the servo turn to the 90 degree position (neutral position).
-* When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point.
-* When the pulse is wider than 1.5 ms the opposite occurs. 
-* The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo.
-*  Generally the pulse will be about 0.5 ms ~ 2.5 ms wide.
+* サーボは20msごとにパルスを期待しています。パルスの長さがサーボの回転範囲を決定します。
+* 例えば、1.5msのパルスはサーボを90度の位置（中立位置）に回転させます。
+* 1.5ms未満のパルスがサーボに送信されると、サーボは中立点から反時計回りにある程度回転してその出力シャフトを保持します。
+* パルスが1.5msより長い場合はその逆が起こります。
+* サーボが有効な位置に回転するように命令するパルスの最小幅と最大幅は各サーボの機能によります。
+* 一般的に、パルス幅は約0.5ms〜2.5msです。
 
 .. image:: img/33_servo_duty.png
     :width: 90%
@@ -71,9 +70,7 @@ The angle is determined by the duration of a pulse that is applied to the contro
     
     <br/>
 
-
-
-Example
+例
 ---------------------------
 * :ref:`uno_lesson33_servo` (Arduino UNO)
 * :ref:`esp32_lesson33_servo` (ESP32)

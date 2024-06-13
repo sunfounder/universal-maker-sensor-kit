@@ -11,22 +11,21 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson36_bluetooth:
 
-Lesson 36: Get Started with Bluetooth Module
+Lesson 36: Bluetoothモジュールの始め方
 ===================================================
 
-In this project, we demonstrate how to communicate with a Bluetooth module through Arduino. 
+このプロジェクトでは、Arduinoを介してBluetoothモジュールと通信する方法を紹介します。
 
-Firstly, we need to set up the circuit and use software serial communication. Connect the TX pin of the Bluetooth module to pin 3 of the Uno board, and connect the RX pin of the Bluetooth module to pin 4 of the Uno board.
+まず、回路を組み立て、ソフトウェアシリアル通信を使用します。BluetoothモジュールのTXピンをUnoボードのピン3に、RXピンをピン4に接続します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,43 +55,43 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-1. Build the Circuit
+1. 回路を組み立てる
 -----------------------------
 
 .. image:: img/Lesson_36_Bluetooth_uno_bb.png
     :width: 100%
 
-2. Upload the code
+2. コードをアップロードする
 -----------------------------
 
-The code establishes a software serial communication using Arduino’s SoftwareSerial library, allowing the Arduino to communicate with the JDY-31 Bluetooth module through its digital pins 3 and 4 (as Rx and Tx). It checks for data transfer between them, forwarding received messages from one to the other at a baud rate of 9600. **With this code, you can use the Arduino’s serial monitor to send AT commands to the JDY-31 Bluetooth module and receive its responses**.
+このコードは、ArduinoのSoftwareSerialライブラリを使用してソフトウェアシリアル通信を確立し、Arduinoがデジタルピン3と4（RxとTx）を介してJDY-31 Bluetoothモジュールと通信できるようにします。データ転送をチェックし、受信したメッセージを互いに転送し、9600のボーレートで通信します。 **このコードを使用することで、Arduinoのシリアルモニターを使用してJDY-31 BluetoothモジュールにATコマンドを送信し、その応答を受信することができます** 。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ae75dbe4-f50d-41a4-915a-b2a30b0f4ebe/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-3. Configuring the Bluetooth module
+3. Bluetoothモジュールの設定
 -----------------------------------------
 
-Click the magnifying glass icon (Serial Monitor) in the upper right corner and set the baud rate to ``9600``. Then, select ``both NL & CR`` from the drop-down option of the ``New Line`` dropdown box.
+右上の虫眼鏡アイコン（シリアルモニター）をクリックし、ボーレートを ``9600`` に設定します。次に、 ``New Line`` ドロップダウンボックスから ``both NL & CR`` を選択します。
 
 .. image:: img/Lesson_36_bluetooth_serial_1_shadow.png 
 
-The following are some examples of using AT commands to configure Bluetooth modules: Enter ``AT+NAME`` to obtain the name of the Bluetooth device. If you want to modify the Bluetooth name, please add a new name after ``AT+NAME``.
+以下に、Bluetoothモジュールの設定に使用するATコマンドの例を示します。 ``AT+NAME`` を入力してBluetoothデバイスの名前を取得します。Bluetoothの名前を変更する場合は、 ``AT+NAME`` の後に新しい名前を追加してください。
 
-* **Query the name of a Bluetooth device:** ``AT+NAME`` 
+* **Bluetoothデバイスの名前を取得する:** ``AT+NAME`` 
 
   .. image:: img/Lesson_36_bluetooth_serial_2.gif
 
-* **Set Bluetooth device name:** ``AT+NAME`` (following by the new name). ``+OK`` means the setting was successful. You can send ``AT+NAME`` again to verify.
+* **Bluetoothデバイスの名前を設定する:** ``AT+NAME``（新しい名前を続けて入力）。 ``+OK`` と表示されれば設定は成功です。再度 ``AT+NAME`` を送信して確認することができます。
 
-  .. image:: img/Lesson_36_bluetooth_serial_3.gif 
+.. image:: img/Lesson_36_bluetooth_serial_3.gif
 
 .. note::
-   To ensure consistency in the learning experience, it is recommended not to modify the default baud rate of the Bluetooth module and **keep it at its default value of 4 (i.e. 9600 baud rate)**. In relevant courses, we communicate with Bluetooth using a baud rate of 9600.
+学習体験の一貫性を保つため、Bluetoothモジュールのデフォルトのボーレートを変更せずにデフォルトの値である9600ボーレートのままにすることをお勧めします。関連するコースでは、9600ボーレートを使用してBluetoothと通信します。
 
-* **Set Bluetooth baudrate:** ``AT+BAUD`` (followed by the number indicating the baudrate). 
+* **Set Bluetooth baudrate:** ``AT+BAUD``（ボーレートを示す番号を続けて入力）。
 
     * 4 == 9600
     * 5 == 19200
@@ -101,79 +100,79 @@ The following are some examples of using AT commands to configure Bluetooth modu
     * 8 == 115200
     * 9 == 128000
 
-Please refer to the table below for more AT commands.
+以下の表に他のATコマンドを示します。
 
 +------------+-------------------------------------+-------------+
-|   Command  |               Function              |   Default   |
+|   コマンド |               機能                   |   デフォルト |
 +============+=====================================+=============+
-| AT+VERSION | Version Number                      | JDY-31-V1.2 |
+| AT+VERSION | バージョン番号                       | JDY-31-V1.2 |
 +------------+-------------------------------------+-------------+
-| AT+RESET   | Soft reset                          |             |
+| AT+RESET   | ソフトリセット                       |             |
 +------------+-------------------------------------+-------------+
-| AT+DISC    | Disconnect (valid when connected)   |             |
+| AT+DISC    | 切断（接続時有効）                   |             |
 +------------+-------------------------------------+-------------+
-| AT+LADDR   | Query the MAC address of the module |             |
+| AT+LADDR   | モジュールのMACアドレスを照会         |             |
 +------------+-------------------------------------+-------------+
-| AT+PIN     | Set or query connection password    | 1234        |
+| AT+PIN     | 接続パスワードの設定または照会        | 1234        |
 +------------+-------------------------------------+-------------+
-| AT+BAUD    | Set or query baud rate              | 9600        |
+| AT+BAUD    | ボーレートの設定または照会            | 9600        |
 +------------+-------------------------------------+-------------+
-| AT+NAME    | Set or query broadcast name         | JDY-31-SPP  |
+| AT+NAME    | ブロードキャスト名の設定または照会 | JDY-31-SPP  |
 +------------+-------------------------------------+-------------+
-| AT+DEFAULT | Factory reset                       |             |
+| AT+DEFAULT | 工場出荷時設定にリセット           |             |
 +------------+-------------------------------------+-------------+
-| AT+ENLOG   | Serial port status output           | 1           |
+| AT+ENLOG   | シリアルポートステータス出力       | 1           |
 +------------+-------------------------------------+-------------+
 
-4. Communicating through Bluetooth debugging tools on mobile phones
+4. 携帯電話のBluetoothデバッグツールを通じて通信する
 -----------------------------------------------------------------------------------
 
-We can use an app called "Serial Bluetooth Terminal" to send messages from the Bluetooth module to Arduino, simulating the process of Bluetooth interaction. The Bluetooth module will send received messages to Arduino through serial port, and similarly, Arduino can also send messages to bluetooth module through serial port.
+"Serial Bluetooth Terminal"というアプリを使用して、BluetoothモジュールからArduinoにメッセージを送信し、Bluetoothの相互作用をシミュレートできます。Bluetoothモジュールは受信したメッセージをシリアルポートを介してArduinoに送信し、同様にArduinoもシリアルポートを介してBluetoothモジュールにメッセージを送信できます。
 
-a. **Install Serial Bluetooth Terminal**
+a. **Serial Bluetooth Terminalのインストール**
 
-   Go to Google Play to download and install |link_serial_bluetooth_terminal| .
+   Google Playにアクセスして、|link_serial_bluetooth_terminal| をダウンロードしてインストールします。
 
 
-b. **Connect Bluetooth**
+b. **Bluetoothを接続する**
 
-   Initially, turn on **Bluetooth** on your smartphone.
+   まず、スマートフォンで **Bluetooth** をオンにします。
    
       .. image:: img/Lesson_36_app_1_shadow.png
          :width: 60%
          :align: center
    
-   Navigate to the **Bluetooth settings** on your smartphone and look for names like **JDY-31-SPP**.
+   スマートフォンの **Bluetooth設定** に移動し、 **JDY-31-SPP** のような名前を探します。
    
       .. image:: img/Lesson_36_app_2_shadow.png
          :width: 60%
          :align: center
    
-   After clicking it, agree to the **Pair** request in the pop-up window. If prompted for a pairing code, please enter "1234".
+   それをクリックした後、ポップアップウィンドウで **ペア** リクエストに同意します。ペアリングコードを求められた場合は、「1234」と入力してください。
    
       .. image:: img/Lesson_36_app_3_shadow.png
          :width: 60%
          :align: center
    
 
-c. **Communicate with Bluetooth module**
+c. **Bluetoothモジュールと通信する**
 
-   Open the Serial Bluetooth Terminal. Connect to "JDY-31-SPP".
+   Serial Bluetooth Terminalを開き、「JDY-31-SPP」に接続します。
 
    .. image:: img/Lesson_36_bluetooth_serial_4_shadow.png 
 
-   After successful connection, you can see the prompt of successful connection in the serial port monitor.
+   接続に成功すると、シリアルポートモニターに接続成功のプロンプトが表示されます。
 
    .. image:: img/Lesson_36_bluetooth_serial_5_shadow.png 
 
-   Input the message in the serial monitor and send it to the Bluetooth module.
+   シリアルモニターにメッセージを入力してBluetoothモジュールに送信します。
 
    .. image:: img/Lesson_36_bluetooth_serial_6_shadow.png 
 
-   After sending, you can see this message in the Serial Bluetooth Terminal APP. Similarly, data can be sent to Arduino via Bluetooth in **Serial Bluetooth Terminal** APP.
+   送信後、このメッセージがSerial Bluetooth Terminalアプリに表示されます。同様に、 **Serial Bluetooth Terminal** アプリでBluetooth経由でArduinoにデータを送信できます。
 
    .. image:: img/Lesson_36_bluetooth_serial_7_shadow.png
 
-   You can see this message from Bluetooth in the serial monitor.
+   シリアルモニターでBluetoothからのメッセージを確認できます。
 
    .. image:: img/Lesson_36_bluetooth_serial_8_shadow.png  

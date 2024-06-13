@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson09_joystick:
 
-Lesson 09: Joystick Module
-==================================
+レッスン 09: ジョイスティックモジュール
+=======================================
 
-In this lesson, you will learn how to read values from a joystick module using an Arduino Uno. We will explore connecting the joystick's X and Y axes to the Arduino and how to display their values on the serial monitor. Additionally, we'll cover the usage of a switch button on the joystick. This project is perfect for beginners, offering hands-on experience with analog and digital inputs on the Arduino platform.
+このレッスンでは、Arduino Unoを使ってジョイスティックモジュールから値を読み取る方法を学びます。ジョイスティックのX軸とY軸をArduinoに接続し、それらの値をシリアルモニタに表示する方法を探ります。さらに、ジョイスティックのスイッチボタンの使用方法についても説明します。このプロジェクトは、Arduinoプラットフォームでのアナログ入力とデジタル入力の実践的な経験を提供する初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらのリンクからどうぞ:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,34 +51,34 @@ You can also buy them separately from the links below.
         - |link_joystick_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_09_joystick_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/82313b82-4ac8-407c-9b65-3e7d548e6520/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Pin Definitions:
-   
+#. ピンの定義:
+
    .. code-block:: arduino
    
       const int xPin = A0;  //the VRX attach to
       const int yPin = A1;  //the VRY attach to
       const int swPin = 8;  //the SW attach to
 
-   Constants for the joystick pins are defined. ``xPin`` and ``yPin`` are analog pins for the joystick's X and Y axes. ``swPin`` is a digital pin for the joystick's switch.
+   ジョイスティックピン用の定数を定義します。 ``xPin`` と ``yPin`` はジョイスティックのX軸とY軸用のアナログピン、 ``swPin`` はジョイスティックのスイッチ用のデジタルピンです。
 
-#. Setup Function:
+#. セットアップ関数:
 
    .. code-block:: arduino
    
@@ -88,9 +87,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-   Initializes ``swPin`` as an input with a pull-up resistor, essential for the switch's functionality. Starts serial communication at 9600 baud.
+   ``swPin``をプルアップ抵抗付きの入力として初期化し、スイッチの機能を確保します。シリアル通信を9600ボーで開始します。
 
-#. Main Loop:
+#. メインループ:
 
    .. code-block:: arduino
    
@@ -104,4 +103,4 @@ Code Analysis
         delay(50);
       }
 
-   Continuously reads and prints the values from the joystick's axes and switch to the Serial Monitor, with a delay of 50 ms between readings.
+   ジョイスティックの軸とスイッチからの値を継続的に読み取り、シリアルモニタに出力します。読み取り間に50msの遅延を追加します。

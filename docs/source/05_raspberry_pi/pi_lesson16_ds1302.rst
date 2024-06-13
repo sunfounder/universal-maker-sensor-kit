@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pi_lesson16_ds1306:
 
-Lesson 16: Real Time Clock Module (DS1302)
+Lesson 16: リアルタイムクロックモジュール (DS1302)
 ==================================================
 
 .. todo
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべてのキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,20 +37,20 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 * Raspberry Pi 5
 * :ref:`cpn_rtc_ds1302`
 * :ref:`cpn_breadboard`
 
-Wiring
+配線
 ---------------------------
 
 .. .. image:: img/Lesson_16_DS1302_module_bb.png
 ..     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -58,7 +58,7 @@ Code
    # todo
 
 
-Code Analysis
+コード解析
 ---------------------------
 
 .. todo

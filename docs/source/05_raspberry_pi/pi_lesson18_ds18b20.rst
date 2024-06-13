@@ -11,33 +11,32 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson18_ds18b20:
 
 Lesson 18: Temperature Sensor Module (DS18B20)
 ================================================
 
-In this lesson, you will learn how to use a Raspberry Pi to read temperature data from a DS18B20 temperature sensor. You will understand how to locate the sensor's device file, read and parse its raw data, and convert this data into Celsius and Fahrenheit readings. 
+このレッスンでは、Raspberry Piを使用してDS18B20温度センサーから温度データを読み取る方法を学びます。センサーのデバイスファイルを見つけ、その生データを読み取り、解析し、このデータを摂氏および華氏の温度に変換する方法を理解します。
 
 Required Components
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -65,7 +64,7 @@ Code
 ---------------------------
 
 .. note::
-   The DS18B20 module communicates with the Raspberry Pi using the onewire protocol. Before running the code, you need to enable the onewire function of the Raspberry Pi. You can refer to this tutorial: :ref:`pi_enable_1wire`. 
+   DS18B20モジュールはonewireプロトコルを使用してRaspberry Piと通信します。コードを実行する前に、Raspberry Piのonewire機能を有効にする必要があります。このチュートリアルを参照してください：:ref:`pi_enable_1wire`.
 
 .. code-block:: python
 
@@ -122,18 +121,18 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Necessary Libraries
+#. 必要なライブラリのインポート
 
-   The ``glob`` library is used to search for the temperature sensor's device folder. The ``time`` library is used for implementing delays in the program.
+   ``glob`` ライブラリは温度センサーのデバイスフォルダを検索するために使用されます。 ``time`` ライブラリはプログラム内で遅延を実装するために使用されます。
 
    .. code-block:: python
 
       import glob
       import time
 
-#. Locating the Temperature Sensor Device File
+#. 温度センサーデバイスファイルの位置特定
 
-   The code searches for the directory of the DS18B20 sensor by looking for a folder name starting with "28". The device file ``w1_slave`` contains the temperature data.
+   コードは "28" で始まるフォルダ名を探すことでDS18B20センサーのディレクトリを検索します。デバイスファイル ``w1_slave`` には温度データが含まれています。
 
    .. code-block:: python
 
@@ -141,9 +140,9 @@ Code Analysis
       device_folder = glob.glob(base_dir + "28*")[0]
       device_file = device_folder + "/w1_slave"
 
-#. Reading Raw Temperature Data
+#. 生の温度データの読み取り
 
-   This function opens the device file and reads its content. It returns the raw temperature data as a list of strings.
+   この関数はデバイスファイルを開き、その内容を読み取ります。生の温度データを文字列のリストとして返します。
 
    .. code-block:: python
 
@@ -153,9 +152,9 @@ Code Analysis
           f.close()
           return lines
 
-#. Parsing and Converting Temperature Data
+#. 温度データの解析と変換
 
-   The ``read_temp`` function calls ``read_temp_raw`` to get the raw data. It waits for a valid temperature reading and then extracts, parses, and converts the temperature to Celsius and Fahrenheit.
+   ``read_temp`` 関数は ``read_temp_raw`` を呼び出して生データを取得します。有効な温度読み取りを待ってから、温度を抽出、解析し、摂氏と華氏に変換します。
 
    .. code-block:: python
 
@@ -171,9 +170,9 @@ Code Analysis
               temp_f = temp_c * 9.0 / 5.0 + 32.0
               return temp_c, temp_f
 
-#. Main Program Loop and Graceful Exit
+#. メインプログラムループと正常終了
 
-   The ``try`` block contains an infinite loop to continuously read and display the temperature. The ``except`` block catches a KeyboardInterrupt to exit the program gracefully.
+   ``try`` ブロックは温度を継続的に読み取り表示する無限ループを含みます。 ``except`` ブロックは KeyboardInterrupt をキャッチしてプログラムを正常に終了します。
 
    .. code-block:: python
 

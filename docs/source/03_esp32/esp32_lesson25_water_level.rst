@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson25_water_level:
 
-Lesson 25: Water Level Sensor Module
+Lesson 25: 水位センサーモジュール
 =========================================
 
-In this lesson, you'll learn how to use an ESP32 Development Board for reading a water level sensor. We'll cover continuously monitoring the sensor's analog value and displaying it on the serial monitor. This project provides a great opportunity to grasp sensor integration and analog data reading with Arduino, making it ideal for beginners in electronics and microcontroller programming.
+このレッスンでは、ESP32開発ボードを使用して水位センサーを読み取る方法を学びます。センサーのアナログ値を継続的に監視し、シリアルモニタに表示する方法を説明します。このプロジェクトは、センサーの統合とアナログデータの読み取りを理解するための絶好の機会を提供し、エレクトロニクスとマイクロコントローラープログラミングの初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_25_Water_Level_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f312bfd8-5583-4d54-a116-35e32d957ef6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Initializing the Sensor Pin**:
+#. **センサーピンの初期化**:
 
-   Before using the water level sensor, it's pin number is defined using a constant variable. This makes the code more readable and easier to modify.
+   水位センサーを使用する前に、定数変数を使用してピン番号を定義します。これにより、コードが読みやすくなり、変更も容易になります。
 
    .. code-block:: arduino
 
       const int sensorPin = 25;
 
-#. **Setting Up Serial Communication**:
+#. **シリアル通信の設定**:
 
-   In the ``setup()`` function, the baud rate for serial communication is set. This is crucial for the Arduino to communicate with the computer's serial monitor.
+   ``setup()`` 関数では、シリアル通信のボーレートを設定します。これは、Arduinoがコンピュータのシリアルモニタと通信するために重要です。
 
    .. code-block:: arduino
 
@@ -89,9 +89,9 @@ Code Analysis
         Serial.begin(9600);  // Start serial communication at 9600 baud rate
       }
 
-#. **Reading Sensor Data and Outputting to Serial Monitor**:
+#. **センサーデータの読み取りとシリアルモニタへの出力**:
 
-   The ``loop()`` function continuously reads the sensor's analog value using ``analogRead()`` and outputs it to the serial monitor using ``Serial.println()``. The ``delay(100)`` function makes the Arduino wait for 100 milliseconds before repeating the loop, controlling the rate of data reading and transmission.
+   ``loop()`` 関数では、 ``analogRead()`` を使用してセンサーのアナログ値を継続的に読み取り、 ``Serial.println()`` を使用してシリアルモニタに出力します。 ``delay(100)`` 関数は、ループを繰り返す前にArduinoを100ミリ秒待機させ、データの読み取りと送信の速度を制御します。
 
    .. code-block:: arduino
     

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson33_servo:
 
-Lesson 33: Servo Motor (SG90)
+レッスン 33: サーボモーター (SG90)
 ==================================
 
-In this lesson, you will learn how to control a servo motor (SG90) using the Raspberry Pi Pico W. You will be introduced to the concepts of Pulse Width Modulation (PWM) for controlling the angle of the servo motor. The lesson includes writing a MicroPython script to make the servo sweep smoothly through its entire range of motion, from 0 to 180 degrees and back. 
+このレッスンでは、Raspberry Pi Pico Wを使用してサーボモーター（SG90）を制御する方法を学びます。サーボモーターの角度を制御するためのパルス幅変調（PWM）の概念を紹介します。このレッスンには、サーボを0度から180度までスムーズに動かし、再び戻すためのMicroPythonスクリプトの作成が含まれます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_33_Servo_pico_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,41 +79,41 @@ Code
        This function is useful for converting servo angle to pulse width.
        """
        return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
-   
+
    
    def servo_write(pin, angle):
-       """
+    """
        Moves the servo to a specific angle.
        The angle is converted to a suitable duty cycle for the PWM signal.
-       """
-       pulse_width = interval_mapping(
-           angle, 0, 180, 0.5, 2.5
+    """
+    pulse_width = interval_mapping(
+        angle, 0, 180, 0.5, 2.5
        )  # Map angle to pulse width in ms
-       duty = int(
-           interval_mapping(pulse_width, 0, 20, 0, 65535)
+    duty = int(
+        interval_mapping(pulse_width, 0, 20, 0, 65535)
        )  # Map pulse width to duty cycle
        pin.duty_u16(duty)  # Set PWM duty cycle
-   
-   
+
+
    # Main loop to continuously move the servo
-   while True:
+while True:
        # Sweep the servo from 0 to 180 degrees
-       for angle in range(180):
-           servo_write(servo, angle)
+    for angle in range(180):
+        servo_write(servo, angle)
            time.sleep_ms(20)  # Short delay for smooth movement
-   
+
        # Sweep the servo back from 180 to 0 degrees
-       for angle in range(180, -1, -1):
-           servo_write(servo, angle)
+    for angle in range(180, -1, -1):
+        servo_write(servo, angle)
            time.sleep_ms(20)  # Short delay for smooth movement
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Modules and Initializing Servo:
+#. モジュールのインポートとサーボの初期化:
 
-   The ``machine`` module is crucial for accessing the PWM functionality needed to control the servo, and ``time`` is used for implementing delays. The servo is initialized on pin 16 of the Raspberry Pi Pico W, setting its frequency to 50Hz, a typical value for servo control.
+   ``machine`` モジュールはサーボを制御するためのPWM機能にアクセスするために重要であり、 ``time`` は遅延を実装するために使用されます。サーボはRaspberry Pi Pico Wのピン16に初期化され、その周波数はサーボ制御に一般的な50Hzに設定されます。
 
    .. code-block:: python
 
@@ -123,11 +122,11 @@ Code Analysis
       servo = machine.PWM(machine.Pin(16))
       servo.freq(50)
 
-#. Mapping and Servo Control Functions:
+#. マッピングとサーボ制御の関数:
 
-   The ``interval_mapping`` function translates the desired servo angle into a PWM pulse width. The ``servo_write`` function then converts this pulse width into a duty cycle, which is used to set the servo's position. These functions are central to converting the angular position into an appropriate PWM signal.
+   ``interval_mapping`` 関数は、希望するサーボ角度をPWMパルス幅に変換します。 ``servo_write`` 関数はこのパルス幅をデューティサイクルに変換し、サーボの位置を設定します。これらの関数は、角度位置を適切なPWM信号に変換するための中心的な役割を果たします。
 
-   Please refer to :ref:`Work Pulse <cpn_servo_pulse>` for information about the work pulse of the servo.
+   サーボのワークパルスについての情報は :ref:`Work Pulse <cpn_servo_pulse>` を参照してください。
 
    .. code-block:: python
 
@@ -139,9 +138,9 @@ Code Analysis
           duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))
           pin.duty_u16(duty)
 
-#. Main Loop for Continuous Movement:
+#. 連続的な動きのためのメインループ:
 
-   The main loop is where the servo is controlled to sweep from 0 to 180 degrees and back. This is achieved by looping through the range of angles and calling ``servo_write`` for each angle, with a short delay to ensure smooth movement.
+   メインループでは、サーボを0度から180度までスイープし、再び戻す制御を行います。これは角度の範囲をループし、各角度に対して ``servo_write`` を呼び出し、スムーズな動きのために短い遅延を設定することで実現します。
 
    .. code-block:: python
 

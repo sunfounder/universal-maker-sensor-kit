@@ -12,21 +12,21 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Variables
+変数
 ==========
-Variables are containers used to store data values.
+変数はデータ値を格納するためのコンテナです。
 
-Creating a variable is very simple. You only need to name it and assign it a value. You don't need to specify the data type of the variable when assigning it, because the variable is a reference, and it accesses objects of different data types through assignment.
+変数を作成するのは非常に簡単です。名前を付けて値を割り当てるだけです。変数に割り当てる際にデータ型を指定する必要はありません。変数は参照であり、割り当てを通じて異なるデータ型のオブジェクトにアクセスします。
 
-Naming variables must follow the following rules:
+変数の名前付けには以下のルールに従う必要があります：
 
-* Variable names can only contain numbers, letters, and underscores
-* The first character of the variable name must be a letter or underscore
-* Variable names are case sensitive
+* 変数名には数字、文字、アンダースコアのみを使用できます。
+* 変数名の最初の文字は文字かアンダースコアでなければなりません。
+* 変数名は大文字と小文字を区別します。
 
-Create Variable
+変数の作成
 ------------------
-There is no command for declaring variables in MicroPython. Variables are created when you assign a value to it for the first time. It does not need to use any specific type declaration, and you can even change the type after setting the variable.
+MicroPythonには変数を宣言するコマンドはありません。変数は初めて値を割り当てたときに作成されます。特定の型宣言を使用する必要はなく、設定後に変数の型を変更することもできます。
 
 
 
@@ -40,9 +40,9 @@ There is no command for declaring variables in MicroPython. Variables are create
 lily
 
 
-Casting
+キャスティング
 -------------
-If you want to specify the data type for the variable, you can do it by casting.
+変数のデータ型を指定したい場合は、キャスティングを使用できます。
 
 
 
@@ -56,9 +56,9 @@ If you want to specify the data type for the variable, you can do it by casting.
 >>> %Run -c $EDITOR_CONTENT
 5 5 5.0
 
-Get the Type
+型を取得する
 -------------------
-You can get the data type of a variable with the `type()` function.
+変数のデータ型は `type()` 関数で取得できます。
 
 
 
@@ -72,10 +72,10 @@ You can get the data type of a variable with the `type()` function.
 >>> %Run -c $EDITOR_CONTENT
 <class 'int'> <class 'str'> <class 'float'>
 
-Single or Double Quotes?
----------------------------
+シングルクォートかダブルクォートか？
+-------------------------------------
 
-In MicroPython, single quotes or double quotes can be used to define string variables.
+MicroPythonでは、文字列変数を定義するためにシングルクォートまたはダブルクォートを使用できます。
 
 
 
@@ -85,9 +85,9 @@ In MicroPython, single quotes or double quotes can be used to define string vari
     # is the same as
     x = 'hello'
 
-Case-Sensitive
+大文字と小文字の区別
 ---------------------
-Variable names are case-sensitive.
+変数名は大文字と小文字を区別します。
 
 
 

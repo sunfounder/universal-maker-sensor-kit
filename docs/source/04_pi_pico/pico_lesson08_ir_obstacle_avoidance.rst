@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_lesson08_ir_obstacle_avoidance:
 
-Lesson 08: IR Obstacle Avoidance Sensor Module
+レッスン 08: 赤外線障害物回避センサーモジュール
 ====================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W with an IR Obstacle Avoidance Sensor Module. We'll walk you through setting up the sensor and writing a MicroPython script that continuously reads its value to detect obstacles. By monitoring changes in the sensor data, you'll grasp how to use it for basic obstacle detection.
+このレッスンでは、Raspberry Pi Pico W と赤外線障害物回避センサーモジュールの使用方法を学びます。センサーのセットアップと、障害物を検出するためにその値を継続的に読み取るMicroPythonスクリプトの作成について説明します。センサーデータの変化を監視することで、基本的な障害物検出の方法を理解することができます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。以下のリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,14 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_08_Obstacle_Avoidance_Sensor_Module_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,29 +79,29 @@ Code
        time.sleep(0.1)
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
-   The ``machine`` module is imported to interact with the GPIO pins, and the ``time`` module is used for adding delays.
+   ``machine``モジュールはGPIOピンと対話するためにインポートされ、 ``time`` モジュールは遅延を追加するために使用されます。
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Setting Up the Sensor
+#. センサーの設定
    
-   The obstacle avoidance sensor is set up as an input device on GPIO pin 16. The ``Pin.IN`` parameter configures the pin as an input.
+   障害物回避センサーはGPIOピン16に入力デバイスとして設定されています。 ``Pin.IN`` パラメータはピンを入力として設定します。
 
    .. code-block:: python
 
       obstacle_avoidance_sensor = Pin(16, Pin.IN)
 
-#. Reading Sensor Data in a Loop
+#. ループでセンサーデータを読み取る
 
-   The ``while True:`` loop continuously checks the sensor's output. If the sensor detects an obstacle, it returns ``0``, which is printed out. The ``time.sleep(0.1)`` adds a small delay to make the readings more manageable.
+   ``while True:``ループはセンサーの出力を継続的にチェックします。センサーが障害物を検出すると、 ``0`` を返し、それが表示されます。 ``time.sleep(0.1)``は読み取りを管理しやすくするために小さな遅延を追加します。
 
    .. code-block:: python
 
@@ -112,4 +111,5 @@ Code Analysis
 
    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+      センサーが正常に動作しない場合は、赤外線送信機と受信機を平行に調整してください。また、内蔵のポテンショメーターを使用して検出範囲を調整することもできます。
+

@@ -14,17 +14,17 @@
 
 .. _pi_lesson05_mpu6050:
 
-Lesson 05: Gyroscope & Accelerometer Module (MPU6050)
+レッスン 05: ジャイロスコープ＆加速度計モジュール (MPU6050)
 ==========================================================
 
-In this lesson, you'll learn how to interface the Raspberry Pi with the MPU6050, a sensor that integrates a 3-axis gyroscope and accelerometer. You'll explore how to measure acceleration, orientation, and rotation. This project offers hands-on experience with reading sensor data, utilizing Python for hardware interaction, and grasping I2C communication fundamentals. You will also learn to continuously capture acceleration in three axes, rotational speed, and temperature from the sensor. It's an ideal starting point for beginners eager to delve into sensors and motion tracking using the Raspberry Pi.
+このレッスンでは、Raspberry Piと3軸ジャイロスコープと加速度計を統合したセンサーであるMPU6050のインターフェース方法を学びます。加速度、方向、および回転を測定する方法を探ります。このプロジェクトでは、センサーデータの読み取り、ハードウェアとの対話にPythonを使用する方法、およびI2C通信の基本を理解するための実践的な経験を提供します。また、センサーから三軸の加速度、回転速度、および温度を継続的に取得する方法も学びます。Raspberry Piを使用したセンサーとモーショントラッキングに興味のある初心者にとって理想的なスタートポイントです。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,14 +52,14 @@ You can also buy them separately from the links below.
         - |link_mpu6050_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_05_mpu6050_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -97,41 +97,40 @@ Code
    
        # Pause for 0.5 seconds before the next read cycle.
        sleep(0.5)
-   
 
-Code Analysis
+ コード解析
 ---------------------------
 
-#. Import Statements
+#. インポート文
 
-   The ``mpu6050`` class is imported from the ``mpu6050`` library, and the ``sleep`` function is imported from the ``time`` module. These imports are necessary for interacting with the MPU-6050 sensor and introducing delays in the code.
+   ``mpu6050``クラスは ``mpu6050`` ライブラリからインポートされ、 ``sleep`` 関数は ``time`` モジュールからインポートされます。これらのインポートは、MPU-6050センサーとの対話とコード内での遅延を導入するために必要です。
 
-   For more information about the ``mpu6050`` library, please visit |link_mpu6050_python_driver|.
+   ``mpu6050``ライブラリの詳細については、|link_mpu6050_python_driver|をご覧ください。
 
    .. code-block:: python
 
       from mpu6050 import mpu6050
       from time import sleep
 
-#. Sensor Initialization
+#. センサーの初期化
 
-   An instance of the ``mpu6050`` class is created with the I2C address 0x68 (the default address of the MPU-6050 sensor). This step initializes the sensor for data reading.
+   I2Cアドレス0x68（MPU-6050センサーのデフォルトアドレス）で ``mpu6050`` クラスのインスタンスを作成します。このステップでセンサーがデータ読み取りのために初期化されます。
 
    .. code-block:: python
 
       sensor = mpu6050(0x68)
 
-#. Infinite Loop for Continuous Reading
+#. 連続読み取りのための無限ループ
 
-   An infinite loop (``while True``) is used to continuously read data from the sensor. This is a common practice for sensor-based applications where constant monitoring is required.
+   無限ループ（ ``while True`` ）を使用して、センサーから継続的にデータを読み取ります。これは、常に監視が必要なセンサーアプリケーションで一般的な手法です。
 
    .. code-block:: python
 
       while True:
 
-#. Reading Sensor Data
+#. センサーデータの読み取り
 
-   Inside the loop, data from the accelerometer, gyroscope, and temperature sensor is read using the ``get_accel_data``, ``get_gyro_data``, and ``get_temp`` methods of the ``mpu6050`` class instance. These methods return the sensor data in a user-friendly format.
+   ループ内で、 ``mpu6050`` クラスのインスタンスの ``get_accel_data`` 、 ``get_gyro_data`` 、および ``get_temp`` メソッドを使用して加速度計、ジャイロスコープ、および温度センサーからデータを読み取ります。これらのメソッドは、ユーザーフレンドリーな形式でセンサーデータを返します。
 
    .. code-block:: python
 
@@ -139,9 +138,9 @@ Code Analysis
       gyro_data = sensor.get_gyro_data()
       temp = sensor.get_temp()
 
-#. Printing Sensor Data
+#. センサーデータの表示
 
-   The retrieved data is then printed out. Accelerometer and gyroscope data are accessed as dictionary values (x, y, z axes), and temperature is directly printed as a Celsius value.
+   取得したデータを出力します。加速度計とジャイロスコープのデータは辞書値（x, y, z軸）としてアクセスされ、温度は摂氏値として直接出力されます。
 
    .. code-block:: python
 
@@ -157,9 +156,9 @@ Code Analysis
 
       print("Temp: " + str(temp) + " C")
 
-#. Delay Between Readings
+#. 読み取り間の遅延
 
-   Finally, a half-second delay is introduced using ``sleep(0.5)``. This delay is crucial to prevent overwhelming the Raspberry Pi with continuous data readings.
+   最後に、 ``sleep(0.5)`` を使用して0.5秒の遅延が導入されます。この遅延は、Raspberry Piが継続的なデータ読み取りで過負荷になるのを防ぐために重要です。
 
    .. code-block:: python
 

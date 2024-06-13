@@ -14,7 +14,7 @@
 
 .. _cpn_buzzer:
 
-Passive Buzzer Module
+パッシブブザーモジュール
 ==========================
 
 .. image:: img/32_passive_buzzer_module.png
@@ -25,15 +25,15 @@ Passive Buzzer Module
     
     <br/>
 
-The passive buzzer is a device that generates sound when an electrical signal is applied to it. It is called passive because it does not have an internal oscillator to generate sound on its own. Instead, it relies on an external signal from a microcontroller like Arduino to produce sound. The passive buzzer module is a small electronic component that contains a passive buzzer and some additional circuitry that makes it easier to use with Arduino.
+パッシブブザーは、電気信号が加えられると音を生成するデバイスです。内部に音を生成するためのオシレータを持たないため、パッシブと呼ばれています。代わりに、Arduinoのようなマイクロコントローラーからの外部信号に依存して音を生成します。パッシブブザーモジュールは、パッシブブザーとArduinoとの連携を容易にする追加の回路を含む小型の電子部品です。
 
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **I/O**: Through this pin, you can send control signals to control the tone and frequency of the buzzer.
+* **VCC**: メインコントロールからの正電源入力。
+* **GND**: 接地接続。
+* **I/O**: このピンを通じて制御信号を送信し、ブザーの音色と周波数を制御できます。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/32_passive_buzzer_module_schematic.png
@@ -44,7 +44,7 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson32_passive_buzzer` (Arduino UNO)
 * :ref:`esp32_lesson32_passive_buzzer` (ESP32)

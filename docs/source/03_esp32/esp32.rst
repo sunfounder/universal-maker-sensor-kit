@@ -11,13 +11,13 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-For ESP32
+    
+ESP32について
 ==================================================
 
-ESP32 users, please refer to the following tutorial.
+ESP32ユーザーの皆様は、以下のチュートリアルを参照してください。
 
-The following tutorial is based on the :ref:`cpn_esp32_wroom_32e` development board, but it is also applicable to other ESP32 development boards.
+以下のチュートリアルは、:ref:`cpn_esp32_wroom_32e` 開発ボードに基づいていますが、他のESP32開発ボードにも適用できます。
 
 .. toctree::
     :maxdepth: 1

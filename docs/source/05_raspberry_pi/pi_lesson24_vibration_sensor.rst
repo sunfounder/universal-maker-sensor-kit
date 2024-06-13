@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson24_vibration_sensor:
 
-Lesson 24: Vibration Sensor Module (SW-420)
+レッスン24: 振動センサーモジュール (SW-420)
 ==============================================
 
-In this lesson, you will learn how to use a vibration sensor with the Raspberry Pi. We'll help you connect the sensor to GPIO pin 17 and guide you through writing a simple Python script. This script will monitor the sensor and print a message whenever vibration is detected. This lesson is focused on giving beginners a hands-on experience in connecting a simple sensor to the Raspberry Pi and writing a straightforward script to interact with it. 
+このレッスンでは、振動センサーを使用してRaspberry Piと接続する方法を学びます。センサーをGPIOピン17に接続し、シンプルなPythonスクリプトを書く手順を説明します。このスクリプトはセンサーを監視し、振動が検出されたときにメッセージを表示します。このレッスンは、初心者に対して簡単なセンサーをRaspberry Piに接続し、それと対話するための簡単なスクリプトを書く実践的な体験を提供することに焦点を当てています。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_24_vibration_sensor_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -83,40 +82,39 @@ Code
        # Wait for 1 second before reading the sensor again
        time.sleep(1)
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Importing Libraries**
+#. **ライブラリのインポート**
 
-   First, we import necessary libraries: ``gpiozero`` for interacting with the GPIO pins, and ``time`` for handling time-related functions.
+   まず、必要なライブラリをインポートします。GPIOピンと対話するための ``gpiozero`` と、時間関連の関数を扱うための ``time`` です。
 
    .. code-block:: python
 
       from gpiozero import InputDevice
       import time
 
-#. **Setting Up the Vibration Sensor**
+#. **振動センサーのセットアップ**
 
-   We initialize the vibration sensor by creating an instance of ``InputDevice`` from the ``gpiozero`` library. The vibration sensor is connected to GPIO pin 17 on the Raspberry Pi.
+   ``gpiozero``ライブラリから ``InputDevice`` のインスタンスを作成して振動センサーを初期化します。振動センサーはRaspberry PiのGPIOピン17に接続されています。
 
    .. code-block:: python
 
       vibration_sensor = InputDevice(17)
 
-#. **Continuous Monitoring Loop**
+#. **連続監視ループ**
 
-   A ``while True`` loop is used for continuous monitoring. This loop will run indefinitely until the program is manually stopped.
+   ``while True``ループを使用して、連続監視を行います。このループはプログラムが手動で停止されるまで無期限に実行されます。
 
    .. code-block:: python
 
       while True:
 
-#. **Sensor State Check and Output**
+#. **センサー状態のチェックと出力**
 
-   - Inside the loop, we use an ``if`` statement to check the state of the vibration sensor. If ``vibration_sensor.is_active`` is ``True``, it means no vibration is detected, and "Vibration detected!" is printed.
-   - If ``vibration_sensor.is_active`` is ``False``, indicating vibration, "..." is printed instead.
-   - This distinction is crucial for understanding how the sensor's output is interpreted in the code.
+   - ループ内で、``if``文を使用して振動センサーの状態をチェックします。 ``vibration_sensor.is_active`` が ``True`` の場合、振動が検出されていないことを意味し、「Vibration detected!」が表示されます。
+   - ``vibration_sensor.is_active``が ``False`` の場合は振動が検出されたことを示し、代わりに"..."が表示されます。
+   - この区別は、コード内でセンサーの出力がどのように解釈されるかを理解するために重要です。
 
    .. code-block:: python
 
@@ -125,9 +123,9 @@ Code Analysis
           else:
               print("...")
 
-#. **Delay**
+#. **遅延**
 
-   Finally, ``time.sleep(1)`` adds a 1-second delay between each iteration of the loop. This delay is crucial to prevent the program from overloading the CPU and to make the output readable.
+   最後に、 ``time.sleep(1)`` はループの各反復の間に1秒の遅延を追加します。この遅延は、プログラムがCPUを過負荷にしないようにし、出力を読みやすくするために重要です。
 
    .. code-block:: python
 

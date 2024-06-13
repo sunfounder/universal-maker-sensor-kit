@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson11_photoresistor:
 
-Lesson 11: Photoresistor Module
-==================================
+Lesson 11: フォトレジスターモジュール
+======================================
 
-In this lesson, you will learn how to use a photoresistance sensor with an ESP32 Development Board to measure light intensity. We'll explore how the sensor detects different light levels and processes and displays these readings on the serial monitor. This project is ideal for beginners as it provides hands-on experience with analog sensors and real-time data handling in Arduino programming.
+このレッスンでは、ESP32開発ボードを使用してフォトレジスタセンサーを利用し、光の強さを測定する方法を学びます。センサーが異なる光レベルを検出し、その読み取り値をシリアルモニターに表示する方法を探ります。このプロジェクトは、アナログセンサーとArduinoプログラミングによるリアルタイムデータ処理の実践的な経験を提供するため、初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,26 +54,26 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_11_Photoresistance_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/d66fd803-df3b-4afd-9986-b335e0739241/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Setting Up the Sensor Pin and Serial Communication**
+#. **センサーピンの設定とシリアル通信の初期化**
 
-   We start by defining the sensor pin and initializing serial communication in the setup function. The photoresistor is connected to the pin 25.
+   setup関数でセンサーピンを定義し、シリアル通信を初期化します。フォトレジスタはピン25に接続されます。
 
    .. code-block:: arduino
 
@@ -83,9 +83,9 @@ Code Analysis
         Serial.begin(9600);  // Start serial communication at 9600 baud rate
       }
 
-#. **Reading and Displaying Sensor Data**
+#. **センサーデータの読み取りと表示**
 
-   In the loop function, we continuously read the analog value from the sensor and print it to the Serial Monitor. We also add a short delay to stabilize the readings.
+   loop関数では、センサーからアナログ値を連続的に読み取り、シリアルモニターに出力します。また、読み取り値を安定させるために短い遅延を追加します。
 
    .. code-block:: arduino
 

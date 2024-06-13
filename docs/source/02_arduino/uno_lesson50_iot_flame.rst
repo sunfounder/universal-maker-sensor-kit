@@ -12,23 +12,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_iot_flame:
 
-Lesson 50: Flame Alert System with Blynk
+Lesson 50: Blynkを使用した火災警報システム
 ============================================================
 
+この章では、Blynkを使用して家庭用火災警報システムのデモを作成する手順を案内します。火炎センサーを利用して、家庭内の火災を検出することができます。検出された値をBlynkに送信することで、インターネットを介してリモートで家庭の監視が可能になります。火災が発生した場合、Blynkはメールで迅速に通知します。
 
-
-In this chapter, we will guide you through the process of creating a home flame alarm system demo using Blynk. By utilizing a flame sensor, you can detect potential fires in your home. Sending the detected values to Blynk allows for remote monitoring of your home via the internet. In case of a fire, Blynk will promptly notify you via email.
-
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -41,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -59,28 +55,25 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_flame`
         - \-
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_50_Iot_flame_alert_system_uno_bb.png
     :width: 100%
 
-
-
-Configure Blynk
+Blynkの設定
 -----------------------------
 
-**1 Create template**
+**1 テンプレートの作成**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Firstly, we need to establish a template on Blynk. Follow the steps below to create a **"Flame Alert System"** template. 
+まず、Blynkにテンプレートを作成する必要があります。以下の手順に従って、 **"Flame Alert System"** テンプレートを作成してください。
 
 .. image:: img/01-create_template_1_shadow.png
     :width: 70%
     :align: center
 
-Ensure that the **HARDWARE** is configured as **ESP8266** and the **CONNECT TYPE** is set to **WiFi**.
+**HARDWARE** が **ESP8266** に設定されていることと、 **CONNECT TYPE** が **WiFi** に設定されていることを確認してください。
 
 .. image:: img/01-create_template_2_shadow.png
     :width: 70%
@@ -90,16 +83,16 @@ Ensure that the **HARDWARE** is configured as **ESP8266** and the **CONNECT TYPE
     
     <br/>  
 
-**2 Datastream**
+**2 データストリーム**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a **Datastream** of type **Virtual Pin** in the **Datastream** page to get the value of Flame sensor module. 
+**Datastream** ページで、タイプが **Virtual Pin** の **Datastream** を作成し、火炎センサーモジュールの値を取得します。
 
 .. image:: img/01-datastream_1_shadow.png
     :width: 90%
     :align: center
 
-Set the name of the **Virtual Pin** to ``flame_sensor_value``. Set the **DATA TYPE** to **Integer** and MIN and MAX to **0** and **1**.
+**Virtual Pin** の名前を ``flame_sensor_value`` に設定します。 **DATA TYPE** を **Integer** に設定し、MIN と MAX を **0** と **1** に設定します。
 
 .. image:: img/01-datastream_2_shadow.png
     :width: 90%
@@ -109,25 +102,25 @@ Set the name of the **Virtual Pin** to ``flame_sensor_value``. Set the **DATA TY
     
     <br/> 
 
-**3 Event**
+**3 イベント**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Next, we will create an **event** that logs the detection of flames and sends an email notification.
+次に、火炎検出を記録し、メール通知を送信する **イベント** を作成します。
 
 .. image:: img/01-event_1_shadow.png
     :width: 80%
     :align: center
 
 .. note::
-    It is recommended to keep it consistent with my settings, otherwise you may need to modify the code to run the project.
+    設定を一貫性のあるものにすることをお勧めします。そうしないと、プロジェクトを実行するためにコードを修正する必要があるかもしれません。
 
-Set **EVENT NAME** to ``flame_detection_alert``. At the same time, you can customize the content of email sent by setting **DESCRIPTION** for event triggering. You can also set frequency limits for event triggering below.
+**EVENT NAME** を ``flame_detection_alert`` に設定します。同時に、イベントトリガーの **DESCRIPTION** を設定して、送信されるメールの内容をカスタマイズできます。また、イベントトリガーの頻度制限を以下で設定できます。
 
 .. image:: img/01-event_2_shadow.png
     :width: 80%
     :align: center
 
-Go to the **Notifications** page and configure email settings.
+**Notifications** ページに移動し、メール設定を行います。
 
 .. image:: img/01-event_3_shadow.png
     :width: 80%
@@ -137,18 +130,18 @@ Go to the **Notifications** page and configure email settings.
     
     <br/> 
 
-**4 Web Dashboard**
+**4 Webダッシュボード**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We also need to set up the **Web Dashboard** to display the sensor data sent from the Uno board.
+次に、Unoボードから送信されたセンサーデータを表示するために、 **Webダッシュボード** を設定する必要があります。
 
-Drag and drop an **Label widget** on the **Web Dashboard** page.
+**Webダッシュボード**ページに **ラベルウィジェット** をドラッグアンドドロップします。
 
 .. image:: img/01-web_dashboard_1_shadow.png
     :width: 100%
     :align: center
 
-In the settings page of the **Label widget**, select **Datastream** as **flame_sensor_value(V0)**. Then set the color of **WIDGET BACKGROUND** to change with the value of data. When the displayed value is 1, it will be shown in green. When the value is 0, it will be shown in red.
+**ラベルウィジェット**の設定ページで、 **Datastream** を **flame_sensor_value(V0)** に設定します。次に、データの値に応じて **ウィジェット背景** の色を変えるように設定します。表示される値が1のときは緑色、0のときは赤色で表示されます。
 
 .. image:: img/01-web_dashboard_2_shadow.png
     :width: 100%
@@ -162,16 +155,16 @@ In the settings page of the **Label widget**, select **Datastream** as **flame_s
     
     <br/> 
 
-**5 Save template**
+**5 テンプレートの保存**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At last, remember to save the template.
+最後に、テンプレートを保存することを忘れないでください。
 
 .. image:: img/01-save_template_shadow.png
     :width: 70%
     :align: center
 
-In case you need to edit the template, you can click on the edit button in the upper right corner.
+テンプレートを編集する必要がある場合は、右上の編集ボタンをクリックしてください。
 
 .. image:: img/01-save_template_2_shadow.png
     :width: 70%
@@ -181,18 +174,16 @@ In case you need to edit the template, you can click on the edit button in the u
     
     <br/> 
 
-
-Code
+コード
 ----------------------- 
 
-#. Open the ``Lesson_50_Flame_alert_system.ino`` file under the path of ``universal-maker-sensor-kit\arduino_uno\Lesson_50_Flame_alert_system``, or copy this code into **Arduino IDE**.
-
+#. ``universal-maker-sensor-kit\arduino_uno\Lesson_50_Flame_alert_system`` パスにある ``Lesson_50_Flame_alert_system.ino`` ファイルを開くか、このコードを **Arduino IDE** にコピーします。
 
    .. raw:: html
        
        <iframe src=https://create.arduino.cc/editor/sunfounder01/ef829dd7-337d-475d-908b-d118c6a93eef/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-#. Create a Blynk device using the Flame Detection Alert template. Then, replace the ``BLYNK_TEMPLATE_ID``, ``BLYNK_TEMPLATE_NAME``, and ``BLYNK_AUTH_TOKEN`` with your own. 
+#. Flame Detection Alertテンプレートを使用してBlynkデバイスを作成します。次に、 ``BLYNK_TEMPLATE_ID`` 、 ``BLYNK_TEMPLATE_NAME`` 、および ``BLYNK_AUTH_TOKEN`` を自分のものに置き換えます。
 
    .. code-block:: arduino
     
@@ -216,16 +207,16 @@ Code
     :width: 80%
     :align: center
 
-#. You also need to enter the ``ssid`` and ``password`` of the WiFi you are using. 
+#. 使用しているWiFiの ``ssid`` と ``password`` を入力する必要があります。
 
    .. code-block:: arduino
 
     char ssid[] = "your_ssid";
     char pass[] = "your_password";
 
-#. After selecting the correct board and port, click the **Upload** button.
+#. 正しいボードとポートを選択した後、 **Upload** ボタンをクリックします。
 
-#. Open the Serial monitor(set baudrate to 115200) and wait for a prompt such as a successful connection to appear.
+#. シリアルモニターを開き（ボーレートを115200に設定）、接続成功などのプロンプトが表示されるのを待ちます。
 
    .. image:: img/01-ready_1_shadow.png
     :width: 80%
@@ -233,28 +224,28 @@ Code
 
    .. note::
 
-       If the message ``ESP is not responding`` appears when you connect, please follow these steps.
+       接続時に ``ESP is not responding`` というメッセージが表示された場合、次の手順に従ってください。
 
-       * Make sure the 9V battery is plugged in.
-       * Reset the ESP8266 module by connecting the pin RST to GND for 1 second, then unplug it.
-       * Press the reset button on the R4 board.
+       * 9Vバッテリーが接続されていることを確認してください。
+       * RSTピンを1秒間GNDに接続してから外すことで、ESP8266モジュールをリセットしてください。
+       * R4ボードのリセットボタンを押してください。
 
-       Sometimes, you may need to repeat the above operation 3-5 times, please be patient.
+       上記の操作を3〜5回繰り返す必要がある場合がありますので、忍耐強く行ってください。
 
-#. Now, Blynk will show the data read from flame sensor. In the label widget, you can see the value read by the flame sensor. When the displayed value is 1, the background of the label will be shown in green. When the value is 0, the background of the label will be shown in red and Blynk will send you an alert email.
-   
+#. これで、Blynkは火炎センサーから読み取ったデータを表示します。ラベルウィジェットでは、火炎センサーが読み取った値が表示されます。表示される値が1のとき、ラベルの背景が緑色で表示されます。表示される値が0のとき、ラベルの背景が赤色で表示され、Blynkから警告メールが送信されます。
+
    .. image:: img/01-ready_2_shadow.png
     :width: 80%
     :align: center
 
-#. If you want to use Blynk on mobile devices, please refer to :ref:`blynk_mobile`.
+#. モバイルデバイスでBlynkを使用する場合は、:ref:`blynk_mobile`を参照してください。
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Library Initialization**
+1. **ライブラリの初期化**
 
-   Before we start, it's crucial to set up the necessary libraries and settings for communication between the Arduino, ESP8266 WiFi module, and Blynk app. This code sets up the required libraries and configures a software serial connection between the Arduino and ESP8266 module, with the appropriate baud rate for data transmission.
+   始める前に、Arduino、ESP8266 WiFiモジュール、およびBlynkアプリ間の通信のために必要なライブラリと設定を行います。このコードは、必要なライブラリを設定し、ArduinoとESP8266モジュールの間でソフトウェアシリアル接続を構成し、データ送信のための適切なボーレートを設定します。
    
    .. code-block:: arduino
    
@@ -270,9 +261,9 @@ Code Analysis
        #define ESP8266_BAUD 115200      // Set the ESP8266 baud rate
        ESP8266 wifi(&EspSerial);
 
-2. **Blynk and WiFi configuration**
+2. **BlynkとWiFiの設定**
 
-   For the project to communicate with the Blynk app, it needs to connect to a Wi-Fi network. The credentials need to specified here.
+   このプロジェクトがBlynkアプリと通信するためには、Wi-Fiネットワークに接続する必要があります。ここでクレデンシャルを指定します。
    
    .. code-block:: arduino
 
@@ -287,21 +278,21 @@ Code Analysis
       char ssid[] = "your_ssid";
       char pass[] = "your_password";
 
-3. **Sensor Pin & Timer Declaration**
+3. **センサーピンとタイマーの宣言**
 
-   Define the pin number for the flame.
-   Blynk library provides a built-in timer, and we create a timer object. More about |link_blynk_timer_intro| 
+   火炎センサーのピン番号を定義します。
+   Blynkライブラリには組み込みのタイマーがあり、タイマーオブジェクトを作成します。詳細は |link_blynk_timer_intro| を参照してください。
 
    .. code-block:: arduino
 
        const int sensorPin = 8;
        BlynkTimer timer;
 
-4. **setup() Function**
+4. **setup()関数**
 
-   Initial configurations such as setting the pin mode for the sensorPin, initiating serial communication, setting the BlynkTimer, and connecting to the Blynk app are done in this function.
+   センサーのピンモードの設定、シリアル通信の初期化、BlynkTimerの設定、およびBlynkアプリへの接続などの初期設定をこの関数で行います。
 
-   - We use ``timer.setInterval(1000L, myTimerEvent)`` to set the timer interval in setup(), here we set to execute the ``myTimerEvent()`` function every **1000ms**. You can modify the first parameter of ``timer.setInterval(1000L, myTimerEvent)`` to change the interval between ``myTimerEvent`` executions.
+   - ``timer.setInterval(1000L, myTimerEvent)``を使用してsetup()でタイマー間隔を設定します。ここでは**1000ms**ごとに ``myTimerEvent()`` 関数を実行するように設定しています。 ``timer.setInterval(1000L, myTimerEvent)`` の最初のパラメータを変更して ``myTimerEvent`` の実行間隔を変更できます。
 
    .. raw:: html
     
@@ -319,9 +310,9 @@ Code Analysis
          Blynk.connectWiFi(ssid, pass);
        }
 
-5. **loop() Function**
+5. **loop()関数**
 
-   The main loop runs the Blynk and Timer services continuously.
+   メインループでは、Blynkおよびタイマーサービスを継続的に実行します。
 
    .. code-block:: arduino
 
@@ -330,9 +321,7 @@ Code Analysis
          timer.run();
        }
 
-6. **myTimerEvent() & sendData() Function**
-
-   
+6. **myTimerEvent()およびsendData()関数**
 
    .. code-block:: arduino
  
@@ -341,11 +330,11 @@ Code Analysis
          sendData();  // Call function to send sensor data to Blynk app
        }
 
-   The ``sendData()`` function reads the value from the flame sensor and sends it to Blynk. If it detects a flame (value 0), it sends ``flame_detection_alert`` event to the Blynk app.
+   ``sendData()``関数は、火炎センサーから値を読み取り、それをBlynkに送信します。火炎が検出された場合（値が0）、Blynkアプリに ``flame_detection_alert`` イベントを送信します。
 
-   - Use ``Blynk.virtualWrite(vPin, value)`` to send data to virtual pin V0 on Blynk. More about |link_blynk_virtualWrite|.
+   - ``Blynk.virtualWrite(vPin, value)``を使用してデータをBlynkの仮想ピンV0に送信します。詳細は |link_blynk_virtualWrite| を参照してください。
 
-   - Use ``Blynk.logEvent("event_code")`` to log event to Blynk. More about |link_blynk_logEvent|.
+   - ``Blynk.logEvent("event_code")``を使用してBlynkにイベントを記録します。詳細は |link_blynk_logEvent| を参照してください。
 
    .. raw:: html
     
@@ -363,7 +352,7 @@ Code Analysis
         }
       }
 
-**Reference**
+**参照**
 
 - |link_blynk_doc|
 - |link_blynk_quickstart| 

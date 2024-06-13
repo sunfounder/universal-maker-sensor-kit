@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_lesson15_raindrop:
 
 Lesson 15: Raindrop Detection Module
 =======================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to detect raindrops using a raindrop sensor connected to pin 16. The script continuously monitors for any indication of raindrops and prints "Raindrop detected!" when one is detected; otherwise, it displays "Monitoring..." as it waits for raindrops. This session offers hands-on experience in handling digital inputs with the Raspberry Pi Pico W and understanding environmental sensing in MicroPython, making it ideal for beginners in electronics and programming.
+このレッスンでは、Raspberry Pi Pico Wを使用してピン16に接続された雨滴センサーを使用して雨滴を検出する方法を学びます。スクリプトは雨滴の兆候を継続的に監視し、検出された場合は「Raindrop detected!」と表示し、雨滴が検出されない場合は「Monitoring...」と表示します。このセッションでは、Raspberry Pi Pico Wを使用したデジタル入力の処理と、MicroPythonによる環境センサリングの理解を実践的に学ぶことができ、エレクトロニクスとプログラミングの初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_15_raindrop_detection_module_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -81,21 +79,21 @@ Code
    
        time.sleep(0.1)  # Short delay of 0.1 seconds to reduce CPU usage
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Initializing the Raindrop Sensor:
+#. 雨滴センサーの初期化:
 
-   The raindrop sensor is initialized using the ``Pin`` class from the ``machine`` module, set to pin 16 in input mode. This allows the Raspberry Pi Pico W to read the sensor output.
+   雨滴センサーは ``machine`` モジュールの ``Pin`` クラスを使用して初期化され、ピン16が入力モードに設定されています。これにより、Raspberry Pi Pico Wがセンサーの出力を読み取ることができます。
 
    .. code-block:: python
    
        from machine import Pin
        raindrop_sensor = Pin(16, Pin.IN)
 
-#. Continuous Monitoring Loop:
+#. 継続的な監視ループ:
 
-   A continuous while loop is used to monitor the sensor. Inside the loop, the sensor value is checked. If the value is 0, it indicates raindrops are detected and prints "Raindrop detected!" Otherwise, it prints "Monitoring..." to indicate the absence of raindrops.
+   継続的なwhileループを使用してセンサーを監視します。ループ内でセンサーの値をチェックします。値が0の場合、雨滴が検出され、「Raindrop detected!」と表示されます。それ以外の場合は、雨滴が検出されていないことを示すために「Monitoring...」と表示されます。
 
    .. code-block:: python
    
@@ -105,9 +103,9 @@ Code Analysis
            else:
                print("Monitoring...")
 
-#. Introducing a Delay:
+#. 遅延の導入:
 
-   To reduce CPU usage, a delay of 0.1 seconds is introduced in each iteration of the loop using ``time.sleep(0.1)``. This prevents the loop from executing too rapidly.
+   CPU使用率を下げるために、ループの各反復で0.1秒の遅延を挿入します。これにより、ループが高速で実行されすぎるのを防ぎます。
 
    .. code-block:: python
    

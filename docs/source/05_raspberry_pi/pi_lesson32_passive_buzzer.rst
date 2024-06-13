@@ -14,17 +14,17 @@
 
 .. _pi_lesson32_passive_buzzer:
 
-Lesson 32: Passive Buzzer Module
-==================================
+レッスン32: パッシブブザーモジュール
+====================================
 
-In this lesson, you will learn how to create musical tones using a TonalBuzzer with a Raspberry Pi. You'll learn how to program the Raspberry Pi to play a sequence of musical notes using Python. The lesson includes defining a tune as a list of notes and durations, and writing a function to play these notes through the buzzer. This project offers a straightforward introduction to working with sound output and Python programming, making it a practical choice for beginners interested in exploring musical applications with the Raspberry Pi.
+このレッスンでは、Raspberry Piを使用してトナルブザーで音楽の音を作成する方法を学びます。Pythonを使用して一連の音符を演奏するようにRaspberry Piをプログラムする方法を学びます。レッスンには、音符と持続時間のリストとしてメロディを定義し、ブザーを通じてこれらの音符を演奏する関数を書くことが含まれています。このプロジェクトは、音出力とPythonプログラミングの基本的な理解を提供し、Raspberry Piを使用して音楽アプリケーションを探求したい初心者にとって実践的な選択肢です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_32_Passive_buzzer_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -95,32 +95,32 @@ Code
       ('A4', 0.2), ('G4', 0.2), ('E4', 0.2),
       ('D4', 0.2), ('E4', 0.2)]
 
-   # Play the tune
+   # メロディを演奏
    play(tune) 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
    
-   Import ``TonalBuzzer`` from ``gpiozero`` for sound generation and ``sleep`` from ``time`` for timing control.
+   音の生成のために ``gpiozero`` から ``TonalBuzzer`` を、タイミング制御のために ``time`` から ``sleep`` をインポートします。
 
    .. code-block:: python
 
       from gpiozero import TonalBuzzer
       from time import sleep
 
-#. Initialize the TonalBuzzer
+#. トナルブザーの初期化
    
-   Create a ``TonalBuzzer`` object connected to GPIO pin 17.
+   GPIOピン17に接続された ``TonalBuzzer`` オブジェクトを作成します。
 
    .. code-block:: python
 
       tb = TonalBuzzer(17)
 
-#. Define the Play Function
+#. 再生関数の定義
    
-   The ``play`` function takes a list of tuples as input, where each tuple represents a musical note and its duration. It iterates through each tuple, playing the note and waiting for its duration.
+   ``play``関数は、音符とその持続時間を表すタプルのリストを入力として受け取ります。各タプルを反復処理して音符を再生し、その持続時間だけ待機します。
 
    .. code-block:: python
 
@@ -131,17 +131,17 @@ Code Analysis
               sleep(float(duration))
           tb.stop()
 
-#. Define the Musical Tune
+#. メロディの定義
    
-   The tune is defined as a list of tuples. Each tuple contains a note and its duration in seconds. ``None`` is used to represent a pause.
+   メロディはタプルのリストとして定義されます。各タプルには音符とその持続時間（秒）が含まれます。 ``None`` は休符を表します。
 
    .. code-block:: python
 
       tune = [('C#4', 0.2), ('D4', 0.2), (None, 0.2), ...]
 
-#. Play the Tune
+#. メロディの再生
    
-   The ``play`` function is called with the ``tune`` list, causing the buzzer to play the defined sequence of notes.
+   ``play`` 関数に ``tune`` リストを渡して呼び出すことで、ブザーが定義された音符のシーケンスを再生します。
 
    .. code-block:: python
 

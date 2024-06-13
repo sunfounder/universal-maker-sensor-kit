@@ -12,35 +12,33 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _add_libraries_py:
 
-Upload the Libraries to Pico
+ライブラリをPicoにアップロードする
 ===================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico W first, and then we can run the code directly later.
+いくつかのプロジェクトでは、追加のライブラリが必要になります。ここでは、これらのライブラリをRaspberry Pi Pico Wにアップロードし、後でコードを直接実行できるようにします。
 
-#. Download the relevant code from the link below.
+#. 以下のリンクから関連コードをダウンロードします。
 
    * :download:`SunFounder Universal Maker Sensor Kit <https://codeload.github.com/sunfounder/universal-maker-sensor-kit/zip/refs/heads/main>`
 
-
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+#. Thonny IDEを開き、PicoをMicro USBケーブルでコンピュータに接続し、右下隅の「MicroPython (Raspberry Pi Pico).COMXX」インタープリタをクリックします。
 
    .. image:: img/sec_inter.png
 
-#. In the top navigation bar, click **View** -> **Files**.
+#. 上部のナビゲーションバーで、 **表示** -> **ファイル** をクリックします。
 
    .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://codeload.github.com/sunfounder/universal-maker-sensor-kit/zip/refs/heads/main>`_ before, and then go to the ``universal-maker-sensor-kit-main/pico/libs`` folder.
+#. ダウンロードした`コードパッケージ `code package <https://codeload.github.com/sunfounder/universal-maker-sensor-kit/zip/refs/heads/main>`_  のフォルダにパスを切り替え、 ``universal-maker-sensor-kit-main/pico/libs`` フォルダに移動します。
 
    .. image:: img/th_path.png
 
-#. Select all the files or folders in the "libs/" folder (by holding down Shift and clicking on the first and last file in the folder), then right-click and select **Upload to /**, it will take a while to upload.
+#. 「libs/」フォルダ内のすべてのファイルまたはフォルダを選択（Shiftキーを押しながらフォルダ内の最初と最後のファイルをクリック）し、右クリックして **/ にアップロード** を選択します。アップロードにはしばらく時間がかかります。
 
    .. image:: img/th_upload.png
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
+#. アップロードが完了したら、ドライブ「Raspberry Pi Pico」の中に先ほどアップロードしたファイルが表示されます。
 
    .. image:: img/th_done.png

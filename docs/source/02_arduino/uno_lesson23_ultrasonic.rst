@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson23_ultrasonic:
 
-Lesson 23: Ultrasonic Sensor Module (HC-SR04)
+レッスン23: 超音波センサーモジュール (HC-SR04)
 ================================================
 
-In this lesson, you will learn how to use an ultrasonic sensor with Arduino to measure distances. We'll cover connecting the HC-SR04 sensor to the Arduino Uno R4 board and using it to calculate and display distance measurements in centimeters. This project is ideal for beginners, providing hands-on experience with Arduino's serial communication and sensor data processing. You'll gain valuable insights into working with digital signals and understanding the basics of ultrasonic sensing technology.
+このレッスンでは、Arduinoを使用して超音波センサーで距離を測定する方法を学びます。HC-SR04センサーをArduino Uno R4ボードに接続し、センチメートル単位で距離を計算して表示する方法を説明します。このプロジェクトは初心者に最適で、Arduinoのシリアル通信とセンサーデータの処理について実践的な経験を提供します。デジタル信号の取り扱いと超音波センサー技術の基本を理解するための貴重な洞察を得ることができます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,35 +53,35 @@ You can also buy them separately from the links below.
 
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_23_ultrasonic_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/633ae8f5-4b15-4888-b4cb-b1eb24f3e2ef/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Pin declaration:
+1. ピンの宣言:
 
-   Start by defining the pins for the ultrasonic sensor. ``echoPin`` and ``trigPin`` are declared as integers and their values are set to match the physical connection on the Arduino board.
+   最初に超音波センサーのピンを定義します。 ``echoPin`` と ``trigPin`` を整数として宣言し、その値をArduinoボードの物理的な接続に合わせます。
 
    .. code-block:: arduino
 
       const int echoPin = 3;
       const int trigPin = 4;
 
-2. ``setup()`` function:
+2. ``setup()`` 関数:
 
-   The ``setup()`` function initializes the serial communication, sets the pin modes, and prints a message to indicate the ultrasonic sensor is ready.
+   ``setup()`` 関数はシリアル通信を初期化し、ピンモードを設定し、超音波センサーが準備完了であることを示すメッセージを表示します。
  
    .. code-block:: arduino
  
@@ -92,9 +92,9 @@ Code Analysis
         Serial.println("Ultrasonic sensor:");
       }
 
-3. ``loop()`` function:
+3. ``loop()`` 関数:
 
-   The ``loop()`` function reads the distance from the sensor and prints it to the serial monitor, then delays for 400 milliseconds before repeating.
+   ``loop()`` 関数はセンサーから距離を読み取り、それをシリアルモニターに表示し、400ミリ秒遅延してから繰り返します。
 
    .. code-block:: arduino
 
@@ -105,11 +105,11 @@ Code Analysis
         delay(400);
       }
 
-4. ``readDistance()`` function :
+4. ``readDistance()`` 関数:
 
-   The ``readDistance()`` function triggers the ultrasonic sensor and calculates the distance based on the time it takes for the signal to bounce back.
+   ``readDistance()`` 関数は超音波センサーをトリガーし、信号が戻ってくるまでの時間に基づいて距離を計算します。
 
-   For more details, please refer to the working :ref:`principle <cpn_ultrasonic_principle>` of the ultrasonic sensor module.
+   超音波センサーモジュールの動作原理については、詳細については :ref:`principle <cpn_ultrasonic_principle>` を参照してください。
 
    .. code-block:: arduino
 

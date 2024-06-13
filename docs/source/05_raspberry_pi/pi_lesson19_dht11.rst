@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson19_dht11:
 
 Lesson 19: Temperature and Humidity Sensor Module (DHT11)
 ====================================================================
 
-In this lesson, you will learn how to connect and read data from a DHT11 temperature and humidity sensor using a Raspberry Pi. You will learn how to set up the sensor, read temperature in both Celsius and Fahrenheit, and obtain humidity readings. This project introduces you to working with external sensors, handling real-time data, and basic exception handling in Python. 
+このレッスンでは、DHT11温湿度センサーを使用してラズベリーパイからデータを接続して読み取る方法を学びます。センサーの設定方法、摂氏および華氏での温度の読み取り、および湿度の読み取り方法を学びます。このプロジェクトは、外部センサーの使用、リアルタイムデータの処理、およびPythonでの基本的な例外処理を紹介します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入するのが便利です。こちらのリンクをご覧ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,43 +53,43 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_19_dht11_module_pi_bb_bb.png
     :width: 100%
 
 
-Install Library
+ライブラリのインストール
 ---------------------------
 
 .. note::
-    The adafruit-circuitpython-dht library relies on Blinka, so please ensure that Blinka has been installed. To install libraries, refer to :ref:`install_blinka`.
+    adafruit-circuitpython-dhtライブラリはBlinkaに依存しているため、Blinkaがインストールされていることを確認してください。ライブラリのインストールについては、:ref:`install_blinka` を参照してください。
 
-Before installing the library, please make sure that the virtual Python environment is activated:
+ライブラリをインストールする前に、仮想Python環境がアクティブになっていることを確認してください。
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Install adafruit-circuitpython-dht library:
+adafruit-circuitpython-dhtライブラリをインストールします：
 
 .. code-block:: bash
 
    pip install adafruit-circuitpython-dht
 
-Code
+コード
 ---------------------------
 
 .. note::
-   - Please ensure that you have installed the Python library required for running the code according to the "Install Library" steps.
-   - Before running the code, please make sure that you have activated the virtual Python environment with blinka installed. You can activate the virtual environment using a command like this:
+   - 「ライブラリのインストール」手順に従って、コードを実行するために必要なPythonライブラリがインストールされていることを確認してください。
+   - コードを実行する前に、blinkaがインストールされた仮想Python環境がアクティブになっていることを確認してください。次のようなコマンドで仮想環境をアクティブにできます：
 
      .. code-block:: bash
   
         source ~/env/bin/activate
 
-   - Find the code for this lesson in ``universal-maker-sensor-kit-main/pi/`` directory, or directly copy and paste the code below. Execute the code by running the following commands in terminal:
+   - このレッスンのコードは ``universal-maker-sensor-kit-main/pi/`` ディレクトリにありますが、以下のコードを直接コピーして貼り付けることもできます。ターミナルで以下のコマンドを実行してコードを実行します：
 
      .. code-block:: bash
   
@@ -133,9 +132,9 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Libraries:
+#. ライブラリのインポート:
 
-   The code begins by importing necessary libraries. ``time`` for handling delays, ``board`` for accessing Raspberry Pi GPIO pins, and ``adafruit_dht`` for interacting with the DHT11 sensor. For more detail about the ``adafruit_dht`` library, please refer to |Adafruit_CircuitPython_DHT|.
+   このコードは、必要なライブラリをインポートすることから始まります。 ``time`` は遅延処理に使用され、 ``board`` はRaspberry PiのGPIOピンにアクセスし、 ``adafruit_dht`` はDHT11センサーと対話するために使用されます。 ``adafruit_dht`` ライブラリの詳細については、|Adafruit_CircuitPython_DHT| を参照してください。
 
    .. code-block:: python
     
@@ -143,25 +142,25 @@ Code Analysis
       import board
       import adafruit_dht
 
-#. Initializing the Sensor:
+#. センサーの初期化:
 
-   The DHT11 sensor is initialized with the data pin connected to GPIO 17 of the Raspberry Pi. This setup is crucial for the sensor to communicate with the Raspberry Pi.
+   DHT11センサーは、データピンがRaspberry PiのGPIO 17に接続された状態で初期化されます。このセットアップは、センサーがRaspberry Piと通信するために重要です。
 
    .. code-block:: python
 
       dhtDevice = adafruit_dht.DHT11(board.D17)
 
-#. Reading Sensor Data in a Loop:
+#. ループ内でのセンサーデータの読み取り:
 
-   The ``while True`` loop allows the program to continuously check the sensor for new data. 
+   ``while True``ループは、プログラムが新しいデータを継続的にセンサーからチェックできるようにします。
 
    .. code-block:: python
 
       while True:
 
-#. Try-Except Blocks:
+#. Try-Exceptブロック:
 
-   Within the loop, a try-except block is used to handle potential runtime errors. Reading from DHT sensors can often result in errors due to timing issues or sensor quirks.
+   ループ内では、try-exceptブロックを使用して、ランタイムエラーの可能性を処理します。DHTセンサーからの読み取りは、タイミングの問題やセンサーの癖により、しばしばエラーを引き起こすことがあります。
 
    .. code-block:: python
 
@@ -177,9 +176,9 @@ Code Analysis
           dhtDevice.exit()
           raise error
 
-#. Reading and Printing Sensor Data:
+#. センサーデータの読み取りと印刷:
 
-   The temperature and humidity are read from the sensor and converted into human-readable formats. The temperature is also converted from Celsius to Fahrenheit.
+   温度と湿度はセンサーから読み取られ、読みやすい形式に変換されます。温度は摂氏から華氏にも変換されます。
 
    .. code-block:: python
 
@@ -188,9 +187,9 @@ Code Analysis
       humidity = dhtDevice.humidity
       print("Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(temperature_f, temperature_c, humidity))
 
-#. Handling Read Errors:
+#. 読み取りエラーの処理:
 
-   The DHT11 sensor can often return errors, so the code uses a try-except block to handle these. If an error occurs, the program waits for 2 seconds before attempting to read from the sensor again.
+   DHT11センサーはしばしばエラーを返すため、コードはこれらを処理するためにtry-exceptブロックを使用します。エラーが発生した場合、プログラムはセンサーから再び読み取る前に2秒待機します。
 
    .. code-block:: python
 
@@ -199,9 +198,9 @@ Code Analysis
           time.sleep(2.0)
           continue
 
-#. General Exception Handling:
+#. 一般的な例外処理:
 
-   Any other exceptions that might occur are handled by safely exiting the sensor and re-raising the error. This ensures the program doesn't continue in an unstable state.
+   その他の例外が発生した場合、安全にセンサーを終了し、エラーを再度発生させることでこれを処理します。これにより、プログラムが不安定な状態で続行しないようにします。
 
    .. code-block:: python
 
@@ -209,9 +208,9 @@ Code Analysis
           dhtDevice.exit()
           raise error
 
-#. Delay Between Readings:
+#. 読み取り間隔の遅延:
 
-   A 2-second delay is added at the end of the loop to avoid constant polling of the sensor, which can lead to erroneous readings.
+   ループの最後に2秒の遅延が追加され、センサーの常時ポーリングを避けます。これにより誤読を防ぎます。
 
    .. code-block:: python
 

@@ -11,21 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_adafruit_io:
 
-Lesson 48: Temperature and Humidity Monitoring with Adafruit IO
+レッスン 48: Adafruit IOを使った温度と湿度の監視
 ===========================================================================
 
-In this project, we will guide you on how to use a popular IoT platform. There are many free (or low-cost) platforms available online for programming enthusiasts. Some examples are Adafruit IO, Blynk, Arduino Cloud, ThingSpeak, and so on. The usage of these platforms is quite similar. Here, we will be focusing on Adafruit IO.
+このプロジェクトでは、人気のあるIoTプラットフォームの使い方を紹介します。オンラインでプログラミング愛好家向けの無料（または低コスト）のプラットフォームは多数あります。例として、Adafruit IO、Blynk、Arduino Cloud、ThingSpeakなどがあります。これらのプラットフォームの使用方法は非常に似ています。ここでは、Adafruit IOに焦点を当てます。
 
-We will write an Arduino program that uses the DHT11 sensor to send temperature and humidity readings to Adafruit IO's dashboard. You can also control an LED on the circuit through a switch on the dashboard.
+Arduinoプログラムを作成し、DHT11センサーを使用して温度と湿度の読み取り値をAdafruit IOのダッシュボードに送信します。また、ダッシュボードのスイッチを通じて回路上のLEDを制御することもできます。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。こちらのリンクをご利用ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,82 +53,80 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_dht11`
         - |link_dht11_humiture_buy|
 
-**Setting up the Dashboard**
+**ダッシュボードの設定**
 
-#. Visit |link_adafruit_io|, then click on **Start for free** to create a free account.
+#. |link_adafruit_io| にアクセスし、 **Start for free** をクリックして無料アカウントを作成します。
 
     .. image:: img/sp230516_102503.png
 
-#. Fill out the form to create an account.
+#. フォームに記入してアカウントを作成します。
 
     .. image:: img/sp230516_102629.png
 
-#. After creating an Adafruit account, you'll need to reopen Adafruit io. Click on the **Dashboards**, then click on **New Dashboard**.
+#. Adafruitアカウントを作成した後、Adafruit ioを再度開く必要があります。 **Dashboards** をクリックし、次に **New Dashboard** をクリックします。
 
     .. image:: img/sp230516_103347.png
 
-#. Create a **New Dashboard**.
+#. **New Dashboard** を作成します。
 
     .. image:: img/sp230516_103744.png
 
-#. Enter the newly created **Dashboard** and create a new block.
+#. 新しく作成した **Dashboard** に入り、新しいブロックを作成します。
 
     .. image:: img/sp230516_104234.png
 
-#. Create 1 **Toggle** block.
+#. **Toggle** ブロックを1つ作成します。
 
     .. image:: img/sp230516_105727.png
 
-#. Next, you'll need to create a new feed here. This toggle will be used to control the LED, and we'll name this feed "LED".
+#. 次に、新しいフィードをここで作成する必要があります。このトグルはLEDを制御するために使用され、フィードの名前を「LED」とします。
 
     .. image:: img/sp230516_105641.png
 
-#. Check the **LED** feed, then move to the next step.
+#. **LED** フィードをチェックし、次のステップに進みます。
 
     .. image:: img/sp230516_105925.png
 
-#. Complete the block settings (mainly Block Title, On Text, and Off Text), then click on the **Create block** button at the bottom right to finish.
+#. ブロック設定（主にブロックタイトル、オンテキスト、およびオフテキスト）を完了し、右下の **Create block** ボタンをクリックして完了します。
 
     .. image:: img/sp230516_110124.png
 
-#. We also need to create two **Text Blocks** next. They will be used to display temperature and humidity. So, create two feeds named **temperature** and **humidity**.
+#. 次に、温度と湿度を表示するために2つの **Text Blocks** を作成する必要があります。したがって、 **temperature** および **humidity** という名前の2つのフィードを作成します。
 
     .. image:: img/sp230516_110657.png
 
-#. After creation, your Dashboard should look something like this:
+#. ダッシュボードを作成すると、次のようになります：
 
     .. image:: img/sp230516_111134.png
 
-#. You can adjust the layout by using the **Edit Layout** option on the Dashboard.
+#. ダッシュボードの **Edit Layout** オプションを使用してレイアウトを調整できます。
 
     .. image:: img/sp230516_111240.png
 
-#. Click on **API KEY**, and you will see your username and **API KEY** displayed. Note these down as you'll need them for your code.
+#. **API KEY** をクリックすると、ユーザー名と **API KEY** が表示されます。これをメモしておきます。コードで使用する必要があります。
 
     .. image:: img/sp230516_111641.png
 
-**Running the Code**
+**コードの実行**
 
-#. Build the circuit. 
+#. 回路を組み立てます。
 
     .. image:: img/Lesson_48_iot_adafruitio_bb.png
 
-#. Then, connect ESP32 to the computer using the USB cable.
+#. 次に、USBケーブルを使用してESP32をコンピュータに接続します。
 
+#. コードを開きます。
 
-#. Open the code.
-
-    * Open the ``Lesson_48_Adafruit_IO.ino`` file located in the ``universal-maker-sensor-kit\esp32\Lesson_48_Adafruit_IO`` directory, or copy the code into the Arduino IDE.
-    * After selecting the board (ESP32 Dev Module) and the appropriate port, click the **Upload** button.
+    * ``universal-maker-sensor-kit\esp32\Lesson_48_Adafruit_IO`` ディレクトリにある ``Lesson_48_Adafruit_IO.ino`` ファイルを開くか、Arduino IDEにコードをコピーします。
+    * ボード（ESP32 Dev Module）と適切なポートを選択した後、 **Upload** ボタンをクリックします。
     * :ref:`unknown_com_port`
-    * The ``Adafruit_MQTT Library`` and ``DHT sensor library`` are used here, you can install them from the **Library Manager**.
+    * ここでは ``Adafruit_MQTT Library`` と ``DHT sensor library`` が使用されているため、 **Library Manager** からインストールできます。
 
     .. raw:: html
 
         <iframe src=https://create.arduino.cc/editor/sunfounder01/987fb2fd-47e9-4a73-9020-6b2111eadd9c/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-#. Find the following lines and replace ``<SSID>`` and ``<PASSWORD>`` with the specific details of your WiFi network.
+#. 次の行を見つけて、 ``<SSID>`` と ``<PASSWORD>`` をWiFiネットワークの詳細に置き換えます。
 
     .. code-block::  Arduino
 
@@ -138,7 +135,7 @@ You can also buy them separately from the links below.
         #define WLAN_SSID "<SSID>"
         #define WLAN_PASS "<PASSWORD>"
 
-#. Then replace ``<YOUR_ADAFRUIT_IO_USERNAME>`` with your Adafruit IO username and ``<YOUR_ADAFRUIT_IO_KEY>`` with the **API KEY** you just copied.
+#. 次に、 ``<YOUR_ADAFRUIT_IO_USERNAME>`` をAdafruit IOのユーザー名に、 ``<YOUR_ADAFRUIT_IO_KEY>`` を先ほどコピーした **API KEY** に置き換えます。
 
     .. code-block::  Arduino
 
@@ -147,9 +144,9 @@ You can also buy them separately from the links below.
         #define AIO_USERNAME "<YOUR_ADAFRUIT_IO_USERNAME>"
         #define AIO_KEY      "<YOUR_ADAFRUIT_IO_KEY>"
 
-#. After selecting the correct board (ESP32 Dev Module) and port, click the **Upload** button.
+#. 正しいボード（ESP32 Dev Module）とポートを選択した後、 **Upload** ボタンをクリックします。
 
-#. Once the code is successfully uploaded, you will observe the following message in the serial monitor, indicating successful communication with Adafruit IO.
+#. コードが正常にアップロードされると、シリアルモニターに次のメッセージが表示され、Adafruit IOとの通信が成功したことを示します。
     
     .. code-block::
 
@@ -163,6 +160,6 @@ You can also buy them separately from the links below.
         Temperature: 27.10
         Humidity: 61.00
 
-#. Navigate back to Adafruit IO. Now you can observe the temperature and humidity readings on the dashboard, or utilize the LED toggle switch to control the on/off state of the external LED connected to the circuit.
+#. Adafruit IOに戻ります。ここで、ダッシュボードに温度と湿度の読み取り値を表示したり、外部LEDに接続されたLEDトグルスイッチを使用してオン/オフ状態を制御することができます。
 
     .. image:: img/sp230516_143220.png

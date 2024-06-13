@@ -11,23 +11,23 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pi_lesson10_pcf8591:
 
-Lesson 10: PCF8591 ADC DAC Converter Module
+レッスン 10: PCF8591 ADC DAC コンバータモジュール
 ==============================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Raspberry Piにはアナログ入力機能がないため、アナログ信号を処理するには :ref:`cpn_pcf8591` のようなモジュールが必要です。
 
-In this lesson, you will learn how to use a Raspberry Pi to interact with the PCF8591 module for analog-to-digital and digital-to-analog conversion. We’ll cover reading analog values from input AIN0, sending these values to the DAC(AOUT). The module's potentiometer is connected to AIN0 using jumper caps, and the D2 LED on the module is connected to AOUT, so you can see that the brightness of D2 LED changes as you rotate the potentiometer.
+このレッスンでは、Raspberry Piを使用してPCF8591モジュールとやり取りし、アナログからデジタル、デジタルからアナログへの変換方法を学びます。入力AIN0からアナログ値を読み取り、これらの値をDAC（AOUT）に送信する方法をカバーします。モジュールのポテンショメータはジャンパーキャップを使用してAIN0に接続されており、モジュール上のD2 LEDはAOUTに接続されているため、ポテンショメータを回すとD2 LEDの明るさが変わる様子が確認できます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -57,17 +57,17 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. note::
-   In this project, we utilized the AIN0 pin of the PCF8591 module, which is linked to a potentiometer on the module through a jumper cap. **Please make sure that the jumper cap on the module is correctly placed.** For more details, please refer to the PCF8591 module :ref:`schematic <cpn_pcf8591_sch>`.
+   このプロジェクトでは、PCF8591モジュールのAIN0ピンを使用しており、これはジャンパーキャップを介してモジュールのポテンショメータに接続されています。 **モジュール上のジャンパーキャップが正しく配置されていることを確認してください。** 詳細については、PCF8591モジュールの :ref:`schematic <cpn_pcf8591_sch>` を参照してください。
 
 .. image:: img/Lesson_10_PCF8591_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: Python
@@ -101,34 +101,33 @@ Code
        print("Exit")
 
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Importing Libraries**:
+1. **ライブラリのインポート**:
 
-   The script starts by importing required libraries. The ``PCF8591`` library is used for interacting with the ADC/DAC module, and ``time`` is for creating delays.
+   スクリプトは必要なライブラリのインポートから始まります。 ``PCF8591`` ライブラリはADC/DACモジュールとのやり取りに使用され、 ``time`` は遅延を作成するために使用されます。
 
    .. code-block:: python
 
       import PCF8591 as ADC  # Import the library for the PCF8591 module
       import time  # Import the time library for adding delays
 
-2. **Initializing PCF8591 Module**:
+2. **PCF8591モジュールの初期化**:
 
-   The PCF8591 module is initialized at the I²C address 0x48. This step is crucial for setting up communication between the Raspberry Pi and the module.
+   PCF8591モジュールはI²Cアドレス0x48で初期化されます。このステップは、Raspberry Piとモジュール間の通信を設定するために重要です。
 
    .. code-block:: python
 
       ADC.setup(0x48)  # Initialize the PCF8591 module at I2C address 0x48
 
-3. **Reading from Potentiometer and Writing to LED**:
+3. **ポテンショメータからの読み取りとLEDへの書き込み**:
 
-   Within a ``try`` block, a continuous ``while True`` loop reads the value from the potentiometer connected to AIN0 and writes this value to the DAC connected to AOUT. Jumper caps link the module's potentiometer to AIN0, and the D2 LED is connected to AOUT; please refer to the PCF8591 module :ref:`schematic <cpn_pcf8591_sch>` for details. The brightness of the LED changes as the potentiometer is rotated.
+   ``try``ブロック内で、継続的な ``while True`` ループがAIN0に接続されたポテンショメータから値を読み取り、AOUTに接続されたDACにこの値を書き込みます。ジャンパーキャップがモジュールのポテンショメータをAIN0にリンクし、D2 LEDがAOUTに接続されています。詳細については、PCF8591モジュールの :ref:`schematic <cpn_pcf8591_sch>` を参照してください。ポテンショメータを回すと、LEDの明るさが変わります。
 
-   - Use ``ADC.read(channel)`` to read the analog input of the specific channel. The channel range from 0 to 3 represents AIN0 to AIN3.
+   - ``ADC.read(channel)``を使用して、特定のチャネルのアナログ入力を読み取ります。チャネル範囲は0から3で、AIN0からAIN3を表します。
 
-   - Use ``ADC.write(Value)`` to set the analog output of the AOUT pin with a Value range from 0 to 255.
+   - ``ADC.write(Value)``を使用して、AOUTピンのアナログ出力を設定します。値の範囲は0から255です。
 
    .. raw:: html
 
@@ -144,9 +143,9 @@ Code Analysis
               ADC.write(tmp)
               time.sleep(0.2)
 
-4. **Handling Keyboard Interrupts**:
+4. **キーボード割り込みの処理**:
 
-   A ``KeyboardInterrupt`` (such as pressing CTRL+C) allows for a graceful exit from the loop without generating errors.
+   ``KeyboardInterrupt``（CTRL+Cを押すなど）により、エラーを生成せずにループから優雅に終了できます。
 
    .. code-block:: python
 

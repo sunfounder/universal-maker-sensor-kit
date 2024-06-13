@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson28_rgb_module:
 
-Lesson 28: RGB LED Module
+レッスン28: RGB LEDモジュール
 ==================================
 
-In this lesson, you will learn how to control an RGB LED with Arduino. We'll cover setting up the LED and then delve into displaying primary colors and creating a vibrant rainbow spectrum. This hands-on project is ideal for beginners, providing practical experience with output operations and color mixing in the Arduino environment.
+このレッスンでは、Arduinoを使用してRGB LEDを制御する方法を学びます。LEDのセットアップから始め、基本色の表示や鮮やかな虹のスペクトルの作成に進みます。この実践的なプロジェクトは、Arduino環境での出力操作と色の混合についての実務経験を提供するため、初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,24 +52,24 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_28_rgb_module_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/69d51b96-ad16-4c16-aa97-6dab559929d3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first segment of the code declares and initializes the pins to which each color channel of the RGB LED module is connected.
+1. コードの最初のセグメントでは、RGB LEDモジュールの各色チャネルに接続されているピンを宣言および初期化します。
 
    .. code-block:: arduino
        
@@ -77,7 +77,7 @@ Code Analysis
       const int gledPin = 10;   // pin connected to the green color channel
       const int bledPin = 11;  // pin connected to the blue color channel
 
-2. The ``setup()`` function initializes these pins as OUTPUT. This means we are sending signals OUT from these pins to the RGB LED module.
+2. ``setup()`` 関数では、これらのピンをOUTPUTとして初期化します。これは、これらのピンからRGB LEDモジュールに信号を出力することを意味します。
 
    .. code-block:: arduino
    
@@ -87,7 +87,7 @@ Code Analysis
         pinMode(bledPin, OUTPUT);
       }
 
-3. In the ``loop()`` function, the ``setColor()`` function is called with different parameters to display different colors. The ``delay()`` function is used after setting each color to pause for 1000 milliseconds (or 1 second) before moving on to the next color.
+3. ``loop()`` 関数では、さまざまなパラメータを持つ ``setColor()`` 関数を呼び出して異なる色を表示します。各色を設定した後、次の色に移る前に1000ミリ秒（1秒）停止するために ``delay()`` 関数を使用します。
 
    .. code-block:: arduino
    
@@ -99,7 +99,7 @@ Code Analysis
         // The rest of the color sequence...
       }
 
-4. The ``setColor()`` function uses the ``analogWrite()`` function to adjust the brightness of each color channel on the RGB LED module. The ``analogWrite()`` function employs Pulse Width Modulation (PWM) to simulate varying voltage outputs. By controlling the PWM duty cycle (the percentage of time a signal is HIGH within a fixed period), the brightness of each color channel can be controlled, allowing the mixing of various colors.
+4. ``setColor()`` 関数は ``analogWrite()`` 関数を使用して、RGB LEDモジュールの各色チャネルの明るさを調整します。 ``analogWrite()`` 関数は、パルス幅変調（PWM）を使用して変動する電圧出力をシミュレートします。PWMデューティサイクル（信号が一定期間内でHIGHである割合）を制御することで、各色チャネルの明るさを制御し、さまざまな色の混合が可能になります。
 
    .. code-block:: arduino
 

@@ -11,26 +11,21 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_digital_dice:
 
-Lesson 42: Digital Dice
+レッスン 42: デジタルサイコロ
 =============================================================
 
+このプログラムは、OLEDディスプレイを使用してサイコロの転がりをシミュレートします。
+振動スイッチを振ることでシミュレーションがトリガーされ、ディスプレイはサイコロを転がすように1から6の数字を循環させます。
+短時間後に表示が停止し、サイコロの結果を示すランダムに選ばれた数字が表示されます。
 
-This program simulates a dice roll using an OLED display. 
-The simulation is triggered by shaking the vibration switch, causing the display to cycle through numbers 1 to 6, 
-akin to rolling a dice. 
-The display halts after a short duration, revealing a randomly selected number that represents the dice roll outcome.
-
-
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+セット全体を購入するのが便利です、リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -43,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -60,49 +55,46 @@ You can also buy them separately from the links below.
         - \-
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
-        
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_42_Digital_dice_esp32_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f3c250f6-c5f6-4dc9-906a-a5a914741fe3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-A comprehensive breakdown of the code:
+コードの詳細な説明：
 
-1. Initialization of variables:
+1. 変数の初期化：
 
-    ``vibPin``: Digital pin connected to the vibration sensor.
+    ``vibPin``: 振動センサーに接続されたデジタルピン。
 
     .. code-block:: arduino
 
         const int vibPin = 35;    // The pin where the vib switch is connected
 
-2. Volatile variables:
+2. ボラタイル変数：
 
-    ``rolling``: A volatile flag that indicates the dice's rolling status. It is volatile as it is accessed within both the interrupt service routine and the main program.
+    ``rolling``: サイコロの転がり状態を示すボラタイルフラグ。これは割り込みサービスルーチンとメインプログラムの両方でアクセスされるため、volatileとして宣言されています。
 
     .. code-block:: arduino
 
         volatile bool rolling = false;
 
-
 3. ``setup()``:
 
-    Configures the vibration sensor's input mode.
-    Assigns an interrupt to the sensor to trigger the rollDice function upon state change.
-    Initializes the OLED display.
+    振動センサーの入力モードを設定します。
+    センサーに割り込みを割り当て、状態変化時にrollDice関数をトリガーします。
+    OLEDディスプレイを初期化します。
 
     .. code-block:: arduino
 
@@ -123,9 +115,9 @@ A comprehensive breakdown of the code:
 
 
 
-4. ``loop()``:
+4. ``loop()``
 
-    Continuously checks if ``rolling`` is true, displaying a random number between 1 and 6 during this state. The rolling ceases if the sensor has been shaken for over 500 milliseconds.
+    ``rolling`` がtrueであるかを連続してチェックし、この状態で1から6のランダムな数字を表示します。センサーが500ミリ秒以上振動している場合、転がりが停止します。
 
     .. code-block:: arduino
 
@@ -145,7 +137,7 @@ A comprehensive breakdown of the code:
 
 5. ``rollDice()``:
 
-    The interrupt service routine for the vibration sensor. It initiates the dice roll when the sensor is shaken by recording the current time.
+    振動センサーの割り込みサービスルーチン。センサーが振動したときにサイコロの転がりを開始し、現在の時間を記録します。
 
     .. code-block:: arduino
 
@@ -160,7 +152,7 @@ A comprehensive breakdown of the code:
 
 6. ``displayNumber()``:
 
-    Displays a selected number on the OLED screen.
+    OLEDディスプレイに選択された数字を表示します。
 
     .. code-block:: arduino
 

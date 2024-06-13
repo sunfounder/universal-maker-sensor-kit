@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson21_vl53l0x:
 
-Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+レッスン21: 飛行時間マイクロ-LIDAR距離センサー (VL53L0X)
 ====================================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W for measuring distances with the VL53L0X Time of Flight Micro-LIDAR Distance Sensor. We'll walk you through setting up I2C communication between the Raspberry Pi Pico W and the sensor, and then we'll explore configuring the sensor's settings for optimal performance. You will also learn how to adjust the measurement timing budget and VCSEL pulse periods to improve accuracy and range.
+このレッスンでは、Raspberry Pi Pico Wを使用してVL53L0X飛行時間マイクロ-LIDAR距離センサーで距離を測定する方法を学びます。Raspberry Pi Pico Wとセンサーの間でI2C通信を設定する手順を説明し、センサーの設定を最適な性能に調整する方法を探ります。また、測定タイミングバジェットとVCSELパルス期間を調整して精度と範囲を向上させる方法も学びます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+以下のリンクからキット全体を購入するのが便利です:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_21_vl53l0x_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -108,15 +107,14 @@ Code
    
        time.sleep_ms(100)  # Short delay of 0.1 seconds to reduce CPU usage
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Setting up the I2C Interface**:
+#. **I2Cインターフェースの設定**:
 
-   The code begins by importing necessary modules and initializing the I2C communication. The ``machine`` module is used to set up I2C with the correct pins of the Raspberry Pi Pico W.
+   このコードは、必要なモジュールをインポートし、I2C通信を初期化することから始まります。 ``machine`` モジュールを使用して、Raspberry Pi Pico Wの正しいピンを使用してI2Cを設定します。
 
-   For more information about the ``vl53l0x`` library, please visit |link_micropython_vl53l0x_driver|.
+   ``vl53l0x`` ライブラリの詳細については、 |link_micropython_vl53l0x_driver| をご覧ください。
 
    .. code-block:: python
 
@@ -131,17 +129,17 @@ Code Analysis
       i2c = I2C(id=id, sda=sda, scl=scl)
       print(i2c.scan())
 
-#. **Creating VL53L0X Object**:
+#. **VL53L0Xオブジェクトの作成**:
 
-   An object of ``VL53L0X`` class is created. This object will be used to interact with the VL53L0X sensor.
+   ``VL53L0X`` クラスのオブジェクトが作成されます。このオブジェクトは、VL53L0Xセンサーとの対話に使用されます。
 
    .. code-block:: python
 
       tof = VL53L0X(i2c)
 
-#. **Configuring Measurement Timing Budget**:
+#. **測定タイミングバジェットの設定**:
 
-   The measurement timing budget is set up. This determines how long the sensor takes to perform a measurement. A longer timing budget allows for more accurate readings.
+   測定タイミングバジェットが設定されます。これは、センサーが測定を実行するのにかかる時間を決定します。タイミングバジェットが長いほど、読み取りがより正確になります。
 
    .. code-block:: python
 
@@ -149,18 +147,18 @@ Code Analysis
       print("Budget was:", budget)
       tof.set_measurement_timing_budget(40000)
 
-#. **Setting VCSEL Pulse Periods**:
+#. **VCSELパルス期間の設定**:
 
-   Here, the pulse periods for the VCSEL (Vertical Cavity Surface Emitting Laser) are set. This affects the range and accuracy of the sensor.
+   ここでは、VCSEL（垂直共振器面発光レーザー）のパルス期間が設定されます。これにより、センサーの範囲と精度が影響を受けます。
 
    .. code-block:: python
 
       tof.set_Vcsel_pulse_period(tof.vcsel_period_type[0], 12)
       tof.set_Vcsel_pulse_period(tof.vcsel_period_type[1], 8)
 
-#. **Continuous Measurement Loop**:
+#. **連続測定ループ**:
 
-   The sensor continuously measures the distance and prints it. The ``ping()`` method of ``VL53L0X`` class is used to get the distance in millimeters. A small delay is added to reduce CPU usage.
+   センサーは継続的に距離を測定し、それを出力します。 ``VL53L0X`` クラスの ``ping()`` メソッドを使用して、距離をミリメートル単位で取得します。CPU使用率を減らすために小さな遅延が追加されています。
 
    .. code-block:: python
 

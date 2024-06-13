@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson15_raindrop:
 
-Lesson 15: Raindrop Detection Module
+Lesson 15: 雨滴検出モジュール
 =======================================
 
-In this lesson, you will learn how to use a raindrop detection sensor with an ESP32 Development Board. We'll cover reading digital signals from the sensor when it detects rainwater and displaying this information on the serial monitor. This project provides an engaging way to grasp digital input and output in microcontroller programming, making it ideal for beginners in electronics and coding with the ESP32 platform.
+このレッスンでは、ESP32開発ボードを使用して雨滴検出センサーの使い方を学びます。センサーが雨水を検出したときにデジタル信号を読み取り、この情報をシリアルモニターに表示する方法を説明します。このプロジェクトは、マイクロコントローラーのプログラミングにおけるデジタル入力と出力の理解を深めるための魅力的な方法を提供し、電子機器やESP32プラットフォームでのコーディング初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_15_Raindrop_Detection_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/5aff47ab-22c5-4500-bbe3-fefc55f6e40f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Defining sensor pin
+1. センサーピンの定義
 
-   Here, a constant integer named ``sensorPin`` is defined and assigned the value 25. This corresponds to the digital pin on the ESP32 Development Board where the raindrops detection sensor is connected.
+   ここでは、 ``sensorPin`` という名前の定数の整数が定義され、値25が割り当てられています。これは、雨滴検出センサーが接続されているESP32開発ボードのデジタルピンに対応します。
 
    .. code-block:: arduino
    
        const int sensorPin = 25;
 
-2. Setting up the pin mode and initiating serial communication.
+2. ピンモードの設定とシリアル通信の開始
 
-   In the ``setup()`` function, two essential steps are performed. Firstly, ``pinMode()`` is used to set the ``sensorPin`` as an input, enabling us to read digital values from the raindrops sensor. Secondly, serial communication is initialized with a baud rate of 9600.
+   ``setup()``関数では、2つの重要なステップが実行されます。まず、 ``pinMode()`` を使用して ``sensorPin`` を入力として設定し、雨滴センサーからデジタル値を読み取ることができるようにします。次に、9600ボーの速度でシリアル通信を初期化します。
 
    .. code-block:: arduino
    
@@ -90,9 +90,9 @@ Code Analysis
          Serial.begin(9600);
        }
 
-3. Reading the digital value and sending it to the serial monitor. 
+3. デジタル値の読み取りとシリアルモニターへの送信
 
-   The ``loop()`` function reads the digital value from the raindrops sensor using ``digitalRead()``. This value (either HIGH or LOW) is printed to the Serial Monitor. When raindrops are detected, the serial monitor will display 0; when no raindrops are detected, it will display 1. The program then waits for 50 milliseconds before the next reading.
+   ``loop()``関数では、``digitalRead()``を使用して雨滴センサーからデジタル値を読み取ります。この値（HIGHまたはLOW）はシリアルモニターに表示されます。雨滴が検出されるとシリアルモニターには0が表示され、検出されない場合は1が表示されます。その後、プログラムは次の読み取りまで50ミリ秒待機します。
 
    .. code-block:: arduino
    

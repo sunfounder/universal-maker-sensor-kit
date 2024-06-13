@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson23_ultrasonic:
 
-Lesson 23: Ultrasonic Sensor Module (HC-SR04)
+レッスン 23: 超音波センサーモジュール (HC-SR04)
 ================================================
 
-In this lesson, you will learn how to measure distances using the Raspberry Pi Pico W and an HC-SR04 ultrasonic sensor. You'll find out how to connect the sensor to the Pico W and write a MicroPython script to control it. The lesson will cover calculating distances based on the time it takes for ultrasonic waves to reflect back from objects. This practical project provides insights into working with sensors, handling digital signals, and basic calculations in MicroPython, suitable for those interested in hardware interfacing with the Raspberry Pi Pico W.
+このレッスンでは、Raspberry Pi Pico WとHC-SR04超音波センサーを使用して距離を測定する方法を学びます。センサーをPico Wに接続し、制御するためのMicroPythonスクリプトを作成する方法について説明します。レッスンでは、超音波が物体から反射して戻るまでの時間に基づいて距離を計算する方法を取り上げます。この実践的なプロジェクトは、センサーの扱い、デジタル信号の処理、およびMicroPythonでの基本的な計算に関する洞察を提供し、Raspberry Pi Pico Wを使用したハードウェアインターフェースに興味のある方に適しています。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_23_ultrasonic_sensor_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -108,32 +107,32 @@ Code
        time.sleep_ms(300)  # Wait for 300 milliseconds before next measurement
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Importing libraries**
+#. **ライブラリのインポート**
 
-   The ``machine`` and ``time`` modules are imported for accessing hardware-specific functions and time-related functions, respectively.
+   ``machine``モジュールと ``time``モジュールは、それぞれハードウェア固有の機能と時間関連の機能にアクセスするためにインポートされます。
 
    .. code-block:: python
 
       import machine
       import time
 
-#. **Pin setup for HC-SR04**
+#. **HC-SR04のピン設定**
 
-   Two GPIO pins are defined for the HC-SR04 sensor: ``TRIG`` is an output pin to trigger the ultrasonic pulse, and ``ECHO`` is an input pin to receive the reflected pulse.
+   HC-SR04センサー用に2つのGPIOピンが定義されています。 ``TRIG``は超音波パルスをトリガーするための出力ピンであり、 ``ECHO``は反射パルスを受信するための入力ピンです。
 
    .. code-block:: python
 
       TRIG = machine.Pin(17, machine.Pin.OUT)
       ECHO = machine.Pin(16, machine.Pin.IN)
 
-#. **Distance measurement function**
+#. **距離測定関数**
 
-   The ``distance`` function triggers the ultrasonic pulse and calculates the distance based on the time taken for the echo to return. It uses time-based functions to measure the duration of the echo.
+   ``distance``関数は超音波パルスをトリガーし、エコーが戻るまでの時間に基づいて距離を計算します。エコーの持続時間を測定するために時間関連の関数を使用します。
 
-   For more details, please refer to the working :ref:`principle <cpn_ultrasonic_principle>` of the ultrasonic sensor module.
+   詳細については、超音波センサーモジュールの動作原理についての :ref:`principle <cpn_ultrasonic_principle>` を参照してください。
 
    .. code-block:: python
 
@@ -156,9 +155,9 @@ Code Analysis
           during = time.ticks_diff(time2, time1)
           return during * 340 / 2 / 10000
 
-#. **Main loop**
+#. **メインループ**
 
-   The main loop continuously calls the ``distance`` function and prints the measured distance. It waits for 300 milliseconds between each measurement to prevent sensor saturation.
+   メインループは継続的に ``distance``関数を呼び出し、測定された距離を表示します。センサーの飽和を防ぐために各測定の間に300ミリ秒待機します。
 
    .. code-block:: python
     

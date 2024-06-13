@@ -14,30 +14,28 @@
 
 .. _cpn_touch:
 
-Touch Sensor Module
+タッチセンサーモジュール
 ==========================
 
 .. image:: img/22_touch_sensor_moudle.png
     :width: 200
     :align: center
 
+タッチスイッチセンサー（タッチボタンまたはタッチスイッチとも呼ばれる）は、デバイスの制御（例：タッチ式ランプ）に広く使用されています。ボタンと同じ機能を持ち、新しいデバイスでは製品を整然と見せるためにボタンの代わりに使用されることが多いです。
 
-The Touch switch sensor (also called touch button or touch switch) is widely used to control devices (e.g. touchable lamp). It has the same functionality as a button. It is used instead of the button on many new devices because it makes the product look neat.
-
-Pinout
+ピン配置
 ---------------------------
-* **VCC**: This is the positive power supply input from the main control. 
-* **GND**: Ground connection.
-* **IO**: Digital output. High level with a touch, low level without touching.
+* **VCC**: メインコントロールからの正電源入力。
+* **GND**: 接地接続。
+* **IO**: デジタル出力。タッチ時に高レベル、非タッチ時に低レベル。
 
-
-Principle
+原理
 ---------------------------
-This module is a capacitive touch switch module based on a touch sensor IC (TTP223B). In the normal state, the module outputs a low level with low power consumption; when a finger touches the corresponding position, the module outputs a high level and becomes low level again after the finger is released.
+このモジュールは、タッチセンサーIC（TTP223B）を基にした静電容量式タッチスイッチモジュールです。通常状態では、モジュールは低消費電力で低レベルを出力します。指が対応する位置に触れると、モジュールは高レベルを出力し、指を離すと再び低レベルになります。
 
-Here is how the capacitive touch switch works:
+静電容量式タッチスイッチの動作原理は以下の通りです：
 
-A capacitive touch switch has different layers—top insulating face plate followed by touch plate, another insulating layer and then ground plate.
+静電容量式タッチスイッチには、上部絶縁面板、タッチプレート、別の絶縁層、そして接地プレートという異なる層があります。
 
 .. image:: img/22_touch_sensor_moudle_principle.jpeg
     :width: 400
@@ -47,11 +45,11 @@ A capacitive touch switch has different layers—top insulating face plate follo
     
     <br/>
 
-In practice, a capacitive sensor can be made on a double-sided PCB by regarding one side as the touch sensor and the opposite side as ground plate of the capacitor. When power is applied across these plates, the two plates get charged. In equilibrium state, the plates have the same voltage as the power source.
+実際には、片面をタッチセンサーとして、反対側をコンデンサの接地プレートと見なすことで、両面PCB上に静電容量センサーを作ることができます。これらのプレートに電力を供給すると、二つのプレートが充電され、平衡状態ではプレートは電源と同じ電圧を持ちます。
 
-The touch detector circuit has an oscillator whose frequency is dependent on capacitance of the touchpad. When a finger is moved close to the touchpad, additional capacitance causes frequency of this internal oscillator to change. The detector circuit tracks oscillator frequency at timed intervals, and when the shift crosses the threshold change, the circuit triggers a key-press event.
+タッチ検出回路には、タッチパッドの静電容量に依存する周波数の発振器があります。指がタッチパッドに近づくと、追加の静電容量がこの内部発振器の周波数を変化させます。検出回路はタイミング間隔で発振器の周波数を追跡し、変動が閾値を超えると回路がキー押下イベントをトリガーします。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/22_touch_sensor_moudle_schematic.png
@@ -62,8 +60,7 @@ Schematic diagram
 
    <br/>
 
-
-Example
+例
 ---------------------------
 * :ref:`uno_lesson22_touch_sensor` (Arduino UNO)
 * :ref:`esp32_lesson22_touch_sensor` (ESP32)

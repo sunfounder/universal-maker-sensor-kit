@@ -14,17 +14,17 @@
 
 .. _uno_lesson27_oled:
 
-Lesson 27: OLED Display Module (SSD1306)
-============================================
+レッスン27: OLEDディスプレイモジュール (SSD1306)
+=================================================
 
-In this lesson, you will learn how to program an Arduino Uno board to control an OLED display (SSD1306). We’ll cover using the Adafruit SSD1306 and GFX libraries to display text, numbers, and create scroll animations on the screen. This project is ideal for those seeking to enhance their knowledge of displaying graphics and text on small screens using the Arduino environment.
+このレッスンでは、Arduino UnoボードをプログラムしてOLEDディスプレイ（SSD1306）を制御する方法を学びます。Adafruit SSD1306とGFXライブラリを使用して、テキスト、数字、およびスクロールアニメーションを画面に表示する方法を説明します。このプロジェクトは、Arduino環境を使用して小型スクリーンにグラフィックとテキストを表示する知識を深めたい人に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,32 +52,31 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_27_OLED_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b2617291-5326-4d12-812b-78c45ced7516/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Library Inclusion and Initial Definitions**:
-   The necessary libraries for interfacing with the OLED are included. Following that, definitions regarding the OLED's dimensions and I2C address are provided.
+1. **ライブラリのインクルードと初期定義**:
+   OLEDとのインターフェース用の必要なライブラリをインクルードします。その後、OLEDの寸法とI2Cアドレスに関する定義を行います。
 
-
-   - **Adafruit SSD1306**: This library is designed to help with the interfacing of the SSD1306 OLED display. It provides methods to initialize the display, control its settings, and display content.
-   - **Adafruit GFX Library**: This is a core graphics library for displaying text, producing colors, drawing shapes, etc., on various screens including OLEDs.
+   - **Adafruit SSD1306**: このライブラリはSSD1306 OLEDディスプレイとのインターフェースを助けるために設計されています。ディスプレイの初期化、設定の制御、およびコンテンツの表示に役立つメソッドを提供します。
+   - **Adafruit GFX Library**: これは、テキストの表示、色の生成、形の描画など、さまざまなスクリーン（OLEDを含む）に対応するコアグラフィックスライブラリです。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit SSD1306"** and **"Adafruit GFX"** and install it. 
+      ライブラリをインストールするには、Arduino Library Managerを使用し、 **"Adafruit SSD1306"**と **"Adafruit GFX"** を検索してインストールしてください。
 
    .. code-block:: arduino
     
@@ -92,19 +91,19 @@ Code Analysis
       #define OLED_RESET -1
       #define SCREEN_ADDRESS 0x3C
 
-2. **Bitmap Data**:
-   Bitmap data for displaying a custom icon on the OLED screen. This data represents an image in a format that the OLED can interpret.
+2. **ビットマップデータ**:
+   OLEDスクリーンにカスタムアイコンを表示するためのビットマップデータ。このデータは、OLEDが解釈できるフォーマットで画像を表します。
 
-   You can use this online tool called |link_image2cpp| that can turn your image into an array. 
+   オンラインツール |link_image2cpp| を使用して、画像を配列に変換できます。
 
-   The ``PROGMEM`` keyword denotes that the array is stored in the program memory of the Arduino microcontroller. Storing data in program memory(PROGMEM) instead of RAM can be helpful for large amounts of data, which would otherwise take up too much space in RAM.
+   ``PROGMEM`` キーワードは、配列がArduinoマイクロコントローラのプログラムメモリに格納されることを示します。データが多い場合、RAMではなくプログラムメモリ（PROGMEM）にデータを格納することが役立ちます。
 
    .. code-block:: arduino
 
       static const unsigned char PROGMEM sunfounderIcon[] = {...};
 
-3. **Setup Function (Initialization and Display)**:
-   The ``setup()`` function initializes the OLED and displays a series of patterns, texts, and animations.
+3. **セットアップ関数（初期化と表示）**:
+   ``setup()`` 関数はOLEDを初期化し、一連のパターン、テキスト、およびアニメーションを表示します。
 
    .. code-block:: arduino
 

@@ -14,22 +14,22 @@
 
 .. _install_blinka:
 
-Insatll ``Adafruit_Blinka`` (CircuitPython) - Optional
-=======================================================
+``Adafruit_Blinka``（CircuitPython）のインストール - 任意
+==========================================================
 
-For an enhanced experience with advanced modules, we recommend using the ``Adafruit_Blinka`` library, a key component of the CircuitPython environment. The unique feature of Blinka is its ability to enable code written for CircuitPython to run seamlessly and effortlessly on Linux computers like the Raspberry Pi.
+高度なモジュールを使用するために、``Adafruit_Blinka``ライブラリを使用することをお勧めします。これはCircuitPython環境の主要なコンポーネントです。Blinkaの特長は、CircuitPython用に書かれたコードをRaspberry PiなどのLinuxコンピュータ上でシームレスかつ簡単に実行できることです。
 
-This library makes it simpler to use complex modules like BMP280, VL53L0X, and OLED, streamlining your project development process. With CircuitPython, programming becomes more accessible, allowing you to focus on creating robust applications without needing extensive hardware knowledge.
+このライブラリを使用することで、BMP280、VL53L0X、OLEDなどの複雑なモジュールの利用が簡単になり、プロジェクト開発プロセスが効率化されます。CircuitPythonを使えば、ハードウェアの知識がなくても、堅牢なアプリケーションの作成に集中できるようになります。
 
-Additionally, you’ll gain the benefit of a large support community and a variety of resources to aid your learning and development.
+さらに、大規模なサポートコミュニティや学習・開発を支援するさまざまなリソースの恩恵を受けることができます。
 
-We will guide you through the straightforward process of installing Adafruit_Blinka, setting the stage for you to quickly start working on your projects.
+ここでは、Adafruit_Blinkaのインストールプロセスを簡単に説明し、プロジェクトにすぐに取り掛かれるようにします。
 
 
-Update your Raspberry Pi and Python
+Raspberry PiとPythonのアップデート
 ----------------------------------------------
 
-Before installing Blinka, please use the following commands to ensure that your Raspberry Pi and Python versions are up to date:
+Blinkaをインストールする前に、以下のコマンドを使用してRaspberry PiとPythonのバージョンを最新にしてください：
 
 .. code-block:: bash
 
@@ -37,34 +37,34 @@ Before installing Blinka, please use the following commands to ensure that your 
    sudo apt-get upgrade
 
 
-Setup Virtual Environment
+仮想環境のセットアップ
 ----------------------------------------------
 
-Starting from Bookworm (OS version), packages installed using ``pip`` must be installed into a Python virtual environment using ``venv``. A virtual environment is a secure container where you can install third-party modules without affecting or disrupting your system's Python.
+Bookworm（OSバージョン）からは、 ``pip`` を使用してインストールされるパッケージは ``venv`` を使用してPython仮想環境にインストールする必要があります。仮想環境は、システムのPythonに影響を与えずにサードパーティモジュールをインストールできる安全なコンテナです。
 
-The following command will create an "env" directory in your user directory (``~``) for the virtual Python environment.
+以下のコマンドは、ユーザーディレクトリ（ ``~`` ）に「env」ディレクトリを作成し、仮想Python環境を設定します。
 
 .. code-block:: bash
    
    cd ~
    python -m venv env --system-site-packages
 
-You will need to activate the virtual environment every time the Pi is rebooted. To activate it:
+Raspberry Piを再起動するたびに仮想環境をアクティブにする必要があります。アクティブにするには：
 
 .. code-block:: bash
 
    source env/bin/activate
 
-You’ll see that your prompt is now prepended with (env) to indicate that you’re no longer using the system Python. Instead, you’re using the version of Python contained inside your virtual environment. Any changes you make here won’t cause problems for your system Python; nor will any new modules you install into your environment.
+プロンプトの先頭に(env)が付くようになり、システムPythonではなく、仮想環境内のPythonを使用していることがわかります。ここで行った変更はシステムPythonには影響を与えませんし、新しいモジュールをインストールしても問題はありません。
 
 .. image:: img/07_activate_env.png
 
-To deactivate, you can use ``deactivate``, but leave it active for now.
+仮想環境を非アクティブにするには、 ``deactivate`` を使用しますが、今はアクティブのままにしておいてください。
 
-Automatic Installation
+自動インストール
 -----------------------
 
-When activated in the virtual environment (you will see ``(env)`` at the beginning of the terminal command), run the following code in order. This code will execute the installation script provided by adafruit and automatically complete the remaining installation steps.
+仮想環境がアクティブになっている場合（ターミナルコマンドの先頭に ``(env)`` が表示されます）、以下のコードを順番に実行してください。このコードはadafruitが提供するインストールスクリプトを実行し、残りのインストールステップを自動的に完了します。
 
 .. code-block:: bash
 
@@ -72,17 +72,18 @@ When activated in the virtual environment (you will see ``(env)`` at the beginni
    wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
    sudo -E env PATH=$PATH python3 raspi-blinka.py
 
-It may take a few minutes to run. When it finishes, it will ask you if you would like to reboot. Press Enter directly to reboot, or if you want to reboot later, enter "n" and then press Enter. When you are ready, manually reboot your raspberry pi.
+実行には数分かかる場合があります。終了すると、再起動するかどうか尋ねられます。Enterを押して直接再起動するか、後で再起動したい場合は「n」と入力してからEnterを押します。準備ができたら、手動でRaspberry Piを再起動してください。
 
 .. image:: img/07_after_install_blinka.png
 
-Once it reboots, the connection will close. After a couple of minutes, you can reconnect.
+再起動後、接続が切れます。数分後に再接続できます。
 
 
-Blinka Test
+
+Blinkaテスト
 -----------------------
 
-Create a new file called ``blinkatest.py`` with nano or your favorite text editor and put the following in:
+``blinkatest.py``という新しいファイルをnanoまたはお好みのテキストエディタで作成し、以下の内容を入力します：
 
 .. code-block:: python
 
@@ -106,24 +107,24 @@ Create a new file called ``blinkatest.py`` with nano or your favorite text edito
    
    print("done!")
 
-Before running the code, please make sure that you have activated the virtual python environment with blinka installed:
+コードを実行する前に、blinkaがインストールされた仮想Python環境がアクティブになっていることを確認してください：
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Then run the following command in the command line:
+次に、コマンドラインで以下のコマンドを実行します：
 
 .. code-block:: bash
 
    python blinkatest.py
 
-You should see the following, indicating digital i/o, I2C and SPI all worked.
+デジタルI/O、I2C、およびSPIがすべて正常に動作することを示す以下の出力が表示されるはずです。
 
 .. image:: img/07_check_blinka.png
 
 
-Reference
+参考文献
 -----------------------
 
 - |link_adafruit_blinka_guide|

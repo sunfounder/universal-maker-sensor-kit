@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson19_dht11:
 
 Lesson 19: Temperature and Humidity Sensor Module (DHT11)
 ====================================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to connect with a DHT11 temperature and humidity sensor. You'll explore accurate measurement of environmental conditions by recording temperature and humidity data. This tutorial offers practical guidance on using digital sensors with the Raspberry Pi Pico W, programming with MicroPython, and managing real-time data processing. 
+このレッスンでは、Raspberry Pi Pico Wを使用してDHT11温湿度センサに接続する方法を学びます。環境条件の正確な測定を行い、温度と湿度のデータを記録します。このチュートリアルは、Raspberry Pi Pico Wでデジタルセンサを使用する実践的なガイダンスを提供し、MicroPythonでプログラミングし、リアルタイムのデータ処理を管理する方法を学ぶのに役立ちます。
 
 Required Components
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品を含むキットを購入すると便利です。以下のリンクを参照してください：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -83,9 +82,9 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Libraries:
+#. ライブラリのインポート:
 
-   The code begins by importing necessary libraries. ``dht`` is for the DHT11 sensor, ``machine`` is for interacting with the hardware, and ``time`` is for adding delays in the loop.
+   コードは必要なライブラリをインポートすることから始まります。 ``dht`` はDHT11センサ用、 ``machine`` はハードウェアとの対話用、 ``time`` はループ内の遅延を追加するために使用されます。
 
    .. code-block:: python
       
@@ -93,17 +92,17 @@ Code Analysis
       import machine
       import time
 
-#. Initializing the DHT11 Sensor:
+#. DHT11センサの初期化:
 
-   The DHT11 sensor is initialized by specifying its connected GPIO pin. Here, it's connected to GPIO 16 on the Raspberry Pi Pico W. This is done using the ``machine.Pin`` function.
+   DHT11センサは、接続されたGPIOピンを指定して初期化されます。ここでは、Raspberry Pi Pico WのGPIO 16に接続されています。これは、 ``machine.Pin`` 関数を使用して行います。
 
    .. code-block:: python
 
       d = dht.DHT11(machine.Pin(16))
 
-#. Reading and Printing Data in a Loop:
+#. データの読み取りと表示をループで行う:
 
-   The ``while True`` loop enables the program to continuously read temperature and humidity data. Inside the loop, ``d.measure()`` is called to take a new measurement. ``d.temperature()`` and ``d.humidity()`` are used to retrieve the temperature and humidity data, respectively. These values are then printed. The loop pauses for one second (``1000`` milliseconds) using ``time.sleep_ms(1000)``, ensuring the data is read and printed every second.
+   ``while True`` ループは、プログラムが温度と湿度のデータを継続的に読み取ることを可能にします。ループ内では、 ``d.measure()`` を呼び出して新しい測定を行います。 ``d.temperature()`` と ``d.humidity()`` を使用して、それぞれ温度と湿度のデータを取得します。これらの値は表示されます。ループは ``time.sleep_ms(1000)`` を使用して1秒（ ``1000`` ミリ秒）停止し、データが毎秒読み取られて表示されるようにします。
 
    .. code-block:: python
 

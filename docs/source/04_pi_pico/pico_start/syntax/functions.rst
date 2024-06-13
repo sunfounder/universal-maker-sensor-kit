@@ -12,51 +12,49 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Functions
-==============
+関数
+========
 
-In MicroPython, a function is a group of related statements that perform a specific task.
+MicroPythonでは、関数は特定のタスクを実行する関連ステートメントのグループです。
 
-Functions help break our program into smaller modular blocks. As our plan becomes larger and larger, functions make it more organized and manageable.
+関数はプログラムを小さなモジュール化されたブロックに分割するのに役立ちます。プログラムが大きくなるにつれて、関数を使用することでより整理され、管理しやすくなります。
 
-In addition, it avoids duplication and makes the code reusable.
+さらに、コードの重複を避け、再利用可能にします。
 
-Create a Function
-------------------
+関数の作成
+------------
 
-.. code-block::
+.. code-block:: python
 
     def function_name(parameters): 
         """docstring"""
         statement(s)
 
-* A function is defined using the ``def`` keyword
+* 関数は``def``キーワードを使用して定義されます。
 
-* A function name to uniquely identify the function. Function naming is the same as variable naming, and both follow the following rules.
+* 関数名は関数を一意に識別します。関数名の命名規則は変数名の命名規則と同じで、次のルールに従います。
     
-   * Can only contain numbers, letters, and underscores.
-   * The first character must be a letter or underscore.
-   * Case sensitive.
+   * 数字、文字、アンダースコアのみを含むことができます。
+   * 最初の文字は文字またはアンダースコアでなければなりません。
+   * 大文字と小文字を区別します。
 
-* Parameters (arguments) through which we pass values to a function. They are optional.
+* パラメータ（引数）は、関数に値を渡すために使用されます。これらはオプションです。
 
-* The colon (:) marks the end of the function header.
+* コロン（:）は関数ヘッダーの終わりを示します。
 
-* Optional docstring, used to describe the function of the function, we usually use triple quotes so that the docstring can be expanded to multiple lines.
+* 関数の機能を説明するためのオプションのdocstring。通常、docstringを複数行に拡張できるようにトリプルクォートを使用します。
 
-* One or more valid Micropython statements that make up the function body. Statements must have the same indentation level (usually 4 spaces).
+* 関数本体を構成する1つ以上の有効なMicroPythonステートメント。ステートメントは同じインデントレベル（通常は4つのスペース）でなければなりません。
 
-* Each function needs at least one statement, but if for some reason there is a function that does not contain any statement, please put in the pass statement to avoid errors.
+* 各関数には少なくとも1つのステートメントが必要ですが、何らかの理由でステートメントを含まない関数がある場合は、エラーを避けるためにpassステートメントを入れてください。
 
-* An optional ``return`` statement to return a value from the function.
-
-
-Calling a Function
--------------------
-
-To call a function, add parentheses after the function name.
+* 関数から値を返すためのオプションの``return``ステートメント。
 
 
+関数の呼び出し
+----------------
+
+関数を呼び出すには、関数名の後に括弧を追加します。
 
 .. code-block:: python
 
@@ -68,25 +66,23 @@ To call a function, add parentheses after the function name.
 >>> %Run -c $EDITOR_CONTENT
 Your first function
 
-The return Statement
------------------------
+returnステートメント
+----------------------
 
-The return statement is used to exit a function and return to the place where it was called.
+returnステートメントは、関数を終了し、呼び出された場所に戻るために使用されます。
 
-**Syntax of return**
+**returnの構文**
 
 .. code-block:: python
 
     return [expression_list]
 
-The statement can contain an expression that is evaluated and returns a value. If there is no expression in the statement, or the ``return`` statement itself does not exist in the function, the function will return a ``None`` object.
-
-
+ステートメントには、評価されて値を返す式を含めることができます。ステートメントに式がない場合、または関数内に ``return`` ステートメント自体が存在しない場合、関数は ``None`` オブジェクトを返します。
 
 .. code-block:: python
 
     def my_function():
-            print("Your first function")
+        print("Your first function")
 
     print(my_function())
 
@@ -94,16 +90,14 @@ The statement can contain an expression that is evaluated and returns a value. I
 Your first function
 None
 
-Here, ``None`` is the return value, because the ``return`` statement is not used.
+ここでは、 ``None`` が返される値です。これは ``return`` ステートメントが使用されていないためです。
 
-Arguments
--------------
+引数
+--------
 
-Information can be passed to the function as arguments.
+情報は引数として関数に渡すことができます。
 
-Specify arguments in parentheses after the function name. You can add as many arguments as you need, just separate them with commas.
-
-
+関数名の後に括弧で引数を指定します。必要なだけ多くの引数を追加でき、それらをコンマで区切ります。
 
 .. code-block:: python
 
@@ -117,13 +111,10 @@ Specify arguments in parentheses after the function name. You can add as many ar
 >>> %Run -c $EDITOR_CONTENT
 Hello Lily, Welcome to China!
 
+引数の数
+----------
 
-Number of Arguments
-*************************
-
-By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 parameters, you have to call the function with 2 arguments, not more, and not less.
-
-
+デフォルトでは、関数は正しい数の引数で呼び出されなければなりません。つまり、関数が2つのパラメータを期待する場合、その関数を2つの引数で呼び出す必要があり、それ以上でも以下でもありません。
 
 .. code-block:: python
 
@@ -134,15 +125,15 @@ By default, a function must be called with the correct number of arguments. Mean
 
     welcome("Lily", "Welcome to China!")
 
-Here, the function welcome() has 2 parameters.
+ここでは、関数welcome()には2つのパラメータがあります。
 
-Since we called this function with two arguments, the function runs smoothly without any errors.
+この関数を2つの引数で呼び出したため、関数はエラーなしにスムーズに実行されます。
 
-If it is called with a different number of arguments, the interpreter will display an error message.
+異なる数の引数で呼び出されると、インタプリタはエラーメッセージを表示します。
 
-The following is the call to this function, which contains one and one no arguments and their respective error messages.
+以下は、この関数の呼び出しで、1つの引数と引数なしの例およびそれぞれのエラーメッセージです。
 
-.. code-block::
+.. code-block:: 
 
     welcome("Lily")＃Only one argument
 
@@ -161,12 +152,12 @@ Traceback (most recent call last):
 TypeError: function takes 2 positional arguments but 0 were given
 
 
-Default Arguments
+デフォルト引数
 *************************
 
-In MicroPython, we can use the assignment operator (=) to provide a default value for the parameter.
+MicroPythonでは、代入演算子（=）を使用して、パラメータにデフォルト値を提供することができます。
 
-If we call the function without argument, it uses the default value.
+引数なしで関数を呼び出すと、デフォルト値が使用されます。
 
 
 
@@ -181,21 +172,21 @@ If we call the function without argument, it uses the default value.
 >>> %Run -c $EDITOR_CONTENT
 Hello Lily, Welcome to China!
 
-In this function, the parameter ``name`` has no default value and is required (mandatory) during the call.
+この関数では、パラメータ ``name`` にはデフォルト値がなく、呼び出し時に必須（必須）です。
 
-On the other hand, the default value of the parameter ``msg`` is "Welcome to China!". Therefore, it is optional during the call. If a value is provided, it will overwrite the default value.
+一方、パラメータ ``msg`` のデフォルト値は「Welcome to China!」です。したがって、呼び出し時に省略可能です。値が提供されると、デフォルト値が上書きされます。
 
-Any number of arguments in the function can have a default value. However, once there is a default argument, all arguments on its right must also have default values.
+関数内の任意の数の引数にデフォルト値を設定できます。ただし、一度デフォルト引数がある場合、その右側のすべての引数にもデフォルト値が必要です。
 
-This means that non-default arguments cannot follow default arguments. 
+これは、非デフォルト引数がデフォルト引数の後に続くことはできないことを意味します。
 
-For example, if we define the above function header as:
+たとえば、上記の関数ヘッダーを次のように定義すると：
 
 .. code-block:: python
 
     def welcome(name = "Lily", msg):
 
-We will receive the following error message:
+次のエラーメッセージが表示されます：
 
 >>> %Run -c $EDITOR_CONTENT
 Traceback (most recent call last):
@@ -203,14 +194,14 @@ Traceback (most recent call last):
 SyntaxError: non-default argument follows default argument
 
 
-Keyword Arguments
+キーワード引数
 **************************
 
-When we call a function with certain values, these values ​​will be assigned to arguments based on their position.
+特定の値で関数を呼び出すと、これらの値は位置に基づいて引数に割り当てられます。
 
-For example, in the above function welcome(), when we called it as welcome("Lily", "Welcome to China"), the value "Lily" gets assigned to the ``name`` and similarly "Welcome to China" to parameter ``msg``.
+たとえば、上記の関数welcome()では、welcome("Lily", "Welcome to China")と呼び出した場合、値「Lily」は ``name`` に割り当てられ、同様に「Welcome to China」はパラメータ ``msg`` に割り当てられます。
 
-MicroPython allows calling functions with keyword arguments. When we call the function in this way, the order (position) of the arguments can be changed. 
+MicroPythonでは、キーワード引数を使用して関数を呼び出すことができます。この方法で関数を呼び出すと、引数の順序（位置）を変更できます。
 
 .. code-block:: python
 
@@ -223,17 +214,17 @@ MicroPython allows calling functions with keyword arguments. When we call the fu
     #1 positional, 1 keyword argument
     welcome("Lily", msg = "Welcome to China!")
 
-As we can see, we can mix positional arguments and keyword arguments during function calls. But we must remember that the keyword arguments must come after the positional arguments.
+ご覧のとおり、関数呼び出し中に位置引数とキーワード引数を混在させることができます。ただし、キーワード引数は位置引数の後に来なければならないことを覚えておく必要があります。
 
-Having a positional argument after a keyword argument will result in an error. 
+キーワード引数の後に位置引数を置くとエラーが発生します。
 
-For example, if the function call as follows:
+たとえば、次のように関数を呼び出すと：
 
 .. code-block:: python
 
     welcome(name="Lily","Welcome to China!")
 
-Will result in an error:
+エラーが発生します：
 
 >>> %Run -c $EDITOR_CONTENT
 Traceback (most recent call last):
@@ -241,14 +232,12 @@ Traceback (most recent call last):
 SyntaxError: non-keyword arg after keyword arg
 
 
-Arbitrary Arguments
+任意の引数
 ********************
 
-Sometimes, if you do not know the number of arguments that will be passed to the function in advance. 
+場合によっては、関数に渡される引数の数が事前にわからないことがあります。
 
-In the function definition, we can add an asterisk (*) before the parameter name.
-
-
+関数定義では、パラメータ名の前にアスタリスク（*）を追加することができます。
 
 .. code-block:: python
 
@@ -266,19 +255,17 @@ Welcome to China! Lily
 Welcome to China! John
 Welcome to China! Wendy
 
-Here, we have called the function with multiple arguments. These arguments are packed into a tuple before being passed into the function. 
+ここでは、複数の引数を使用して関数を呼び出しました。これらの引数は関数に渡される前にタプルにまとめられます。
 
-Inside the function, we use a for loop to retrieve all the arguments.
+関数内では、forループを使用して全ての引数を取得します。
 
-Recursion
+再帰
 ----------------
-In Python, we know that a function can call other functions. It is even possible for the function to call itself. These types of construct are termed as recursive functions.
+Pythonでは、関数が他の関数を呼び出すことができます。関数が自分自身を呼び出すことさえ可能です。このような構造は再帰関数と呼ばれます。
 
-This has the benefit of meaning that you can loop through data to reach a result.
+これにより、データをループして結果に到達することができます。
 
-The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.
-
-
+開発者は再帰を使用する際には非常に注意する必要があります。関数が終了しないものを書いたり、過剰なメモリやプロセッサーを消費するものを書いてしまうことが容易に起こり得ます。しかし、正しく書かれた場合、再帰は非常に効率的で数学的にエレガントなプログラミングアプローチとなります。
 
 .. code-block:: python
 
@@ -300,18 +287,19 @@ The developer should be very careful with recursion as it can be quite easy to s
 15
 21
 
-In this example, rec_func() is a function that we have defined to call itself ("recursion"). We use the ``i`` variable as the data, and it will decrement (-1) every time we recurse. When the condition is not greater than 0 (that is, 0), the recursion ends.
+この例では、rec_func()は自分自身を呼び出す関数です（「再帰」）。データとして変数 ``i`` を使用し、再帰ごとに減少（-1）します。条件が0より大きくない場合（つまり、0）、再帰は終了します。
 
-For new developers, it may take some time to determine how it works, and the best way to test it is to test and modify it.
+新しい開発者にとっては、どのように機能するかを理解するのに時間がかかるかもしれません。最良の方法はテストと修正です。
 
-**Advantages of Recursion**
+**再帰の利点**
 
-* Recursive functions make the code look clean and elegant.
-* A complex task can be broken down into simpler sub-problems using recursion.
-* Sequence generation is easier with recursion than using some nested iteration.
+* 再帰関数はコードをクリーンでエレガントに見せます。
+* 複雑なタスクを再帰を使用して単純なサブ問題に分解できます。
+* シーケンス生成は、いくつかのネストされた反復を使用するよりも再帰を使用する方が簡単です。
 
-**Disadvantages of Recursion**
+**再帰の欠点**
 
-* Sometimes the logic behind recursion is hard to follow through.
-* Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
-* Recursive functions are hard to debug.
+* 再帰の背後にあるロジックは理解しにくい場合があります。
+* 再帰呼び出しはメモリと時間を多く消費するため、コストがかかります（非効率的）。
+* 再帰関数はデバッグが難しいです。
+

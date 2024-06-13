@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson17_rotary_encoder:
 
-Lesson 17: Rotary Encoder Module
-==================================
+Lesson 17: ロータリーエンコーダーモジュール
+=============================================
 
-In this lesson, you will learn how to connect and program a rotary encoder with a Raspberry Pi. We will provide step-by-step instructions on writing a Python script that monitors the encoder's position and button state, with outputs displayed in the console. 
+このレッスンでは、Raspberry Piにロータリーエンコーダーを接続してプログラムする方法を学びます。エンコーダーの位置とボタンの状態を監視し、コンソールに出力を表示するPythonスクリプトの作成手順をステップバイステップで提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべてのキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,14 +52,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_17_Rotary_encoder_Pi_bb.png
     :width: 100%
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -95,36 +93,35 @@ Code
        print("Program terminated")  # Print message when program is terminated via keyboard interrupt
 
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts with importing the ``RotaryEncoder`` and ``Button`` classes from gpiozero for interfacing with the rotary encode, respectively, and the ``sleep`` function from the time module for adding delays.
+   スクリプトは、gpiozeroから ``RotaryEncoder`` と ``Button`` クラスをそれぞれインポートし、timeモジュールから ``sleep`` 関数をインポートすることから始まります。これにより、ロータリーエンコーダーとボタンのインターフェースを設定し、遅延を追加することができます。
 
    .. code-block:: python
 
       from gpiozero import RotaryEncoder, Button  
       from time import sleep  
 
-#. Initializing the Rotary Encoder and Button
+#. ロータリーエンコーダーとボタンの初期化
    
-   - This line initializes a ``RotaryEncoder`` object from the ``gpiozero`` library. The encoder is connected to GPIO pins 17 and 27. 
-   - The ``wrap=True`` parameter means the encoder's value will reset after reaching ``max_steps`` (16 in this case), mimicking a circular dial behavior.
-   - Here, a ``Button`` object is created, connected to GPIO pin 22. This object will be used to detect when the rotary encoder is pressed.
+   - この行は、 ``gpiozero`` ライブラリからの ``RotaryEncoder`` オブジェクトを初期化します。エンコーダーはGPIOピン17と27に接続されています。
+   - ``wrap=True``パラメータは、エンコーダーの値が ``max_steps`` （この場合は16）に達するとリセットされ、円形ダイヤルの動作を模倣します。
+   - ここでは、GPIOピン22に接続された ``Button`` オブジェクトが作成されます。このオブジェクトは、ロータリーエンコーダーが押されたときに検出するために使用されます。
 
    .. code-block:: python
 
       encoder = RotaryEncoder(a=17, b=27, wrap=True, max_steps=16)
       button = Button(22)
 
-#. Implementing the Monitoring Loop
+#. 監視ループの実装
    
-   - An infinite loop (``while True:``) is used to continuously monitor the rotary encoder.
-   - The current value of the rotary encoder is read and compared with its last recorded value. If there's a change, the new value is printed.
-   - The script checks if the rotary encoder is pressed. On detection of a press, it prints a message and waits until the rotary encoder is released.
-   - A ``sleep(0.1)`` is included to add a brief delay, preventing excessive CPU usage.
+   - 無限ループ（ ``while True:`` ）は、ロータリーエンコーダーを継続的に監視するために使用されます。
+   - ロータリーエンコーダーの現在の値を読み取り、最後に記録された値と比較します。変更があれば、新しい値が表示されます。
+   - スクリプトは、ロータリーエンコーダーが押されたかどうかを確認します。押されたことを検出すると、メッセージを表示し、ロータリーエンコーダーがリリースされるまで待機します。
+   - ``sleep(0.1)``が含まれており、短い遅延を追加してCPUの使用を過度に防ぎます。
 
    .. raw:: html
 

@@ -11,21 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson26_lcd:
 
-Lesson 26: I2C LCD 1602
+レッスン 26: I2C LCD 1602
 ==================================
 
-In this lesson, you will learn to connect an I2C LCD 1602 display to a Raspberry Pi Pico W. You'll understand how to set up I2C communication, display and clear messages on the LCD using MicroPython. 
+このレッスンでは、Raspberry Pi Pico WにI2C LCD 1602ディスプレイを接続する方法を学びます。I2C通信の設定方法、MicroPythonを使用してLCDにメッセージを表示およびクリアする方法を理解します。
 
-
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,18 +52,16 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
-.. note:: 
-   To ensure the LCD module operates normally, please power it using the VBUS pin on the Pico.
+.. note::
+   LCDモジュールが正常に動作するようにするために、PicoのVBUSピンを使用して電源を供給してください。
 
 .. image:: img/Lesson_26_LCD1602_Module_pico_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -99,32 +95,32 @@ Code
    lcd.clear()
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up I2C Communication
+#. I2C通信の設定
 
-   The ``machine`` module is used to set up I2C communication. SDA (Serial Data) and SCL (Serial Clock) pins are defined (pin 20 and 21 respectively), along with the I2C frequency (400kHz).
+   ``machine``モジュールを使用してI2C通信を設定します。SDA（シリアルデータ）ピンとSCL（シリアルクロック）ピン（それぞれピン20と21）が定義され、I2Cの周波数（400kHz）が設定されます。
 
    .. code-block:: python
       
       from machine import I2C, Pin
       i2c = I2C(0, sda=Pin(20), scl=Pin(21), freq=400000)
 
-#. Initializing the LCD Display
+#. LCDディスプレイの初期化
 
-   The ``LCD`` class from the ``lcd1602`` module is instantiated. This class handles the communication with the LCD display through I2C. An ``LCD`` object is created using the ``i2c`` object.
+   ``lcd1602``モジュールの ``LCD``クラスをインスタンス化します。このクラスはI2Cを介してLCDディスプレイとの通信を処理します。 ``i2c``オブジェクトを使用して ``LCD``オブジェクトが作成されます。
 
-   For more usage of the ``lcd1602`` library, please refer to ``lcd1602.py``.
+   ``lcd1602``ライブラリの使用法については、 ``lcd1602.py``を参照してください。
 
    .. code-block:: python
       
       from lcd1602 import LCD
       lcd = LCD(i2c)
 
-#. Displaying Messages on the LCD
+#. LCDへのメッセージ表示
 
-   The ``message`` method of the ``LCD`` object is used to display text on the screen. The ``\n`` character creates a new line on the LCD. The ``time.sleep()`` function pauses execution for a specified number of seconds.
+   ``LCD``オブジェクトの ``message``メソッドを使用して、画面にテキストを表示します。 ``\n`` 文字はLCD上で改行を作成します。  ``time.sleep()``関数は、指定された秒数だけ実行を一時停止します。
 
    .. code-block:: python
       
@@ -133,17 +129,17 @@ Code Analysis
       time.sleep(2)
       lcd.clear()
 
-#. Clearing the Display
+#. ディスプレイのクリア
 
-   The ``clear`` method of the ``LCD`` object is called to clear the text from the display.
+   ``LCD``オブジェクトの ``clear`` メソッドを呼び出して、ディスプレイからテキストを消去します。
 
    .. code-block:: python
       
       lcd.clear()
 
-#. Displaying a Second Message
+#. 2つ目のメッセージ表示
 
-   A new message is displayed, followed by a delay and then clearing the screen again.
+   新しいメッセージが表示され、遅延の後、再度画面がクリアされます。
 
    .. code-block:: python
       

@@ -11,35 +11,34 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _iot_add_library:
 
-1.3 Adding the required libraries
+1.3 必要なライブラリの追加
 ===================================
 
-You need to add the correct libraries for the Arduino IDE to use Blynk.
+Arduino IDEでBlynkを使用するためには、正しいライブラリを追加する必要があります。
 
-#. Click |link_blynk_lib|, scroll down to **"Assets"** and download the first ``.zip`` file. 
+#. |link_blynk_lib| をクリックし、 **"Assets"**までスクロールして、最初の ``.zip`` ファイルをダウンロードします。
 
    .. note::
-    Please note that the version number shown in the image below may be outdated. We highly recommend downloading and installing the latest version available.
+    以下の画像に表示されているバージョン番号は古い可能性があります。最新バージョンをダウンロードしてインストールすることを強くお勧めします。
 
    .. image:: img/new/add_lib_shadow.png
 
-#. Unzip this file and then enter the ``libraries`` folder to see the following folders.
+#. このファイルを解凍し、 ``libraries`` フォルダに入ると、以下のフォルダが表示されます。
 
    .. image:: img/new/add_lib_0_shadow.png
     
-#. Copy them all and add them to the ``libraries`` folder of your sketchbook.
+#. それらをすべてコピーし、スケッチブックの ``libraries`` フォルダに追加します。
 
-   **Step 1:** You can find or change the location of your libraries folder at ``File > Preferences > Sketchbook location``.
+   **ステップ1:** ライブラリフォルダの場所を ``File > Preferences > Sketchbook location`` で確認または変更できます。
 
    .. image:: img/new/add_lib_1_shadow.png
 
-   **Step 2:** Go to the location of your Sketchbook location(find from Arduino IDE). And find ``libraries`` folder, click to open it.
+   **ステップ2:** Arduino IDEからスケッチブックの場所に移動し、 ``libraries`` フォルダを見つけて開きます。
 
    .. image:: img/new/add_lib_2_shadow.png
 
-   **Step 3:** Paste all the unzipped folders of ``Blynk_Release_vx.x.x\libraries`` into the libraries folder.
+   **ステップ3:** 解凍した ``Blynk_Release_vx.x.x\libraries`` フォルダ内のすべてのフォルダを、 ``libraries``フォルダに貼り付けます。
 
    .. image:: img/new/add_lib_3_shadow.png

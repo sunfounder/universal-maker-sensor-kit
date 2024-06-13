@@ -14,17 +14,17 @@
 
 .. _uno_lesson32_passive_buzzer:
 
-Lesson 32: Passive Buzzer Module
-==================================
+レッスン32: パッシブブザーモジュール
+====================================
 
-In this lesson, you will learn how to play a melody on a passive buzzer module using Arduino. We'll cover programming the Arduino to control the buzzer and create various note durations. This project is ideal for beginners as it provides hands-on experience in producing sound and understanding musical notes within electronic components. You'll also gain practical insight into using the Arduino Uno board and the passive buzzer module.
+このレッスンでは、Arduinoを使用してパッシブブザーモジュールでメロディを演奏する方法を学びます。Arduinoをプログラムしてブザーを制御し、さまざまな音符の長さを作成する方法を説明します。このプロジェクトは、音を出す方法と電子部品内の音符の理解に関する実践的な経験を提供するため、初心者に最適です。また、Arduino Unoボードとパッシブブザーモジュールの使用に関する実践的な洞察を得ることもできます。
 
-Required Components
---------------------------
+必要なコンポーネント
+---------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -51,38 +51,36 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_buzzer`
         - |link_passive_buzzer_module_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_32_passive_buzzer_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/eebc46ab-2a9d-4731-8778-3c8f07b0003b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Including the pitches library:
-   This library provides the frequency values for various musical notes, allowing you to use musical notation in your code.
-
-   .. code-block:: arduino
+1. ピッチライブラリのインクルード:
+   このライブラリは、さまざまな音符の周波数値を提供し、コード内で音楽記号を使用できるようにします。
+.. code-block:: arduino
        
       #include "pitches.h"
 
-2. Defining constants and arrays:
+2. 定数と配列の定義:
 
-   * ``buzzerPin`` is the digital pin on the Arduino where the buzzer is connected.
+   * ``buzzerPin``はブザーが接続されているArduinoのデジタルピンです。
 
-   * ``melody[]`` is an array that stores the sequence of notes to be played.
+   * ``melody[]``は演奏する音符のシーケンスを格納する配列です。
 
-   * ``noteDurations[]`` is an array that stores the duration of each note in the melody.
+   * ``noteDurations[]``はメロディの各音符の持続時間を格納する配列です。
 
    .. raw:: html
       
@@ -98,15 +96,15 @@ Code Analysis
         4, 8, 8, 4, 4, 4, 4, 4
       };
 
-3. Playing the melody:
+3. メロディの演奏:
 
-   * The ``for`` loop iterates over each note in the melody.
+   * ``for``ループはメロディの各音符を反復処理します。
 
-   * The ``tone()`` function plays a note on the buzzer for a specific duration.
+   * ``tone()``関数は特定の期間ブザーで音符を演奏します。
 
-   * A delay is added between notes to distinguish them.
+   * 音符を区別するために音符間に遅延が追加されます。
 
-   * The ``noTone()`` function stops the sound.
+   * ``noTone()``関数は音を停止します。
 
    .. raw:: html
       
@@ -124,5 +122,6 @@ Code Analysis
         }
       }
 
-4. Empty loop function:
-   Since the melody is played only once in the setup, there's no code in the loop function.
+4. 空のループ関数:
+   メロディはセットアップ内で一度だけ再生されるため、ループ関数にはコードがありません。
+

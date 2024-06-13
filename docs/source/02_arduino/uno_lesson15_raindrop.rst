@@ -14,17 +14,17 @@
 
 .. _uno_lesson15_raindrop:
 
-Lesson 15: Raindrop Detection Module
+レッスン15: 雨滴検出モジュール
 =======================================
 
-In this lesson, you will learn how to use a Raindrop Detection Sensor Module with an Arduino. We will see how the sensor detects rain by measuring changes in resistance caused by raindrops completing circuits on its nickel-coated surface.
+このレッスンでは、Arduinoを使用して雨滴検出センサーモジュールを使う方法を学びます。センサーがどのように雨を検出するのか、ニッケルメッキされた表面上の回路を雨滴が完成させることで抵抗値が変化する仕組みを見ていきます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,34 +52,34 @@ You can also buy them separately from the links below.
         - |link_raindrop_sensor_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_15_raindrop_detection_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/856a64c8-ecb6-455e-97e6-186cb8d159ea/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Defining sensor pin
+1. センサーピンの定義
 
-   Here, a constant integer named ``sensorPin`` is defined and assigned the value 7. This corresponds to the digital pin on the Arduino board where the raindrops detection sensor is connected.
+   ここでは、 ``sensorPin`` という定数整数が定義され、値7が割り当てられています。これは、雨滴検出センサーが接続されているArduinoボードのデジタルピンを示します。
 
    .. code-block:: arduino
    
        const int sensorPin = 7;
 
-2. Setting up the pin mode and initiating serial communication.
+2. ピンモードの設定とシリアル通信の開始
 
-   In the ``setup()`` function, two essential steps are performed. Firstly, ``pinMode()`` is used to set the ``sensorPin`` as an input, enabling us to read digital values from the raindrops sensor. Secondly, serial communication is initialized with a baud rate of 9600.
+   ``setup()``関数では、まず ``pinMode()`` を使用して ``sensorPin`` を入力モードに設定し、雨滴センサーからのデジタル値を読み取ることができるようにします。次に、シリアル通信を9600ボーのレートで初期化します。
 
    .. code-block:: arduino
    
@@ -88,9 +88,9 @@ Code Analysis
          Serial.begin(9600);
        }
 
-3. Reading the digital value and sending it to the serial monitor. 
+3. デジタル値の読み取りとシリアルモニターへの送信
 
-   The ``loop()`` function reads the digital value from the raindrops sensor using ``digitalRead()``. This value (either HIGH or LOW) is printed to the Serial Monitor. When raindrops are detected, the serial monitor will display 0; when no raindrops are detected, it will display 1. The program then waits for 50 milliseconds before the next reading.
+   ``loop()``関数では、 ``digitalRead()`` を使用して雨滴センサーからデジタル値を読み取ります。この値（HIGHまたはLOW）はシリアルモニターに表示されます。雨滴が検出された場合、シリアルモニターには0が表示され、雨滴が検出されない場合は1が表示されます。その後、次の読み取りまで50ミリ秒待ちます。
 
    .. code-block:: arduino
    

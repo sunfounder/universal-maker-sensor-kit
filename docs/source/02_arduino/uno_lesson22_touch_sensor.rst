@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson22_touch_sensor:
 
-Lesson 22: Touch Sensor Module
+レッスン22: タッチセンサーモジュール
 ==================================
 
-In this lesson, you will learn how to integrate a touch sensor with an Arduino Uno. We'll focus on reading inputs from the touch sensor connected to the Arduino and how these inputs affect the program's flow. You'll discover how to use conditional statements to detect touch events and respond with appropriate actions and messages. This project is excellent for beginners, providing a clear understanding of working with digital inputs and basic Arduino programming concepts.
+このレッスンでは、タッチセンサーをArduino Unoに接続する方法を学びます。Arduinoに接続されたタッチセンサーからの入力を読み取り、これらの入力がプログラムの流れにどのように影響するかに焦点を当てます。条件文を使用してタッチイベントを検出し、適切なアクションとメッセージで応答する方法を学びます。このプロジェクトは初心者に最適で、デジタル入力の処理と基本的なArduinoプログラミングの概念を明確に理解するのに役立ちます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,30 +51,30 @@ You can also buy them separately from the links below.
         - |link_touch_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_22_touch_sensor_moudle_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a0d962e5-5d21-4f26-88db-c38f8e9fb90c/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up the necessary variables. We start by defining the pin number where the touch sensor is connected.
+#. 必要な変数の設定。タッチセンサーが接続されているピン番号を定義します。
 
    .. code-block:: arduino
 
       const int sensorPin = 7;
 
-#. Initialization in the ``setup()`` function. Here, we specify that the sensor pin will be used for input, the built-in LED will be used for output, and we start the serial communication to allow messages to be sent to the serial monitor.
+#. ``setup()``関数での初期化。ここでは、センサーピンを入力用、内蔵LEDを出力用に指定し、シリアル通信を開始してメッセージをシリアルモニターに送信できるようにします。
 
    .. code-block:: arduino
 
@@ -85,7 +84,7 @@ Code Analysis
         Serial.begin(9600);
       }
 
-#. Continuously, the Arduino checks if the touch sensor is activated. If touched, it turns on the LED and sends a "Touch detected!" message. If not touched, it turns off the LED and sends a "No touch detected..." message. A delay is introduced to prevent the sensor from being read too quickly.
+#. Arduinoはタッチセンサーが作動しているかどうかを継続的にチェックします。触れられるとLEDが点灯し、「Touch detected!」というメッセージが送信されます。触れられていない場合は、LEDが消灯し、"No touch detected..." というメッセージが送信されます。センサーが読み取られすぎるのを防ぐために遅延が導入されています。
 
    .. code-block:: arduino
 

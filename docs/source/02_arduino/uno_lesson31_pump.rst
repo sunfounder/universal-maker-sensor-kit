@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson31_pump:
 
-Lesson 31: Centrifugal Pump
+レッスン31: 遠心ポンプ
 ==================================
 
-In this lesson, you'll learn how to control a centrifugal pump with an Arduino Uno R3 or R4 and an L9110 motor control board. You'll discover how to set up and program the Arduino to start the pump in one direction, run it for a specific duration, and then stop it. This hands-on experience is ideal for beginners and offers fundamental insight into managing motor operations and understanding output controls in Arduino projects.
+このレッスンでは、Arduino Uno R3またはR4とL9110モーター制御ボードを使用して遠心ポンプを制御する方法を学びます。ポンプを一方向に起動し、特定の期間動作させ、停止させるためのセットアップとプログラミング方法を説明します。この実践的な経験は初心者に最適で、モーター操作の管理とArduinoプロジェクトにおける出力制御の基本的な理解を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,41 +52,39 @@ You can also buy them separately from the links below.
         - \-
     *   - :ref:`cpn_l9110`
         - \-
-
 * Arduino UNO R3 or R4
 * :ref:`cpn_pump`
 * :ref:`cpn_l9110`
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_31_pump_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f5fad7fa-4b2c-4630-a832-d3a5e077d9fa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Two pins are defined for controlling the motor, specifically ``motorB_1A`` and ``motorB_2A``. These pins will connect to the L9110 motor control board to control the direction and speed of the motor.
+1. モーター制御用に2つのピン（ ``motorB_1A`` と ``motorB_2A`` ）が定義されています。これらのピンは、L9110モーター制御ボードに接続され、モーターの方向と速度を制御します。
   
    .. code-block:: arduino
    
       const int motorB_1A = 9;
       const int motorB_2A = 10;
 
-2. Configuring the pins and controlling the motor:
+2. ピンの設定とモーターの制御:
 
-   - The ``setup()`` function initializes the pins as ``OUTPUT`` which means they can send signals to the motor control board.
+   - ``setup()``関数では、これらのピンを``OUTPUT``として初期化します。これは、これらのピンがモーター制御ボードに信号を送信できることを意味します。
 
-   - The ``analogWrite()`` function is used to set the motor speed. Here, setting one pin to ``HIGH`` and the other to ``LOW`` makes the pump spin in one direction. After a 5-second delay, both pins are set to 0, turning off the motor.
+   - ``analogWrite()``関数を使用してモーターの速度を設定します。ここでは、一方のピンを``HIGH``にし、もう一方を``LOW``にすることで、ポンプを一方向に回転させます。5秒間の遅延の後、両方のピンを0に設定してモーターを停止させます。
 
    .. raw:: html
 

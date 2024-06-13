@@ -11,12 +11,10 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-1.2 Configuring the Blynk
+1.2 Blynkの設定
 ==========================
 
-
-#. Go to the `BLYNK <https://blynk.io/>`_ and click **START FREE**. 
+#. `BLYNK <https://blynk.io/>`_ にアクセスし、 **START FREE** をクリックします。
 
    .. image:: img/sp220607_142551.png
         :width: 90%
@@ -25,7 +23,7 @@
 
       <br/><br/>
 
-#. Fill in your email address to register an account.
+#. メールアドレスを入力してアカウントを登録します。
 
    .. image:: img/sp220607_142807.png
         :width: 70%
@@ -35,7 +33,7 @@
 
       <br/>
 
-#. Go to your email address to complete your account registration.
+#. メールアドレスに届いたメールを確認し、アカウント登録を完了させます。
 
    .. image:: img/sp220607_142936.png
     :width: 90%
@@ -44,7 +42,7 @@
 
       <br/><br/>
 
-#. Afterwards, **Blynk Tour** will appear and you can read it to learn the basic information about the Blynk.
+#. 登録後、 **Blynk Tour** が表示されます。これを読んでBlynkの基本情報を学びましょう。
 
    .. image:: img/sp220607_143244.png
     :width: 90%
@@ -53,7 +51,7 @@
 
       <br/><br/>
 
-#. Next, we need to create a template and device with this **Quick Start**, click **Let's go**.
+#. 次に、この **Quick Start** でテンプレートとデバイスを作成する必要があります。 **Let's go** をクリックします。
 
    .. image:: img/sp220607_143608.png
     :width: 90%
@@ -62,7 +60,7 @@
 
       <br/><br/>  
 
-#. Select the hardware and connection type.
+#. ハードウェアと接続タイプを選択します。
 
    .. image:: img/sp20220614173218.png
     :width: 90%
@@ -71,7 +69,7 @@
 
       <br/><br/>
 
-#. Here you are told which IDE you need to prepare, we recommend the **Arduino IDE**.
+#. ここで準備する必要のあるIDEが示されています。 **Arduino IDE** をお勧めします。
 
    .. image:: img/sp20220614173454.png
     :width: 90%
@@ -80,7 +78,7 @@
 
       <br/><br/>
 
-#. Here is the library you need to add, but the recommended library here is a bit problematic, we need to add other libraries manually (we will mention it later). Click **Next** here, and a new template and device will be created.
+#. ここでは追加する必要のあるライブラリが表示されていますが、推奨されているライブラリには問題があるため、手動で他のライブラリを追加する必要があります（後で説明します）。ここでは **Next** をクリックして、新しいテンプレートとデバイスを作成します。
 
    .. image:: img/sp20220614173629.png
     :width: 90%
@@ -89,7 +87,7 @@
 
       <br/><br/>
 
-#. The next steps are to upload the relevant code and connect your board to Blynk, but since there is a problem with the library provided earlier, you need to add other libraries again. So click **Cancel** here to stop **Quick Start**.
+#. 次のステップは関連するコードをアップロードし、ボードをBlynkに接続することですが、先ほど提供されたライブラリに問題があるため、再度他のライブラリを追加する必要があります。ここで **Cancel** をクリックして**Quick Start**を停止します。
 
    .. image:: img/sp20220614174006.png
     :width: 90%
@@ -98,7 +96,7 @@
 
       <br/><br/>
 
-#. Click the **Search** button and you will see the new device you just created.
+#. **Search**ボタンをクリックすると、先ほど作成した新しいデバイスが表示されます。
 
    .. image:: img/sp20220614174410.png
     :width: 90%
@@ -107,7 +105,7 @@
 
       <br/><br/>
 
-#. Go to this **Quickstart Device** and click **Device Info**, you will see ``TEMPLATE_ID``, ``DEVICE_NAME``, and ``AUTH_TOKEN`` on the **Device info** page, and you will need to copy them later.
+#. この **Quickstart Device** にアクセスし、 **Device Info** をクリックすると、 **Device info** ページに ``TEMPLATE_ID`` 、 ``DEVICE_NAME`` 、 ``AUTH_TOKEN`` が表示されます。これらは後でコピーする必要があります。
 
    .. image:: img/sp20220614174721.png
     :width: 90%

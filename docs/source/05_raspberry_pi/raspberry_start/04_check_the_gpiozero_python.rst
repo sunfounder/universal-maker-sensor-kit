@@ -12,12 +12,12 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Check the ``GPIO Zero``
+``GPIO Zero``の確認
 =================================
 
-``GPIO Zero`` is a module for controlling Raspberry Pi GPIO pins. This package provides a range of user-friendly classes and functions to control GPIO on a Raspberry Pi. For examples and documentation, visit: https://gpiozero.readthedocs.io/en/latest/.
+``GPIO Zero``はRaspberry PiのGPIOピンを制御するためのモジュールです。このパッケージは、Raspberry PiのGPIOを制御するための使いやすいクラスや関数を提供します。例やドキュメントについては、https://gpiozero.readthedocs.io/en/latest/ をご覧ください。
 
-The latest Raspberry Pi OS includes GPIO Zero by default. To verify its installation, open the Terminal and enter:
+最新のRaspberry Pi OSには、デフォルトでGPIO Zeroが含まれています。インストールを確認するには、ターミナルを開いて以下を入力します：
 
 .. code-block::
 
@@ -27,7 +27,7 @@ The latest Raspberry Pi OS includes GPIO Zero by default. To verify its installa
     :width: 100%
 
 
-Next, type ``import gpiozero`` within the Python CLI. If no errors appear, GPIO Zero is successfully installed.
+次に、Python CLI内で ``import gpiozero`` と入力します。エラーが表示されなければ、GPIO Zeroが正常にインストールされています。
 
 .. code-block::
 
@@ -37,7 +37,7 @@ Next, type ``import gpiozero`` within the Python CLI. If no errors appear, GPIO 
     :width: 100%
 
 
-If you want to quit python CLI, type in:
+Python CLIを終了したい場合は、以下を入力します：
 
 .. code-block::
 

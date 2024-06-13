@@ -14,14 +14,14 @@
 
 .. _install_os:
 
-Write Raspberry Pi OS to SD Card
+Raspberry Pi OSをSDカードに書き込む
 ========================================
 
-**Step 1**
+**ステップ1**
 
-The Raspberry Pi team offers a user-friendly graphical SD card writing tool compatible with Mac OS, Ubuntu 18.04, and Windows. This is the most convenient option for most users, as it automatically downloads and installs the OS image to the SD card.
+Raspberry Piチームは、Mac OS、Ubuntu 18.04、Windowsに対応したユーザーフレンドリーなグラフィカルSDカード書き込みツールを提供しています。これが最も便利なオプションで、多くのユーザーにとって、自動的にOSイメージをダウンロードしてSDカードにインストールします。
 
-Visit the download page: https://www.raspberrypi.org/software/. Choose the **Raspberry Pi Imager** for your operating system. Once downloaded, open it to begin the installation.
+ダウンロードページにアクセスしてください：https://www.raspberrypi.org/software/。お使いのオペレーティングシステム用の **Raspberry Pi Imager** を選択します。ダウンロードが完了したら、開いてインストールを開始します。
 
 .. image:: img/installing_01.png
     :align: center
@@ -30,9 +30,9 @@ Visit the download page: https://www.raspberrypi.org/software/. Choose the **Ras
 
     <br/>
 
-**Step 2**
+**ステップ2**
 
-Upon launching the installer, your OS might prompt a security warning. For instance, Windows may show this message:
+インストーラーを起動すると、OSがセキュリティ警告を表示する場合があります。例えば、Windowsではこのメッセージが表示されることがあります：
 
 .. image:: img/installing_02.png
     :align: center
@@ -41,12 +41,12 @@ Upon launching the installer, your OS might prompt a security warning. For insta
 
     <br/>
 
-If you see this warning, click on **More info** and then choose **Run anyway**. Continue by following the instructions on your screen to complete the installation of the Raspberry Pi Imager.
+この警告が表示された場合は、 **詳細情報** をクリックし、次に **実行** を選択します。画面の指示に従って、Raspberry Pi Imagerのインストールを完了します。
 
 
-**Step 3**
+**ステップ3**
 
-After installing the Imager, open the application by clicking the **Raspberry Pi Imager** icon or executing ``rpi-imager``.
+Imagerのインストールが完了したら、 **Raspberry Pi Imager** アイコンをクリックするか、 ``rpi-imager`` を実行してアプリケーションを開きます。
 
 .. image:: img/installing_03.png
     :align: center
@@ -55,9 +55,9 @@ After installing the Imager, open the application by clicking the **Raspberry Pi
 
     <br/>
 
-**Step 4**
+**ステップ4**
 
-Click **Choose device** and select your Raspberry Pi model from the list.
+**Choose device**をクリックし、リストからRaspberry Piモデルを選択します。
 
 .. image:: img/installing_04.png
     :align: center
@@ -66,9 +66,9 @@ Click **Choose device** and select your Raspberry Pi model from the list.
 
     <br/>
 
-**Step 5**
+**ステップ5**
 
-Next, click **Choose OS** and pick an operating system to install. 
+次に、 **Choose OS** をクリックして、インストールするオペレーティングシステムを選択します。
 
 .. image:: img/installing_05.png
     :align: center
@@ -77,13 +77,13 @@ Next, click **Choose OS** and pick an operating system to install.
 
     <br/>
 
-**Step 6**
+**ステップ6**
 
-Insert your preferred storage medium, such as a microSD card, into an external or integrated SD card reader. Next, click "Choose Storage" and select your device.
+microSDカードなどの希望するストレージ媒体を外部または内蔵のSDカードリーダーに挿入します。次に、"Choose Storage"をクリックしてデバイスを選択します。
 
 .. note:: 
 
-   **Ensure you select the correct storage device when multiple devices are connected**; they can often be distinguished by their capacity. If uncertain, disconnect the other devices. **Be aware that installing the system on the chosen storage device will erase all data on it.**
+   **複数のデバイスが接続されている場合、正しいストレージデバイスを選択するようにしてください**。容量で区別できることが多いです。不明な場合は、他のデバイスを切断してください。 **選択したストレージデバイスにシステムをインストールすると、すべてのデータが消去されることに注意してください。**
 
 .. image:: img/installing_06.png
     :align: center
@@ -92,9 +92,9 @@ Insert your preferred storage medium, such as a microSD card, into an external o
 
     <br/>
 
-**Step 7**
+**ステップ7**
 
-Press the **NEXT** button and choose **EDIT SETTINGS** to access the OS Customization page.
+**NEXT**ボタンを押し、 **EDIT SETTINGS** を選択して、OSカスタマイズページにアクセスします。
 
 .. image:: img/installing_07.png
     :align: center
@@ -103,13 +103,14 @@ Press the **NEXT** button and choose **EDIT SETTINGS** to access the OS Customiz
 
     <br/>
 
-**Step 8**
 
-Set the **hostname**.
+**ステップ8**
+
+**ホスト名**を設定します。
 
 .. note::
 
-   The hostname option defines the hostname your Raspberry Pi broadcasts to the network using mDNS. By connecting your Raspberry Pi to the network, it allows other devices to interact with it using ``<hostname>.local`` or ``<hostname>.lan``.
+   ホスト名オプションは、Raspberry PiがmDNSを使用してネットワークにブロードキャストするホスト名を定義します。Raspberry Piをネットワークに接続することで、他のデバイスが ``<hostname>.local`` または ``<hostname>.lan`` を使用して相互作用できるようになります。
 
 .. image:: img/installing_08.png
     :align: center
@@ -118,10 +119,10 @@ Set the **hostname**.
 
     <br/>
 
-Set the **username** and **password** for the Raspberry Pi's administrator account.
+Raspberry Piの管理者アカウントの **ユーザー名** と **パスワード** を設定します。
 
 .. note::
-   The Raspberry Pi does not come with a default password, making it crucial to set one. Additionally, you have the option to personalize the username.
+   Raspberry Piにはデフォルトのパスワードが設定されていないため、必ず設定してください。また、ユーザー名を個別に設定することも可能です。
 
 .. image:: img/installing_09.png
     :align: center
@@ -130,11 +131,11 @@ Set the **username** and **password** for the Raspberry Pi's administrator accou
 
     <br/>
 
-Configure wireless LAN by entering your network's **SSID** and **password**.
+ネットワークの **SSID** と **パスワード** を入力してワイヤレスLANを設定します。
 
 .. note::
 
-   Configure the "Wireless LAN country" using your nation's two-letter |link_alpha2_code|.
+   "Wireless LAN country"を設定するには、あなたの国の2文字の|link_alpha2_code|を使用してください。
 
 .. image:: img/installing_10.png
     :align: center
@@ -143,9 +144,9 @@ Configure wireless LAN by entering your network's **SSID** and **password**.
 
     <br/>
 
-**Step 9**
+**ステップ9**
 
-Navigate to the **SERVICES** page, choose **Enable SSH option** to turn on SSH, and select “Use password authentication” (recommended for beginners). Click **Save** to apply your changes.
+**SERVICES**ページに移動し、 **SSHオプションを有効にする** を選択してSSHを有効にし、「Use password authentication」を選択します（初心者に推奨）。変更を適用するには **Save** をクリックします。
 
 .. image:: img/installing_11.png
     :align: center
@@ -154,9 +155,9 @@ Navigate to the **SERVICES** page, choose **Enable SSH option** to turn on SSH, 
 
     <br/>
 
-**Step 10**
+**ステップ10**
 
-Click the **Yes** button.
+**Yes**ボタンをクリックします。
 
 .. image:: img/installing_12.png
     :align: center
@@ -165,9 +166,9 @@ Click the **Yes** button.
 
     <br/>
 
-**Step 11**
+**ステップ11**
 
-If your SD card contains files, consider backing them up to avoid permanent loss. If no backup is needed, click **Yes**.
+SDカードにファイルが含まれている場合は、永久に失われないようにバックアップを検討してください。バックアップが不要な場合は、 **Yes** をクリックします。
 
 .. image:: img/installing_13.png
     :align: center
@@ -176,9 +177,9 @@ If your SD card contains files, consider backing them up to avoid permanent loss
 
     <br/>
 
-**Step 12**
+**ステップ12**
 
-The window below will appear once the writing process is complete. Writing process takes some time and varies based on the SD card's read-write performance; please be patient.
+書き込みプロセスが完了すると、以下のウィンドウが表示されます。書き込みプロセスには時間がかかり、SDカードの読み書き性能によって異なりますので、しばらくお待ちください。
 
 .. image:: img/installing_14.png
     :align: center

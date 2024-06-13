@@ -11,33 +11,32 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson34_motor:
 
-Lesson 34: TT Motor
+Lesson 34: TTモーター
 ==================================
 
-In this lesson, you will learn how to operate a TT motor using the Raspberry Pi Pico W and an L9110 motor control board. We'll guide you through the process of configuring two PWM (Pulse Width Modulation) pins to control the motor. You'll set up the motor to run for 5 seconds and then turn off. This practical exercise offers a valuable opportunity to delve into motor control mechanisms and PWM signals, crucial in microcontroller programming. 
+このレッスンでは、Raspberry Pi Pico WとL9110モータ制御ボードを使用してTTモーターを操作する方法を学びます。モーターを制御するために2つのPWM（パルス幅変調）ピンを設定するプロセスをガイドします。モーターを5秒間動作させ、その後停止するように設定します。この実践的な演習は、マイクロコントローラープログラミングにおけるモーター制御メカニズムとPWM信号に関する貴重な機会を提供します。
 
 Required Components
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入すると非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name    
         - ITEMS IN THIS KIT
         - LINK
     *   - Universal Maker Sensor Kit
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -87,10 +86,10 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
-   - The ``machine`` module is imported to interact with the GPIO pins and PWM functionalities of the Raspberry Pi Pico W.
-   - The ``time`` module is used for creating delays in the code.
+   - ``machine`` モジュールは、Raspberry Pi Pico WのGPIOピンとPWM機能を操作するためにインポートされます。
+   - ``time`` モジュールは、コード内で遅延を作成するために使用されます。
 
    .. raw:: html
 
@@ -101,10 +100,10 @@ Code Analysis
       from machine import Pin, PWM
       import time
 
-#. Initializing PWM Objects
+#. PWMオブジェクトの初期化
 
-   - Two PWM objects, ``motor_a`` and ``motor_b``, are created. They correspond to GPIO pins 26 and 27, respectively.
-   - The frequency for PWM is set to 1000 Hz, a common frequency for motor control.
+   - 2つのPWMオブジェクト、 ``motor_a`` と ``motor_b`` を作成します。これらはそれぞれGPIOピン26と27に対応しています。
+   - PWMの周波数はモーター制御によく使われる1000 Hzに設定されます。
 
    .. raw:: html
 
@@ -115,10 +114,10 @@ Code Analysis
       motor_a = PWM(Pin(26), freq=1000)
       motor_b = PWM(Pin(27), freq=1000)
 
-#. Turning on the Motor
+#. モーターのオン
 
-   - ``motor_a.duty_u16(0)`` sets the duty cycle of ``motor_a`` pin to 0, while ``motor_b.duty_u16(65535)`` sets the duty cycle of ``motor_b`` pin to 65535, running the motor at full speed. For more details, please refer to :ref:`the working principle of L9110 <cpn_l9110_principle>`.
-   - The motor runs for 5 seconds, controlled by ``time.sleep(5)``.
+   - ``motor_a.duty_u16(0)`` は ``motor_a`` ピンのデューティサイクルを0に設定し、 ``motor_b.duty_u16(65535)`` は ``motor_b`` ピンのデューティサイクルを65535に設定し、モーターを全速で動作させます。詳細については :ref:`L9110の動作原理 <cpn_l9110_principle>` を参照してください。
+   - モーターは ``time.sleep(5)`` によって制御され、5秒間動作します。
 
    .. raw:: html
 
@@ -131,9 +130,9 @@ Code Analysis
       motor_b.duty_u16(65535)  # speed(0-65535)
       time.sleep(5)
 
-#. Turning off the Motor
+#. モーターのオフ
 
-   Both ``motor_a`` and ``motor_b`` are set to a duty cycle of 0, stopping the motor.
+   ``motor_a`` と ``motor_b`` は両方ともデューティサイクルを0に設定し、モーターを停止させます。
 
    .. code-block:: python
 

@@ -14,7 +14,7 @@
 
 .. _cpn_rgb:
 
-RGB LED Module
+RGB LEDモジュール
 ==========================
 
 .. image:: img/28_rgb_module.png
@@ -25,31 +25,31 @@ RGB LED Module
     
     <br/>
 
-The RGB Full Color LED module emits a range of colors by mixing red, green, and blue light. Each color is adjusted by using PWM.It can be used to create colorful lighting effects or to learn how to use PWM (pulse-width modulation) with Arduino.
+RGBフルカラ―LEDモジュールは、赤、緑、青の光を混ぜることで様々な色を発光します。各色はPWMを使用して調整されます。カラフルな照明効果を作成したり、ArduinoでPWM（パルス幅変調）の使い方を学んだりするのに使用できます。
 
-Pinout
+ピン配置
 ---------------------------
 
-* **GND**: Common ground for power.
-* **B**: Controls the brightness of the red LED. By adjusting the current flowing through this pin, the intensity of the red light can be varied.
-* **R**: Controls the brightness of the green LED. Similarly to the red pin, adjusting the current flow through this pin changes the intensity of the green light.
-* **G**: Controls the brightness of the blue LED. By adjusting the current flowing through this pin, the intensity of the blue light can be altered.
+* **GND**: 電源の共通グランド。
+* **B**: 赤色LEDの明るさを制御します。このピンを流れる電流を調整することで、赤色光の強さを変えることができます。
+* **R**: 緑色LEDの明るさを制御します。赤色ピンと同様に、このピンを流れる電流を調整することで、緑色光の強さを変えることができます。
+* **G**: 青色LEDの明るさを制御します。このピンを流れる電流を調整することで、青色光の強さを変えることができます。
 
-Principle
+原理
 ---------------------------
-The RGB MODULE works by using a full-color LED that uses R, G, and B pins with adjustable PWM voltage input. 
-Colors from the LED can be combined. For example, mix blue light and green light give cyan light, red light and green light give yellow light. This is called "The additive method of color mixing".
+RGBモジュールは、調整可能なPWM電圧入力を持つR、G、Bピンを使用するフルカラ―LEDを使用して動作します。
+LEDからの色は組み合わせることができます。例えば、青色光と緑色光を混ぜるとシアン色になり、赤色光と緑色光を混ぜると黄色になります。これを「加法混色法」といいます。
 
-* `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
+* `加法混色 - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
 
 .. image:: img/28_rgb_module_2.png
     :width: 200
     :align: center
 
-Based on this method, we can use the three primary colors to mix the visible light of any color according to different proportions. For example, orange can be produced by more red and less green.
-The strength of the primary colors (red, blue, green) is adjusted in order to achieve full color mixing effect.PWM is a technique where the duty cycle of a digital signal is modified, adjusting the percentage of time that the signal remains active within a given period. By changing the duty cycle, we can make the LED appear brighter or dimmer.
+この方法に基づき、異なる比率で三原色を混ぜて任意の色の可視光を作り出すことができます。例えば、オレンジは赤色を多く、緑色を少なくすることで生成できます。
+三原色（赤、青、緑）の強度を調整することで、フルカラ―混色効果を実現します。PWMはデジタル信号のデューティサイクルを変更し、信号がアクティブな時間の割合を調整する技術です。デューティサイクルを変更することで、LEDの明るさを調整できます。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/28_rgb_module_schematic.png
@@ -61,7 +61,7 @@ Schematic diagram
    <br/>
 
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson28_rgb_module` (Arduino UNO)
 * :ref:`esp32_lesson28_rgb_module` (ESP32)

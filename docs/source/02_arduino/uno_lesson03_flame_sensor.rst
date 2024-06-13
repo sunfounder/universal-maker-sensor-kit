@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson03_flame:
 
-Lesson 03: Flame Sensor Module
+レッスン 03: 炎センサーモジュール
 ==================================
 
-In this lesson, you will learn how to integrate a flame sensor with an Arduino board to detect the presence of fire. We will see how the flame sensor, when detecting a flame, triggers the Arduino's built-in LED to light up and sends a warning message to the serial monitor. Conversely, in the absence of a flame, the LED stays off, and a different message is relayed to the monitor. This project is an excellent starting point for beginners, offering a comprehensive understanding of how to manage digital inputs and outputs on the Arduino platform. It provides a hands-on approach to learning about sensor integration and real-time response mechanisms in an Arduino-based system.
+このレッスンでは、炎センサーをArduinoボードに統合して火の存在を検知する方法を学びます。炎センサーが炎を検知すると、Arduinoの内蔵LEDが点灯し、シリアルモニターに警告メッセージが送信される仕組みを見ていきます。逆に、炎がない場合はLEDが消灯し、異なるメッセージがモニターに表示されます。このプロジェクトは初心者に最適で、Arduinoプラットフォーム上でデジタル入力と出力を管理する方法を包括的に理解するのに役立ちます。センサー統合とリアルタイム応答メカニズムについて、実践的なアプローチを提供します。
 
-Required Components
+必要なコンポーネント
 ---------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちらです:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,30 +51,30 @@ You can also buy them separately from the links below.
         - |link_flame_sensor_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_03_flame_module_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/244b68c4-0c4d-46fb-b220-985d42f4efdc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first line of code is a constant integer declaration for the flame sensor pin. We use the digital pin 7 to read the output from the flame sensor.
+1. 最初のコード行は、炎センサーピンの定数整数宣言です。デジタルピン7を使用して炎センサーの出力を読み取ります。
 
    .. code-block:: arduino
    
       const int sensorPin = 7;
 
-2. The ``setup()`` function initializes the flame sensor pin as an input and the built-in LED pin as an output. It also starts the serial communication at a baud rate of 9600 for printing messages to the serial monitor.
+2. ``setup()``関数は、炎センサーピンを入力として初期化し、内蔵LEDピンを出力として初期化します。また、シリアルモニターにメッセージを表示するために9600ボーレートでシリアル通信を開始します。
 
    .. code-block:: arduino
    
@@ -85,10 +84,10 @@ Code Analysis
         Serial.begin(9600);            // Initialize the serial monitor at a baud rate of 9600
       }
 
-3. The ``loop()`` function is where we continuously check the status of the flame sensor. If the sensor detects a flame, the built-in LED is turned on and a message is printed to the serial monitor. If no flame is detected, the LED is turned off and a different message is printed. The process repeats every 100 milliseconds.
+3. ``loop()``関数では、炎センサーの状態を継続的にチェックします。センサーが炎を検知すると、内蔵LEDが点灯し、シリアルモニターにメッセージが表示されます。炎が検知されない場合は、LEDが消灯し、異なるメッセージが表示されます。このプロセスは100ミリ秒ごとに繰り返されます。
 
    .. note:: 
-      You can change the threshold for detecting flames by adjusting the potentiometer on the flame sensor module.
+      炎の検出閾値は、炎センサーモジュールのポテンショメータを調整することで変更できます。
 
    .. code-block:: arduino
    

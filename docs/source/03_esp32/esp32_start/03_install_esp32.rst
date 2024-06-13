@@ -11,67 +11,62 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-Install the ESP32 Board(Important)
+ESP32ボードのインストール（重要）
 ===========================================
 
-To program the ESP32 microcontroller, we need to install the ESP32 board package in the Arduino IDE. Follow the step-by-step guide below:
+ESP32マイクロコントローラーをプログラムするためには、Arduino IDEにESP32ボードパッケージをインストールする必要があります。以下のステップバイステップガイドに従ってください。
 
-**Install the ESP32 Board**
+**ESP32ボードのインストール**
 
-#. Open the Arduino IDE. Go to **File** and select **Preferences** from the drop-down menu.
+#. Arduino IDEを開きます。 **ファイル**からドロップダウンメニューで **環境設定** を選択します。
 
    .. image:: img/install_esp32_1.png
 
-#. In the Preferences window, locate the **Additional Board Manager URLs** field. Click on it to activate the text box.
+#. 環境設定ウィンドウで、 **追加のボードマネージャーのURL** フィールドを見つけます。それをクリックしてテキストボックスを有効にします。
 
    .. image:: img/install_esp32_2.png
 
-#. Add the following URL to the **Additional Board Manager URLs** field: https://espressif.github.io/arduino-esp32/package_esp32_index.json. This URL points to the package index file for the ESP32 boards. Click the **OK** button to save the changes.
+#. 以下のURLを **追加のボードマネージャーのURL** フィールドに追加します: https://espressif.github.io/arduino-esp32/package_esp32_index.json。このURLはESP32ボード用のパッケージインデックスファイルを指します。 **OK** ボタンをクリックして変更を保存します。
 
    .. image:: img/install_esp32_3.png
 
-#. In the **Boards Manager** window, type **ESP32** in the search bar. Click the **Install** button to start the installation process. This will download and install the ESP32 board package.
+#. **ボードマネージャー**ウィンドウで、検索バーに **ESP32** と入力します。 **インストール** ボタンをクリックしてインストールプロセスを開始します。これにより、ESP32ボードパッケージがダウンロードおよびインストールされます。
 
    .. image:: img/install_esp32_4.png
 
-#. Congratulations! You have successfully installed the ESP32 board package in the Arduino IDE. 
+#. おめでとうございます！Arduino IDEにESP32ボードパッケージを正常にインストールしました。
 
-**Upload the Code**
+**コードのアップロード**
 
-#. Now, connect the ESP32 WROOM 32E to your computer using a Micro USB cable. 
+#. 次に、Micro USBケーブルを使用してESP32 WROOM 32Eをコンピュータに接続します。
 
    .. image:: img/plugin_esp32.png
        :width: 80%
        :align: center
 
-#. Then select the correct board, **ESP32 Dev Module**, by clicking on **Tools** -> **Board** -> **esp32**.
+#. 次に、**ツール** -> **ボード** -> **esp32**をクリックして、正しいボード **ESP32 Dev Module**を選択します。
 
    .. image:: img/install_esp32_5.png
       :width: 100%
 
-#. If your ESP32 is connected to the computer, you can choose the correct port by clicking on **Tools** -> **Port**.
+#. ESP32がコンピュータに接続されている場合、 **ツール** -> **ポート**をクリックして正しいポートを選択できます。
 
    .. image:: img/install_esp32_6.png
       :width: 100%
 
-#. Additionally, Arduino 2.0 introduced a new way to quickly select the board and port. For ESP32, it is usually not automatically recognized, so you need to click on **Select other board and port**.
+#. さらに、Arduino 2.0ではボードとポートを迅速に選択する新しい方法が導入されました。ESP32の場合、自動的に認識されないことが多いので、 **その他のボードとポートを選択**をクリックする必要があります。
 
    .. image:: img/install_esp32_7.png
       :width: 80%
 
-#. In the search box, type **ESP32 Dev Module** and select it when it appears. Then, choose the correct port and click **OK**.
+#. 検索ボックスに **ESP32 Dev Module**と入力し、表示されたらそれを選択します。次に、正しいポートを選択し、 **OK**をクリックします。
 
    .. image:: img/install_esp32_8.png
       :width: 90%
 
-#. Afterward, you can select it through this quick access window. Note that during subsequent use, there may be times when ESP32 is not available in the quick access window, and you will need to repeat the above two steps.
+#. その後、このクイックアクセスウィンドウを通じて選択できます。なお、後の使用時に、ESP32がクイックアクセスウィンドウに表示されないことがあり、その場合は上記の2つのステップを繰り返す必要があります。
 
    .. image:: img/install_esp32_9.png
       :width: 80%
 
-#. Both methods allow you to select the correct board and port, so choose the one that suits you best. Now, everything is ready to upload the code to the ESP32.
-
-
-
-
+#. 両方の方法で正しいボードとポートを選択できますので、最も適した方法を選んでください。これで、ESP32にコードをアップロードする準備が整いました。

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson01_button:
 
-Lesson 01: Button Module
+Lesson 01: ボタンモジュール
 ==================================
 
-In this lesson, you will learn how to use Raspberry Pi Pico W to interact with the onboard LED using a button. Pressing the button will light up the LED, and releasing the button will turn it off. This project is ideal for beginners as it offers hands-on experience with input and output operations on Raspberry Pi Pico W using MicroPython.
+このレッスンでは、Raspberry Pi Pico Wを使用してボタンを介してオンボードLEDを操作する方法を学びます。ボタンを押すとLEDが点灯し、ボタンを離すとLEDが消灯します。このプロジェクトは、MicroPythonを使用してRaspberry Pi Pico Wの入出力操作を体験する初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入するのが便利です。以下のリンクをご参照ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_01_Button_Module_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -82,43 +81,42 @@ Code
            led.value(0)  # Turn off the LED
    
        time.sleep(0.1)  # Short delay to reduce CPU usage
-
-
-Code Analysis
+       
+コード解析
 ---------------------------
 
-#. Importing Modules
+#. モジュールのインポート
 
-   The ``machine`` module is imported to interact with the GPIO pins, and the ``time`` module is for handling timing.
+   ``machine`` モジュールはGPIOピンと対話するためにインポートされ、 ``time`` モジュールはタイミングを処理するために使用されます。
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Setting up the Button
+#. ボタンの設定
 
-   GPIO 2 is configured as an input pin. This will read the state of the push button connected to it.
+   GPIO 2は入力ピンとして設定されます。これに接続された押しボタンの状態を読み取ります。
 
    .. code-block:: python
 
       button = Pin(2, Pin.IN)
 
-#. Setting up the LED
+#. LEDの設定
 
-   The onboard LED is set up as an output pin, enabling us to turn it on or off programmatically.
+   オンボードLEDは出力ピンとして設定され、プログラムで点灯や消灯を制御できるようにします。
 
    .. code-block:: python
 
       led = Pin('LED', Pin.OUT)
 
-#. Main Loop
+#. メインループ
 
-   - An infinite loop is used to continuously check the state of the button. 
-   - If the button is pressed (``button.value() == 0``), the LED is turned on. Otherwise, it's turned off.
-   - A short delay of 0.1 seconds is added to reduce CPU usage.
-   
-   The :ref:`button module<cpn_button>` used in this project has an internal pull-up resistor (see its :ref:`schematic diagram<cpn_button_sch>`), causing the button to be at a low level when pressed and remain at a high level when released.
+   - 無限ループを使用してボタンの状態を継続的にチェックします。
+   - ボタンが押されている場合（ ``button.value() == 0`` ）、LEDを点灯させます。それ以外の場合は消灯します。
+   - CPU使用率を減らすために0.1秒の短い遅延が追加されます。
+
+   このプロジェクトで使用されている :ref:`ボタンモジュール<cpn_button>` には内部プルアップ抵抗が内蔵されており（その :ref:`回路図<cpn_button_sch>` を参照）、ボタンが押されると低レベルになり、離されると高レベルのままになります。
 
    .. code-block:: python
 

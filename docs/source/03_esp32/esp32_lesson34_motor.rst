@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson34_motor:
 
-Lesson 34: TT Motor
+レッスン34: TTモーター
 ==================================
 
-In this lesson, you'll learn how to control a motor with the ESP32 Development Board and an L9110 motor control board. We'll cover defining and initializing motor pins, setting them as outputs, and adjusting the motor's speed using the analogWrite function. This project is ideal for those seeking to grasp motor control and pulse-width modulation (PWM) on the ESP32 platform, providing a hands-on demonstration of output operations in a microcontroller environment.
+このレッスンでは、ESP32開発ボードとL9110モーター制御ボードを使用してモーターを制御する方法を学びます。モーターピンの定義と初期化、それらを出力として設定する方法、およびanalogWrite関数を使用してモーターの速度を調整する方法をカバーします。このプロジェクトは、ESP32プラットフォーム上でのモーター制御とパルス幅変調（PWM）を理解しようとする人々に最適で、マイクロコントローラー環境での出力操作の実践的なデモンストレーションを提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらがリンクです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,24 +56,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_34_Motor_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c1d4e7f5-140c-4ed4-a149-1af81df5dc0b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first part of the code defines the motor control pins. These are connected to the L9110 motor control board.
+1. コードの最初の部分では、モーター制御ピンを定義します。これらはL9110モーター制御ボードに接続されています。
 
    .. code-block:: arduino
    
@@ -81,7 +81,7 @@ Code Analysis
       const int motorB_1A = 26;
       const int motorB_2A = 25;
 
-2. The ``setup()`` function initializes the motor control pins as output using the ``pinMode()`` function. Then it uses ``analogWrite()`` to set the speed of the motor. The value passed to ``analogWrite()`` can range from 0 (off) to 255 (full speed). A ``delay()`` function is then used to pause the code for 5000 milliseconds (or 5 seconds), after which the motor speed is set to 0 (off).
+2. ``setup()``関数では、 ``pinMode()``関数を使用してモーター制御ピンを出力として初期化します。次に、 ``analogWrite()``を使用してモーターの速度を設定します。 ``analogWrite()``に渡される値は0（オフ）から255（全速）までの範囲です。 ``delay()``関数を使用してコードを5000ミリ秒（5秒）間一時停止し、その後モーター速度を0（オフ）に設定します。
 
    .. code-block:: arduino
    

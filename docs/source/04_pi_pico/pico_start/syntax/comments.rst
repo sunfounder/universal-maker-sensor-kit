@@ -11,16 +11,16 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-Comments
+    
+コメント
 =============
 
-The comments in the code help us understand the code, make the entire code more readable and comment out part of the code during testing, so that this part of the code does not run.
+コード内のコメントはコードの理解を助け、全体を読みやすくし、テスト中に一部のコードをコメントアウトして、その部分が実行されないようにします。
 
-Single-line Comment
+単一行コメント
 ----------------------------
 
-Single-line comments in MicroPython begin with #, and the following text is considered a comment until the end of the line. Comments can be placed before or after the code.
+MicroPythonの単一行コメントは # で始まり、行の終わりまでのテキストがコメントとして扱われます。コメントはコードの前後に配置できます。
 
 .. code-block:: python
 
@@ -29,8 +29,7 @@ Single-line comments in MicroPython begin with #, and the following text is cons
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-Comments are not necessarily text used to explain the code. You can also comment out part of the code to prevent micropython from running the code.
-
+コメントは必ずしもコードを説明するためのテキストである必要はありません。コードの一部をコメントアウトしてMicroPythonがそのコードを実行しないようにすることもできます。
 
 .. code-block:: python
 
@@ -40,10 +39,10 @@ Comments are not necessarily text used to explain the code. You can also comment
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-Multi-line comment
+複数行コメント
 ------------------------------
 
-If you want to comment on multiple lines, you can use multiple # signs.
+複数行にわたるコメントを記述する場合、複数の # 記号を使用できます。
 
 .. code-block:: python
 
@@ -55,9 +54,9 @@ If you want to comment on multiple lines, you can use multiple # signs.
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-Or, you can use multi-line strings instead of expected.
+または、期待される動作とは異なるかもしれませんが、複数行の文字列をコメントの代わりに使用することもできます。
 
-Since MicroPython ignores string literals that are not assigned to variables, you can add multiple lines of strings (triple quotes) to the code and put comments in them:
+MicroPythonは変数に割り当てられていない文字列リテラルを無視するため、コード内に複数行の文字列（三重引用符）を追加し、その中にコメントを入れることができます。
 
 .. code-block:: python
 
@@ -71,4 +70,4 @@ Since MicroPython ignores string literals that are not assigned to variables, yo
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-As long as the string is not assigned to a variable, MicroPython will ignore it after reading the code and treat it as if you made a multi-line comment.
+文字列が変数に割り当てられていない限り、MicroPythonはそれを無視し、複数行コメントとして扱います。

@@ -14,60 +14,60 @@
 
 .. _what_do_we_need:
 
-What Do We Need?
+何が必要か？
 ================
 
-Required Components
+必要なコンポーネント
 -----------------------
 
 **Raspberry Pi**
 
-The Raspberry Pi is a low cost, credit-card sized computer that plugs into a computer monitor or TV and used with a standard keyboard and mouse. It's a versatile device that allows people of all ages to explore computing and learn programming languages such as Scratch and Python.
+Raspberry Piは、低価格でクレジットカードサイズのコンピュータで、コンピューターモニターやテレビに接続し、標準的なキーボードとマウスを使用します。これは、すべての年齢の人々がコンピュータを探索し、ScratchやPythonなどのプログラミング言語を学ぶことを可能にする多用途のデバイスです。
 
 .. image:: img/Raspberry-Pi-5-8G.jpg
     :width: 70%
     :align: center
 
 
-**Power Adapter**
+**電源アダプター**
 
 .. https://www.tablesgenerator.com/text_tables
 
 +-----------------------------+--------------------------------------------+
-| Model                       | Recommended power supply (voltage/current) |
+| モデル                       | 推奨電源供給 (電圧/電流)                    |
 +=============================+============================================+
-| Raspberry Pi 5              | 5V/5A, 5V/3A limits peripherals to 600mA   |
+| Raspberry Pi 5              | 5V/5A, 5V/3Aは周辺機器を600mAに制限         |
 +-----------------------------+--------------------------------------------+
 | Raspberry Pi 4 Model B      | 5V/3A                                      |
 +-----------------------------+--------------------------------------------+
-| Raspberry Pi 3 (all models) | 5V/2.5A                                    |
+| Raspberry Pi 3 (全モデル)    | 5V/2.5A                                    |
 +-----------------------------+--------------------------------------------+
 
-**Micro SD Card**
+**Micro SDカード**
 
-Your Raspberry Pi needs an Micro SD card to store all its files and the Raspberry Pi OS. You will need a micro SD card with a capacity of at least 8 GB.
+Raspberry Piは、すべてのファイルとRaspberry Pi OSを保存するためにMicro SDカードを必要とします。容量が少なくとも8 GBのMicro SDカードが必要です。
 
-Optional Components
+オプションのコンポーネント
 -------------------------
 
-**Screen**
+**スクリーン**
 
-To access the Raspberry Pi's desktop environment, you can connect it to a TV or computer monitor. If the screen includes speakers, audio will be output through them.
+Raspberry Piのデスクトップ環境にアクセスするためには、テレビやコンピューターモニターに接続できます。スクリーンにスピーカーが含まれている場合、音声はそれらを通して出力されます。
 
-**Mouse & Keyboard**
+**マウスとキーボード**
 
-When you use a screen, a USB keyboard and a USB mouse are also needed.
+スクリーンを使用する場合、USBキーボードとUSBマウスも必要です。
 
 **HDMI**
 
-The Raspberry Pi has HDMI (or Micro HDMI) output ports, which are compatible with the HDMI ports of most modern TVs and computer monitors. If your screen only comes with a DVI or VGA port, you will need to use the corresponding adapter cable.
+Raspberry PiにはHDMI（またはMicro HDMI）出力ポートがあり、ほとんどの最新のテレビやコンピューターモニターのHDMIポートと互換性があります。スクリーンがDVIまたはVGAポートのみの場合、対応するアダプターケーブルを使用する必要があります。
 
-**Case**
+**ケース**
 
-You can place the Raspberry Pi in a case to protect your device. On our official website, we offer related products for sale; you can view or purchase Raspberry Pi cases |link_buy_pi_case|.
+Raspberry Piを保護するためにケースに入れることができます。公式ウェブサイトでは関連製品を販売しており、Raspberry Piケースを閲覧または購入できます。|link_buy_pi_case|。
 
-**Sound or Earphone**
+**サウンドまたはイヤホン**
 
-Most Raspberry Pi models come with a 3.5mm audio port, which can be used when your screen doesn't have built-in speakers or isn't in use. However, it’s important to note that the latest Raspberry Pi 5 doesn’t come with a 3.5mm audio port.
+ほとんどのRaspberry Piモデルには3.5mmオーディオポートが付いており、スクリーンに内蔵スピーカーがない場合や使用しない場合に使用できます。ただし、最新のRaspberry Pi 5には3.5mmオーディオポートが付いていないことに注意してください。
 
 

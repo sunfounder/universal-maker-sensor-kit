@@ -14,17 +14,17 @@
 
 .. _uno_lesson08_ir_obstacle_avoidance:
 
-Lesson 08: IR Obstacle Avoidance Sensor Module
+レッスン 08: 赤外線障害物回避センサーモジュール
 ====================================================
 
-In this lesson, you will learn how to use an Infrared obstacle avoidance sensor with an Arduino Uno. We will explore how to read digital signals from the sensor to detect obstacles. You'll see how the sensor's red indicator light illuminates in the presence of obstacles and how it sends a low-level signal to the Arduino. This lesson is perfect for beginners, providing hands-on experience with reading digital inputs and practicing serial communication on the Arduino platform.
+このレッスンでは、Arduino Unoを使用して赤外線障害物回避センサーを利用する方法を学びます。センサーからのデジタル信号を読み取って障害物を検出する方法を探ります。障害物が存在するとセンサーの赤色インジケーターライトが点灯し、Arduinoに低レベル信号を送信する様子を確認します。このレッスンはデジタル入力の読み取りとシリアル通信の練習に最適な初心者向けの実践的な内容です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらのリンクからどうぞ:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,32 +53,32 @@ You can also buy them separately from the links below.
 
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_08_IR_obstacle_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/be83e63b-959c-4d9c-a27b-0be46291c1f8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Define pin number for sensor connection:
+1. センサー接続用のピン番号を定義します:
 
    .. code-block:: arduino
 
      const int sensorPin = 2;
 
-   Connect the sensor's output pin to Arduino pin 2.
+   センサーの出力ピンをArduinoのピン2に接続します。
 
-2. Setup serial communication and define sensor pin as input:
+2. シリアル通信を設定し、センサーピンを入力として定義します:
 
    .. code-block:: arduino
 
@@ -87,10 +87,10 @@ Code Analysis
        Serial.begin(9600);
      }
 
-   Initialize serial communication at 9600 baud rate to print to serial monitor.
-   Set sensor pin as input to read input signal.
+   シリアル通信を9600ボーで初期化し、シリアルモニタに出力します。
+   センサーピンを入力として設定し、入力信号を読み取ります。
 
-3. Read sensor value and print to serial monitor:
+3. センサー値を読み取り、シリアルモニターに出力します:
 
    .. code-block:: arduino
 
@@ -99,9 +99,10 @@ Code Analysis
        delay(50); 
      }
    
-   Continuously read digital value from sensor pin using ``digitalRead()`` and print value to serial monitor using ``Serial.println()``.
-   Add 50ms delay between prints for better viewing.
+   ``digitalRead()``を使用してセンサーピンからデジタル値を継続的に読み取り、その値を ``Serial.println()``でシリアルモニタに出力します。
+   表示を見やすくするために、出力間に50msの遅延を追加します。
 
    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+      センサーが正常に動作しない場合は、IR送信機と受信機を平行に調整してください。また、内蔵のポテンショメーターを使用して検出範囲を調整することもできます。
+

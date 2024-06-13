@@ -14,20 +14,20 @@
 
 .. _pi_lesson06_hall_sensor:
 
-Lesson 06: Hall Sensor Module
+レッスン 06: ホールセンサーモジュール
 ==================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Raspberry Piにはアナログ入力機能がないため、アナログ信号を処理するには :ref:`cpn_pcf8591` のようなモジュールが必要です。
 
-In this lesson, we will learn how to use a Raspberry Pi to read from a hall sensor module. You will learn how to connect a photoresistor module to the PCF8591 for analog-to-digital conversion and monitor its output in real-time using Python. Additionally, you will explore reading analog values and interpreting them to detect the presence and type of magnetic poles.
+このレッスンでは、Raspberry Piを使用してホールセンサーモジュールから読み取る方法を学びます。フォトレジスターモジュールをPCF8591に接続してアナログからデジタルへの変換を行い、Pythonを使用してその出力をリアルタイムで監視する方法を学びます。さらに、アナログ値を読み取り、それらを解釈して磁極の存在と種類を検出する方法も探ります。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -59,14 +59,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_06_Hall_Sensor_Module_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -91,28 +91,28 @@ Code
    
    except KeyboardInterrupt:
        print("Exit")  # Exit on CTRL+C
-
-Code Analysis
+       
+コード解析
 ---------------------------
 
-#. **Import Libraries**:
+#. **ライブラリのインポート**:
 
    .. code-block:: python
       
       import PCF8591 as ADC  # Import PCF8591 module
       import time  # Import time for delay
 
-   This imports necessary libraries. ``PCF8591`` is used to interact with the ADC module, and ``time`` is for implementing delays in the loop.
+   必要なライブラリをインポートします。 ``PCF8591`` はADCモジュールとの対話に使用され、 ``time`` はループ内で遅延を実装するために使用されます。
 
-#. **Initialize ADC Module**:
+#. **ADCモジュールの初期化**:
 
    .. code-block:: python
       
       ADC.setup(0x48)  # Initialize PCF8591 at address 0x48
 
-   Sets up the PCF8591 module. ``0x48`` is the I2C address of the PCF8591 module. This line prepares the Raspberry Pi to communicate with the module.
+   PCF8591モジュールをセットアップします。 ``0x48`` はPCF8591モジュールのI2Cアドレスです。この行で、Raspberry Piがモジュールと通信できるように準備します。
 
-#. **Main Loop for Reading Sensor Data**:
+#. **センサーデータを読み取るメインループ**:
 
    .. code-block:: python
 
@@ -121,9 +121,9 @@ Code Analysis
               sensor_value = ADC.read(1) # Read from hall sensor module at AIN1
               print(sensor_value, end="")  # Print the sensor raw data
 
-   In this loop, ``sensor_value`` is read continuously from the Hall sensor (connected to AIN1 on the PCF8591). The ``print`` statement outputs the raw sensor data.
+   このループでは、 ``sensor_value`` がホールセンサー（PCF8591のAIN1に接続）から継続的に読み取られます。 ``print`` ステートメントは、生のセンサーデータを出力します。
 
-#. **Determine Magnet Polarity**:
+#. **磁極の判定**:
 
    .. code-block:: python
       
@@ -132,12 +132,12 @@ Code Analysis
                   print(" - South pole detected")   # Determined as South pole.
               elif sensor_value <= 80:
                   print(" - North pole detected")   # Determined as North pole.
- 
-   Here, the code determines the polarity of the magnet. If ``sensor_value`` is 180 or higher, it is identified as the South pole. If it is 80 or lower, it is considered the North pole. You need to modify these two threshold values based on your actual measurement results.
 
-   The Hall sensor module is equipped with a 49E linear Hall effect sensor, which can measure the polarity of the magnetic field's north and south poles as well as the relative strength of the magnetic field. If you place a magnet's south pole near the side marked with 49E (the side with text engraved on it), the value read by the code will increase linearly in proportion to the applied magnetic field strength. Conversely, if you place a north pole near this side, the value read by the code will decrease linearly in proportion to that magnetic field strength. For more details, please refer to :ref:`cpn_hall`.
+   ここでは、磁石の極性を判定します。 ``sensor_value`` が180以上の場合は南極と判断され、80以下の場合は北極と見なされます。これらのしきい値は、実際の測定結果に基づいて調整する必要があります。
 
-#. **Delay and Exception Handling**:
+   ホールセンサーモジュールは49Eリニアホール効果センサーを搭載しており、磁場の北極と南極の極性だけでなく、磁場の相対的な強さも測定できます。49Eと記された側（文字が刻まれている側）に磁石の南極を近づけると、コードが読み取る値は適用された磁場の強さに比例して直線的に増加します。逆に、北極をこの側に近づけると、コードが読み取る値はその磁場の強さに比例して直線的に減少します。詳細については :ref:`cpn_hall` を参照してください。
+
+#. **遅延と例外処理**:
 
    .. code-block:: python
 
@@ -146,4 +146,4 @@ Code Analysis
       except KeyboardInterrupt:
           print("Exit")  # Exit on CTRL+C
 
-   ``time.sleep(0.2)`` creates a 0.2-second delay between each loop iteration to prevent excessive reading speed. The ``except`` block catches a keyboard interrupt (CTRL+C) to exit the program gracefully.
+``time.sleep(0.2)``は各ループの反復間に0.2秒の遅延を作り、過剰な読み取り速度を防ぎます。 ``except`` ブロックはキーボード割り込み（CTRL+C）をキャッチして、プログラムを適切に終了させます。

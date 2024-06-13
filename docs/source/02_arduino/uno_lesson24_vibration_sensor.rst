@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson24_vibration_sensor:
 
-Lesson 24: Vibration Sensor Module (SW-420)
+レッスン24: 振動センサーモジュール (SW-420)
 ==============================================
 
-In this lesson, you will learn how to detect vibrations using a vibration sensor with an Arduino Uno. We'll explore how the sensor signals the presence of vibrations to the Arduino, triggering it to display a message. This project is perfect for beginners to understand digital input processing and serial communication in Arduino. You'll gain hands-on experience in reading sensor data and implementing conditional logic in your sketches.
+このレッスンでは、Arduino Unoを使用して振動センサーで振動を検出する方法を学びます。センサーが振動をArduinoに知らせ、それをトリガーとしてメッセージを表示する仕組みを探ります。このプロジェクトは初心者に最適で、Arduinoにおけるデジタル入力処理とシリアル通信を理解するのに役立ちます。センサーデータの読み取りとスケッチにおける条件ロジックの実装を実践的に学べます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,30 +52,30 @@ You can also buy them separately from the links below.
 
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_24_vibration_module_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a04cb423-f55b-465a-bef3-100260eef067/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first line of code is a constant integer declaration for the vibration sensor pin. We use digital pin 7 to read the output from the vibration sensor.
+1. 最初のコード行は、振動センサーピンの定数整数宣言です。デジタルピン7を使用して振動センサーの出力を読み取ります。
 
    .. code-block:: arduino
    
       const int sensorPin = 7;
 
-2. In the ``setup()`` function, we initialize the serial communication at a baud rate of 9600 to print readings from the vibration sensor to the serial monitor. We also set the vibration sensor pin as an input.
+2. ``setup()`` 関数では、シリアル通信を9600ボーで初期化して、振動センサーからの読み取り結果をシリアルモニターに表示します。また、振動センサーピンを入力として設定します。
 
    .. code-block:: arduino
    
@@ -85,7 +84,7 @@ Code Analysis
         pinMode(sensorPin, INPUT);  // Set the sensorPin as an input pin
       }
 
-3. The ``loop()`` function is where we continuously check for any vibrations detected by the sensor. If the sensor detects a vibration, it prints "Detected vibration..." to the serial monitor. If no vibration is detected, it prints "...". The loop repeats every 100 milliseconds.
+3. ``loop()`` 関数では、センサーが検出した振動を継続的にチェックします。センサーが振動を検出した場合、シリアルモニターに「Detected vibration...」と表示されます。振動が検出されない場合は、「...」と表示されます。このループは100ミリ秒ごとに繰り返されます。
 
    .. code-block:: arduino
    

@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson06_hall_sensor:
 
-Lesson 06: Hall Sensor Module
+Lesson 06: ホールセンサーモジュール
 ==================================
 
-In this lesson, you will learn how to use a Hall sensor with an ESP32 Development Board to detect the polarity of a magnetic field. We'll cover reading analog signals from the sensor and interpreting them to differentiate between south and north poles. This project is ideal for beginners in electronics, providing practical experience with sensors and signal processing on the ESP32 platform.
+このレッスンでは、ホールセンサーを使用して、ESP32開発ボードで磁場の極性を検出する方法を学びます。センサーからのアナログ信号を読み取り、それを解釈して南極と北極を区別する方法を説明します。このプロジェクトは、センサーとESP32プラットフォームでの信号処理に関する実践的な経験を提供する、電子工学の初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+部品一式を購入するのが便利です。こちらのリンクをご利用ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,24 +54,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_06_Hall_Sensor_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/48094da0-b2f8-4af6-ad59-38504a201cbf/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Setting up the Hall Sensor
+1. ホールセンサーの設定
 
    .. code-block:: arduino
 
@@ -81,11 +81,11 @@ Code Analysis
         pinMode(hallSensorPin, INPUT);  // Set hall sensor pin as input
       }
 
-   The hall sensor's output is connected to pin 25 on the ESP32 Development Board. The ``setup()`` function is used to initialize serial communication at 9600 bits per second (bps) for displaying data on the serial monitor. The ``pinMode()`` function is used to configure 25 as an input pin.
+   ホールセンサーの出力はESP32開発ボードのピン25に接続されています。 ``setup()``関数では、データをシリアルモニターに表示するためにシリアル通信を9600bpsで初期化します。 ``pinMode()``関数は、25を入力ピンとして設定します。
 
-2. Reading from the Hall Sensor and Determining Polarity
+2. ホールセンサーからの読み取りと極性の判定
 
-   The Hall sensor module is equipped with a 49E linear Hall effect sensor, which can measure the polarity of the magnetic field's north and south poles as well as the relative strength of the magnetic field. If you place a magnet's south pole near the side marked with 49E (the side with text engraved on it), the value read by the code will increase linearly in proportion to the applied magnetic field strength. Conversely, if you place a north pole near this side, the value read by the code will decrease linearly in proportion to that magnetic field strength. For more details, please refer to :ref:`cpn_hall`.
+   ホールセンサーモジュールには49Eリニアホール効果センサーが搭載されており、磁場の南極と北極の極性および磁場の相対強度を測定できます。磁石の南極を49Eと刻印された側（テキストが刻まれている側）に近づけると、コードで読み取られる値は加えられた磁場強度に比例して線形に増加します。逆に、北極を近づけると、その磁場強度に比例して値が線形に減少します。詳細については :ref:`cpn_hall` を参照してください。
 
    .. code-block:: arduino
 

@@ -14,17 +14,17 @@
 
 .. _pi_lesson23_ultrasonic:
 
-Lesson 23: Ultrasonic Sensor Module (HC-SR04)
+レッスン23: 超音波センサーモジュール (HC-SR04)
 ================================================
 
-In this lesson, you'll learn how to connect an ultrasonic distance sensor to a Raspberry Pi and write a Python script for reading distance measurements. We'll guide you through the process of wiring the sensor's trigger pin to GPIO 17 and the echo pin to GPIO 27. The provided Python code will assist you in measuring distances and displaying them in centimeters. 
+このレッスンでは、超音波距離センサーをRaspberry Piに接続し、距離測定を行うためのPythonスクリプトを書く方法を学びます。センサーのトリガーピンをGPIO 17に、エコーピンをGPIO 27に配線する手順を説明します。提供されたPythonコードを使用して距離を測定し、センチメートル単位で表示します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_23_ultrasonic_sensor_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -85,34 +85,32 @@ Code
        # Handle KeyboardInterrupt (Ctrl+C) to gracefully exit the loop
        pass
 
-
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script begins by importing ``DistanceSensor`` from the gpiozero library for the ultrasonic sensor, and ``sleep`` from the time module for timing control.
+   スクリプトは、超音波センサーのためにgpiozeroライブラリから ``DistanceSensor`` を、タイミング制御のためにtimeモジュールから ``sleep`` をインポートすることから始まります。
 
    .. code-block:: python
 
       from gpiozero import DistanceSensor
       from time import sleep
 
-#. Initializing the Distance Sensor
+#. 距離センサーの初期化
    
-   A ``DistanceSensor`` object named ``sensor`` is created with ``echo`` and ``trigger`` pins connected to GPIO 27 and GPIO 17, respectively. These pins are used to send and receive the ultrasonic signals for distance measurement.
+   ``DistanceSensor``オブジェクト ``sensor`` が作成され、 ``echo`` ピンと ``trigger`` ピンがそれぞれGPIO 27とGPIO 17に接続されます。これらのピンは、距離測定のために超音波信号の送受信に使用されます。
 
    .. code-block:: python
 
       sensor = DistanceSensor(echo=27, trigger=17)
 
-#. Implementing the Continuous Monitoring Loop
+#. 継続的な監視ループの実装
    
-   - A ``try`` block with an infinite loop (``while True:``) is used to continuously measure the distance.
-   - Within the loop, ``sensor.distance`` gives the measured distance in meters, which is then converted to centimeters and stored in ``dis``.
-   - The distance is printed with two decimal points of precision using the ``format`` method.
-   - ``sleep(0.3)`` adds a 0.3-second delay between each measurement to control the frequency of readings and reduce CPU load.
+   - 無限ループ（ ``while True:`` ）を持つ``try``ブロックが使用され、継続的に距離を測定します。
+   - ループ内で、 ``sensor.distance`` はメートル単位で測定された距離を返し、それをセンチメートルに変換して ``dis`` に保存します。
+   - 距離は ``format`` メソッドを使用して小数点以下2桁の精度で表示されます。
+   - ``sleep(0.3)``は各測定の間に0.3秒の遅延を追加し、読み取りの頻度を制御してCPUの負荷を軽減します。
 
    .. raw:: html
 
@@ -126,9 +124,9 @@ Code Analysis
               print('Distance: {:.2f} cm'.format(dis))
               sleep(0.3)
 
-#. Handling KeyboardInterrupt for Graceful Exit
+#. 優雅な終了のためのKeyboardInterruptの処理
    
-   The ``except`` block is used to catch a KeyboardInterrupt (typically Ctrl+C). When this occurs, the script exits the loop gracefully without any additional actions.
+   ``except``ブロックはKeyboardInterrupt（通常はCtrl+C）をキャッチするために使用されます。これが発生すると、追加のアクションを取ることなくスクリプトはループを正常に終了します。
 
    .. code-block:: python
 

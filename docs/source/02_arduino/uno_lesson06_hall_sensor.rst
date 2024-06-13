@@ -14,17 +14,17 @@
 
 .. _uno_lesson06_hall_sensor:
 
-Lesson 06: Hall Sensor Module
-==================================
+レッスン 06: ホールセンサーモジュール
+=======================================
 
-In this lesson, you will learn how a Hall sensor detects magnetic fields using Arduino. We'll explore how to read the sensor's analog signal with Arduino Uno, interpreting the values to determine the polarity of a magnetic field. You'll understand the workings of the Hall sensor, and how the Arduino board processes and displays these readings in real-time. 
+このレッスンでは、Arduinoを使用してホールセンサーが磁場を検出する方法を学びます。Arduino Unoでセンサーのアナログ信号を読み取り、その値を解釈して磁場の極性を判断する方法について探求します。ホールセンサーの仕組みと、Arduinoボードがこれらの読み取り値をリアルタイムで処理・表示する方法を理解することができます。
 
-Required Components
---------------------------
+必要なコンポーネント
+---------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらのリンクからどうぞ:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,24 +52,24 @@ You can also buy them separately from the links below.
         - \-
         
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_06_hall_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/fc459930-a030-4a1d-b998-e57a6a4f2e78/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Setting up the Hall Sensor
+1. ホールセンサーの設定
 
    .. code-block:: arduino
 
@@ -79,11 +79,11 @@ Code Analysis
         pinMode(hallSensorPin, INPUT);  // Set hall sensor pin as input
       }
 
-   The hall sensor's output is connected to pin A0 on the Arduino. The ``setup()`` function is used to initialize serial communication at 9600 bits per second (bps) for displaying data on the serial monitor. The ``pinMode()`` function is used to configure A0 as an input pin.
+   ホールセンサーの出力はArduinoのピンA0に接続されています。 ``setup()`` 関数は、シリアルモニターでデータを表示するために9600ビット毎秒（bps）でシリアル通信を初期化します。 ``pinMode()`` 関数はA0を入力ピンとして設定します。
 
-2. Reading from the Hall Sensor and Determining Polarity
+2. ホールセンサーからの読み取りと極性の判定
 
-   The Hall sensor module is equipped with a 49E linear Hall effect sensor, which can measure the polarity of the magnetic field's north and south poles as well as the relative strength of the magnetic field. If you place a magnet's south pole near the side marked with 49E (the side with text engraved on it), the value read by the code will increase linearly in proportion to the applied magnetic field strength. Conversely, if you place a north pole near this side, the value read by the code will decrease linearly in proportion to that magnetic field strength. For more details, please refer to :ref:`cpn_hall`.
+   ホールセンサーモジュールには49Eリニアホール効果センサーが搭載されており、磁場の北極および南極の極性と磁場の相対的な強さを測定できます。磁石の南極を49Eと記された側（テキストが刻まれた側）に近づけると、コードで読み取る値は適用される磁場強度に比例して線形に増加します。逆に、北極をこの側に近づけると、読み取る値は磁場強度に比例して線形に減少します。詳細については、:ref:`cpn_hall`を参照してください。
 
    .. code-block:: arduino
 

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson21_vl53l0x:
 
-Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+レッスン21: 飛行時間型マイクロLIDAR距離センサー (VL53L0X)
 ====================================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi to connect with a Time of Flight Micro-LIDAR Distance Sensor (VL53L0X). You'll be guided through setting up the sensor, initializing I2C communication, and measuring distances in real-time. This project will enhance your comprehension of connecting hardware with the Raspberry Pi and utilizing Python for practical applications. Additionally, you'll delve into adjusting measurement parameters to meet varying accuracy and speed needs.
+このレッスンでは、Raspberry Piを使用して飛行時間型マイクロLIDAR距離センサー (VL53L0X) を接続する方法を学びます。センサーのセットアップ、I2C通信の初期化、およびリアルタイムでの距離測定について順を追って説明します。このプロジェクトは、ハードウェアをRaspberry Piに接続し、Pythonを使った実践的な応用についての理解を深めるものです。また、さまざまな精度と速度のニーズに対応するための測定パラメータの調整についても学びます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,44 +53,44 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_21_vl53l0x_pi_bb.png
     :width: 100%
 
 
-Install Library
+ライブラリのインストール
 ---------------------------
 
 .. note::
-    The adafruit-circuitpython-vl53l0x library relies on Blinka, so please ensure that Blinka has been installed. To install libraries, refer to :ref:`install_blinka`.
+    adafruit-circuitpython-vl53l0xライブラリはBlinkaに依存しているため、Blinkaがインストールされていることを確認してください。ライブラリのインストール方法については、:ref:`install_blinka` を参照してください。
 
-Before installing the library, please make sure that the virtual Python environment is activated:
+ライブラリをインストールする前に、仮想Python環境がアクティブになっていることを確認してください：
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Install adafruit-circuitpython-vl53l0x library:
+adafruit-circuitpython-vl53l0xライブラリをインストールします：
 
 .. code-block:: bash
 
    pip3 install adafruit-circuitpython-vl53l0x
 
 
-Code
+コード
 ---------------------------
 
 .. note::
-   - Please ensure that you have installed the Python library required for running the code according to the "Install Library" steps.
-   - Before running the code, please make sure that you have activated the virtual Python environment with blinka installed. You can activate the virtual environment using a command like this:
+   - 「ライブラリのインストール」ステップに従って、コードを実行するために必要なPythonライブラリがインストールされていることを確認してください。
+   - コードを実行する前に、blinkaがインストールされた仮想Python環境がアクティブになっていることを確認してください。仮想環境をアクティブにするには、以下のコマンドを使用します:
 
      .. code-block:: bash
   
         source ~/env/bin/activate
 
-   - Find the code for this lesson in ``universal-maker-sensor-kit-main/pi/`` directory, or directly copy and paste the code below. Execute the code by running the following commands in terminal:
+   - このレッスンのコードは ``universal-maker-sensor-kit-main/pi/`` ディレクトリにありますが、以下のコードを直接コピーして貼り付けても構いません。ターミナルで次のコマンドを実行してコードを実行します:
 
      .. code-block:: bash
   
@@ -133,10 +132,10 @@ Code
    except KeyboardInterrupt:
        print("Exit")  # Exit on CTRL+C
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Importing Libraries**
+#. **ライブラリのインポート**
 
    .. code-block:: python
    
@@ -145,16 +144,16 @@ Code Analysis
        import busio
        import adafruit_vl53l0x
 
-   - ``time``: Used for implementing delays.
-   - ``board``: Provides access to the physical pins on the Raspberry Pi.
-   - ``busio``: Manages I2C communication between the Pi and the sensor.
-   - ``adafruit_vl53l0x``: The specific library for the VL53L0X sensor. For more detail about the ``adafruit_vl53l0x`` library, please refer to |link_Adafruit_CircuitPython_VL53L0X|.
+   - ``time``: 遅延の実装に使用します。
+   - ``board``: Raspberry Piの物理ピンにアクセスします。
+   - ``busio``: Piとセンサー間のI2C通信を管理します。
+   - ``adafruit_vl53l0x``: VL53L0Xセンサー専用のライブラリです。 ``adafruit_vl53l0x`` ライブラリの詳細については、|link_Adafruit_CircuitPython_VL53L0X| を参照してください。
 
    .. raw:: html
       
       <br/>
 
-#. **Initializing the Sensor**
+#. **センサーの初期化**
 
    .. code-block:: python
    
@@ -169,7 +168,7 @@ Code Analysis
       
       <br/>
 
-#. **Configuration (Optional)**
+#. **設定（オプション）**
 
    .. code-block:: python
    
@@ -177,9 +176,9 @@ Code Analysis
        # vl53.measurement_timing_budget = 20000
        # ...
 
-   This part of the code, which is commented out, allows for adjusting the sensor's timing budget, affecting the balance between speed and accuracy.
+   このコードの部分はコメントアウトされていますが、センサーのタイミング予算を調整し、速度と精度のバランスを変更することができます。
 
-#. **Main Loop**
+#. **メインループ**
 
    .. code-block:: python
       
@@ -190,5 +189,5 @@ Code Analysis
        except KeyboardInterrupt:
            print("Exit")
 
-   - In an infinite loop, the sensor's range is read and printed every second.
-   - The loop can be exited with a CTRL+C interrupt, which is handled by the KeyboardInterrupt exception.
+   - 無限ループ内で、センサーの測定距離が読み取られ、毎秒表示されます。
+   - ループはCTRL+Cの割り込みで終了でき、この割り込みはKeyboardInterrupt例外で処理されます。

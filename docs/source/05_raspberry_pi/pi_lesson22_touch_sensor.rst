@@ -14,17 +14,17 @@
 
 .. _pi_lesson22_touch_sensor:
 
-Lesson 22: Touch Sensor Module
+レッスン22: タッチセンサーモジュール
 ==================================
 
-In this lesson, you will learn how to connect and program a touch sensor with the Raspberry Pi using Python. The focus will be on setting up the sensor on GPIO pin 17 and writing a simple script to detect and respond to touch and release events. This practical session is aimed at teaching the basics of sensor integration and event handling in Python, providing you with the skills needed for more advanced sensor-based projects. It's an ideal starting point for those new to working with electronics and the Raspberry Pi.
+このレッスンでは、Raspberry Piを使用してタッチセンサーを接続し、Pythonでプログラムする方法を学びます。GPIOピン17にセンサーを設定し、タッチおよびリリースイベントを検出して応答する簡単なスクリプトを作成することに焦点を当てます。この実践的なセッションは、Pythonでのセンサー統合とイベント処理の基本を教えることを目的としており、より高度なセンサーを使用したプロジェクトに必要なスキルを提供します。電子機器やRaspberry Piの作業に不慣れな方にとって理想的なスタート地点です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_22_touch_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -93,21 +93,21 @@ Code
 
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts by importing the ``Button`` class from gpiozero for interfacing with the touch sensor, and ``pause`` from the signal module to keep the program running and responsive to events.
+   スクリプトは、タッチセンサーとのインターフェースのためにgpiozeroから ``Button`` クラスを、プログラムを実行し続けてイベントに応答させるためにsignalモジュールから ``pause`` をインポートすることから始まります。
 
    .. code-block:: python
 
       from gpiozero import Button
       from signal import pause
 
-#. Defining Callback Functions
+#. コールバック関数の定義
    
-   Two functions, ``touched`` and ``not_touched``, are defined to handle touch and release events from the sensor. Each function prints a message indicating the sensor's state.
+   センサーのタッチとリリースイベントを処理するために、 ``touched`` と ``not_touched`` という2つの関数が定義されます。それぞれの関数は、センサーの状態を示すメッセージを表示します。
 
    .. code-block:: python
 
@@ -117,26 +117,26 @@ Code Analysis
       def not_touched():
           print("Not touched!")  
 
-#. Initializing the Touch Sensor
+#. タッチセンサーの初期化
    
-   A ``Button`` object named ``touch_sensor`` is created for the touch sensor on GPIO pin 17. The ``pull_up`` parameter is set to ``None`` to disable internal pull-up/pull-down resistors, and ``active_state`` is set to ``True`` to consider high voltage as the active state.
+   GPIOピン17にタッチセンサー用の ``Button`` オブジェクト ``touch_sensor`` が作成されます。 ``pull_up`` パラメータは内部プルアップ/プルダウン抵抗を無効にするために ``None`` に設定され、 ``active_state`` は高電圧をアクティブ状態と見なすために ``True`` に設定されます。
 
    .. code-block:: python
 
       touch_sensor = Button(17, pull_up=None, active_state=True)
 
-#. Assigning Functions to Sensor Events
+#. センサーイベントへの関数の割り当て
    
-   The ``when_pressed`` event of the ``touch_sensor`` is linked to the ``touched`` function, and the ``when_released`` event is linked to the ``not_touched`` function. This setup allows the script to react to touch and release events from the sensor.
+   ``touch_sensor``の ``when_pressed`` イベントが ``touched`` 関数にリンクされ、 ``when_released`` イベントが ``not_touched`` 関数にリンクされます。この設定により、スクリプトはセンサーのタッチとリリースイベントに応答することができます。
 
    .. code-block:: python
 
       touch_sensor.when_pressed = touched
       touch_sensor.when_released = not_touched
 
-#. Keeping the Program Running
+#. プログラムを実行し続ける
    
-   The ``pause()`` function is called to keep the program running indefinitely. This is necessary to continuously monitor and respond to touch sensor events.
+   プログラムを無期限に実行し続けるために ``pause()`` 関数が呼び出されます。これは、タッチセンサーイベントを継続的に監視して応答するために必要です。
 
    .. code-block:: python
 

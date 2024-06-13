@@ -14,18 +14,17 @@
 
 .. _uno_lesson26_lcd:
 
-Lesson 26: I2C LCD 1602
+レッスン26: I2C LCD 1602
 ==================================
 
-In this lesson, you will learn how to set up and display messages on a 16x2 Liquid Crystal Display (LCD) with an I2C interface using Arduino. We'll cover the basics of using the LiquidCrystal I2C library to initialize the LCD, display text, and control the backlight. You'll see how to print "Hello world!" and "LCD Tutorial" on the display, providing a hands-on introduction to interfacing LCDs with Arduino. This tutorial is perfect for beginners as it offers a practical lesson in controlling electronic displays.
+このレッスンでは、Arduinoを使用してI2Cインターフェースを持つ16x2液晶ディスプレイ（LCD）を設定し、メッセージを表示する方法を学びます。LiquidCrystal I2Cライブラリを使用してLCDを初期化し、テキストを表示し、バックライトを制御する基本的な操作を説明します。「Hello world!」や「LCD Tutorial」をディスプレイに表示する方法を紹介し、ArduinoとLCDのインターフェースを実践的に学びます。このチュートリアルは、電子ディスプレイの制御を実践的に学ぶための初心者に最適な内容です。
 
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,37 +52,36 @@ You can also buy them separately from the links below.
         - |link_i2clcd1602_buy|
 
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_26_I2C_lcd_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/48a64786-bcfc-4497-a12d-495c283e09ce/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Library Inclusion and LCD Initialization:
-   The LiquidCrystal I2C library is included to provide functions and methods for LCD interfacing. Following that, an LCD object is created using the LiquidCrystal_I2C class, specifying the I2C address, number of columns, and number of rows.
+#. **ライブラリのインクルードとLCDの初期化**:
+   LiquidCrystal I2Cライブラリをインクルードし、LCDインターフェース用の関数とメソッドを提供します。その後、LiquidCrystal_I2Cクラスを使用してLCDオブジェクトを作成し、I2Cアドレス、列数、および行数を指定します。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"LiquidCrystal I2C"** and install it.  
+      ライブラリをインストールするには、Arduinoライブラリマネージャーを使用し、 **"LiquidCrystal I2C"** を検索してインストールしてください。  
 
    .. code-block:: arduino
 
       #include <LiquidCrystal_I2C.h>
       LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-2. Setup Function:
-   The ``setup()`` function is executed once when the Arduino starts. In this function, the LCD is initialized, cleared, and the backlight is turned on. Then, two messages are displayed on the LCD.
+#. **セットアップ関数**:
+   ``setup()`` 関数は、Arduinoが起動すると一度実行されます。この関数では、LCDを初期化し、クリアし、バックライトをオンにします。次に、LCDに2つのメッセージを表示します。
 
    .. code-block:: arduino
 

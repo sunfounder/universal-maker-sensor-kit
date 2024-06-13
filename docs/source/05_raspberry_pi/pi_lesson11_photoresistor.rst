@@ -11,23 +11,22 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson11_photoresistor:
 
-Lesson 11: Photoresistor Module
-==================================
+レッスン 11: フォトレジスタモジュール
+=====================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Raspberry Piにはアナログ入力機能がないため、アナログ信号を処理するには :ref:`cpn_pcf8591` のようなモジュールが必要です。
 
-In this lesson, we'll learn how to read from a photoresistor module using a Raspberry Pi. You'll find out how to connect a photoresistor Module to the PCF8591 for analog-to-digital conversion and monitor its output in real-time with Python.
+このレッスンでは、Raspberry Piを使用してフォトレジスタモジュールからデータを読み取る方法を学びます。フォトレジスタモジュールをPCF8591に接続してアナログからデジタルへの変換を行い、Pythonを使用してその出力をリアルタイムで監視する方法を紹介します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +39,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -59,14 +58,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_11_photoresistor_module_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -83,30 +82,29 @@ Code
    except KeyboardInterrupt:
        print("Exit")  # Exit on CTRL+C
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Import Libraries**:
+1. **ライブラリのインポート**:
 
-   This section imports necessary Python libraries. The ``PCF8591`` library is used for interacting with the PCF8591 module, and ``time`` is for implementing delays in the code.
+   このセクションでは、必要なPythonライブラリをインポートします。 ``PCF8591`` ライブラリはPCF8591モジュールとのやり取りに使用され、 ``time`` はコード内で遅延を実装するために使用されます。
 
    .. code-block:: python
 
       import PCF8591 as ADC  # Import PCF8591 module
       import time  # Import time for delay
 
-2. **Initialize PCF8591 Module**:
+2. **PCF8591モジュールの初期化**:
 
-   Here, the PCF8591 module is initialized. The address ``0x48`` is the I²C address of the PCF8591 module. This is necessary for the Raspberry Pi to communicate with the module.
+   ここでは、PCF8591モジュールを初期化します。アドレス ``0x48`` はPCF8591モジュールのI²Cアドレスです。これは、Raspberry Piがモジュールと通信するために必要です。
 
    .. code-block:: python
 
       ADC.setup(0x48)  # Initialize PCF8591 at address 0x48
 
-3. **Main Loop and Reading Data**:
+3. **メインループとデータの読み取り**:
 
-   The ``try`` block includes a continuous loop that consistently reads data from the Photoresistor module. The ``ADC.read(1)`` function captures the analog input from the sensor connected to channel 1 (AIN1) of the PCF8591 module. Incorporating a ``time.sleep(0.2)`` creates a 0.2-second pause between each reading. This not only helps in reducing CPU usage on the Raspberry Pi by avoiding excessive data processing demands, but also prevents the terminal from being overrun with rapidly scrolling information, making it easier to monitor and analyze the output.
+   ``try``ブロックには、フォトレジスタモジュールからデータを一貫して読み取る連続ループが含まれています。 ``ADC.read(1)`` 関数は、PCF8591モジュールのチャンネル1（AIN1）に接続されたセンサーからのアナログ入力をキャプチャします。 ``time.sleep(0.2)`` を組み込むことで、各読み取り間に0.2秒の間隔を作ります。これにより、過剰なデータ処理負荷を避けることでRaspberry PiのCPU使用率が減少し、端末が急速にスクロールする情報で溢れるのを防ぎ、出力の監視と分析を容易にします。
 
    .. code-block:: python
 
@@ -115,9 +113,9 @@ Code Analysis
               print(ADC.read(1))  # Read from Photoresistor at AIN1
               time.sleep(0.2)  # Delay of 0.2 seconds
 
-4. **Handling Keyboard Interrupt**:
+4. **キーボード割り込みの処理**:
 
-   The ``except`` block is designed to catch a KeyboardInterrupt (like pressing CTRL+C). When this interrupt occurs, the script prints "exit" and stops running. This is a common way to gracefully exit a continuously running script in Python.
+   ``except``ブロックは、キーボード割り込み（CTRL+Cを押すなど）をキャッチするために設計されています。この割り込みが発生すると、スクリプトは"exit"を表示し、実行を停止します。これは、Pythonで継続的に実行されるスクリプトを優雅に終了する一般的な方法です。
 
    .. code-block:: python
 

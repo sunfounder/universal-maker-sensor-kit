@@ -15,21 +15,20 @@
 
 .. _esp32_plant_monitor:
 
-Lesson 43: Plant Monitor
+レッスン 43: プラントモニター
 =============================================================
 
+このプロジェクトは、土壌の湿度レベルが所定の閾値を下回ると水ポンプを作動させることで、植物の水やりを自動化します。
+また、LCDディスプレイには温度、湿度、および土壌湿度レベルが表示され、ユーザーに植物の環境条件に関する貴重な情報を提供します。
 
-This project intelligently automates plant watering by triggering a water pump whenever the soil's 
-moisture level dips below a predetermined threshold. 
-It also features an LCD display that showcases the temperature, humidity, 
-and soil moisture levels, offering users valuable insights into the plant's environmental conditions.
 
-Required Components
+
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+セット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -42,7 +41,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -68,32 +67,30 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_dht11`
         - \-
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_43_Plant_monitor_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c769b454-80f4-4516-83ce-9ff702d8627f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
 
-Code Analysis
+
+コード解析
 ---------------------------
 
+このコードは環境パラメータを監視しながら植物の水やりをシームレスに管理するように設計されています。
 
+1. ライブラリのインクルードと定数・変数の宣言:
 
-The code is structured to seamlessly manage plant watering by monitoring environmental parameters:
-
-1. Library Inclusions and Constants/Variables:
-
-    Incorporate ``Wire.h``, ``LiquidCrystal_I2C.h``, and ``DHT.h`` libraries for functionality.
-    Specify pin assignments and settings for the DHT11 sensor, soil moisture sensor, and water pump.
+    ``Wire.h`` 、 ``LiquidCrystal_I2C.h`` 、および ``DHT.h`` ライブラリをインクルードして機能を提供します。
+    DHT11センサー、土壌湿度センサー、水ポンプのピン割り当てと設定を指定します。
 
     .. code-block:: arduino
 
@@ -111,14 +108,12 @@ The code is structured to seamlessly manage plant watering by monitoring environ
         DHT dht(DHTPIN, DHTTYPE);
         LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-
-
 2. ``setup()``:
 
-    Configure pin modes for the moisture sensor and pump.
-    Initially deactivate the pump.
-    Initialize and backlight the LCD.
-    Activate the DHT sensor.
+    土壌湿度センサーとポンプのピンモードを設定します。
+    初めにポンプをオフにします。
+    LCDを初期化してバックライトをオンにします。
+    DHTセンサーを起動します。
 
     .. code-block:: arduino
 
@@ -143,10 +138,10 @@ The code is structured to seamlessly manage plant watering by monitoring environ
 
 3. ``loop()``:
 
-    Measure humidity and temperature via the DHT sensor.
-    Gauge soil moisture through the soil moisture sensor.
-    Display the temperature and humidity on the LCD, then show soil moisture levels.
-    Assess soil moisture to decide on water pump activation; if soil moisture is under 500 (adjustable threshold), run the pump for 1 second.
+    DHTセンサーを使用して湿度と温度を測定します。
+    土壌湿度センサーで土壌の湿度を測定します。
+    温度と湿度をLCDに表示し、その後に土壌湿度レベルを表示します。
+    土壌湿度を評価して水ポンプの作動を判断します。土壌湿度が500（調整可能な閾値）を下回る場合は、ポンプを1秒間作動させます。
 
     .. code-block:: arduino
 

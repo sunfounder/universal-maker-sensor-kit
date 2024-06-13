@@ -11,32 +11,31 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-If Else
+if else
 =============
 
-Decision making is required when we want to execute a code only if a certain condition is satisfied.
+特定の条件が満たされた場合にのみコードを実行したい場合、意思決定が必要です。
 
 if
 --------------------
 .. code-block:: python
 
-    if test expression:
-        statement(s)
+    if テスト式:
+        ステートメント
 
-Here, the program evaluates the ``test expression`` and executes the ``statement`` only when the ``test expression`` is True.
+ここで、プログラムは ``テスト式`` を評価し、 ``テスト式`` が True の場合にのみ ``ステートメント`` を実行します。
 
-If ``test expression`` is False, then ``statement(s)`` will not be executed.
+``テスト式`` が False の場合、 ``ステートメント`` は実行されません。
 
-In MicroPython, indentation means the body of the ``if`` statement. The body starts with an indentation and ends with the first unindented line.
+MicroPythonでは、インデントが ``if`` 文の本文を意味します。本文はインデントから始まり、最初の非インデント行で終了します。
 
-Python interprets non-zero values ​​as "True". None and 0 are interpreted as "False".
+Pythonは非ゼロ値を「True」と解釈します。None と 0 は「False」と解釈されます。
 
-**if Statement Flowchart**
+**if 文のフローチャート**
 
 .. image:: img/if_statement.png
 
-**Example**
+**例**
 
 .. code-block:: python
 
@@ -61,15 +60,15 @@ if...else
     else:
         Body of else
 
-The ``if..else`` statement evaluates ``test expression`` and will execute the body of ``if`` only when the test condition is ``True``.
+``if..else`` 文は ``テスト式`` を評価し、テスト条件が ``True`` の場合にのみ ``if`` の本文を実行します。
 
-If the condition is ``False``, the body of ``else`` is executed. Indentation is used to separate the blocks.
+条件が ``False`` の場合、 ``else`` の本文が実行されます。ブロックを区別するためにインデントが使用されます。
 
-**if...else Statement Flowchart**
+**if...else 文のフローチャート**
 
 .. image:: img/if_else.png
 
-**Example**
+**例**
 
 .. code-block:: python
 
@@ -96,21 +95,21 @@ if...elif...else
     else: 
         Body of else
 
-``Elif`` is short for ``else if``. It allows us to check multiple expressions.
+``Elif`` は ``else if`` の略です。複数の式をチェックすることができます。
 
-If the condition of the ``if`` is False, the condition of the next elif block is checked, and so on.
+``if`` の条件が False の場合、次の elif ブロックの条件がチェックされます。これが繰り返されます。
 
-If all conditions are ``False``, the body of ``else`` is executed.
+すべての条件が ``False`` の場合、 ``else`` の本文が実行されます。
 
-Only one of several ``if...elif...else`` blocks is executed according to the conditions.
+条件に応じて、複数の ``if...elif...else`` ブロックのうち一つだけが実行されます。
 
-The ``if`` block can only have one ``else`` block. But it can have multiple ``elif`` blocks.
+``if`` ブロックには一つの ``else`` ブロックしか持つことができませんが、複数の ``elif`` ブロックを持つことができます。
 
-**if...elif...else Statement Flowchart**
+**if...elif...else 文のフローチャート**
 
 .. image:: img/if_elif_else.png
 
-**Example**
+**例**
 
 .. code-block:: python
 
@@ -128,12 +127,12 @@ The ``if`` block can only have one ``else`` block. But it can have multiple ``el
 x is greater than y
 
 
-Nested if
+ネストされたif
 ---------------------
 
-We can embed an if statement into another if statement, and then call it a nested if statement.
+if文を別のif文に埋め込むことができ、これをネストされたif文と呼びます。
 
-**Example**
+**例**
 
 .. code-block:: python
 

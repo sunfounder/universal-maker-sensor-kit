@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson16_ds1306:
 
 Lesson 16: Real Time Clock Module (DS1302)
 ==================================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to interact with a DS1302 Real-Time Clock module. We'll start by setting up the DS1302 and connecting it to the Pico W using specific GPIO pins. You'll also learn how to retrieve and set the current date and time on the DS1302. Additionally, we'll explore continuously displaying the current datetime on your console, updating every half second.
+このレッスンでは、Raspberry Pi Pico Wを使用してDS1302リアルタイムクロックモジュールとやり取りする方法を学びます。まず、特定のGPIOピンを使用してDS1302をPico Wに接続する手順を説明します。さらに、DS1302で現在の日付と時刻を取得および設定する方法を学びます。また、コンソールに現在の日付と時刻を継続的に表示し、毎秒半ごとに更新する方法も探ります。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +52,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_16_DS1302_module_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -91,11 +88,11 @@ Code
 Code Analysis
 ---------------------------
 
-#. **Import Libraries**
+#. **ライブラリのインポート**
 
-   This section imports necessary libraries: ``machine`` for GPIO control, ``ds1302`` for the RTC module, and ``time`` for implementing delays.
+   このセクションでは、必要なライブラリをインポートします。 ``machine`` はGPIO制御用、 ``ds1302`` はRTCモジュール用、 ``time`` は遅延処理用です。
 
-   For more detail about the ``ds1302`` library, please refer to ``ds1302.py``.
+   ``ds1302``ライブラリの詳細については、 ``ds1302.py`` を参照してください。
 
    .. code-block:: python
 
@@ -103,41 +100,41 @@ Code Analysis
       import ds1302
       import time
 
-#. **Initialize the DS1302 RTC**
+#. **DS1302 RTCの初期化**
 
-   This code initializes the DS1302 module by defining which GPIO pins of the Raspberry Pi Pico W are connected to the clock (clk), data input/output (dio), and chip select (cs) pins of the DS1302.
+   ここでは、DS1302モジュールを初期化し、Raspberry Pi Pico WのGPIOピンを定義します。これにより、クロック（clk）、データ入出力（dio）、チップセレクト（cs）の各ピンが接続されます。
 
    .. code-block:: python
 
       ds = ds1302.DS1302(Pin(5), Pin(18), Pin(19))  # (clk, dio, cs)
 
-#. **Get Current DateTime**
+#. **現在の日時の取得**
 
-   Retrieves the current date and time from the DS1302. The ``date_time()`` method returns a list containing year, month, day, weekday, hour, minute, and second.
+   DS1302から現在の日付と時刻を取得します。 ``date_time()`` メソッドは、年、月、日、曜日、時、分、秒を含むリストを返します。
 
    .. code-block:: python
 
       ds.date_time()
 
-#. **Set DS1302 DateTime**
+#. **DS1302の日時設定**
 
-   Sets the DS1302's date and time to January 1, 2024, at 00:00:00. The day of the week (Monday) is represented by 1.
+   DS1302の日付と時刻を2024年1月1日00:00:00に設定します。曜日（月曜日）は1で表されます。
    
    .. code-block:: python
 
       ds.date_time([2024, 1, 1, 1, 0, 0, 0])  # (year,month,day,weekday,hour,minute,second)
 
-#. **Set Seconds**
+#. **秒の設定**
 
-   Sets the seconds value of the DS1302's time to 10.
+   DS1302の時間の秒の値を10に設定します。
 
    .. code-block:: python
 
       ds.second(10)
 
-#. **Display Current DateTime Continuously**
+#. **現在の日時を継続的に表示**
 
-   This loop continuously displays the current date and time every half second. The ``time.sleep(0.5)`` function creates a half-second delay between each iteration.
+   このループは、現在の日付と時刻を毎秒0.5秒ごとに継続的に表示します。 ``time.sleep(0.5)`` 関数は、各反復間に0.5秒の遅延を作成します。
 
    .. code-block:: python
 

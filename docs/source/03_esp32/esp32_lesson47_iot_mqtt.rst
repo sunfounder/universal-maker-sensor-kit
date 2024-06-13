@@ -15,17 +15,17 @@
 .. _esp32_iot_mqtt:
 
 Lesson 47: IoT Communication with MQTT
-=======================================
+=========================================
 
-This project focuses on utilizing MQTT, a popular communication protocol in the Internet of Things (IoT) domain. MQTT enables IoT devices to exchange data using a publish/subscribe model, where devices communicate through topics.
+このプロジェクトでは、モノのインターネット（IoT）分野で人気のある通信プロトコルであるMQTTを使用します。MQTTは、デバイスがトピックを介してデータを交換するためのパブリッシュ/サブスクライブモデルを提供します。
 
-In this project, we explore the implementation of MQTT by building a circuit that includes an LED, a button, and a thermistor. The ESP32-WROOM-32E microcontroller is used to establish a connection to WiFi and communicate with an MQTT broker. The code allows the microcontroller to subscribe to specific topics, receive messages, and control the LED based on the received information. Additionally, the project demonstrates publishing temperature data from the thermistor to a designated topic when the button is pressed.
+このプロジェクトでは、LED、ボタン、サーミスタを含む回路を構築し、MQTTの実装を探ります。ESP32-WROOM-32Eマイクロコントローラを使用してWiFiに接続し、MQTTブローカーと通信します。このコードは、マイクロコントローラが特定のトピックをサブスクライブし、メッセージを受信し、受信した情報に基づいてLEDを制御できるようにします。また、プロジェクトでは、ボタンを押したときにサーミスタからの温度データを指定されたトピックに公開する方法も示します。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,54 +56,52 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_rgb`
         - \-
 
-**Code Upload**
+**コードのアップロード**
 
-#. Build the circuit.
+#. 回路を構築します。
 
     .. note:: 
-        When establishing a connection to WiFi, only the 36, 39, 34, 35, 32, 33 pins can be employed for analog reading. Please ensure the thermistor is connected to these designated pins.
+        WiFiに接続する際には、36、39、34、35、32、33のピンのみがアナログ読み取りに使用できます。サーミスタがこれらの指定されたピンに接続されていることを確認してください。
 
     .. image:: img/Lesson_01_Button_Module_esp32_bb.png
 
-#. Then, connect ESP32-WROOM-32E to the computer using the USB cable.
+#. その後、USBケーブルを使用してESP32-WROOM-32Eをコンピュータに接続します。
 
+#. コードを開きます。
 
-#. Open the code.
-
-    * Open the ``Lesson_47_MQTT.ino`` file located in the ``universal-maker-sensor-kit\esp32\Lesson_47_MQTT`` directory, or copy the code into the Arduino IDE.
-    * After selecting the board (ESP32 Dev Module) and the appropriate port, click the **Upload** button.
+    * ``universal-maker-sensor-kit\esp32\Lesson_47_MQTT`` ディレクトリにある ``Lesson_47_MQTT.ino`` ファイルを開くか、Arduino IDEにコードをコピーします。
+    * ボード（ESP32 Dev Module）と適切なポートを選択した後、 **Upload** ボタンをクリックします。
     * :ref:`unknown_com_port`
-    * The ``PubSubClient`` library is used here, you can install it from the **Library Manager**.
+    * ここでは ``PubSubClient`` ライブラリが使用されますので、 **Library Manager** からインストールしてください。
 
         .. image:: img/mqtt_lib.png
- 
+
     .. raw:: html
 
         <iframe src=https://create.arduino.cc/editor/sunfounder01/3f33a562-ebaa-48ed-a3ba-ae11e0b9706f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+#. 以下の行を見つけて、 ``<SSID>`` と ``<PASSWORD>`` で修正します。
 
-#. Locate the following lines and modify them with your ``<SSID>`` and ``<PASSWORD>``.
-
-    .. code-block::  Arduino
+    .. code-block:: Arduino
 
         // Replace the next variables with your SSID/Password combination
         const char* ssid = "<SSID>";
         const char* password = "<PASSWORD>";
+ 
+#. 次の行を見つけて、 ``unique_identifier`` を修正します。 ``unique_identifier`` が真にユニークであることを保証してください。同じIDを使用して同じMQTTブローカーにログインしようとすると、ログインに失敗する可能性があります。
 
-#. Find the next line and modify your ``unique_identifier``. Guarantee that your ``unique_identifier`` is truly unique as any IDs that are identical trying to log in to the same MQTT Broker may result in a login failure.
-
-    .. code-block::  Arduino
+    .. code-block:: Arduino
 
         // Add your MQTT Broker address, example:
         const char* mqtt_server = "broker.hivemq.com";
-        const char* unique_identifier = "sunfounder-client-sdgvsda";  
+        const char* unique_identifier = "sunfounder-client-sdgvsda";
 
-**Topic Subscription**
+**トピックサブスクリプション**
 
-#. To avoid interference from messages sent by other participants, you can set it as an obscure or uncommon string. Simply replace the current topic ``SF/LED`` with your desired topic name.
+#. 他の参加者が送信したメッセージの干渉を避けるために、あまり一般的でない文字列に設定することをお勧めします。現在のトピック ``SF/LED`` を希望のトピック名に置き換えるだけです。
 
     .. note:: 
-        You have the freedom to set the Topic as any character you desire. Any MQTT device that has subscribed to the identical Topic will be able to receive the same message. You can also simultaneously subscribe to multiple Topics.
+        トピックを任意の文字に設定する自由があります。同じトピックをサブスクライブしているMQTTデバイスは同じメッセージを受信できます。また、複数のトピックを同時にサブスクライブすることも可能です。
 
     .. code-block::  Arduino
         :emphasize-lines: 9
@@ -127,10 +125,10 @@ You can also buy them separately from the links below.
             }
         }
 
-#. Modify the functionality to respond to the subscribed topic. In the provided code, if a message is received on the topic ``SF/LED``, it checks whether the message is ``on`` or ``off``. Depending on the received message, it changes the output state to control the LED's on or off status.
+#. サブスクライブしたトピックに応答するように機能を変更します。提供されたコードでは、 ``SF/LED``  トピックでメッセージを受信した場合、メッセージが ``on`` または ``off`` であるかどうかを確認します。受信したメッセージに応じて、LEDのオンまたはオフの状態を制御します。
 
     .. note::
-       You can modify it for any topic you are subscribed to, and you can write multiple if statements to respond to multiple topics.
+       サブスクライブしている任意のトピックに対応するように変更でき、複数のトピックに対応するために複数のif文を書くこともできます。
 
     .. code-block::  arduino
         :emphasize-lines: 15
@@ -161,9 +159,9 @@ You can also buy them separately from the links below.
             }
         }
 
-#. After selecting the correct board (ESP32 Dev Module) and port, click the **Upload** button.
+#. 正しいボード（ESP32 Dev Module）とポートを選択した後、 **Upload** ボタンをクリックします。
 
-#. Open the serial monitor and if the following information is printed, it indicates a successful connection to the MQTT server.
+#. シリアルモニターを開き、以下の情報が表示された場合、MQTTサーバーへの接続が成功したことを示します。
 
     .. code-block:: 
 
@@ -172,38 +170,36 @@ You can also buy them separately from the links below.
         192.168.18.77
         Attempting MQTT connection...connected
 
-**Message Publication via HiveMQ**
+**HiveMQを介したメッセージの公開**
 
-HiveMQ is a messaging platform that functions as an MQTT broker, facilitating fast, efficient, and reliable data transfer to IoT devices.
+HiveMQは、MQTTブローカーとして機能するメッセージングプラットフォームであり、IoTデバイスへのデータ転送を迅速かつ効率的、信頼性の高いものにします。
 
-Our code specifically utilizes the MQTT broker provided by HiveMQ. We have included the address of the HiveMQ MQTT broker in the code as follows:
-
+私たちのコードは、特にHiveMQが提供するMQTTブローカーを利用しています。以下のようにコードにHiveMQ MQTTブローカーのアドレスを含めました：
 
     .. code-block::  Arduino
 
         // Add your MQTT Broker address, example:
         const char* mqtt_server = "broker.hivemq.com";
 
-#. At present, open the |link_hivemq| in your web browser.
+#. 現在、Webブラウザで |link_hivemq| を開きます。
 
-#. Connect the client to the default public proxy.
+#. クライアントをデフォルトのパブリックプロキシに接続します。
 
     .. image:: img/sp230512_092258.png
 
-#. Publish a message in the Topic you have subscribed to. In this project, you can publish ``on`` or ``off`` to control your LED.
+#. サブスクライブしているトピックにメッセージを公開します。このプロジェクトでは、LEDを制御するために ``on`` または ``off`` を公開できます。
 
     .. image:: img/sp230512_140234.png
 
-**Message Publication to MQTT**
+**MQTTへのメッセージの公開**
 
-We can also utilize the code to publish information to the Topic. 
-In this demonstration, we have coded a feature that sends the simple message to the Topic when you press the button.
+コードを使用してトピックに情報を公開することもできます。このデモでは、ボタンを押すとトピックにシンプルなメッセージを送信する機能をコーディングしました。
 
-#. Click on **Add New Topic Subscription**.
+#. **Add New Topic Subscription** をクリックします。
 
     .. image:: img/sp230512_092341.png
 
-#. Fill in the topics you desire to follow and click **Subscribe**. In the code, we send message to the topic ``SF/TEMP``.
+#. フォローしたいトピックを入力し、 **Subscribe**  をクリックします。このコードでは、 ``SF/TEMP`` トピックにメッセージを送信します。
 
     .. code-block::  Arduino
         :emphasize-lines: 14
@@ -226,6 +222,6 @@ In this demonstration, we have coded a feature that sends the simple message to 
             }
         }
 
-#. Hence, we can monitor this Topic on HiveMQ, allowing us to view the information you have published.
+#. したがって、HiveMQでこのトピックを監視し、公開された情報を確認できます。
 
     .. image:: img/sp230512_154342.png

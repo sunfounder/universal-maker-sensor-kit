@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson33_servo:
 
-Lesson 33: Servo Motor (SG90)
+レッスン33: サーボモーター (SG90)
 ==================================
 
-In this lesson, you will learn how to control a servo motor using a Raspberry Pi. You'll learn how to adjust the servo's pulse width settings for precise control and write a Python script to move the servo to different positions: minimum, middle, and maximum.
+このレッスンでは、Raspberry Piを使用してサーボモーターを制御する方法を学びます。サーボのパルス幅設定を調整して精密に制御し、Pythonスクリプトを作成してサーボを最小、中間、最大の位置に移動させる方法を学びます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,14 +51,14 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_33_Servo_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -101,21 +100,21 @@ Code
       sleep(1)
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
    
-   Import the ``Servo`` class from ``gpiozero`` for servo control and ``sleep`` from ``time`` for timing.
+   ``gpiozero``からサーボ制御用の ``Servo`` クラスと、タイミング用の ``time`` から ``sleep`` をインポートします。
 
    .. code-block:: python
 
       from gpiozero import Servo
       from time import sleep
 
-#. GPIO Pin and Servo Correction Factor
+#. GPIOピンとサーボ補正係数の設定
    
-   Define the GPIO pin connected to the servo and set a correction factor to calibrate the servo's pulse width range.
+   サーボに接続されたGPIOピンを定義し、サーボのパルス幅範囲をキャリブレーションするための補正係数を設定します。
 
    .. code-block:: python
 
@@ -124,17 +123,17 @@ Code Analysis
       maxPW = (2.0 + myCorrection) / 1000
       minPW = (1.0 - myCorrection) / 1000
 
-#. Initialize the Servo
+#. サーボの初期化
    
-   Create a ``Servo`` object with the specified GPIO pin and adjusted pulse width range.
+   指定されたGPIOピンと調整されたパルス幅範囲を使用して ``Servo`` オブジェクトを作成します。
 
    .. code-block:: python
 
       servo = Servo(myGPIO, min_pulse_width=minPW, max_pulse_width=maxPW)
 
-#. Move the Servo Continuously
+#. サーボを連続的に移動
    
-   Use a ``while True`` loop to move the servo between its minimum, middle, and maximum positions, printing the current position and pausing between movements.
+   ``while True``ループを使用して、サーボを最小、中間、および最大の位置間で移動させ、現在の位置を表示し、移動間にポーズを入れます。
 
    .. code-block:: python
 

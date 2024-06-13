@@ -14,17 +14,18 @@
 
 .. _pico_lesson27_oled:
 
-Lesson 27: OLED Display Module (SSD1306)
-============================================
+レッスン 27: OLEDディスプレイモジュール (SSD1306)
+================================================
 
-In this lesson, you will learn how to connect and display text and graphics on an OLED display module (SSD1306) using the Raspberry Pi Pico W. You'll set up the I2C communication, use MicroPython to program the Pico W to control the OLED display, and practice displaying simple text messages.
+このレッスンでは、Raspberry Pi Pico Wを使用してOLEDディスプレイモジュール（SSD1306）にテキストやグラフィックを表示する方法を学びます。I2C通信を設定し、MicroPythonを使用してPico Wをプログラムし、OLEDディスプレイを制御します。簡単なテキストメッセージを表示する練習を行います。
 
-Required Components
+
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,17 +55,17 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. note:: 
-   To ensure the OLED module operates normally, please power it using the VBUS pin on the Pico.
+   OLEDモジュールが正常に動作するためには、PicoのVBUSピンを使用して電源を供給してください。
 
 .. image:: img/Lesson_27_oled_pico_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -98,34 +99,34 @@ Code
    # The following line sends what to show to the display
    oled.show()
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Initializing the I2C communication:
+#. **I2C通信の初期化**:
 
-   This code segment sets up the I2C communication protocol. I2C is a standard protocol for communication between devices. It uses two lines: SDA (data line) and SCL (clock line).
+   このコードセグメントは、I2C通信プロトコルを設定します。I2Cはデバイス間の通信に使用される標準的なプロトコルで、SDA（データライン）とSCL（クロックライン）の2本のラインを使用します。
    
    .. code-block:: python
 
       from machine import Pin, I2C
       i2c = I2C(0, sda=Pin(20), scl=Pin(21))
 
-#. Setting up the OLED display:
+#. **OLEDディスプレイの設定**:
 
-   Here, we initialize the SSD1306 OLED display with the I2C protocol. The parameters 128 and 64 define the width and height of the display in pixels, respectively.
+   ここでは、I2Cプロトコルを使用してSSD1306 OLEDディスプレイを初期化します。パラメータの128と64は、それぞれディスプレイの幅と高さをピクセル単位で定義しています。
 
-   For more information about the ``ssd1306`` library, please visit |link_micropython_ssd1306_driver|.
+   ``ssd1306``ライブラリの詳細については、|link_micropython_ssd1306_driver|をご参照ください。
 
    .. code-block:: python
 
       import ssd1306
       oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
-#. Clearing the display:
+#. **ディスプレイのクリア**:
 
-   The display is cleared by filling it with white (1) and then updating the display with ``oled.show()``. The ``time.sleep(1)`` command adds a one-second delay. Then, the display is cleared again by filling it with black (0).
+   ディスプレイは、白（1）で塗りつぶしてから ``oled.show()`` で更新することによりクリアされます。 ``time.sleep(1)`` コマンドで1秒の遅延を追加します。その後、黒（0）で塗りつぶして再度ディスプレイをクリアします。
 
-   SSD1306_I2C is a subclass of FrameBuffer, which supports graphics primitives. If you want to display other patterns, please refer to |link_FrameBuffer_doc|.
+   SSD1306_I2Cは、グラフィックプリミティブをサポートするFrameBufferのサブクラスです。その他のパターンを表示したい場合は、|link_FrameBuffer_doc|をご参照ください。
 
    .. code-block:: python
       
@@ -136,9 +137,9 @@ Code Analysis
       oled.show()
       time.sleep(1)
 
-#. Displaying text:
+#. **テキストの表示**:
 
-   The ``oled.text`` method is used to display text on the screen. The parameters are the text to display and the x, y coordinates on the screen. Finally, ``oled.show()`` updates the display to show the text.
+   ``oled.text``メソッドを使用して、画面にテキストを表示します。パラメータは、表示するテキストと画面上のx、y座標です。最後に ``oled.show()`` でディスプレイを更新してテキストを表示します。
 
    .. code-block:: python
 

@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson03_flame:
 
-Lesson 03: Flame Sensor Module
+レッスン 03: 炎センサーモジュール
 ==================================
 
-In this lesson, you will learn how to connect a flame sensor to an ESP32 Development Board for fire detection. We'll examine the sensor's response to fire and how it triggers a warning message. This project is ideal for beginners working with sensors and ESP32, providing hands-on experience in monitoring environmental factors using basic electronic components.
+このレッスンでは、ESP32開発ボードに炎センサーを接続して火災を検知する方法を学びます。センサーが火に反応し、警告メッセージを発する仕組みを調べます。このプロジェクトは、センサーとESP32を使用する初心者に最適で、基本的な電子部品を使用して環境要因を監視する実践的な経験を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+または、以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_03_Flame_Sensor_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/82f965f6-4213-4c23-88db-4257cf12d920/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Defining the Sensor Pin**:
+#. **センサーピンの定義**:
 
-   The pin to which the flame sensor is connected is defined as an integer constant.
+   炎センサーが接続されているピンを整数定数として定義します。
  
    .. code-block:: arduino
 
       const int sensorPin = 25;
 
-#. **Setup Function**:
+#. **セットアップ関数**:
 
-   This function runs once when the ESP32 starts. It initializes the sensor pin as an input and begins serial communication at 9600 baud rate for output.
+   この関数はESP32が起動すると一度だけ実行されます。センサーピンを入力として初期化し、出力のために9600ボーのシリアル通信を開始します。
  
    .. code-block:: arduino
 
@@ -90,9 +90,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-#. **Loop Function**:
+#. **ループ関数**:
 
-   The core of the program, it continuously checks the state of the flame sensor. If the sensor detects a flame (returns 0), it prints a fire alert message. Otherwise, it indicates no fire is detected. The check happens every 100 milliseconds.
+   プログラムの核心部分で、炎センサーの状態を連続的にチェックします。センサーが炎を検知した場合（0を返す）、火災警告メッセージを表示します。そうでない場合は、火災が検知されていないことを示します。このチェックは100ミリ秒ごとに行われます。
  
    .. code-block:: arduino
 

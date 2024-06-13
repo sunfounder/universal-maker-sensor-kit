@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson31_pump:
 
-Lesson 31: Centrifugal Pump
+レッスン 31: 遠心ポンプ
 ==================================
 
-In this lesson, you will learn how to operate a centrifugal pump using the Raspberry Pi Pico W and an L9110 motor control board. We'll guide you through the process of configuring two PWM (Pulse Width Modulation) pins to control the motor. You'll set up the pump to run for 5 seconds and then turn off. This practical exercise offers a valuable opportunity to delve into motor control mechanisms and PWM signals, crucial in microcontroller programming. 
+このレッスンでは、Raspberry Pi Pico WとL9110モーター制御ボードを使用して遠心ポンプを操作する方法を学びます。モーターを制御するために2つのPWM（パルス幅変調）ピンを設定する手順を説明します。ポンプを5秒間動作させ、その後停止させる設定を行います。この実践的な演習は、マイクロコントローラープログラミングにおいて重要なモーター制御メカニズムとPWM信号に触れる貴重な機会を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+以下のリンクからキット全体を購入すると便利です：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,14 +55,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_31_Pump_pico_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -85,13 +84,13 @@ Code
    pump_b.duty_u16(0)
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
-   - The ``machine`` module is imported to interact with the GPIO pins and PWM functionalities of the Raspberry Pi Pico W.
-   - The ``time`` module is used for creating delays in the code.
+   - ``machine`` モジュールは、Raspberry Pi Pico WのGPIOピンおよびPWM機能を操作するためにインポートされます。
+   - ``time`` モジュールは、コード内で遅延を作成するために使用されます。
 
    .. raw:: html
 
@@ -102,10 +101,10 @@ Code Analysis
       from machine import Pin, PWM
       import time
 
-#. Initializing PWM Objects
+#. PWMオブジェクトの初期化
 
-   - Two PWM objects, ``pump_a`` and ``pump_b``, are created. They correspond to GPIO pins 26 and 27, respectively.
-   - The frequency for PWM is set to 1000 Hz, a common frequency for motor control.
+   - 2つのPWMオブジェクト、 ``pump_a`` と ``pump_b`` が作成されます。それぞれGPIOピン26および27に対応します。
+   - PWMの周波数は1000Hzに設定されており、これはモーター制御に一般的な周波数です。
 
    .. raw:: html
 
@@ -116,10 +115,10 @@ Code Analysis
       pump_a = PWM(Pin(26), freq=1000)
       pump_b = PWM(Pin(27), freq=1000)
 
-#. Turning on the Pump
+#. ポンプをオンにする
 
-   - ``pump_a.duty_u16(0)`` sets the duty cycle of ``pump_a`` pin to 0, while ``pump_b.duty_u16(65535)`` sets the duty cycle of ``pump_b`` pin to 65535, running the motor at full speed. For more details, please refer to :ref:`the working principle of L9110 <cpn_l9110_principle>`.
-   - The pump runs for 5 seconds, controlled by ``time.sleep(5)``.
+   - ``pump_a.duty_u16(0)`` は ``pump_a`` ピンのデューティサイクルを0に設定し、 ``pump_b.duty_u16(65535)`` は ``pump_b`` ピンのデューティサイクルを65535に設定し、モーターを全速で動作させます。詳細については、:ref:`L9110の動作原理 <cpn_l9110_principle>` を参照してください。
+   - ポンプは ``time.sleep(5)`` によって制御され、5秒間動作します。
 
    .. raw:: html
 
@@ -132,9 +131,9 @@ Code Analysis
       pump_b.duty_u16(65535)  # speed(0-65535)
       time.sleep(5)
 
-#. Turning off the Pump
+#. ポンプをオフにする
 
-   Both ``pump_a`` and ``pump_b`` are set to a duty cycle of 0, stopping the motor.
+   ``pump_a`` と ``pump_b`` の両方のデューティサイクルを0に設定し、モーターを停止させます。
 
    .. code-block:: python
 

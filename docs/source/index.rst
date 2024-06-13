@@ -2,7 +2,7 @@
 
     こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **なぜ参加するのか？**
+     **なぜ参加するのか？** 
 
     - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
     - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。
@@ -11,74 +11,73 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-Universal Maker Sensor Kit
+ユニバーサルメーカーセンサーキット
 ==================================================
 
-Thanks for choosing our Universal Maker Sensor Kit.
+このたびは、弊社のユニバーサルメーカーセンサーキットをお選びいただき、ありがとうございます。
 
 .. .. note::
-..     This document is available in the following languages.
+..    このドキュメントは以下の言語で利用できます。
 
-..         * |link_german_tutorials|
-..         * |link_jp_tutorials|
-..         * |link_en_tutorials |
-    
-..     Please click on the respective links to access the document in your preferred language.
+..        * |link_german_tutorials|
+..        * |link_jp_tutorials|
+..        * |link_en_tutorials|
+
+..    ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
 
 .. image:: img/universal-maker-sensor-kit-cover.png
     :width: 100%
 
-Have you ever ordered an electronic kit online, only to find it came with a basic PDF or a limited booklet that barely scratches the surface of your project's potential? Or are you eager to build your own smart devices but feel daunted by the complexity and high costs of available kits? Maybe you've admired the advanced projects others have created but didn't know where to start?
+オンラインで電子キットを注文したことはありますか？しかし、それに付属していたのは、プロジェクトの潜在能力を十分に引き出せない基本的なPDFや限定された冊子だけだったことはありませんか？または、スマートデバイスを自作したいけれど、利用可能なキットの複雑さや高コストに圧倒されたことはありませんか？他の人が作成した高度なプロジェクトに感心しながら、どこから始めればよいのかわからなかったことはありませんか？
 
-Introducing our "Universal Maker Sensor Kit" – the solution to all these challenges and the gateway to mastering modern electronics.
+そんなあなたに「ユニバーサルメーカーセンサーキット」をご紹介します。これまでの課題をすべて解決し、最新の電子工学をマスターするためのゲートウェイです。
 
-Within the Universal Maker Sensor Kit, you'll find an extensive range of components, from basic breadboards to intricate sensors like flame detectors, gas sensors, and much more – over 25 sensors, actuators, and display modules in total. Each component comes with an easy-to-follow tutorial supporting Arduino Uno, ESP32 modules, Raspberry Pi Pico, and Raspberry Pi, making your learning journey smooth and engaging.
+ユニバーサルメーカーセンサーキットには、基本的なブレッドボードから、火炎検知器、ガスセンサーなどの高度なセンサーまで、合計25種類以上のセンサー、アクチュエーター、ディスプレイモジュールが含まれています。各コンポーネントには、Arduino Uno、ESP32モジュール、Raspberry Pi Pico、およびRaspberry Piをサポートする簡単に従えるチュートリアルが付属しており、学習の旅をスムーズで魅力的なものにします。
 
-Our kit proudly supports the latest in the Arduino UNO series, the UNO R4, as well as the latest Raspberry Pi release, the Raspberry Pi 5, ensuring you stay at the forefront of technological advancements. Whether you're a beginner or an experienced maker, our kit can enhance your skills through cutting-edge components.
+このキットは、Arduino UNOシリーズの最新モデルUNO R4と、最新のRaspberry Pi 5をサポートしており、技術の最前線に立つことができます。初心者から経験豊富なメーカーまで、最先端のコンポーネントを通じてスキルを向上させることができます。
 
-This kit isn't just about assembling parts; it's about unleashing your creativity. You'll learn to write your own code, develop unique projects, and understand the intricacies of each component. Whether you're a beginner or an experienced maker, our kit is tailored to elevate your skills in electronics.
+このキットは、単なる部品の組み立てではなく、創造性を解き放つためのものです。独自のコードを書き、ユニークなプロジェクトを開発し、各コンポーネントの詳細を理解する方法を学びます。初心者から経験豊富なメーカーまで、電子工学のスキルを高めるために特別に設計されたキットです。
 
-And for those just starting, we offer a range of engaging projects, perfect for easing into the world of programming and electronics. You'll gain the knowledge and confidence to progress from a beginner to an expert, creating your own smart devices and electronic projects.
+初めての方のために、プログラミングと電子工学の世界に簡単に入門できる一連の魅力的なプロジェクトも提供しています。初心者からエキスパートまでの知識と自信を身につけ、スマートデバイスや電子プロジェクトを自作できるようになります。
 
-Embrace the world of electronic innovation today with our Universal Maker Sensor Kit. Transform your ideas into reality, and evolve from zero to hero in the realm of electronics and programming!
+今日からユニバーサルメーカーセンサーキットで電子革新の世界に飛び込みましょう。アイデアを現実に変え、電子工学とプログラミングの分野でゼロからヒーローへと進化しましょう！
 
-If you have any questions or other interesting ideas, please feel free to email us at service@sunfounder.com.
+ご質問やその他の興味深いアイデアがある場合は、service@sunfounder.comまでお気軽にメールしてください。
 
-.. * :ref:`About the display language`
+.. * :ref:`表示言語について`
 
-* :ref:`Table of contents`
+* :ref:`目次`
 
-* :ref:`Copyright Notice`
+* :ref:`著作権表示`
 
 
-.. About the display language
+.. 表示言語について
 .. --------------------------------
 
-.. .. note::
+.. note::
 
-..     In addition to English, we are working on other languages for this course. 
-..     Please contact service@sunfounder.com if you are interested in helping, 
-..     and we will give you a free product in return. 
+..    英語に加えて、他の言語でもこのコースを提供する予定です。
+..   ご協力いただける方は、service@sunfounder.comまでご連絡ください。
+..    無料の製品をお送りします。
 
 
-.. Currently the online tutorial supports English, German and Japanese. Please click the **Read the Docs** icon in the lower left corner of the page to change the display language.
+..現在、オンラインチュートリアルは英語、ドイツ語、日本語をサポートしています。ページの左下隅にある**Read the Docs**アイコンをクリックして表示言語を変更してください。
 
 .. .. image:: img/translation.png
-..     :align: center
+..    :align: center
 
 .. .. raw:: html
 
-..     <br/>
+..    <br/>
 
 
-Table of contents
+目次
 --------------------------------
 
 .. toctree:: 
     :maxdepth: 2
 
-    About Universal Maker Sensor Kit <self>
+    ユニバーサルメーカーセンサーキットについて <self>
     download_code
     01_components_basic/00-component_list
     02_arduino/arduino
@@ -89,7 +88,7 @@ Table of contents
     07_appendix/appendix
     thank-learning
 
-Copyright Notice
+著作権表示
 -----------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study, investigation, enjoyment, or other non-commercial or nonprofit purposes, under the related regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+このマニュアルのテキスト、画像、コードなどのすべての内容は、SunFounder Companyに帰属します。関連する規制および著作権法の下で、著者および関連権利者の法的権利を侵害することなく、個人の学習、調査、楽しみ、またはその他の非商業的または非営利的な目的でのみ使用する必要があります。許可なく商業的利益のためにこれらを使用する個人または組織に対して、会社は法的措置を取る権利を留保します。

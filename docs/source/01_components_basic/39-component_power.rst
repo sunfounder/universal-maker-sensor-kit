@@ -11,31 +11,31 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _cpn_power_module:
 
-Power Supply Module
+電源供給モジュール
 ===================
 
-The breadboard power module provides 3.3V and 5V with a series diode and reverse polarity protection. It accepts input from 6.5V to 12V and outputs 3.3V and +5V. This power supply module is essential for experimenters who need to test electronic circuits on breadboards or perforated/veroboards.
+ブレッドボード用電源モジュールは、3.3Vおよび5Vの電圧を提供し、ダイオードと逆極性保護を備えています。入力電圧は6.5Vから12Vを受け入れ、出力は3.3Vおよび5Vです。この電源モジュールは、ブレッドボードやベロボードで電子回路をテストする必要がある実験者にとって不可欠です。
 
 .. image:: img/39_power_module.png
     :width: 60%
     :align: center
 
-**Features**
+**特徴**
 
-#. Plug directly to MB102 Standard breadboard.
-#. Input voltage: 6.5-12 V (DC) or 5V USB power supply.
-#. Output voltage: 3.3V and 5V can switch over.
-#. Maximum output current: <700 mA.
-#. External Input voltage ON/OFF switch.
-#. Independent control of upper and Lower Bread Board Power Rails. Can switch over to 0V, 3.3V, 5V using jumpers on any rail.
-#. On-board two groups of 3.3V, 5V DC output plug pin, convenient external lead use.
-#. USB device connector onboard for power output to external device.
-#. Size: 5.3cm x 3.5cm.
+#. MB102標準ブレッドボードに直接接続。
+#. 入力電圧: 6.5-12 V (DC) または 5V USB電源。
+#. 出力電圧: 3.3Vと5Vに切り替え可能。
+#. 最大出力電流: <700 mA。
+#. 外部入力電圧のON/OFFスイッチ。
+#. 上部および下部のブレッドボード電源レールを独立して制御。ジャンパーを使用して、どのレールでも0V、3.3V、5Vに切り替え可能。
+#. オンボードの2つのグループの3.3V、5V DC出力プラグピン、便利な外部リード使用。
+#. 外部デバイスへの電源出力用のUSBデバイスコネクタをオンボードに装備。
+#. サイズ: 5.3cm x 3.5cm。
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
 * :ref:`esp32_soap_dispenser` (ESP32)

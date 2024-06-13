@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson28_rgb_module:
 
-Lesson 28: RGB LED Module
+レッスン28: RGB LEDモジュール
 ==================================
 
-In this lesson, you'll learn how to control an RGB LED using the Raspberry Pi Pico W. You'll discover how to set up PWM (Pulse Width Modulation) on different GPIO pins for each color channel of the RGB LED, allowing you to create various colors by adjusting the intensity of red, green, and blue components. This project offers beginners a great opportunity to gain practical experience with PWM and color mixing on Raspberry Pi Pico W using MicroPython. Additionally, you'll learn how to handle interrupts to safely turn off the LED. This lesson provides a fun and interactive way to explore the basics of electronics and programming.
+このレッスンでは、Raspberry Pi Pico Wを使用してRGB LEDを制御する方法を学びます。各色チャンネルのGPIOピンにPWM（パルス幅変調）を設定し、赤、緑、青の成分の強度を調整することで、さまざまな色を作成する方法を発見します。このプロジェクトは、初心者にPWMと色の混合についての実践的な経験を提供し、Raspberry Pi Pico WとMicroPythonを使用して楽しくインタラクティブにエレクトロニクスとプログラミングの基礎を探求する良い機会です。さらに、割り込みを処理して安全にLEDをオフにする方法も学びます。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_28_RGB_LED_Module_pico_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -99,21 +98,21 @@ Code
        set_color(0, 0, 0)  # Turn off RGB LED on interrupt
 
 
-Code Analysis
+コード分析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
-   The ``machine`` module is imported to use the PWM class and Pin class. The ``time`` module is imported to use the ``sleep`` function for creating delays.
+   ``machine`` モジュールは PWM クラスと Pin クラスを使用するためにインポートされます。 ``time`` モジュールは、遅延を作成するために ``sleep`` 関数を使用するためにインポートされます。
 
    .. code-block:: python
 
       from machine import Pin, PWM
       from time import sleep
 
-#. Initializing PWM for RGB LED
+#. RGB LED の PWM 初期化
 
-   The RGB LED has three channels (Red, Green, Blue), each controlled by a separate PWM signal. The PWM signals are connected to GPIO pins 26, 27, and 28.
+   RGB LED には 3 つのチャンネル（赤、緑、青）があり、それぞれが個別の PWM 信号で制御されます。PWM 信号は GPIO ピン 26、27、および 28 に接続されています。
 
    .. code-block:: python
 
@@ -121,9 +120,9 @@ Code Analysis
       green = PWM(Pin(27))  # Green channel on GPIO pin 27
       blue = PWM(Pin(28))  # Blue channel on GPIO pin 28
 
-#. Setting Frequency for PWM Signals
+#. PWM 信号の周波数設定
 
-   The frequency of the PWM signals is set to 1000 Hz for all three channels.
+   PWM 信号の周波数は、3 つのチャンネルすべてで 1000 Hz に設定されています。
 
    .. code-block:: python
 
@@ -131,9 +130,9 @@ Code Analysis
       green.freq(1000)
       blue.freq(1000)
 
-#. Defining the set_color Function
+#. set_color 関数の定義
 
-   This function sets the color of the RGB LED. The ``duty_u16`` method is used to set the duty cycle for each color channel, which determines the intensity of that color.
+   この関数は、RGB LED の色を設定します。 ``duty_u16`` メソッドは、各色チャンネルのデューティサイクルを設定し、その色の強度を決定します。
 
    .. code-block:: python
 
@@ -142,9 +141,9 @@ Code Analysis
           green.duty_u16(g)
           blue.duty_u16(b)
 
-#. Main Program Loop
+#. メインプログラムループ
 
-   An infinite loop is used to change the color of the LED. The ``set_color`` function is called with different values to display red, green, and blue colors. Each color is displayed for 1 second.
+   無限ループを使用して LED の色を変更します。 ``set_color`` 関数を異なる値で呼び出して赤、緑、青の色を表示します。各色は 1 秒間表示されます。
 
    .. code-block:: python
 

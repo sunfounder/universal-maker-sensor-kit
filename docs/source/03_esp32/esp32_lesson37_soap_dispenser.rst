@@ -11,23 +11,22 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_soap_dispenser:
 
 Lesson 37: Automatic soap dispenser
 =====================================
 
-The Automatic Soap Dispenser project uses an Arduino Uno board along 
-with an infrared obstacle avoidance sensor and a water pump. 
-The sensor detects the presence of an object such as a hand, 
-which activates the water pump to dispense soap.
+自動ソープディスペンサーのプロジェクトは、Arduino Unoボードと赤外線障害物回避センサーおよび水ポンプを使用します。
+センサーは手などの物体の存在を検知し、水ポンプを作動させて石鹸を出します。
 
-Required Components
+
+
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+便利なキットを購入するのがおすすめです。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +39,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから部品を個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -63,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_37_Automatic_soap_dispenser_esp32_bb.png
@@ -77,17 +76,17 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f1923f60-5b82-497b-915f-ecc7ad46fea4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
-Code Analysis
+コード解析
 ---------------------------
 
-The main idea behind this project is to create a hands-free soap dispensing system. The infrared obstacle avoidance sensor detects when an object (like a hand) is close. Upon detecting an object, the sensor sends a signal to the Arduino, which in turn triggers the water pump to dispense soap. The pump stays active for a brief period, dispensing soap, then turns off.
+このプロジェクトの主な目的は、ハンズフリーのソープディスペンサーシステムを作成することです。赤外線障害物回避センサーが物体（手など）が近くにあることを検知します。物体を検知すると、センサーはArduinoに信号を送り、これによりウォーターポンプが作動して石鹸を出します。ポンプは短時間作動し、石鹸を出した後に停止します。
 
-#. **Defining the pins for the sensor and the pump**
+#. **センサーとポンプのピンの定義**
 
-    In this code snippet, we define the Arduino pins that connect to the sensor and pump. 
-    We define pin 7 as the sensor pin and we will use the variable ``sensorValue`` to store the data read from this sensor. 
-    For the water pump, we use two pins, 9 and 10.
-    
+    このコードスニペットでは、センサーとポンプに接続するArduinoのピンを定義します。
+    センサーピンとして7番ピンを定義し、このセンサーから読み取ったデータを格納するために``sensorValue``変数を使用します。
+    ウォーターポンプには、9番ピンと10番ピンを使用します。
+
     .. code-block:: arduino
    
         // Define the pin numbers for the Infrared obstacle avoidance sensor
@@ -98,13 +97,13 @@ The main idea behind this project is to create a hands-free soap dispensing syst
         const int pump1A = 19;
         const int pump1B = 21;
 
-#. **Setting up the sensor and pump**
+#. **センサーとポンプの設定**
 
-    In the ``setup()`` function, we define the modes for the pins we're using. 
-    The sensor pin is set to ``INPUT`` as it will be used to receive data from the sensor. 
-    The pump pins are set to ``OUTPUT`` as they will send commands to the pump. 
-    We ensure that the pin ``pump1B`` starts in a ``LOW`` state (off), 
-    and we start the serial communication with a baud rate of 9600.
+    ``setup()``関数では、使用するピンのモードを定義します。
+    センサーピンはセンサーからデータを受信するために ``INPUT`` に設定されます。
+    ポンプピンはポンプにコマンドを送信するために ``OUTPUT`` に設定されます。
+    ``pump1B``ピンは ``LOW`` 状態（オフ）で開始され、
+    シリアル通信を9600ボーの速度で開始します。
 
     .. code-block:: arduino
     
@@ -123,15 +122,15 @@ The main idea behind this project is to create a hands-free soap dispensing syst
             Serial.begin(9600);
         }
 
-#. **Continuously checking the sensor and controlling the pump**
+#. **センサーの連続チェックとポンプの制御**
+ 
+    ``loop()``関数では、Arduinoがセンサーからの値を ``digitalRead()`` を使用して常に読み取り、それを ``sensorValue`` に割り当てます。その後、この値をデバッグ目的でシリアルモニターに表示します。センサーが物体を検知すると、 ``sensorValue`` は0になります。この場合、 ``pump1A`` が ``HIGH`` に設定され、ポンプが作動し、700ミリ秒の遅延で石鹸を出します。その後、 ``pump1A`` を ``LOW`` に設定してポンプを停止し、1秒の遅延でユーザーが手を離す時間を確保します。このサイクルが繰り返されます。
 
-   In the ``loop()`` function, the Arduino constantly reads the value from the sensor using ``digitalRead()`` and assigns it to ``sensorValue()``. It then prints this value to the serial monitor for debugging purposes. If the sensor detects an object, ``sensorValue()`` will be 0. When this happens, ``pump1A`` is set to ``HIGH``, activating the pump, and a delay of 700 milliseconds allows the pump to dispense soap. The pump is then deactivated by setting ``pump1A`` to ``LOW``, and a 1-second delay gives the user time to move their hand away before the cycle repeats.
-
-   .. note:: 
+    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+        センサーが正しく動作しない場合、IR送信機と受信機を平行に調整してください。また、内蔵のポテンショメータを使用して検出範囲を調整することができます。
 
-   .. code-block:: arduino
+    .. code-block:: arduino
    
         void loop() {
             sensorValue = digitalRead(sensorPin);

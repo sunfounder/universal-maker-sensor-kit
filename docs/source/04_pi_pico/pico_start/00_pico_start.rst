@@ -11,15 +11,15 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_start:
 
-Getting Started with MicroPython
+MicroPythonの始め方
 ========================================================
 
-In this section, you will learn about the history of MicroPython, how to install MicroPython on Pico W, its basic syntax, and a dozen interesting and practical projects to help you quickly grasp MicroPython.
+このセクションでは、MicroPythonの歴史、Pico WへのMicroPythonのインストール方法、その基本構文、そしてMicroPythonを迅速に習得するための興味深く実用的なプロジェクトについて学びます。
 
-We recommend that you read the chapters in order.
+章を順に読むことをお勧めします。
 
 .. toctree::
     :maxdepth: 1

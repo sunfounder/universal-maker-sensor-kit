@@ -14,17 +14,17 @@
 
 .. _uno_lesson07_speed:
 
-Lesson 07: Infrared Speed Sensor Module
+レッスン 07: 赤外線速度センサーモジュール
 ==========================================
 
-In this lesson, you will learn how to measure motor speed using a speed sensor module with an Arduino Uno. We'll cover setting up the motor and sensor, programming the Arduino to calculate revolutions per second, and displaying the data. This project is great for intermediate learners as it provides hands-on experience with real-time data processing and motor control on the Arduino platform.
+このレッスンでは、Arduino Unoを使用して速度センサーモジュールでモーターの速度を測定する方法を学びます。モーターとセンサーのセットアップ、Arduinoのプログラミングによる毎秒回転数の計算、およびデータの表示について説明します。このプロジェクトは、リアルタイムデータ処理とモーター制御の実践的な経験を提供するため、中級学習者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらのリンクからどうぞ:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -58,24 +58,24 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_07_speed_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0d705c03-2813-4e71-8ec6-1208684358c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up the pins and initializing variables. Here, we define the pins for the motor and the speed sensor. We also initialize variables that will be used to measure and calculate the speed of the motor.
+#. ピンの設定と変数の初期化。このセクションでは、モーターと速度センサーのピンを定義します。また、モーターの速度を測定および計算するために使用される変数を初期化します。
 
    .. code-block:: arduino
 
@@ -92,7 +92,7 @@ Code Analysis
       float temp = 0;
       float rps = 0;
 
-#. Initialization in the ``setup()`` function. This section sets up the serial communication, configures the pins' modes, and sets the initial motor speed.
+#. ``setup()``関数での初期化。このセクションでは、シリアル通信の設定、ピンモードの構成、および初期モーター速度の設定を行います。
 
    .. code-block:: arduino
 
@@ -105,9 +105,9 @@ Code Analysis
         analogWrite(motorB_2A, 0);
       }
 
-#. Measuring the motor's speed in the ``loop()`` function. In this segment, the motor's steps are measured for a duration of 1 second. These steps are then used to calculate the revolutions per second (rps), which is then printed to the serial monitor.
+#. ``loop()``関数でのモーター速度の測定。このセクションでは、モーターのステップを1秒間測定します。これらのステップを使用して毎秒回転数（rps）を計算し、その結果をシリアルモニターに表示します。
 
-   ``millis()`` returns the number of milliseconds passed since the Arduino board began running the current program. 
+   ``millis()``関数は、Arduinoボードが現在のプログラムの実行を開始してから経過したミリ秒数を返します。
 
    .. code-block:: arduino
 

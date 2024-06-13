@@ -14,17 +14,17 @@
 
 .. _esp32_lesson17_rotary_encoder:
 
-Lesson 17: Rotary Encoder Module
-==================================
+Lesson 17: ロータリーエンコーダーモジュール
+===========================================
 
-In this lesson, you will learn how to use an ESP32 Development Board and a rotary encoder module to detect rotation direction and count, as well as button presses. We'll explore how the encoder signals clockwise and counterclockwise rotations and increments or decrements a counter accordingly. Additionally, you'll understand how to detect button presses on the encoder module. This project offers hands-on experience in managing rotary encoders and reading digital inputs, enhancing your skills in working with the ESP32 and Arduino programming.
+このレッスンでは、ESP32開発ボードとロータリーエンコーダーモジュールを使用して、回転方向とカウント、およびボタンの押下を検出する方法を学びます。エンコーダーが時計回りと反時計回りの回転をどのように信号化し、それに応じてカウンターを増減するかを探ります。さらに、エンコーダーモジュールのボタン押下を検出する方法も理解します。このプロジェクトは、ロータリーエンコーダーの管理とデジタル入力の読み取りに関する実践的な経験を提供し、ESP32およびArduinoプログラミングでのスキルを向上させます。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,24 +54,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
  
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_17_Rotary_Encoder_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0ba81725-2139-4c8c-9575-c4d343be6708/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Setup and Initialization**
+#. **セットアップと初期化**
 
    .. code-block:: arduino
 
@@ -83,9 +83,9 @@ Code Analysis
         lastStateCLK = digitalRead(CLK);
       }
 
-   In the setup function, the digital pins connected to the encoder's CLK and DT are set as inputs. The SW pin, which is connected to the button, is set as an input with an internal pull-up resistor. This setup prevents the need for an external pull-up resistor. The Serial communication is started at a baud rate of 9600 to enable data visualization on the Serial Monitor. The initial state of the CLK pin is read and stored.
+   setup関数では、エンコーダーのCLKとDTに接続されているデジタルピンを入力として設定します。ボタンに接続されているSWピンは内部プルアップ抵抗を使用して入力として設定されます。これにより、外部プルアップ抵抗は不要となります。シリアル通信は9600ボーで開始され、シリアルモニタでのデータ視覚化が可能になります。CLKピンの初期状態が読み取られ、保存されます。
 
-#. **Main Loop: Reading Encoder and Button State**
+#. **メインループ：エンコーダーとボタンの状態読み取り**
 
    .. code-block:: arduino
 
@@ -115,6 +115,6 @@ Code Analysis
         delay(1);
       }
 
-   In the loop function, the program continually reads the current state of the CLK pin. If there's a change in the state, it implies a rotation has occurred. The direction of rotation is determined by comparing the states of CLK and DT pins. If they are different, it indicates counterclockwise (CCW) rotation; otherwise, it's clockwise (CW). The encoder's count is incremented or decremented accordingly. This information is then sent to the Serial Monitor.
+   ループ関数では、プログラムがCLKピンの現在の状態を継続的に読み取ります。状態に変化があった場合、それは回転が発生したことを意味します。回転の方向は、CLKピンとDTピンの状態を比較することで決定されます。異なる場合は反時計回り（CCW）の回転を示し、同じ場合は時計回り（CW）を示します。エンコーダーのカウントはそれに応じて増減されます。この情報はシリアルモニタに送信されます。
 
-   The button state is read from the SW pin. If it's LOW (pressed), a debounce mechanism is implemented by checking the time elapsed since the last button press. If more than 50 milliseconds have passed, it's considered a valid press, and a message is sent to the Serial Monitor. The `delay(1)` at the end helps in debouncing.
+   ボタンの状態はSWピンから読み取られます。LOW（押されている）場合、最後にボタンが押されてからの経過時間をチェックすることでデバウンス機構が実装されます。50ミリ秒以上経過している場合、有効な押下と見なし、メッセージがシリアルモニタに送

@@ -12,17 +12,17 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Configuring Your Raspberry Pi
+Raspberry Piの設定
 =================================
 
 .. _pi_enable_i2c:
 
-I2C Configuration
+I2Cの設定
 -----------------------
 
-To enable the I2C port on your Raspberry Pi, follow these steps (skip if already enabled; if unsure, proceed with the instructions).
+Raspberry PiでI2Cポートを有効にするには、以下の手順に従ってください（すでに有効になっている場合はスキップします。不明な場合は、指示に従ってください）。
 
-1. Log into your Raspberry Pi, open the Terminal, and enter the command below to access the Raspberry Pi Software Configuration Tool. (You can also access the terminal using SSH.)
+1. Raspberry Piにログインし、ターミナルを開いて以下のコマンドを入力し、Raspberry Pi Software Configuration Toolにアクセスします。（SSHを使用してターミナルにアクセスすることもできます。）
 
    .. code-block:: 
 
@@ -35,10 +35,10 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-2. Go to **Interfacing options**.
+2. **Interfacing options**に移動します。
 
    .. note::
-      Use the ``up`` and ``down`` arrow keys to move the highlighted selection between the options available. Pressing the ``right`` arrow key will jump out of the Options menu and take you to the ``<Select>`` and ``<Finish>`` buttons. Pressing ``left`` will take you back to the options. Alternatively, you can use the ``Tab`` key to switch between these.
+      ``上``および ``下`` 矢印キーを使用して、利用可能なオプションの間でハイライト選択を移動させます。 ``右`` 矢印キーを押すと、オプションメニューを抜けて ``<Select>`` および ``<Finish>`` ボタンに移動します。 ``左`` を押すと、再びオプションに戻ります。代わりに、 ``Tab`` キーを使用してこれらの間を切り替えることもできます。
 
    .. image:: img/configuration_02.png
        :width: 100%
@@ -47,7 +47,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-3. Select **I2C**.
+3. **I2C**を選択します。
 
    .. image:: img/configuration_03.png
        :width: 100%
@@ -56,7 +56,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-4. Choose **<Yes>** to activate the I2C interface, then choose **<Ok>**.
+4. **<Yes>**を選択してI2Cインターフェースを有効にし、次に **<Ok>** を選択します。
 
    .. image:: img/configuration_04.png
        :width: 100%
@@ -65,7 +65,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-5. Select **<Finish>** to exit the Raspberry Pi Software Configuration Tool.
+5. **<Finish>**を選択してRaspberry Pi Software Configuration Toolを終了します。
 
    .. image:: img/configuration_05.png
        :width: 100%
@@ -74,7 +74,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
        <br/><br/>
 
-6. Verify the address of the connected I2C device using the following command.
+6. 以下のコマンドを使用して、接続されたI2Cデバイスのアドレスを確認します。
 
    .. code-block:: 
 
@@ -83,7 +83,7 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
    .. image:: img/configuration_06.png
        :width: 100%
 
-   Addresses of any connected I2C devices will be shown.
+   接続されているI2Cデバイスのアドレスが表示されます。
 
    .. image:: img/configuration_07.png
        :width: 100%
@@ -96,13 +96,12 @@ To enable the I2C port on your Raspberry Pi, follow these steps (skip if already
 
 .. _pi_enable_1wire:
 
-1-Wire Configuration
+1-Wireの設定
 -----------------------
 
-To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if already enabled; if unsure, proceed with the instructions).
+Raspberry Piで1-Wireポートを有効にするには、以下の手順に従ってください（すでに有効になっている場合はスキップします。不明な場合は、指示に従ってください）。
 
-
-1. Log into your Raspberry Pi, open the Terminal, and enter this command to access the Raspberry Pi Software Configuration Tool. (You can also access the terminal using SSH.)
+1. Raspberry Piにログインし、ターミナルを開いて以下のコマンドを入力し、Raspberry Pi Software Configuration Toolにアクセスします。（SSHを使用してターミナルにアクセスすることもできます。）
 
    .. code-block:: 
 
@@ -115,10 +114,10 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-2. Go to **Interfacing options**.
+2. **Interfacing options**に移動します。
 
    .. note::
-      Use the ``up`` and ``down`` arrow keys to move the highlighted selection between the options available. Pressing the ``right`` arrow key will jump out of the Options menu and take you to the ``<Select>`` and ``<Finish>`` buttons. Pressing ``left`` will take you back to the options. Alternatively, you can use the ``Tab`` key to switch between these.
+      ``上``および ``下`` 矢印キーを使用して、利用可能なオプションの間でハイライト選択を移動させます。 ``右`` 矢印キーを押すと、オプションメニューを抜けて ``<Select>`` および ``<Finish>`` ボタンに移動します。 ``左`` を押すと、再びオプションに戻ります。代わりに、 ``Tab`` キーを使用してこれらの間を切り替えることもできます。
 
    .. image:: img/configuration_09.png
        :width: 100%
@@ -127,7 +126,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-3. Select **1-Wire**.
+3. **1-Wire**を選択します。
 
    .. image:: img/configuration_10.png
        :width: 100%
@@ -136,7 +135,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-4. Choose **<Yes>** to activate the 1-Wire interface, then choose **<Ok>**.
+4. **<Yes>**を選択して1-Wireインターフェースを有効にし、次に **<Ok>** を選択します。
 
    .. image:: img/configuration_11.png
        :width: 100%
@@ -145,7 +144,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-5. Select **<Finish>** to exit the Raspberry Pi Software Configuration Tool.
+5. **<Finish>**を選択してRaspberry Pi Software Configuration Toolを終了します。
 
    .. image:: img/configuration_12.png
        :width: 100%
@@ -154,7 +153,7 @@ To enable the 1-Wire port on your Raspberry Pi, follow these steps (skip if alre
 
        <br/><br/>
 
-6. Select **<yes>** to reboot the Raspberry Pi.
+6. **<yes>**を選択してRaspberry Piを再起動します。
 
    .. image:: img/configuration_13.png
        :width: 100%

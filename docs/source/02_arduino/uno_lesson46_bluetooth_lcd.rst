@@ -12,21 +12,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_bluetooth_lcd:
 
 Lesson 46: Bluetooth LCD
 =============================================================
 
+このプロジェクトでは、Arduino UNOボードに接続されたBluetoothモジュールを介してメッセージを受信し、それらのメッセージをLCD画面に表示します。
 
-This project enables the receipt of messages via a Bluetooth module connected to an Arduino UNO board and displays these messages on an LCD screen.
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -57,62 +55,57 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_jdy31`
         - \-
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_46_Bluetooth_lcd_uno_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/ae00239d-f273-4686-b01d-f20487892640/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-
-App and Bluetooth module Connection
+アプリとBluetoothモジュールの接続
 -----------------------------------------------
-We can use an app called "Serial Bluetooth Terminal" to send messages from the Bluetooth module to Arduino.
+"Serial Bluetooth Terminal"というアプリを使用して、BluetoothモジュールからArduinoにメッセージを送信できます。
 
-a. **Install Serial Bluetooth Terminal**
+a. **Serial Bluetooth Terminalのインストール**
 
-   Go to Google Play to download and install |link_serial_bluetooth_terminal| .
+   Google Playにアクセスして、|link_serial_bluetooth_terminal| をダウンロードしてインストールします。
 
 
-b. **Connect Bluetooth**
+b. **Bluetoothの接続**
 
-   Initially, turn on **Bluetooth** on your smartphone.
+   まず、スマートフォンで**Bluetooth**をオンにします。
    
       .. image:: img/09-app_1_shadow.png
          :width: 60%
          :align: center
    
-   Navigate to the **Bluetooth settings** on your smartphone and look for names like **JDY-31-SPP**.
+   スマートフォンの **Bluetooth設定** に移動し、 **JDY-31-SPP** のような名前を探します。
    
       .. image:: img/09-app_2_shadow.png
          :width: 60%
          :align: center
    
-   After clicking it, agree to the **Pair** request in the pop-up window. If prompted for a pairing code, please enter "1234".
+   それをクリックした後、ポップアップウィンドウで **ペア** リクエストに同意します。ペアリングコードを求められた場合は、「1234」と入力してください。
    
       .. image:: img/09-app_3_shadow.png
          :width: 60%
          :align: center
-   
 
-c. **Communicate with Bluetooth module**
+c. **Bluetoothモジュールとの通信**
 
-   Open the Serial Bluetooth Terminal. Connect to "JDY-31-SPP".
+   Serial Bluetooth Terminalを開き、「JDY-31-SPP」に接続します。
 
    .. image:: img/00-bluetooth_serial_4_shadow.png 
 
-d. **Send command**
+d. **コマンドの送信**
 
-   Use the Serial Bluetooth Terminal app to send messages to Arduino via Bluetooth. The message sent to Bluetooth will be displayed on the LCD.
+   Serial Bluetooth Terminalアプリを使用して、Bluetooth経由でArduinoにメッセージを送信します。Bluetoothに送信されたメッセージはLCDに表示されます。
 
    .. image:: img/15-lcd_shadow.png
       :width: 100%
@@ -120,23 +113,22 @@ d. **Send command**
 
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-
 .. note:: 
-      To install library, use the Arduino Library Manager and search for **"LiquidCrystal I2C"** and install the library.  
+      ライブラリをインストールするには、Arduinoライブラリマネージャを使用して**"LiquidCrystal I2C"**を検索し、ライブラリをインストールしてください。
 
-#. Setting up the LCD
+#. LCDの設定
 
    .. code-block:: arduino
 
       #include <LiquidCrystal_I2C.h>
       LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-   This segment of code includes the LiquidCrystal_I2C library and initializes the LCD module with the I2C address as ``0x27`` and specifies that the LCD has ``16`` columns and ``2`` rows.
+   このコードセグメントでは、LiquidCrystal_I2Cライブラリをインクルードし、I2Cアドレスを ``0x27`` としてLCDモジュールを初期化し、LCDが ``16`` 列と ``2`` 行であることを指定します。
 
-#. Setting up Bluetooth communication
+#. Bluetooth通信の設定
 
    .. code-block:: arduino
 
@@ -145,9 +137,9 @@ Code Analysis
       const int bluetoothRx = 4;
       SoftwareSerial bleSerial(bluetoothTx, bluetoothRx);
 
-   Here, the SoftwareSerial library is included to allow the JDY-31 Bluetooth module to communicate with the Arduino using pins 3 (TX) and 4 (RX).
+   ここでは、SoftwareSerialライブラリをインクルードし、JDY-31 Bluetoothモジュールがピン3（TX）とピン4（RX）を使用してArduinoと通信できるようにします。
 
-#. Initialization
+#. 初期化
 
    .. code-block:: arduino
 
@@ -160,9 +152,9 @@ Code Analysis
          bleSerial.begin(9600);
       }
 
-   The ``setup()`` function initializes the LCD and clears any existing content. It also turns on the backlight for the LCD. Communication is started with the serial monitor and the Bluetooth module, both at a baud rate of ``9600``.
+   ``setup()``関数は、LCDを初期化し、既存のコンテンツをクリアします。また、LCDのバックライトをオンにします。シリアルモニタおよびBluetoothモジュールとの通信は、どちらもボーレート ``9600`` で開始されます。
 
-#. Main Loop
+#. メインループ
 
    .. code-block:: arduino
 
@@ -184,4 +176,4 @@ Code Analysis
          }
       }
 
-   This is the main operational loop of the Arduino program. It continually checks for incoming data from both the Bluetooth module and the serial monitor. When data is received from the Bluetooth device, it's processed, displayed on the serial monitor, and shown on the LCD. If data is entered into the serial monitor, this data is sent to the Bluetooth module.
+   これはArduinoプログラムのメインの動作ループです。Bluetoothモジュールおよびシリアルモニタからのデータの受信を継続的にチェックします。Bluetoothデバイスからデータが受信されると、それが処理され、シリアルモニタに表示され、LCDに表示されます。シリアルモニタにデータが入力されると、そのデータはBluetoothモジュールに送信されます。

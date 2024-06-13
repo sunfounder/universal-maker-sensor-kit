@@ -11,22 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_iot_weather_monito:
 
-Lesson 48: Weather Monitor with ThingSpeak
+Lesson 48: ThingSpeakを使用したウェザーモニター
 =============================================================
 
+このプロジェクトでは、大気圧センサーを使用して温度と気圧のデータを収集します。収集されたデータは、ESP8266モジュールとWi-Fiネットワークを介して、一定時間間隔でThingSpeakクラウドプラットフォームに送信されます。
 
-
-This project collects temperature and pressure data using an Atmospheric Pressure Sensor. The collected data is then transmitted to the ThingSpeak cloud platform via an ESP8266 module and Wi-Fi network at regular time intervals.
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -57,19 +54,16 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_bmp280`
         - \-
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_48_Iot_weather_monitor_uno_bb.png
     :width: 100%
 
-
-
-Configure ThingSpeak
+ThingSpeakの設定
 -----------------------------
 
-|link_thingspeak| ™ is an IoT analytics platform service that allows you to aggregate, visualize and analyze live data streams in the cloud. ThingSpeak provides instant visualizations of data posted by your devices to ThingSpeak. With the ability to execute MATLAB® code in ThingSpeak you can perform online analysis and processing of the data as it comes in. ThingSpeak is often used for prototyping and proof of concept IoT systems that require analytics.
+|link_thingspeak| ™は、クラウドでライブデータストリームを集約、可視化、分析できるIoT分析プラットフォームサービスです。ThingSpeakは、デバイスから投稿されたデータを即座に可視化する機能を提供します。MATLAB®コードをThingSpeakで実行できるため、データが到着するたびにオンラインで分析および処理を行うことができます。ThingSpeakは、分析が必要なIoTシステムのプロトタイピングおよび概念実証によく使用されます。
 
 .. image:: img/signup_tsp_ml.png
     :width: 80% 
@@ -79,28 +73,27 @@ Configure ThingSpeak
     
     <br/>  
 
-**1) Creating ThingSpeak Account**
+**1) ThingSpeakアカウントの作成**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing you need to do is to create an account with ThingSpeak. Since the collaboration with MATLAB, you can use your MathWorks credentials to login to |link_thingspeak|.
+まず最初に、ThingSpeakのアカウントを作成する必要があります。MATLABとの連携により、MathWorksの資格情報を使用して|link_thingspeak|にログインできます。
 
-If you do not have one, you need to create an account with MathWorks and login to ThingSpeak Application.
+アカウントをお持ちでない場合は、MathWorksのアカウントを作成し、ThingSpeakアプリケーションにログインする必要があります。
 
 .. image:: img/05-thingspeak_signup_shadow.png
     :width: 50%
     :align: center
 
-
-**2) Creating the channel**
+**2) チャンネルの作成**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After logging in, create a new channel to store the data by going to "Channels" > "My Channels" and clicking on "New Channel".
+ログイン後、「Channels」>「My Channels」に進み、「New Channel」をクリックして新しいチャンネルを作成し、データを保存します。
 
 .. image:: img/05-thingspeak_channel_1_shadow.png
     :width: 95%
     :align: center
 
-For this project, we need to create a channel called "**Weather Monitor**" with two fields: **Field 1** for "**Temperature**" and **Field 2** for "**Atmospheric Pressure**".
+このプロジェクトでは、「 **Weather Monitor** 」というチャンネルを作成し、 **Field 1** に「 **Temperature** 」、 **Field 2** に「 **Atmospheric Pressure** 」を設定する必要があります。
 
 .. image:: img/05-thingspeak_channel_2_shadow.png
     :width: 95%
@@ -110,29 +103,26 @@ For this project, we need to create a channel called "**Weather Monitor**" with 
     
     <br/>  
 
-
-Code
+コード
 --------------------------- 
 
-
-#. Open the ``Lesson_48_Iot_Weather_Monitor.ino`` file under the path of ``universal-maker-sensor-kit\arduino_uno\Lesson_48_Iot_Weather_Monitor``, or copy this code into **Arduino IDE**.
+#. ``universal-maker-sensor-kit\arduino_uno\Lesson_48_Iot_Weather_Monitor``のパスにある ``Lesson_48_Iot_Weather_Monitor.ino`` ファイルを開くか、このコードを **Arduino IDE** にコピーします。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit BMP280"** and install it. 
+      ライブラリをインストールするには、Arduinoライブラリマネージャを使用して **"Adafruit BMP280"**を検索し、インストールしてください。
 
    .. raw:: html
       
       <iframe src=https://create.arduino.cc/editor/sunfounder01/59eeae43-5dcc-46d7-833f-65fd2bdb3603/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-#. You need to enter the ``mySSID`` and ``myPWD`` of the WiFi you are using. 
+#. 使用するWiFiの ``mySSID`` と ``myPWD`` を入力する必要があります。
 
    .. code-block:: arduino
 
-    String mySSID = "your_ssid";     // WiFi SSID
+      String mySSID = "your_ssid";     // WiFi SSID
     String myPWD = "your_password";  // WiFi Password
 
-#. You also need to modify the ``myAPI`` with your ThingSpeak Channel API key.
+#. また、ThingSpeakチャネルAPIキーを使用して ``myAPI`` を修正する必要があります。
 
    .. code-block:: arduino
     
@@ -143,11 +133,11 @@ Code
        :align: center
    
    
-   Here you can find **your unique API KEY that you must keep private**. 
+   ここには **あなたのユニークなAPIキーが表示され、これは秘密にしておく必要があります** 。
 
-#. After selecting the correct board and port, click the **Upload** button.
+#. 正しいボードとポートを選択した後、 **アップロード** ボタンをクリックします。
 
-#. Open the Serial monitor(set baudrate to **9600**) and wait for a prompt such as a successful connection to appear.
+#. シリアルモニタを開き（ボーレートを **9600** に設定）、接続成功などのプロンプトが表示されるのを待ちます。
 
    .. image:: img/05-ready_1_shadow.png
           :width: 95%
@@ -155,11 +145,10 @@ Code
    .. image:: img/05-ready_2_shadow.png
           :width: 95%
 
-Code Analysis
+コード解析
 ---------------------------
 
-
-#. Initialization and Bluetooth setup
+#. 初期化とBluetooth設定
 
    .. code-block:: arduino
 
@@ -169,9 +158,9 @@ Code Analysis
       const int bluetoothRx = 4;
       SoftwareSerial bleSerial(bluetoothTx, bluetoothRx);
    
-   We begin by including the SoftwareSerial library to help us with Bluetooth communication. The Bluetooth module's TX and RX pins are then defined and associated with pins 3 and 4 on the Arduino. Finally, we initialize the ``bleSerial`` object for Bluetooth communication.
+   まず、Bluetooth通信をサポートするためにSoftwareSerialライブラリをインクルードします。次に、BluetoothモジュールのTXおよびRXピンを定義し、Arduinoのピン3および4に割り当てます。最後に、Bluetooth通信のための``bleSerial``オブジェクトを初期化します。
 
-#. LED Pin Definitions
+#. LEDピンの定義
 
    .. code-block:: arduino
 
@@ -180,9 +169,10 @@ Code Analysis
       const int yledPin = 11;  //yellow
       const int gledPin = 12;  //green
 
-   Here, we're defining which Arduino pins our LEDs are connected to. The red LED is on pin 10, yellow on 11, and green on 12.
 
-#. setup() Function
+   ここでは、LEDが接続されているArduinoのピンを定義しています。赤色LEDはピン10、黄色はピン11、緑色はピン12に接続されています。
+
+#. setup()関数
 
    .. code-block:: arduino
 
@@ -195,9 +185,9 @@ Code Analysis
          bleSerial.begin(9600);
       }
 
-   In the ``setup()`` function, we set the LED pins as ``OUTPUT``. We also start serial communication for both the Bluetooth module and the default serial (connected to the computer) at a baud rate of 9600.
+   ``setup()``関数では、LEDピンを ``OUTPUT`` として設定します。また、Bluetoothモジュールおよびデフォルトのシリアル（コンピュータに接続されている）とのシリアル通信をボーレート9600で開始します。
 
-#. Main loop() for Bluetooth Communication
+#. Bluetooth通信のためのメインループ
 
    .. code-block:: arduino
 
@@ -216,9 +206,9 @@ Code Analysis
          }
       }
 
-   Inside our main ``loop()``, we continuously check if data is available from the Bluetooth module. If we receive data, we read the character and display it in the serial monitor. Depending on the character received (R, Y, or G), we toggle the respective LED using the ``toggleLights()`` function.
+   メインの ``loop()`` 内では、Bluetoothモジュールからデータが利用可能かどうかを継続的にチェックします。データを受信した場合、その文字を読み取り、シリアルモニタに表示します。受信した文字（R、Y、またはG）に応じて、 ``toggleLights()`` 関数を使用して対応するLEDを点灯します。
 
-#. Toggle Lights Function
+#. LED切り替え関数
 
    .. code-block:: arduino
 
@@ -230,4 +220,4 @@ Code Analysis
          digitalWrite(targetLight, HIGH);
       }
 
-   This function, ``toggleLights()``, turns off all the LEDs first. After ensuring they are all off, it turns on the specified target LED. This ensures that only one LED is on at a time.
+   ``toggleLights()``関数は、まずすべてのLEDを消灯します。すべてが消灯していることを確認した後、指定されたターゲットLEDを点灯させます。これにより、常に1つのLEDのみが点灯するようにします。

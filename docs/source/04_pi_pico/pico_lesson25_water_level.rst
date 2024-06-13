@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson25_water_level:
 
-Lesson 25: Water Level Sensor Module
+レッスン25: 水位センサーモジュール
 =========================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to measure water levels with a water level sensor. You'll understand how to connect the sensor to the board, read its analog output using MicroPython, and interpret these readings to determine water levels. This practical session is aimed at developing your skills in sensor integration and data acquisition with the Raspberry Pi Pico W.
+このレッスンでは、Raspberry Pi Pico Wを使用して水位センサーで水位を測定する方法を学びます。センサーをボードに接続し、MicroPythonを使用してそのアナログ出力を読み取り、これらの読み取り値を解釈して水位を判断する方法を理解します。この実践的なセッションは、Raspberry Pi Pico Wを使用したセンサー統合とデータ取得のスキルを向上させることを目的としています。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_25_Water_Level_Sensor_Module_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,30 +79,30 @@ Code
    
        utime.sleep_ms(200)  # Wait for 200 milliseconds before the next read
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
-   Here, we import necessary libraries: ``machine`` for hardware interactions and ``utime`` for time-based functions.
+   ここでは、ハードウェアとの対話に必要な ``machine`` と、時間関連の関数に必要な ``utime`` ライブラリをインポートします。
 
    .. code-block:: python
 
       import machine
       import utime
 
-#. Initializing the Water Level Sensor
+#. 水位センサーの初期化
 
-   An ADC object is created on GPIO pin 26 to read analog signals from the water level sensor. ADC is crucial for converting the sensor's analog signals to digital format that the microcontroller can process.
+   GPIOピン26にADCオブジェクトを作成し、水位センサーからのアナログ信号を読み取ります。ADCは、センサーのアナログ信号をマイクロコントローラーが処理できるデジタル形式に変換するために重要です。
 
    .. code-block:: python
 
       # Initialize an ADC object on GPIO pin 26.
       water_level_sensor = machine.ADC(26)
 
-#. Reading and Printing Sensor Data
+#. センサーデータの読み取りと出力
 
-   The ``while True`` loop enables continuous reading of the sensor data. ``read_u16`` method converts the analog signal to a 16-bit integer. The value is printed, and the loop pauses for 200 milliseconds using ``utime.sleep_ms(200)`` to prevent rapid firing.
+   ``while True`` ループは、センサーデータの継続的な読み取りを可能にします。 ``read_u16`` メソッドはアナログ信号を16ビットの整数に変換します。この値を出力し、 ``utime.sleep_ms(200)`` を使用して200ミリ秒間ループを一時停止させ、急速な繰り返しを防ぎます。
 
    .. code-block:: python
 

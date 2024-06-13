@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson22_touch_sensor:
 
-Lesson 22: Touch Sensor Module
-==================================
+レッスン 22: タッチセンサーモジュール
+======================================
 
-In this lesson, you'll learn how to connect a touch sensor to the Raspberry Pi Pico W in order to control an onboard LED. By using straightforward Python code, you'll configure the touch sensor as an input device. When the sensor detects a touch, it will send a signal to turn on the LED, providing a visual indication that a touch has been detected. Conversely, when there's no touch, the LED stays off. 
+このレッスンでは、タッチセンサーをRaspberry Pi Pico Wに接続してオンボードLEDを制御する方法を学びます。シンプルなPythonコードを使用して、タッチセンサーを入力デバイスとして設定します。センサーがタッチを検出すると、LEDを点灯させてタッチが検出されたことを視覚的に示します。逆に、タッチがない場合はLEDが消灯します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_22_touch_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -86,12 +85,12 @@ Code
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Setting up the pins**:
+#. **ピンの設定**:
 
-   Here, we import necessary libraries and set up GPIO pins. The touch sensor is connected to GPIO 16 as an input, and the onboard LED is configured as an output.
+   ここでは、必要なライブラリをインポートし、GPIOピンを設定します。タッチセンサーはGPIO 16に入力として接続され、オンボードLEDは出力として設定されます。
 
    .. code-block:: python
 
@@ -101,9 +100,9 @@ Code Analysis
       touch_sensor = Pin(16, Pin.IN)
       led = Pin("LED", Pin.OUT)
 
-#. **Main loop and touch detection**:
+#. **メインループとタッチ検出**:
 
-   In an infinite loop, the code constantly checks the state of the touch sensor. If a touch is detected (value equals 1), the LED is turned on and a message is printed. Otherwise, the LED remains off, and a different message is printed. A short delay is added to reduce CPU usage.
+   無限ループ内で、コードはタッチセンサーの状態を常にチェックします。タッチが検出されると（値が1の場合）、LEDが点灯し、メッセージが表示されます。それ以外の場合はLEDが消灯し、別のメッセージが表示されます。CPU使用率を減らすために短い遅延が追加されています。
 
    .. code-block:: python
 

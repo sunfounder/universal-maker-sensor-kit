@@ -11,22 +11,22 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 For Arduino Uno
 ==================================================
 
-Arduino users, please refer to the following tutorial.
+Arduinoユーザーの皆さん、以下のチュートリアルをご参照ください。
 
-The following tutorial uses Arduino UNO R3 as example, but it also applies to Arduino UNO R4.
+以下のチュートリアルではArduino UNO R3を例にしていますが、Arduino UNO R4にも適用できます。
 
-**Arduino Config**
+**Arduino設定**
 
 .. toctree::
     :maxdepth: 1
 
     arduino_start/00_get_start
 
-**Basic Project**
+**基本プロジェクト**
 
 .. toctree::
     :maxdepth: 1
@@ -68,7 +68,7 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson35_esp8266
     uno_lesson36_bluetooth
 
-**Fun Project**
+**楽しいプロジェクト**
 
 .. toctree::
     :maxdepth: 1
@@ -85,15 +85,14 @@ The following tutorial uses Arduino UNO R3 as example, but it also applies to Ar
     uno_lesson46_bluetooth_lcd.rst 
     uno_lesson47_bluetooth_traffic_light copy.rst 
 
-**IoT Config**
+**IoT設定**
 
 .. toctree::
     :maxdepth: 1
 
     iot_start/00-blynk_start
 
-**IoT Project**
-
+**IoTプロジェクト**
 
 .. toctree::
     :maxdepth: 1

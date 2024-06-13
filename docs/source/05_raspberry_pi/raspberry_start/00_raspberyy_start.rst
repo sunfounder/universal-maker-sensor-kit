@@ -14,16 +14,16 @@
 
 .. _raspberry_start:
 
-Getting Started with Raspberry Pi
+Raspberry Piの始め方
 ====================================
 
-In this chapter, we will learn how to get started with Raspberry Pi. The content covers installing the OS, setting up the Raspberry Pi network, and accessing the terminal.
+この章では、Raspberry Piの始め方について学びます。内容には、OSのインストール、Raspberry Piネットワークの設定、およびターミナルへのアクセスが含まれます。
 
 .. note::
 
-    You can also find the full tutorial for setting up the Raspberry Pi on the Raspberry Pi Foundation official website at: |link_set_up_pi|.
+    Raspberry Piのセットアップに関する完全なチュートリアルは、Raspberry Pi財団の公式ウェブサイトでご覧いただけます：|link_set_up_pi|。
 
-    Once your Raspberry Pi is set up, you can skip this part and move on to the next chapter.
+    Raspberry Piがセットアップされたら、この部分をスキップして次の章に進むことができます。
 
 .. toctree::
     :maxdepth: 1

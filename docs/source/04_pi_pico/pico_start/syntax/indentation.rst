@@ -12,18 +12,16 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Indentation
+インデント
 =============
 
-Indentation refers to the spaces at the beginning of a code line.
-Like standard Python programs, MicroPython programs usually run from top to bottom:
-It traverses each line in turn, runs it in the interpreter, and then continues to the next line,
-Just like you type them line by line in the Shell.
-A program that just browses the instruction list line by line is not very smart, though – so MicroPython, just like Python, has its own method to control the sequence of its program execution: indentation.
+インデントとは、コード行の先頭にあるスペースのことを指します。
+標準のPythonプログラムと同様に、MicroPythonプログラムも通常は上から下へ実行されます：
+各行を順に走査し、インタープリタで実行し、その後次の行へと進みます。
+ちょうどシェルで一行ずつ入力するように。
+ただし、指示リストを行ごとにブラウズするだけのプログラムはあまり賢くありません。そのためMicroPythonもPythonと同様に、プログラムの実行順序を制御するための独自の方法、つまりインデントを持っています。
 
-You must put at least one space before print(), otherwise an error message "Invalid syntax" will appear. It is usually recommended to standardise spaces by pressing the Tab key uniformly.
-
-
+print()の前には少なくとも1つのスペースを入れる必要があります。そうしないと、「Invalid syntax（無効な構文）」というエラーメッセージが表示されます。通常は、Tabキーを押してスペースを統一することをお勧めします。
 
 .. code-block:: python
 
@@ -35,8 +33,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2
 SyntaxError: invalid syntax
 
-You must use the same number of spaces in the same block of code, or Python will give you an error.
-
+同じコードブロック内で同じ数のスペースを使用しなければなりません。そうしないと、Pythonはエラーを返します。
 
 .. code-block:: python
 

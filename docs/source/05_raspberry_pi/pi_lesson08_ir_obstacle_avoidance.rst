@@ -14,17 +14,17 @@
 
 .. _pi_lesson08_ir_obstacle_avoidance:
 
-Lesson 08: IR Obstacle Avoidance Sensor Module
+レッスン 08: 赤外線障害物回避センサーモジュール
 ====================================================
 
-In this lesson, you will learn how to detect obstacles using a sensor with the Raspberry Pi. We will guide you through connecting a digital input sensor to GPIO pin 17. You'll learn how to write a Python script that continuously monitors the sensor to determine the presence of an obstacle. The program will output a message indicating whether an obstacle is detected or not. This straightforward yet practical project is an excellent way to get started with GPIO interfacing and Python programming, making it ideal for beginners interested in exploring sensor integration with the Raspberry Pi.
+このレッスンでは、Raspberry Piを使用して障害物を検出する方法を学びます。デジタル入力センサーをGPIOピン17に接続する方法を案内します。センサーを継続的に監視して障害物の有無を判断するPythonスクリプトの書き方を学びます。プログラムは障害物が検出されたかどうかを示すメッセージを出力します。このシンプルでありながら実用的なプロジェクトは、GPIOインターフェースとPythonプログラミングの入門として最適で、Raspberry Piを使用したセンサー統合に興味のある初心者に理想的です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_08_Obstacle_Avoidance_Sensor_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -69,7 +69,7 @@ Code
    from gpiozero import InputDevice
    from time import sleep
 
-   # Initialize the sensor as a digital input device on GPIO 17
+   # センサーをGPIO17のデジタル入力デバイスとして初期化
    sensor = InputDevice(17)
 
    while True:
@@ -79,33 +79,33 @@ Code
          print("Obstacle detected")     # Prints when an obstacle is detected
       sleep(0.5)
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script begins by importing the ``InputDevice`` class from the gpiozero library for interacting with the sensor, and the ``sleep`` function from Python's time module for pausing execution.
+   スクリプトは、センサーと対話するためのgpiozeroライブラリから ``InputDevice`` クラスと、実行を一時停止するためのPythonのtimeモジュールから ``sleep`` 関数をインポートすることから始まります。
 
    .. code-block:: python
 
       from gpiozero import InputDevice
       from time import sleep
 
-#. Initializing the Sensor
+#. センサーの初期化
    
-   An ``InputDevice`` object named ``sensor`` is created, connected to GPIO pin 17. This line assumes that the obstacle sensor is connected to this specific GPIO pin.
+   ``InputDevice``オブジェクトである ``sensor`` をGPIOピン17に接続して作成します。この行は、障害物センサーがこの特定のGPIOピンに接続されていることを前提としています。
 
    .. code-block:: python
 
       sensor = InputDevice(17)
 
-#. Implementing the Continuous Monitoring Loop
+#. 継続的な監視ループの実装
    
-   - The script uses a ``while True:`` loop to continuously check the sensor's state. This loop will run indefinitely until the program is stopped.
-   - Inside the loop, an ``if`` statement checks the ``is_active`` property of the ``sensor``. 
-   - If ``is_active`` is ``True``, it indicates no obstacle is detected, and "No obstacle detected" is printed.
-   - If ``is_active`` is ``False``, indicating an obstacle is detected, "Obstacle detected" is printed.
-   - ``sleep(0.5)`` pauses the loop for 0.5 seconds between each check, which helps in reducing the script's processing demand and provides a delay between consecutive sensor readings.
+   - スクリプトは ``while True:`` ループを使用してセンサーの状態を継続的にチェックします。このループはプログラムが停止されるまで無期限に実行されます。
+   - ループ内で、 ``if`` ステートメントが ``sensor`` の ``is_active`` プロパティをチェックします。
+   - ``is_active``が ``True`` の場合、障害物が検出されていないことを示し、「障害物なし」と表示されます。
+   - ``is_active``が ``False`` の場合、障害物が検出されたことを示し、「障害物検出」と表示されます。
+   - ``sleep(0.5)``は、各チェックの間に0.5秒間ループを一時停止し、スクリプトの処理負荷を軽減し、連続するセンサー読み取りの間に遅延を提供します。
 
    .. raw:: html
 
@@ -122,4 +122,4 @@ Code Analysis
 
    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+      センサーが正常に動作しない場合、赤外線送信機と受信機を並行に調整してください。また、内蔵ポテンショメータを使用して検出範囲を調整できます。

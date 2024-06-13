@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson31_pump:
 
-Lesson 31: Centrifugal Pump
+レッスン31: 遠心ポンプ
 ==================================
 
-In this lesson, you will learn how to control a pump using a Raspberry Pi. You'll learn how to write a Python script to activate the pump, control its speed, and then stop it after a set period. This project provides a basic understanding of pump control through GPIO interfacing and Python programming, making it a suitable starting point for beginners interested in Raspberry Pi and simple pump applications.
+このレッスンでは、Raspberry Piを使用してポンプを制御する方法を学びます。Pythonスクリプトを作成してポンプを作動させ、その速度を制御し、設定した期間後に停止させる方法を学びます。このプロジェクトは、GPIOインターフェースとPythonプログラミングを通じてポンプ制御の基本的な理解を提供し、Raspberry Piとシンプルなポンプアプリケーションに興味のある初心者に適した出発点となります。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_31_Pump_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,39 +79,38 @@ Code
    pump.stop()            # Stop the pump
 
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
    
-   The ``gpiozero`` library is used for controlling the motor, and the ``time`` library's ``sleep`` function is for delays.
+   ``gpiozero``ライブラリはモーター制御に使用され、 ``time`` ライブラリの ``sleep`` 関数は遅延に使用されます。
 
    .. code-block:: python
 
       from gpiozero import Motor
       from time import sleep
 
-#. Define Pump Pins
+#. ポンプピンの定義
    
-   A ``Motor`` object is created with two GPIO pins: one for forward and one for backward operation. In this case, GPIO 17 and 27 are used.
+   2つのGPIOピンを使用して ``Motor`` オブジェクトを作成します。一つは前進操作用、もう一つは後退操作用です。この例ではGPIO 17と27が使用されています。
 
    .. code-block:: python
 
       pump = Motor(forward=17, backward=27)
 
-#. Activate the pump
+#. ポンプの作動
    
-   The motor is activated in the forward direction with a specified speed using ``pump.forward(speed=1)``. The speed parameter ranges from 0 (stopped) to 1 (full speed). The motor runs for 5 seconds, as defined by ``sleep(5)``.
+   ``pump.forward(speed=1)``を使用して、指定された速度で前進方向にモーターを作動させます。速度パラメータは0（停止）から1（全速）までの範囲です。モーターは ``sleep(5)`` で定義された5秒間作動します。
 
    .. code-block:: python
 
       pump.forward(speed=1)
       sleep(5)
 
-#. Deactivate the pump
+#. ポンプの停止
    
-   The motor is stopped using ``pump.stop()``. This is essential for safely halting the motor's operation after the required duration.
+   ``pump.stop()``を使用してモーターを停止させます。これは、必要な期間の後にモーターの動作を安全に停止するために不可欠です。
 
    .. code-block:: python
 

@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson10_pcf8591:
 
-Lesson 10: PCF8591 ADC DAC Converter Module
-==============================================
+Lesson 10: PCF8591 ADC DAC コンバーターモジュール
+==================================================
 
-In this lesson, you'll learn how to connect the ESP32 Development Board with a PCF8591 ADC DAC Converter Module. We'll cover reading analog values from input AIN0, sending these values to the DAC(AOUT), and displaying both the raw and voltage-converted readings on the serial monitor. The module's potentiometer is connected to AIN0 using jumper caps, and the D2 LED on the module is connected to AOUT, so you can see that the brightness of D2 LED changes as you rotate the potentiometer.
+このレッスンでは、ESP32開発ボードをPCF8591 ADC DACコンバーターモジュールに接続する方法を学びます。入力AIN0からアナログ値を読み取り、これらの値をDAC（AOUT）に送信し、シリアルモニタに生の読み取り値と電圧変換後の値を表示する方法をカバーします。モジュールのポテンショメータはジャンパーキャップを使用してAIN0に接続され、モジュールのD2 LEDはAOUTに接続されているため、ポテンショメータを回すとD2 LEDの明るさが変わることがわかります。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,27 +54,27 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_10_PCF8591_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/5f184da9-9ea5-4c8a-877e-a7a41abf8c15/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Including the Library and Defining Constants**
+#. **ライブラリのインクルードと定数の定義**
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit PCF8591"** and install it. 
+      ライブラリをインストールするには、Arduinoライブラリマネージャを使用して **"Adafruit PCF8591"** を検索し、インストールしてください。
 
    .. code-block:: arduino
 
@@ -83,9 +83,9 @@ Code Analysis
       // Define the reference voltage for ADC conversion
       #define ADC_REFERENCE_VOLTAGE 3.3
 
-   This section includes the Adafruit PCF8591 library, which provides functions for interacting with the PCF8591 module. The ADC reference voltage is set to 3.3 volts, which is the maximum voltage that the ADC can measure.
+   このセクションでは、PCF8591モジュールと対話するための関数を提供するAdafruit PCF8591ライブラリをインクルードします。ADCの基準電圧は3.3ボルトに設定されており、これはADCが測定できる最大電圧です。
 
-#. **Setting Up the PCF8591 Module**
+#. **PCF8591モジュールの設定**
 
    .. code-block:: arduino
 
@@ -102,9 +102,9 @@ Code Analysis
         pcf.enableDAC(true);
       }
 
-   In the setup function, serial communication is started, and an instance of the PCF8591 module is created. The ``pcf.begin()`` function checks if the module is connected properly. If not, it prints an error message and halts the program. If the module is found, it enables the DAC.
+   setup関数では、シリアル通信を開始し、PCF8591モジュールのインスタンスを作成します。 ``pcf.begin()`` 関数は、モジュールが正しく接続されているかを確認します。接続されていない場合、エラーメッセージを出力し、プログラムを停止します。モジュールが見つかった場合、DACを有効にします。
 
-#. **Reading from ADC and Writing to DAC**
+#. **ADCからの読み取りとDACへの書き込み**
 
    .. code-block:: arduino
 
@@ -119,16 +119,16 @@ Code Analysis
         delay(500);
       }
 
-   The loop function continuously reads the analog value from AIN0 (analog input 0) of the PCF8591 module, then writes this value back to the DAC. It also prints the raw value and the voltage-converted value of AIN0 to the Serial Monitor.
+   loop関数では、PCF8591モジュールのAIN0（アナログ入力0）からアナログ値を連続的に読み取り、その値をDACに書き戻します。また、AIN0の生の値と電圧変換後の値をシリアルモニタに出力します。
 
-   Jumper caps link the module's potentiometer to AIN0, and the D2 LED is connected to AOUT; please refer to the PCF8591 module :ref:`schematic <cpn_pcf8591_sch>` for details. The brightness of the LED changes as the potentiometer is rotated.
+   ジャンパーキャップはモジュールのポテンショメータをAIN0に接続し、D2 LEDはAOUTに接続されています。PCF8591モジュールの :ref:`schematic <cpn_pcf8591_sch>` を参照してください。ポテンショメータを回すと、LEDの明るさが変わります。
 
-#. **Digital to Voltage Conversion Function**
+#. **デジタル値を電圧に変換する関数**
 
    .. code-block:: arduino
 
       float int_to_volts(uint16_t dac_value, uint8_t bits, float logic_level) {
         return (((float)dac_value / ((1 << bits) - 1)) * logic_level);
       }
-
-   This function converts the digital value back to its corresponding voltage. It takes the digital value (``dac_value``), the number of bits of resolution (``bits``), and the logic level voltage (``logic_level``) as arguments. The formula used is a standard approach to convert a digital value to its equivalent voltage.
+ 
+   この関数は、デジタル値を対応する電圧に変換します。引数にはデジタル値（ ``dac_value`` ）、解像度のビット数（ ``bits`` ）、および論理レベルの電圧（ ``logic_level`` ）が含まれます。この公式は、デジタル値を対応する電圧に変換するための標準的なアプローチです。

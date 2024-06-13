@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson30_relay_module:
 
-Lesson 30: Relay Module
+Lesson 30: リレーモジュール
 ==================================
 
-In this lesson, you'll learn how to use an ESP32 Development Board to control a one-channel relay module. We'll cover turning the relay on and off in a loop, with a 3-second delay between each state change. This project provides hands-on experience with digital output operations in embedded systems, making it ideal for beginners entering the realm of ESP32 and relay modules.
+このレッスンでは、ESP32開発ボードを使用して1チャンネルリレーモジュールを制御する方法を学びます。リレーをオンとオフにするループを作成し、各状態変更の間に3秒の遅延を入れる方法をカバーします。このプロジェクトは、組み込みシステムでのデジタル出力操作に関する実践的な経験を提供し、ESP32とリレーモジュールの世界に入る初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,26 +56,26 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_30_Relay_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a0035890-76ca-4a85-9f21-9df01717d906/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up the relay pin:
+#. リレーピンの設定:
 
-   - The relay module is connected to pin 25 of the ESP32 Development Board. This pin is defined as ``relayPin`` for ease of reference in the code.
+   - リレーモジュールはESP32開発ボードのピン25に接続されています。このピンはコード内で参照しやすいように``relayPin``として定義されています。
 
    .. raw:: html
 
@@ -85,9 +85,9 @@ Code Analysis
     
       const int relayPin = 25;
 
-#. Configuring the relay pin as an output:
+#. リレーピンを出力として設定:
 
-   - In the ``setup()`` function, the relay pin is set as an OUTPUT using the ``pinMode()`` function. This means the Arduino will send signals (either HIGH or LOW) to this pin.
+   - ``setup()``関数内で、リレーピンは ``pinMode()`` 関数を使用してOUTPUTとして設定されます。これにより、ArduinoはこのピンにHIGHまたはLOWの信号を送信します。
 
    .. raw:: html
 
@@ -99,11 +99,11 @@ Code Analysis
         pinMode(relayPin, OUTPUT);
       }
 
-#. Toggling the relay ON and OFF:
+#. リレーのオンとオフの切り替え:
 
-   - In the ``loop()`` function, the relay is first set to the OFF state using ``digitalWrite(relayPin, LOW)``. It remains in this state for 3 seconds (``delay(3000)``).
-   - Then, the relay is set to the ON state using ``digitalWrite(relayPin, HIGH)``. Again, it remains in this state for 3 seconds.
-   - This cycle repeats indefinitely.
+   - ``loop()``関数内で、リレーは最初に ``digitalWrite(relayPin, LOW)``を使用してオフの状態に設定されます。この状態で3秒間（ ``delay(3000)`` ）保持されます。
+   - 次に、リレーは ``digitalWrite(relayPin, HIGH)``を使用してオンの状態に設定されます。この状態も3秒間保持されます。
+   - このサイクルは無限に繰り返されます。
 
    .. raw:: html
 

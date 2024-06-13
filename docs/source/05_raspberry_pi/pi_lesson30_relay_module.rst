@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson30_relay_module:
 
-Lesson 30: Relay Module
+レッスン30: リレーモジュール
 ==================================
 
-In this lesson, you will learn how to control a relay module using a Raspberry Pi. You'll learn how to write a simple Python script to turn the relay on and off at one-second intervals. This project is a practical introduction to using GPIO pins for controlling external devices, providing a basic understanding of how relays work in electronic circuits. It's a straightforward and informative exercise, well-suited for beginners starting with Raspberry Pi and hardware control.
+このレッスンでは、Raspberry Piを使用してリレーモジュールを制御する方法を学びます。リレーを1秒間隔でオンとオフにするシンプルなPythonスクリプトを書く方法を学びます。このプロジェクトは、外部デバイスを制御するためにGPIOピンを使用する実践的な入門編であり、電子回路でのリレーの働きについての基本的な理解を提供します。これは、Raspberry Piとハードウェア制御を始める初心者にとってわかりやすく有益な演習です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,14 +55,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_30_Relay_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -93,30 +92,30 @@ Code
       print("Program interrupted by user")
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
    
-   Import the ``gpiozero`` library for GPIO control and the ``time`` library for delays.
+   GPIO制御のために ``gpiozero`` ライブラリを、遅延のために ``time`` ライブラリをインポートします。
 
    .. code-block:: python
 
       from gpiozero import OutputDevice
       from time import sleep
 
-#. Initialize the Relay
+#. リレーの初期化
    
-   Define the GPIO pin connected to the relay and initialize an ``OutputDevice`` object with that pin.
+   リレーに接続されたGPIOピンを定義し、そのピンで ``OutputDevice`` オブジェクトを初期化します。
 
    .. code-block:: python
 
       relay_pin = 17  # Example using GPIO17
       relay = OutputDevice(relay_pin)
 
-#. Relay Control in a Loop
+#. ループ内のリレー制御
    
-   The ``while True:`` loop continuously toggles the relay. ``relay.on()`` and ``relay.off()`` are used to control the relay, and ``sleep(1)`` creates a one-second delay between each state.
+   ``while True:``ループはリレーを継続的にトグルします。 ``relay.on()`` と ``relay.off()`` を使用してリレーを制御し、 ``sleep(1)`` は各状態の間に1秒の遅延を作成します。
 
    .. code-block:: python
 
@@ -127,9 +126,9 @@ Code Analysis
               relay.off()
               sleep(1)  # Relay remains off for 1 second
 
-#. Exception Handling
+#. 例外処理
    
-   The ``except`` block captures a ``KeyboardInterrupt`` (Ctrl+C). It ensures the relay is turned off and the program exits safely.
+   ``except``ブロックは ``KeyboardInterrupt`` （Ctrl+C）をキャッチします。これにより、リレーがオフになり、プログラムが安全に終了することが保証されます。
 
    .. code-block:: python
 

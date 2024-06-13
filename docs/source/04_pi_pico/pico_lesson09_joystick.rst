@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson09_joystick:
 
-Lesson 09: Joystick Module
-==================================
+レッスン 09: ジョイスティックモジュール
+=======================================
 
-In this lesson, you'll learn how to interface with and read data from a joystick module using the Raspberry Pi Pico W. You'll explore initializing and reading analog values from the X and Y axes of the joystick, as well as handling digital input from its switch using MicroPython. This lesson is ideal for beginners, offering practical experience in reading and interpreting analog and digital inputs on the Raspberry Pi Pico W.
+このレッスンでは、Raspberry Pi Pico Wを使用してジョイスティックモジュールとインターフェースし、データを読み取る方法を学びます。ジョイスティックのX軸とY軸からアナログ値を初期化して読み取る方法、およびそのスイッチからデジタル入力を処理する方法を探求します。このレッスンは初心者に最適で、Raspberry Pi Pico Wでのアナログおよびデジタル入力の読み取りと解釈に実践的な経験を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。以下のリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +52,14 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_09_Jostick_Module_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -88,41 +86,41 @@ Code
        time.sleep_ms(200)  # Loop every 200 milliseconds
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
 
-   The ``machine`` and ``time`` modules are imported for hardware control and time functions.
+   ``machine``および ``time``モジュールは、ハードウェア制御と時間関数のためにインポートされます。
 
    .. code-block:: python
 
       import machine  # Import hardware control module
       import time  # Import time module
 
-#. Initialize Joystick Axes
+#. ジョイスティック軸の初期化
 
-   The joystick's X and Y axes are connected to analog pins (27 and 26 respectively). These pins are initialized as ADC (Analog to Digital Converter) objects.
+   ジョイスティックのX軸とY軸はそれぞれアナログピン（27と26）に接続されています。これらのピンはADC（アナログ-デジタルコンバータ）オブジェクトとして初期化されます。
 
    .. code-block:: python
 
       x_joystick = machine.ADC(27)
       y_joystick = machine.ADC(26)
 
-#. Initialize Joystick Switch
+#. ジョイスティックスイッチの初期化
 
-   The joystick's switch is connected to pin 22. It's set as an input with a pull-up resistor. When the button is not pressed, it reads high (1), and when pressed, it reads low (0).
+   ジョイスティックのスイッチはピン22に接続されています。これはプルアップ抵抗付きの入力として設定されています。ボタンが押されていないときは高（1）を読み取り、押されたときは低（0）を読み取ります。
 
    .. code-block:: python
 
       z_switch = machine.Pin(22, machine.Pin.IN, machine.Pin.PULL_UP)
 
-#. Main Loop
+#. メインループ
 
-   - An infinite loop continuously reads values from the joystick. 
-   - ``read_u16`` method is used to read 16-bit values from the X and Y axes.
-   - ``value()`` method is used to read the state of the switch.
-   - The values are then printed, and the loop pauses for 200 milliseconds.
+   - 無限ループはジョイスティックの値を継続的に読み取ります。
+   - ``read_u16``メソッドを使用して、X軸とY軸から16ビットの値を読み取ります。
+   - ``value()``メソッドを使用して、スイッチの状態を読み取ります。
+   - 値は印刷され、ループは200ミリ秒間一時停止します。
 
    .. raw:: html
 

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson15_raindrop:
 
 Lesson 15: Raindrop Detection Module
 =======================================
 
-In this lesson, you will learn how to detect rain using a digital rain sensor with Raspberry Pi. We will guide you through connecting a rain sensor to GPIO pin 17 on your Raspberry Pi. You'll learn how to program the Raspberry Pi using Python to continuously monitor the sensor. The program will identify whether it's raining or not and display a message accordingly. This practical project is an excellent introduction to environmental sensing, GPIO interfacing, and Python programming, making it ideal for beginners interested in weather-related projects using Raspberry Pi.
+このレッスンでは、Raspberry Piを使用してデジタル雨センサーで雨を検出する方法を学びます。雨センサーをRaspberry PiのGPIOピン17に接続する手順を説明します。Pythonを使用してセンサーを継続的に監視するプログラムの作成方法を学びます。このプログラムは、雨が降っているかどうかを判断し、適切なメッセージを表示します。この実践的なプロジェクトは、環境センサーの使用、GPIOインターフェース、およびPythonプログラミングの優れた導入となり、Raspberry Piを使用した天気関連のプロジェクトに興味のある初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_15_raindrop_detection_module_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -83,30 +82,30 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts with importing ``DigitalInputDevice`` from gpiozero for interfacing with the rain sensor, and ``sleep`` from the time module for implementing delays.
+   スクリプトは、gpiozeroから ``DigitalInputDevice`` をインポートして雨センサーとインターフェースし、timeモジュールから ``sleep`` をインポートして遅延を実装することから始まります。
 
    .. code-block:: python
 
       from gpiozero import DigitalInputDevice  
       from time import sleep  
 
-#. Initializing the Rain Sensor
+#. 雨センサーの初期化
    
-   A ``DigitalInputDevice`` object named ``rain_sensor`` is created, connected to GPIO pin 17. This line configures the rain sensor to communicate with the Raspberry Pi through this GPIO pin.
+   GPIOピン17に接続された ``DigitalInputDevice`` オブジェクト ``rain_sensor`` が作成されます。この行は、雨センサーがこのGPIOピンを通じてRaspberry Piと通信するように設定します。
 
    .. code-block:: python
 
       rain_sensor = DigitalInputDevice(17)
 
-#. Implementing Continuous Monitoring Loop
+#. 連続監視ループの実装
    
-   - An infinite loop (``while True:``) is set up to continuously monitor the rain sensor.
-   - Inside the loop, an ``if`` statement checks the ``is_active`` property of the ``rain_sensor``.
-   - If ``is_active`` is ``True``, it indicates no rain is detected, and "No rain detected." is printed.
-   - If ``is_active`` is ``False``, it indicates rain is detected, and "Rain detected!" is printed.
-   - ``sleep(1)`` pauses the loop for 1 second between each check, controlling the frequency of sensor polling and reducing CPU usage.
+   - 無限ループ（ ``while True:`` ）が設定され、雨センサーを継続的に監視します。
+   - ループ内で、 ``if`` 文が ``rain_sensor`` の ``is_active`` プロパティをチェックします。
+   - ``is_active``が ``True`` の場合、雨が検出されていないことを示し、 "No rain detected."が表示されます。
+   - ``is_active``が ``False`` の場合、雨が検出されたことを示し、"Rain detected!" が表示されます。
+   - ``sleep(1)``は各チェックの間に1秒の遅延を挿入し、センサーポーリングの頻度を制御し、CPU使用率を減少させます。
 
    .. raw:: html
 

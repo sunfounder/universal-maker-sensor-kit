@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson09_joystick:
 
-Lesson 09: Joystick Module
-==================================
+Lesson 09: ジョイスティックモジュール
+======================================
 
-In this lesson, you will learn how to read values from a joystick module using the ESP32 Development Board. We'll cover measuring the X and Y axis movements of the joystick and interpreting the switch position. By integrating these inputs with the ESP32, you'll gain insights into handling analog and digital signals. This project is perfect for beginners, providing hands-on experience in reading and processing data from interactive hardware components.
+このレッスンでは、ESP32開発ボードを使用してジョイスティックモジュールから値を読み取る方法を学びます。ジョイスティックのX軸およびY軸の動きとスイッチの位置を測定し、それらを解釈する方法をカバーします。これらの入力をESP32に統合することで、アナログおよびデジタル信号の処理に関する洞察を得ることができます。このプロジェクトは初心者に最適で、インタラクティブなハードウェアコンポーネントからデータを読み取り、処理する実践的な経験を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,24 +54,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_09_Jostick_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6a9f54fb-a117-48f2-bca0-fd43bdd45b51/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Pin Definitions:
+#. ピン定義:
    
    .. code-block:: arduino
    
@@ -79,9 +79,9 @@ Code Analysis
       const int yPin = 26;  //the VRY attach to
       const int swPin = 25;  //the SW attach to
 
-   Constants for the joystick pins are defined. ``xPin`` and ``yPin`` are analog pins for the joystick's X and Y axes. ``swPin`` is a digital pin for the joystick's switch.
+   ジョイスティックのピン用の定数が定義されています。 ``xPin`` および ``yPin`` はジョイスティックのX軸およびY軸のためのアナログピンです。 ``swPin`` はジョイスティックのスイッチ用のデジタルピンです。
 
-#. Setup Function:
+#. セットアップ関数:
 
    .. code-block:: arduino
    
@@ -90,9 +90,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-   Initializes ``swPin`` as an input with a pull-up resistor, essential for the switch's functionality. Starts serial communication at 9600 baud.
+   ``swPin``をプルアップ抵抗を使用した入力として初期化し、スイッチの機能に不可欠です。9600ボーのシリアル通信を開始します。
 
-#. Main Loop:
+#. メインループ:
 
    .. code-block:: arduino
    
@@ -106,4 +106,4 @@ Code Analysis
         delay(50);
       }
 
-   Continuously reads and prints the values from the joystick's axes and switch to the Serial Monitor, with a delay of 50 ms between readings.
+   ジョイスティックの軸およびスイッチから値を連続的に読み取り、50msの遅延を挟んでシリアルモニタに出力します。

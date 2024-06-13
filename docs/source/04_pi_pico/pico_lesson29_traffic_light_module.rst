@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson29_traffic_light_module:
 
-Lesson 29: Traffic Light Module
+レッスン29: 交通信号モジュール
 ==================================
 
-In this lesson, you will learn to create a traffic light system using the Raspberry Pi Pico W. You'll program the Pico W to control three LEDs – red, yellow, and green – mimicking a real traffic light. This project offers a practical introduction to using Pulse Width Modulation (PWM) for LED brightness control and basic control structures in MicroPython. It's ideal for beginners looking to explore digital signal processing and gain confidence in coding on the Raspberry Pi Pico W platform.
+このレッスンでは、Raspberry Pi Pico Wを使用して交通信号システムを作成する方法を学びます。Pico Wをプログラムして、赤、黄、緑の3つのLEDを制御し、実際の交通信号を模倣します。このプロジェクトは、LEDの明るさ制御のためのパルス幅変調（PWM）の使用と、MicroPythonの基本的な制御構造の実践的な紹介を提供します。デジタル信号処理を探求し、Raspberry Pi Pico Wプラットフォームでのコーディングに自信をつけたい初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +52,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_29_Traffic_Light_Module_pico_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -117,21 +114,21 @@ Code
        set_brightness(green, 0)
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
-   The ``machine`` library is used for controlling hardware components, and ``time`` is used for creating delays.
+   ``machine``ライブラリはハードウェアコンポーネントを制御するために使用され、 ``time`` ライブラリは遅延を作成するために使用されます。
 
    .. code-block:: python
 
       from machine import Pin, PWM
       import time
 
-#. Initializing LED Pins
+#. LEDピンの初期化
 
-   Here, we initialize the pins connected to the LEDs. PWM is used to control the brightness of the LEDs.
+   ここでは、LEDに接続されたピンを初期化します。PWMはLEDの明るさを制御するために使用されます。
 
    .. code-block:: python
 
@@ -139,12 +136,12 @@ Code Analysis
       yellow = PWM(Pin(27), freq=1000)  #  yellow LED
       green = PWM(Pin(28), freq=1000)  # green LED
 
-#. Defining the Set Brightness Function
+#. 明るさ設定関数の定義
 
    .. note::
-      Due to the fact that the pins of Raspberry Pi Pico can only output a maximum voltage of 3.3V, the green LED will appear dim.
+      Raspberry Pi Picoのピンは最大電圧3.3Vしか出力できないため、緑色LEDは暗く見えます。
 
-   This function sets the brightness of the LEDs. It takes two parameters: the LED and the desired brightness level (0-100%). The ``duty_u16`` method is used to set the PWM duty cycle.
+   この関数はLEDの明るさを設定します。2つのパラメータ、LEDと希望する明るさレベル（0-100%）を取ります。 ``duty_u16`` メソッドを使用してPWMデューティサイクルを設定します。
 
    .. code-block:: python
 
@@ -153,9 +150,9 @@ Code Analysis
               raise ValueError("Brightness should be between 0 and 100")
           led.duty_u16(int(brightness / 100 * 65535))
 
-#. Main Loop and Traffic Light Sequence
+#. メインループと交通信号シーケンス
 
-   The ``while True`` loop makes the code run continuously. It controls the sequence of the traffic light: green, yellow (blinking), and red.
+   ``while True``ループはコードを連続的に実行します。これは交通信号のシーケンス（緑、黄色（点滅）、赤）を制御します。
 
    .. code-block:: python
 
@@ -167,9 +164,9 @@ Code Analysis
               set_brightness(green, 0)
               ...
 
-#. Handling Keyboard Interrupt
+#. キーボード割り込みの処理
 
-   The ``except KeyboardInterrupt`` block is used to handle a manual interruption (like Ctrl+C). It turns off all LEDs when the script is interrupted.
+   ``except KeyboardInterrupt``ブロックは手動の割り込み（Ctrl+Cなど）を処理するために使用されます。スクリプトが中断されたときにすべてのLEDを消灯します。
 
    .. code-block:: python
 

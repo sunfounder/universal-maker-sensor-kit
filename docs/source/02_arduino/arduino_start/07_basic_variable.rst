@@ -11,13 +11,12 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-Variable
+変数
 ========
 
-The variable is one of the most powerful and critical tools in a program. It helps us to store and call data in our programs.
+変数はプログラム内で最も強力で重要なツールの一つです。データをプログラム内に保存し、呼び出すのに役立ちます。
 
-The following sketch file uses variables. It stores the pin numbers of the on-board LED in the variable ``ledPin`` and a number "500" in the variable ``delayTime``.
+次のスケッチファイルでは変数を使用しています。オンボードLEDのピン番号を変数 ``ledPin`` に、数値「500」を変数 ``delayTime`` に保存します。
 
 .. code-block:: C
     :emphasize-lines: 1,2
@@ -36,12 +35,12 @@ The following sketch file uses variables. It stores the pin numbers of the on-bo
         delay(delayTime);
     }
 
-Wait, is this a duplicate of what ``#define`` does? The answer is NO.
+待ってください、これは ``#define`` と同じことをしているのではありませんか？答えはNOです。
 
-* The role of ``#define`` is to simply and directly replace text, it is not considered by the compiler as part of the program. 
-* A ``variable``, on the other hand, exists within the program and is used to store and call value. A variable can also modify its value within the program, something that a define cannot do.
+* ``#define``の役割は単にテキストを直接置き換えるだけであり、コンパイラによってプログラムの一部と見なされません。
+* 一方、 ``variable`` はプログラム内に存在し、値を保存して呼び出すために使用されます。変数はプログラム内でその値を変更することもできますが、defineではそれができません。
 
-The sketch file below self-adds to the variable and it will cause the on-board LED to blink longer after each blink.
+次のスケッチファイルは、変数に自己加算を行い、各点滅後にオンボードLEDが長く点滅するようにします。
 
 .. code-block:: C
 
@@ -60,58 +59,56 @@ The sketch file below self-adds to the variable and it will cause the on-board L
         delayTime = delayTime+200; //Each execution increments the value by 200
     }
 
-Declare a variable
+変数を宣言する
 -------------------
 
-Declaring a variable means creating a variable. 
+変数を宣言するとは、変数を作成することを意味します。
 
-To declare a variable, you need two things: the data type, and the variable name. The data type needs to be separated from the variable by a space, and the variable declaration needs to be terminated by a ``;``.
+変数を宣言するには、データ型と変数名が必要です。データ型は変数名とスペースで区切る必要があり、変数の宣言は ``;`` で終わらせる必要があります。
 
-Let's use this variable as an example.
+この変数を例として使用しましょう。
 
 .. code-block:: C
 
     int delayTime;
 
-**Data Type**
+**データ型**
 
-Here ``int`` is a data type called integer type, which can be used to store integers from -32768 to 32766. It can also not be used to store decimals.
+ここでの ``int`` は整数型と呼ばれるデータ型で、-32768から32767までの整数を保存できます。小数を保存することはできません。
 
-Variables can hold different kinds of data other than integers. The Arduino language (which, remember, is C++) has built-in support for a few of them (only the most frequently used and useful are listed here):
+変数は整数以外のさまざまなデータを保持できます。Arduino言語（つまりC++）には、いくつかの組み込みデータ型がサポートされています（ここでは最も頻繁に使用されるもののみを挙げています）：
 
-* ``float``: Store a decimal number, for example 3.1415926.
-* ``byte``: Can hold numbers from 0 to 255.
-* ``boolean``: Holds only two possible values, ``True`` or ``False``, even though it occupies a byte in memory.
-* ``char``: Holds a number from -127 to 127. Because it is marked as a ``char`` the compiler will try to match it to a character from the |link_ascii|.
-* ``string``: Can stores a string of characters, e.g. ``Halloween``.
-
-
-**Variable Name**
+* ``float``: 小数を保存します。例：3.1415926
+* ``byte``: 0から255までの数値を保存します。
+* ``boolean``: ``True`` または ``False`` の2つの値のみを保持しますが、メモリ内ではバイトを占有します。
+* ``char``: -128から127までの数値を保持します。 ``char`` としてマークされているため、コンパイラはそれを|link_ascii|の文字に一致させようとします。
+* ``string``: 文字列を保存できます。例： ``Halloween`` 
 
 
-You can set the variable to any name you want, such as ``i``, ``apple``, ``Bruce``, ``R2D2``, ``Sectumsempra``, but there are some basic rules to follow.
+**変数名**
 
-1. describe what it is used for. Here, I named the variable delayTime, so you can easily understand what it does. It works fine if I name the variable ``barryAllen``, but it confuses the person looking at the code.
+変数名は ``i`` 、 ``apple`` 、 ``Bruce`` 、 ``R2D2`` 、 ``Sectumsempra`` など、好きな名前に設定できますが、いくつかの基本的なルールに従う必要があります。
 
-2. Use regular nomenclature. You can use CamelCase like I did, with the initial T in ``delayTime`` so that it is easy to see that the variable consists of two words. Also, you can use UnderScoreCase to write the variable as ``delay_time``. It doesn't affect the program's running, but it would help the programmer to read the code if you use the nomenclature you prefer.
+1. 使用目的を説明する名前にします。ここでは変数をdelayTimeと名付けたので、その目的が簡単に理解できます。変数を ``barryAllen`` と名付けても問題ありませんが、コードを見ている人を混乱させます。
 
-3. Don't use keywords. Similar to what happens when we type "int", the Arduino IDE will color it to remind you that it is a word with a special purpose and cannot be used as a variable name. Change the name of the variable if it is colored. 
+2. 一般的な命名規則を使用します。CamelCase ``delayTime`` やUnderScoreCase ``delayTime`` を使用して変数名を付けることができます。プログラムの実行には影響しませんが、好みの命名規則を使用するとプログラマーがコードを読みやすくなります。
 
-4. Special symbols are not allowed. For example, space, #, $, /, +, %, etc. The combination of English letters (case sensitive), underscores, and numbers (but numbers cannot be used as the first character of a variable name) is rich enough.
+3. キーワードを使用しないでください。「int」などのキーワードを入力すると、Arduino IDEはそれを色分けして特別な目的を持つ単語であることを示し、変数名として使用できないことを示します。変数名が色分けされている場合は名前を変更してください。
+
+4. 特殊記号を使用しないでください。例えば、space、＃、＄、/、+、％などです。英字（大文字と小文字）、アンダースコア、および数字（ただし、数字は変数名の最初の文字として使用できません）の組み合わせが十分に豊富です。
 
 
-**Assign a value to a variable**
+**変数に値を代入する**
 
-Once we have declared the variable, it is time to store the data. We use the assignment operator (i.e. ``=``) to put value into the variable.
+変数を宣言したら、データを保存する時が来ました。代入演算子（i.e. ``=``）を使用して値を変数に入れます。
 
-We can assign values to the variable as soon as we declare it.
-
+変数を宣言すると同時に値を代入することができます。
 
 .. code-block:: C
 
     int delayTime = 500;
 
-It is also possible to assign a new value to it at some time.
+また、ある時点で新しい値を代入することもできます。
 
 .. code-block:: C
 

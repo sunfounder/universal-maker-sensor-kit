@@ -14,17 +14,17 @@
 
 .. _pi_lesson04_mq2:
 
-Lesson 04: Gas Sensor Module (MQ-2)
+レッスン 04: ガスセンサーモジュール (MQ-2)
 ============================================
 
-In this lesson, you will learn to use the MQ2 gas sensor with Raspberry Pi for gas detection. The course covers connecting the MQ2 sensor to the GPIO17 pin and programming the Raspberry Pi in Python to read the sensor output. You'll understand how to detect gas presence, with a low signal from the sensor indicating the detection of gas. This project offers a practical introduction to sensor usage and Python scripting on the Raspberry Pi, ideal for beginners interested in environmental monitoring and safety applications.
+このレッスンでは、Raspberry Piを使用してMQ2ガスセンサーでガスを検出する方法を学びます。このコースでは、MQ2センサーをGPIO17ピンに接続し、PythonでRaspberry Piをプログラミングしてセンサー出力を読み取る方法をカバーします。ガスの存在を検出する方法を理解し、センサーからの低信号がガスの検出を示します。このプロジェクトは、Raspberry Piでのセンサーの使用とPythonスクリプトの実践的な入門編を提供し、環境監視や安全アプリケーションに興味のある初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_04_mq2_sensor_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -81,29 +81,30 @@ Code
  
       # Delay between readings
       time.sleep(1)
+
  
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
 
    .. code-block:: python
       
       from gpiozero import DigitalInputDevice
       import time
 
-   This section imports necessary libraries. ``gpiozero`` is used for interacting with the GPIO pins of the Raspberry Pi, and ``time`` is used for handling time-related tasks such as delays.
+   このセクションでは、必要なライブラリをインポートします。 ``gpiozero`` はRaspberry PiのGPIOピンと対話するために使用され、 ``time`` は遅延などの時間関連のタスクを処理するために使用されます。
 
-#. Initializing the MQ2 Sensor
+#. MQ2センサーの初期化
 
    .. code-block:: python
 
       mq2 = DigitalInputDevice(17)
 
-   Here, the MQ2 sensor is initialized as a digital input device on GPIO pin 17 of the Raspberry Pi. The ``DigitalInputDevice`` class from gpiozero is used for this purpose.
+   ここでは、MQ2センサーをRaspberry PiのGPIOピン17にデジタル入力デバイスとして初期化します。このためにgpiozeroの ``DigitalInputDevice`` クラスを使用します。
 
-#. Infinite Loop for Sensor Reading
+#. センサー読み取り用の無限ループ
 
    .. code-block:: python
 
@@ -114,11 +115,11 @@ Code Analysis
             print("No gas detected.")
          time.sleep(1)
 
-   In this segment:
+   このセグメントでは:
 
    .. note::
-      The DO pin on the MQ-2 sensor module indicates the presence of combustible gases. When the gas concentration exceeds the threshold value (as set by the potentiometer on the module), D0 becomes LOW; otherwise, it remains HIGH.
+      MQ-2センサーモジュールのDOピンは可燃性ガスの存在を示します。ガス濃度がモジュール上のポテンショメータで設定された閾値を超えると、D0はLOWになり、そうでない場合はHIGHのままです。
    
-   - An infinite loop is created using ``while True``. This loop will continue to run until the program is manually stopped.
-   - Inside the loop, the value of the MQ2 sensor is checked using ``mq2.value``. If the value is 0, it indicates the presence of gas, and "Gas detected!" is printed. Otherwise, "No gas detected." is printed.
-   - ``time.sleep(1)`` creates a delay of 1 second between each reading, reducing the frequency of the sensor checks and the output messages.
+   - ``while True``を使用して無限ループを作成します。このループはプログラムが手動で停止されるまで実行され続けます。
+   - ループ内で、 ``mq2.value`` を使用してMQ2センサーの値を確認します。値が0の場合はガスの存在を示し、「ガスが検出されました！」と表示されます。そうでない場合は「ガスは検出されませんでした。」と表示されます。
+   - ``time.sleep(1)``は各読み取りの間に1秒の遅延を作り、センサーのチェック頻度と出力メッセージの頻度を減らします。

@@ -12,26 +12,22 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_digital_dice:
 
-Lesson 44: Digital Dice
+Lesson 44: デジタルサイコロ
 =============================================================
 
+このプログラムは、OLEDディスプレイを使用してサイコロの振りをシミュレートします。
+振動スイッチを振ることでシミュレーションがトリガーされ、ディスプレイが1から6までの数字をサイコロのように順に表示します。
+短時間後に表示が停止し、ランダムに選ばれた数字がサイコロの結果として表示されます。
 
-This program simulates a dice roll using an OLED display. 
-The simulation is triggered by shaking the vibration switch, causing the display to cycle through numbers 1 to 6, 
-akin to rolling a dice. 
-The display halts after a short duration, revealing a randomly selected number that represents the dice roll outcome.
-
-
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -44,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -61,50 +57,47 @@ You can also buy them separately from the links below.
         - \-
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
-        
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_44_Digital_dice_uno_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/70e73ef9-2968-4845-befd-23185286fd93/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-A comprehensive breakdown of the code:
+コードの詳細な解析：
 
-1. Initialization of variables:
+1. 変数の初期化:
 
-   ``vibPin``: Digital pin connected to the vibration sensor.
+   ``vibPin``: 振動センサーに接続されたデジタルピン。
 
-2. Volatile variables:
+2. 揮発性変数:
 
-   ``rolling``: A volatile flag that indicates the dice's rolling status. It is volatile as it is accessed within both the interrupt service routine and the main program.
+   ``rolling``: サイコロの転がり状態を示す揮発性フラグ。割り込みサービスルーチンとメインプログラムの両方でアクセスされるため揮発性としています。
 
 3. ``setup()``:
 
-   Configures the vibration sensor's input mode.
-   Assigns an interrupt to the sensor to trigger the rollDice function upon state change.
-   Initializes the OLED display.
+   振動センサーの入力モードを設定。
+   センサーに割り込みを割り当て、状態変化時にrollDice関数をトリガー。
+   OLEDディスプレイを初期化。
 
 4. ``loop()``:
 
-   Continuously checks if ``rolling`` is true, displaying a random number between 1 and 6 during this state. The rolling ceases if the sensor has been shaken for over 500 milliseconds.
+   ``rolling``がtrueであるかを継続的にチェックし、この状態では1から6までのランダムな数字を表示。センサーが500ミリ秒以上振動すると転がりが停止。
 
 5. ``rollDice()``:
 
-   The interrupt service routine for the vibration sensor. It initiates the dice roll when the sensor is shaken by recording the current time.
+   振動センサーの割り込みサービスルーチン。センサーが振られた時に現在の時間を記録してサイコロの転がりを開始。
 
 6. ``displayNumber()``:
 
-   Displays a selected number on the OLED screen.
+   OLEDスクリーンに選択された数字を表示。

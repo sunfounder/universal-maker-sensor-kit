@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pi_lesson28_rgb_module:
 
-Lesson 28: RGB Module
+レッスン28: RGBモジュール
 ==================================
 
-In this lesson, you will learn how to control an RGB LED module with a Raspberry Pi. You'll learn how to use Python to change the LED's color to red, green, blue, and yellow, and then turn it off. This project is a straightforward introduction to working with RGB LEDs and GPIO interfacing, making it ideal for beginners starting with Raspberry Pi and Python programming.
+このレッスンでは、Raspberry Piを使ってRGB LEDモジュールを制御する方法を学びます。Pythonを使用してLEDの色を赤、緑、青、黄に変更し、最後にLEDを消灯する方法を学びます。このプロジェクトは、RGB LEDとGPIOインターフェースの基本を学ぶためのシンプルな入門編で、Raspberry PiとPythonプログラミングを始める初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +54,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_28_RGB_LED_Module_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -99,12 +99,12 @@ Code
 
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts with importing the ``RGBLED`` class from gpiozero for controlling the RGB LED and the ``sleep`` function from the time module for delays. It also imports the ``Color`` class from colorzero for color definitions.
+   スクリプトは、RGB LEDを制御するためにgpiozeroから ``RGBLED`` クラスを、遅延のためにtimeモジュールから ``sleep`` 関数を、カラー定義のためにcolorzeroから ``Color`` クラスをインポートすることから始まります。
 
    .. code-block:: python
 
@@ -112,10 +112,10 @@ Code Analysis
       from time import sleep  
       from colorzero import Color  
 
-#. Initializing the RGB LED
+#. RGB LEDの初期化
    
-   - GPIO pins for each color component of the RGB LED are defined. 
-   - The RGB LED is initialized with its red, green, and blue components connected to GPIO pins 22, 27, and 17 respectively.
+   - RGB LEDの各色コンポーネントのGPIOピンが定義されます。
+   - 赤、緑、青のコンポーネントがそれぞれGPIOピン22、27、17に接続されたRGB LEDを初期化します。
 
    .. code-block:: python
 
@@ -124,10 +124,10 @@ Code Analysis
       blue_pin = 17
       led = RGBLED(red=red_pin, green=green_pin, blue=blue_pin)
 
-#. Setting LED Colors
+#. LEDの色を設定
    
-   - The color of the LED is set to red, green, and blue in sequence, each followed by a 1-second pause. 
-   - Colors are represented by tuples (red, green, blue), where each value is between 0 and 1, indicating the intensity.
+   - LEDの色を赤、緑、青の順に設定し、それぞれ1秒間のポーズを入れます。
+   - 色はタプル（赤、緑、青）で表され、各値は0から1の間で強度を示します。
 
    .. code-block:: python
 
@@ -138,20 +138,20 @@ Code Analysis
       led.color = (0, 0, 1)
       sleep(1)
 
-#. Using the Color Class
+#. Colorクラスの使用
    
-   The script demonstrates how to use the ``Color`` class from colorzero to set the LED to a named color (``yellow``) and then waits for 1 second.
+   スクリプトは、colorzeroの ``Color`` クラスを使用してLEDを名前付きの色（ ``yellow`` ）に設定し、1秒待機する方法を示します。
 
-   In addition to using the pre-defined colors directly, you can also define colors in various ways. For more details, please refer to |link_gpiozero_color|.
+   事前定義された色を直接使用するだけでなく、さまざまな方法で色を定義することもできます。詳細については、|link_gpiozero_color|を参照してください。
 
    .. code-block:: python
 
       led.color = Color('yellow')
       sleep(1)
 
-#. Turning the LED Off
+#. LEDを消灯
    
-   Finally, the script turns off the LED using ``led.off()``.
+   最後に、スクリプトは ``led.off()`` を使用してLEDを消灯します。
 
    .. code-block:: python
 

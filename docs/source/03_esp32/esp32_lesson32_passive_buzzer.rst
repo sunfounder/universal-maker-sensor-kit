@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson32_passive_buzzer:
 
-Lesson 32: Passive Buzzer Module
-==================================
+Lesson 32: パッシブブザーモジュール
+====================================
 
-In this lesson, you'll learn to play a melody on a passive buzzer module using an ESP32 Development Board. We'll cover programming the ESP32 to control the buzzer and create musical notes with varying durations. This project is ideal for beginners in electronics and programming, providing hands-on experience in sound generation and basic digital sound principles. You'll develop practical skills in utilizing the ESP32 board and integrating simple components like the passive buzzer.
+このレッスンでは、ESP32開発ボードを使用してパッシブブザーモジュールでメロディを演奏する方法を学びます。ESP32をプログラムしてブザーを制御し、さまざまな長さの音符を作成する方法をカバーします。このプロジェクトは、エレクトロニクスやプログラミングの初心者に最適で、音の生成と基本的なデジタルサウンドの原理に関する実践的な経験を提供します。ESP32ボードを活用し、パッシブブザーのようなシンプルなコンポーネントを統合する実用的なスキルを身につけることができます。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,38 +54,38 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_32_Passive_buzzer_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f3f8514-29eb-491f-b40f-0d808ef0aaac/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Including the pitches library:
+1. pitchesライブラリのインクルード:
 
-   This library provides the frequency values for various musical notes, allowing you to use musical notation in your code.
+   このライブラリはさまざまな音符の周波数値を提供し、コード内で音楽記譜法を使用することを可能にします。
 
    .. code-block:: arduino
        
       #include "pitches.h"
 
-2. Defining constants and arrays:
+2. 定数と配列の定義:
 
-   * ``buzzerPin`` is the digital pin on the ESP32 Development Board where the buzzer is connected.
+   * ``buzzerPin``は、パッシブブザーが接続されているESP32開発ボードのデジタルピンです。
 
-   * ``melody[]`` is an array that stores the sequence of notes to be played.
+   * ``melody[]``は、再生する音符のシーケンスを格納する配列です。
 
-   * ``noteDurations[]`` is an array that stores the duration of each note in the melody.
+   * ``noteDurations[]``は、メロディ内の各音符の持続時間を格納する配列です。
 
    .. raw:: html
       
@@ -101,15 +101,15 @@ Code Analysis
         4, 8, 8, 4, 4, 4, 4, 4
       };
 
-3. Playing the melody:
+3. メロディの再生:
 
-   * The ``for`` loop iterates over each note in the melody.
+   * ``for``ループはメロディ内の各音符を繰り返し処理します。
 
-   * The ``tone()`` function plays a note on the buzzer for a specific duration.
+   * ``tone()``関数は特定の持続時間でブザーで音符を再生します。
 
-   * A delay is added between notes to distinguish them.
+   * 音符間に区別をつけるために遅延が追加されます。
 
-   * The ``noTone()`` function stops the sound.
+   * ``noTone()``関数は音を停止します。
 
    .. raw:: html
       
@@ -127,6 +127,7 @@ Code Analysis
         }
       }
 
-4. Empty loop function:
+4. 空のループ関数:
 
-   Since the melody is played only once in the setup, there's no code in the loop function.
+   メロディはセットアップで一度だけ再生されるため、ループ関数にはコードがありません。
+

@@ -14,20 +14,20 @@
 
 .. _pi_lesson09_joystick:
 
-Lesson 09: Joystick Module
-==================================
+レッスン 09: ジョイスティックモジュール
+========================================
 
 .. note::
-   The Raspberry Pi does not have analog input capabilities, so it needs a module like the :ref:`cpn_pcf8591` to read analog signals for processing.
+   Raspberry Piにはアナログ入力機能がないため、アナログ信号を処理するには :ref:`cpn_pcf8591` のようなモジュールが必要です。
 
-In this lesson, you will learn how to use a Raspberry Pi to interface with a joystick module using the PCF8591 ADC. You'll be able to read the X and Y positions of the joystick from its analog outputs and detect button presses. This setup demonstrates how to handle both analog and digital inputs on a Raspberry Pi. 
+このレッスンでは、PCF8591 ADCを使用してジョイスティックモジュールとインターフェースする方法を学びます。ジョイスティックのアナログ出力からX軸とY軸の位置を読み取り、ボタンの押下を検出できるようになります。このセットアップにより、Raspberry Piでアナログ入力とデジタル入力の両方を処理する方法が示されます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -57,17 +57,17 @@ You can also buy them separately from the links below.
         - |link_pcf8591_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. note::
-   In this project, we utilized the AIN0 pin of the PCF8591 module, which is linked to a potentiometer on the module through a jumper cap. **To prevent data interference, please disconnect the jumper cap from the module.** For more details, please refer to the PCF8591 module :ref:`schematic <cpn_pcf8591_sch>`.
+   このプロジェクトでは、PCF8591モジュールのAIN0ピンを使用しています。このピンは、ジャンパキャップを通してモジュールのポテンショメータに接続されています。 **データ干渉を防ぐため、ジャンパキャップをモジュールから外してください。**  詳細については、PCF8591モジュールの :ref:`schematic <cpn_pcf8591_sch>` を参照してください。
 
 .. image:: img/Lesson_09_Jostick_Module_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -90,13 +90,12 @@ Code
        print("Exit")  # End program on keyboard interrupt
 
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Import Libraries**:
+1. **ライブラリのインポート**:
 
-   The script starts with importing necessary libraries for the project.
+   スクリプトは、プロジェクトに必要なライブラリをインポートすることから始まります。
 
    .. code-block:: python
 
@@ -104,25 +103,25 @@ Code Analysis
       import time  # Import time module for creating delay
       from gpiozero import Button  # Import Button for button input
 
-2. **Setup PCF8591 Module**:
+2. **PCF8591モジュールのセットアップ**:
 
-   The PCF8591 module is set up at I2C address 0x48 which allows the Raspberry Pi to communicate with it.
+   PCF8591モジュールはI2Cアドレス0x48に設定されており、Raspberry Piと通信できるようにします。
 
    .. code-block:: python
 
       ADC.setup(0x48)  # Set up PCF8591 module at I2C address 0x48
 
-3. **Initialize Button**:
+3. **ボタンの初期化**:
 
-   A button is initialized, connected to GPIO pin 17 on the Raspberry Pi.
+   ボタンはRaspberry PiのGPIOピン17に接続され、初期化されます。
 
    .. code-block:: python
 
       button = Button(17)  # Initialize button connected to GPIO 17
 
-4. **Main Loop**:
+4. **メインループ**:
 
-   The main part of the script is an infinite loop that continuously reads analog values from two channels of the PCF8591 (AIN0 and AIN1) and checks if the button is pressed. ``AIN0`` and ``AIN1`` are analog pins for the joystick’s X and Y axes.
+   スクリプトの主な部分は無限ループで、PCF8591の2つのチャネル（AIN0とAIN1）からアナログ値を継続的に読み取り、ボタンが押されているかどうかを確認します。 ``AIN0`` と ``AIN1`` はジョイスティックのX軸とY軸のアナログピンです。
 
    .. code-block:: python
 
@@ -133,9 +132,9 @@ Code Analysis
               print("sw:", button.is_active)  # Check if button is pressed
               time.sleep(0.2)  # Wait for 0.2 seconds before next loop
 
-5. **Interrupt Handling**:
+5. **割り込み処理**:
 
-   The script can be exited gracefully using a keyboard interrupt (CTRL+C), which is a common practice in Python for stopping an infinite loop.
+   スクリプトはキーボード割り込み（CTRL+C）を使用して正常に終了できます。これは、Pythonで無限ループを停止する一般的な方法です。
 
    .. code-block:: python
 

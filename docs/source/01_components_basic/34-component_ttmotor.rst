@@ -14,7 +14,7 @@
 
 .. _cpn_ttmotor:
 
-TT Motor
+TTモーター
 ==========================
 
 .. image:: img/34_tt_motor.png
@@ -26,27 +26,27 @@ TT Motor
     <br/>
 
 
-A TT motor is a type of DC motor that has a gearbox attached to it. The gearbox reduces the speed of the motor and increases its torque. A TT motor is commonly used in applications such as driving wheels, propellers, fans, among others. A TT motor has two wires: a positive wire and a negative wire. The positive wire is usually red and the negative wire is usually black.
+TTモーターは、ギアボックスが取り付けられたDCモーターの一種です。ギアボックスはモーターの速度を減少させ、トルクを増加させます。TTモーターは、車輪、プロペラ、ファンなどの駆動に一般的に使用されます。TTモーターには2本のワイヤーがあります：プラスワイヤーとマイナスワイヤーです。プラスワイヤーは通常赤色で、マイナスワイヤーは通常黒色です。
 
-A TT DC gearbox motor with a 1:48 gear ratio is used in the product, it comes with 2 x 200mm wires with 0.1” male connectors that fit into a breadboard. Perfect for plugging into a breadboard or terminal block.
+この製品には1:48のギア比を持つTT DCギアボックスモーターが使用されており、0.1インチのオスコネクターが付いた2本の200mmワイヤーが付属しています。ブレッドボードや端子ブロックに直接差し込むのに最適です。
 
-You can power these motors with 3 ~ 6VDC, but of course, they will go a little faster at higher voltages.
+これらのモーターは3〜6VDCで駆動できますが、もちろん高い電圧では少し速く動作します。
 
 
-**Technical Details** 
+**技術詳細**
 
-* Rated Voltage: 3~6V
-* Continuous No-Load Current: 150mA +/- 10%
-* Min. Operating Speed (3V): 90+/- 10% RPM
-* Min. Operating Speed (6V): 200+/- 10% RPM
-* Stall Torque (3V): 0.4kg.cm
-* Stall Torque (6V): 0.8kg.cm
-* Gear Ratio: 1:48
-* Body Dimensions: 70 x 22 x 18mm
-* Wires Length: 200mm & 28 AWG
-* Weight: 30.6g
+* 定格電圧: 3~6V
+* 無負荷連続電流: 150mA +/- 10%
+* 最小動作速度 (3V): 90+/- 10% RPM
+* 最小動作速度 (6V): 200+/- 10% RPM
+* 停止トルク (3V): 0.4kg.cm
+* 停止トルク (6V): 0.8kg.cm
+* ギア比: 1:48
+* 本体寸法: 70 x 22 x 18mm
+* ワイヤー長: 200mm & 28 AWG
+* 重量: 30.6g
 
-**Dimensional Drawing**
+**寸法図**
 
 .. image:: img/34_motor_size.png
     :width: 65%
@@ -56,7 +56,7 @@ You can power these motors with 3 ~ 6VDC, but of course, they will go a little f
     <br/>
 
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson34_motor` (Arduino UNO)
 * :ref:`esp32_lesson34_motor` (ESP32)

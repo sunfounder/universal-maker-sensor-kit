@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson14_max30102:
 
-Lesson 14: Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
+Lesson 14: パルスオキシメーターと心拍センサーモジュール (MAX30102)
 ====================================================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to interface with the MAX30102 pulse oximeter and heart rate sensor. You will gain knowledge on setting up I2C communication, configuring the sensor, and reading raw data from the sensor. By observing changes in the data, you can obtain heartbeat information.
+このレッスンでは、Raspberry Pi Pico Wを使用してMAX30102パルスオキシメーターと心拍センサーとインターフェースする方法を学びます。I2C通信の設定、センサーの構成、およびセンサーからの生データの読み取りについて学びます。データの変化を観察することで、心拍数情報を得ることができます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを一括購入すると便利です。以下のリンクをご覧ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_14_MAX30102_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -70,28 +69,28 @@ Code
    from time import ticks_diff, ticks_us, sleep
    
    from max30102 import MAX30102, MAX30105_PULSE_AMP_MEDIUM
-   
-   
-   def main():
+
+      
+def main():
        # I2C software instance
        i2c = SoftI2C(sda=Pin(20),  # Here, use your I2C SDA pin
                      scl=Pin(21),  # Here, use your I2C SCL pin
                      freq=400000)  # Fast: 400kHz, slow: 100kHz
-   
+
        # Sensor instance
        sensor = MAX30102(i2c=i2c)  # An I2C instance is required
-   
+
        # Scan I2C bus to ensure that the sensor is connected
-       if sensor.i2c_address not in i2c.scan():
+    if sensor.i2c_address not in i2c.scan():
            print("Sensor not found.")
-           return
-       elif not (sensor.check_part_id()):
+        return
+    elif not (sensor.check_part_id()):
            # Check that the targeted sensor is compatible
            print("I2C device ID not corresponding to MAX30102 or MAX30105.")
-           return
-       else:
+        return
+    else:
            print("Sensor connected and recognized.")
-   
+
        # It's possible to set up the sensor at once with the setup_sensor() method.
        # If no parameters are supplied, the default config is loaded:
        # Led mode: 2 (RED + IR)
@@ -101,72 +100,72 @@ Code
        # Averaged samples: 8
        # pulse width: 411
        print("Setting up sensor with default configuration.", '\n')
-       sensor.setup_sensor()
-   
+    sensor.setup_sensor()
+
        # It is also possible to tune the configuration parameters one by one.
        # Set the sample rate to 400: 400 samples/s are collected by the sensor
-       sensor.set_sample_rate(400)
+    sensor.set_sample_rate(400)
        # Set the number of samples to be averaged per each reading
-       sensor.set_fifo_average(8)
+    sensor.set_fifo_average(8)
        # Set LED brightness to a medium value
-       sensor.set_active_leds_amplitude(MAX30105_PULSE_AMP_MEDIUM)
-   
-       sleep(1)
-   
+    sensor.set_active_leds_amplitude(MAX30105_PULSE_AMP_MEDIUM)
+
+    sleep(1)
+
        # The readTemperature() method allows to extract the die temperature in °C    
        print("Reading temperature in °C.", '\n')
-       print(sensor.read_temperature())
-   
+    print(sensor.read_temperature())
+
        print("Starting data acquisition from RED & IR registers...", '\n')
-       sleep(1)
-   
-       while True:
+    sleep(1)
+
+    while True:
            # The check() method has to be continuously polled, to check if
            # there are new readings into the sensor's FIFO queue. When new
            # readings are available, this function will put them into the storage.
-           sensor.check()
-   
+        sensor.check()
+
            # Check if the storage contains available samples
-           if sensor.available():
+        if sensor.available():
                # Access the storage FIFO and gather the readings (integers)
-               red_reading = sensor.pop_red_from_storage()
-               ir_reading = sensor.pop_ir_from_storage()
-   
+            red_reading = sensor.pop_red_from_storage()
+            ir_reading = sensor.pop_ir_from_storage()
+
                # Print the acquired data (so that it can be plotted with a Serial Plotter)
                print("red_reading",red_reading, "ir_reading", ir_reading)
-   
-   if __name__ == '__main__':
-       main()
+
+if __name__ == '__main__':
+    main()
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up I2C Interface
+#. I2Cインターフェースの設定
 
-   ``SoftI2C`` is initialized with SDA and SCL pins, and a frequency of 400kHz is set for the communication.
+   ``SoftI2C``は、SDAおよびSCLピンで初期化され、通信のために400kHzの周波数が設定されます。
 
    .. code-block:: python
 
       from machine import SoftI2C, Pin
       i2c = SoftI2C(sda=Pin(20), scl=Pin(21), freq=400000)
 
-#. Initializing the Sensor
+#. センサーの初期化
 
-   The MAX30102 sensor is initialized using the I2C interface.
-   A scan of the I2C bus is performed to ensure the sensor is connected and recognized.
+   MAX30102センサーはI2Cインターフェースを使用して初期化されます。
+   センサーが接続され認識されていることを確認するためにI2Cバスのスキャンが行われます。
 
-   For more information about the ``max30102`` library, please visit |link_micropython_max30102_driver|.
+   ``max30102``ライブラリの詳細については、|link_micropython_max30102_driver|を参照してください。
 
    .. code-block:: python
 
       from max30102 import MAX30102
       sensor = MAX30102(i2c=i2c)
 
-#. Sensor Configuration
+#. センサーの設定
 
-   The sensor is configured with default settings for LED mode, ADC range, sample rate, LED power, averaged samples, and pulse width.
-   Additional configurations like sample rate, FIFO average, and LED amplitude are set.
+   センサーは、LEDモード、ADCレンジ、サンプルレート、LED出力、平均サンプル数、パルス幅のデフォルト設定で構成されます。
+   サンプルレート、FIFOの平均、およびLEDの振幅などの追加の構成が設定されます。
 
    .. code-block:: python
 
@@ -175,19 +174,19 @@ Code Analysis
       sensor.set_fifo_average(8)
       sensor.set_active_leds_amplitude(MAX30105_PULSE_AMP_MEDIUM)
 
-#. Reading Temperature
+#. 温度の読み取り
 
-   The temperature of the sensor is read and printed.
+   センサーの温度が読み取られ、表示されます。
 
    .. code-block:: python
 
       print(sensor.read_temperature())
 
-#. Data Acquisition
+#. データ取得
 
-   A loop is set up to continuously acquire data from the sensor.
-   The ``check()`` method is polled to see if new readings are available.
-   Red and IR readings are retrieved from the sensor's storage and printed.
+   センサーからデータを継続的に取得するためにループが設定されます。
+   新しい読み取りが利用可能かどうかを確認するために ``check()`` メソッドがポーリングされます。
+   赤色とIRの読み取り値がセンサーのストレージから取得され、表示されます。
 
    .. code-block:: python
 
@@ -198,7 +197,7 @@ Code Analysis
               ir_reading = sensor.pop_ir_from_storage()
               print("red_reading",red_reading, "ir_reading", ir_reading)
 
-   Open Plotter in Thonny to observe the heartbeat data.
+   Thonnyのプロッタを開いて心拍データを観察します。
 
    .. image:: img/Lesson_14_max30102_plotter.png
       :width: 60%

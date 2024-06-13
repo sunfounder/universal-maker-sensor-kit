@@ -11,23 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_touch_toggle_light:
 
-Lesson 40: Touch toggle light
+Lesson 40: タッチトグルライト
 ==================================
 
-
-This project is a simple implementation of a traffic light control system utilizing a touch sensor and a traffic light LED module. 
-Activating the touch sensor initiates a sequence where LEDs illuminate in the following order: Red -> Yellow -> Green.
-
+このプロジェクトは、タッチセンサーと交通信号LEDモジュールを利用した簡単な交通信号制御システムの実装です。
+タッチセンサーを作動させると、次の順序でLEDが点灯します：赤 -> 黄 -> 緑。
 
 Required Components
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式購入するのが便利です。以下のリンクをご覧ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -73,14 +70,12 @@ Code
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/3745fb2e-d031-4698-9360-a2f7e9a54c13/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-  
-Code Analysis
+  コード解析
 ---------------------------
 
-The operation of this project is straightforward: 
-a touch detection on the sensor triggers the illumination of the next LED in the sequence (Red -> Yellow -> Green), controlled by the ``currentLED`` variable.
+このプロジェクトの動作は簡単です。センサーがタッチを検出すると、次のLED（赤 -> 黄 -> 緑）が点灯します。これは ``currentLED`` 変数によって制御されます。
 
-1. Define pins and initial values
+1. ピンの定義と初期値の設定
 
     .. code-block:: arduino
    
@@ -93,10 +88,10 @@ a touch detection on the sensor triggers the illumination of the next LED in the
         int lastTouchState;     // the previous state of touch sensor
         int currentTouchState;  // the current state of touch sensor
         int currentLED = 0;     // current LED 0->Red, 1->Yellow, 2->Green
-   
-   These lines establish the pin connections for the Arduino board components and initialize the touch sensor and LED states.
+ 
+   これらの行は、Arduinoボードのコンポーネントのピン接続を確立し、タッチセンサーとLEDの状態を初期化します。
 
-2. setup() function
+2. setup() 関数
 
     .. code-block:: arduino
    
@@ -112,9 +107,9 @@ a touch detection on the sensor triggers the illumination of the next LED in the
         currentTouchState = digitalRead(touchSensorPin);
       }
    
-    This function configures the initial setup for the Arduino, defining input and output modes and starting serial communication for debugging.
+    この関数は、Arduinoの初期設定を行い、入力および出力モードを定義し、デバッグ用のシリアル通信を開始します。
 
-3. loop() function
+3. loop() 関数
 
     .. code-block:: arduino
    
@@ -146,9 +141,9 @@ a touch detection on the sensor triggers the illumination of the next LED in the
         }
       }
 
-    The loop continuously monitors the touch sensor, cycling through the LEDs when a touch is detected, ensuring only one LED is on at any given time.
+    このループはタッチセンサーを継続的に監視し、タッチが検出されるとLEDを順番に切り替え、常に一つのLEDだけが点灯するようにします。
 
-4. Turn off LEDs function
+4. LEDを消灯する関数
 
     .. code-block:: arduino
       
@@ -159,4 +154,4 @@ a touch detection on the sensor triggers the illumination of the next LED in the
         digitalWrite(gledPin, LOW);
       }
 
-    This auxiliary function turns off all LEDs, aiding in the cycling process.
+    この補助関数は、すべてのLEDを消灯し、切り替えプロセスをサポートします。

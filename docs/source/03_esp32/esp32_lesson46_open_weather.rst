@@ -11,23 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_iot_owm:
 
-
-
-Lesson 46: Real-time Weather From @OpenWeatherMap
+Lesson 46: @OpenWeatherMapによるリアルタイム天気
 ====================================================
 
-The IoT Open Weather Display project utilizes the ESP32 board and an I2C LCD1602 module to create a weather information display that retrieves data from the OpenWeatherMap API. 
+IoT Open Weather Displayプロジェクトは、ESP32ボードとI2C LCD1602モジュールを利用して、OpenWeatherMap APIからデータを取得する天気情報表示装置を作成します。
 
-This project serves as an excellent introduction to working with APIs, Wi-Fi connectivity, and data display on an LCD module using the ESP32 board. With the IoT Open Weather Display, you can conveniently access real-time weather updates at a glance, making it an ideal solution for home or office environments.
+このプロジェクトは、APIの操作、Wi-Fi接続、およびESP32ボードを使用したLCDモジュールでのデータ表示の優れた入門編です。IoT Open Weather Displayを使用すると、自宅やオフィス環境でリアルタイムの天気情報を簡単にアクセスできるようになります。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 .. list-table::
     :widths: 30 20
     :header-rows: 1
@@ -53,52 +50,49 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_i2c_lcd1602`
         - |link_i2clcd1602_buy|
 
-**Get OpenWeather API keys**
+**OpenWeather APIキーを取得する**
 
-|link_openweather| is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location.
+|link_openweather|は、OpenWeather Ltdが所有するオンラインサービスで、APIを通じてグローバルな天気データを提供します。これには、現在の天気データ、予報、ナウキャスト、および任意の地理的場所の過去の天気データが含まれます。
 
-#. Visit |link_openweather| to log in/create an account.
+#. |link_openweather|にアクセスしてログイン/アカウント作成を行います。
 
     .. image:: img/OWM-1.png
 
-#. Click into the API page from the navigation bar.
+#. ナビゲーションバーからAPIページに移動します。
 
     .. image:: img/OWM-2.png
 
-#. Find **Current Weather Data** and click Subscribe.
+#. **Current Weather Data**を見つけて、Subscribeをクリックします。
 
     .. image:: img/OWM-3.png
 
-#. Under **Current weather and forecasts collection** , subscribe to the appropriate service. In our project, Free is good enough.
+#. **Current weather and forecasts collection**の下で、適切なサービスにサブスクライブします。このプロジェクトでは、Freeプランで十分です。
 
     .. image:: img/OWM-4.png
 
-#. Copy the Key from the **API keys** page.
+#. **API keys**ページからキーをコピーします。
 
     .. image:: img/OWM-5.png
 
+**デバイスの完成**
 
-**Complete Your Device**
-
-#. Build the circuit.
+#. 回路を構築します。
 
     .. image:: img/Lesson_26_LCD1602_esp32_bb.png
         :width: 800
+#. コードを開く
 
-#. Open the code.
-
-    * Open the ``Lesson_46_OpenWeatherMap.ino`` file located in the ``universal-maker-sensor-kit\esp32\Lesson_46_OpenWeatherMap`` directory, or copy the code into the Arduino IDE.
-    * After selecting the board (ESP32 Dev Module) and the appropriate port, click the **Upload** button.
+    * ``universal-maker-sensor-kit\esp32\Lesson_46_OpenWeatherMap``ディレクトリにある ``Lesson_46_OpenWeatherMap.ino``ファイルを開くか、Arduino IDEにコードをコピーします。
+    * ボード（ESP32 Dev Module）と適切なポートを選択した後、 **Upload** ボタンをクリックします。
     * :ref:`unknown_com_port`
-    * The ``LiquidCrystal I2C``  and ``Arduino_JSON`` libraries are used here, you can install them from the **Library Manager**.
+    * ここでは ``LiquidCrystal I2C`` と ``Arduino_JSON`` ライブラリが使用されますので、 **Library Manager** からインストールしてください。
 
     .. raw:: html
 
         <iframe src=https://create.arduino.cc/editor/sunfounder01/5e262afa-97ca-45ba-807b-adf7650b30e8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
          
 
-#. Locate the following lines and modify them with your ``<SSID>`` and ``<PASSWORD>``.
-
+#. 以下の行を見つけて、 ``<SSID>`` と ``<PASSWORD>`` で修正します。
 
     .. code-block::  Arduino
 
@@ -106,14 +100,14 @@ You can also buy them separately from the links below.
         const char* ssid = "<SSID>";
         const char* password = "<PASSWORD>";
 
-#. Fill in the API keys you copied earlier into ``openWeatherMapApiKey``.
+#. 前にコピーしたAPIキーを ``openWeatherMapApiKey`` に入力します。
 
     .. code-block::  Arduino
 
         // Your Domain name with URL path or IP address with path
         String openWeatherMapApiKey = "<openWeatherMapApiKey>";
 
-#. Replace with your country code and city.
+#. 国コードと都市名を置き換えます。
 
     .. code-block::  Arduino
 
@@ -122,8 +116,8 @@ You can also buy them separately from the links below.
         String city = "<CITY>";
         String countryCode = "<COUNTRY CODE>";
 
-#. After the code runs, you will see the time and weather information of your location on the I2C LCD1602.
+#. コードが実行されると、I2C LCD1602に現在地の時間と天気情報が表示されます。
 
 .. note::
-   When the code is running, if the screen is blank, you can turn the potentiometer on the back of the module to increase the contrast.
+   コードが実行されているときに画面が空白の場合は、モジュールの裏側にあるポテンショメータを回してコントラストを調整してください。
 

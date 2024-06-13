@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson26_lcd:
 
-Lesson 26: I2C LCD 1602
+レッスン26: I2C LCD 1602
 ==================================
 
-In this lesson, you will learn the basics of displaying text on an LCD screen using a Raspberry Pi. We'll start by showing you how to connect a standard LCD to the Raspberry Pi using the I2C interface. You'll learn how to set up the LCD with simple parameters like the Raspberry Pi model and I2C address. Then, we'll walk you through writing a basic Python script to display messages like "Hello World!" on the screen. This straightforward project is aimed at beginners, offering a foundational introduction to interfacing hardware with the Raspberry Pi and basic Python programming.
+このレッスンでは、Raspberry Piを使用してLCDスクリーンにテキストを表示する基本を学びます。I2Cインターフェースを使用して標準のLCDをRaspberry Piに接続する方法から始めます。Raspberry PiのモデルやI2Cアドレスなど、簡単なパラメータでLCDを設定する方法を学びます。その後、「Hello World!」のようなメッセージを画面に表示するための基本的なPythonスクリプトの書き方を説明します。このシンプルなプロジェクトは初心者向けで、ハードウェアをRaspberry Piに接続し、基本的なPythonプログラミングの基礎を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,14 +51,14 @@ You can also buy them separately from the links below.
         - |link_i2clcd1602_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_26_LCD1602_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,49 +79,48 @@ Code
    # Clear the LCD display
    lcd.clear()
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
    
-   Import the ``time`` module for creating delays and the ``LCD`` module for controlling the LCD.
+   遅延を作成するための ``time`` モジュールと、LCDを制御するための ``LCD`` モジュールをインポートします。
 
-   For more detail about the ``LCD`` library, please refer to |link_lcd1602_python_driver_pi|.
+   ``LCD``ライブラリの詳細については、|link_lcd1602_python_driver_pi|を参照してください。
 
    .. code-block:: python
 
       import time
       from LCD import LCD
 
-#. Initialize the LCD
+#. LCDの初期化
    
-   Create an ``LCD`` object with specific parameters: the Raspberry Pi revision, the I2C address of the LCD, and the backlight status. In this case, Raspberry Pi revision 2(and higher version), I2C address 0x27, and backlight enabled.
+   特定のパラメータを使用して ``LCD`` オブジェクトを作成します。Raspberry Piのリビジョン、LCDのI2Cアドレス、およびバックライトの状態です。この場合、Raspberry Piのリビジョン2（およびそれ以降）、I2Cアドレス0x27、バックライトは有効です。
 
    .. code-block:: python
 
       lcd = LCD(2, 0x27, True)
 
-#. Display Messages on the LCD
+#. LCDにメッセージを表示
    
-   Use the ``message`` method of the ``LCD`` object to display text on the LCD. The first argument is the text, and the second argument is the line number.
+   ``LCD``オブジェクトの ``message`` メソッドを使用してLCDにテキストを表示します。最初の引数はテキスト、2番目の引数は行番号です。
 
    .. code-block:: python
 
       lcd.message("Hello World!", 1)
       lcd.message("    - Sunfounder", 2)
 
-#. Keep the Messages Displayed
+#. メッセージを表示したままにする
    
-   Pause the program for 5 seconds, keeping the messages on the LCD during this time.
+   プログラムを5秒間一時停止し、この間LCDにメッセージを表示します。
 
    .. code-block:: python
 
       time.sleep(5)
 
-#. Clear the LCD Display
+#. LCDディスプレイをクリアする
    
-   After the delay, clear the display using the ``clear`` method of the ``LCD`` object.
+   遅延の後、 ``LCD`` オブジェクトの ``clear`` メソッドを使用してディスプレイをクリアします。
 
    .. code-block:: python
 

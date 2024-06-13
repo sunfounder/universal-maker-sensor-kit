@@ -14,10 +14,10 @@
 
 .. _esp32_start:
 
-Get Started with ESP32
+ESP32を始める
 ======================================
 
-We'll program the ESP32 development board using the Arduino IDE. This chapter offers a quick-start guide, with steps for installing the Arduino IDE, an overview of its features, and instructions for adding the ESP32 board package.
+この章では、Arduino IDEを使用してESP32開発ボードをプログラムする方法を紹介します。Arduino IDEのインストール手順、その機能の概要、ESP32ボードパッケージの追加方法を順を追って説明するクイックスタートガイドです。
 
 .. toctree::
    :maxdepth: 2

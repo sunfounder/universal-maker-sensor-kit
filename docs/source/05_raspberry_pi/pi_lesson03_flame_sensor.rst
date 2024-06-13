@@ -14,18 +14,18 @@
 
 .. _pi_lesson03_flame:
 
-Lesson 03: Flame Sensor Module
+レッスン 03: 炎センサーモジュール
 ==================================
 
+このレッスンでは、Raspberry Piを使用して炎センサーで火災を検出する方法を学びます。炎センサーをGPIO17に接続し、その出力を読み取るPythonスクリプトを書く方法を紹介します。センサーが炎を検出したときの状態変化を識別する方法を学びます。この実践的なプロジェクトは、Raspberry PiでのセンサーインターフェースとPythonコーディングの基本を紹介し、安全関連のプロジェクトに興味のある初心者に適しています。
 
-In this lesson, you will learn to use a flame sensor with Raspberry Pi for fire detection. We'll show you how to connect the flame sensor to GPIO17 and write a Python script to read its output. You'll learn to identify when the sensor detects a flame, indicated by a change in the sensor's state. This practical project introduces you to the basics of sensor interfacing and Python coding on the Raspberry Pi, suitable for beginners interested in building safety-related projects.
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -55,14 +55,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_03_flame_module_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -85,33 +85,33 @@ Code
        time.sleep(1)
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts by importing the necessary classes from the gpiozero library and the time module from Python's standard library.
+   スクリプトは、gpiozeroライブラリから必要なクラスと、Python標準ライブラリのtimeモジュールをインポートすることから始まります。
 
    .. code-block:: python
 
       from gpiozero import InputDevice
       import time
 
-#. Initializing the Flame Sensor
+#. 炎センサーの初期化
    
-   An ``InputDevice`` object named ``flame_sensor`` is created, representing the flame sensor connected to GPIO pin 17 of the Raspberry Pi. This setup assumes that the digital output of the flame sensor is connected to GPIO17.
+   ``InputDevice``オブジェクトの ``flame_sensor`` を作成し、Raspberry PiのGPIOピン17に接続された炎センサーを表します。この設定では、炎センサーのデジタル出力がGPIO17に接続されていることを前提としています。
 
    .. code-block:: python
 
       flame_sensor = InputDevice(17)
 
-#. Continuous Reading Loop
+#. 連続読み取りループ
    
-   - The script uses a ``while True:`` loop to continuously read the sensor's data. This loop will run indefinitely.
-   - Inside the loop, an ``if`` statement checks the state of the flame sensor using the ``is_active`` property.
-   - If ``flame_sensor.is_active`` is ``True``, it indicates no flame is detected, and "No flame detected." is printed.
-   - If ``flame_sensor.is_active`` is ``False``, it indicates a flame is detected, and "Flame detected!" is printed.
-   - The ``time.sleep(1)`` command pauses the loop for 1 second between each sensor reading, preventing the script from overloading the CPU.
+   - スクリプトは ``while True:`` ループを使用してセンサーのデータを継続的に読み取ります。このループは無期限に実行されます。
+   - ループ内では、 ``if`` 文を使用して ``is_active`` プロパティを使用して炎センサーの状態を確認します。
+   - ``flame_sensor.is_active``が ``True`` の場合、炎が検出されていないことを示し、「炎は検出されませんでした。」と表示されます。
+   - ``flame_sensor.is_active``が ``False`` の場合、炎が検出されたことを示し、「炎が検出されました！」と表示されます。
+   - ``time.sleep(1)``コマンドは、各センサーの読み取り間でループを1秒間一時停止し、スクリプトがCPUを過負荷にしないようにします。
 
    .. raw:: html
 
@@ -121,7 +121,7 @@ Code Analysis
 
       while True:
           if flame_sensor.is_active:
-              print("No flame detected.")
+              print("炎は検出されませんでした。")
           else:
-              print("Flame detected!")
+              print("炎が検出されました！")
           time.sleep(1)

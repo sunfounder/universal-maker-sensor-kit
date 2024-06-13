@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_lesson02_soil_moisture:
 
-Lesson 02: Capacitive Soil Moisture Module
+レッスン02：容量性土壌湿度モジュール
 ============================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to measure soil moisture levels using a capacitive sensor and an ADC (Analog to Digital Converter). This beginner-friendly project will introduce you to handling analog signals in MicroPython. 
+このレッスンでは、Raspberry Pi Pico Wを使用して容量性センサーとADC（アナログ-デジタルコンバーター）を使い、土壌湿度レベルを測定する方法を学びます。この初心者向けプロジェクトでは、MicroPythonでアナログ信号を扱う基本を紹介します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_02_Capacitive_Soil_Moisture_Module_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,25 +78,25 @@ Code
    
        time.sleep_ms(200)  # Wait for 200 milliseconds before the next read
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries:
+#. ライブラリのインポート:
 
    .. code-block:: python
 
       from machine import ADC
       import time
 
-#. ADC Setup:
+#. ADCの設定:
 
    .. code-block:: python
 
       sensor_AO = ADC(26)
 
-   This code initializes an ADC object on GPIO pin 26. ADC is used to convert analog signals (from analog sensors) to digital data that the microcontroller can process.
+   このコードは、GPIOピン26でADCオブジェクトを初期化します。ADCはアナログ信号（アナログセンサーからの信号）をマイクロコントローラーが処理できるデジタルデータに変換するために使用されます。
 
-#. Reading Sensor Data in a Loop:
+#. ループ内でセンサーデータを読み取る:
 
    .. code-block:: python
     
@@ -107,4 +105,4 @@ Code Analysis
           print("AO:", value)
           time.sleep_ms(200)
 
-   The ``while True`` loop runs indefinitely, constantly reading data from the sensor. The ``read_u16()`` method reads the analog value and converts it to a 16-bit unsigned integer. The ``print`` statement displays this value. The ``time.sleep_ms(200)`` causes the loop to wait for 200 milliseconds before reading the sensor value again, preventing excessive data readings and console output.
+   ``while True`` ループは無限に実行され、センサーからのデータを常に読み取ります。 ``read_u16()`` メソッドはアナログ値を読み取り、16ビットの符号なし整数に変換します。 ``print`` 文はこの値を表示します。 ``time.sleep_ms(200)`` はループを200ミリ秒間待機させ、過剰なデータ読み取りとコンソール出力を防ぎます。

@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson22_touch_sensor:
 
-Lesson 22: Touch Sensor Module
-==================================
+Lesson 22: タッチセンサーモジュール
+=====================================
 
-In this lesson, you'll learn how to use a touch sensor with an ESP32 Development Board. We'll see how touching the sensor sends a signal to the ESP32, triggering a response displayed through serial communication. This project is ideal for beginners and provides hands-on experience with digital inputs and serial output on the ESP32 platform. You'll develop a foundational understanding of how sensors interact with microcontrollers, which is essential for building interactive hardware projects.
+このレッスンでは、ESP32開発ボードを使用してタッチセンサーを使う方法を学びます。センサーに触れることでESP32に信号が送られ、シリアル通信を通じて応答が表示される仕組みを確認します。このプロジェクトは初心者に最適で、ESP32プラットフォームでのデジタル入力とシリアル出力の実践的な経験を提供します。センサーがマイクロコントローラーとどのように相互作用するかを理解することは、インタラクティブなハードウェアプロジェクトを構築するための基本となります。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,27 +54,27 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_22_Touch_Sensor_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f3fd3d61-1d6b-46b8-8e62-e3c91e262830/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Setting Up the Pin and Serial Communication**
+#. **ピンの設定とシリアル通信の初期化**
 
-   - The touch sensor is connected to pin 25 of the ESP32, and this pin is configured as an input.
-   - The ``Serial.begin(9600);`` initializes serial communication at a baud rate of 9600 bits per second.
+   - タッチセンサーはESP32のピン25に接続され、このピンは入力として設定されます。
+   - ``Serial.begin(9600);`` はシリアル通信を毎秒9600ビットのボーレートで初期化します。
    
    .. raw:: html
       
@@ -89,13 +89,13 @@ Code Analysis
         Serial.begin(9600);            // Start the serial communication
       }
 
-#. **Reading the Sensor and Sending Data to Serial Monitor**
+#. **センサーの読み取りとシリアルモニタへのデータ送信**
 
-   - The ``loop()`` function continuously checks the state of the touch sensor.
-   - ``digitalRead(sensorPin)`` reads the digital value (1 or 0) from the sensor pin.
-   - If the sensor is touched (value 1), it prints "Touch detected!" to the Serial Monitor.
-   - If not touched (value 0), it prints "No touch detected...".
-   - The ``delay(100);`` helps in debouncing the sensor, preventing multiple rapid readings.
+   - ``loop()`` 関数はタッチセンサーの状態を継続的にチェックします。
+   - ``digitalRead(sensorPin)`` はセンサーピンからデジタル値（1または0）を読み取ります。
+   - センサーに触れた場合（値が1）、シリアルモニタに "Touch detected!" と表示します。
+   - 触れていない場合（値が0）、シリアルモニタに "No touch detected..." と表示します。
+   - ``delay(100);`` はセンサーのデバウンスを助け、急速な読み取りを防ぎます。
 
    .. raw:: html
       

@@ -14,36 +14,36 @@
 
 .. _set_up_your_raspberry_pi:
 
-Set up Your Raspberry Pi
+Raspberry Piのセットアップ
 ============================
 
-If You Have a Screen
+スクリーンがある場合
 -------------------------
 
-If you have a screen, it will be easy for you to operate on the Raspberry Pi.
+スクリーンがあれば、Raspberry Piの操作が簡単になります。
 
-**Required Components**
+**必要なコンポーネント**
 
-* Any Raspberry Pi   
-* 1 * Power Adapter
-* 1 * Micro SD card
-* 1 * Screen Power Adapter
-* 1 * HDMI cable
-* 1 * Screen
-* 1 * Mouse
-* 1 * Keyboard
+* いずれかのRaspberry Pi   
+* 1 * 電源アダプター
+* 1 * Micro SDカード
+* 1 * スクリーン用電源アダプター
+* 1 * HDMIケーブル
+* 1 * スクリーン
+* 1 * マウス
+* 1 * キーボード
 
-#. Insert the SD card you’ve set up with Raspberry Pi OS into the micro SD card slot on the underside of your Raspberry Pi.
+#. Raspberry Pi OSをセットアップしたSDカードをRaspberry Piの底面にあるmicro SDカードスロットに挿入します。
 
-#. Plug in the Mouse and Keyboard.
+#. マウスとキーボードを接続します。
 
-#. Connect the screen to Raspberry Pi’s HDMI port and make sure your screen is plugged into a wall socket and switched on.
+#. スクリーンをRaspberry PiのHDMIポートに接続し、スクリーンがコンセントに差し込まれ、電源が入っていることを確認します。
 
    .. note::
    
-      If you use a Raspberry Pi 4, you need to connect the screen to the HDMI0 (nearest the power in port).
+      Raspberry Pi 4を使用する場合、スクリーンをHDMI0（電源ポートに最も近い）に接続する必要があります。
 
-#. Use the power adapter to power the Raspberry Pi. After a few seconds, the Raspberry Pi OS desktop will be displayed.
+#. 電源アダプターを使用してRaspberry Piに電源を供給します。数秒後、Raspberry Pi OSのデスクトップが表示されます。
 
    .. image:: img/set_up_01.png
        :align: center
@@ -52,7 +52,7 @@ If you have a screen, it will be easy for you to operate on the Raspberry Pi.
    
        <br/>
 
-#. You can launch a web browser on your Raspberry Pi system and access this tutorial page. This makes it convenient to copy instructions and execute them in the Terminal.
+#. Raspberry Piシステムでウェブブラウザーを起動し、このチュートリアルページにアクセスできます。これにより、指示をコピーしてターミナルで実行するのが便利です。
 
    .. image:: img/set_up_02.png
        :align: center
@@ -63,22 +63,22 @@ If you have a screen, it will be easy for you to operate on the Raspberry Pi.
 
 .. _no_screen:
 
-If You Have No Screen
+スクリーンがない場合
 --------------------------
 
-If you don't have a monitor, you can remotely log into your Raspberry Pi.
+モニターがない場合、リモートでRaspberry Piにログインできます。
 
-**Required Components**
+**必要なコンポーネント**
 
-* Any Raspberry Pi   
-* 1 * Power Adapter
-* 1 * Micro SD card
+* いずれかのRaspberry Pi   
+* 1 * 電源アダプター
+* 1 * Micro SDカード
 
-You can use the SSH command to access the Raspberry Pi's Bash shell, which is Linux's default interface. The shell lets you perform most tasks with simple commands on Unix/Linux systems.
+SSHコマンドを使用してRaspberry PiのBashシェルにアクセスできます。BashシェルはLinuxのデフォルトインターフェースであり、Unix/Linuxシステム上でシンプルなコマンドでほとんどのタスクを実行できます。
 
-If you'd rather not use the command line for your Raspberry Pi, you can utilize the remote desktop feature to operate the Raspberry Pi's desktop environment without a dedicated screen.
+Raspberry Piにコマンドラインを使いたくない場合、リモートデスクトップ機能を利用して専用のスクリーンなしでRaspberry Piのデスクトップ環境を操作できます。
 
-See below for detailed tutorials for each system.
+各システムの詳細なチュートリアルは以下を参照してください。
 
 
 .. toctree::

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _eps32_lesson01_button:
 
-Lesson 01: Button Module
+レッスン 01: ボタンモジュール
 ==================================
 
-In this lesson, you will learn how a button interacts with an LED using ESP32 Development Board. We'll see how pressing the button lights up the LED and releasing it turns off the LED. This project is ideal for beginners as it provides a practical understanding of input and output operations on the ESP32 platform.
+このレッスンでは、ESP32開発ボードを使用してボタンがLEDとどのように相互作用するかを学びます。ボタンを押すとLEDが点灯し、離すとLEDが消灯する仕組みを見ていきます。このプロジェクトは、入力および出力操作についての実践的な理解を提供するため、初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+または、以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,26 +53,26 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_01_Button_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/7286feaf-3b32-4ce8-959b-eccd6c99c4e1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Initialization of Pins
-
-   The pins for the button and LED are defined and initialized. The ``buttonPin`` is set as an input to read the button's state, and ``ledPin`` is set as an output to control the LED.
+#. ピンの初期化
+ 
+   ボタンとLEDのピンが定義され、初期化されます。 ``buttonPin``はボタンの状態を読み取るために入力として設定され、 ``ledPin``はLEDを制御するために出力として設定されます。
    
    .. code-block:: arduino
 
@@ -81,9 +80,9 @@ Code Analysis
       const int ledPin = 25;     // Pin number for the LED
       int buttonState = 0;  // Variable to hold the current state of the button
 
-#. Setup Function
+#. セットアップ関数
 
-   This function runs once and sets up the pin modes. ``pinMode(buttonPin, INPUT)`` configures the button pin as an input. ``pinMode(ledPin, OUTPUT)`` sets the LED pin as an output.
+   この関数は一度だけ実行され、ピンモードを設定します。 ``pinMode(buttonPin, INPUT)`` はボタンピンを入力として設定し、 ``pinMode(ledPin, OUTPUT)`` はLEDピンを出力として設定します。
    
    .. code-block:: arduino
 
@@ -92,11 +91,11 @@ Code Analysis
         pinMode(ledPin, OUTPUT);    // Initialize ledPin as an output pin
       }
 
-#. Main Loop Function
+#. メインループ関数
 
-   This is the core of the program where the button state is continuously read and the LED state is controlled. ``digitalRead(buttonPin)`` reads the button's state. If the button is pressed (state is LOW), the LED is turned on by ``digitalWrite(ledPin, HIGH)``. If not pressed, the LED is turned off (``digitalWrite(ledPin, LOW)``).
+   これはプログラムの中心であり、ボタンの状態が連続して読み取られ、LEDの状態が制御されます。 ``digitalRead(buttonPin)``はボタンの状態を読み取ります。ボタンが押されている場合（状態はLOW）、 ``digitalWrite(ledPin, HIGH)``でLEDを点灯します。押されていない場合、LEDは消灯します（ ``digitalWrite(ledPin, LOW)``）。
 
-   The :ref:`button module<cpn_button>` used in this project has an internal pull-up resistor (see its :ref:`schematic diagram<cpn_button_sch>`), causing the button to be at a low level when pressed and remain at a high level when released.
+   このプロジェクトで使用される:ref:`ボタンモジュール<cpn_button>`には内部プルアップ抵抗があり（その:ref:`回路図<cpn_button_sch>`を参照）、ボタンが押されると低レベルになり、離されると高レベルのままになります。
    
    .. code-block:: arduino
 

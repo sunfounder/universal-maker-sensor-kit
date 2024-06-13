@@ -12,19 +12,20 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
+
 .. _uno_lesson12_pir_motion:
 
-Lesson 12: PIR Motion Module (HC-SR501)
+レッスン12: PIRモーションモジュール (HC-SR501)
 ============================================
 
-In this lesson, you will learn how to use a PIR (Passive Infrared) motion sensor with an Arduino Uno. We'll see how the sensor detects movement and sends a signal to the Arduino, which then triggers a response. This project is ideal for beginners as it provides hands-on experience with digital inputs, serial communication, and conditional programming on the Arduino platform.
+このレッスンでは、PIR（パッシブ赤外線）モーションセンサーをArduino Unoで使用する方法を学びます。センサーが動きを検出し、Arduinoに信号を送信する仕組みを確認し、その信号に基づいて反応を引き起こします。このプロジェクトは、デジタル入力、シリアル通信、条件プログラミングの実践を通じて初心者に最適な教材です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,31 +53,31 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_12_pir_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/75947bcf-8e55-4737-b1b7-f17b4a28e775/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Setting up the PIR Sensor Pin. The pin for the PIR sensor is defined as pin 2. 
+1. PIRセンサーピンの設定。PIRセンサーのピンは2番ピンとして定義されています。
 
    .. code-block:: arduino
 
       const int pirPin = 2;
       int state = 0;
 
-2. Initializing the PIR Sensor. In the ``setup()`` function, the PIR sensor pin is set as an input. This allows the Arduino to read the state of the PIR sensor.
+2. PIRセンサーの初期化。 ``setup()`` 関数内で、PIRセンサーピンを入力として設定します。これにより、ArduinoがPIRセンサーの状態を読み取ることができます。
 
    .. code-block:: arduino
 
@@ -85,7 +86,7 @@ Code Analysis
         Serial.begin(9600);
       }
 
-3. Reading from the PIR Sensor and Displaying the Results. In the ``loop()`` function, the state of the PIR sensor is continuously read. 
+3. PIRセンサーからの読み取りと結果の表示。 ``loop()`` 関数内で、PIRセンサーの状態を連続して読み取ります。
 
    .. code-block:: arduino
 
@@ -99,4 +100,5 @@ Code Analysis
         }
       }
 
-   If the state is ``HIGH``, meaning motion is detected, a message "Somebody here!" is printed to the serial monitor. Otherwise, "Monitoring..." is printed.
+   状態が ``HIGH``、つまり動きが検出された場合、"Somebody here!"というメッセージがシリアルモニターに表示されます。それ以外の場合は、"Monitoring..." が表示されます。
+

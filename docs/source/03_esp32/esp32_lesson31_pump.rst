@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson31_pump:
 
-Lesson 31: Centrifugal Pump
+Lesson 31: 遠心ポンプ
 ==================================
 
-In this lesson, you'll learn how to control a centrifugal pump with an ESP32 Development Board and an L9110 motor control board. We'll cover setting up and using two pins to operate the motor, causing the pump to spin in one direction for 5 seconds before shutting off. This project provides hands-on experience in managing motor operations and understanding digital signals in microcontroller programming, making it ideal for beginners in electronics and programming.
+このレッスンでは、ESP32開発ボードとL9110モータ制御ボードを使用して遠心ポンプを制御する方法を学びます。モータを操作するために2つのピンを設定して使用し、ポンプを5秒間一方向に回転させて停止させる手順をカバーします。このプロジェクトは、モータ操作の管理とマイクロコントローラプログラミングにおけるデジタル信号の理解に関する実践的な経験を提供し、エレクトロニクスとプログラミングの初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,35 +56,35 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_31_Pump_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b1b98b14-d067-4cba-8c3f-a04a8ad5e0c7/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Two pins are defined for controlling the motor, specifically ``motorB_1A`` and ``motorB_2A``. These pins will connect to the L9110 motor control board to control the direction and speed of the motor.
+1. モータ制御のための2つのピンを定義します。具体的には ``motorB_1A`` と ``motorB_2A`` です。これらのピンはL9110モータ制御ボードに接続され、モータの方向と速度を制御します。
   
    .. code-block:: arduino
    
       const int motorB_1A = 26;
       const int motorB_2A = 25;
 
-2. Configuring the pins and controlling the motor:
+2. ピンの設定とモータの制御:
 
-   - The ``setup()`` function initializes the pins as ``OUTPUT`` which means they can send signals to the motor control board.
+   - ``setup()`` 関数では、ピンを ``OUTPUT`` として初期化します。これにより、モータ制御ボードに信号を送信できます。
 
-   - The ``analogWrite()`` function is used to set the motor speed. Here, setting one pin to ``HIGH`` and the other to ``LOW`` makes the pump spin in one direction. After a 5-second delay, both pins are set to 0, turning off the motor.
+   - ``analogWrite()`` 関数を使用してモータの速度を設定します。ここでは、一方のピンを ``HIGH`` 、もう一方を ``LOW`` に設定することで、ポンプを一方向に回転させます。5秒後に両方のピンを0に設定してモータを停止させます。
 
    .. raw:: html
 

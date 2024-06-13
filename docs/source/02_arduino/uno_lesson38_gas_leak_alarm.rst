@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson38_gas_leak_alarm:
 
-Lesson 38: Gas leak alarm
+Lesson 38: ガス漏れアラーム
 ==================================
 
-This project revolves around simulating a gas leak detection scenario using an Arduino Uno board. By incorporating an MQ-2 gas sensor and an RGB LED, this demonstration continuously reads the gas concentration. If this concentration surpasses a predefined threshold, it activates an alarm (buzzer) and illuminates the RGB LED in red. Conversely, if the concentration remains below this threshold, the alarm remains inactive and the LED shines green. It's crucial to note that this demo is purely illustrative and shouldn't replace real gas leak detection systems.
+このプロジェクトでは、Arduino Unoボードを使用してガス漏れ検知シナリオをシミュレートします。MQ-2ガスセンサーとRGB LEDを組み込むことで、ガス濃度を継続的に読み取ります。この濃度が事前に設定された閾値を超えると、アラーム（ブザー）が作動し、RGB LEDが赤く点灯します。逆に、濃度がこの閾値以下にとどまる場合、アラームは作動せず、LEDは緑色に点灯します。このデモはあくまで例示的なものであり、実際のガス漏れ検知システムの代替として使用しないでください。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,30 +56,28 @@ You can also buy them separately from the links below.
         - \-
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
-        
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_38_Gas_leak_alarm_uno_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/314a351a-9c54-4938-bb72-1471f1807adb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-The core principle of the project revolves around continuously monitoring the gas concentration. When the detected gas concentration surpasses a certain threshold, it sets off an alarm and changes the LED's color to red. This serves as a simulated warning mechanism, indicative of potentially hazardous conditions. If the concentration drops below the threshold, the alarm is deactivated and the LED switches to green, indicating a safe environment.
+このプロジェクトの基本原理は、ガス濃度を継続的に監視することです。検出されたガス濃度が一定の閾値を超えると、アラームが鳴り、LEDの色が赤に変わります。これは潜在的に危険な状態を示す警告メカニズムとして機能します。濃度が閾値以下に下がると、アラームは解除され、LEDは緑に変わり、安全な環境を示します。
 
-1. Defining Constants and Variables
+1. 定数と変数の定義
 
-   These lines declare and initialize the pin numbers for various components. The ``sensorPin`` denotes the analog pin where the MQ-2 gas sensor is connected. ``sensorValue`` is an integer variable storing the sensor's analog output. The ``buzzerPin`` indicates the digital pin to which the buzzer is connected. Finally, the ``RPin`` and ``GPin`` are the pins for the red and green channels of the RGB LED, respectively.
+   以下の行では、各コンポーネントのピン番号を宣言および初期化します。``sensorPin``はMQ-2ガスセンサーが接続されているアナログピンを示します。``sensorValue``はセンサーのアナログ出力を格納する整数変数です。``buzzerPin``はブザーが接続されているデジタルピンを示します。最後に、``RPin``と``GPin``はRGB LEDの赤と緑のチャンネルのピンです。
 
    .. code-block:: arduino
    
@@ -94,10 +92,9 @@ The core principle of the project revolves around continuously monitoring the ga
       const int RPin = 5;  // R channel of RGB LED
       const int GPin = 6;  // G channel of RGB LED
    
+2. ``setup()``での初期化
 
-2. Initialization in ``setup()``
-
-   The ``setup()`` function initializes the required settings. Serial communication begins at a baud rate of 9600, allowing us to view sensor readings on the Serial Monitor. Pins for the buzzer and RGB LED are set as ``OUTPUT``, meaning they'll send signals out to external components.
+   ``setup()``関数は必要な設定を初期化します。シリアル通信はボーレート9600で開始され、シリアルモニタでセンサーの読み取り値を表示できるようになります。ブザーとRGB LEDのピンは ``OUTPUT`` として設定され、外部コンポーネントに信号を送るようになります。
 
    .. code-block:: arduino
    
@@ -111,14 +108,14 @@ The core principle of the project revolves around continuously monitoring the ga
       }
    
 
-3. Main Loop: Reading Sensor and Triggering Alarm
+3. メインループ：センサーの読み取りとアラームのトリガー
 
-   The ``loop()`` function continually reads the gas sensor's output. The reading is then displayed on the Serial Monitor for observation. Depending on the sensor value, two scenarios can occur:
+   ``loop()``関数はガスセンサーの出力を継続的に読み取ります。この読み取り値はシリアルモニタに表示され、観察できます。センサー値に応じて、次の2つのシナリオが発生します：
    
-   - If the value exceeds 300, the buzzer is activated using ``tone()``, and the RGB LED turns red.
-   - If the value is below 300, the buzzer is silenced using ``noTone()``, and the LED turns green.
+   - 値が300を超えると、 ``tone()`` を使用してブザーが作動し、RGB LEDが赤くなります。
+   - 値が300未満の場合、 ``noTone()`` を使用してブザーが停止し、LEDが緑になります。
    
-   Lastly, a delay of 50 milliseconds is introduced before the next loop iteration to manage the read frequency and reduce the CPU load.
+   最後に、次のループ繰り返しまでの間に50ミリ秒の遅延が導入され、読み取り頻度を管理し、CPUの負荷を軽減します。
 
    .. code-block:: arduino
    

@@ -11,29 +11,26 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_motion_triggered_relay:
 
-Lesson 38: Motion triggered relay
+レッスン38: モーション検知リレー
 ==================================
 
-This project aims to control a relay-operated light using a passive infrared (PIR) sensor. 
-When the PIR sensor detects motion, the relay is activated, turning the light on. 
-The light remains on for 5 seconds after the last detected motion.
+このプロジェクトは、パッシブ赤外線（PIR）センサーを使用してリレー操作のライトを制御することを目的としています。
+PIRセンサーが動きを検知すると、リレーが作動し、ライトが点灯します。最後に動きを検知してから5秒間、ライトは点灯したままになります。
 
 .. warning::
 
-    As a demonstration, we are using a relay to control an RGB LED module. 
-    However, in real-life scenarios, this may not be the most practical approach.
-    
-    **While you can connect the relay to other appliances in actual applications, extreme caution is required when dealing with HIGH AC voltage. Improper or incorrect use can lead to severe injury or even death. Therefore, it is intended for people who are familiar with and knowledgeable about HIGH AC voltage. Always prioritize safety.**
+    デモンストレーションとして、リレーを使用してRGB LEDモジュールを制御していますが、実際のシナリオでは最も実用的なアプローチではないかもしれません。
 
-Required Components
+    **実際のアプリケーションではリレーを他の機器に接続することもできますが、高電圧の交流電圧を扱う際には極めて注意が必要です。不適切または誤った使用は、重傷や死亡に繋がる可能性があります。そのため、高電圧の交流電圧について熟知している人々を対象としています。常に安全を最優先してください。**
+
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。こちらのリンクをご利用ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -67,29 +64,28 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
         
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_38_Motion_triggered_relay_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/5a29dc43-f362-434e-9e5a-f32dcd41b952/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-Code Analysis
+コード分析
 ---------------------------
 
-The project revolves around the PIR motion sensor's capability to detect motion. When motion is detected, a signal is sent to the Arduino, triggering the relay module, which in turn activates a light. The light stays on for a specified duration (in this case, 5 seconds) after the last detected motion, ensuring the area remains illuminated for a short period even if motion ceases.
+このプロジェクトは、PIRモーションセンサーの動きを検知する能力に基づいています。動きが検知されると、信号がArduinoに送られ、リレーモジュールが作動し、ライトが点灯します。ライトは、最後に動きを検知してから指定された期間（この場合は5秒間）点灯し続けます。これにより、動きが止まっても短期間照明が維持されます。
 
-1. **Initial setup and variable declarations**
+1. **初期設定と変数の宣言**
 
-    This segment defines constants and variables that will be used throughout the code. We set up the relay and PIR pins and a delay constant for motion. We also have a variable to keep track of the last detected motion time and a flag to monitor if motion is detected.
+    このセグメントでは、コード全体で使用される定数と変数を定義します。リレーとPIRピンの設定と、動きの遅延定数を設定します。また、最後に動きを検知した時間を記録する変数と、動きを検知したかどうかを監視するフラグもあります。
 
     .. code-block:: arduino
    
@@ -107,9 +103,9 @@ The project revolves around the PIR motion sensor's capability to detect motion.
         
    
 
-2. **Configuration of pins in setup() function**
+2. **setup()関数でのピンの設定**
 
-    In the ``setup()`` function, we configure the pin modes for both the relay and PIR sensor. We also initialize the relay to be off at the start.
+    ``setup()``関数では、リレーとPIRセンサーのピンモードを設定します。また、最初はリレーがオフであるように初期化します。
 
     .. code-block:: arduino
     
@@ -119,11 +115,11 @@ The project revolves around the PIR motion sensor's capability to detect motion.
             digitalWrite(relayPin, LOW);  // Turn off the relay initially
         }
 
-3. **Main logic in loop() function**
+3. **loop()関数でのメインロジック**
 
-    The ``loop()`` function contains the primary logic. When the PIR sensor detects motion, it sends a ``HIGH`` signal, turning on the relay and updating the ``lastMotionTime``. If there's no motion for the specified delay (5 seconds in this case), the relay is turned off.
+    ``loop()``関数には主要なロジックが含まれています。PIRセンサーが動きを検知すると、 ``HIGH`` 信号を送信し、リレーをオンにして ``lastMotionTime`` を更新します。指定された遅延期間（この場合は5秒間）動きがない場合、リレーをオフにします。
     
-    This approach ensures that even if motion is sporadic or brief, the light remains on for at least 5 seconds after the last detected motion, providing a consistent illumination duration.
+    このアプローチにより、動きが断続的または短時間であっても、最後に動きを検知してから少なくとも5秒間ライトが点灯し続け、安定した照明期間が提供されます。
 
     .. code-block:: arduino
     
@@ -140,6 +136,5 @@ The project revolves around the PIR motion sensor's capability to detect motion.
                 motionDetected = false;
             }
         }
-    
    
    

@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_lesson12_pir_motion:
 
 Lesson 12: PIR Motion Module (HC-SR501)
 ============================================
 
-In this lesson, you'll learn how to connect a PIR Motion Sensor to the Raspberry Pi Pico W. You'll discover how to configure the sensor for motion detection and use basic MicroPython code to react to movement. By monitoring the PIR sensor, you'll gain experience in managing digital inputs and creating a simple security measure or automation trigger.
+このレッスンでは、Raspberry Pi Pico WにPIRモーションセンサーを接続する方法を学びます。センサーをモーション検出用に設定し、基本的なMicroPythonコードを使用して動きに反応する方法を紹介します。PIRセンサーを監視することで、デジタル入力の管理や簡単なセキュリティ対策や自動化トリガーを作成する経験を積むことができます。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_12_pir_module_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -81,30 +79,30 @@ Code
    
        time.sleep(0.1)  # Short delay of 0.1 seconds to reduce CPU usage
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing modules
+#. モジュールのインポート
 
-   The ``machine`` module is imported to use the ``Pin`` class for GPIO pin control. The ``time`` module is imported for creating delays in the loop.
+   ``machine``モジュールはGPIOピンを制御するために ``Pin``クラスを使用するためにインポートされます。 ``time``モジュールはループ内で遅延を作成するためにインポートされます。
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Initializing the PIR sensor
+#. PIRセンサーの初期化
 
-   The PIR sensor is connected to GPIO pin 16 of the Raspberry Pi Pico W. It is set as an input device because it sends data to the microcontroller.
+   PIRセンサーはRaspberry Pi Pico WのGPIOピン16に接続されています。これはマイクロコントローラにデータを送信する入力デバイスとして設定されています。
 
    .. code-block:: python
 
       # Initialize PIR sensor connected to pin 16 as input
       pir_sensor = Pin(16, Pin.IN)
 
-#. Main loop
+#. メインループ
 
-   The ``while True`` loop makes the code run continuously. Inside this loop, the PIR sensor's value is checked. If the value is ``0``, it means no motion is detected. Otherwise, motion is detected. A delay of 0.1 seconds is added to reduce CPU usage and prevent the code from running too fast.
+   ``while True``ループはコードを継続的に実行させます。このループ内でPIRセンサーの値がチェックされます。値が ``0`` の場合、動きが検出されていないことを意味します。それ以外の場合は動きが検出されたことを意味します。CPU使用率を減らし、コードが速すぎて実行されないようにするために0.1秒の遅延が追加されます。
 
    .. code-block:: python
 

@@ -12,21 +12,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_bluetooth_traffic_light:
 
-Lesson 47: Bluetooth Traffic Light
+Lesson 47: Bluetooth信号機
 =============================================================
 
-This project is designed to control a traffic light (Red, Yellow, Green LEDs) using Bluetooth communication. The user can send a character ('R', 'Y', or 'G') from a Bluetooth device. When the Arduino receives one of these characters, it lights up the corresponding LED, while ensuring the other two LEDs are turned off.
+このプロジェクトは、Bluetooth通信を使用して信号機（赤、黄、緑のLED）を制御することを目的としています。ユーザーはBluetoothデバイスから文字（'R'、'Y'、または'G'）を送信できます。Arduinoがこれらの文字のいずれかを受信すると、対応するLEDが点灯し、他の2つのLEDが消灯します。
 
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -57,61 +55,56 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_jdy31`
         - \-
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_47_Bluetooth_traffic_light_uno_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/5b9bd574-c807-4370-8e09-61f5f5a60b42/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-App and Bluetooth module Connection
+アプリとBluetoothモジュールの接続
 -----------------------------------------------
-We can use an app called "Serial Bluetooth Terminal" to send messages from the Bluetooth module to Arduino.
+"Serial Bluetooth Terminal"というアプリを使用して、BluetoothモジュールからArduinoにメッセージを送信できます。
 
-a. **Install Serial Bluetooth Terminal**
+a. **Serial Bluetooth Terminalのインストール**
 
-   Go to Google Play to download and install |link_serial_bluetooth_terminal| .
+   Google Playにアクセスして、|link_serial_bluetooth_terminal| をダウンロードしてインストールします。
 
+b. **Bluetoothの接続**
 
-b. **Connect Bluetooth**
-
-   Initially, turn on **Bluetooth** on your smartphone.
+   まず、スマートフォンで**Bluetooth**をオンにします。
    
       .. image:: img/09-app_1_shadow.png
          :width: 60%
          :align: center
    
-   Navigate to the **Bluetooth settings** on your smartphone and look for names like **JDY-31-SPP**.
+   スマートフォンの **Bluetooth設定** に移動し、 **JDY-31-SPP** のような名前を探します。
    
       .. image:: img/09-app_2_shadow.png
          :width: 60%
          :align: center
    
-   After clicking it, agree to the **Pair** request in the pop-up window. If prompted for a pairing code, please enter "1234".
+   それをクリックした後、ポップアップウィンドウで **ペア** リクエストに同意します。ペアリングコードを求められた場合は、「1234」と入力してください。
    
       .. image:: img/09-app_3_shadow.png
          :width: 60%
          :align: center
-   
 
-c. **Communicate with Bluetooth module**
+   c. **Bluetoothモジュールとの通信**
 
-   Open the Serial Bluetooth Terminal. Connect to "JDY-31-SPP".
+   Serial Bluetooth Terminalを開き、「JDY-31-SPP」に接続します。
 
    .. image:: img/00-bluetooth_serial_4_shadow.png 
 
-d. **Send command**
+d. **コマンドの送信**
 
-   Use the Serial Bluetooth Terminal app to send commands to Arduino via Bluetooth. Send R to turn on the red light, Y for yellow, and G for green.
+   Serial Bluetooth Terminalアプリを使用して、Bluetooth経由でArduinoにコマンドを送信します。赤色のライトを点灯させるには「R」、黄色には「Y」、緑色には「G」を送信します。
 
    .. image:: img/16-R_shadow.png 
       :width: 85%
@@ -125,14 +118,10 @@ d. **Send command**
       :width: 85%
       :align: center
 
-
-
-
-Code Analysis
+コード解析
 ---------------------------
 
-
-#. Initialization and Bluetooth setup
+#. 初期化とBluetooth設定
 
    .. code-block:: arduino
 
@@ -142,9 +131,9 @@ Code Analysis
       const int bluetoothRx = 4;
       SoftwareSerial bleSerial(bluetoothTx, bluetoothRx);
    
-   We begin by including the SoftwareSerial library to help us with Bluetooth communication. The Bluetooth module's TX and RX pins are then defined and associated with pins 3 and 4 on the Arduino. Finally, we initialize the ``bleSerial`` object for Bluetooth communication.
+   まず、Bluetooth通信をサポートするためにSoftwareSerialライブラリをインクルードします。次に、BluetoothモジュールのTXおよびRXピンを定義し、Arduinoのピン3および4に割り当てます。最後に、Bluetooth通信のための``bleSerial``オブジェクトを初期化します。
 
-#. LED Pin Definitions
+#. LEDピンの定義
 
    .. code-block:: arduino
 
@@ -153,9 +142,9 @@ Code Analysis
       const int yledPin = 11;  //yellow
       const int gledPin = 12;  //green
 
-   Here, we're defining which Arduino pins our LEDs are connected to. The red LED is on pin 10, yellow on 11, and green on 12.
+   ここでは、LEDが接続されているArduinoのピンを定義しています。赤色LEDはピン10、黄色はピン11、緑色はピン12に接続されています。
 
-#. setup() Function
+#. setup()関数
 
    .. code-block:: arduino
 
@@ -168,9 +157,9 @@ Code Analysis
          bleSerial.begin(9600);
       }
 
-   In the ``setup()`` function, we set the LED pins as ``OUTPUT``. We also start serial communication for both the Bluetooth module and the default serial (connected to the computer) at a baud rate of 9600.
+   ``setup()``関数では、LEDピンを ``OUTPUT`` として設定します。また、Bluetoothモジュールおよびデフォルトのシリアル（コンピュータに接続されている）とのシリアル通信をボーレート9600で開始します。
 
-#. Main loop() for Bluetooth Communication
+#. Bluetooth通信のためのメインループ
 
    .. code-block:: arduino
 
@@ -189,9 +178,9 @@ Code Analysis
          }
       }
 
-   Inside our main ``loop()``, we continuously check if data is available from the Bluetooth module. If we receive data, we read the character and display it in the serial monitor. Depending on the character received (R, Y, or G), we toggle the respective LED using the ``toggleLights()`` function.
+   メインの ``loop()`` 内では、Bluetoothモジュールからデータが利用可能かどうかを継続的にチェックします。データを受信した場合、その文字を読み取り、シリアルモニタに表示します。受信した文字（R、Y、またはG）に応じて、 ``toggleLights()`` 関数を使用して対応するLEDを点灯します。
 
-#. Toggle Lights Function
+#. LED切り替え関数
 
    .. code-block:: arduino
 
@@ -203,4 +192,4 @@ Code Analysis
          digitalWrite(targetLight, HIGH);
       }
 
-   This function, ``toggleLights()``, turns off all the LEDs first. After ensuring they are all off, it turns on the specified target LED. This ensures that only one LED is on at a time.
+   ``toggleLights()``関数は、まずすべてのLEDを消灯します。すべてが消灯していることを確認した後、指定されたターゲットLEDを点灯させます。これにより、常に1つのLEDのみが点灯するようにします。

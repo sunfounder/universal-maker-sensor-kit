@@ -17,14 +17,14 @@
 Lesson 13: Potentiometer Module
 ==================================
 
-In this lesson, you'll learn how to use a potentiometer with the Raspberry Pi Pico W to measure analog values. The potentiometer, which is a variable resistor, lets you adjust the voltage that the Raspberry Pi Pico W reads on one of its analog input pins. By turning the knob of the potentiometer, you'll observe changes in the input value. This project offers a basic grasp of analog inputs and their application in electronic projects, making it an ideal entry point for beginners in electronics and MicroPython programming.
+このレッスンでは、Raspberry Pi Pico Wを使用してポテンショメータでアナログ値を測定する方法を学びます。ポテンショメータは可変抵抗器であり、Raspberry Pi Pico Wのアナログ入力ピンの1つで読み取る電圧を調整できます。ポテンショメータのつまみを回すことで、入力値の変化を観察します。このプロジェクトは、アナログ入力とその電子プロジェクトへの応用に関する基本的な理解を提供し、電子工学とMicroPythonプログラミングの初心者にとって理想的な入門点となります。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,12 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_13_potentiometer_module_bb.png
     :width: 100%
-
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -78,28 +75,29 @@ Code
        time.sleep_ms(200)  # Delay of 200 ms between reads
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
 
-   First, the necessary libraries are imported. ``machine`` is for hardware control, and ``time`` is for managing delays.
+   最初に、必要なライブラリをインポートします。 ``machine`` はハードウェア制御用で、 ``time`` は遅延管理用です。
 
    .. code-block:: python
 
       import machine  # Hardware control library
       import time     # Time control library
 
-#. Initialize ADC (Analog to Digital Converter)
+#. ADC（アナログ-デジタルコンバータ）の初期化
 
-   The photoresistor is connected to pin 26 of the Pico W. This pin is initialized as an ADC pin to read analog values.
+   ポテンショメータはPico Wのピン26に接続されています。このピンは、アナログ値を読み取るためにADCピンとして初期化されます。
 
    .. code-block:: python
 
       potentiometer = machine.ADC(26)  # Initialize ADC on pin 26
 
-#. Reading and Printing the Analog Value
-   The code enters an infinite loop (``while True:``) where it continually reads the analog value from the photoresistor using ``potentiometer.read_u16()`` and prints it.
+#. アナログ値の読み取りと表示
+
+   コードは無限ループ（ ``while True:`` ）に入り、 ``potentiometer.read_u16()`` を使用してポテンショメータから継続的にアナログ値を読み取り、それを表示します。
 
    .. code-block:: python
 
@@ -107,9 +105,9 @@ Code Analysis
           value = potentiometer.read_u16()  # Read analog value
           print(value)                      # Print the value
 
-#. Adding a Delay
+#. 遅延の追加
 
-   To prevent the loop from running too fast, a delay of 200 milliseconds is introduced using ``time.sleep_ms(200)``. This gives a readable output and reduces processor load.
+   ループが速く動きすぎるのを防ぐために、 ``time.sleep_ms(200)`` を使用して200ミリ秒の遅延を追加します。これにより、読みやすい出力が得られ、プロセッサの負荷が軽減されます。
 
    .. code-block:: python
 

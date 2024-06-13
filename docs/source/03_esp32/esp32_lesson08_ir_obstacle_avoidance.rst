@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson08_ir_obstacle_avoidance:
 
-Lesson 08: IR Obstacle Avoidance Sensor Module
+Lesson 08: 赤外線障害物回避センサーモジュール
 ====================================================
 
-In this lesson, you'll learn how to use an Infrared obstacle avoidance sensor with an ESP32 Development Board. We'll explore how the sensor detects obstacles and alters its output signal. You'll also learn how to read these signals using the ESP32 and display them on the serial monitor. This project provides a great opportunity for beginners to gain hands-on experience with sensors and digital input processing on the ESP32 platform, making it perfect for those interested in building interactive projects.
+このレッスンでは、ESP32開発ボードを使用して赤外線障害物回避センサーの使い方を学びます。センサーが障害物を検出し、その出力信号をどのように変更するかを探ります。また、ESP32を使用してこれらの信号を読み取り、シリアルモニターに表示する方法も学びます。このプロジェクトは、センサーとデジタル入力処理に関する実践的な経験を積むための素晴らしい機会を提供し、インタラクティブなプロジェクトに興味がある初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,32 +54,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_08_Obstacle_Avoidance_Sensor_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/e04a4a04-e707-46a1-aee5-488add646356/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Define pin number for sensor connection:
+1. センサー接続用のピン番号を定義します：
 
    .. code-block:: arduino
 
      const int sensorPin = 25;
 
-   Connect the sensor's output pin to pin 25.
+   センサーの出力ピンをピン25に接続します。
 
-2. Setup serial communication and define sensor pin as input:
+2. シリアル通信を設定し、センサーピンを入力として定義します：
 
    .. code-block:: arduino
 
@@ -88,10 +88,10 @@ Code Analysis
        Serial.begin(9600);
      }
 
-   Initialize serial communication at 9600 baud rate to print to serial monitor.
-   Set sensor pin as input to read input signal.
+   シリアルモニターに出力するために、9600ボーのシリアル通信を初期化します。
+   センサーピンを入力として設定し、入力信号を読み取ります。
 
-3. Read sensor value and print to serial monitor:
+3. センサーの値を読み取り、シリアルモニターに出力します：
 
    .. code-block:: arduino
 
@@ -100,9 +100,9 @@ Code Analysis
        delay(50); 
      }
    
-   Continuously read digital value from sensor pin using ``digitalRead()`` and print value to serial monitor using ``Serial.println()``.
-   Add 50ms delay between prints for better viewing.
+   ``digitalRead()``を使用してセンサーピンからデジタル値を連続的に読み取り、 ``Serial.println()``を使用してその値をシリアルモニターに出力します。
+   見やすくするために、出力間に50msの遅延を追加します。
 
    .. note:: 
    
-      If the sensor is not working properly, adjust the IR transmitter and receiver to make them parallel. Additionally, you can adjust the detection range using the built-in potentiometer.
+      センサーが正しく動作しない場合は、赤外線送信機と受信機を平行に調整してください。さらに、内蔵のポテンショメーターを使用して検出範囲を調整できます。

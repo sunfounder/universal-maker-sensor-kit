@@ -14,20 +14,20 @@
 
 .. _uno_lesson14_max30102:
 
-Lesson 14: Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
+レッスン14: パルスオキシメーターおよび心拍センサーモジュール (MAX30102)
 ====================================================================
 
-In this lesson, you'll learn how to measure heart rate using a MAX30102 sensor and Arduino Uno. You'll learn to set up the sensor, read infrared values, calculate BPM, and average readings over time. This project is perfect for those interested in health monitoring with Arduino, combining hardware interfacing and software logic.
+このレッスンでは、MAX30102センサーとArduino Unoを使用して心拍数を測定する方法を学びます。センサーの設定、赤外線値の読み取り、BPM（1分間の心拍数）の計算、時間経過による平均化について学びます。このプロジェクトは、Arduinoを使用した健康監視に興味がある方に最適で、ハードウェアのインターフェースとソフトウェアのロジックを組み合わせています。
 
 .. warning::
-    This project detects heart-rate optically. This method is tricky and prone to give false readings. So please **DO NOT** use it for actual medical diagnosis.
+    このプロジェクトは光学的に心拍数を検出します。この方法は微妙で誤読が発生しやすいですので、実際の医療診断には **使用しないでください** 。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -40,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -55,29 +55,29 @@ You can also buy them separately from the links below.
         - |link_max30102_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_14_max30102_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/448258fd-5114-4b94-b3fc-9c2fcc308899/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Including Libraries & Initializing Global Variables**:
+1. **ライブラリのインクルードとグローバル変数の初期化**:
 
-   The essential libraries are imported, the sensor object is instantiated, and global variables for data management are set.
+   必要なライブラリがインポートされ、センサーオブジェクトがインスタンス化され、データ管理のためのグローバル変数が設定されます。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"SparkFun MAX3010x"** and install it. 
+      ライブラリをインストールするには、Arduinoライブラリマネージャーを使用して **"SparkFun MAX3010x"** を検索し、インストールしてください。
    
    .. code-block:: arduino
     
@@ -87,9 +87,9 @@ Code Analysis
       MAX30105 particleSensor;
       // ... (other global variables)
 
-2. **Setup Function & Sensor Initialization**:
+2. **セットアップ関数とセンサーの初期化**:
 
-   The Serial communication is initialized at a baud rate of 9600. The sensor's connection is checked, and if successful, an initialization sequence is run. An error message is displayed if the sensor isn't detected.
+   シリアル通信は9600ボーのレートで初期化されます。センサーの接続がチェックされ、成功した場合、初期化シーケンスが実行されます。センサーが検出されない場合はエラーメッセージが表示されます。
    
    .. code-block:: arduino
 
@@ -101,9 +101,9 @@ Code Analysis
         }
         // ... (further setup)
 
-3. **Reading IR Value & Checking for Heartbeat**:
+3. **IR値の読み取りと心拍のチェック**:
 
-   The IR value, which is indicative of the blood flow, is fetched from the sensor. The ``checkForBeat()`` function assesses if a heartbeat is detected based on this value.
+   血流を示すIR値がセンサーから取得されます。この値に基づいて ``checkForBeat()`` 関数が心拍を検出したかどうかを評価します。
 
    .. code-block:: arduino
 
@@ -112,9 +112,9 @@ Code Analysis
           // ... (heartbeat detected actions)
       }
 
-4. **Calculating Beats Per Minute (BPM)**:
+4. **1分間の心拍数（BPM）の計算**:
 
-   Upon detecting a heartbeat, the BPM is calculated based on the time difference since the last detected heartbeat. The code also ensures the BPM falls within a realistic range before updating the average.
+   心拍が検出された場合、最後に検出された心拍からの時間差に基づいてBPMが計算されます。コードはまた、BPMが現実的な範囲内に収まるかどうかを確認してから平均を更新します。
 
    .. code-block:: arduino
 
@@ -125,9 +125,9 @@ Code Analysis
       }
       
 
-5. **Printing Values to the Serial Monitor**:
+5. **シリアルモニターへの値の表示**:
 
-   The IR value, current BPM, and average BPM are printed to the Serial Monitor. Additionally, the code checks if the IR value is too low, suggesting the absence of a finger.
+   IR値、現在のBPM、および平均BPMがシリアルモニターに表示されます。さらに、IR値が低すぎる場合、指が存在しないことを示唆するメッセージが表示されます。
 
    .. code-block:: arduino
 

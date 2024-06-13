@@ -14,17 +14,17 @@
 
 .. _uno_lesson16_ds1306:
 
-Lesson 16: Real Time Clock Module (DS1302)
+レッスン16: リアルタイムクロックモジュール (DS1302)
 ==================================================
 
-In this lesson, you will learn how to set up and use a Real Time Clock (RTC) module with an Arduino. We'll cover initializing the RTC DS1302 module, displaying the current date and time on the serial monitor, and ensuring accurate timekeeping. This session is ideal for those interested in time-based operations in embedded systems, offering hands-on experience with managing date and time settings, using RTC libraries, and troubleshooting common issues. This project is suitable for intermediate learners familiar with Arduino basics.
+このレッスンでは、Arduinoを使用してリアルタイムクロック（RTC）モジュールを設定し、使用する方法を学びます。RTC DS1302モジュールの初期化、現在の日付と時刻をシリアルモニターに表示する方法、および正確な時間管理を行う方法について説明します。このセッションは、組み込みシステムにおける時間ベースの操作に興味がある方に最適で、日付と時間の設定、RTCライブラリの使用、および一般的な問題のトラブルシューティングの実践経験を提供します。このプロジェクトは、Arduinoの基本を理解している中級学習者に適しています。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,38 +52,38 @@ You can also buy them separately from the links below.
         - |link_ds1302_module_buy|
         
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_16_DS1302_module_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/9b509afa-545f-4fb6-b8f0-0d87b7cf4992/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Initialization and library inclusion
+#. 初期化とライブラリのインクルード
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Rtc by Makuna"** and install it. 
+      ライブラリをインストールするには、Arduinoライブラリマネージャーを使用して **"Rtc by Makuna"** を検索し、インストールしてください。
 
-   Here, necessary libraries are included for the DS1302 RTC module.
+   ここでは、DS1302 RTCモジュール用の必要なライブラリをインクルードします。
 
    .. code-block:: arduino
 
       #include <ThreeWire.h>
       #include <RtcDS1302.h>
 
-#. Define pins and create RTC instance
+#. ピンの定義とRTCインスタンスの作成
 
-   Pins for communication are defined and an instance of the RTC is created.
+   通信のためのピンが定義され、RTCのインスタンスが作成されます。
 
    .. code-block:: arduino
 
@@ -94,10 +94,9 @@ Code Analysis
       ThreeWire myWire(4, 5, 2);  // IO, SCLK, CE
       RtcDS1302<ThreeWire> Rtc(myWire);
 
+#. ``setup()`` 関数
 
-#. ``setup()`` function
-
-   This function initializes the serial communication and sets up the RTC module. Various checks are made to ensure the RTC is running correctly.
+   この関数はシリアル通信を初期化し、RTCモジュールをセットアップします。RTCが正常に動作していることを確認するためのさまざまなチェックが行われます。
 
    .. code-block:: arduino
 
@@ -144,10 +143,9 @@ Code Analysis
         }
       }
 
+#. ``loop()`` 関数
 
-#. ``loop()`` function
-
-   This function periodically fetches the current date and time from the RTC and prints it on the serial monitor. It also checks if the RTC is still maintaining a valid date and time.
+   この関数は、RTCから現在の日付と時刻を定期的に取得し、シリアルモニターに表示します。また、RTCが有効な日付と時刻を維持しているかどうかもチェックします。
 
    .. code-block:: arduino
 
@@ -166,10 +164,9 @@ Code Analysis
         delay(5000);  // five seconds
       }
 
+#. 日付と時刻の表示関数
 
-#. Date and time printing function
-
-   A helper function that takes a ``RtcDateTime`` object and prints the formatted date and time to the serial monitor.
+   ``RtcDateTime``オブジェクトを受け取り、フォーマットされた日付と時刻をシリアルモニターに表示するヘルパー関数。
 
    .. code-block:: arduino
 

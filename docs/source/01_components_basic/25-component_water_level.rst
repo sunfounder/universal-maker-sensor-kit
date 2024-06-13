@@ -14,7 +14,7 @@
 
 .. _cpn_water_level:
 
-Water Level Sensor Module
+水位センサーモジュール
 =====================================
 
 .. image:: img/25_water_leve_module.png
@@ -25,22 +25,22 @@ Water Level Sensor Module
 
    <br/>
 
-The water level sensor is an affordable, user-friendly device that is compact and lightweight. It uses exposed parallel wire traces to measure the size of water droplets or volume, thus determining the water level. This sensor effortlessly converts water levels into analog signals, which can be readily utilized by program functions for triggering water level alarms. Its low power consumption and high sensitivity are also notable features.
+水位センサーは、手頃な価格で使いやすいデバイスで、コンパクトかつ軽量です。露出した並列ワイヤートレースを使用して水滴や水量を測定し、水位を判断します。このセンサーは水位を簡単にアナログ信号に変換し、プログラム関数が水位アラームをトリガーするのに容易に利用できます。低消費電力と高感度も特筆すべき特徴です。
 
-Specification
+仕様
 ---------------------------
-* Supply Voltage: 3.3V or 5V
-* PCB size: 22 x 60mm
-* Working temperature range: 10℃ - 30℃
-* Working humidity range: 10% - 90%
+* 供給電圧: 3.3V または 5V
+* PCBサイズ: 22 x 60mm
+* 動作温度範囲: 10℃ - 30℃
+* 動作湿度範囲: 10% - 90%
 
-Pinout
+ピン配置
 ---------------------------
-* **V**: This is the positive power supply input from the main control. 
-* **G**: Ground connection.
-* **A**: Analog output. The higher the water level, the greater the output voltage.
+* **V**: メインコントロールからの正電源入力。
+* **G**: 接地接続。
+* **A**: アナログ出力。水位が高いほど、出力電圧も高くなります。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/25_water_leve_module_schematic.png
@@ -51,7 +51,7 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson25_water_level` (Arduino UNO)
 * :ref:`esp32_lesson25_water_level` (ESP32)

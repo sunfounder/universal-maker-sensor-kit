@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson19_dht11:
 
-Lesson 19: Temperature and Humidity Sensor Module (DHT11)
+レッスン19: 温度・湿度センサーモジュール (DHT11)
 ====================================================================
 
-In this lesson, you'll learn how to measure temperature and humidity, as well as calculate the heat index using a DHT11 sensor with an Arduino Uno. We'll cover reading and interpreting data from the DHT11 sensor, and displaying these values along with the heat index in both Celsius and Fahrenheit on the serial monitor. This project is perfect for Arduino beginners, providing hands-on experience with sensors and data handling in a simple yet engaging way.
+このレッスンでは、Arduino Unoを使用してDHT11センサーで温度と湿度を測定し、熱指数を計算する方法を学びます。DHT11センサーからのデータを読み取り解釈し、これらの値を摂氏および華氏でシリアルモニターに表示する方法を説明します。このプロジェクトは、センサーとデータ処理に関する実践的な経験を提供するため、Arduino初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -52,31 +51,31 @@ You can also buy them separately from the links below.
         - |link_dht11_humiture_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_19_dht11_module_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. note:: 
-   To install the library, use the Arduino Library Manager and search for **"DHT sensor library"** and install it. 
+   ライブラリをインストールするには、Arduino Library Managerを使用して **"DHT sensor library"** を検索し、インストールしてください。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ca143284-4649-4f76-a6f0-d6b8f3cb4c73/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Inclusion of necessary libraries and definition of constants.
-   This part of the code includes the DHT sensor library and defines the pin number and sensor type used in this project.
+#. 必要なライブラリのインクルードと定数の定義。
+   この部分のコードでは、DHTセンサーライブラリをインクルードし、使用するピン番号とセンサータイプを定義します。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"DHT sensor library"** and install it. 
+      ライブラリをインストールするには、Arduino Library Managerを使用して **"DHT sensor library"** を検索し、インストールしてください。
 
    .. code-block:: arduino
     
@@ -84,14 +83,15 @@ Code Analysis
       #define DHTPIN 2       // Define the pin used to connect the sensor
       #define DHTTYPE DHT11  // Define the sensor type
 
-#. Creation of DHT object.
-   Here we create a DHT object using the defined pin number and sensor type.
+#. DHTオブジェクトの作成。
+   ここでは、定義されたピン番号とセンサータイプを使用してDHTオブジェクトを作成します。
 
    .. code-block:: arduino
 
       DHT dht(DHTPIN, DHTTYPE);  // Create a DHT object
 
-#. This function is executed once when the Arduino starts. We initialize the serial communication and the DHT sensor in this function.
+#. Arduinoが起動すると一度だけ実行される関数。
+   この関数では、シリアル通信とDHTセンサーを初期化します。
 
    .. code-block:: arduino
 
@@ -101,12 +101,12 @@ Code Analysis
         dht.begin();  // Initialize the DHT sensor
       }
 
-#. Main loop.
-   The ``loop()`` function runs continuously after the setup function. Here, we read the humidity and temperature values, calculate the heat index, and print these values to the serial monitor.  If the sensor read fails (returns NaN), it prints an error message.
+#. メインループ。
+   ``loop()``関数は、setup関数の後に継続的に実行されます。ここでは、湿度と温度の値を読み取り、熱指数を計算し、これらの値をシリアルモニターに表示します。センサーの読み取りが失敗した場合（NaNを返す）、エラーメッセージを表示します。
 
    .. note::
     
-      The |link_heat_index| is a way to measure how hot it feels outside by combining the air temperature and the humidity. It is also called the "felt air temperature" or "apparent temperature".
+      |link_heat_index|は、気温と湿度を組み合わせて外の暑さを測定する方法です。「体感気温」や「見かけの温度」とも呼ばれます。
 
    .. code-block:: arduino
 

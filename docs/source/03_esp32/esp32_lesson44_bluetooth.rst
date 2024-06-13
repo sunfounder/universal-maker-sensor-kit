@@ -11,56 +11,57 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _esp32_bluetooth:
 
-Lesson 44: Bluetooth
+レッスン 44: Bluetooth
 =================================
 
-This project provides a guide to develop a simple Bluetooth Low Energy (BLE) serial communication application 
-using the ESP32 microcontroller. The ESP32 is a powerful microcontroller that integrates Wi-Fi and Bluetooth 
-connectivity, making it an ideal candidate for developing wireless applications. BLE is 
-a low-power wireless communication protocol that is designed for short-range communication. 
-This document will cover the steps to set up the ESP32 to act as a BLE server and communicate with a BLE client over a serial connection.
+このプロジェクトでは、ESP32マイクロコントローラーを使用してシンプルなBluetooth Low Energy (BLE) シリアル通信アプリケーションを開発するためのガイドを提供します。
+ESP32は、Wi-FiとBluetoothの接続機能を統合した強力なマイクロコントローラーであり、ワイヤレスアプリケーションの開発に理想的です。
+BLEは、短距離通信向けに設計された低消費電力のワイヤレス通信プロトコルです。
+このドキュメントでは、ESP32をBLEサーバーとして設定し、シリアル接続を介してBLEクライアントと通信する手順を説明します。
 
 
-**About the Bluetooth Function**
 
-The ESP32 WROOM 32E is a module that integrates Wi-Fi and Bluetooth connectivity into a single chip. 
-It supports Bluetooth Low Energy (BLE) and Classic Bluetooth protocols.
 
-The module can be used as a Bluetooth client or server. As a Bluetooth client, the module can connect to 
-other Bluetooth devices and exchange data with them. As a Bluetooth server, the module can provide 
-services to other Bluetooth devices.
-s
-The ESP32 WROOM 32E supports various Bluetooth profiles, including the Generic Access Profile (GAP), Generic Attribute Profile (GATT), 
-and Serial Port Profile (SPP). The SPP profile allows the module to emulate a serial port over Bluetooth, 
-enabling serial communication with other Bluetooth devices.
+**Bluetooth機能について**
 
-To use the Bluetooth function of the ESP32 WROOM 32E, you need to program it using an appropriate software 
-development kit (SDK) or using the Arduino IDE with the ESP32 BLE library. 
-The ESP32 BLE library provides a high-level interface for working with BLE. It includes examples that demonstrate 
-how to use the module as a BLE client and server.
+ESP32 WROOM 32Eは、Wi-FiとBluetoothの接続機能を1つのチップに統合したモジュールです。
+このモジュールは、Bluetooth Low Energy (BLE)およびクラシックBluetoothプロトコルをサポートしています。
 
-Overall, the Bluetooth function of the ESP32 WROOM 32E provides a convenient and low-power way to enable wireless 
-communication in your projects.
+このモジュールは、Bluetoothクライアントまたはサーバーとして使用できます。
+Bluetoothクライアントとして、他のBluetoothデバイスに接続し、それらとデータを交換できます。
+Bluetoothサーバーとして、このモジュールは他のBluetoothデバイスにサービスを提供できます。
 
-**Operation Steps**
+ESP32 WROOM 32Eは、Generic Access Profile (GAP)、Generic Attribute Profile (GATT)、およびSerial Port Profile (SPP)を含むさまざまなBluetoothプロファイルをサポートしています。
+SPPプロファイルを使用すると、モジュールはBluetooth経由でシリアルポートをエミュレートし、他のBluetoothデバイスとシリアル通信を可能にします。
 
-Here are the step-by-step instructions to set up Bluetooth communication between your ESP32 and mobile device using the LightBlue app:
+ESP32 WROOM 32EのBluetooth機能を使用するには、適切なソフトウェア開発キット (SDK) を使用してプログラムするか、Arduino IDEとESP32 BLEライブラリを使用する必要があります。
+ESP32 BLEライブラリは、BLEを使用するための高レベルインターフェースを提供し、モジュールをBLEクライアントおよびサーバーとして使用する方法を示す例を含んでいます。
 
-#. Download the LightBlue app from the **App Store** (for iOS) or **Google Play** (for Android).
+全体として、ESP32 WROOM 32EのBluetooth機能は、プロジェクトにワイヤレス通信を簡単かつ低消費電力で実装するための便利な方法を提供します。
+
+
+
+
+
+
+
+**操作手順**
+
+以下は、LightBlueアプリを使用してESP32とモバイルデバイス間でBluetooth通信を設定するためのステップバイステップの手順です：
+
+#. iOSの場合は **App Store** から、Androidの場合は **Google Play** からLightBlueアプリをダウンロードします。
 
     .. image:: img/bluetooth_lightblue.png
 
-#. Open the ``Lesson_44_Bluetooth.ino`` file located in the ``universal-maker-sensor-kit\esp32\Lesson_44_Bluetooth`` directory, or copy the code into the Arduino IDE.
+#. ``universal-maker-sensor-kit\esp32\Lesson_44_Bluetooth``ディレクトリにある ``Lesson_44_Bluetooth.ino`` ファイルを開くか、コードをArduino IDEにコピーします。
 
     .. raw:: html
         
         <iframe src=https://create.arduino.cc/editor/sunfounder01/3f42363e-1484-4c11-8d27-3a4d60b88a31/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-        
-#. To avoid UUID conflicts, it is recommended to randomly generate three new UUIDs using the |link_uuid|, and fill them in the following lines of code.
+#. UUIDの競合を避けるために、|link_uuid| を使用して新しいUUIDを3つランダムに生成し、次のコード行に入力することをお勧めします。
 
     .. code-block:: arduino
 
@@ -70,50 +71,48 @@ Here are the step-by-step instructions to set up Bluetooth communication between
 
     .. image:: img/uuid_generate.png
 
-
-#. Select the correct board and port, then click the **Upload** button.
+#. 正しいボードとポートを選択し、 **Upload** ボタンをクリックします。
 
     .. image:: img/bluetooth_upload.png
 
-#. After the code has been successfully uploaded, turn on **Bluetooth** on your mobile device and open the **LightBlue** app.
+#. コードのアップロードが成功したら、モバイルデバイスで **Bluetooth** をオンにし、 **LightBlue** アプリを開きます。
 
     .. image:: img/bluetooth_open.png
 
-#. On the **Scan** page, find **ESP32-Bluetooth** and click **CONNECT**. If you don't see it, try refreshing the page a few times. When **"Connected to device!"** appears, the Bluetooth connection is successful. Scroll down to see the three UUIDs set in the code.
+#. **Scan**ページで**ESP32-Bluetooth**を見つけて **CONNECT** をクリックします。表示されない場合は、ページを数回更新してみてください。 **"Connected to device!"** と表示されたら、Bluetooth接続は成功です。コードで設定した3つのUUIDが表示されるまでスクロールします。
 
     .. image:: img/bluetooth_connect.png
         :width: 800
 
-#. Click the **Receive** UUID. Select the appropriate data format in the box to the right of **Data Format**, such as "HEX" for hexadecimal, "UTF-8 String" for character, or "Binary" for binary, etc. Then click **SUBSCRIBE**.
+#. **Receive** UUIDをクリックします。 **Data Format** の右側のボックスで適切なデータ形式（"HEX"、"UTF-8 String"、"Binary"など）を選択し、 **SUBSCRIBE** をクリックします。
 
     .. image:: img/bluetooth_read.png
         :width: 300
 
-#. Go back to the Arduino IDE, open the Serial Monitor, set the baud rate to 115200, then type "welcome" and press Enter.
+#. Arduino IDEに戻り、シリアルモニタを開き、ボーレートを115200に設定してから、「welcome」と入力してEnterキーを押します。
 
     .. image:: img/bluetooth_serial.png
 
-#. You should now see the "welcome" message in the LightBlue app.
+#. LightBlueアプリに「welcome」メッセージが表示されます。
 
     .. image:: img/bluetooth_welcome.png
         :width: 400
 
-#. To send information from the mobile device to the Serial Monitor, click the Send UUID, set the data format to "UTF-8 String", and write a message.
+#. モバイルデバイスからシリアルモニタに情報を送信するには、Send UUIDをクリックし、データ形式を「UTF-8 String」に設定して、メッセージを書きます。
 
     .. image:: img/bluetooth_send.png
 
-
-#. You should see the message in the Serial Monitor.
+#. シリアルモニタにメッセージが表示されます。
 
     .. image:: img/bluetooth_receive.png
 
-**How it works?**
+**動作原理**
 
-This Arduino code is written for the ESP32 microcontroller and sets it up to communicate with a Bluetooth Low Energy (BLE) device. 
+このArduinoコードは、ESP32マイクロコントローラーを使用してBluetooth Low Energy (BLE) デバイスと通信するための設定を行います。
 
-The following is a brief summary of the code:
+以下はコードの簡単な概要です：
 
-* **Include necessary libraries**: The code begins by including necessary libraries for working with Bluetooth Low Energy (BLE) on the ESP32.
+* **必要なライブラリのインクルード**：コードは、ESP32でBluetooth Low Energy (BLE) を使用するために必要なライブラリをインクルードすることから始まります。
 
     .. code-block:: arduino
 
@@ -122,8 +121,8 @@ The following is a brief summary of the code:
         #include "BLEUtils.h"
         #include "BLE2902.h"
 
-* **Global Variables**: The code defines a set of global variables including the Bluetooth device name (``bleName``), variables to keep track of received text and the time of the last message, UUIDs for the service and characteristics, and a ``BLECharacteristic`` object (``pCharacteristic``).
-    
+* **グローバル変数**：コードは、Bluetoothデバイス名（ ``bleName`` ）、受信テキストと最後のメッセージの時刻を追跡する変数、サービスと特性のUUID、および ``BLECharacteristic`` オブジェクト（ ``pCharacteristic`` ）を含む一連のグローバル変数を定義します。
+
     .. code-block:: arduino
 
         // Define the Bluetooth device name
@@ -141,7 +140,7 @@ The following is a brief summary of the code:
         // Define the Bluetooth characteristic
         BLECharacteristic *pCharacteristic;
 
-* **Setup**: In the ``setup()`` function, the serial port is initialized with a baud rate of 115200 and the ``setupBLE()`` function is called to set up the Bluetooth BLE.
+* **セットアップ**： ``setup()`` 関数では、シリアルポートを115200のボーレートで初期化し、 ``setupBLE()`` 関数を呼び出してBluetooth BLEを設定します。
 
     .. code-block:: arduino
     
@@ -149,8 +148,7 @@ The following is a brief summary of the code:
             Serial.begin(115200);  // Initialize the serial port
             setupBLE();            // Initialize the Bluetooth BLE
         }
-
-* **Main Loop**: In the ``loop()`` function, if a string was received over BLE (i.e., ``receivedText`` is not empty) and at least 1 second has passed since the last message, the code prints the received string to the serial monitor, sets the characteristic value to the received string, sends a notification, and then clears the received string. If data is available on the serial port, it reads the string until a newline character is encountered, sets the characteristic value to this string, and sends a notification.
+* **メインループ**： ``loop()`` 関数では、BLE経由で文字列が受信され（ ``receivedText`` が空でない場合）、最後のメッセージから少なくとも1秒が経過している場合、コードは受信した文字列をシリアルモニタに出力し、特性値を受信した文字列に設定し、通知を送信し、受信した文字列をクリアします。シリアルポートでデータが利用可能な場合、改行文字が見つかるまで文字列を読み取り、この文字列を特性値に設定し、通知を送信します。
 
     .. code-block:: arduino
 
@@ -174,7 +172,7 @@ The following is a brief summary of the code:
             }
         }
 
-* **Callbacks**: Two callback classes (``MyServerCallbacks`` and ``MyCharacteristicCallbacks``) are defined to handle events related to Bluetooth communication. ``MyServerCallbacks`` is used to handle events related to the connection state (connected or disconnected) of the BLE server. ``MyCharacteristicCallbacks`` is used to handle write events on the BLE characteristic, i.e., when a connected device sends a string to the ESP32 over BLE, it's captured and stored in ``receivedText``, and the current time is recorded in ``lastMessageTime``.
+* **コールバック**：Bluetooth通信に関連するイベントを処理するために、2つのコールバッククラス（ ``MyServerCallbacks`` および ``MyCharacteristicCallbacks`` ）が定義されています。 ``MyServerCallbacks`` はBLEサーバーの接続状態（接続または切断）に関連するイベントを処理し、 ``MyCharacteristicCallbacks`` はBLE特性への書き込みイベントを処理します。接続されたデバイスがBLE経由でESP32に文字列を送信すると、それが ``receivedText`` に格納され、現在の時間が ``lastMessageTime`` に記録されます。
 
     .. code-block:: arduino
 
@@ -202,7 +200,7 @@ The following is a brief summary of the code:
             }
         };
 
-* **Setup BLE**: In the ``setupBLE()`` function, the BLE device and server are initialized, the server callbacks are set, the BLE service is created using the defined UUID, characteristics for sending notifications and receiving data are created and added to the service, and the characteristic callbacks are set. Finally, the service is started and the server begins advertising.
+* **BLEの設定**： ``setupBLE()`` 関数では、BLEデバイスとサーバーを初期化し、サーバーのコールバックを設定し、定義されたUUIDを使用してBLEサービスを作成し、通知を送信するための特性とデータを受信するための特性を作成してサービスに追加し、特性のコールバックを設定します。最後に、サービスを開始し、サーバーが広告を開始します。
 
     .. code-block:: arduino
 
@@ -229,17 +227,11 @@ The following is a brief summary of the code:
             pCharacteristic->addDecodeor(new BLE2902());  // Add the decodeor
             // Create the BLE characteristic for receiving data
             BLECharacteristic *pCharacteristicRX = pService->createCharacteristic(CHARACTERISTIC_UUID_RX, BLECharacteristic::PROPERTY_WRITE);
-            pCharacteristicRX->setCallbacks(new MyCharacteristicCallbacks());  // Set the BLE characteristic callbacks
+           pCharacteristicRX->setCallbacks(new MyCharacteristicCallbacks());  // Set the BLE characteristic callbacks
             pService->start();                                                 // Start the BLE service
             pServer->getAdvertising()->start();                                // Start advertising
             Serial.println("Waiting for a client connection...");              // Wait for a client connection
         }
 
-
-Please note that this code allows for bidirectional communication - it can send and receive data via BLE. 
-However, to interact with specific hardware like turning on/off an LED, additional code should be added to process 
-the received strings and act accordingly.
-
-
-
-
+このコードは双方向通信を可能にします - BLE経由でデータの送受信が可能です。
+ただし、LEDのオン/オフなどの特定のハードウェアと対話するためには、受信した文字列を処理して対応する追加のコードを追加する必要があります。

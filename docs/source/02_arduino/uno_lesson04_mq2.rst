@@ -14,17 +14,17 @@
 
 .. _uno_lesson04_mq2:
 
-Lesson 04: Gas Sensor Module (MQ-2)
+レッスン 04: ガスセンサーモジュール (MQ-2)
 ============================================
 
-In this lesson, you will learn how to use the MQ-2 Gas Sensor with an Arduino Uno to measure gas concentrations. We'll explore how the sensor reads analog output values ranging from 0 to 1023, which represent the concentration of gases in the air. This project is essential for understanding environmental sensing and analog signal processing in Arduino, as well as a great introduction to working with sensors and interpreting their outputs. We'll discuss the importance of preheating the sensor for accurate readings and delve into the basics of serial communication for data visualization. This lesson is ideal for beginners interested in Arduino and environmental monitoring projects.
+このレッスンでは、Arduino Unoを使用してMQ-2ガスセンサーでガス濃度を測定する方法を学びます。センサーが0から1023までのアナログ出力値を読み取り、空気中のガス濃度を表す仕組みについて探求します。このプロジェクトは、環境センシングとArduinoでのアナログ信号処理を理解するために重要であり、センサーの取り扱いやその出力の解釈に関する優れた入門書です。正確な測定のためにセンサーの予熱の重要性についても説明し、データの視覚化のためのシリアル通信の基本についても掘り下げます。このレッスンは、Arduinoや環境モニタリングプロジェクトに興味のある初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらのリンクからどうぞ:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -52,30 +52,30 @@ You can also buy them separately from the links below.
         - |link_mq2_gas_sensor_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_04_mq2_sensor_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6af3295c-28dd-4319-8f26-587930ffd2ef/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first line of code is a constant integer declaration for the gas sensor pin. We use the analog pin A0 to read the output from the gas sensor.
+1. 最初のコード行はガスセンサーピンの定数整数宣言です。アナログピンA0を使用してガスセンサーの出力を読み取ります。
 
    .. code-block:: arduino
    
       const int sensorPin = A0;
 
-2. The ``setup()`` function is where we initialize our serial communication at a baud rate of 9600. This is necessary to print the readings from the gas sensor to the serial monitor.
+2. ``setup()``関数では、9600ボーのボーレートでシリアル通信を初期化します。これは、ガスセンサーからの読み取り値をシリアルモニターに表示するために必要です。
 
    .. code-block:: arduino
    
@@ -83,11 +83,11 @@ Code Analysis
         Serial.begin(9600);  // Start serial communication at 9600 baud rate
       }
 
-3. The ``loop()`` function is where we continuously read the analog value from the gas sensor and print it to the serial monitor. We use the ``analogRead()`` function to read the analog value from the sensor. We then wait for 50 milliseconds before the next reading. This delay gives some breathing space for the serial monitor to process the data.
+3. ``loop()``関数では、ガスセンサーからのアナログ値を連続的に読み取り、それをシリアルモニターに表示します。 ``analogRead()`` 関数を使用してセンサーからのアナログ値を読み取ります。その後、次の読み取りまで50ミリ秒待ちます。この遅延は、シリアルモニターがデータを処理するための余裕を与えます。
 
    .. note:: 
    
-     MQ2 is a heating-driven sensor that usually requires preheating before use. During the preheating period, the sensor typically reads high and gradually decreases until it stabilizes.
+     MQ2は加熱駆動のセンサーであり、使用前に予熱が必要です。予熱期間中、センサーは通常高い値を読み取り、徐々に安定するまで減少します。
 
    .. code-block:: arduino
    

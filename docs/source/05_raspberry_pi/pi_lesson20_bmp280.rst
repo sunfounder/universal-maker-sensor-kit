@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson20_bmp280:
 
 Lesson 20: Temperature, Humidity & Pressure Sensor (BMP280)
 ====================================================================
 
-In this lesson, you will learn how to connect and read data from a BMP280 sensor that measures temperature, humidity, and pressure using a Raspberry Pi. You'll set up the sensor and write a Python script to measure environmental data including temperature, atmospheric pressure, and altitude.
+このレッスンでは、Raspberry Piを使用して温度、湿度、および気圧を測定するBMP280センサーを接続し、データを読み取る方法を学びます。センサーをセットアップし、温度、大気圧、標高を測定するPythonスクリプトを作成します。
 
 Required Components
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -61,37 +60,36 @@ Wiring
     :width: 100%
 
 
-Install Library
+ライブラリのインストール
 ---------------------------
 
 .. note::
-    The adafruit-circuitpython-bmp280 library relies on Blinka, so please ensure that Blinka has been installed. To install libraries, refer to :ref:`install_blinka`.
+    adafruit-circuitpython-bmp280ライブラリはBlinkaに依存していますので、Blinkaがインストールされていることを確認してください。ライブラリのインストールについては :ref:`install_blinka` を参照してください。
 
-Before installing the library, please make sure that the virtual Python environment is activated:
+ライブラリをインストールする前に、仮想Python環境がアクティブになっていることを確認してください：
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Install adafruit-circuitpython-bmp280 library:
+adafruit-circuitpython-bmp280ライブラリをインストール：
 
 .. code-block:: bash
 
    pip install adafruit-circuitpython-bmp280
 
-
-Run the Code
+コードの実行
 ---------------------------
 
 .. note::
-   - Please ensure that you have installed the Python library required for running the code according to the "Install Library" steps.
-   - Before running the code, please make sure that you have activated the virtual Python environment with blinka installed. You can activate the virtual environment using a command like this:
+   - コードを実行する前に、「ライブラリのインストール」ステップに従って必要なPythonライブラリがインストールされていることを確認してください。
+   - コードを実行する前に、blinkaがインストールされた仮想Python環境がアクティブになっていることを確認してください。仮想環境をアクティブにするには、以下のコマンドを使用します:
 
      .. code-block:: bash
   
         source ~/env/bin/activate
 
-   - Find the code for this lesson in ``universal-maker-sensor-kit-main/pi/`` directory, or directly copy and paste the code below. Execute the code by running the following commands in terminal:
+   - このレッスンのコードは ``universal-maker-sensor-kit-main/pi/`` ディレクトリにありますが、以下のコードを直接コピーして貼り付けても構いません。ターミナルで次のコマンドを実行してコードを実行します:
 
      .. code-block:: bash
   
@@ -123,14 +121,14 @@ Run the Code
        print("Exit")  # Exit on CTRL+C
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Setting up the sensor
+#. センサーのセットアップ
 
-   Import necessary libraries and create an object to interact with the BMP280 sensor. ``board.I2C()`` sets up the I2C communication. ``adafruit_bmp280.Adafruit_BMP280_I2C(i2c, address=0x76)`` initializes the BMP280 sensor with its I2C address.
+   必要なライブラリをインポートし、BMP280センサーと対話するオブジェクトを作成します。 ``board.I2C()`` はI2C通信を設定します。 ``adafruit_bmp280.Adafruit_BMP280_I2C(i2c, address=0x76)`` はBMP280センサーをそのI2Cアドレスで初期化します。
 
-   For more detail about the ``adafruit_bmp280`` library, please refer to |link_Adafruit_CircuitPython_BMP280|.
+   ``adafruit_bmp280`` ライブラリの詳細については、|link_Adafruit_CircuitPython_BMP280| を参照してください。
 
    .. code-block:: python
 
@@ -140,17 +138,17 @@ Code Analysis
       i2c = board.I2C()
       bmp280 = adafruit_bmp280.Adafruit_BMP280_I2C(i2c, address=0x76)
 
-#. Configuring sea-level pressure
+#. 海面気圧の設定
 
-   Set the ``sea_level_pressure`` property of the BMP280 object. This value is needed to calculate altitude.
+   BMP280オブジェクトの ``sea_level_pressure`` プロパティを設定します。この値は高度を計算するために必要です。
 
    .. code-block:: python
 
       bmp280.sea_level_pressure = 1013.25
 
-#. Reading data in a loop
+#. ループ内でのデータ読み取り
 
-   Use a ``while True`` loop to continuously read data from the sensor. ``bmp280.temperature``, ``bmp280.pressure``, and ``bmp280.altitude`` read the temperature, pressure, and altitude, respectively. ``time.sleep(2)`` pauses the loop for 2 seconds.
+   ``while True`` ループを使用してセンサーからデータを連続的に読み取ります。 ``bmp280.temperature`` 、 ``bmp280.pressure`` 、および ``bmp280.altitude`` はそれぞれ温度、気圧、および高度を読み取ります。 ``time.sleep(2)`` はループを2秒間一時停止します。
 
    .. code-block:: python
 
@@ -163,9 +161,9 @@ Code Analysis
       except KeyboardInterrupt:
          print("Exit")
 
-#. Handling interruptions
+#. 中断の処理
 
-   The ``try`` and ``except KeyboardInterrupt:`` block allows the program to exit gracefully when you press CTRL+C.
+   ``try`` および ``except KeyboardInterrupt:`` ブロックは、CTRL+Cを押したときにプログラムが正常に終了できるようにします。
 
    .. code-block:: python
 

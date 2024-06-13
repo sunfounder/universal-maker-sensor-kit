@@ -14,17 +14,17 @@
 
 .. _pi_lesson07_speed:
 
-Lesson 07: Infrared Speed Sensor Module
+レッスン 07: 赤外線速度センサーモジュール
 ==========================================
 
-In this lesson, you will learn how to measure rotational speed using a Raspberry Pi and a simple sensor. We'll connect a digital input sensor to GPIO pin 17 and use Python to monitor its state changes. The focus will be on calculating revolutions per second by counting the sensor activations over a specific time period. You'll write a Python function to accurately capture this data and convert it into a measurable speed. This hands-on project is a straightforward yet practical introduction to real-world data collection and analysis with Raspberry Pi, ideal for beginners interested in applied Python programming and hardware interaction.
+このレッスンでは、Raspberry Piとシンプルなセンサーを使用して回転速度を測定する方法を学びます。デジタル入力センサーをGPIOピン17に接続し、その状態変化をPythonで監視します。特定の時間内にセンサーの作動回数をカウントすることで、1秒あたりの回転数（RPS）を計算することに焦点を当てます。Python関数を作成して、このデータを正確にキャプチャし、測定可能な速度に変換します。この実践的なプロジェクトは、Raspberry Piを使用した現実のデータ収集と分析のシンプルでありながら実用的な入門編で、応用Pythonプログラミングやハードウェアインターフェースに興味のある初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,14 +56,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_07_Speed_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -110,36 +110,34 @@ Code
        pass
 
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-
-#. Importing Libraries
+#. ライブラリのインポート
    
-   The script starts by importing ``DigitalInputDevice`` from gpiozero for sensor interaction and ``time`` for time management.
+   スクリプトは、センサーとの対話のためにgpiozeroから ``DigitalInputDevice`` を、時間管理のために ``time`` をインポートすることから始まります。
 
    .. code-block:: python
 
       from gpiozero import DigitalInputDevice
       from time import time
 
-#. Initializing the Sensor
+#. センサーの初期化
    
-   A ``DigitalInputDevice`` object named ``sensor`` is created, connected to GPIO pin 17. This setup assumes that the digital sensor is connected to GPIO17.
+   ``DigitalInputDevice``オブジェクトの ``sensor`` がGPIOピン17に接続されて作成されます。この設定では、デジタルセンサーがGPIO17に接続されていることを前提としています。
 
    .. code-block:: python
 
       sensor = DigitalInputDevice(17)
 
-#. Defining the ``calculate_rps`` Function
+#. ``calculate_rps``関数の定義
    
-   - This function calculates the Revolutions Per Second (RPS) of a rotating object.
-   - ``sample_time`` is the duration in seconds for which the sensor's output is sampled.
-   - ``steps_per_revolution`` represents the number of sensor activations per complete revolution.
-   - The function uses a while loop to count the number of steps (sensor activations) within the sample time.
-   - It detects transitions from inactive to active states and increments the ``steps`` count accordingly.
-   - RPS is calculated as the number of steps divided by ``steps_per_revolution``.
+   - この関数は、回転体の1秒あたりの回転数（RPS）を計算します。
+   - ``sample_time``は、センサーの出力がサンプリングされる秒数を表します。
+   - ``steps_per_revolution``は、1回転あたりのセンサーの作動回数を示します。
+   - 関数は、サンプル時間内のステップ（センサーの作動回数）をカウントするためにwhileループを使用します。
+   - 非アクティブ状態からアクティブ状態への遷移を検出し、それに応じて ``steps`` カウントを増加させます。
+   - RPSは、ステップ数を ``steps_per_revolution`` で割ったものとして計算されます。
 
    .. raw:: html
 
@@ -150,7 +148,7 @@ Code Analysis
       def calculate_rps(sample_time=1, steps_per_revolution=20):
           """
           Calculate Revolutions Per Second (RPS)
-      
+          
           :param sample_time: Sampling time in seconds
           :param steps_per_revolution: Number of steps in each complete revolution
           :return: Revolutions per second
@@ -171,11 +169,11 @@ Code Analysis
           rps = steps / steps_per_revolution
           return rps
 
-#. Running the Main Loop
+#. メインループの実行
    
-   - The script then enters a continuous loop where it calls ``calculate_rps`` to calculate and print the RPS.
-   - The loop runs indefinitely until a keyboard interrupt (Ctrl+C) is detected.
-   - A ``try-except`` block is used to handle the interrupt gracefully, allowing for a safe exit.
+   - 次にスクリプトは、 ``calculate_rps`` を呼び出してRPSを計算し、出力する連続ループに入ります。
+   - ループはキーボード割り込み（Ctrl+C）が検出されるまで無期限に実行されます。
+   - ``try-except``ブロックを使用して割り込みを適切に処理し、安全に終了できるようにします。
 
    .. code-block:: python
 

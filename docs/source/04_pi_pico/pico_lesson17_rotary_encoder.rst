@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson17_rotary_encoder:
 
 Lesson 17: Rotary Encoder Module
 ==================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to control a rotary encoder. The rotary encoder is an advanced sensor that translates knob rotation into an output signal, indicating both the amount and direction of rotation. This project offers hands-on experience with digital input devices, enhancing your ability to work with more complex sensors. You'll configure the rotary encoder using specific GPIO pins, read its output to determine rotation direction and amount, and master using a button to trigger events.
+このレッスンでは、Raspberry Pi Pico Wを使用してロータリーエンコーダーを制御する方法を学びます。ロータリーエンコーダーは、ノブの回転を出力信号に変換し、回転の量と方向の両方を示す高度なセンサーです。このプロジェクトでは、デジタル入力デバイスを使った実践的な経験を提供し、より複雑なセンサーを扱う能力を向上させます。特定のGPIOピンを使用してロータリーエンコーダーを設定し、その出力を読み取って回転方向と量を判断し、ボタンを使用してイベントをトリガーする方法を習得します。
 
 Required Components
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -108,15 +107,14 @@ Code
        # Short delay to prevent debouncing issues
        time.sleep_ms(50)
 
-
 Code Analysis
 ---------------------------
 
-#. **Importing Libraries**
+#. **ライブラリのインポート**
 
-   First, the necessary libraries are imported. ``rotary_irq_rp2`` is for the rotary encoder, ``time`` for delays, and ``machine`` for hardware control.
+   まず、必要なライブラリをインポートします。 ``rotary_irq_rp2``はロータリーエンコーダー用、 ``time`` は遅延処理用、 ``machine`` はハードウェア制御用です。
 
-   For more information about the ``rotary_irq_rp2`` library, please visit |link_rotary_irq_rp2_library|.
+   ``rotary_irq_rp2``ライブラリの詳細については、|link_rotary_irq_rp2_library|をご覧ください。
 
    .. code-block:: python
 
@@ -124,17 +122,17 @@ Code Analysis
       import time
       from machine import Pin
 
-#. **Setting up the Button Pin**
+#. **ボタンピンの設定**
 
-   The GPIO pin connected to the SW pin is configured as an input with a pull-up resistor. This ensures a stable HIGH signal when the button is not pressed.
+   SWピンに接続されたGPIOピンは、プルアップ抵抗付きの入力として設定されます。これにより、ボタンが押されていないときに安定したHIGH信号が得られます。
 
    .. code-block:: python
 
       button_pin = Pin(20, Pin.IN, Pin.PULL_UP)
 
-#. **Initializing the Rotary Encoder**
+#. **ロータリーエンコーダーの初期化**
 
-   The encoder is set up with specified GPIO pins for CLK and DT. ``min_val`` and ``max_val`` define the range of values, and ``range_mode`` sets how the value behaves at limits (wraps around in this case).
+   エンコーダーは、CLKとDT用の指定されたGPIOピンで設定されます。 ``min_val`` と ``max_val`` は値の範囲を定義し、 ``range_mode`` は限界値での動作を設定します（この場合、値が巻き戻ります）。
 
    .. code-block:: python
 
@@ -147,18 +145,18 @@ Code Analysis
           range_mode=RotaryIRQ.RANGE_WRAP,
       )
 
-#. **Storing Initial Values**
+#. **初期値の保存**
 
-   The initial values of the rotary encoder and the button are stored to detect changes in their states later.
+   後で状態の変化を検出するために、ロータリーエンコーダーとボタンの初期値を保存します。
 
    .. code-block:: python
 
       last_rotary_value = rotary_encoder.value()
       last_button_state = button_pin.value()
 
-#. **Main Loop**
+#. **メインループ**
 
-   The loop continuously checks for changes in the rotary encoder value and button state. If the rotary value changes, it prints the new value. If the button state changes from unpressed to pressed, it prints "Button pressed!".
+   ループはロータリーエンコーダーの値とボタンの状態の変化を継続的にチェックします。ロータリー値が変化した場合、新しい値を表示します。ボタンの状態が未押下から押下に変わった場合、「Button pressed!」と表示します。
 
    .. code-block:: python
 
@@ -176,4 +174,4 @@ Code Analysis
           last_button_state = current_button_state
           time.sleep_ms(50)
 
-   The ``time.sleep_ms(50)`` at the end of the loop is to prevent debouncing issues, which can cause erratic readings.
+   ループの最後の ``time.sleep_ms(50)`` は、デバウンス問題を防ぐためのものです。デバウンスが発生すると、不規則な読み取りが発生する可能性があります。

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson20_bmp280:
 
-Lesson 20: Temperature, Humidity & Pressure Sensor (BMP280)
+レッスン20: 温度、湿度、気圧センサー (BMP280)
 ====================================================================
 
-In this lesson, you'll learn how to connect the BMP280 temperature, humidity, and pressure sensor to the Raspberry Pi Pico W using MicroPython. You'll get practical experience in setting up I2C communication, configuring the BMP280 sensor for weather monitoring, and obtaining temperature and pressure data. By the end of this tutorial, you'll be able to view real-time environmental data on your console.
+このレッスンでは、BMP280 温度、湿度、および気圧センサーを Raspberry Pi Pico W に接続し、MicroPython を使用して制御する方法を学びます。I2C 通信の設定、BMP280 センサーの設定、および温度と気圧データの取得について実践的な経験を得ることができます。このチュートリアルの最後には、コンソール上でリアルタイムの環境データを表示できるようになります。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_20_bmp280_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -88,15 +87,14 @@ Code
        # Read data every second
        time.sleep_ms(1000)
 
-
-Code Analysis
+コード分析
 ---------------------------
 
-#. **Importing Libraries and Initializing I2C Communication**:
+#. **ライブラリのインポートとI2C通信の初期化**:
 
-   This code segment imports necessary libraries and initializes I2C communication. The ``machine`` module is used to interact with the hardware components like I2C and pins. The ``bmp280`` library is imported to interact with the BMP280 sensor.
+   このコードセグメントは、必要なライブラリをインポートし、I2C通信を初期化します。 ``machine`` モジュールはI2Cやピンなどのハードウェアコンポーネントと対話するために使用されます。 ``bmp280`` ライブラリはBMP280センサーと対話するためにインポートされます。
 
-   For more information about the ``bmp280`` library, please visit |link_micropython_bmp280_driver|.
+   ``bmp280`` ライブラリの詳細については、|link_micropython_bmp280_driver| を参照してください。
 
    .. code-block:: python
 
@@ -107,9 +105,9 @@ Code Analysis
       # Initialize I2C communication
       i2c = I2C(0, sda=Pin(20), scl=Pin(21), freq=100000)
 
-#. **Configuring the BMP280 Sensor**:
+#. **BMP280センサーの設定**:
 
-   Here, the BMP280 sensor is configured. An object ``bmp`` is created to interact with the sensor. The oversampling setting is adjusted for higher accuracy.
+   ここでは、BMP280センサーを設定します。センサーと対話するためのオブジェクト ``bmp`` が作成されます。高精度のためにオーバーサンプリング設定が調整されます。
 
    .. code-block:: python
 
@@ -117,9 +115,9 @@ Code Analysis
       bmp = bmp280.BMP280(i2c)
       bmp.oversample(bmp280.BMP280_OS_HIGH)
 
-#. **Reading and Displaying Sensor Data in a Loop**:
+#. **ループ内でのセンサーデータの読み取りと表示**:
 
-   The sensor is continuously read in an infinite loop. Each iteration sets the sensor to weather monitoring mode, reads the temperature and pressure, and prints them. The ``time.sleep_ms(1000)`` ensures the loop runs once every second.
+   センサーは無限ループ内で継続的に読み取られます。各イテレーションでは、センサーを気象監視モードに設定し、温度と気圧を読み取って表示します。 ``time.sleep_ms(1000)`` はループが毎秒1回実行されるようにします。
 
    .. code-block:: python
 

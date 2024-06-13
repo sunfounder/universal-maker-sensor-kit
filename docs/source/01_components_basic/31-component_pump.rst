@@ -14,7 +14,7 @@
 
 .. _cpn_pump:
 
-Centrifugal Pump
+遠心ポンプ
 ==========================
 
 .. image:: img/31_pump.png
@@ -26,26 +26,26 @@ Centrifugal Pump
     <br/>
     
 
-A centrifugal pump is a device that can move liquids from one place to another by using a rotating impeller. It can be used to pump water, oil, chemicals, etc. A centrifugal pump has two main parts: a motor and a pump. The motor provides power to the pump and the pump converts the rotational energy into pressure and flow.
+遠心ポンプは、回転するインペラを使用して液体をある場所から別の場所へ移動させる装置です。水、油、化学物質などをポンプするために使用できます。遠心ポンプは、モーターとポンプの2つの主要部分で構成されています。モーターはポンプに動力を提供し、ポンプは回転エネルギーを圧力と流れに変換します。
 
-Specification
+仕様
 ---------------------------
 
-* **Voltage Scope**: DC 3 ~ 4.5V
-* **Operating Current**: 120 ~ 180mA
-* **Power**: 0.36 ~ 0.91W
-* **Max Water Head**: 0.35 ~ 0.55M
-* **Max Flow Rate**: 80 ~ 100 L/H
-* **Continuous Working Life**: 100 hours
-* **Water Fing Grade**: IP68
-* **Driving Mode**: DC, Magnetic Driving
-* **Material**: Engineering Plastic
-* **Outlet Outside Diameter**: 7.8 mm
-* **Outlet Inside Diameter**: 6.5 mm
-* It is a submersible pump and should be used that way. It tends to heat too much that there's a risk of overheating if you turn it on unsubmerged.
+* **電圧範囲**: DC 3 ~ 4.5V
+* **動作電流**: 120 ~ 180mA
+* **電力**: 0.36 ~ 0.91W
+* **最大揚程**: 0.35 ~ 0.55M
+* **最大流量**: 80 ~ 100 L/H
+* **連続作動寿命**: 100時間
+* **防水等級**: IP68
+* **駆動方式**: DC, 磁気駆動
+* **材質**: 工業用プラスチック
+* **アウトレット外径**: 7.8 mm
+* **アウトレット内径**: 6.5 mm
+* これは水中ポンプであり、そのように使用する必要があります。水中で使用しない場合、過熱のリスクがあります。
 
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson31_pump` (Arduino UNO)
 * :ref:`esp32_lesson31_pump` (ESP32)

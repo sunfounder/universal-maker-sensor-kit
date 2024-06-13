@@ -14,17 +14,17 @@
 
 .. _pi_lesson27_oled:
 
-Lesson 27: OLED Display Module (SSD1306)
-============================================
+レッスン27: OLEDディスプレイモジュール (SSD1306)
+===============================================
 
-In this lesson, you will learn how to connect a Raspberry Pi with an OLED Display Module (SSD1306) using Python. You'll learn how to establish I2C communication between the Raspberry Pi and the OLED display, and use the Python Imaging Library (PIL) for creating graphics and text. The lesson will guide you through drawing shapes and text on the OLED screen, providing a practical example with the message "Hello World!".
+このレッスンでは、Raspberry Piを使用してOLEDディスプレイモジュール (SSD1306) をPythonで接続する方法を学びます。Raspberry PiとOLEDディスプレイの間でI2C通信を確立し、Python Imaging Library (PIL) を使用してグラフィックスやテキストを作成する方法を学びます。このレッスンでは、OLED画面に図形やテキストを描画する手順を説明し、"Hello World!"というメッセージの実用的な例を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,26 +54,26 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_27_oled_pi_bb.png
     :width: 100%
 
 
-Install Library
+ライブラリのインストール
 ---------------------------
 
 .. note::
-    The adafruit-circuitpython-ssd1306 library relies on Blinka, so please ensure that Blinka has been installed. To install libraries, refer to :ref:`install_blinka`.
+    adafruit-circuitpython-ssd1306ライブラリはBlinkaに依存しているため、Blinkaがインストールされていることを確認してください。ライブラリのインストール方法については、:ref:`install_blinka` を参照してください。
 
-Before installing the library, please make sure that the virtual Python environment is activated:
+ライブラリをインストールする前に、仮想Python環境がアクティブになっていることを確認してください：
 
 .. code-block:: bash
 
    source ~/env/bin/activate
 
-Install adafruit-circuitpython-ssd1306 library:
+adafruit-circuitpython-ssd1306ライブラリをインストールします：
 
 .. code-block:: bash
 
@@ -83,14 +83,14 @@ Run the Code
 ---------------------------
 
 .. note::
-   - Please ensure that you have installed the Python library required for running the code according to the "Install Library" steps.
-   - Before running the code, please make sure that you have activated the virtual Python environment with blinka installed. You can activate the virtual environment using a command like this:
+   - コードを実行するために必要なPythonライブラリが「ライブラリのインストール」手順に従ってインストールされていることを確認してください。
+   - コードを実行する前に、blinkaがインストールされた仮想Python環境がアクティブになっていることを確認してください。仮想環境をアクティブにするには、以下のコマンドを使用します：
 
      .. code-block:: bash
   
         source ~/env/bin/activate
 
-   - Find the code for this lesson in ``universal-maker-sensor-kit-main/pi/`` directory, or directly copy and paste the code below. Execute the code by running the following commands in terminal:
+   - このレッスンのコードは ``universal-maker-sensor-kit-main/pi/`` ディレクトリにあります。以下のコードを直接コピーして貼り付けても実行できます。ターミナルで次のコマンドを実行してコードを実行します：
 
      .. code-block:: bash
   
@@ -161,11 +161,11 @@ Run the Code
 Code Analysis
 ---------------------------
 
-#. Importing Necessary Libraries
+#. 必要なライブラリのインポート
 
-   Here, we import the libraries needed for the project. ``board`` is for interfacing with the Raspberry Pi hardware, ``PIL`` for image processing, and ``adafruit_ssd1306`` for controlling the OLED display.
+   ここでは、プロジェクトに必要なライブラリをインポートします。 ``board`` はRaspberry Piハードウェアとのインターフェース用、 ``PIL`` は画像処理用、 ``adafruit_ssd1306`` はOLEDディスプレイの制御用です。
 
-   For more detail about the ``adafruit_ssd1306`` library, please refer to |Adafruit_Adafruit_CircuitPython_SSD1306|.
+   ``adafruit_ssd1306``ライブラリの詳細については、|Adafruit_Adafruit_CircuitPython_SSD1306|を参照してください。
 
    .. code-block:: python
 
@@ -174,9 +174,9 @@ Code Analysis
       from PIL import Image, ImageDraw, ImageFont
       import adafruit_ssd1306
 
-#. Initializing the OLED Display
+#. OLEDディスプレイの初期化
 
-   The OLED display dimensions are set, and I2C communication is established. The ``adafruit_ssd1306.SSD1306_I2C`` object is created to interact with the OLED.
+   OLEDディスプレイの寸法を設定し、I2C通信を確立します。 ``adafruit_ssd1306.SSD1306_I2C`` オブジェクトを作成してOLEDと対話します。
 
    .. code-block:: python
 
@@ -188,9 +188,9 @@ Code Analysis
       i2c = board.I2C()
       oled = adafruit_ssd1306.SSD1306_I2C(WIDTH, HEIGHT, i2c, addr=0x3C)
 
-#. Clearing the Display
+#. ディスプレイのクリア
 
-   The OLED display is cleared by filling it with zeros (black).
+   OLEDディスプレイをゼロ（黒）で埋めることでクリアします。
 
    .. code-block:: python
 
@@ -198,11 +198,11 @@ Code Analysis
       oled.fill(0)
       oled.show()
 
-#. Creating an Image Buffer
+#. イメージバッファの作成
 
-   An image buffer is created using PIL. This is where the graphics are drawn before being displayed on the screen.
+   PILを使用してイメージバッファを作成します。これは、グラフィックスが画面に表示される前に描画される場所です。
 
-   The PIL(Python Imaging Library) adds image processing capabilities to your Python interpreter. For more detail, please refer to |link_pil_handbook|.
+   PIL（Python Imaging Library）は、Pythonインタープリタに画像処理機能を追加します。詳細については、|link_pil_handbook|を参照してください。
 
    .. code-block:: python
 
@@ -212,9 +212,9 @@ Code Analysis
       # Obtain a drawing object to manipulate the image
       draw = ImageDraw.Draw(image)
 
-#. Drawing Graphics
+#. グラフィックスの描画
 
-   Here, a white rectangle (background) and a smaller black rectangle (border effect) are drawn on the image buffer.
+   ここでは、白い矩形（背景）と、内側に小さな黒い矩形（境界効果）を画像バッファに描画します。
 
    .. code-block:: python
 
@@ -230,9 +230,9 @@ Code Analysis
           fill=0,
       )
 
-#. Adding Text
+#. テキストの追加
 
-   The default font is loaded, and a function to calculate the text size is defined. Then, "Hello World!" is centered and drawn on the image buffer.
+   デフォルトフォントを読み込み、テキストサイズを計算する関数を定義します。そして、 "Hello World!"を中央に配置して画像バッファに描画します。
 
    .. code-block:: python
 
@@ -256,9 +256,9 @@ Code Analysis
           fill=255,
       )
 
-#. Displaying the Image
+#. イメージの表示
 
-   Finally, the image buffer is sent to the OLED display for visualization.
+   最後に、画像バッファをOLEDディスプレイに送信して視覚化します。
 
    .. code-block:: python
 

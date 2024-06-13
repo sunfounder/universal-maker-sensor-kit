@@ -2,7 +2,7 @@
 
     こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebook上で、仲間と一緒にRaspberry Pi、Arduino、ESP32をさらに深く探求しましょう。
 
-    **なぜ参加するのか？**
+     **なぜ参加するのか？** 
 
     - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決。
     - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換。

@@ -14,17 +14,17 @@
 
 .. _uno_lesson05_mpu6050:
 
-Lesson 05: Gyroscope & Accelerometer Module (MPU6050)
+レッスン 05: ジャイロスコープ & 加速度計モジュール (MPU6050)
 ==========================================================
 
-In this lesson, you will learn how to use the MPU6050 sensor with an Arduino to measure acceleration, rotation, and temperature. We'll explore initializing the sensor, setting its ranges, and reading data to display on the serial monitor. This project offers a hands-on approach to working with motion sensors and integrating them with Arduino, perfect for those looking to dive into the world of electronics and sensor data handling.
+このレッスンでは、Arduinoを使用してMPU6050センサーで加速度、回転、温度を測定する方法を学びます。センサーの初期化、範囲の設定、データの読み取り、およびシリアルモニターへの表示方法について探求します。このプロジェクトは、モーションセンサーを扱い、それをArduinoに統合するための実践的なアプローチを提供し、エレクトロニクスやセンサーデータの取り扱いに興味がある人に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。こちらのリンクからどうぞ:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -52,27 +52,27 @@ You can also buy them separately from the links below.
         - |link_mpu6050_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_05_mpu6050_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b0efe80d-c89d-402e-a213-a778c404565b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The code starts by including the necessary libraries and creating an object for the MPU6050 sensor. This code uses the Adafruit_MPU6050 library, Adafruit_Sensor library, and Wire library. The ``Adafruit_MPU6050`` library is used to interact with the MPU6050 sensor and retrieve acceleration, rotation, and temperature data. The ``Adafruit_Sensor`` library provides a common interface for various types of sensors. The ``Wire`` library is used for I2C communication, which is necessary to communicate with the MPU6050 sensor.
+1. コードは必要なライブラリをインクルードし、MPU6050センサー用のオブジェクトを作成することから始まります。このコードでは、Adafruit_MPU6050ライブラリ、Adafruit_Sensorライブラリ、およびWireライブラリを使用します。 ``Adafruit_MPU6050`` ライブラリはMPU6050センサーと対話し、加速度、回転、温度データを取得するために使用されます。 ``Adafruit_Sensor`` ライブラリは、さまざまなタイプのセンサーに共通のインターフェースを提供します。 ``Wire`` ライブラリはI2C通信に使用され、MPU6050センサーと通信するために必要です。
 
    .. note:: 
-       To install the library, use the Arduino Library Manager and search for **"Adafruit MPU6050"** and install it. 
+       ライブラリをインストールするには、Arduinoライブラリマネージャを使用し、 **"Adafruit MPU6050"**を検索してインストールします。
    
    .. code-block:: arduino
    
@@ -81,7 +81,7 @@ Code Analysis
       #include <Wire.h>
       Adafruit_MPU6050 mpu;
    
-2. The ``setup()`` function initializes the serial communication and checks if the sensor is detected. If the sensor is not found, the Arduino enters an infinite loop with a "Failed to find MPU6050 chip" message. If found, the accelerometer range, gyro range, and filter bandwidth are set, and a delay is added for stability.
+2. ``setup()``関数では、シリアル通信を初期化し、センサーが検出されているかを確認します。センサーが見つからない場合、Arduinoは「MPU6050チップの検出に失敗しました」というメッセージと共に無限ループに入ります。見つかった場合は、加速度計の範囲、ジャイロの範囲、およびフィルターバンド幅を設定し、安定のために遅延を追加します。
 
    .. code-block:: arduino
    
@@ -111,7 +111,7 @@ Code Analysis
         delay(100);
       }
 
-3. In the ``loop()`` function, the program creates events to store the sensor readings and then retrieves the readings. The acceleration, rotation, and temperature values are then printed to the serial monitor.
+3. ``loop()``関数では、プログラムはセンサーの読み取り値を格納するイベントを作成し、その後読み取りを行います。加速度、回転、温度の値がシリアルモニターに表示されます。
 
    .. code-block:: arduino
    

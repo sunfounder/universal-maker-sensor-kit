@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson34_motor:
 
-Lesson 34: TT Motor
+レッスン34: TTモーター
 ==================================
 
-In this lesson, you will learn how to control the speed and direction of a motor using a Raspberry Pi. You'll learn how to program the Raspberry Pi to run the motor at different speeds and in both forward and backward directions. The project will involve setting the motor speed, running it for a specified duration, and then stopping it. This exercise is a practical introduction to motor control with the Raspberry Pi, offering a clear and straightforward experience in hardware control and Python programming, suitable for beginners.
+このレッスンでは、Raspberry Piを使用してモーターの速度と方向を制御する方法を学びます。Raspberry Piをプログラムして、モーターを異なる速度で前後方向に動かす方法を学びます。このプロジェクトでは、モーターの速度を設定し、指定された時間だけ動作させた後に停止することが含まれます。この演習は、Raspberry Piを用いたモーター制御の実践的な入門編であり、ハードウェア制御とPythonプログラミングの明確で簡単な体験を提供し、初心者に適しています。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てが揃ったキットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - \-
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_34_Motor_Pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -88,56 +87,56 @@ Code
    motor.stop()
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Import Libraries
+#. ライブラリのインポート
    
-   Import the ``Motor`` class from ``gpiozero`` for motor control, and ``sleep`` from ``time`` for timing control.
+   モーター制御のために ``gpiozero`` から ``Motor`` クラスを、タイミング制御のために ``time`` から ``sleep`` をインポートします。
 
    .. code-block:: python
 
       from gpiozero import Motor
       from time import sleep
 
-#. Define Motor Pins
+#. モーターピンの定義
    
-   Create a ``Motor`` object to control a motor connected to GPIO pins 17 and 27 for forward and backward movements, respectively.
+   GPIOピン17と27に接続されたモーターを制御するために ``Motor`` オブジェクトを作成します。GPIOピン17は前進、27は後退用です。
 
    .. code-block:: python
 
       motor = Motor(forward=17, backward=27)
 
-#. Run the Motor Forward at Half Speed
+#. モーターを半速で前進させる
    
-   The motor is run forward at half speed (``speed=0.5``) for 5 seconds. The speed range is between 0 (stopped) and 1 (full speed).
+   モーターを半速（ ``speed=0.5`` ）で5秒間前進させます。速度範囲は0（停止）から1（全速）までです。
 
    .. code-block:: python
 
       motor.forward(speed=0.5)
       sleep(5)
 
-#. Increase to Full Speed Forward
+#. 前進速度を全速に増加
    
-   Increase the motor speed to full speed (``speed=1``) in the forward direction, running for another 5 seconds.
+   モーターの速度を全速（ ``speed=1`` ）に増加させ、さらに5秒間前進させます。
 
    .. code-block:: python
 
       motor.forward(speed=1)
       sleep(5)
 
-#. Run the Motor Backward at Full Speed
+#. モーターを全速で後退させる
    
-   The motor is then run backward at full speed for 5 seconds.
+   モーターを全速で5秒間後退させます。
 
    .. code-block:: python
 
       motor.backward(speed=1)
       sleep(5)
 
-#. Stop the Motor
+#. モーターを停止
    
-   Finally, stop the motor using the ``stop`` method.
+   最後に、 ``stop`` メソッドを使用してモーターを停止させます。
 
    .. code-block:: python
 

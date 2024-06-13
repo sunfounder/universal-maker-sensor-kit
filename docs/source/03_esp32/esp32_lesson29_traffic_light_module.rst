@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson29_traffic_light_module:
 
-Lesson 29: Traffic Light Module
+Lesson 29: 交通信号モジュール
 ==================================
 
-In this lesson, you'll learn how to use an ESP32 Development Board to control a Mini Traffic Light Module. We'll cover setting up the board and writing code to create a traffic light sequence: 5 seconds of green light, blinking yellow light for 1.5 seconds, and 5 seconds of red light. This project is ideal for beginners in electronics and programming as it provides practical experience with output operations and basic timing control using the ESP32.
+このレッスンでは、ESP32開発ボードを使用してミニ交通信号モジュールを制御する方法を学びます。ボードのセットアップと、交通信号のシーケンスを作成するためのコードの作成をカバーします。具体的には、5秒間の緑信号、1.5秒間の黄色信号の点滅、そして5秒間の赤信号です。このプロジェクトは、エレクトロニクスとプログラミングの初心者に最適で、ESP32を使用した出力操作と基本的なタイミング制御の実践的な経験を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,24 +54,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_29_Traffic_Light_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df3260e8-4f79-4dca-aa47-c3a684867ca1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Before any operations, we define constants for the pins where LEDs are connected. This makes our code easier to read and modify.
+1. 操作を行う前に、LEDが接続されているピンの定数を定義します。これにより、コードの読みやすさと修正のしやすさが向上します。
 
   .. code-block:: arduino
 
@@ -79,7 +79,7 @@ Code Analysis
      const int yledPin = 26;  //yellow
      const int gledPin = 27;  //green
 
-2. Here, we specify the pin modes for our LED pins. They are all set to ``OUTPUT`` because we intend to send voltage to them.
+2. ここでは、LEDピンのピンモードを指定します。これらはすべて ``OUTPUT``に設定されており、電圧を送信することを意図しています。
 
   .. code-block:: arduino
 
@@ -89,11 +89,11 @@ Code Analysis
        pinMode(gledPin, OUTPUT);
      }
 
-3. This is where our traffic light cycle logic is implemented. The sequence of operations is:
+3. ここで、交通信号のサイクルロジックを実装します。操作のシーケンスは以下の通りです：
 
-    * Turn the green LED on for 5 seconds.
-    * Blink the yellow LED three times (each blink lasts for 0.5 seconds).
-    * Turn the red LED on for 5 seconds.
+    * 緑のLEDを5秒間点灯させます。
+    * 黄色のLEDを3回点滅させます（各点滅は0.5秒間続きます）。
+    * 赤のLEDを5秒間点灯させます。
     
   .. code-block:: arduino
 

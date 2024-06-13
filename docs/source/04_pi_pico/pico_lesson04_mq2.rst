@@ -14,17 +14,17 @@
 
 .. _pico_lesson04_mq2:
 
-Lesson 04: Gas Sensor Module (MQ-2)
+レッスン 04: ガスセンサーモジュール (MQ-2)
 ============================================
 
-In this lesson, you'll learn how to use the Raspberry Pi Pico W to read data from a gas sensor module (MQ-2) using MicroPython. We'll guide you through setting up an ADC on GPIO pin 26 to process analog signals from the MQ-2 sensor. You'll gain practical experience in continuously monitoring and printing sensor data to understand the presence of gases in the environment.
+このレッスンでは、Raspberry Pi Pico W を使用してガスセンサーモジュール (MQ-2) からデータを読み取る方法を学びます。MicroPython を使って、MQ-2 センサーからのアナログ信号を処理するために GPIO ピン 26 に ADC を設定する手順を説明します。環境中のガスの存在を理解するために、センサーデータを継続的に監視して印刷する実践的な経験を得ることができます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_04_mq2_sensor_circuit_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -80,33 +78,33 @@ Code
    
        utime.sleep_ms(200)  # Wait for 200 milliseconds before the next read
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries:
+#. ライブラリのインポート:
 
-   The code begins by importing necessary libraries: ``machine`` for hardware interactions, and ``utime`` for handling time-related tasks.
+   コードは必要なライブラリをインポートすることから始まります。 ``machine`` はハードウェアとのやり取りに使用され、 ``utime`` は時間関連のタスクを処理します。
 
    .. code-block:: python
 
       import machine
       import utime
 
-#. Initializing the MQ-2 Sensor:
+#. MQ-2 センサーの初期化:
 
-   An ADC object is created on GPIO pin 26 to read analog signals from the MQ-2 sensor. The MQ-2 sensor outputs an analog signal which varies with the concentration of gas in the air.
+   ADC オブジェクトが GPIO ピン 26 に作成され、MQ-2 センサーからのアナログ信号を読み取ります。MQ-2 センサーは、空気中のガス濃度に応じて変化するアナログ信号を出力します。
 
    .. code-block:: python
 
       mq2_AO = machine.ADC(26)
 
-#. Reading Sensor Data in a Loop:
+#. センサーデータをループで読み取る:
 
-   The main loop of the program continuously reads the analog value from the sensor. The ``read_u16`` method is used to read the analog value and convert it to a 16-bit integer. This value is then printed out. The loop includes a delay (``utime.sleep_ms(200)``) to wait for 200 milliseconds before reading the sensor value again. This delay is crucial to prevent overwhelming the sensor and the microcontroller with rapid readings.
+   プログラムのメインループでは、センサーからアナログ値を継続的に読み取ります。 ``read_u16`` メソッドはアナログ値を読み取り、16ビットの整数に変換します。この値が印刷されます。ループには遅延 (``utime.sleep_ms(200)``) が含まれており、200 ミリ秒待機してから再びセンサー値を読み取ります。この遅延は、センサーとマイクロコントローラーが急速な読み取りに圧倒されないようにするために重要です。
 
-   .. note:: 
-   
-     MQ2 is a heating-driven sensor that usually requires preheating before use. During the preheating period, the sensor typically reads high and gradually decreases until it stabilizes.
+   .. note::
+
+     MQ-2 は加熱駆動型センサーであり、使用前に通常予熱が必要です。予熱期間中、センサーは通常高い値を読み取り、安定するまで徐々に減少します。
 
    .. code-block:: python
 

@@ -14,22 +14,19 @@
 
 .. _install_micropython_on_pico:
 
-Install MicroPython on Your Pico
+PicoにMicroPythonをインストールする
 ==========================================
 
-
-Now come to install MicroPython into Raspberry Pi Pico, Thonny IDE provides a very convenient way for you to install it with one click.
+次に、Raspberry Pi PicoにMicroPythonをインストールします。Thonny IDEはワンクリックで非常に便利にインストールできます。
 
 .. note::
-    You can also use the |link_micropython_pi| provided by Raspberry Pi official by dragging and dropping an ``rp2_pico_xxxx.uf2`` file into Raspberry Pi Pico.
+    また、Raspberry Pi公式が提供する |link_micropython_pi| を使用して、 ``rp2_pico_xxxx.uf2`` ファイルをRaspberry Pi Picoにドラッグ＆ドロップする方法もあります。
 
-
-
-#. Open Thonny IDE.
+#. Thonny IDEを開きます。
 
    .. image:: img/set_pico1.png
 
-#. Press and hold the **BOOTSEL** button and then connect the Pico to computer via a Micro USB cable. Release the **BOOTSEL** button after your Pico is mount as a Mass Storage Device called **RPI-RP2**.
+#. **BOOTSEL** ボタンを押し続けながら、PicoをMicro USBケーブルでコンピュータに接続します。Picoが **RPI-RP2** というマスストレージデバイスとしてマウントされたら **BOOTSEL** ボタンを離します。
 
    .. image:: img/bootsel_onboard.png
       :width: 70%
@@ -39,22 +36,21 @@ Now come to install MicroPython into Raspberry Pi Pico, Thonny IDE provides a ve
 
       <br/>
 
-#. In the bottom right corner, click the interpreter selection button and select **Install Micropython**.
+#. 右下隅のインタープリタ選択ボタンをクリックし、 **Install Micropython**  を選択します。
 
    .. note::
-      If your Thonny does not have this option, please update to the latest version.
+      Thonnyにこのオプションがない場合は、最新バージョンに更新してください。
 
    .. image:: img/set_pico2.png
 
-#. In the **Target volume** section, the volume of the Pico you just plugged in will automatically appear. In the **variant** section, select **Raspberry Pi.Pico/Pico H**. Select the latest version in the version dropdown menu.
+#. **Target volume** セクションでは、先ほど接続したPicoのボリュームが自動的に表示されます。 **variant** セクションで **Raspberry Pi.Pico/Pico H** を選択します。バージョンドロップダウンメニューで最新バージョンを選択します。
 
    .. image:: img/set_pico3.png
 
-#. Click the **Install** button, wait for the installation to complete.
+#. **Install** ボタンをクリックし、インストールが完了するのを待ちます。
 
    .. image:: img/set_pico4.png
 
-
-#. Congratulations, now your Raspberry Pi Pico is ready to go.
+#. おめでとうございます。これでRaspberry Pi Picoの準備が整いました。
 
    .. image:: img/set_pico5.png

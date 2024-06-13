@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson33_servo:
 
-Lesson 33: Servo Motor (SG90)
-==================================
+レッスン 33: サーボモーター (SG90)
+===================================
 
-In this lesson, you'll learn how to control a servo motor with an ESP32 Development Board. We'll cover the process of making the servo motor scan from 0 to 180 degrees and back, giving you hands-on experience in managing servo movements. This project is ideal for those seeking to grasp motor control and the use of pulse width modulation (PWM) in robotics, utilizing the versatile ESP32 board.
+このレッスンでは、ESP32開発ボードを使用してサーボモーターを制御する方法を学びます。サーボモーターを0度から180度までスキャンし、戻すプロセスをカバーし、サーボの動きを管理する実践的な経験を提供します。このプロジェクトは、モーター制御とロボティクスにおけるパルス幅変調（PWM）の使用を理解したい人に最適で、汎用性の高いESP32ボードを活用します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_33_Servo_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/877c9719-5f1b-4df1-9d3b-9e9500a5df08/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Including the Library
+#. ライブラリのインクルード
 
-   The ESP32Servo library is included to manage servo motor operations.
+   サーボモーターの操作を管理するためにESP32Servoライブラリをインクルードします。
 
    .. code-block:: arduino
 
      #include <ESP32Servo.h>
 
-#. Defining Servo and Pin
+#. サーボとピンの定義
 
-   A Servo object is created, and a pin is defined for servo control.
+   サーボオブジェクトを作成し、サーボ制御用のピンを定義します。
 
    .. raw:: html
       
@@ -92,9 +92,9 @@ Code Analysis
      Servo myServo;
      const int servoPin = 25;
 
-#. Setting Pulse Width Limits
+#. パルス幅の制限を設定
 
-   Minimum and maximum pulse widths are defined for servo motion limits.
+   サーボの動作範囲を制限するために最小および最大パルス幅を定義します。
 
    .. raw:: html
       
@@ -105,10 +105,10 @@ Code Analysis
      const int minPulseWidth = 500; // 0.5 ms
      const int maxPulseWidth = 2500; // 2.5 ms
 
-#. Setup Function
+#. セットアップ関数
 
-   - The servo is attached to the defined pin and its pulse width range is set.
-   - The PWM frequency is set to 50Hz, standard for servos.
+   - サーボを定義されたピンに接続し、そのパルス幅の範囲を設定します。
+   - サーボの標準PWM周波数である50Hzに設定します。
 
    .. raw:: html
       
@@ -121,10 +121,10 @@ Code Analysis
        myServo.setPeriodHertz(50);
      }
 
-#. Loop Function
+#. ループ関数
 
-   - Servo rotation is controlled in a loop, moving from 0 to 180 degrees, then back to 0 degrees.
-   - ``writeMicroseconds()`` is used to set the servo position based on pulse width.
+   - サーボの回転をループ内で制御し、0度から180度まで回転させ、再び0度に戻します。
+   - ``writeMicroseconds()`` を使用して、パルス幅に基づいてサーボの位置を設定します。
 
    .. raw:: html
       

@@ -15,29 +15,29 @@
 
 .. _add_libraries_ar:
 
-Install libraries (Important)
+ライブラリのインストール（重要）
 ======================================
 
-A library is a collection of pre-written code or functions that extend the capabilities of the Arduino IDE. Libraries provide ready-to-use code for various functionalities, allowing you to save time and effort in coding complex features.
+ライブラリは、Arduino IDEの機能を拡張するために事前に書かれたコードや関数のコレクションです。ライブラリを使用することで、複雑な機能をコーディングする時間と労力を節約できます。
 
-Install from Library Manager
+ライブラリマネージャからのインストール
 ------------------------------------
 
-Many libraries are available directly through the Arduino Library Manager. You can access the Library Manager by following these steps:
+多くのライブラリは、Arduinoライブラリマネージャを通じて直接入手可能です。ライブラリマネージャにアクセスするには、以下の手順に従います：
 
-#. In the **Library Manager**, you can search for the desired library by name or browse through different categories.
+#. **ライブラリマネージャ**で、ライブラリの名前を検索するか、さまざまなカテゴリを参照して目的のライブラリを探します。
 
    .. note::
 
-      In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as "To install the library, use the Arduino Library Manager and search for “DHT sensor library” and install it." Simply search and install the recommended libraries as prompted.
+      ライブラリのインストールが必要なプロジェクトでは、インストールすべきライブラリが指示されます。例えば、「ライブラリをインストールするには、Arduinoライブラリマネージャを使用して“DHTセンサライブラリ”を検索し、インストールしてください」といった指示に従って、推奨されたライブラリを検索し、インストールしてください。
 
    .. image:: img/install_lib3.png
 
-#. Once you find the library you want to install, click on it and then click the **Install** button.
+#. インストールしたいライブラリが見つかったら、それをクリックして **インストール** ボタンをクリックします。
 
    .. image:: img/install_lib2.png
 
-#. The Arduino IDE will automatically download and install the library for you.
+#. Arduino IDEが自動的にライブラリをダウンロードしてインストールします。
 
 .. _install_lib_man:
 

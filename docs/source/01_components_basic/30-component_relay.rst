@@ -14,7 +14,7 @@
 
 .. _cpn_relay:
 
-5V Relay Module
+5Vリレーモジュール
 ==========================
 
 .. image:: img/30_relay_module.png
@@ -25,35 +25,34 @@
     
     <br/>
 
-5V relay modules are devices that can switch high voltage or high current devices on and off using a 5V signal from Arduino. They can be used to control devices such as lights, fans, motors, solenoids, etc. 5V relay has three high voltage terminals (NC, C, and NO) which connect to the device you want to control. The other side has three low voltage pins (Ground, Vcc, and Signal) which connect to the Arduino.
+5Vリレーモジュールは、Arduinoからの5V信号を使用して高電圧または高電流のデバイスをオンオフできるデバイスです。照明、ファン、モーター、ソレノイドなどのデバイスを制御するために使用できます。5Vリレーには、制御したいデバイスに接続する3つの高電圧端子（NC、C、NO）があります。もう一方の側には、Arduinoに接続する3つの低電圧ピン（Ground、Vcc、Signal）があります。
 
-
-Principle
+原理
 ---------------------------
-A relay is a device which is used to provide connection between two or more points or devices in response to the input signal applied. In other words, relays provide isolation between the controller and devices, which may operate on either AC or DC. However, they receive signals from a microcontroller which works on DC hence requiring a relay to bridge the gap. Relay is extremely useful when you need to control a large amount of current or voltage with small electrical signal.
+リレーは、入力信号に応じて2つ以上のポイントやデバイス間の接続を提供するデバイスです。言い換えれば、リレーはコントローラーとデバイス間の絶縁を提供し、デバイスはACまたはDCのいずれかで動作する場合があります。しかし、リレーはDCで動作するマイクロコントローラーから信号を受け取るため、ギャップを埋めるために必要です。リレーは、小さな電気信号で大電流または高電圧を制御する必要がある場合に非常に便利です。
 
-There are 5 parts in every relay:
+すべてのリレーには5つの部分があります：
 
 .. image:: img/30_relay_2.jpeg
     :width: 500
     :align: center
 
-Electromagnet - It consists of an iron core wounded by coil of wires. When electricity is passed through, it becomes magnetic. Therefore, it is called electromagnet.
+電磁石 - 鉄心に巻かれたコイルで構成されています。電気が流れると磁性を帯びるため、電磁石と呼ばれます。
 
-Armature - The movable magnetic strip is known as armature. When current flows through them, the coil gets energized thus producing a magnetic field which is used to make or break the normally open (N/O) or normally close (N/C) points. And the armature can be moved with direct current (DC) as well as alternating current (AC).
+アーマチュア - 可動磁気ストリップはアーマチュアと呼ばれます。電流が流れるとコイルが励起され、通常開（N/O）または通常閉（N/C）のポイントを開閉します。アーマチュアは直流（DC）と交流（AC）の両方で動作できます。
 
-Spring - When no currents flow through the coil on the electromagnet, the spring pulls the armature away so the circuit cannot be completed.
+ばね - 電磁石のコイルに電流が流れないとき、ばねはアーマチュアを引き離し、回路が完了しないようにします。
 
-Set of electrical contacts - There are two contact points:
+電気接点のセット - 2つの接点があります：
 
-* Normally open - connected when the relay is activated, and disconnected when it is inactive.
-* Normally closed - not connected when the relay is activated, and connected when it is inactive.
+* 通常開 - リレーが作動しているときに接続されており、作動していないときに切断されています。
+* 通常閉 - リレーが作動していないときに接続されており、作動しているときに切断されています。
 
-Molded frame - This is typically made of plastic and provides structural support and protection for the relay.
+成形フレーム - 通常はプラスチック製で、リレーに構造的なサポートと保護を提供します。
 
-The working principle of relay is simple. When power is supplied to the relay, currents start flowing through the control coil; as a result, the electromagnet starts energizing. Then the armature is attracted to the coil, pulling down the moving contact together thus connecting with the normally open contacts. So the circuit with the load is energized. Then breaking the circuit would be a similar case, as the moving contact will be pulled up to the normally closed contacts under the force of the spring. In this way, the switching on and off of the relay can control the state of a load circuit.
+リレーの動作原理は簡単です。リレーに電力が供給されると、制御コイルに電流が流れ始め、電磁石が励起されます。次にアーマチュアがコイルに引き寄せられ、可動接点が引き下げられて通常開接点に接続されます。これにより、負荷の回路が活性化されます。回路を切断する場合も同様で、可動接点はばねの力で通常閉接点に引き上げられます。このようにして、リレーのオンオフが負荷回路の状態を制御します。
 
-Schematic diagram
+回路図
 ---------------------------
 
 .. image:: img/30_relay_module_schematic.png
@@ -64,12 +63,12 @@ Schematic diagram
 
    <br/>
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson30_relay_module` (Arduino UNO)
 * :ref:`esp32_lesson30_relay_module` (ESP32)
 * :ref:`pico_lesson30_relay_module` (Raspberry Pi Pico)
 * :ref:`pi_lesson30_relay_module` (Raspberry Pi)
- 
+
 * :ref:`uno_lesson40_motion_triggered_relay` (Arduino UNO)
 * :ref:`esp32_motion_triggered_relay` (ESP32)

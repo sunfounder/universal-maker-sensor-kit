@@ -11,14 +11,13 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 Print()
 =====================
 
-The ``print()`` function prints the specified message to the screen, or other standard output device.
-The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+``print()`` 関数は、指定されたメッセージを画面または他の標準出力デバイスに表示します。
+メッセージは文字列または他のオブジェクトでもかまいません。オブジェクトは画面に表示される前に文字列に変換されます。
 
-Print multiple objects:
+複数のオブジェクトを表示する:
 
 
 
@@ -29,7 +28,7 @@ Print multiple objects:
 >>> %Run -c $EDITOR_CONTENT
 Welcome! Enjoy yourself!
 
-Print tuples:
+タプルを表示する:
 
 
 
@@ -41,7 +40,7 @@ Print tuples:
 >>> %Run -c $EDITOR_CONTENT
 ('pear', 'apple', 'grape')
 
-Print two messages and specify the separator:
+2つのメッセージを表示し、区切り文字を指定する:
 
 
 

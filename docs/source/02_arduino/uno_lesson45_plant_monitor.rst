@@ -12,23 +12,22 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_plant_monitor:
 
-Lesson 45: Plant Monitor
+Lesson 45: プラントモニター
 =============================================================
 
+このプロジェクトは、土壌の湿度が事前に設定されたしきい値を下回ると、水ポンプを作動させて植物に水を自動的に供給します。
+また、LCDディスプレイに温度、湿度、および土壌湿度レベルを表示し、ユーザーに植物の環境条件に関する貴重な洞察を提供します。
 
-This project intelligently automates plant watering by triggering a water pump whenever the soil's moisture level dips below a predetermined threshold. 
-It also features an LCD display that showcases the temperature, humidity, 
-and soil moisture levels, offering users valuable insights into the plant's environmental conditions.
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -41,7 +40,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -67,48 +66,42 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_dht11`
         - \-
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_45_Plant_monitor_uno_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/700a51fb-6bb3-46c0-b0eb-5b03a6eb681e/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-
-Code Analysis
+コード解析
 ---------------------------
 
+コードは環境パラメータを監視しながら、植物への水供給をシームレスに管理するように構成されています：
 
+1. ライブラリのインクルードと定数/変数の宣言:
 
-The code is structured to seamlessly manage plant watering by monitoring environmental parameters:
-
-1. Library Inclusions and Constants/Variables:
-
-   Incorporate ``Wire.h``, ``LiquidCrystal_I2C.h``, and ``DHT.h`` libraries for functionality.
-   Specify pin assignments and settings for the DHT11 sensor, soil moisture sensor, and water pump.
+   ``Wire.h``, ``LiquidCrystal_I2C.h``, ``DHT.h``ライブラリを機能のためにインクルードします。
+   DHT11センサー、土壌湿度センサー、水ポンプのピン割り当てと設定を指定します。
 
 2. ``setup()``:
 
-   Configure pin modes for the moisture sensor and pump.
-   Initially deactivate the pump.
-   Initialize and backlight the LCD.
-   Activate the DHT sensor.
+   湿度センサーとポンプのピンモードを設定します。
+   最初にポンプをオフにします。
+   LCDを初期化し、バックライトをオンにします。
+   DHTセンサーを有効にします。
 
 3. ``loop()``:
 
-   Measure humidity and temperature via the DHT sensor.
-   Gauge soil moisture through the soil moisture sensor.
-   Display the temperature and humidity on the LCD, then show soil moisture levels.
-   Assess soil moisture to decide on water pump activation; if soil moisture is under 500 (adjustable threshold), run the pump for 1 second.
-
+   DHTセンサーを介して湿度と温度を測定します。
+   土壌湿度センサーを通じて土壌湿度を測定します。
+   温度と湿度をLCDに表示し、その後土壌湿度レベルを表示します。
+   土壌湿度を評価して水ポンプの作動を判断します。土壌湿度が500（調整可能なしきい値）以下の場合、ポンプを1秒間作動させます。
 
 
 

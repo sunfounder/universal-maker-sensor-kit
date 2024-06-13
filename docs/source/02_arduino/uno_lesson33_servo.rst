@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson33_servo:
 
-Lesson 33: Servo Motor (SG90)
+Lesson 33: サーボモーター (SG90)
 ==================================
 
-In this lesson, you will learn how to use Arduino to control a servo motor and make it rotate from 0 to 180 degrees and back. We will cover the usage of the Servo library, defining and using variables for servo control, as well as implementing a for loop for gradual movement. This project is ideal for beginners as it provides hands-on experience with motor control and basic programming principles in Arduino.
+このレッスンでは、Arduinoを使用してサーボモーターを制御し、0度から180度まで回転させ、再び戻す方法を学びます。Servoライブラリの使用法、サーボ制御のための変数の定義と使用、さらには段階的な動きを実現するためのforループの実装について説明します。このプロジェクトは初心者に最適で、モーター制御とArduinoの基本的なプログラミング原則を実践的に学ぶことができます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入するのが便利です。こちらのリンクをご覧ください。
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -51,25 +51,24 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_servo`
         - |link_servo_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_33_servo_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/12bb5427-6260-4b46-88a7-4b98f9db3ace/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Here, the ``Servo`` library is included which allows for easy control of the servo motor. The pin connected to the servo and the initial angle of the servo are also defined.
+1. ここでは、サーボモーターを簡単に制御できるようにするために「Servo」ライブラリをインクルードしています。サーボに接続されているピンと、サーボの初期角度も定義されています。
 
    .. code-block:: arduino
 
@@ -78,7 +77,7 @@ Code Analysis
       int angle = 0;           // Initialize the angle variable to 0 degrees
       Servo servo;             // Create a servo object
 
-2. The ``setup()`` function runs once when the Arduino starts. The servo is attached to the defined pin using the ``attach()`` function.
+2. ``setup()``関数はArduinoが起動すると一度だけ実行されます。サーボは ``attach()`` 関数を使用して定義されたピンに接続されます。
 
    .. code-block:: arduino
 
@@ -86,7 +85,7 @@ Code Analysis
         servo.attach(servoPin);
       }
 
-3. The main loop has two ``for`` loops. The first loop increases the angle from 0 to 180 degrees, and the second loop decreases the angle from 180 to 0 degrees. The ``servo.write(angle)`` command sets the servo to the specified angle. The ``delay(15)`` causes the servo to wait for 15 milliseconds before moving to the next angle, controlling the speed of the scanning movement.
+3. メインループには2つの ``for`` ループがあります。最初のループは角度を0度から180度に増加させ、2つ目のループは角度を180度から0度に減少させます。 ``servo.write(angle)`` コマンドはサーボを指定された角度に設定します。 ``delay(15)`` は次の角度に移動する前にサーボが15ミリ秒待機することを意味し、スキャンの速度を制御します。
 
    .. code-block:: arduino
 

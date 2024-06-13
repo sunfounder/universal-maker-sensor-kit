@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson05_mpu6050:
 
-Lesson 05: Gyroscope & Accelerometer Module (MPU6050)
+レッスン 05: ジャイロスコープ＆加速度計モジュール (MPU6050)
 ==========================================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W with the MPU6050 module, which combines a gyroscope and accelerometer. You'll discover how to connect the MPU6050 to the Raspberry Pi Pico W and read its acceleration and gyroscopic data using MicroPython. The lesson will guide you through writing a script to continuously display the X, Y, and Z values of both the accelerometer and gyroscope. 
+このレッスンでは、Raspberry Pi Pico W を MPU6050 モジュールと組み合わせて使用する方法を学びます。このモジュールはジャイロスコープと加速度計を組み合わせたものです。MPU6050 を Raspberry Pi Pico W に接続し、MicroPython を使用してその加速度およびジャイロスコープのデータを読み取る方法を説明します。このレッスンでは、加速度計とジャイロスコープの X、Y、および Z の各値を継続的に表示するスクリプトの書き方を紹介します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,25 +52,21 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_05_mpu6050_circuit_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. note::
 
-    * Open the ``05_mpu6050_module.py`` file under the path of ``universal-maker-sensor-kit-main/pico/Lesson_05_MPU6050_Module`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it. For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * ``universal-maker-sensor-kit-main/pico/Lesson_05_MPU6050_Module`` のパスにある ``05_mpu6050_module.py`` ファイルを開くか、このコードを Thonny にコピーし、「現在のスクリプトを実行」をクリックするか、F5 キーを押して実行します。詳細なチュートリアルについては :ref:`open_run_code_py` を参照してください。
 
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-    
+    * ここでは ``imu.py`` と ``vector3d.py`` を使用する必要があります。Pico W にアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
+    * 右下隅にある「MicroPython (Raspberry Pi Pico)」インタープリタをクリックするのを忘れないでください。
 
 .. code-block:: python
 
@@ -99,16 +94,16 @@ Code
    
        # Delay between readings
        time.sleep(0.5)
-   
 
-Code Analysis
+
+コード解析
 ---------------------------
 
-#. Importing Libraries and Initializing I2C
+#. ライブラリのインポートとI2Cの初期化
+ 
+   コードは必要なライブラリをインポートすることから始まります。 ``imu`` ライブラリはMPU6050センサーの値を読み取るために使用され、 ``machine`` はRaspberry Pi Pico Wのハードウェア機能を制御します。I2Cはデータ通信のために特定のピン（SDAとSCL）を使用して初期化されます。
 
-   The code starts by importing necessary libraries. The ``imu`` library is used to read the values of the MPU6050 sensor, and ``machine`` allows controlling the hardware features of the Raspberry Pi Pico W. I2C is initialized using specific pins (SDA and SCL) for data communication.
-
-   For more information about the ``imu`` library, please visit |link_imu|.
+   ``imu`` ライブラリの詳細については |link_imu| を参照してください。
 
    .. code-block:: python
 
@@ -118,17 +113,17 @@ Code Analysis
 
       i2c = I2C(1, sda=Pin(20), scl=Pin(21), freq=400000)
 
-#. Creating MPU6050 Object
+#. MPU6050オブジェクトの作成
 
-   An object of the MPU6050 sensor is created by passing the initialized I2C. This object will be used to access sensor data.
+   初期化されたI2Cを渡してMPU6050センサーのオブジェクトを作成します。このオブジェクトはセンサーデータにアクセスするために使用されます。
 
    .. code-block:: python
 
       mpu = MPU6050(i2c)
 
-#. Reading and Printing Sensor Data in a Loop
+#. センサーデータの読み取りと表示のループ
 
-   The code then enters an infinite loop where it continually reads and prints accelerometer and gyroscope data. ``time.sleep`` is used to create a delay between successive readings.
+   コードは無限ループに入り、加速度計とジャイロスコープのデータを継続的に読み取り、表示します。 ``time.sleep`` は連続する読み取りの間に遅延を作成するために使用されます。
 
    .. code-block:: python
 

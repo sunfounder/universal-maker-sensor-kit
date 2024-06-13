@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson29_traffic_light_module:
 
-Lesson 29: Traffic Light Module
+レッスン29: 交通信号モジュール
 ==================================
 
-In this lesson, you will learn how to use Arduino to control a mini LED traffic light. We’ll cover programming the Arduino Uno to cycle through green, yellow, and red lights, simulating a real traffic signal. This project is ideal for beginners as it provides practical experience in coding light sequences and timing controls on the Arduino platform.
+このレッスンでは、Arduinoを使用してミニLED交通信号を制御する方法を学びます。Arduino Unoをプログラムして、緑、黄色、赤のライトを順番に点灯させ、実際の交通信号をシミュレートします。このプロジェクトは、Arduinoプラットフォームでのライトシーケンスとタイミング制御の実務経験を提供するため、初心者に最適です。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -50,28 +50,26 @@ You can also buy them separately from the links below.
         - |link_Uno_R3_buy|
     *   - :ref:`cpn_traffic`
         - |link_traffic_light_module_buy|
-
-* Arduino UNO R3 or R4
-* :ref:`cpn_traffic`
-
-Wiring
+    * Arduino UNO R3 or R4
+    * :ref:`cpn_traffic`
+配線
 ---------------------------
 
 .. image:: img/Lesson_29_traffic_light_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/48f3abf4-1a9c-405f-9247-7dbd61e64f75/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. Before any operations, we define constants for the pins where LEDs are connected. This makes our code easier to read and modify.
+1. 操作を行う前に、LEDが接続されているピンの定数を定義します。これにより、コードが読みやすく、変更が容易になります。
 
   .. code-block:: arduino
 
@@ -79,7 +77,7 @@ Code Analysis
      const int yledPin = 8;  //yellow
      const int gledPin = 7;  //green
 
-2. Here, we specify the pin modes for our LED pins. They are all set to ``OUTPUT`` because we intend to send voltage to them.
+2. 次に、LEDピンのピンモードを指定します。すべて ``OUTPUT`` に設定されており、これによりピンに電圧を送ることができます。
 
   .. code-block:: arduino
 
@@ -89,11 +87,11 @@ Code Analysis
        pinMode(gledPin, OUTPUT);
      }
 
-3. This is where our traffic light cycle logic is implemented. The sequence of operations is:
+3. ここでは、交通信号のサイクルロジックが実装されています。操作のシーケンスは次の通りです：
 
-    * Turn the green LED on for 5 seconds.
-    * Blink the yellow LED three times (each blink lasts for 0.5 seconds).
-    * Turn the red LED on for 5 seconds.
+    * 緑色LEDを5秒間点灯させます。
+    * 黄色LEDを3回点滅させます（各点滅は0.5秒間続きます）。
+    * 赤色LEDを5秒間点灯させます。
     
   .. code-block:: arduino
 

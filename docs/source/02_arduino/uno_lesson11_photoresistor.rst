@@ -12,19 +12,20 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
+
 .. _uno_lesson11_photoresistor:
 
-Lesson 11: Photoresistor Module
-==================================
+レッスン11: フォトレジスターモジュール
+========================================
 
-In this lesson, you will learn how to measure light intensity using a photoresistor sensor with an Arduino Uno. We'll cover reading and displaying the analog values from the sensor, which reflect the amount of light it detects. This project is ideal for beginners as it provides hands-on experience in working with sensors and understanding analog input on the Arduino platform. You'll also improve your proficiency in serial communication by outputting sensor readings to the serial monitor.
+このレッスンでは、Arduino Unoを使用してフォトレジスターセンサーで光の強さを測定する方法を学びます。センサーからのアナログ値を読み取り、表示する方法をカバーします。これらの値は、センサーが検出する光の量を反映します。このプロジェクトは、センサーの取り扱いやArduinoプラットフォームでのアナログ入力の理解を実践するのに最適な初心者向けの教材です。また、センサーデータをシリアルモニターに出力することで、シリアル通信のスキルも向上させることができます。
 
-Required Components
---------------------------
+必要なコンポーネント
+-----------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +38,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -52,26 +53,26 @@ You can also buy them separately from the links below.
         - |link_photoresistor_sensor_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_11_photoresistor_module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ac4664d2-2f44-4d5f-9cf4-a82eadc74d3e/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. **Setting Up the Sensor Pin and Serial Communication**
+#. **センサーピンとシリアル通信の設定**
 
-   We start by defining the sensor pin and initializing serial communication in the setup function. The photoresistor is connected to the analog pin A0.
+   setup関数でセンサーピンを定義し、シリアル通信を初期化します。フォトレジスターはアナログピンA0に接続されています。
 
    .. code-block:: arduino
 
@@ -81,9 +82,9 @@ Code Analysis
         Serial.begin(9600);  // Start serial communication at 9600 baud rate
       }
 
-#. **Reading and Displaying Sensor Data**
+#. **センサーデータの読み取りと表示**
 
-   In the loop function, we continuously read the analog value from the sensor and print it to the Serial Monitor. We also add a short delay to stabilize the readings.
+   loop関数では、センサーからのアナログ値を連続して読み取り、シリアルモニターに表示します。また、読み取り値を安定させるために短い遅延を追加します。
 
    .. code-block:: arduino
 

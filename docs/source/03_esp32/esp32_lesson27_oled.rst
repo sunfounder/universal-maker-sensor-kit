@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson27_oled:
 
-Lesson 27: OLED Display Module (SSD1306)
-============================================
+Lesson 27: OLEDディスプレイモジュール (SSD1306)
+=================================================
 
-In this lesson, you will learn how to set up and utilize an OLED display with an ESP32 Development Board using the Adafruit SSD1306 and GFX libraries. We will cover displaying text in different sizes, inverting text colors, creating scrolling text animations, and rendering custom bitmap graphics. This project provides a thorough introduction to advanced display techniques, ideal for individuals seeking to improve their skills in developing interactive electronics with microcontrollers.
+このレッスンでは、Adafruit SSD1306およびGFXライブラリを使用して、ESP32開発ボードでOLEDディスプレイをセットアップし、利用する方法を学びます。異なるサイズのテキストの表示、テキストの色の反転、スクロールテキストアニメーションの作成、およびカスタムビットマップグラフィックの描画をカバーします。このプロジェクトは、インタラクティブな電子機器をマイクロコントローラーで開発するスキルを向上させたい人に最適な、ディスプレイ技術の高度な紹介を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,32 +54,31 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_27_oled_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/33f2fdd0-af4e-4438-bacf-982894bb8ac4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. **Library Inclusion and Initial Definitions**:
-   The necessary libraries for interfacing with the OLED are included. Following that, definitions regarding the OLED's dimensions and I2C address are provided.
+1. **ライブラリのインクルードと初期定義**:
+   OLEDとインターフェースするための必要なライブラリをインクルードします。その後、OLEDの寸法とI2Cアドレスに関する定義が提供されます。
 
-
-   - **Adafruit SSD1306**: This library is designed to help with the interfacing of the SSD1306 OLED display. It provides methods to initialize the display, control its settings, and display content.
-   - **Adafruit GFX Library**: This is a core graphics library for displaying text, producing colors, drawing shapes, etc., on various screens including OLEDs.
+   - **Adafruit SSD1306**: このライブラリはSSD1306 OLEDディスプレイとのインターフェースを支援するために設計されており、ディスプレイの初期化、設定の制御、コンテンツの表示方法を提供します。
+   - **Adafruit GFX Library**: これは、テキストの表示、色の生成、形状の描画など、さまざまな画面上でのグラフィック操作のためのコアライブラリです。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit SSD1306"** and **"Adafruit GFX"** and install it. 
+      ライブラリをインストールするには、Arduino Library Managerを使用して **"Adafruit SSD1306"** および **"Adafruit GFX"** を検索し、インストールしてください。
 
    .. code-block:: arduino
     
@@ -94,19 +93,19 @@ Code Analysis
       #define OLED_RESET -1
       #define SCREEN_ADDRESS 0x3C
 
-2. **Bitmap Data**:
-   Bitmap data for displaying a custom icon on the OLED screen. This data represents an image in a format that the OLED can interpret.
+2. **ビットマップデータ**:
+   OLEDスクリーンにカスタムアイコンを表示するためのビットマップデータ。このデータは、OLEDが解釈できる形式で画像を表します。
 
-   You can use this online tool called |link_image2cpp| that can turn your image into an array. 
+   オンラインツール|link_image2cpp|を使用して、画像を配列に変換できます。
 
-   The ``PROGMEM`` keyword denotes that the array is stored in the program memory of the Arduino microcontroller. Storing data in program memory(PROGMEM) instead of RAM can be helpful for large amounts of data, which would otherwise take up too much space in RAM.
+   ``PROGMEM``キーワードは、配列がArduinoマイクロコントローラーのプログラムメモリに格納されていることを示します。プログラムメモリ（PROGMEM）にデータを格納することは、大量のデータをRAMではなくプログラムメモリに保存するために役立ちます。
 
    .. code-block:: arduino
 
       static const unsigned char PROGMEM sunfounderIcon[] = {...};
 
-3. **Setup Function (Initialization and Display)**:
-   The ``setup()`` function initializes the OLED and displays a series of patterns, texts, and animations.
+3. **セットアップ関数（初期化と表示）**:
+   ``setup()`` 関数はOLEDを初期化し、一連のパターン、テキスト、およびアニメーションを表示します。
 
    .. code-block:: arduino
 

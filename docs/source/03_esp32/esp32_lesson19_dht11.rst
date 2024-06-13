@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson19_dht11:
 
-Lesson 19: Temperature and Humidity Sensor Module (DHT11)
+Lesson 19: 温湿度センサーモジュール (DHT11)
 ====================================================================
 
-In this lesson, you will learn how to read temperature and humidity from a DHT11 sensor using an ESP32 Development Board. We'll also cover interpreting these readings and calculating the heat index in both Celsius and Fahrenheit. This project is ideal for beginners in environmental sensing, providing hands-on experience with sensor data acquisition and basic concepts of climate monitoring on the ESP32 platform.
+このレッスンでは、ESP32開発ボードを使用してDHT11センサーから温度と湿度を読み取る方法を学びます。これらの読み取り値の解釈と摂氏および華氏での熱指数の計算についても説明します。このプロジェクトは、環境センサーの初心者に最適で、ESP32プラットフォームでのセンサーデータ取得と気候モニタリングの基本概念について実践的な経験を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -52,33 +52,33 @@ You can also buy them separately from the links below.
         - |link_dht11_humiture_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
- 
 
-Wiring
+
+配線
 ---------------------------
 
 .. image:: img/Lesson_19_DHT11_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
-.. note:: 
-   To install the library, use the Arduino Library Manager and search for **"DHT sensor library"** and install it. 
+.. note::
+   ライブラリをインストールするには、Arduino Library Managerを使用して**"DHT sensor library"**を検索し、インストールしてください。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/926830ca-9421-4852-ad72-ff75c1f10174/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Inclusion of necessary libraries and definition of constants.
-   This part of the code includes the DHT sensor library and defines the pin number and sensor type used in this project.
+#. 必要なライブラリのインクルードと定数の定義
+   このコード部分では、DHTセンサーライブラリがインクルードされ、このプロジェクトで使用するピン番号とセンサータイプが定義されます。
 
-   .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"DHT sensor library"** and install it. 
+   .. note::
+      ライブラリをインストールするには、Arduino Library Managerを使用して **"DHT sensor library"**を検索し、インストールしてください。
 
    .. code-block:: arduino
     
@@ -86,14 +86,14 @@ Code Analysis
       #define DHTPIN 25       // Define the pin used to connect the sensor
       #define DHTTYPE DHT11  // Define the sensor type
 
-#. Creation of DHT object.
-   Here we create a DHT object using the defined pin number and sensor type.
+#. DHTオブジェクトの作成
+   ここでは、定義されたピン番号とセンサータイプを使用してDHTオブジェクトを作成します。
 
    .. code-block:: arduino
 
       DHT dht(DHTPIN, DHTTYPE);  // Create a DHT object
 
-#. This function is executed once when the ESP32 Development Board starts. We initialize the serial communication and the DHT sensor in this function.
+#. この関数は、ESP32開発ボードが起動すると一度だけ実行されます。この関数でシリアル通信とDHTセンサーを初期化します。
 
    .. code-block:: arduino
 
@@ -103,12 +103,12 @@ Code Analysis
         dht.begin();  // Initialize the DHT sensor
       }
 
-#. Main loop.
-   The ``loop()`` function runs continuously after the setup function. Here, we read the humidity and temperature values, calculate the heat index, and print these values to the serial monitor.  If the sensor read fails (returns NaN), it prints an error message.
+#. メインループ
+   ``loop()``関数は、セットアップ関数の後に連続して実行されます。ここでは、湿度と温度の値を読み取り、熱指数を計算し、これらの値をシリアルモニタに表示します。センサーの読み取りに失敗した場合（NaNが返される）、エラーメッセージを表示します。
 
    .. note::
     
-      The |link_heat_index| is a way to measure how hot it feels outside by combining the air temperature and the humidity. It is also called the "felt air temperature" or "apparent temperature".
+      |link_heat_index| は、気温と湿度を組み合わせることで、外気がどれだけ暑く感じるかを測定する方法です。「体感温度」や「見かけの温度」とも呼ばれます。
 
    .. code-block:: arduino
 

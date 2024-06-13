@@ -11,20 +11,36 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson02_soil_moisture:
 
-Lesson 02: Capacitive Soil Moisture Module
+レッスン 02: 容量性土壌湿度モジュール
 ============================================
 
-In this lesson, you will learn how to connect a capacitive soil moisture sensor to an Arduino and interpret its readings. The project includes reading the sensor's analog output with the Arduino and understanding that lower readings indicate higher soil moisture levels. You'll gain practical experience in handling analog input and serial communication with the Arduino by using the provided code as a hands-on example.
+このレッスンでは、容量性土壌湿度センサーをArduinoに接続し、その読み取り値を解釈する方法を学びます。このプロジェクトでは、センサーのアナログ出力をArduinoで読み取り、低い読み取り値が高い土壌湿度を示すことを理解します。提供されたコードを使用して、Arduinoでアナログ入力とシリアル通信を実践的に学ぶことができます。
 
-Required Components
+必要なコンポーネント
 ---------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちらです:
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Universal Maker Sensor Kit
+        - 94
+        - |link_umsk|
+        
+以下のリンクから個別に購入することもできます。
+
+このプロジェクトでは、以下のコンポーネントが必要です。
+
+全体のキットを購入するのが便利です。リンクはこちらです:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,28 +53,11 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
-
-.. list-table::
-    :widths: 20 20 20
-    :header-rows: 1
-
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Universal Maker Sensor Kit
-        - 94
-        - |link_umsk|
-
-You can also buy them separately from the links below.
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちらです:
 
 .. list-table::
     :widths: 20 20 20
@@ -71,7 +70,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -86,34 +85,34 @@ You can also buy them separately from the links below.
         - |link_soil_moisture_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_02_Capacitive_Soil_Moisture_Module_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/fa2c3492-576b-4039-bbfe-891ed87e72c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Defining the sensor pin:
+#. センサーピンの定義:
 
-   This line of code declares a constant integer ``sensorPin`` and assigns it the value of ``A0``, which is the analog input pin the sensor is connected to.
+   このコード行は定数整数 ``sensorPin`` を宣言し、センサーが接続されているアナログ入力ピン``A0``の値を割り当てます。
 
    .. code-block:: arduino
 
       const int sensorPin = A0;
 
-#. Setup function:
+#. セットアップ関数:
 
-   The ``setup()`` function is executed once when the program starts. It initializes serial communication at 9600 baud rate. This setup is necessary for sending data to the serial monitor.
+   ``setup()`` 関数はプログラムが開始されると一度実行されます。シリアル通信を9600ボーレートで初期化します。このセットアップは、データをシリアルモニターに送信するために必要です。
 
    .. code-block:: arduino
 
@@ -121,9 +120,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-#. Loop function:
+#. ループ関数:
 
-   The ``loop()`` function runs continuously after ``setup()``. It reads the sensor value from pin A0 using ``analogRead()`` and prints this value to the serial monitor. The ``delay(500)`` statement pauses the loop for 500 milliseconds before the next reading, thus controlling the rate of data acquisition.
+   ``loop()`` 関数は ``setup()`` の後に連続して実行されます。 ``analogRead()`` を使用してピンA0からセンサー値を読み取り、この値をシリアルモニターに表示します。 ``delay(500)`` 文はループを500ミリ秒一時停止し、次の読み取りまでのデータ取得速度を制御します。
 
    .. code-block:: arduino
 

@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _uno_lesson21_vl53l0x:
 
-Lesson 21: Time of Flight Micro-LIDAR Distance Sensor (VL53L0X)
+レッスン21: 飛行時間マイクロLIDAR距離センサー（VL53L0X）
 ====================================================================
 
-In this lesson, you will learn how to use the VL53L0X Time of Flight Distance Sensor with an Arduino Uno. We'll cover the basics of connecting the sensor to measure distances in millimeters and displaying the readings on the serial monitor. This project provides hands-on experience with advanced sensors and their real-world applications, enhancing your Arduino skills.
+このレッスンでは、VL53L0X飛行時間距離センサーをArduino Unoと共に使用する方法を学びます。センサーを接続し、ミリメートル単位で距離を測定し、シリアルモニターに読み取り結果を表示する基本を説明します。このプロジェクトは、高度なセンサーの実際の応用に関する実践的な経験を提供し、Arduinoのスキルを向上させます。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -52,34 +51,34 @@ You can also buy them separately from the links below.
         - |link_vl53l0x_module_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_21_VL53L0X_module_circuit_uno_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/72c81822-13e0-4a33-8da0-acf3c966bf57/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Including the necessary library and initializing the sensor object. We start by including the library for the VL53L0X sensor and creating an instance of the Adafruit_VL53L0X class.
+#. 必要なライブラリのインクルードとセンサーオブジェクトの初期化。まず、VL53L0Xセンサー用のライブラリをインクルードし、Adafruit_VL53L0Xクラスのインスタンスを作成します。
 
    .. note:: 
-      To install the library, use the Arduino Library Manager and search for **"Adafruit_VL53L0X"** and install it.  
+      ライブラリをインストールするには、Arduino Library Managerを使用して **"Adafruit_VL53L0X"** を検索し、インストールしてください。
 
    .. code-block:: arduino
 
       #include <Adafruit_VL53L0X.h>
       Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 
-#. Initialization in the ``setup()`` function. Here, we set up serial communication and initialize the distance sensor. If the sensor can't be initialized, the program halts.
+#. ``setup()``関数での初期化。ここでは、シリアル通信を設定し、距離センサーを初期化します。センサーが初期化できない場合、プログラムは停止します。
 
    .. code-block:: arduino
 
@@ -97,7 +96,7 @@ Code Analysis
         Serial.println(F("VL53L0X API Simple Ranging example\n\n"));
       }
 
-#. Capturing and displaying the measurements in the ``loop()`` function. Continuously, the Arduino captures a distance measurement using the ``rangingTest()`` method. If the measurement is valid, it's printed to the serial monitor.
+#. ``loop()``関数での測定値のキャプチャと表示。Arduinoは ``rangingTest()`` メソッドを使用して距離を継続的に測定します。測定が有効であれば、シリアルモニターに表示されます。
 
    .. code-block:: arduino
        

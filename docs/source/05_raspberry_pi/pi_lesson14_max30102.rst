@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pi_lesson14_max30102:
 
-Lesson 14: Pulse Oximeter and Heart Rate Sensor Module (MAX30102)
+Lesson 14: パルスオキシメーターおよび心拍数センサーモジュール (MAX30102)
 ====================================================================
 
-In this tutorial, you'll learn to operate the MAX30102 sensor using a Raspberry Pi, streamlined through the use of the open-source MAX30102 Python driver available on GitHub. This approach makes it easier to interface with the module, allowing you to focus on understanding the basics of sensor data collection and analysis. Ideal for novices, the project provides hands-on experience with sensor implementation and Python coding on the Raspberry Pi platform.
+このチュートリアルでは、Raspberry Piを使用してMAX30102センサーを操作する方法を学びます。GitHubで入手可能なオープンソースのMAX30102 Pythonドライバーを使用することで、モジュールとのインターフェースが簡素化され、センサーデータの収集と分析の基本を理解することに集中できます。このプロジェクトは初心者に最適で、Raspberry Piプラットフォーム上でのセンサーの実装とPythonコーディングの実践的な経験を提供します。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品が揃ったキットを購入するのが便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 10
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_14_MAX30102_pi_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -99,10 +98,10 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Modules
+#. モジュールのインポート
 
-   - The ``heartrate_monitor`` module is used to interface with the sensor. For more information about the ``heartrate_monitor`` library, please visit |link_max30102_python_driver| .
-   - The ``time`` module helps in managing the duration of the sensor data collection.
+   - ``heartrate_monitor``モジュールはセンサーとのインターフェースに使用されます。 ``heartrate_monitor`` ライブラリの詳細については、|link_max30102_python_driver| をご覧ください。
+   - ``time``モジュールはセンサーデータ収集の期間を管理するのに役立ちます。
 
    .. raw:: html
 
@@ -113,11 +112,11 @@ Code Analysis
       from heartrate_monitor import HeartRateMonitor
       import time
 
-#. Initializing the Heart Rate Monitor
+#. 心拍数モニターの初期化
 
-   - A ``HeartRateMonitor`` object is created with specific print options.
-   - ``print_raw`` controls whether raw sensor data is printed.
-   - ``print_result`` controls the printing of processed results (heart rate and SpO2).
+   - 特定の印刷オプションを設定して ``HeartRateMonitor`` オブジェクトを作成します。
+   - ``print_raw``は生センサーデータを印刷するかどうかを制御します。
+   - ``print_result``は処理された結果（心拍数とSpO2）の印刷を制御します。
 
    .. raw:: html
 
@@ -127,18 +126,18 @@ Code Analysis
 
       hrm = HeartRateMonitor(print_raw=False, print_result=True)
 
-#. Starting the Sensor
+#. センサーの起動
 
-   The ``start_sensor`` method activates the heart rate sensor.
+   ``start_sensor``メソッドは心拍数センサーを起動します。
 
    .. code-block:: python
 
       hrm.start_sensor()
 
-#. Running the Sensor for a Set Duration
+#. 指定時間センサーを稼働させる
 
-   - The program sleeps for a specified duration, during which the sensor collects data.
-   - ``time.sleep(duration)`` halts the program for the given number of seconds.
+   - プログラムは指定された期間スリープし、その間にセンサーはデータを収集します。
+   - ``time.sleep(duration)``は指定された秒数だけプログラムを停止させます。
 
    .. raw:: html
 
@@ -151,17 +150,17 @@ Code Analysis
       except KeyboardInterrupt:
           print('keyboard interrupt detected, exiting...')
 
-#. Stopping the Sensor
+#. センサーの停止
 
-   After the duration, the ``stop_sensor`` method is called to stop data collection.
+   指定時間が経過した後、 ``stop_sensor`` メソッドを呼び出してデータ収集を停止します。
 
    .. code-block:: python
 
       hrm.stop_sensor()
 
-#. Finalizing the Program
+#. プログラムの終了
 
-   Prints a message when the sensor stops.
+   センサーが停止したことを示すメッセージを印刷します。
 
    .. code-block:: python
 

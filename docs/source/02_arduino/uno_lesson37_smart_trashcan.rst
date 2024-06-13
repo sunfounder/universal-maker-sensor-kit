@@ -11,21 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _uno_lesson37_trashcan:
 
-Lesson 37: Smart trashcan
+Lesson 37: スマートゴミ箱
 ==================================
 
-This project revolves around the concept of a smart trash can. The primary aim is to have the trash can's lid automatically open when an object approaches within a set distance (20cm in this case). The functionality is achieved by using an ultrasonic distance sensor paired with a servo motor. The distance between the object and the sensor is continually measured. If the object is close enough, the servo motor is triggered to open the lid. 
+このプロジェクトでは、スマートゴミ箱のコンセプトに基づいています。主な目的は、物体が一定の距離（この場合は20cm）以内に近づいたときに自動的にゴミ箱の蓋を開けることです。この機能は、超音波距離センサーとサーボモーターを組み合わせて実現されます。センサーと物体の間の距離を継続的に測定し、物体が十分に近づくとサーボモーターが作動して蓋を開けます。
 
-
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入するのが便利です。こちらのリンクをご覧ください:
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから別々に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -55,30 +54,28 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
-        
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_37_smart_trashcan_uno_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f9aacc6c-809f-4fd2-9246-23bb4bdf78a2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-The project is based on real-time monitoring of the distance between an object and a trash can. An ultrasonic sensor continuously measures this distance, and if an object approaches within 20cm, the trash can interprets it as an intention to dispose of waste and automatically opens its lid. This automation adds smartness and convenience to a regular trash can.
+このプロジェクトは、物体とゴミ箱の間の距離をリアルタイムで監視することに基づいています。超音波センサーがこの距離を継続的に測定し、物体が20cm以内に接近すると、ゴミ箱はそれをゴミを捨てる意図と解釈し、自動的に蓋を開けます。この自動化により、通常のゴミ箱にスマートさと便利さが追加されます。
 
-#. Initial Setup and Variable Declaration
+#. 初期設定と変数の宣言
 
-   Here, we're including the ``Servo`` library and defining the constants and variables we'll use. The pins for the servo and the ultrasonic sensor are declared. We also have an array ``averDist`` to hold the three distance measurements.
+   ここでは、 ``Servo`` ライブラリをインクルードし、使用する定数と変数を定義します。サーボと超音波センサーのピンを宣言し、距離測定値を保持するための配列 ``averDist`` も定義します。
 
    .. code-block:: arduino
        
@@ -93,9 +90,9 @@ The project is based on real-time monitoring of the distance between an object a
       long averDist[3];
       const int distanceThreshold = 20;
 
-#. ``setup()`` Function
+#. ``setup()``関数
 
-   The ``setup()`` function initializes serial communication, configures the ultrasonic sensor's pins, and sets the initial position of the servo to the closed position.
+   ``setup()``関数では、シリアル通信を初期化し、超音波センサーのピンを設定し、サーボの初期位置を閉位置に設定します。
 
    .. code-block:: arduino
    
@@ -108,11 +105,9 @@ The project is based on real-time monitoring of the distance between an object a
         delay(100);
       }
 
-   
+#. ``loop()``関数
 
-#. ``loop()`` Function
-
-   The ``loop()`` function is responsible for continuously measuring the distance, computing its average, and then making a decision whether to open or close the trash can's lid based on this averaged distance.
+   ``loop()``関数は、距離を継続的に測定し、その平均値を計算して、この平均距離に基づいてゴミ箱の蓋を開閉するかどうかを判断します。
 
    .. code-block:: arduino
    
@@ -132,14 +127,12 @@ The project is based on real-time monitoring of the distance between an object a
           delay(1000);
         }
       }
-   
-   
 
-#. Distance Reading Function
+#. 距離読み取り関数
 
-   This function, ``readDistance()``, is what actually interacts with the ultrasonic sensor. It sends a pulse and waits for an echo. The time taken for the echo is then used to calculate the distance between the sensor and any object in front of it.
+   この ``readDistance()`` 関数は、超音波センサーと実際に対話します。パルスを送信し、エコーを待ちます。エコーにかかる時間を使用して、センサーと前方の物体との距離を計算します。
 
-   You can refer to the :ref:`cpn_ultrasonic_principle` of the ultrasonic sensor.
+   超音波センサーの原理については :ref:`cpn_ultrasonic_principle` を参照してください。
 
    .. code-block:: arduino
    

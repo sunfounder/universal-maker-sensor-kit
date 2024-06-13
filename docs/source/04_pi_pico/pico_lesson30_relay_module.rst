@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson30_relay_module:
 
-Lesson 30: Relay Module
+レッスン30: リレーモジュール
 ==================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to control a relay module. We will set up a basic circuit connecting the relay to the Pi and write a MicroPython script to toggle the relay on and off at one-second intervals. This project introduces you to controlling external devices such as relays and demonstrates practical output operations using the GPIO pins on the Raspberry Pi Pico W. Ideal for those interested in delving into home automation or managing other high-power devices, this lesson offers fundamental insight into how microcontrollers can interact with and control external hardware.
+このレッスンでは、Raspberry Pi Pico W を使用してリレーモジュールを制御する方法を学びます。リレーを Pi に接続する基本的な回路をセットアップし、リレーを1秒間隔でオンとオフに切り替えるMicroPythonスクリプトを書きます。このプロジェクトは、リレーのような外部デバイスを制御することを紹介し、Raspberry Pi Pico W のGPIOピンを使用した実際の出力操作を示します。ホームオートメーションや他の高出力デバイスの管理に興味がある人にとって、このレッスンはマイクロコントローラーが外部ハードウェアとどのように相互作用し、制御できるかについての基本的な洞察を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、次のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -56,14 +55,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_30_Relay_Module_pico_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -93,29 +92,29 @@ Code
        print("Program interrupted, relay turned off.")
 
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Libraries
-   
-   The ``machine`` and ``time`` libraries are imported to interact with GPIO pins and handle time-related functions, respectively.
+#. ライブラリのインポート
+
+   GPIOピンを操作し、時間関連の機能を扱うために ``machine`` ライブラリと ``time`` ライブラリをインポートします。
 
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Initializing Relay Pin
+#. リレーピンの初期化
 
-   A GPIO pin is set up as an output pin to control the relay. The ``relay_pin`` variable represents the GPIO pin connected to the relay.
+   リレーを制御するためにGPIOピンを出力ピンとして設定します。 ``relay_pin`` 変数はリレーに接続されたGPIOピンを表します。
 
    .. code-block:: python
 
       relay_pin = Pin(16, Pin.OUT)
 
-#. Defining Relay Control Functions
-   
-   Two functions, ``relay_on`` and ``relay_off``, are defined to turn the relay on and off, respectively. These functions change the GPIO pin's value to high (1) or low (0).
+#. リレー制御関数の定義
+
+   リレーをオンにする ``relay_on`` 関数と、リレーをオフにする ``relay_off`` 関数を定義します。これらの関数はGPIOピンの値を高（1）または低（0）に変更します。
 
    .. code-block:: python
 
@@ -125,9 +124,9 @@ Code Analysis
       def relay_off():
           relay_pin.value(0)  # Set relay to OFF state
 
-#. Main Loop and Exception Handling
-   
-   A continuous loop is created using ``while True``. Inside this loop, the relay is turned on and off with a 1-second delay between each state. If an interruption occurs (like a keyboard interruption), the relay is turned off for safety, and a message is printed.
+#. メインループと例外処理
+
+   ``while True`` を使用して連続ループを作成します。このループ内で、リレーは1秒ごとにオンとオフが切り替わります。中断（キーボードによる中断など）が発生した場合、安全のためにリレーがオフにされ、メッセージが表示されます。
 
    .. code-block:: python
 

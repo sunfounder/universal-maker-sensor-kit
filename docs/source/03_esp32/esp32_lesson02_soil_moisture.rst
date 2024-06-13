@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson02_soil_moisture:
 
-Lesson 02: Capacitive Soil Moisture Module
+レッスン 02: 容量式土壌湿度モジュール
 ============================================
 
-In this lesson, you will learn how to use a capacitive soil moisture sensor with an ESP32 Development Board to read the moisture level of soil. We'll cover connecting the sensor to pin 25, reading its analog value, and interpreting these readings to determine the soil's moisture level. This project is ideal for beginners as it provides hands-on experience in working with sensors and understanding analog input on the ESP32 platform.
+このレッスンでは、ESP32開発ボードを使用して容量式土壌湿度センサーで土壌の湿度レベルを読み取る方法を学びます。センサーをピン25に接続し、そのアナログ値を読み取り、これらの読み取り値を解釈して土壌の湿度レベルを判定する方法を紹介します。このプロジェクトは、センサーの操作やESP32プラットフォームでのアナログ入力の理解に関する実践的な経験を提供するため、初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式キットを購入すると便利です。リンクはこちら:
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+または、以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,34 +54,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_02_Capacitive_Soil_Moisture_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ab3dd759-5698-477c-b837-0c3719a09b8d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-#. Defining the sensor pin:
+#. センサーピンの定義:
 
-   This line of code declares a constant integer ``sensorPin`` and assigns it the value of ``25``, which is the pin the sensor is connected to.
+   このコード行は、定数整数 ``sensorPin`` を宣言し、センサーが接続されているピン ``25`` の値を割り当てます。
 
    .. code-block:: arduino
 
       const int sensorPin = 25;
 
-#. Setup function:
+#. セットアップ関数:
 
-   The ``setup()`` function is executed once when the program starts. It initializes serial communication at 9600 baud rate. This setup is necessary for sending data to the serial monitor.
+   ``setup()`` 関数はプログラムが開始されたときに一度実行されます。シリアル通信を9600ボーで初期化します。このセットアップはシリアルモニタにデータを送信するために必要です。
 
    .. code-block:: arduino
 
@@ -89,9 +89,9 @@ Code Analysis
         Serial.begin(9600);
       }
 
-#. Loop function:
+#. ループ関数:
 
-   The ``loop()`` function runs continuously after ``setup()``. It reads the sensor value from pin A0 using ``analogRead()`` and prints this value to the serial monitor. The ``delay(500)`` statement pauses the loop for 500 milliseconds before the next reading, thus controlling the rate of data acquisition.
+   ``loop()`` 関数は ``setup()`` の後に連続して実行されます。 ``analogRead()`` を使用してピンA0からセンサー値を読み取り、この値をシリアルモニタに出力します。 ``delay(500)``  ステートメントは次の読み取りまでループを500ミリ秒一時停止し、データ取得の速度を制御します。
 
    .. code-block:: arduino
 

@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _esp32_lesson24_vibration_sensor:
 
-Lesson 24: Vibration Sensor Module (SW-420)
+Lesson 24: 振動センサーモジュール (SW-420)
 ==============================================
 
-In this lesson, you'll learn how to detect vibrations using an ESP32 Development Board and a Vibration Sensor (SW-420). We'll cover reading digital output from the sensor and using conditional statements to display messages on the serial monitor. When the sensor detects vibration, it will display "Detected vibration..."; otherwise, it will output "...". This project provides a practical way to grasp digital inputs and serial communication, making it ideal for electronics and programming beginners.
+このレッスンでは、ESP32開発ボードと振動センサー (SW-420) を使用して振動を検出する方法を学びます。センサーからデジタル出力を読み取り、条件文を使用してシリアルモニターにメッセージを表示する方法を説明します。センサーが振動を検出すると、「Detected vibration...」と表示され、振動を検出しない場合は「...」と表示されます。このプロジェクトはデジタル入力とシリアル通信を理解するための実践的な方法を提供し、エレクトロニクスやプログラミングの初心者に最適です。
 
-Required Components
+必要な部品
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトには以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+すべての部品が揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,30 +54,30 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_24_Vibration_Sensor_Module_esp32_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a64a9f69-b056-4b41-993e-3f77101091e0/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
+コード解析
 ---------------------------
 
-1. The first line of code is a constant integer declaration for the vibration sensor pin. We use digital pin 25 to read the output from the vibration sensor.
+1. 最初のコード行は振動センサーピンの定数整数宣言です。デジタルピン25を使用して振動センサーからの出力を読み取ります。
 
    .. code-block:: arduino
    
       const int sensorPin = 25;
 
-2. In the ``setup()`` function, we initialize the serial communication at a baud rate of 9600 to print readings from the vibration sensor to the serial monitor. We also set the vibration sensor pin as an input.
+2. ``setup()`` 関数では、シリアル通信を9600ボーレートで初期化し、振動センサーの読み取りをシリアルモニターに表示します。また、振動センサーピンを入力として設定します。
 
    .. code-block:: arduino
    
@@ -86,7 +86,7 @@ Code Analysis
         pinMode(sensorPin, INPUT);  // Set the sensorPin as an input pin
       }
 
-3. The ``loop()`` function is where we continuously check for any vibrations detected by the sensor. If the sensor detects a vibration, it prints "Detected vibration..." to the serial monitor. If no vibration is detected, it prints "...". The loop repeats every 100 milliseconds.
+3. ``loop()`` 関数では、センサーが検出した振動を継続的にチェックします。センサーが振動を検出した場合、シリアルモニターに「Detected vibration...」と表示します。振動を検出しない場合は「...」と表示します。このループは100ミリ秒ごとに繰り返されます。
 
    .. code-block:: arduino
    

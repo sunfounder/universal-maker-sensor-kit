@@ -12,24 +12,23 @@
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
+
 .. _cpn_breadboard:
 
-Breadboard
+ブレッドボード
 ==============
 
 .. image:: img/38_breadboard.png
     :width: 600
 
-A breadboard is a construction base for prototyping of electronics. Originally the word referred to a literal bread board, a polished piece of wood used for slicing bread. In the 1970s the solderless breadboard (a.k.a. plugboard, a terminal array board) became available and nowadays the term "breadboard" is commonly used to refer to these.
+ブレッドボードは、電子回路のプロトタイプ作成のための構築基盤です。元々この言葉は、パンをスライスするために使われる研磨された木製の板を指していました。1970年代にハンダ付け不要のブレッドボード（プラグボード、端子アレイボードとも呼ばれる）が登場し、現在では「ブレッドボード」という用語はこれらを指すのが一般的です。
 
-It is used to build and test circuits quickly before finishing any circuit design. 
-And it has many holes into which components mentioned above can be inserted like ICs and resistors as well as jumper wires. 
-The breadboard allows you to plug in and remove components easily. 
+ブレッドボードは、回路設計を完成させる前に迅速に回路を組み立ててテストするために使用されます。上記のようなICや抵抗器、ジャンパーワイヤーなどの部品を挿入できる多数の穴があり、部品の差し込みや取り外しが容易です。
 
-The picture shows the internal structure of a breadboard. 
-Although these holes on the breadboard appear to be independent of each other, they are actually connected to each other through metal strips internally.
+この画像は、ブレッドボードの内部構造を示しています。ブレッドボードのこれらの穴は一見独立しているように見えますが、実際には内部の金属ストリップで互いに接続されています。
 
 .. image:: img/38_breadboard_internal.png
     :width: 600
 
-If you want to know more about breadboard, refer to: |link_breadboard_tutorials|
+ブレッドボードについてもっと知りたい場合は、こちらを参照してください: |link_breadboard_tutorials| 
+

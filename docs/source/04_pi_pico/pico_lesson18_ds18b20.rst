@@ -17,14 +17,14 @@
 Lesson 18: Temperature Sensor Module (DS18B20)
 ================================================
 
-In this lesson, you'll learn how to integrate and read temperature data from DS18B20 sensors using the Raspberry Pi Pico W. You'll begin by setting up a OneWire bus on the GPIO pin and scanning for DS18X20 devices. The main focus of the lesson is continuously reading and displaying temperature measurements from these sensors. 
+このレッスンでは、Raspberry Pi Pico Wを使用してDS18B20センサーから温度データを取得する方法を学びます。GPIOピンにOneWireバスを設定し、DS18X20デバイスをスキャンすることから始めます。このレッスンの主な焦点は、これらのセンサーから温度測定値を継続的に読み取り、表示することです。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全キットを購入すると便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_18_DS18B20_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -99,11 +97,11 @@ Code
 Code Analysis
 ---------------------------
 
-#. Importing Libraries
+#. インポートするライブラリ
 
-   The code begins by importing necessary libraries. ``machine`` is used for controlling GPIO pins, ``onewire`` for the OneWire communication protocol, ``ds18x20`` for the specific temperature sensor, and ``time`` for delays.
+   コードは必要なライブラリをインポートすることから始まります。 ``machine`` はGPIOピンの制御に使用され、 ``onewire`` はOneWire通信プロトコルに使用され、 ``ds18x20``  は特定の温度センサーに使用され、 ``time`` は遅延処理に使用されます。
 
-   Regarding OneWire in MicroPython, you can refer to |link_micropython_onewire_driver|.
+   MicroPythonにおけるOneWireの詳細については、|link_micropython_onewire_driver| を参照してください。
 
    .. code-block:: python
 
@@ -111,37 +109,37 @@ Code Analysis
       import onewire
       import time, ds18x20
 
-#. Initializing OneWire Bus
+#. OneWireバスの初期化
 
-   A OneWire bus is initialized on GPIO pin 12. This sets up the communication between the Raspberry Pi Pico W and the DS18B20 sensor.
+   GPIOピン12でOneWireバスを初期化します。これにより、Raspberry Pi Pico WとDS18B20センサー間の通信が設定されます。
 
    .. code-block:: python
 
       ow = onewire.OneWire(Pin(12))
 
-#. Creating DS18X20 Instance
+#. DS18X20インスタンスの作成
 
-   A DS18X20 instance is created using the OneWire bus. This instance is used to interact with the temperature sensor.
+   OneWireバスを使用してDS18X20インスタンスを作成します。このインスタンスを使用して温度センサーと対話します。
 
    .. code-block:: python
 
       ds = ds18x20.DS18X20(ow)
 
-#. Scanning for Devices
+#. デバイスのスキャン
 
-   The code scans for DS18X20 devices on the OneWire bus and prints their addresses. This is important for identifying the connected sensors.
+   コードはOneWireバス上のDS18X20デバイスをスキャンして、そのアドレスを表示します。これは接続されたセンサーを特定するために重要です。
 
    .. code-block:: python
 
       roms = ds.scan()
       print('found devices:', roms)
 
-#. Reading Temperature Data
+#. 温度データの読み取り
 
-   - The main loop of the program continuously reads temperature data from the sensor.
-   - It starts the temperature conversion process and waits for it to complete, which takes about 750 milliseconds.
-   - It then reads and prints the temperature from each sensor found on the bus.
-   - The loop pauses for 1000 milliseconds before repeating.
+   - プログラムのメインループは、センサーから温度データを継続的に読み取ります。
+   - 温度変換プロセスを開始し、完了するまで約750ミリ秒待ちます。
+   - バス上の各センサーから温度を読み取り、表示します。
+   - ループは1000ミリ秒の間隔で繰り返されます。
 
    .. raw:: html
 

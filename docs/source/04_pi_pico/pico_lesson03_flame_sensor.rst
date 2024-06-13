@@ -11,20 +11,20 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
+    
 .. _pico_lesson03_flame:
 
-Lesson 03: Flame Sensor Module
+レッスン03：火炎センサーモジュール
 ==================================
 
-In this lesson, you will learn how to use the Raspberry Pi Pico W to detect fire using a flame sensor. When the sensor detects a flame, the onboard LED of the Raspberry Pi Pico W will turn on and display a message indicating fire detection. If no fire is detected, the LED remains off and shows a different message. This project introduces working with external sensors and provides practical experience in handling digital inputs and outputs on the Raspberry Pi Pico W using MicroPython.
+このレッスンでは、Raspberry Pi Pico Wを使用して火炎センサーで火を検知する方法を学びます。センサーが火を検知すると、Raspberry Pi Pico WのオンボードLEDが点灯し、火災検知を示すメッセージを表示します。火災が検知されない場合、LEDは消灯し、別のメッセージが表示されます。このプロジェクトは、外部センサーの使用方法を紹介し、MicroPythonを使用してRaspberry Pi Pico Wのデジタル入出力を処理する実践的な経験を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +37,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -53,15 +53,13 @@ You can also buy them separately from the links below.
     *   - :ref:`cpn_breadboard`
         - |link_breadboard_buy|
 
-
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_03_flame_module_circuit_bb.png
     :width: 100%
 
-
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -85,34 +83,33 @@ Code
    
        time.sleep(0.1)  # Short delay to reduce CPU usage
 
-
-Code Analysis
+コード解析
 ---------------------------
 
-#. Importing Required Modules
+#. 必要なモジュールのインポート
 
-   This part of the code imports necessary modules. ``machine`` is used for interacting with GPIO pins, and ``time`` provides functionality for delays.
+   この部分では、必要なモジュールをインポートします。 ``machine`` はGPIOピンとのやり取りに使用され、 ``time`` は遅延機能を提供します。
    
    .. code-block:: python
 
       from machine import Pin
       import time
 
-#. Initializing the Flame Sensor and LED
+#. 火炎センサーとLEDの初期化
 
-   Sets up the flame sensor and onboard LED. Pin 16 is configured as an input to read the flame sensor, and the onboard LED is set as an output.
+   火炎センサーとオンボードLEDを設定します。ピン16を入力ピンとして火炎センサーを読み取り、オンボードLEDを出力として設定します。
    
    .. code-block:: python
 
       flame_sensor = Pin(16, Pin.IN)
       led = Pin("LED", Pin.OUT)
 
-#. The Main Loop
+#. メインループ
 
-   - An infinite loop checks the state of the flame sensor. If the sensor detects a flame (value 0), it turns on the LED and prints a message. Otherwise, it turns off the LED and prints a different message.
-   - A delay of 0.1 seconds reduces CPU usage.
+   - 無限ループで火炎センサーの状態をチェックします。センサーが火を検知した場合（値が0）、LEDを点灯し、メッセージを表示します。そうでない場合、LEDを消灯し、別のメッセージを表示します。
+   - 0.1秒の遅延がCPU使用率を減らします。
 
-   .. raw :: html
+   .. raw:: html
       
       <br/>
    

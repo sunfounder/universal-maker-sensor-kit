@@ -11,13 +11,13 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
-For Raspberry Pi Pico W
+    
+Raspberry Pi Pico W向け
 ==================================================
 
-Raspberry Pi Pico W users, please check out the following tutorial. This tutorial is suitable for |link_pi_pico| We will use MicroPython to program the Pi Pico W and write a simple code example for each component to help you get started quickly.
+Raspberry Pi Pico Wユーザーの皆さん、以下のチュートリアルをご覧ください。このチュートリアルは |link_pi_pico| に適しています。MicroPythonを使用してPi Pico Wをプログラムし、各コンポーネントの簡単なコード例を作成して、すぐに始められるようにします。
 
-MicroPython is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.
+MicroPythonは、Raspberry Pi Pico Wのようなマイクロコントローラ向けのPythonプログラミング言語のバージョンです。MicroPythonを使用すると、Pythonの知識を活用して電子コンポーネントと対話するコードを作成できます。
 
 .. toctree::
     :maxdepth: 1

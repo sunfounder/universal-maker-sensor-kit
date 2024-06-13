@@ -14,53 +14,52 @@
 
 .. _cpn_l9110:
 
-L9110 Motor Driver Module
-=============================
+L9110モータードライバーモジュール
+==================================
 
-The L9110 motor driver module is adept at driving two motors in tandem. It houses a pair of independent L9110S driver chips, each channel boasting a steady current output of up to 800mA.
+L9110モータードライバーモジュールは、二つのモーターを同時に駆動するのに適しています。独立したL9110Sドライバーチップを二つ搭載しており、各チャンネルは最大800mAの安定した電流出力を誇ります。
 
-Spanning a voltage range from 2.5V to 12V, the module comfortably pairs with both 3.3V and 5V microcontrollers.
+電圧範囲は2.5Vから12Vにわたり、3.3Vおよび5Vのマイクロコントローラと容易にペアリングできます。
 
-Serving as a streamlined solution, the L9110 motor driver module facilitates motor control across a spectrum of applications. 
-Thanks to its dual-channel architecture, it enables the independent orchestration of two motors—ideal for projects where dual motor operations are paramount.
+L9110モータードライバーモジュールは、さまざまなアプリケーションにおいてモーター制御を簡素化するソリューションです。デュアルチャンネルアーキテクチャのおかげで、二つのモーターを独立して制御することが可能で、デュアルモーター操作が重要なプロジェクトに最適です。
 
-Given its potent continuous current output, this module confidently powers motors from the petite to the moderately sized, paving the way for diverse robotic, automation, and motor-centric endeavors. Its expansive voltage range further injects adaptability, aligning with varied power supply setups.
+強力な連続電流出力により、このモジュールは小型から中型までのモーターを自信を持って駆動し、多様なロボティクス、自動化、モーター中心のプロジェクトに道を開きます。広い電圧範囲はさまざまな電源構成に対応し、適応性を高めます。
 
-Designed with user-friendliness in mind, the module offers intuitive input and output terminals, simplifying connections to microcontrollers or akin control devices. Plus, it doesn't skimp on safety—integrated overcurrent and overtemperature safeguards bolster the trustworthiness and security of motor operations.
+使いやすさを念頭に置いて設計されており、マイクロコントローラや類似の制御デバイスへの接続が簡単な直感的な入力および出力端子を提供します。さらに、過電流および過熱保護機能が組み込まれており、モーター操作の信頼性と安全性を強化します。
 
 .. image:: img/37_l9110_module.jpg
     :width: 80%
     :align: center
     
-* **B-1A & B-1B(B-2A)**: Input pins for controlling the spinning direction of Motor B.
-* **A-1A & A-1B**: Input pins for controlling the spinning direction of Motor A.
-* **0A & OB(A)**: Output pins of Motor A.
-* **0A & OB(B)**: Output pins of Motor B.
-* **VCC**: Power input pin (2.5V-12V).
-* **GND**: Ground pin.
+* **B-1A & B-1B(B-2A)**: モーターBの回転方向を制御するための入力ピン。
+* **A-1A & A-1B**: モーターAの回転方向を制御するための入力ピン。
+* **0A & OB(A)**: モーターAの出力ピン。
+* **0A & OB(B)**: モーターBの出力ピン。
+* **VCC**: 電源入力ピン（2.5V-12V）。
+* **GND**: グランドピン。
 
-**Features**
+**特徴**
 
-* On-board 2 L9110S motor control chip
-* Dual-channel motor control.
-* Independent motor spinning direction control.
-* High current output (800mA per channel).
-* Wide voltage range (2.5V-12V).
-* Compact design.
-* Convenient input and output terminals.
-* Built-in protective features.
-* Versatile applications.
-* PCB Size: 29.2mm x 23mm
-* Operating Temperature: -20°C ~ 80°C
-* Power-On LED indicator
+* オンボード2つのL9110Sモーター制御チップ
+* デュアルチャンネルモーター制御
+* 独立したモーター回転方向制御
+* 高電流出力（各チャンネル800mA）
+* 広い電圧範囲（2.5V-12V）
+* コンパクトなデザイン
+* 便利な入力および出力端子
+* 内蔵保護機能
+* 多用途のアプリケーション
+* PCBサイズ: 29.2mm x 23mm
+* 動作温度: -20°C ~ 80°C
+* 電源オンLEDインジケータ
 
 .. _cpn_l9110_principle:
 
-**Operating Principle**
+**動作原理**
 
-Here is the truth table of Motor B:
+以下はモーターBの真理値表です：
 
-This truth table shows the different states of Motor B based on the values of input pins B-1A and B-1B(B-2A). It indicates the direction of rotation (clockwise or counterclockwise), braking, or stopping of Motor B.
+この真理値表は、入力ピンB-1AおよびB-1B(B-2A)の値に基づくモーターBのさまざまな状態を示しています。回転方向（時計回りまたは反時計回り）、ブレーキ、または停止を示しています。
 
 .. list-table:: 
     :widths: 25 25 50
@@ -82,9 +81,9 @@ This truth table shows the different states of Motor B based on the values of in
       - 1
       - Stop
 
-Here is the truth table of Motor A:
+以下はモーターAの真理値表です：
 
-This truth table shows the different states of Motor A based on the values of input pins A-1A and A-1B. It indicates the direction of rotation (clockwise or counterclockwise), braking, or stopping of Motor A.
+この真理値表は、入力ピンA-1AおよびA-1Bの値に基づくモーターAのさまざまな状態を示しています。回転方向（時計回りまたは反時計回り）、ブレーキ、または停止を示しています。
 
 .. list-table:: 
     :widths: 25 25 50
@@ -106,7 +105,7 @@ This truth table shows the different states of Motor A based on the values of in
       - 1
       - Stop
 
-Example
+例
 ---------------------------
 * :ref:`uno_lesson31_pump` (Arduino UNO)
 * :ref:`esp32_lesson31_pump` (ESP32)

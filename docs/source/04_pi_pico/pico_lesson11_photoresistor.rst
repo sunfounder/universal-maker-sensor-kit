@@ -11,20 +11,19 @@
     - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
-
 .. _pico_lesson11_photoresistor:
 
-Lesson 11: Photoresistor Module
-==================================
+レッスン 11: フォトレジスタモジュール
+=====================================
 
-In this lesson, you'll learn how to connect a photoresistor module to the Raspberry Pi Pico W in order to measure light intensity. By linking the photoresistor to the analog input, you can read different analog values that correspond to varying light levels. This project is ideal for beginners and provides hands-on experience in utilizing analog inputs on the Raspberry Pi Pico W with MicroPython.
+このレッスンでは、フォトレジスタモジュールをRaspberry Pi Pico Wに接続し、光の強度を測定する方法を学びます。フォトレジスタをアナログ入力に接続することで、異なる光レベルに対応するさまざまなアナログ値を読み取ることができます。このプロジェクトは初心者に最適で、Raspberry Pi Pico WでMicroPythonを使用してアナログ入力を活用する実践的な経験を提供します。
 
-Required Components
+必要なコンポーネント
 --------------------------
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式揃ったキットを購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
@@ -37,7 +36,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 94
         - |link_umsk|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 30 20
@@ -54,14 +53,14 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
 
 
-Wiring
+配線
 ---------------------------
 
 .. image:: img/Lesson_11_photoresistor_module_bb.png
     :width: 100%
 
 
-Code
+コード
 ---------------------------
 
 .. code-block:: python
@@ -77,30 +76,30 @@ Code
    
        time.sleep_ms(200)  # Delay of 200 ms between reads
 
-
-Code Analysis
+       
+コード解析
 ---------------------------
 
-1. **Importing Libraries**:
+1. **ライブラリのインポート**:
 
-   The code begins by importing necessary libraries. The ``machine`` library is used for controlling hardware components, and the ``time`` library is used for managing time-related tasks such as delays.
+   コードは必要なライブラリをインポートすることから始まります。 ``machine``ライブラリはハードウェアコンポーネントを制御するために使用され、 ``time``ライブラリは遅延などの時間関連のタスクを管理するために使用されます。
 
    .. code-block:: python
 
       import machine  # Hardware control library
       import time  # Time control library
 
-2. **Initializing the Photoresistor**:
+2. **フォトレジスタの初期化**:
 
-   Here, we initialize the photoresistor. We use the ``machine.ADC`` class to create an ADC object on pin 26, where the photoresistor is connected. The ADC object will be used to read the analog values from the photoresistor.
+   ここでは、フォトレジスタを初期化します。 ``machine.ADC``クラスを使用してピン26にADCオブジェクトを作成します。ここにフォトレジスタが接続されています。ADCオブジェクトはフォトレジスタからアナログ値を読み取るために使用されます。
 
    .. code-block:: python
 
       photoresistor = machine.ADC(26)  # Initialize ADC on pin 26
 
-3. **Reading from the Photoresistor**:
+3. **フォトレジスタからの読み取り**:
 
-   In this loop, the code continuously reads the analog value from the photoresistor using ``photoresistor.read_u16()``. This method reads the value as a 16-bit unsigned integer. The value is then printed to the console.
+   このループでは、 ``photoresistor.read_u16()``を使用してフォトレジスタからアナログ値を連続的に読み取ります。このメソッドは値を16ビットの符号なし整数として読み取ります。その後、値はコンソールに出力されます。
 
    .. code-block:: python
 
@@ -108,9 +107,9 @@ Code Analysis
           value = photoresistor.read_u16()  # Read analog value
           print(value)  # Print the value
 
-4. **Adding a Delay**:
+4. **遅延の追加**:
 
-   To prevent the code from running too quickly and flooding the console with data, a delay of 200 milliseconds is introduced after each read using ``time.sleep_ms(200)``.
+   コードが速すぎて実行され、データでコンソールが溢れるのを防ぐために、各読み取りの後に200ミリ秒の遅延を``time.sleep_ms(200)``を使用して追加します。
 
    .. code-block:: python
 
