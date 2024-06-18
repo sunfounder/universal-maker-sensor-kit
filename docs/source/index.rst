@@ -17,14 +17,14 @@
 
 このたびは、弊社のユニバーサルメーカーセンサーキットをお選びいただき、ありがとうございます。
 
- .. note::
-    このドキュメントは以下の言語で利用できます。
+.. note::
+   このドキュメントは以下の言語で利用できます。
 
-        * |link_german_tutorials|
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
+       * |link_german_tutorials|
+       * |link_jp_tutorials|
+       * |link_en_tutorials|
 
-    ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
+   ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
 
 .. image:: img/universal-maker-sensor-kit-cover.png
     :width: 100%
