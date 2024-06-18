@@ -64,6 +64,12 @@ Verkabelung
 Code
 ---------------------------
 
+.. note::
+
+    * Öffnen Sie die Datei ``18_ds18b20_module.py`` im Pfad ``universal-maker-sensor-kit-main/pico/Lesson_18_DS18B20_Module`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen. Für detaillierte Anleitungen lesen Sie bitte :ref:`open_run_code_py`.
+    
+    * Vergessen Sie nicht, auf den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke zu klicken.
+
 .. code-block:: python
 
    from machine import Pin

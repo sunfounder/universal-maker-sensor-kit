@@ -64,6 +64,14 @@ Verkabelung
 Code
 ---------------------------
 
+.. note::
+
+    * Öffnen Sie die Datei ``16_ds1302_module.py`` im Pfad ``universal-maker-sensor-kit-main/pico/Lesson_16_DS1302_Module`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen. Für detaillierte Anleitungen lesen Sie bitte :ref:`open_run_code_py`.
+    
+    * Hier müssen Sie die Dateien ``ds1302.py`` verwenden. Bitte überprüfen Sie, ob sie auf dem Pico W hochgeladen wurden. Für eine detaillierte Anleitung siehe :ref:`add_libraries_py`.
+    
+    * Vergessen Sie nicht, auf den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke zu klicken.
+
 .. code-block:: python
 
    from machine import Pin
