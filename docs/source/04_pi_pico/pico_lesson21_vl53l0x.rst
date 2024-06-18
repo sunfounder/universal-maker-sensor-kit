@@ -64,6 +64,14 @@ Wiring
 Code
 ---------------------------
 
+.. note::
+
+    * Open the ``21_vl53l0x_module.py`` file under the path of ``universal-maker-sensor-kit-main/pico/Lesson_21_VL53L0X_Module`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it. For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+
+    * Here you need to use the ``vl53l0x.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
 .. code-block:: python
 
    import time

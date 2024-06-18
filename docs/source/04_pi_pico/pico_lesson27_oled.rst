@@ -67,6 +67,14 @@ Wiring
 Code
 ---------------------------
 
+.. note::
+
+    * Open the ``27_ssd1306_oled_module.py`` file under the path of ``universal-maker-sensor-kit-main/pico/Lesson_27_SSD1306_OLED_Module`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it. For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+
+    * Here you need to use the ``ssd1306.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
 .. code-block:: python
 
    from machine import Pin, I2C

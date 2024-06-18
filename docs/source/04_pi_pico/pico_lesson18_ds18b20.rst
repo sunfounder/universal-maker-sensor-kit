@@ -64,6 +64,12 @@ Wiring
 Code
 ---------------------------
 
+.. note::
+
+    * Open the ``18_ds18b20_module.py`` file under the path of ``universal-maker-sensor-kit-main/pico/Lesson_18_DS18B20_Module`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it. For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
 .. code-block:: python
 
    from machine import Pin
