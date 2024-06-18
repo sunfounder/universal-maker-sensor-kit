@@ -28,6 +28,9 @@ Flammensensor-Modul
 .. tip::
    Halten Sie einen bestimmten Abstand zwischen dem Sensor und der Flamme, um Schäden durch hohe Temperaturen zu vermeiden.
 
+.. note::
+   **Hinweis**: Aufgrund eines Produktionsfehlers können einige der Flammensensoren in unseren Kits die 3-Pin-Version sein, die über keinen AO (Analogausgang) verfügt. Diese Version ist für die meisten Projekte geeignet und beeinträchtigt die allgemeine Verwendung nicht. Falls Sie dennoch die 4-Pin-Version benötigen, kontaktieren Sie bitte unseren Kundenservice unter service@sunfounder.com. Wir werden Ihnen kostenlos einen Ersatz zur Verfügung stellen, um Ihren Anforderungen gerecht zu werden.
+
 Der Flammensensor ist ein Sensor, der das Vorhandensein von Feuer oder Flammen erkennen kann. Der Flammensensor arbeitet auf der Basis von Infrarotstrahlung. Die IR-Photodiode erkennt die IR-Strahlung von jedem heißen Körper. Dieser Wert wird dann mit einem Sollwert verglichen. Sobald die Strahlung den Schwellenwert erreicht, ändert der Sensor entsprechend seinen Ausgang. Er wird häufig in Brandmeldesystemen in Haushalten und Industrie eingesetzt.
 
 Der Flammensensor arbeitet nach dem Prinzip der Infrarot (IR)-Erkennung. Der Sensor verfügt über einen IR-Empfänger, der die von Flammen ausgestrahlte IR-Strahlung erkennt. Wenn Feuer brennt, sendet es eine kleine Menge Infrarotlicht aus, dieses Licht wird von der Photodiode (IR-Empfänger) auf dem Sensormodul empfangen. Dann verwenden wir einen Operationsverstärker, um eine Spannungsänderung über dem IR-Empfänger zu überprüfen, sodass bei Branderkennung der Ausgangspin (DO) 0V (LOW) liefert und bei Nicht-Erkennung 5V (HIGH) anliegt.
