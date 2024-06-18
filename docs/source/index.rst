@@ -22,7 +22,7 @@ Thanks for choosing our Universal Maker Sensor Kit.
 
          * |link_german_tutorials|
          * |link_jp_tutorials|
-         * |link_en_tutorials |
+         * |link_en_tutorials|
     
      Please click on the respective links to access the document in your preferred language.
 
