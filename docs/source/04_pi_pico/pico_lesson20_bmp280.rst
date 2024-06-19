@@ -63,6 +63,13 @@
 コード
 ---------------------------
 
+.. note::
+
+    * ``universal-maker-sensor-kit-main/pico/Lesson_20_BMP280_Module`` のパスにある ``20_bmp280_module.py`` ファイルを開くか、このコードを Thonny にコピーし、「現在のスクリプトを実行」をクリックするか、F5 キーを押して実行します。詳細なチュートリアルについては :ref:`open_run_code_py` を参照してください。
+
+    * ここでは ``bmp280.py`` を使用する必要があります。Pico W にアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
+    * 右下隅にある「MicroPython (Raspberry Pi Pico)」インタープリタをクリックするのを忘れないでください。
+
 .. code-block:: python
 
    from machine import I2C, Pin

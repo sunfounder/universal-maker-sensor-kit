@@ -64,6 +64,13 @@
 コード
 ---------------------------
 
+.. note::
+
+    * ``universal-maker-sensor-kit-main/pico/Lesson_26_I2C_LCD1602_Module`` のパスにある ``26_lcd1602_module.py`` ファイルを開くか、このコードを Thonny にコピーし、「現在のスクリプトを実行」をクリックするか、F5 キーを押して実行します。詳細なチュートリアルについては :ref:`open_run_code_py` を参照してください。
+
+    * ここでは ``lcd1602.py`` を使用する必要があります。Pico W にアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
+    * 右下隅にある「MicroPython (Raspberry Pi Pico)」インタープリタをクリックするのを忘れないでください。
+
 .. code-block:: python
 
    from machine import I2C, Pin

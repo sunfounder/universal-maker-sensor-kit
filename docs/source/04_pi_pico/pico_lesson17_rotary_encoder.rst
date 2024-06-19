@@ -63,6 +63,13 @@ Wiring
 Code
 ---------------------------
 
+.. note::
+
+    * ``universal-maker-sensor-kit-main/pico/Lesson_17_Rotary_Encoder_Module`` のパスにある ``17_rotary_encoder_module.py`` ファイルを開くか、このコードを Thonny にコピーし、「現在のスクリプトを実行」をクリックするか、F5 キーを押して実行します。詳細なチュートリアルについては :ref:`open_run_code_py` を参照してください。
+
+    * ここでは ``rotary_irq_rp2.py`` を使用する必要があります。Pico W にアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
+    * 右下隅にある「MicroPython (Raspberry Pi Pico)」インタープリタをクリックするのを忘れないでください。
+
 .. code-block:: python
 
    from rotary_irq_rp2 import RotaryIRQ
