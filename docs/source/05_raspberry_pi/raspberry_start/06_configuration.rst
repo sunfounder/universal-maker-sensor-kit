@@ -35,7 +35,7 @@ Raspberry PiでI2Cポートを有効にするには、以下の手順に従っ�
 
        <br/><br/>
 
-2. **Interfacing options**に移動します。
+2. **Interfacing options** に移動します。
 
    .. note::
       ``上``および ``下`` 矢印キーを使用して、利用可能なオプションの間でハイライト選択を移動させます。 ``右`` 矢印キーを押すと、オプションメニューを抜けて ``<Select>`` および ``<Finish>`` ボタンに移動します。 ``左`` を押すと、再びオプションに戻ります。代わりに、 ``Tab`` キーを使用してこれらの間を切り替えることもできます。
@@ -47,7 +47,7 @@ Raspberry PiでI2Cポートを有効にするには、以下の手順に従っ�
 
        <br/><br/>
 
-3. **I2C**を選択します。
+3. **I2C** を選択します。
 
    .. image:: img/configuration_03.png
        :width: 100%
@@ -56,7 +56,7 @@ Raspberry PiでI2Cポートを有効にするには、以下の手順に従っ�
 
        <br/><br/>
 
-4. **<Yes>**を選択してI2Cインターフェースを有効にし、次に **<Ok>** を選択します。
+4. **<Yes>** を選択してI2Cインターフェースを有効にし、次に **<Ok>** を選択します。
 
    .. image:: img/configuration_04.png
        :width: 100%
@@ -65,7 +65,7 @@ Raspberry PiでI2Cポートを有効にするには、以下の手順に従っ�
 
        <br/><br/>
 
-5. **<Finish>**を選択してRaspberry Pi Software Configuration Toolを終了します。
+5. **<Finish>** を選択してRaspberry Pi Software Configuration Toolを終了します。
 
    .. image:: img/configuration_05.png
        :width: 100%
@@ -114,7 +114,7 @@ Raspberry Piで1-Wireポートを有効にするには、以下の手順に従�
 
        <br/><br/>
 
-2. **Interfacing options**に移動します。
+2. **Interfacing options** に移動します。
 
    .. note::
       ``上``および ``下`` 矢印キーを使用して、利用可能なオプションの間でハイライト選択を移動させます。 ``右`` 矢印キーを押すと、オプションメニューを抜けて ``<Select>`` および ``<Finish>`` ボタンに移動します。 ``左`` を押すと、再びオプションに戻ります。代わりに、 ``Tab`` キーを使用してこれらの間を切り替えることもできます。
@@ -126,7 +126,7 @@ Raspberry Piで1-Wireポートを有効にするには、以下の手順に従�
 
        <br/><br/>
 
-3. **1-Wire**を選択します。
+3. **1-Wire** を選択します。
 
    .. image:: img/configuration_10.png
        :width: 100%
@@ -135,7 +135,7 @@ Raspberry Piで1-Wireポートを有効にするには、以下の手順に従�
 
        <br/><br/>
 
-4. **<Yes>**を選択して1-Wireインターフェースを有効にし、次に **<Ok>** を選択します。
+4. **<Yes>** を選択して1-Wireインターフェースを有効にし、次に **<Ok>** を選択します。
 
    .. image:: img/configuration_11.png
        :width: 100%
@@ -144,7 +144,7 @@ Raspberry Piで1-Wireポートを有効にするには、以下の手順に従�
 
        <br/><br/>
 
-5. **<Finish>**を選択してRaspberry Pi Software Configuration Toolを終了します。
+5. **<Finish>** を選択してRaspberry Pi Software Configuration Toolを終了します。
 
    .. image:: img/configuration_12.png
        :width: 100%
@@ -153,7 +153,7 @@ Raspberry Piで1-Wireポートを有効にするには、以下の手順に従�
 
        <br/><br/>
 
-6. **<yes>**を選択してRaspberry Piを再起動します。
+6. **<yes>** を選択してRaspberry Piを再起動します。
 
    .. image:: img/configuration_13.png
        :width: 100%

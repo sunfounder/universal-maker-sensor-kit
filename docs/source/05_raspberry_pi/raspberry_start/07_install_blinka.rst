@@ -14,10 +14,10 @@
 
 .. _install_blinka:
 
-``Adafruit_Blinka``（CircuitPython）のインストール - 任意
+``Adafruit_Blinka`` （CircuitPython）のインストール - 任意
 ==========================================================
 
-高度なモジュールを使用するために、``Adafruit_Blinka``ライブラリを使用することをお勧めします。これはCircuitPython環境の主要なコンポーネントです。Blinkaの特長は、CircuitPython用に書かれたコードをRaspberry PiなどのLinuxコンピュータ上でシームレスかつ簡単に実行できることです。
+高度なモジュールを使用するために、 ``Adafruit_Blinka`` ライブラリを使用することをお勧めします。これはCircuitPython環境の主要なコンポーネントです。Blinkaの特長は、CircuitPython用に書かれたコードをRaspberry PiなどのLinuxコンピュータ上でシームレスかつ簡単に実行できることです。
 
 このライブラリを使用することで、BMP280、VL53L0X、OLEDなどの複雑なモジュールの利用が簡単になり、プロジェクト開発プロセスが効率化されます。CircuitPythonを使えば、ハードウェアの知識がなくても、堅牢なアプリケーションの作成に集中できるようになります。
 
@@ -83,7 +83,7 @@ Raspberry Piを再起動するたびに仮想環境をアクティブにする�
 Blinkaテスト
 -----------------------
 
-``blinkatest.py``という新しいファイルをnanoまたはお好みのテキストエディタで作成し、以下の内容を入力します：
+``blinkatest.py`` という新しいファイルをnanoまたはお好みのテキストエディタで作成し、以下の内容を入力します：
 
 .. code-block:: python
 
