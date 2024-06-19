@@ -14,6 +14,7 @@
    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson22_touch_sensor:
+
 Lektion 22: Touch-Sensor-Modul
 ==================================
 

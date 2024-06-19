@@ -13,6 +13,7 @@
    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson26_lcd:
+
 Lesson 26: I2C LCD 1602
 ==================================
 

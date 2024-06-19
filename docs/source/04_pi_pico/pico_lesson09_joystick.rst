@@ -13,7 +13,8 @@
    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson09_joystick:
-Lesson 09: Joystick-Modul
+
+Lektion 09: Joystick-Modul
 ==================================
 
 In dieser Lektion lernst du, wie du mit dem Raspberry Pi Pico W ein Joystick-Modul verbindest und dessen Daten ausliest. Du wirst lernen, wie man analoge Werte der X- und Y-Achsen des Joysticks initialisiert und ausliest sowie digitale Eingaben von seinem Schalter mit MicroPython verarbeitet. Diese Lektion ist ideal für Anfänger und bietet praktische Erfahrung im Lesen und Interpretieren analoger und digitaler Eingaben auf dem Raspberry Pi Pico W.

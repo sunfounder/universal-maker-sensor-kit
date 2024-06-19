@@ -14,7 +14,7 @@
 
 .. _pico_lesson17_rotary_encoder:
 
-Lesson 17: Drehgebermodul
+Lektion 17: Drehgebermodul
 ====================================
 
 In diesem Lektion lernst du, wie du den Raspberry Pi Pico W verwendest, um einen Drehgeber zu steuern. Der Drehgeber ist ein fortschrittlicher Sensor, der die Drehung eines Knopfes in ein Ausgangssignal übersetzt, das sowohl die Menge als auch die Richtung der Drehung angibt. Dieses Projekt bietet praktische Erfahrung mit digitalen Eingabegeräten und verbessert deine Fähigkeit, mit komplexeren Sensoren zu arbeiten. Du wirst den Drehgeber mit spezifischen GPIO-Pins konfigurieren, seine Ausgabe lesen, um Drehrichtung und -menge zu bestimmen, und das Auslösen von Ereignissen mit einem Knopfmechanismus beherrschen.

@@ -13,6 +13,7 @@
    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _pico_lesson15_raindrop:
+
 Lektion 15: Regentropfen-Erkennungsmodul
 ===============================================
 
