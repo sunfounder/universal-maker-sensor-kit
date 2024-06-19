@@ -40,7 +40,7 @@ Pinout
 ---------------------------
 * **VCC**: This is the positive power supply input from the main control. 
 * **GND**: Ground connection.
-* **DO**: Digital output. 
+* **S**: This pin is used for transmitting temperature and humidity data to the microcontroller using a single-wire bi-directional protocol.
 
 Principle
 ---------------------------
