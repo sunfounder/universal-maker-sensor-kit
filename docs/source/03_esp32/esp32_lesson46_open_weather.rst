@@ -13,7 +13,7 @@
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 .. _esp32_iot_owm:
 
-Lesson 46: @OpenWeatherMapによるリアルタイム天気
+レッスン46: @OpenWeatherMapによるリアルタイム天気
 ====================================================
 
 IoT Open Weather Displayプロジェクトは、ESP32ボードとI2C LCD1602モジュールを利用して、OpenWeatherMap APIからデータを取得する天気情報表示装置を作成します。

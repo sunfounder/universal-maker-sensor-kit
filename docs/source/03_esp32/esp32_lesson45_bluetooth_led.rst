@@ -14,7 +14,7 @@
 .. _esp32_bluetooth_led:
 
 
-Lesson 45: Bluetooth Control RGB LED
+レッスン45: Bluetoothで制御するRGB LED
 ===============================================
 
 このプロジェクトは前のプロジェクト(:ref:`esp32_bluetooth`)の拡張版で、RGB LEDの設定と、「led_off」、「red」、「green」などのカスタムコマンドを追加します。これらのコマンドを使用して、LightBlueを使ったモバイルデバイスからRGB LEDを制御することができます。

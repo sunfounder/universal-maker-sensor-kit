@@ -13,7 +13,7 @@
     👉 私たちと一緒に探索と創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 .. _esp32_iot_bluetooth_app:
 
-Lesson 50: Androidアプリケーション - ArduinoとBluetoothを使用したRGB LED操作
+レッスン50: Androidアプリケーション - ArduinoとBluetoothを使用したRGB LED操作
 ==================================================================================
 
 このプロジェクトの目的は、Bluetooth技術を使用してスマートフォンを介してRGB LEDの色を操作できるAndroidアプリケーションを開発することです。
