@@ -40,7 +40,7 @@ Pinbelegung
 ---------------------------
 * **VCC**: Dies ist der positive Stromeingang von der Hauptsteuerung.
 * **GND**: Masseanschluss.
-* **DO**: Digitalausgang.
+* **S**: Datenpin, verwendet für die Datenübertragung.
 
 Funktionsprinzip
 ---------------------------
