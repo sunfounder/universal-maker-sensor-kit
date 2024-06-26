@@ -62,6 +62,9 @@ Wiring
 Code
 ---------------------------
 
+.. note:: 
+    To install the library, use the Arduino Library Manager and search for **"Adafruit MPU6050"** and install it. 
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b0efe80d-c89d-402e-a213-a778c404565b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

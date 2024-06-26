@@ -62,6 +62,9 @@ Wiring
 Code
 ---------------------------
 
+.. note:: 
+   To install the library, use the Arduino Library Manager and search for **"Adafruit BMP280"** and install it.
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/96357754-fa67-4a69-82dc-156650454e41/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

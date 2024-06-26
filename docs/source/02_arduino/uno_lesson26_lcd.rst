@@ -64,6 +64,9 @@ Wiring
 Code
 ---------------------------
 
+.. note:: 
+   To install the library, use the Arduino Library Manager and search for **"LiquidCrystal I2C"** and install it.  
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/48a64786-bcfc-4497-a12d-495c283e09ce/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

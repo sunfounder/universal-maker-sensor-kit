@@ -62,6 +62,9 @@ Wiring
 Code
 ---------------------------
 
+.. note:: 
+   To install the library, use the Arduino Library Manager and search for **"Rtc by Makuna"** and install it. 
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/9b509afa-545f-4fb6-b8f0-0d87b7cf4992/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

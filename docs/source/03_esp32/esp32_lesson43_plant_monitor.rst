@@ -78,6 +78,9 @@ Wiring
 Code
 ---------------------------
 
+.. note:: 
+   To install the library, use the Arduino Library Manager and search for **"LiquidCrystal I2C"** and **"DHT sensor library"** and install it.  
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c769b454-80f4-4516-83ce-9ff702d8627f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -85,8 +88,6 @@ Code
 
 Code Analysis
 ---------------------------
-
-
 
 The code is structured to seamlessly manage plant watering by monitoring environmental parameters:
 

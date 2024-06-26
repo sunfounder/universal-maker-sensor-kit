@@ -62,6 +62,9 @@ Wiring
 Code
 ---------------------------
 
+.. note:: 
+   To install the library, use the Arduino Library Manager and search for **"DallasTemperature"** and install it. 
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/7619d902-81b3-4faa-bdf4-29b4429ccd54/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -72,6 +75,9 @@ Code Analysis
 #. Library inclusion
 
    The inclusion of the OneWire and DallasTemperature libraries allows communication with the DS18B20 sensor.
+
+   .. note:: 
+      To install the library, use the Arduino Library Manager and search for **"DallasTemperature"** and install it. 
 
    .. code-block:: arduino
 
