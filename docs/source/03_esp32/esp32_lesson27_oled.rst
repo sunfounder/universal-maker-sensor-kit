@@ -64,6 +64,9 @@
 コード
 ---------------------------
 
+.. note:: 
+   ライブラリをインストールするには、Arduino Library Managerを使用して **"Adafruit SSD1306"** および **"Adafruit GFX"** を検索し、インストールしてください。
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/33f2fdd0-af4e-4438-bacf-982894bb8ac4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

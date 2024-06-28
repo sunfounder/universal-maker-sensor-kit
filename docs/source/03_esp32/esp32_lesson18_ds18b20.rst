@@ -64,6 +64,9 @@
 コード
 ---------------------------
 
+.. note:: 
+   ライブラリをインストールするには、Arduino Library Managerを使用して **"DallasTemperature"** を検索し、インストールしてください。
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/08628842-3743-431f-871e-51b51ae1851f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -74,6 +77,9 @@
 #. ライブラリのインクルード
 
    OneWireおよびDallasTemperatureライブラリのインクルードにより、DS18B20センサーとの通信が可能になります。
+
+   .. note:: 
+      ライブラリをインストールするには、Arduino Library Managerを使用して **"DallasTemperature"** を検索し、インストールしてください。
 
    .. code-block:: arduino
 

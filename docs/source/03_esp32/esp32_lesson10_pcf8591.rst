@@ -64,6 +64,9 @@
 コード
 ---------------------------
 
+.. note:: 
+   ライブラリをインストールするには、Arduinoライブラリマネージャを使用して **"Adafruit PCF8591"** を検索し、インストールしてください。
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/5f184da9-9ea5-4c8a-877e-a7a41abf8c15/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

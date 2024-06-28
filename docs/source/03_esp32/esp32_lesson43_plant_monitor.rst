@@ -77,6 +77,9 @@
 コード
 ---------------------------
 
+.. note:: 
+   ライブラリをインストールするには、Arduino Library Managerを使用し、 **"LiquidCrystal I2C"**と **"DHT sensor library"** を検索してインストールしてください。
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c769b454-80f4-4516-83ce-9ff702d8627f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -91,6 +94,9 @@
 
     ``Wire.h`` 、 ``LiquidCrystal_I2C.h`` 、および ``DHT.h`` ライブラリをインクルードして機能を提供します。
     DHT11センサー、土壌湿度センサー、水ポンプのピン割り当てと設定を指定します。
+
+    .. note:: 
+       ライブラリをインストールするには、Arduino Library Managerを使用し、 **"LiquidCrystal I2C"**と **"DHT sensor library"** を検索してインストールしてください。
 
     .. code-block:: arduino
 

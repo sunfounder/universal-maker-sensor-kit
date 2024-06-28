@@ -64,6 +64,9 @@
 コード
 ---------------------------
 
+.. note:: 
+    ライブラリをインストールするには、Arduino Library Managerを使用し、 **"Adafruit MPU6050"**を検索してインストールしてください。
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/9464e05b-2cab-4185-bf6d-983e907dd279/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

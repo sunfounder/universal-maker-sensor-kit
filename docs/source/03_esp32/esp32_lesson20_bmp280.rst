@@ -64,6 +64,9 @@
 コード
 ---------------------------
 
+.. note::
+   ライブラリをインストールするには、Arduino Library Managerを使用して **"Adafruit BMP280"**を検索し、インストールしてください。
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/25c4b695-7d09-47f5-9385-61d239afa214/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

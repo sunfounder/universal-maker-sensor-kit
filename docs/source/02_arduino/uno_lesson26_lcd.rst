@@ -62,6 +62,9 @@
 コード
 ---------------------------
 
+.. note:: 
+   ライブラリをインストールするには、Arduinoライブラリマネージャーを使用し、 **"LiquidCrystal I2C"** を検索してインストールしてください。  
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/48a64786-bcfc-4497-a12d-495c283e09ce/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
