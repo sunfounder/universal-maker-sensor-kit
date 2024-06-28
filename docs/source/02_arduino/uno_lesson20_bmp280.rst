@@ -61,6 +61,9 @@ Verkabelung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen nach **"Adafruit BMP280"** und installieren Sie sie. 
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/96357754-fa67-4a69-82dc-156650454e41/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

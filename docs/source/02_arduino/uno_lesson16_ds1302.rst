@@ -61,6 +61,9 @@ Verkabelung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"Rtc by Makuna"** und installieren Sie diese. 
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/9b509afa-545f-4fb6-b8f0-0d87b7cf4992/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

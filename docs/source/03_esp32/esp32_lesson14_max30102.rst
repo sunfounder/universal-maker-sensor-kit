@@ -65,6 +65,9 @@ Verdrahtung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"SparkFun MAX3010x"** und installieren Sie sie.
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a59539a0-dab1-414e-a195-3d221a61c9a9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

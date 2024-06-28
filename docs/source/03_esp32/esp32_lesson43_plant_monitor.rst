@@ -74,6 +74,9 @@ Verdrahtung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager, suchen Sie nach **"LiquidCrystal I2C"** und **"DHT sensor library"** und installieren Sie sie.
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c769b454-80f4-4516-83ce-9ff702d8627f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

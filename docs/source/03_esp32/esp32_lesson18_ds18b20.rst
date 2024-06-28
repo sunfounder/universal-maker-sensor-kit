@@ -62,6 +62,9 @@ Verdrahtung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"DallasTemperature"** und installieren Sie diese. 
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/08628842-3743-431f-871e-51b51ae1851f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -72,6 +75,9 @@ Code-Analyse
 #. Bibliothekseinbindung
 
    Die Einbindung der OneWire- und DallasTemperature-Bibliotheken ermöglicht die Kommunikation mit dem DS18B20-Sensor.
+
+   .. note:: 
+      Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen Sie nach **"DallasTemperature"** und installieren Sie diese. 
 
    .. code-block:: arduino
 

@@ -64,6 +64,9 @@ Verkabelung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager und suchen nach **"LiquidCrystal I2C"** und installieren diese.  
+
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/ae00239d-f273-4686-b01d-f20487892640/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

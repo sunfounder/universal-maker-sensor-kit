@@ -69,6 +69,9 @@ Verdrahtung
 Code
 ---------------------------
 
+.. note:: 
+   Um die Bibliothek zu installieren, verwenden Sie den Arduino Library Manager, suchen Sie nach **"Adafruit SSD1306"** und **"Adafruit GFX"** und installieren Sie sie.
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f3c250f6-c5f6-4dc9-906a-a5a914741fe3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
