@@ -83,7 +83,9 @@ Arduinoユーザーの皆さん、以下のチュートリアルをご参照く�
     uno_lesson44_digital_dice.rst 
     uno_lesson45_plant_monitor.rst 
     uno_lesson46_bluetooth_lcd.rst 
-    uno_lesson47_bluetooth_traffic_light copy.rst 
+    uno_lesson47_bluetooth_traffic_light copy.rst
+    uno_lesson52_tilt_direction_indicator.rst
+    uno_lesson53_direction_indicator.rst
 
 **IoT設定**
 
