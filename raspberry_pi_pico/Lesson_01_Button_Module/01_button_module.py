@@ -1,8 +1,8 @@
 from machine import Pin
 import time
 
-# Set GPIO 2 as an input pin to read the button state
-button = Pin(2, Pin.IN)
+# Set GPIO 19 as an input pin to read the button state
+button = Pin(19, Pin.IN)
 
 # Initialize the onboard LED of the Raspberry Pi Pico W
 led = Pin('LED', Pin.OUT)
