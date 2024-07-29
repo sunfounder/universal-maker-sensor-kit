@@ -58,7 +58,7 @@ Sie können sie auch separat über die folgenden Links kaufen.
 Verkabelung
 ---------------------------
 
-.. image:: img/Lesson_14_MAX30102_bb.png
+.. image:: img/Lesson_14_max30102_bb.png
     :width: 100%
 
 
