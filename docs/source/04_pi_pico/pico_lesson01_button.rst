@@ -69,8 +69,8 @@
    from machine import Pin
    import time
    
-   # Set GPIO 2 as an input pin to read the button state
-   button = Pin(2, Pin.IN)
+   # Set GPIO 19 as an input pin to read the button state
+   button = Pin(19, Pin.IN)
    
    # Initialize the onboard LED of the Raspberry Pi Pico W
    led = Pin('LED', Pin.OUT)
@@ -97,11 +97,11 @@
 
 #. ボタンの設定
 
-   GPIO 2は入力ピンとして設定されます。これに接続された押しボタンの状態を読み取ります。
+   GPIO 19は入力ピンとして設定されます。これに接続された押しボタンの状態を読み取ります。
 
    .. code-block:: python
 
-      button = Pin(2, Pin.IN)
+      button = Pin(19, Pin.IN)
 
 #. LEDの設定
 
