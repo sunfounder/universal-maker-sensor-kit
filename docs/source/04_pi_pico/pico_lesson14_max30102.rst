@@ -57,7 +57,7 @@ You can also buy them separately from the links below.
 Wiring
 ---------------------------
 
-.. image:: img/Lesson_14_MAX30102_bb.png
+.. image:: img/Lesson_14_max30102_bb.png
     :width: 100%
 
 
