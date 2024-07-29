@@ -69,8 +69,8 @@ Code
    from machine import Pin
    import time
    
-   # Set GPIO 2 as an input pin to read the button state
-   button = Pin(2, Pin.IN)
+   # Set GPIO 19 as an input pin to read the button state
+   button = Pin(19, Pin.IN)
    
    # Initialize the onboard LED of the Raspberry Pi Pico W
    led = Pin('LED', Pin.OUT)
@@ -98,11 +98,11 @@ Code-Analyse
 
 #. Konfigurieren des Tasters
 
-   GPIO 2 wird als Eingangspin konfiguriert. Dies liest den Zustand des daran angeschlossenen Drucktasters.
+   GPIO 19 wird als Eingangspin konfiguriert. Dies liest den Zustand des daran angeschlossenen Drucktasters.
 
    .. code-block:: python
 
-      button = Pin(2, Pin.IN)
+      button = Pin(19, Pin.IN)
 
 #. Einrichten der LED
 
