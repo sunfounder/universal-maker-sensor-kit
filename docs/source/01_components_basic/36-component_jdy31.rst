@@ -1,4 +1,4 @@
- .. _cpn_jdy31:.. note::
+.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -13,6 +13,7 @@
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
 
+.. _cpn_jdy31:
 
 JDY-31 Bluetooth Module
 =====================================
@@ -89,5 +90,5 @@ AT Command Set
 Example
 ---------------------------
 * :ref:`uno_lesson36_bluetooth` (Arduino UNO)
-* :ref:`uno_bluetooth_lcd` (Arduino UNO)
-* :ref:`uno_bluetooth_traffic_light` (Arduino UNO)
+* :ref:`uno_lesson46_bluetooth_lcd` (Arduino UNO)
+* :ref:`uno_lesson47_bluetooth_traffic_light` (Arduino UNO)

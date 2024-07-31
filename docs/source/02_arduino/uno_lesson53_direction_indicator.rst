@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_fun_direction_indicator:
+.. _uno_lesson53_direction_indicator:
 
 Lesson 53: Direction Indicator
 ===========================================

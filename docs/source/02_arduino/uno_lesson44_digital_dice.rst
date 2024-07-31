@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_digital_dice:
+.. _uno_lesson44_digital_dice:
 
 Lesson 44: Digital Dice
 =============================================================

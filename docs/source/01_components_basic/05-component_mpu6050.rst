@@ -88,6 +88,8 @@ Example
 * :ref:`pico_lesson05_mpu6050` (Raspberry Pi Pico)
 * :ref:`pi_lesson05_mpu6050` (Raspberry Pi Pi)
 
+* :ref:`uno_lesson52_tilt_direction_indicator` (Arduino UNO)
+
 
 
 

@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_potentiometer_scale_value:
+.. _uno_lesson43_potentiometer_scale_value:
 
 Lesson 43: Potentiometer scale value
 =============================================================

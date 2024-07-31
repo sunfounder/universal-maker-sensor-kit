@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_touch_toggle_light:
+.. _uno_lesson42_touch_toggle_light:
 
 Lesson 42: Touch toggle light
 ==================================

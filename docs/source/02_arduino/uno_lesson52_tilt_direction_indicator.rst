@@ -13,7 +13,9 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_fun_tilt_direction_indicator:
+.. _uno_lesson52_tilt_direction_indicator:
+
+
 
 Lesson 52: Tilt Direction Indicator
 ===========================================

@@ -40,7 +40,7 @@ Example
 * :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)
 * :ref:`esp32_soap_dispenser` (ESP32)
 
-* :ref:`uno_plant_monitor` (Arduino UNO)
+* :ref:`uno_lesson45_plant_monitor` (Arduino UNO)
 * :ref:`esp32_plant_monitor` (ESP32)
 
 * :ref:`uno_lesson39_soap_dispenser` (Arduino UNO)

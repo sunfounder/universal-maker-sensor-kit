@@ -74,4 +74,4 @@ Example
 * :ref:`pico_lesson09_joystick` (Raspberry Pi Pico)
 * :ref:`pi_lesson09_joystick` (Raspberry)
 
-
+* :ref:`uno_lesson53_direction_indicator` (Arduino UNO)

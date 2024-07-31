@@ -79,5 +79,5 @@ Example
 * :ref:`pico_lesson13_potentiometer` (Raspberry Pi Pico)
 * :ref:`pi_lesson13_potentiometer` (Raspberry Pi)
 
-* :ref:`uno_potentiometer_scale_value` (Arduino UNO)
+* :ref:`uno_lesson43_potentiometer_scale_value` (Arduino UNO)
 * :ref:`esp32_potentiometer_scale_value` (ESP32)

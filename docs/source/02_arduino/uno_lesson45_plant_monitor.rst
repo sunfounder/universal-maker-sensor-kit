@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_plant_monitor:
+.. _uno_lesson45_plant_monitor:
 
 Lesson 45: Plant Monitor
 =============================================================

@@ -51,6 +51,8 @@ Example
 * :ref:`pi_lesson27_oled` (Raspberry Pi)
 
 * :ref:`uno_lesson41_heartrate_monitor` (Arduino UNO)
-* :ref:`uno_digital_dice` (Arduino UNO)
+* :ref:`uno_lesson44_digital_dice` (Arduino UNO)
+* :ref:`uno_lesson52_tilt_direction_indicator` (Arduino UNO)
+* :ref:`uno_lesson53_direction_indicator` (Arduino UNO)
 * :ref:`esp32_heartrate_monitor` (ESP32)
 * :ref:`esp32_digital_dice` (ESP32)

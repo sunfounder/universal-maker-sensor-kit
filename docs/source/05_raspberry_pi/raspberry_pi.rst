@@ -45,9 +45,6 @@ The ``GPIO Zero`` library is a remarkable tool in Python designed for interfacin
     pi_lesson13_potentiometer
     pi_lesson14_max30102
     pi_lesson15_raindrop
-    
-    .. pi_lesson16_ds1302
-
     pi_lesson17_rotary_encoder
     pi_lesson18_ds18b20
     pi_lesson19_dht11

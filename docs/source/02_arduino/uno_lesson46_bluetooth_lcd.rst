@@ -13,7 +13,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _uno_bluetooth_lcd:
+.. _uno_lesson46_bluetooth_lcd:
 
 Lesson 46: Bluetooth LCD
 =============================================================
