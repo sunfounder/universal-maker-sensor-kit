@@ -372,6 +372,14 @@ rst_epilog = """
 
 rst_epilog += """
 
+.. |link_Universal_Maker_Sensor_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-universal-maker-sensor-kit?_pos=1&_sid=0cf649641&_ss=r" target="_blank">Purchase Link for Universal Maker Sensor Kit</a>
+
+.. |link_Universal_kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-universal-maker-sensor-kit?_pos=1&_sid=0cf649641&_ss=r" target="_blank">Universal Maker Sensor Kit</a>
+
 .. |link_Uno_R3_buy| raw:: html
 
     <a href="https://www.sunfounder.com/products/arduino-unor3-control-board" target="_blank">BUY</a>
