@@ -12,10 +12,12 @@
 
    👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Universal Maker Sensor Kit
+|link_Universal_kit|
 ==================================================
 
-Vielen Dank, dass Sie sich für unser Universal Maker Sensor Kit entschieden haben.
+* |link_Universal_Maker_Sensor_Kit|
+
+Vielen Dank, dass Sie sich für unser |link_Universal_kit| entschieden haben.
 
  .. note::
      Dieses Dokument ist in den folgenden Sprachen verfügbar.
