@@ -1,4 +1,4 @@
 # Defining the exact version will make sure things don't break
 sphinx==7.3.7
-sphinx-rtd-theme==2.0.0
+sphinx-rtd-theme==3.0.0rc1
 sphinx_copybutton
