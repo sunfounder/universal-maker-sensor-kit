@@ -23,6 +23,10 @@ project = 'SunFounder Universal Maker Sensor Kit'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached'
+}
 
 # -- General configuration ---------------------------------------------------
 
