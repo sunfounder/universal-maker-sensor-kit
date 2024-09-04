@@ -23,13 +23,20 @@ project = 'SunFounder Universal Maker Sensor Kit'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached'
+}
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel'
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx_copybutton',
+    'sphinx_rtd_theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
