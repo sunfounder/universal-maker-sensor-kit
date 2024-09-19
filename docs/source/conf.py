@@ -516,7 +516,7 @@ rst_epilog += """
 
 .. |link_esp32_camera_pro_kit_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/esp-32-camera-pro-kit" target="_blank">BUY</a>    
+    <a href="https://www.sunfounder.com/products/sunfounder-esp32-camera-pro-kit" target="_blank">BUY</a>    
 
 .. |link_umsk| raw:: html
 
