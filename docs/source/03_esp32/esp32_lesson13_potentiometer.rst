@@ -46,7 +46,7 @@ You can also buy them separately from the links below.
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 & Development Board
+    *   - ESP32 & Development Board (:ref:`cpn_esp32_wroom_32e`)
         - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_potentiometer`
         - |link_potentiometer_sensor_module_buy|

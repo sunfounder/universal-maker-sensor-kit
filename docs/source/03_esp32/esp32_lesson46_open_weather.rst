@@ -41,6 +41,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - |link_umsk|
 
 You can also buy them separately from the links below.
+
 .. list-table::
     :widths: 30 20
     :header-rows: 1
@@ -48,7 +49,7 @@ You can also buy them separately from the links below.
     *   - COMPONENT INTRODUCTION
         - PURCHASE LINK
 
-    *   - ESP32 & Development Board
+    *   - ESP32 & Development Board (:ref:`cpn_esp32_wroom_32e`)
         - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_i2c_lcd1602`
         - |link_i2clcd1602_buy|

@@ -46,7 +46,7 @@ You can also buy them separately from the links below.
     *   - Component Introduction
         - Purchase Link
 
-    *   - ESP32 & Development Board
+    *   - ESP32 & Development Board (:ref:`cpn_esp32_wroom_32e`)
         - |link_esp32_camera_pro_kit_buy|
     *   - :ref:`cpn_bmp280`
         - |link_bmp280_module_buy|
