@@ -55,7 +55,6 @@ exclude_patterns = []
 #
 html_static_path = ['_static']
 html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # SunFounder logo
 
@@ -70,7 +69,7 @@ html_css_files = [
 
 # Multi-language
 
-language = 'en' # Before running make html, set the language.
+language = 'de' # Before running make html, set the language.
 locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
