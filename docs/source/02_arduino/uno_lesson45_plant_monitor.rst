@@ -70,9 +70,14 @@ You can also buy them separately from the links below.
 Wiring
 ---------------------------
 
+.. note:: 
+   The kit may contain different versions of the DHT11 module. Please confirm the wiring method according to the module you have.
+
 .. image:: img/Lesson_45_Plant_monitor_uno_bb.png
     :width: 100%
 
+.. image:: img/Lesson_45_Plant_monitor_uno_new_bb.png
+    :width: 100%
 
 Code
 ---------------------------

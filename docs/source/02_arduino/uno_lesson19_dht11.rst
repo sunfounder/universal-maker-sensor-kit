@@ -55,8 +55,27 @@ You can also buy them separately from the links below.
 Wiring
 ---------------------------
 
-.. image:: img/Lesson_19_dht11_module_circuit_uno_bb.png
-    :width: 100%
+.. note:: 
+   The kit may contain different versions of the DHT11 module. Please confirm the wiring method according to the module you have.
+
+.. csv-table:: 
+   :header: "module", "diagram"
+   :widths: 25, 75
+
+   |dht11_module|, |dht11_module_circuit|
+   |dht11_module_withLED|, |dht11_module_withLED_circuit|
+
+.. |dht11_module| image:: img/dht11_module.png 
+   :width: 100px
+
+.. |dht11_module_circuit| image:: img/Lesson_19_dht11_module_circuit_uno_bb.png
+   :width: 500px
+
+.. |dht11_module_withLED| image:: img/dht11_module_withLED.png
+   :width: 150px
+
+.. |dht11_module_withLED_circuit| image:: img/Lesson_19_dht11_module_circuit_uno_new_bb.png
+   :width: 500px
 
 
 Code

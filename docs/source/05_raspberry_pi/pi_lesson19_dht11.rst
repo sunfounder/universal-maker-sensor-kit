@@ -57,7 +57,13 @@ You can also buy them separately from the links below.
 Wiring
 ---------------------------
 
+.. note:: 
+   The kit may contain different versions of the DHT11 module. Please confirm the wiring method according to the module you have.0
+
 .. image:: img/Lesson_19_dht11_module_pi_bb_bb.png
+    :width: 100%
+
+.. image:: img/Lesson_19_dht11_module_pi_new_bb.png
     :width: 100%
 
 
