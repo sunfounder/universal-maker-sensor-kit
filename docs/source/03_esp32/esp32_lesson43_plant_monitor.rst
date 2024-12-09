@@ -70,7 +70,13 @@
 配線
 ---------------------------
 
+.. note:: 
+   このキットには異なるバージョンのDHT11モジュールが含まれている場合があります。お持ちのモジュールに応じて配線方法を確認してください。
+
 .. image:: img/Lesson_43_Plant_monitor_esp32_bb.png
+    :width: 100%
+
+.. image:: img/Lesson_43_Plant_monitor_esp32_new_bb.png
     :width: 100%
 
 

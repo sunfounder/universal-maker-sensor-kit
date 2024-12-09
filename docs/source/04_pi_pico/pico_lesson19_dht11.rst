@@ -57,8 +57,26 @@ Required Components
 Wiring
 ---------------------------
 
-.. image:: img/Lesson_19_dht11_module_bb.png
-    :width: 100%
+.. note:: 
+   このキットには異なるバージョンのDHT11モジュールが含まれている場合があります。お持ちのモジュールに応じて配線方法を確認してください。
+
+.. csv-table:: 
+   :widths: 25, 75
+
+   |dht11_module|, |dht11_module_circuit|
+   |dht11_module_withLED|, |dht11_module_withLED_circuit|
+
+.. |dht11_module| image:: img/Lesson_19_dht11_module.png 
+   :width: 100px
+
+.. |dht11_module_circuit| image:: img/Lesson_19_dht11_module_bb.png
+   :width: 500px
+
+.. |dht11_module_withLED| image:: img/Lesson_19_dht11_module_withLED.png
+   :width: 150px
+
+.. |dht11_module_withLED_circuit| image:: img/Lesson_19_dht11_module_new_bb.png
+   :width: 500px
 
 
 Code

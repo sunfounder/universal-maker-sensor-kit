@@ -69,7 +69,13 @@
 配線
 ---------------------------
 
+.. note:: 
+   このキットには異なるバージョンのDHT11モジュールが含まれている場合があります。お持ちのモジュールに応じて配線方法を確認してください。
+
 .. image:: img/Lesson_45_Plant_monitor_uno_bb.png
+    :width: 100%
+
+.. image:: img/Lesson_45_Plant_monitor_uno_new_bb.png
     :width: 100%
 
 コード
