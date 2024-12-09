@@ -55,9 +55,26 @@ Sie können sie auch separat über die unten stehenden Links kaufen.
 Verkabelung
 ---------------------------
 
-.. image:: img/Lesson_19_dht11_module_circuit_uno_bb.png
-    :width: 100%
+.. note:: 
+   Das Kit kann unterschiedliche Versionen des DHT11-Moduls enthalten. Bitte überprüfen Sie die Verdrahtungsmethode entsprechend dem Modul, das Sie haben.
 
+.. csv-table:: 
+   :widths: 25, 75
+
+   |dht11_module|, |dht11_module_circuit|
+   |dht11_module_withLED|, |dht11_module_withLED_circuit|
+
+.. |dht11_module| image:: img/dht11_module.png 
+   :width: 100px
+
+.. |dht11_module_circuit| image:: img/Lesson_19_dht11_module_circuit_uno_bb.png
+   :width: 500px
+
+.. |dht11_module_withLED| image:: img/dht11_module_withLED.png
+   :width: 150px
+
+.. |dht11_module_withLED_circuit| image:: img/Lesson_19_dht11_module_circuit_new_bb.png
+   :width: 500px
 
 Code
 ---------------------------

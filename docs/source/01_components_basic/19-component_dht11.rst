@@ -57,13 +57,23 @@ Es sind nur drei Pins verfügbar: VCC, GND und DATA. Der Kommunikationsprozess b
 Schaltplan
 ---------------------------
 
-.. image:: img/19_dht11_module_schematic.png
-    :width: 80%
-    :align: center
+.. csv-table:: 
+   :widths: 30, 70
 
-.. raw:: html
+   |dht11_module|, |dht11_module_schematic|
+   |dht11_module_withLED|, |dht11_module_withLED_schematic|
 
-   <br/>
+.. |dht11_module| image:: img/19_dht11_module.png
+   :width: 100px
+
+.. |dht11_module_withLED| image:: img/19_dht11_module_withLED.png
+   :width: 150px
+
+.. |dht11_module_schematic| image:: img/19_dht11_module_schematic.png
+   :width: 360px
+   
+.. |dht11_module_withLED_schematic| image:: img/19_dht11_module_withLED_schematic.png
+   :width: 360px
 
 Beispiel
 ---------------------------

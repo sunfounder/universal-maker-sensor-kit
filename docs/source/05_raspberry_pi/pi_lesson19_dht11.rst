@@ -56,7 +56,13 @@ Sie können sie auch einzeln über die untenstehenden Links kaufen.
 Verkabelung
 ---------------------------
 
+.. note:: 
+   Das Kit kann unterschiedliche Versionen des DHT11-Moduls enthalten. Bitte überprüfen Sie die Verdrahtungsmethode entsprechend dem Modul, das Sie haben.
+
 .. image:: img/Lesson_19_dht11_module_pi_bb_bb.png
+    :width: 100%
+
+.. image:: img/Lesson_19_dht11_module_pi_new_bb.png
     :width: 100%
 
 Bibliothek installieren

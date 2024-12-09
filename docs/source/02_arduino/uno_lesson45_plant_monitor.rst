@@ -70,9 +70,14 @@ Sie können sie auch separat von den untenstehenden Links kaufen.
 Verkabelung
 ---------------------------
 
+.. note:: 
+   Das Kit kann unterschiedliche Versionen des DHT11-Moduls enthalten. Bitte überprüfen Sie die Verdrahtungsmethode entsprechend dem Modul, das Sie haben.
+
 .. image:: img/Lesson_45_Plant_monitor_uno_bb.png
     :width: 100%
 
+.. image:: img/Lesson_45_Plant_monitor_uno_new_bb.png
+    :width: 100%
 
 Code
 ---------------------------

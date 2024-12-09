@@ -67,9 +67,14 @@ Sie können sie auch separat über die untenstehenden Links kaufen.
 Verdrahtung
 ---------------------------
 
+.. note:: 
+   Das Kit kann unterschiedliche Versionen des DHT11-Moduls enthalten. Bitte überprüfen Sie die Verdrahtungsmethode entsprechend dem Modul, das Sie haben.
+
 .. image:: img/Lesson_43_Plant_monitor_esp32_bb.png
     :width: 100%
 
+.. image:: img/Lesson_43_Plant_monitor_esp32_new_bb.png
+    :width: 100%
 
 Code
 ---------------------------
