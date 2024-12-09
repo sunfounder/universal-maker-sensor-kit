@@ -49,9 +49,9 @@ Wenn Sie Fragen oder andere interessante Ideen haben, senden Sie uns bitte eine 
 
 .. * :ref:`About the display language`
 
-* :ref:`Table of contents`
+* :ref:`Inhaltsverzeichnis`
 
-* :ref:`Copyright Notice`
+* :ref:`Copyright-Hinweis`
 
 .. Über die Anzeigesprache
 .. --------------------------------
