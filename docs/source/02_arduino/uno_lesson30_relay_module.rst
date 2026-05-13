@@ -76,6 +76,7 @@ Analyse du code
 1. Définition de la broche du relais :
 
    - Le module relais est connecté à la broche 6 de l’Arduino. Cette broche est définie comme ``relayPin`` pour faciliter la référence dans le code.   
+
    .. raw:: html
 
       <br/>
@@ -88,9 +89,6 @@ Analyse du code
 
    - Dans la fonction ``setup()``, la broche du relais est définie en tant que ``OUTPUT`` à l’aide de la fonction ``pinMode()``. Cela signifie que l’Arduino enverra des signaux (HIGH ou LOW) à cette broche.
 
-      .. raw:: html
-
-      <br/>
 
    .. code-block:: arduino
 
@@ -103,10 +101,6 @@ Analyse du code
    - Dans la fonction ``loop()``, le relais est d’abord désactivé avec ``digitalWrite(relayPin, LOW)`` et reste dans cet état pendant 3 secondes (``delay(3000)``).
    - Ensuite, le relais est activé avec ``digitalWrite(relayPin, HIGH)`` et reste dans cet état pendant 3 secondes.
    - Ce cycle se répète indéfiniment.
-
-      .. raw:: html
-
-      <br/>
 
    .. code-block:: arduino
 

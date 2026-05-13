@@ -49,33 +49,6 @@ Embrassez le monde de l'innovation électronique aujourd'hui avec notre Kit de c
 
 Si vous avez des questions ou d'autres idées intéressantes, n'hésitez pas à nous envoyer un courriel à service@sunfounder.com.
 
-.. * :ref:`About the display language`
-
-* :ref:`Table des matières`
-
-* :ref:`Notice de droit d'auteur`
-
-
-.. À propos de la langue d'affichage
-.. --------------------------------
-
-.. .. note::
-
-..     En plus de l'anglais, nous travaillons sur d'autres langues pour ce cours. 
-..     Veuillez contacter service@sunfounder.com si vous souhaitez aider, 
-..     et nous vous offrirons un produit gratuitement en retour. 
-
-
-.. Actuellement, le tutoriel en ligne est disponible en anglais, allemand et japonais. Veuillez cliquer sur l'icône **Lire les docs** dans le coin inférieur gauche de la page pour changer la langue d'affichage.
-
-.. .. image:: img/translation.png
-..     :align: center
-
-.. .. raw:: html
-
-..     <br/>
-
-
 Table des matières
 --------------------------------
 

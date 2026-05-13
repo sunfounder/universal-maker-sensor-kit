@@ -17,19 +17,6 @@ Opérateurs
 
 Les opérateurs sont utilisés pour effectuer des opérations sur des variables et des valeurs.
 
-* :ref:`Opérateurs arithmétiques`
-
-* :ref:`Opérateurs d'assignation`
-
-* :ref:`Opérateurs de comparaison`
-
-* :ref:`Opérateurs logiques`
-
-* :ref:`Opérateurs d'identité`
-
-* :ref:`Opérateurs d'appartenance`
-
-* :ref:`Opérateurs binaires`
 
 Opérateurs arithmétiques
 -----------------------------

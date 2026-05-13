@@ -149,9 +149,6 @@ Analyse du code
    - ``busio`` : Gère la communication I2C entre le Pi et le capteur.
    - ``adafruit_vl53l0x`` : La bibliothèque spécifique pour le capteur VL53L0X. Pour plus de détails sur la bibliothèque ``adafruit_vl53l0x``, veuillez vous référer à |link_Adafruit_CircuitPython_VL53L0X|.
  
-      .. raw:: html
-      
-      <br/>
 
 #. **Initialisation du capteur**
 

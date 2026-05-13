@@ -93,6 +93,7 @@ Analyse du code
       .. raw:: html
 
        <br/>
+
    .. code-block:: arduino
    
       void setup() {

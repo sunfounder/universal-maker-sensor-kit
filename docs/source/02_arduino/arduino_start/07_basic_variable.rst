@@ -61,7 +61,7 @@ Le fichier de sketch ci-dessous ajoute lui-même à la variable et cela provoque
     }
 
 Déclarer une variable
--------------------
+------------------------------------------
 
 Déclarer une variable signifie créer une variable.
 

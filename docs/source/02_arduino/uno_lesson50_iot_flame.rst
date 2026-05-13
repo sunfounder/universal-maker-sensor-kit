@@ -87,7 +87,8 @@ Assurez-vous que le **MATÉRIEL** est configuré comme **ESP8266** et que le **T
 .. raw:: html
     
     <br/>  
-**2 Flux de données**
+
+2 Flux de données
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Créez un **flux de données** de type **Broche Virtuelle** sur la page **Flux de données** pour obtenir la valeur du module capteur de flamme.
@@ -293,9 +294,7 @@ Analyse du code
 
    - Nous utilisons ``timer.setInterval(1000L, myTimerEvent)`` pour régler l'intervalle du minuteur dans setup(), ici nous le réglons pour exécuter la fonction ``myTimerEvent()`` toutes les **1000ms**. Vous pouvez modifier le premier paramètre de ``timer.setInterval(1000L, myTimerEvent)`` pour changer l'intervalle entre les exécutions de ``myTimerEvent``.
 
-      .. raw:: html
-    
-    <br/> 
+
    .. code-block:: arduino
 
        void setup() {

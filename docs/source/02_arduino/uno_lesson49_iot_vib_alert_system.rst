@@ -109,7 +109,8 @@ Cliquez sur "Create" pour commencer la création de l'applet.
 .. raw:: html
     
     <br/>  
-**Déclencheur Si Ceci**
+
+Déclencheur Si Ceci
 ---------------------------
 
 Cliquez sur "Ajouter" à côté de "Si Ceci" pour ajouter un déclencheur.

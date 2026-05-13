@@ -15,7 +15,7 @@
 .. _uno_lesson39_soap_dispenser:
 
 Leçon 39 : Distributeur automatique de savon
-=====================================
+=============================================================
 
 Le projet de Distributeur Automatique de Savon utilise une carte Arduino Uno ainsi qu'un capteur infrarouge de détection d'obstacles et une pompe à eau. Le capteur détecte la présence d'un objet tel qu'une main, ce qui active la pompe à eau pour distribuer le savon.
 

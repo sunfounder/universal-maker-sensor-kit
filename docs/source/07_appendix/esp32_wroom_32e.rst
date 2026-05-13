@@ -13,89 +13,88 @@
 
 .. _cpn_esp32_wroom_32e:
 
-ESP32 WROOM 32E
-==================
+ESP32
+=================
 
-L'ESP32 WROOM-32E est un module polyvalent et puissant construit autour du chipset ESP32 d'Espressif. Il offre un traitement bicœur, une connectivité Wi-Fi et Bluetooth intégrée, et dispose d'une large gamme d'interfaces périphériques. Connu pour sa faible consommation d'énergie, ce module est idéal pour les applications IoT, permettant une connectivité intelligente et des performances robustes dans des formats compacts.
+L’ESP32 est un microcontrôleur puissant et polyvalent, doté d’un processeur double cœur, du Wi-Fi et du Bluetooth intégrés, ainsi que d’une large prise en charge des périphériques. Sa conception à faible consommation d’énergie le rend particulièrement adapté aux applications IoT compactes et performantes.
 
-.. image:: img/esp32_wroom_32e.png
-    :width: 60%
+.. image:: img/esp32_board.png
     :align: center
 
 
-Caractéristiques clés :
+Caractéristiques principales :
 
-* **Puissance de traitement** : Il est équipé d'un microprocesseur bicœur Xtensa® 32 bits LX6, offrant évolutivité et flexibilité.
-* **Capacités sans fil** : Avec le Wi-Fi 2,4 GHz intégré et le Bluetooth en mode dual, il est parfaitement adapté aux applications exigeant une communication sans fil stable.
-* **Mémoire et stockage** : Il est doté d'une SRAM abondante et d'un stockage flash haute performance, répondant aux besoins de stockage de programmes utilisateurs et de données.
-* **GPIO** : Offrant jusqu'à 38 broches GPIO, il prend en charge une variété de dispositifs externes et de capteurs.
-* **Consommation d'énergie faible** : Plusieurs modes d'économie d'énergie sont disponibles, ce qui le rend idéal pour les scénarios alimentés par batterie ou à efficacité énergétique.
-* **Sécurité** : Des fonctionnalités de chiffrement et de sécurité intégrées garantissent que les données des utilisateurs et leur vie privée sont bien protégées.
-* **Polyvalence** : Des appareils ménagers simples aux machines industrielles complexes, le WROOM-32E offre des performances cohérentes et efficaces.
+* **Puissance de traitement** : équipé d’un microprocesseur Xtensa® LX6 32 bits double cœur, offrant à la fois flexibilité et évolutivité.
+* **Connectivité sans fil** : grâce au Wi-Fi 2,4 GHz intégré et au Bluetooth double mode, il convient parfaitement aux applications nécessitant une communication sans fil stable.
+* **Mémoire et stockage** : dispose d’une SRAM généreuse et d’une mémoire flash haute performance pour répondre aux besoins des programmes et du stockage de données.
+* **GPIO** : jusqu’à 38 broches GPIO permettant la connexion de nombreux capteurs et périphériques externes.
+* **Faible consommation énergétique** : plusieurs modes d’économie d’énergie sont disponibles, idéaux pour les applications alimentées par batterie.
+* **Sécurité** : des fonctions de chiffrement et de sécurité intégrées assurent une bonne protection des données et de la confidentialité des utilisateurs.
+* **Polyvalence** : des appareils domestiques simples aux équipements industriels complexes, la carte garantit des performances fiables et efficaces.
 
-En résumé, l'ESP32 WROOM-32E offre non seulement des capacités de traitement robustes et diverses options de connectivité, mais aussi une gamme de fonctionnalités qui en font un choix privilégié dans les secteurs de l'IoT et des dispositifs intelligents.
+En résumé, la carte ESP32 offre non seulement de solides capacités de traitement et de nombreuses options de connectivité, mais également un large éventail de fonctionnalités qui en font un choix privilégié pour les projets IoT et les appareils intelligents.
 
-* |link_esp32_datasheet|
+.. * |link_esp32_datasheet|
 
 .. _esp32_pinout:
 
 Schéma des broches
----------------------
+-------------------------
 
-L'ESP32 présente certaines limitations d'utilisation des broches en raison du partage de certaines fonctionnalités sur des broches spécifiques. Lors de la conception d'un projet, il est judicieux de planifier soigneusement l'utilisation des broches et de vérifier les conflits potentiels pour garantir un fonctionnement correct et éviter les problèmes.
+L’ESP32 présente certaines limitations d’utilisation des broches, car plusieurs fonctions partagent les mêmes GPIO. Lors de la conception d’un projet, il est recommandé de planifier soigneusement l’utilisation des broches et de vérifier les éventuels conflits afin d’assurer un fonctionnement correct et d’éviter les problèmes.
 
 
 .. image:: img/esp32_pinout.jpg
-    :width: 100%
+    :width: 800
     :align: center
 
-Voici certaines des restrictions et considérations clés :
+Voici quelques restrictions et points importants à prendre en compte :
 
-* **ADC1 et ADC2** : ADC2 ne peut pas être utilisé lorsque le WiFi ou le Bluetooth est actif. Cependant, ADC1 peut être utilisé sans restrictions.
-* **Broches de démarrage** : GPIO0, GPIO2, GPIO5, GPIO12 et GPIO15 sont utilisées pour le démarrage pendant le processus de boot. Il convient de ne pas connecter de composants externes qui pourraient interférer avec le processus de boot sur ces broches.
-* **Broches JTAG** : GPIO12, GPIO13, GPIO14 et GPIO15 peuvent être utilisées comme broches JTAG pour le débogage. Si le débogage JTAG n'est pas nécessaire, ces broches peuvent être utilisées comme GPIO normales.
-* **Broches tactiles** : Certaines broches prennent en charge les fonctionnalités tactiles. Ces broches doivent être utilisées avec précaution si vous souhaitez les utiliser pour la détection tactile.
-* **Broches d'alimentation** : Certaines broches sont réservées aux fonctions liées à l'alimentation et doivent être utilisées en conséquence. Par exemple, évitez de tirer un courant excessif des broches d'alimentation comme 3V3 et GND.
-* **Broches uniquement en entrée** : Certaines broches sont uniquement en entrée et ne doivent pas être utilisées comme sorties.
-
+* **ADC1 et ADC2** : ADC2 ne peut pas être utilisé lorsque le Wi-Fi ou le Bluetooth est actif. ADC1, en revanche, peut être utilisé sans restriction.
+* **Broches de démarrage (Bootstrapping Pins)** : GPIO0, GPIO2, GPIO5, GPIO12 et GPIO15 sont utilisées pendant le processus de démarrage. Évitez d’y connecter des composants externes susceptibles d’interférer avec le boot.
+* **Broches JTAG** : GPIO12, GPIO13, GPIO14 et GPIO15 peuvent être utilisées pour le débogage JTAG. Si le débogage JTAG n’est pas nécessaire, elles peuvent servir de GPIO classiques.
+* **Broches tactiles** : certaines broches prennent en charge les fonctions tactiles. Elles doivent être utilisées avec précaution si vous souhaitez exploiter cette fonctionnalité.
+* **Broches d’alimentation** : certaines broches sont réservées à l’alimentation. Par exemple, évitez de tirer un courant excessif des broches 3V3 et GND.
+* **Broches en entrée uniquement** : certaines broches ne prennent en charge que les signaux d’entrée et ne doivent pas être utilisées comme sorties.
 
 .. _esp32_strapping:
 
-Broches de strapping
------------------------
+**Broches de configuration de démarrage**
+-----------------------------------------------------
 
-L'ESP32 dispose de cinq broches de strapping :
+L’ESP32 possède cinq broches de configuration de démarrage :
 
 .. list-table::
     :widths: 5 15
     :header-rows: 1
 
-    *   - Broches de Strapping
+    *   - Broche
         - Description
     *   - IO5
-        - Par défaut en pull-up, le niveau de tension de IO5 et IO15 affecte le timing de l'esclave SDIO.
+        - Tirage interne vers le haut par défaut. Le niveau de tension de IO5 et IO15 influence le timing du SDIO Slave.
     *   - IO0
-        - Par défaut en pull-up, si mis à bas, il entre en mode téléchargement.
+        - Tirage interne vers le haut par défaut. Si la broche est forcée à l’état bas, l’ESP32 entre en mode téléchargement.
     *   - IO2
-        - Par défaut en pull-down, IO0 et IO2 feront entrer l'ESP32 en mode téléchargement.
+        - Tirage interne vers le bas par défaut. IO0 et IO2 ensemble peuvent faire entrer l’ESP32 en mode téléchargement.
     *   - IO12(MTDI)
-        - Par défaut en pull-down, si mis à haut, l'ESP32 ne démarrera pas normalement.
+        - Tirage interne vers le bas par défaut. Si cette broche est à l’état haut au démarrage, l’ESP32 ne démarrera pas correctement.
     *   - IO15(MTDO)
-        - Par défaut en pull-up, si mis à bas, le journal de débogage ne sera pas visible. De plus, le niveau de tension de IO5 et IO15 affecte le timing de l'esclave SDIO.
+        - Tirage interne vers le haut par défaut. Si cette broche est à l’état bas, les journaux de débogage ne seront pas affichés. De plus, le niveau de tension de IO5 et IO15 influence le timing du SDIO Slave.
 
-Le logiciel peut lire les valeurs de ces cinq bits depuis le registre "GPIO_STRAPPING". Pendant la libération du reset du système du chip (power-on-reset, reset du watchdog RTC et brownout reset), les verrous des broches de strapping échantillonnent le niveau de tension comme bits de strapping de "0" ou "1", et conservent ces bits jusqu'à ce que le chip soit alimenté ou éteint. Les bits de strapping configurent le mode de boot du dispositif, la tension de fonctionnement de VDD_SDIO et d'autres paramètres système initiaux.
 
-Chaque broche de strapping est connectée à sa résistance de pull-up/pull-down interne pendant le reset du chip. En conséquence, si une broche de strapping n'est pas connectée ou si le circuit externe connecté est à haute impédance, la pull-up/pull-down interne faible déterminera le niveau d'entrée par défaut des broches de strapping.
+Le logiciel peut lire les valeurs de ces cinq bits via le registre « GPIO_STRAPPING ».
 
-Pour changer les valeurs des bits de strapping, les utilisateurs peuvent appliquer des résistances de pull-down/pull-up externes, ou utiliser les GPIOs du MCU hôte pour contrôler le niveau de tension de ces broches lors de l'allumage de l'ESP32.
+Lors de la sortie de réinitialisation du système (mise sous tension, réinitialisation par watchdog RTC ou brownout reset), les broches de configuration échantillonnent leur niveau logique afin de déterminer les bits de configuration « 0 » ou « 1 ». Ces valeurs restent mémorisées jusqu’à l’arrêt ou la mise hors tension de la puce. Elles définissent notamment le mode de démarrage, la tension de fonctionnement de VDD_SDIO et d’autres paramètres système initiaux.
 
-Après la libération du reset, les broches de strapping fonctionnent comme des broches à fonction normale.
-Reportez-vous au tableau suivant pour une configuration détaillée du mode de boot par les broches de strapping.
+Chaque broche de configuration est reliée à une résistance interne de pull-up ou pull-down pendant la phase de réinitialisation. Ainsi, si une broche n’est pas connectée ou si le circuit externe présente une haute impédance, le niveau logique par défaut sera déterminé par cette résistance interne.
+
+Pour modifier les valeurs des bits de configuration, il est possible d’utiliser des résistances externes de pull-up/pull-down ou de contrôler le niveau logique de ces broches via les GPIO du microcontrôleur hôte lors de la mise sous tension de l’ESP32.
+
+Une fois la réinitialisation terminée, ces broches redeviennent des GPIO classiques.
+Reportez-vous au tableau suivant pour plus de détails concernant la configuration des modes de démarrage via les broches de configuration.
 
 .. image:: img/esp32_strapping.png
-   :width: 100%
-   :align: center
 
 * FE : front descendant, RE : front montant
-* Le firmware peut configurer les bits de registre pour changer les paramètres de "Tension de l'LDO interne (VDD_SDIO)" et "Timing de l'esclave SDIO", après le démarrage.
-* Le module intègre un flash SPI de 3,3 V, donc la broche MTDI ne peut pas être mise à 1 lorsque le module est alimenté.
+* Le firmware peut modifier certains registres après le démarrage afin de changer les paramètres de « Voltage of Internal LDO (VDD_SDIO) » et de « Timing of SDIO Slave ».
+* Le module intègre une mémoire flash SPI 3,3 V ; par conséquent, la broche MTDI ne doit pas être à l’état haut lors de la mise sous tension.

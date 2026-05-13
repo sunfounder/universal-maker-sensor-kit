@@ -154,6 +154,7 @@ Code
 
    .. image:: img/05-ready_2_shadow.png
           :width: 95%
+
 Analyse du code
 ---------------------------
 
