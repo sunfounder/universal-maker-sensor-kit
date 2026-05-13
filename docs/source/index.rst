@@ -49,32 +49,6 @@ Embrace the world of electronic innovation today with our Universal Maker Sensor
 
 If you have any questions or other interesting ideas, please feel free to email us at service@sunfounder.com.
 
-.. * :ref:`About the display language`
-
-* :ref:`Table of contents`
-
-* :ref:`Copyright Notice`
-
-
-.. About the display language
-.. --------------------------------
-
-.. .. note::
-
-..     In addition to English, we are working on other languages for this course. 
-..     Please contact service@sunfounder.com if you are interested in helping, 
-..     and we will give you a free product in return. 
-
-
-.. Currently the online tutorial supports English, German and Japanese. Please click the **Read the Docs** icon in the lower left corner of the page to change the display language.
-
-.. .. image:: img/translation.png
-..     :align: center
-
-.. .. raw:: html
-
-..     <br/>
-
 
 Table of contents
 --------------------------------

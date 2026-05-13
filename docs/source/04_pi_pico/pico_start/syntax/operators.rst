@@ -16,19 +16,19 @@ Operators
 ============
 Operators are used to perform operations on variables and values.
 
-* :ref:`Arithmetic operators`
+.. * :ref:`Arithmetic operators`
 
-* :ref:`Assignment operators`
+.. * :ref:`Assignment operators`
 
-* :ref:`Comparison operators`
+.. * :ref:`Comparison operators`
 
-* :ref:`Logical operators`
+.. * :ref:`Logical operators`
 
-* :ref:`Identity operators`
+.. * :ref:`Identity operators`
 
-* :ref:`Membership operators`
+.. * :ref:`Membership operators`
 
-* :ref:`Bitwise operators`
+.. * :ref:`Bitwise operators`
 
 Arithmetic Operators
 ----------------------
