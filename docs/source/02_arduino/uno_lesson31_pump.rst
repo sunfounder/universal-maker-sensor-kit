@@ -52,9 +52,6 @@
         - \-
     *   - :ref:`cpn_l9110`
         - \-
-* Arduino UNO R3 or R4
-* :ref:`cpn_pump`
-* :ref:`cpn_l9110`
 
 配線
 ---------------------------

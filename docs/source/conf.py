@@ -44,7 +44,7 @@ html_context = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
@@ -394,6 +394,10 @@ rst_epilog = """
 
 rst_epilog += """
 
+.. |link_adafruit_gfx_graphics_library| raw:: html
+
+    <a href="https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives">Adafruit GFX Graphics Library</a>
+
 .. |link_Universal_Maker_Sensor_Kit| raw:: html
 
     <a href="https://www.sunfounder.com/products/sunfounder-universal-maker-sensor-kit?_pos=1&_sid=0cf649641&_ss=r" target="_blank">購入リンク： Universal Maker Sensor Kit</a>
@@ -537,7 +541,7 @@ rst_epilog += """
 
 .. |link_esp32_camera_pro_kit_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-esp32-camera-pro-kit" target="_blank">購入</a>    
+    <a href="https://www.sunfounder.com/products/esp32-board" target="_blank">BUY</a>    
 
 .. |link_umsk| raw:: html
 

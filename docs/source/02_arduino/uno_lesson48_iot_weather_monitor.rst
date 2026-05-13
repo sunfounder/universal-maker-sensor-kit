@@ -110,7 +110,7 @@ ThingSpeakの設定
 #. ``universal-maker-sensor-kit\arduino_uno\Lesson_48_Iot_Weather_Monitor`` のパスにある ``Lesson_48_Iot_Weather_Monitor.ino`` ファイルを開くか、このコードを **Arduino IDE** にコピーします。
 
    .. note:: 
-      ライブラリをインストールするには、Arduinoライブラリマネージャを使用して **"Adafruit BMP280"**を検索し、インストールしてください。
+      ライブラリをインストールするには、Arduinoライブラリマネージャを使用して **"Adafruit BMP280"** を検索し、インストールしてください。
 
    .. raw:: html
       

@@ -45,8 +45,6 @@ Raspberry Piユーザーの皆様、以下のチュートリアルをご参照�
     pi_lesson13_potentiometer
     pi_lesson14_max30102
     pi_lesson15_raindrop
-    
-    .. pi_lesson16_ds1302
 
     pi_lesson17_rotary_encoder
     pi_lesson18_ds18b20

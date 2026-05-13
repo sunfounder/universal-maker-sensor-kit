@@ -97,7 +97,7 @@
 
    これはプログラムの中核であり、ボタンの状態が連続して読み取られ、LEDの状態が制御されます。 ``digitalRead(buttonPin)`` はボタンの状態を読み取ります。ボタンが押されている場合（状態がLOW）、 ``digitalWrite(ledPin, HIGH)`` でLEDが点灯します。押されていない場合、LEDは消灯します（ ``digitalWrite(ledPin, LOW)``）。
 
-   このプロジェクトで使用されている :ref:`button module<cpn_button>` には内部プルアップ抵抗があります（その :ref:`schematic diagram<cpn_button_sch>`を参照）、ボタンが押されたときに低レベルになり、離されたときに高レベルのままになります。
+   このプロジェクトで使用されている :ref:`button module<cpn_button>` には内部プルアップ抵抗があります（その :ref:`schematic diagram<cpn_button_sch>` を参照）、ボタンが押されたときに低レベルになり、離されたときに高レベルのままになります。
    
    .. code-block:: arduino
 

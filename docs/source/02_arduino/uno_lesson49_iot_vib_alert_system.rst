@@ -184,7 +184,7 @@ IFTTTは「If This Then That」の略です。基本的に、特定の条件が�
 コード
 ----------------------- 
 
-#. ``universal-maker-sensor-kit\arduino_uno\Lesson_49_Vibration_alert_system`` のパスにある ``Lesson_49_Vibration_alert_system.ino`` ファイルを開くか、このコードを **Arduino IDE**にコピーします。
+#. ``universal-maker-sensor-kit\arduino_uno\Lesson_49_Vibration_alert_system`` のパスにある ``Lesson_49_Vibration_alert_system.ino`` ファイルを開くか、このコードを **Arduino IDE** にコピーします。
 
    .. raw:: html
        

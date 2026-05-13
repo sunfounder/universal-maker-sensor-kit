@@ -15,7 +15,7 @@
 .. _cpn_potentiometer:
 
 ポテンショメーターモジュール
-==========================
+=======================================
 
 .. image:: img/13_potentiomete_module.png
     :width: 300

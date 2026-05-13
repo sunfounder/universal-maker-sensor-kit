@@ -70,7 +70,8 @@
 
 1. ピッチライブラリのインクルード:
    このライブラリは、さまざまな音符の周波数値を提供し、コード内で音楽記号を使用できるようにします。
-.. code-block:: arduino
+
+   .. code-block:: arduino
        
       #include "pitches.h"
 

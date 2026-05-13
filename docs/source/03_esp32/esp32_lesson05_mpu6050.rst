@@ -65,7 +65,7 @@
 ---------------------------
 
 .. note:: 
-    ライブラリをインストールするには、Arduino Library Managerを使用し、 **"Adafruit MPU6050"**を検索してインストールしてください。
+    ライブラリをインストールするには、Arduino Library Managerを使用し、 **"Adafruit MPU6050"** を検索してインストールしてください。
 
 .. raw:: html
 
@@ -77,7 +77,7 @@
 1. このコードは、必要なライブラリをインクルードし、MPU6050センサーのオブジェクトを作成することから始まります。このコードでは、Adafruit_MPU6050ライブラリ、Adafruit_Sensorライブラリ、およびWireライブラリを使用します。 ``Adafruit_MPU6050`` ライブラリは、MPU6050センサーと対話して加速度、回転、および温度データを取得します。 ``Adafruit_Sensor`` ライブラリは、さまざまなタイプのセンサーのための共通のインターフェースを提供します。 ``Wire`` ライブラリはI2C通信に使用され、MPU6050センサーとの通信に必要です。
 
    .. note:: 
-       ライブラリをインストールするには、Arduino Library Managerを使用し、 **"Adafruit MPU6050"**を検索してインストールしてください。
+       ライブラリをインストールするには、Arduino Library Managerを使用し、 **"Adafruit MPU6050"** を検索してインストールしてください。
    
    .. code-block:: arduino
    

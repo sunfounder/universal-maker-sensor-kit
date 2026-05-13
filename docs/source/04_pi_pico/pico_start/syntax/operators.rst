@@ -17,14 +17,6 @@
 
 演算子は、変数や値に対する操作を実行するために使用されます。
 
-* :ref:`Arithmetic operators` （算術演算子）
-* :ref:`Assignment operators` （代入演算子）
-* :ref:`Comparison operators` （比較演算子）
-* :ref:`Logical operators` （論理演算子）
-* :ref:`Identity operators` （同一性演算子）
-* :ref:`Membership operators` （メンバーシップ演算子）
-* :ref:`Bitwise operators` （ビット演算子）
-
 Arithmetic operators
 ------------------------
 算術演算子を使用して、一般的な数学的操作を行うことができます。

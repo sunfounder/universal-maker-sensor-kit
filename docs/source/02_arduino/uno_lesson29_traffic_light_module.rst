@@ -45,13 +45,11 @@
 
     *   - Component Introduction
         - Purchase Link
-
     *   - Arduino UNO R3 or R4
         - |link_Uno_R3_buy|
     *   - :ref:`cpn_traffic`
         - |link_traffic_light_module_buy|
-    * Arduino UNO R3 or R4
-    * :ref:`cpn_traffic`
+
 配線
 ---------------------------
 
