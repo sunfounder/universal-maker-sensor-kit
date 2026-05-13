@@ -18,7 +18,7 @@
 
 
 Lezione 52: Indicatore di Direzione dell'Inclinazione
-===========================================
+================================================================
 
 Questo progetto Arduino utilizza un sensore di accelerazione e giroscopio MPU6050 insieme a un display OLED. Il progetto legge i dati dal sensore MPU6050 per rilevare la direzione di inclinazione e visualizza le frecce corrispondenti (su, giù, sinistra o destra) o un cerchio (se non c'è un'inclinazione significativa) sullo schermo OLED in base alla direzione di inclinazione.
 

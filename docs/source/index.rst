@@ -50,33 +50,6 @@ Abbraccia il mondo dell'innovazione elettronica oggi con il nostro Kit Sensori M
 
 Se hai domande o altre idee interessanti, sentiti libero di inviarci un'email a service@sunfounder.com.
 
-.. * :ref:`About the display language`
-
-* :ref:`Indice dei contenuti`
-
-* :ref:`Avviso di copyright`
-
-
-.. Informazioni sulla lingua di visualizzazione
-.. -----------------------------------------------------
-
-.. .. note::
-
-..     Oltre all'inglese, stiamo lavorando ad altre lingue per questo corso. 
-..     Se sei interessato ad aiutarci, 
-..     contatta service@sunfounder.com e riceverai un prodotto gratuito in cambio. 
-
-
-.. Attualmente il tutorial online supporta inglese, tedesco e giapponese. Clicca sull'icona **Leggi la documentazione** nell'angolo in basso a sinistra della pagina per cambiare la lingua di visualizzazione.
-
-.. .. image:: img/translation.png
-..     :align: center
-
-.. .. raw:: html
-
-..     <br/>
-
-
 Indice dei contenuti
 --------------------------------
 

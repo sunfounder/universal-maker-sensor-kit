@@ -17,20 +17,6 @@ Operatori
 
 Gli operatori vengono utilizzati per eseguire operazioni su variabili e valori.
 
-* :ref:`Operatori aritmetici`
-
-* :ref:`Operatori di assegnazione`
-
-* :ref:`Operatori di confronto`
-
-* :ref:`Operatori logici`
-
-* :ref:`Operatori di identità`
-
-* :ref:`Operatori di appartenenza`
-
-* :ref:`Operatori bitwise`
-
 Operatori Aritmetici
 ------------------------
 

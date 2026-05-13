@@ -14,90 +14,88 @@
 
 .. _cpn_esp32_wroom_32e:
 
-ESP32 WROOM 32E
-===================
+Scheda ESP32
+=================
 
-L'ESP32 WROOM-32E è un modulo versatile e potente basato sul chipset ESP32 di Espressif. Offre elaborazione dual-core, connettività Wi-Fi e Bluetooth integrate e vanta un'ampia gamma di interfacce periferiche. Nota per il suo basso consumo energetico, il modulo è ideale per applicazioni IoT, consentendo connettività intelligente e prestazioni robuste in formati compatti.
+L’ESP32 è un microcontrollore potente e versatile, dotato di elaborazione dual-core, Wi-Fi e Bluetooth integrati e un ampio supporto per periferiche. Grazie al suo design a basso consumo energetico, è particolarmente adatto ad applicazioni IoT compatte e ad alte prestazioni.
 
-.. image:: img/esp32_wroom_32e.png
-   :width: 60%
-   :align: center
+.. image:: img/esp32_board.png
+    :align: center
 
 
-Le caratteristiche principali includono:
+Caratteristiche principali:
 
-* **Potenza di Elaborazione**: È dotato di un microprocessore dual-core Xtensa® LX6 a 32 bit, offrendo scalabilità e flessibilità.
-* **Capacità Wireless**: Con Wi-Fi integrato a 2,4 GHz e Bluetooth dual-mode, è perfettamente adatto per applicazioni che richiedono una comunicazione wireless stabile.
-* **Memoria e Archiviazione**: Dispone di ampio SRAM e memoria flash ad alte prestazioni, soddisfando le esigenze di memorizzazione di programmi utente e dati.
-* **GPIO**: Offrendo fino a 38 pin GPIO, supporta una varietà di dispositivi esterni e sensori.
-* **Consumo Energetico Ridotto**: Sono disponibili molteplici modalità di risparmio energetico, rendendolo ideale per scenari alimentati a batteria o efficienti dal punto di vista energetico.
-* **Sicurezza**: Le funzionalità integrate di crittografia e sicurezza garantiscono che i dati e la privacy degli utenti siano ben protetti.
-* **Versatilità**: Dalle semplici apparecchiature domestiche alle complesse macchine industriali, il WROOM-32E offre prestazioni consistenti ed efficienti.
+* **Potenza di elaborazione**: è equipaggiato con un microprocessore Xtensa® LX6 dual-core a 32 bit, che offre grande flessibilità e scalabilità.
+* **Connettività wireless**: grazie al Wi-Fi a 2,4 GHz integrato e al Bluetooth dual-mode, è ideale per applicazioni che richiedono comunicazioni wireless stabili.
+* **Memoria e archiviazione**: dispone di ampia SRAM e memoria flash ad alte prestazioni per gestire programmi utente e archiviazione dati.
+* **GPIO**: con fino a 38 pin GPIO, supporta numerosi sensori e dispositivi esterni.
+* **Basso consumo energetico**: offre diverse modalità di risparmio energetico, ideali per dispositivi alimentati a batteria o applicazioni a basso consumo.
+* **Sicurezza**: le funzionalità integrate di crittografia e sicurezza proteggono efficacemente i dati e la privacy degli utenti.
+* **Versatilità**: dagli elettrodomestici alle applicazioni industriali più complesse, la scheda garantisce prestazioni affidabili ed efficienti.
 
-In sintesi, l'ESP32 WROOM-32E non solo offre capacità di elaborazione robuste e diverse opzioni di connettività, ma vanta anche una serie di funzionalità che lo rendono la scelta preferita nei settori IoT e dispositivi intelligenti.
+In sintesi, la scheda ESP32 non offre soltanto elevate capacità di elaborazione e numerose opzioni di connettività, ma anche una vasta gamma di funzionalità che la rendono una scelta ideale per il settore IoT e i dispositivi intelligenti.
 
-* |link_esp32_datasheet|
+.. * |link_esp32_datasheet|
 
 .. _esp32_pinout:
 
-Schema dei Pin
+Schema dei pin
 -------------------------
 
-L'ESP32 presenta alcune limitazioni nell'uso dei pin a causa della condivisione di certe funzionalità su determinati pin. Quando si progetta un progetto, è buona pratica pianificare attentamente l'uso dei pin e verificare eventuali conflitti per garantire il corretto funzionamento ed evitare problemi.
+L’ESP32 presenta alcune limitazioni nell’utilizzo dei pin, poiché diverse funzionalità condividono gli stessi pin. Durante la progettazione di un progetto, è consigliabile pianificare attentamente l’uso dei pin e verificare eventuali conflitti per garantire il corretto funzionamento ed evitare problemi.
 
 
 .. image:: img/esp32_pinout.jpg
-   :width: 100%
-   :align: center
+    :width: 800
+    :align: center
 
-Ecco alcune delle principali restrizioni e considerazioni:
+Di seguito sono riportate alcune delle principali limitazioni e considerazioni:
 
-* **ADC1 e ADC2**: ADC2 non può essere utilizzato quando il WiFi o il Bluetooth sono attivi. Tuttavia, ADC1 può essere utilizzato senza restrizioni.
-* **Pin di Bootstrap**: GPIO0, GPIO2, GPIO5, GPIO12 e GPIO15 sono utilizzati per il bootstrap durante il processo di avvio. Si dovrebbe fare attenzione a non collegare componenti esterni che potrebbero interferire con il processo di avvio su questi pin.
-* **Pin JTAG**: GPIO12, GPIO13, GPIO14 e GPIO15 possono essere utilizzati come pin JTAG per scopi di debug. Se il debug JTAG non è richiesto, questi pin possono essere utilizzati come GPIO regolari.
-* **Pin Touch**: Alcuni pin supportano funzionalità touch. Questi pin dovrebbero essere utilizzati con cautela se si intende utilizzarli per il rilevamento touch.
-* **Pin di Alimentazione**: Alcuni pin sono riservati per funzioni legate all'alimentazione e dovrebbero essere utilizzati di conseguenza. Ad esempio, evitare di prelevare corrente eccessiva dai pin di alimentazione come 3V3 e GND.
-* **Pin Solo Input**: Alcuni pin sono solo di input e non dovrebbero essere utilizzati come output.
-
+* **ADC1 e ADC2**: ADC2 non può essere utilizzato quando il Wi-Fi o il Bluetooth sono attivi. ADC1, invece, può essere utilizzato senza restrizioni.
+* **Pin di bootstrapping**: GPIO0, GPIO2, GPIO5, GPIO12 e GPIO15 vengono utilizzati durante il processo di avvio. È importante evitare di collegare componenti esterni che possano interferire con il boot.
+* **Pin JTAG**: GPIO12, GPIO13, GPIO14 e GPIO15 possono essere utilizzati come pin JTAG per il debug. Se il debug JTAG non è necessario, possono essere usati come normali GPIO.
+* **Pin touch**: alcuni pin supportano funzionalità touch. Se si desidera utilizzare il rilevamento tattile, è necessario prestare attenzione al loro impiego.
+* **Pin di alimentazione**: alcuni pin sono riservati a funzioni di alimentazione e devono essere utilizzati correttamente. Ad esempio, evitare di assorbire corrente eccessiva dai pin 3V3 e GND.
+* **Pin solo ingresso**: alcuni pin supportano esclusivamente segnali di ingresso e non devono essere utilizzati come uscite.
 
 .. _esp32_strapping:
 
-Pin di Strapping
+**Pin di strapping**
 --------------------------
 
-L'ESP32 ha cinque pin di strapping:
+L’ESP32 dispone di cinque pin di strapping:
 
 .. list-table::
-   :widths: 5 15
-   :header-rows: 1
+    :widths: 5 15
+    :header-rows: 1
 
-   *   - Pin di Strapping
-       - Descrizione
-   *   - IO5
-       - Predefinito a pull-up, il livello di tensione di IO5 e IO15 influisce sulla temporizzazione di SDIO Slave.
-   *   - IO0
-       - Predefinito a pull-up, se tirato a terra, entra in modalità di download.
-   *   - IO2
-       - Predefinito a pull-down, IO0 e IO2 faranno entrare l'ESP32 in modalità di download.
-   *   - IO12(MTDI)
-       - Predefinito a pull-down, se tirato in alto, l'ESP32 non si avvierà normalmente.
-   *   - IO15(MTDO)
-       - Predefinito a pull-up, se tirato a terra, il log di debug non sarà visibile. Inoltre, il livello di tensione di IO5 e IO15 influisce sulla temporizzazione di SDIO Slave.
+    *   - Pin di strapping
+        - Descrizione
+    *   - IO5
+        - Pull-up attivo per impostazione predefinita. Il livello di tensione di IO5 e IO15 influisce sul timing dello SDIO Slave.
+    *   - IO0
+        - Pull-up attivo per impostazione predefinita. Se portato a livello basso, entra in modalità download.
+    *   - IO2
+        - Pull-down attivo per impostazione predefinita. IO0 e IO2 insieme fanno entrare l’ESP32 in modalità download.
+    *   - IO12(MTDI)
+        - Pull-down attivo per impostazione predefinita. Se portato a livello alto, l’ESP32 non si avvierà correttamente.
+    *   - IO15(MTDO)
+        - Pull-up attivo per impostazione predefinita. Se portato a livello basso, i log di debug non saranno visibili. Inoltre, il livello di tensione di IO5 e IO15 influisce sul timing dello SDIO Slave.
 
 
-Il software può leggere i valori di questi cinque bit dal registro "GPIO_STRAPPING". Durante il rilascio del reset del sistema del chip (power-on-reset, reset del watchdog RTC e reset per calo di tensione), i latch dei pin di strapping campionano il livello di tensione come bit di strapping di "0" o "1" e mantengono questi bit fino a quando il chip non viene alimentato o spento. I bit di strapping configurano la modalità di avvio del dispositivo, la tensione operativa di VDD_SDIO e altre impostazioni iniziali del sistema.
+Il software può leggere i valori di questi cinque bit dal registro “GPIO_STRAPPING”.
 
-Ogni pin di strapping è collegato al suo pull-up/pull-down interno durante il reset del chip. Di conseguenza, se un pin di strapping non è collegato o il circuito esterno collegato è ad alta impedenza, il pull-up/pull-down interno debole determinerà il livello di ingresso predefinito dei pin di strapping.
+Durante il rilascio del reset del sistema del chip (power-on reset, reset del watchdog RTC e brownout reset), i latch dei pin di strapping campionano il livello di tensione come bit di configurazione “0” o “1” e mantengono tali valori finché il chip non viene spento o arrestato. Questi bit configurano la modalità di avvio del dispositivo, la tensione operativa di VDD_SDIO e altre impostazioni iniziali del sistema.
 
-Per modificare i valori dei bit di strapping, gli utenti possono applicare le resistenze esterne di pull-down/pull-up, o utilizzare i GPIO del MCU ospite per controllare il livello di tensione di questi pin all'accensione dell'ESP32.
+Ogni pin di strapping è collegato internamente a una resistenza di pull-up o pull-down durante il reset del chip. Di conseguenza, se un pin di strapping non è collegato oppure il circuito esterno presenta un’elevata impedenza, il livello logico predefinito sarà determinato dalle resistenze interne.
 
-Dopo il rilascio del reset, i pin di strapping funzionano come pin di funzione normale.
-Consulta la seguente tabella per una configurazione dettagliata della modalità di avvio tramite pin di strapping.
+Per modificare i valori dei bit di strapping, è possibile utilizzare resistenze esterne di pull-up/pull-down oppure controllare il livello logico di questi pin tramite i GPIO del microcontrollore host durante l’accensione dell’ESP32.
+
+Dopo il rilascio del reset, i pin di strapping tornano a funzionare come normali GPIO.
+Fare riferimento alla tabella seguente per una configurazione dettagliata delle modalità di avvio tramite i pin di strapping.
 
 .. image:: img/esp32_strapping.png
-   :width: 100%
-   :align: center
 
-* FE: flanco di discesa, RE: flanco di salita
-* Il firmware può configurare i bit del registro per modificare le impostazioni di "Tensione dell'LDO interno (VDD_SDIO)" e "Temporizzazione di SDIO Slave", dopo l'avvio.
-* Il modulo integra un flash SPI da 3,3 V, quindi il pin MTDI non può essere impostato su 1 quando il modulo è alimentato.
+* FE: fronte di discesa, RE: fronte di salita
+* Il firmware può configurare i registri dopo l’avvio per modificare le impostazioni relative a “Voltage of Internal LDO (VDD_SDIO)” e “Timing of SDIO Slave”.
+* Il modulo integra una memoria flash SPI da 3,3 V; pertanto il pin MTDI non deve essere impostato a livello alto durante l’accensione del modulo.
