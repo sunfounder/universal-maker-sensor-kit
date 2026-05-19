@@ -106,6 +106,8 @@ Code
    
    # The following line sends what to show to the display
    oled.show()
+
+
 Code-Analyse
 ---------------------------
 

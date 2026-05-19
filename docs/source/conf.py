@@ -44,7 +44,7 @@ html_context = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    #'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
@@ -537,7 +537,7 @@ rst_epilog += """
 
 .. |link_esp32_camera_pro_kit_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-esp32-camera-pro-kit" target="_blank">KAUFEN</a>    
+    <a href="https://www.sunfounder.com/products/esp32-board" target="_blank">BUY</a>    
 
 .. |link_umsk| raw:: html
 

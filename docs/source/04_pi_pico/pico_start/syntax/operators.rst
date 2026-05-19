@@ -16,20 +16,6 @@ Operatoren
 =================
 Operatoren werden verwendet, um Operationen auf Variablen und Werten durchzuführen.
 
-* :ref:`Arithmetische Operatoren`
-
-* :ref:`Zuweisungsoperatoren`
-
-* :ref:`Vergleichsoperatoren`
-
-* :ref:`Logische Operatoren`
-
-* :ref:`Identitätsoperatoren`
-
-* :ref:`Mitgliedschaftsoperatoren`
-
-* :ref:`Bitweise Operatoren`
-
 Arithmetische Operatoren
 ----------------------------------
 Mit arithmetischen Operatoren können Sie einige gängige mathematische Operationen durchführen.

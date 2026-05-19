@@ -222,7 +222,7 @@ Hier ist eine kurze Zusammenfassung des Codes:
             pCharacteristic->addDecodeor(new BLE2902());  // Add the decodeor
             // Create the BLE characteristic for receiving data
             BLECharacteristic *pCharacteristicRX = pService->createCharacteristic(CHARACTERISTIC_UUID_RX, BLECharacteristic::PROPERTY_WRITE);
-    pCharacteristicRX->setCallbacks(new MyCharacteristicCallbacks());  // Set the BLE characteristic callbacks
+            pCharacteristicRX->setCallbacks(new MyCharacteristicCallbacks());  // Set the BLE characteristic callbacks
             pService->start();                                                 // Start the BLE service
             pServer->getAdvertising()->start();                                // Start advertising
             Serial.println("Waiting for a client connection...");              // Wait for a client connection

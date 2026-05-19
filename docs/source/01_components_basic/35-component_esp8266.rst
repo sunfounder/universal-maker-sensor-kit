@@ -22,8 +22,7 @@ ESP8266-Modul
 
 Das ESP8266 ist ein kostengünstiger Wi-Fi-Mikrochip mit integriertem TCP/IP-Netzwerksoftware und Mikrocontroller-Funktionalität, hergestellt von Espressif Systems in Shanghai, China.
 
-Der Chip erregte erstmals im August 2014 die Aufmerksamkeit westlicher Maker mit dem ESP-01-Modul,
- das von einem Drittanbieter, Ai-Thinker, hergestellt wurde.
+Der Chip erregte erstmals im August 2014 die Aufmerksamkeit westlicher Maker mit dem ESP-01-Modul, das von einem Drittanbieter, Ai-Thinker, hergestellt wurde.
 Dieses kleine Modul ermöglicht es Mikrocontrollern, eine Verbindung zu einem Wi-Fi-Netzwerk herzustellen und einfache TCP/IP-Verbindungen unter Verwendung von Hayes-ähnlichen Befehlen zu erstellen. 
 Anfangs gab es jedoch fast keine englischsprachige Dokumentation zu dem Chip und den von ihm akzeptierten Befehlen. 
 Der sehr niedrige Preis und die Tatsache, dass nur wenige externe Komponenten auf dem Modul vorhanden waren, 
@@ -66,6 +65,8 @@ Pins des ESP8266 und ihre Funktionen:
    * - 8
      - RXD
      - UART_RXD, Empfangen; General Purpose Input/Output: GPIO3.
+
+
 * `ESP8266 - Espressif <https://www.espressif.com/en/products/socs/esp8266>`_
 * |link_esp8266_at|
 

@@ -186,5 +186,6 @@ Code-Analyse
                time.sleep(1.0)
        except KeyboardInterrupt:
            print("Exit")
-- In an infinite loop, the sensor's range is read and printed every second.
+
+   - In an infinite loop, the sensor's range is read and printed every second.
    - The loop can be exited with a CTRL+C interrupt, which is handled by the KeyboardInterrupt exception.

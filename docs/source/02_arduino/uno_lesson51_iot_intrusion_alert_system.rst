@@ -134,7 +134,8 @@ Gehen Sie zur **Benachrichtigungen**-Seite und konfigurieren Sie die E-Mail-Eins
 .. raw:: html
 
     <br/> 
-**4 Web-Dashboard konfigurieren**
+
+4 Web-Dashboard konfigurieren
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Wir müssen auch das **Web-Dashboard** konfigurieren, um mit dem Einbruchsalarm-System interagieren zu können.

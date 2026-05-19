@@ -95,6 +95,8 @@ Code
    while True:
        print(ds.date_time())
        time.sleep(0.5)
+
+
 Codeanalyse
 ---------------------------
 

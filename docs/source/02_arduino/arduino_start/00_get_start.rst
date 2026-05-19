@@ -73,7 +73,7 @@ Bis heute entwickeln Elektronikbegeisterte weltweit kreative elektronische Kreat
 .. Das Arduino-Team hat die Arduino-Entwicklungsplatine als Open Source freigegeben, was bedeutet, dass andere Produkte basierend auf Arduino-Designs herstellen können. Derzeit gibt es zwei Arten von Entwicklungsplatinen auf dem Markt. Zum einen die offiziellen Entwicklungsplatinen von Arduino und zum anderen die kompatiblen Entwicklungsplatinen, die von anderen Unternehmen produziert werden. ARDUINO Originalplatinen werden von ARDUINO mit der Zertifizierung von Arduino hergestellt. Kompatible Entwicklungsplatinen für Arduino werden von Drittunternehmen montiert und produziert und sind oft preislich günstiger. Das Arduino-Team hat viel für Arduino getan, daher sollten Sie, wenn Sie sie unterstützen möchten, erwägen, Original-Arduino-Platinen auf der Arduino-Website zu kaufen. Sie können je nach Situation entscheiden, welche Platine Sie kaufen möchten. Wir empfehlen, eine Arduino Uno R3 Platine oder eine kompatible Platine für Arduino Uno R3 zu erwerben, um ein konsistentes Lernerlebnis in unseren Tutorials zu gewährleisten.
 
 Wie man ein Arduino-Projekt erstellt
------------------------------------
+------------------------------------------------
 
 Folgen Sie diesen Schritten, um von Grund auf zu lernen, wie man Arduino verwendet!
 

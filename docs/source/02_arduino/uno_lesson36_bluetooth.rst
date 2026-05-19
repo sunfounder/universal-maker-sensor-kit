@@ -103,27 +103,40 @@ Im Folgenden sind einige Beispiele für die Verwendung von AT-Befehlen zur Konfi
 
 Bitte beachten Sie die folgende Tabelle für weitere AT-Befehle.
 
-+------------+-------------------------------------+-------------+
-|   Befehl   |               Funktion              |   Standard  |
-+============+=====================================+=============+
-| AT+VERSION | Versionsnummer                      | JDY-31-V1.2 |
-+------------+-------------------------------------+-------------+
-| AT+RESET   | Soft-Reset                          |             |
-+------------+-------------------------------------+-------------+
-| AT+DISC    | Trennen (gültig, wenn verbunden)    |             |
-+------------+-------------------------------------+-------------+
-| AT+LADDR   | MAC-Adresse des Moduls abfragen     |             |
-+------------+-------------------------------------+-------------+
-| AT+PIN     | Verbindungskennwort festlegen       | 1234        |
-+------------+-------------------------------------+-------------+
-| AT+BAUD    | Baudrate festlegen oder abfragen    | 9600        |
-+------------+-------------------------------------+-------------+
-| AT+NAME    | Broadcast-Namen festlegen oder abfragen | JDY-31-SPP  |
-+------------+-------------------------------------+-------------+
-| AT+DEFAULT | Werkseinstellungen zurücksetzen     |             |
-+------------+-------------------------------------+-------------+
-| AT+ENLOG   | Statusausgabe des seriellen Ports   | 1           |
-+------------+-------------------------------------+-------------+
+.. list-table::
+    :widths: 20 50 20
+    :header-rows: 1
+
+    * - Befehl
+      - Funktion
+      - Standard
+    * - AT+VERSION
+      - Versionsnummer
+      - JDY-31-V1.2
+    * - AT+RESET
+      - Soft-Reset
+      -
+    * - AT+DISC
+      - Trennen (gültig, wenn verbunden)
+      -
+    * - AT+LADDR
+      - MAC-Adresse des Moduls abfragen
+      -
+    * - AT+PIN
+      - Verbindungskennwort festlegen
+      - 1234
+    * - AT+BAUD
+      - Baudrate festlegen oder abfragen
+      - 9600
+    * - AT+NAME
+      - Broadcast-Namen festlegen oder abfragen
+      - JDY-31-SPP
+    * - AT+DEFAULT
+      - Werkseinstellungen zurücksetzen
+      -
+    * - AT+ENLOG
+      - Statusausgabe des seriellen Ports
+      - 1
 
 
 4. Kommunikation über Bluetooth-Debugging-Tools auf Mobiltelefonen

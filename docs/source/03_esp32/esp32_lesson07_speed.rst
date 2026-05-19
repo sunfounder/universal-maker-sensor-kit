@@ -15,7 +15,7 @@
 .. _esp32_lesson07_speed:
 
 Lektion 07: Infrarot-Geschwindigkeitssensormodul
-==========================================
+==================================================================
 
 In dieser Lektion lernen Sie, wie Sie ein ESP32-Entwicklungsboard mit einem Geschwindigkeitssensormodul verwenden, um Hindernisse zu erkennen. Wir werden sehen, wie der Sensor ein hohes Signal sendet, wenn ein Hindernis vorhanden ist, und ein niedriges Signal, wenn der Weg frei ist. Dieses Projekt ist ideal für diejenigen, die das Verständnis der Sensorintegration und grundlegender Ein-/Ausgabeoperationen in einem praktischen Umfeld mit der ESP32-Plattform vertiefen möchten.
 

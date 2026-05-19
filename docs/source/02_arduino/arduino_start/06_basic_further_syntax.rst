@@ -100,13 +100,13 @@ Das Ergebnis ist, dass **Sketch A** einen Fehler meldet und **Sketch B** funktio
 Bitte schreiben Sie Ihren Code jedoch nicht wie **Sketch B**, da normalerweise Menschen den Code schreiben und lesen. Vermeiden Sie also unnötige Schwierigkeiten.
 
 Geschweifte Klammern ``{}``
-------------------
+--------------------------------------------
 
 ``{}`` sind der Hauptbestandteil der Arduino-Programmiersprache und müssen paarweise auftreten. 
 Eine bessere Programmierkonvention ist es, eine Struktur, die geschweifte Klammern erfordert, einzufügen, indem man die rechte geschweifte Klammer direkt nach der linken geschweiften Klammer eingibt und dann den Cursor zwischen die geschweiften Klammern bewegt, um die Anweisung einzufügen.
 
 Kommentare ``//``
----------------
+---------------------------------
 
 Kommentare sind der Teil des Sketches, den der Compiler ignoriert. Sie werden normalerweise verwendet, um anderen zu erklären, wie das Programm funktioniert.
 

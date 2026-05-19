@@ -39,11 +39,7 @@ Um den ESP32-Mikrocontroller zu programmieren, müssen wir das ESP32-Board-Paket
 
 **Hochladen des Codes**
 
-#. Verbinden Sie nun das ESP32 WROOM 32E mit Ihrem Computer über ein Micro-USB-Kabel.
-
-   .. image:: img/plugin_esp32.png
-       :width: 80%
-       :align: center
+#. Verbinden Sie nun das ESP32-Board mit Ihrem Computer.
 
 #. Wählen Sie dann das richtige Board, **ESP32 Dev Module**, indem Sie auf **Werkzeuge** -> **Board** -> **esp32** klicken.
 

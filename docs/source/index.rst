@@ -49,29 +49,6 @@ Tauchen Sie noch heute in die Welt der elektronischen Innovation ein mit unserem
 
 Wenn Sie Fragen oder andere interessante Ideen haben, senden Sie uns bitte eine E-Mail an service@sunfounder.com.
 
-.. * :ref:`About the display language`
-
-* :ref:`Inhaltsverzeichnis`
-
-* :ref:`Copyright-Hinweis`
-
-.. Über die Anzeigesprache
-.. --------------------------------
-
-.. .. note::
-
-..     Neben Englisch arbeiten wir an weiteren Sprachen für diesen Kurs. 
-..     Bitte kontaktieren Sie service@sunfounder.com, wenn Sie interessiert sind, 
-..     und wir werden Ihnen im Gegenzug ein kostenloses Produkt zukommen lassen. 
-
-.. Derzeit unterstützt das Online-Tutorial Englisch, Deutsch und Japanisch. Bitte klicken Sie auf das **Read the Docs**-Symbol in der unteren linken Ecke der Seite, um die Anzeigesprache zu ändern.
-
-.. .. image:: img/translation.png
-..     :align: center
-
-.. .. raw:: html
-
-..     <br/>
 
 Inhaltsverzeichnis
 --------------------------------

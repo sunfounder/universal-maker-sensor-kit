@@ -76,6 +76,8 @@ Installieren Sie die adafruit-circuitpython-ssd1306-Bibliothek:
 .. code-block:: bash
 
    pip install adafruit-circuitpython-ssd1306
+
+
 Code ausführen
 ---------------------------
 

@@ -76,6 +76,8 @@ IFTTT steht für "If This Then That". Grundsätzlich, wenn bestimmte Bedingungen
 
 .. image:: img/04-ifttt_intro_2A.png
     :width: 100%
+
+
 **1) Anmelden bei IFTTT**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -134,6 +136,8 @@ Setzen Sie den "Ereignisnamen" auf "vibration_detected".
 .. raw:: html
     
     <br/>  
+
+
 **Dann diese Aktion**
 
 Klicken Sie auf "Hinzufügen" neben "Dann das", um eine Aktion hinzuzufügen.
@@ -179,8 +183,10 @@ Führen Sie die Erstellung des Applets gemäß den folgenden Schritten durch.
 .. raw:: html
     
     <br/>  
+
+
 Code
------------------------ 
+-------------------
 
 
 #. Öffnen Sie die Datei ``Lesson_49_Vibration_alert_system.ino`` im Pfad ``universal-maker-sensor-kit\arduino_uno\Lesson_49_Vibration_alert_system``, oder kopieren Sie diesen Code in die **Arduino IDE**.
