@@ -77,7 +77,7 @@ Hasta el día de hoy, los entusiastas de la electrónica en todo el mundo contin
 
 
 Cómo construir un proyecto con Arduino
--------------------------------------
+--------------------------------------------------
 
 ¡Sigue estos pasos para aprender a usar Arduino desde cero!
 

@@ -14,90 +14,87 @@
 
 .. _cpn_esp32_wroom_32e:
 
-ESP32 WROOM 32E
-===================
+Placa ESP32
+=================
 
-El ESP32 WROOM-32E es un módulo versátil y potente basado en el chip ESP32 de Espressif. Ofrece procesamiento de dos núcleos, conectividad integrada Wi-Fi y Bluetooth, y una amplia variedad de interfaces periféricas. Conocido por su bajo consumo de energía, el módulo es ideal para aplicaciones IoT, permitiendo una conectividad inteligente y un rendimiento robusto en factores de forma compactos.
+El ESP32 es un microcontrolador potente y versátil que cuenta con procesamiento de doble núcleo, Wi-Fi y Bluetooth integrados, y un amplio soporte de periféricos. Su diseño de bajo consumo lo hace ideal para aplicaciones IoT compactas y de alto rendimiento.
 
-.. image:: img/esp32_wroom_32e.png
-    :width: 60%
+.. image:: img/esp32_board.png
     :align: center
 
 
-Las características clave incluyen:
+Las características principales incluyen:
 
-* **Potencia de procesamiento**: Está equipado con un microprocesador de 32 bits Xtensa® LX6 de doble núcleo, que ofrece escalabilidad y flexibilidad.
-* **Capacidades inalámbricas**: Con Wi-Fi integrado de 2,4 GHz y Bluetooth de modo dual, es perfectamente adecuado para aplicaciones que requieren una comunicación inalámbrica estable.
-* **Memoria y almacenamiento**: Viene con una amplia SRAM y almacenamiento flash de alto rendimiento, adecuado para programas de usuario y almacenamiento de datos.
-* **GPIO**: Ofrece hasta 38 pines GPIO, lo que permite la conexión a una variedad de dispositivos y sensores externos.
-* **Bajo consumo de energía**: Dispone de varios modos de ahorro de energía, lo que lo convierte en una opción ideal para escenarios alimentados por batería o aplicaciones eficientes en energía.
-* **Seguridad**: Las funciones de cifrado y seguridad integradas garantizan que los datos y la privacidad del usuario estén bien protegidos.
-* **Versatilidad**: Desde electrodomésticos simples hasta maquinaria industrial compleja, el WROOM-32E ofrece un rendimiento constante y eficiente.
+* **Potencia de Procesamiento**: Está equipado con un microprocesador Xtensa® LX6 de 32 bits y doble núcleo, que ofrece escalabilidad y flexibilidad.
+* **Capacidades Inalámbricas**: Con Wi-Fi integrado de 2.4 GHz y Bluetooth de modo dual, es ideal para aplicaciones que requieren comunicación inalámbrica estable.
+* **Memoria y Almacenamiento**: Incluye abundante SRAM y almacenamiento flash de alto rendimiento para programas de usuario y almacenamiento de datos.
+* **GPIO**: Ofrece hasta 38 pines GPIO, compatibles con una gran variedad de dispositivos y sensores externos.
+* **Bajo Consumo de Energía**: Dispone de múltiples modos de ahorro de energía, ideales para aplicaciones alimentadas por batería o de alta eficiencia energética.
+* **Seguridad**: Las funciones integradas de cifrado y seguridad garantizan la protección de los datos y la privacidad del usuario.
+* **Versatilidad**: Desde simples electrodomésticos hasta maquinaria industrial compleja, la placa ofrece un rendimiento constante y eficiente.
 
-En resumen, el ESP32 WROOM-32E no solo ofrece robustas capacidades de procesamiento y opciones de conectividad diversas, sino que también cuenta con una variedad de características que lo hacen una opción preferida en los sectores de IoT y dispositivos inteligentes.
+En resumen, la placa ESP32 no solo ofrece potentes capacidades de procesamiento y diversas opciones de conectividad, sino también una amplia variedad de funciones que la convierten en una opción preferida en los sectores de IoT y dispositivos inteligentes.
 
-* |link_esp32_datasheet|
+.. * |link_esp32_datasheet|
 
 .. _esp32_pinout:
 
-Diagrama de pines
+Diagrama de Pines
 -------------------------
 
-El ESP32 tiene algunas limitaciones en el uso de los pines debido a que varias funcionalidades comparten ciertos pines. Al diseñar un proyecto, es recomendable planificar cuidadosamente el uso de los pines y verificar posibles conflictos para asegurar un funcionamiento adecuado y evitar problemas.
+El ESP32 tiene algunas limitaciones en el uso de pines debido a que varias funciones comparten ciertos pines. Al diseñar un proyecto, es recomendable planificar cuidadosamente el uso de los pines y verificar posibles conflictos para asegurar un funcionamiento correcto y evitar problemas.
 
 
 .. image:: img/esp32_pinout.jpg
-    :width: 100%
+    :width: 800
     :align: center
 
-A continuación se indican algunas de las restricciones y consideraciones clave:
+Estas son algunas de las principales restricciones y consideraciones:
 
-* **ADC1 y ADC2**: ADC2 no se puede usar cuando WiFi o Bluetooth están activos. Sin embargo, ADC1 puede utilizarse sin restricciones.
-* **Pines de arranque (bootstrapping)**: GPIO0, GPIO2, GPIO5, GPIO12 y GPIO15 se utilizan para el arranque durante el proceso de inicio. Se debe tener cuidado de no conectar componentes externos que puedan interferir con el proceso de arranque en estos pines.
-* **Pines JTAG**: GPIO12, GPIO13, GPIO14 y GPIO15 pueden usarse como pines JTAG para depuración. Si no se requiere depuración JTAG, estos pines pueden usarse como GPIO regulares.
-* **Pines táctiles**: Algunos pines admiten funcionalidades táctiles. Estos pines deben usarse con cuidado si se tienen intenciones de usarlos para detección táctil.
-* **Pines de alimentación**: Algunos pines están reservados para funciones relacionadas con la alimentación y deben usarse en consecuencia. Por ejemplo, se debe evitar extraer un exceso de corriente de pines de alimentación como 3V3 y GND.
-* **Pines de solo entrada**: Algunos pines son de solo entrada y no deben usarse como salidas.
-
+* **ADC1 y ADC2**: ADC2 no puede utilizarse cuando WiFi o Bluetooth están activos. Sin embargo, ADC1 puede utilizarse sin restricciones.
+* **Pines de Arranque (Bootstrapping)**: GPIO0, GPIO2, GPIO5, GPIO12 y GPIO15 se utilizan durante el proceso de arranque. Debe evitarse conectar componentes externos que puedan interferir con el proceso de arranque en estos pines.
+* **Pines JTAG**: GPIO12, GPIO13, GPIO14 y GPIO15 pueden utilizarse como pines JTAG para depuración. Si no se requiere depuración JTAG, estos pines pueden utilizarse como GPIO normales.
+* **Pines Táctiles**: Algunos pines admiten funciones táctiles. Estos deben utilizarse cuidadosamente si se pretende usarlos para detección táctil.
+* **Pines de Alimentación**: Algunos pines están reservados para funciones relacionadas con la alimentación y deben utilizarse adecuadamente. Por ejemplo, evite extraer corriente excesiva de pines como 3V3 y GND.
+* **Pines Solo de Entrada**: Algunos pines son solo de entrada y no deben utilizarse como salidas.
 
 .. _esp32_strapping:
 
-Pines de arranque
---------------------------
+**Pines de Configuración de Arranque**
+--------------------------------------------------
 
-El ESP32 tiene cinco pines de arranque:
+El ESP32 tiene cinco pines de configuración de arranque:
 
 .. list-table::
     :widths: 5 15
     :header-rows: 1
 
-    *   - Pines de arranque
+    *   - Pines de Configuración
         - Descripción
     *   - IO5
-        - Predeterminado a pull-up, el nivel de voltaje de IO5 e IO15 afecta el tiempo de SDIO Slave.
+        - Tiene pull-up por defecto; el nivel de voltaje de IO5 e IO15 afecta la sincronización del esclavo SDIO.
     *   - IO0
-        - Predeterminado a pull-up, si se conecta a tierra, entra en modo de descarga.
+        - Tiene pull-up por defecto; si se mantiene en nivel bajo, entra en modo de descarga.
     *   - IO2
-        - Predeterminado a pull-down, IO0 e IO2 harán que el ESP32 entre en modo de descarga.
+        - Tiene pull-down por defecto; IO0 e IO2 harán que el ESP32 entre en modo de descarga.
     *   - IO12(MTDI)
-        - Predeterminado a pull-down, si se conecta a alta, el ESP32 no podrá arrancar normalmente.
+        - Tiene pull-down por defecto; si se mantiene en nivel alto, el ESP32 no arrancará normalmente.
     *   - IO15(MTDO)
-        - Predeterminado a pull-up, si se conecta a tierra, no será visible el registro de depuración. Además, el nivel de voltaje de IO5 e IO15 afecta el tiempo de SDIO Slave.
+        - Tiene pull-up por defecto; si se mantiene en nivel bajo, el registro de depuración no será visible. Además, el nivel de voltaje de IO5 e IO15 afecta la sincronización del esclavo SDIO.
 
 
-El software puede leer los valores de estos cinco bits desde el registro "GPIO_STRAPPING". Durante la liberación del reinicio del chip (reset de encendido, reset del watchdog RTC y reset por caída de tensión), los registros de los pines de arranque muestrean el nivel de voltaje como bits de arranque "0" o "1" y mantienen estos bits hasta que el chip se apaga o se apaga. Los bits de arranque configuran el modo de arranque del dispositivo, el voltaje de operación de VDD_SDIO y otras configuraciones iniciales del sistema.
+El software puede leer los valores de estos cinco bits desde el registro "GPIO_STRAPPING".
+Durante la liberación del reinicio del sistema del chip (encendido, reinicio por watchdog RTC y reinicio por caída de voltaje), los pines de configuración muestrean el nivel de voltaje como bits de configuración "0" o "1", y mantienen estos bits hasta que el chip se apaga o se desconecta de la alimentación. Estos bits configuran el modo de arranque del dispositivo, el voltaje de funcionamiento de VDD_SDIO y otros ajustes iniciales del sistema.
 
-Cada pin de arranque está conectado a su pull-up/pull-down interno durante el reinicio del chip. En consecuencia, si un pin de arranque no está conectado o el circuito externo conectado es de alta impedancia, el pull-up/pull-down débil interno determinará el nivel de entrada predeterminado de los pines de arranque.
+Cada pin de configuración está conectado internamente a una resistencia pull-up o pull-down durante el reinicio del chip. Por lo tanto, si un pin de configuración está desconectado o el circuito externo conectado tiene alta impedancia, la resistencia interna determinará el nivel lógico predeterminado del pin.
 
-Para cambiar los valores de los bits de arranque, los usuarios pueden aplicar resistencias externas de pull-down/pull-up o usar los GPIO del MCU anfitrión para controlar el nivel de voltaje de estos pines al encender el ESP32.
+Para cambiar los valores de estos bits de configuración, los usuarios pueden aplicar resistencias externas pull-up/pull-down o utilizar los GPIO del MCU anfitrión para controlar el nivel de voltaje de estos pines al encender el ESP32.
 
-Después de la liberación del reinicio, los pines de arranque funcionan como pines de función normal. 
-Consulta la siguiente tabla para obtener una configuración detallada del modo de arranque mediante los pines de arranque.
+Después de la liberación del reinicio, los pines de configuración funcionan como pines normales.
+Consulte la siguiente tabla para ver la configuración detallada del modo de arranque mediante estos pines.
 
 .. image:: img/esp32_strapping.png
-   :width: 100%
-   :align: center
 
-* FE: borde de bajada, RE: borde de subida
-* El firmware puede configurar los bits del registro para cambiar la configuración de "Voltaje del LDO interno (VDD_SDIO)" y "Tiempo del SDIO Slave", después de arrancar.
-* El módulo integra una memoria SPI flash de 3.3 V, por lo que el pin MTDI no puede configurarse a 1 cuando el módulo se enciende.
+* FE: flanco descendente, RE: flanco ascendente
+* El firmware puede configurar bits de registro para cambiar los ajustes de "Voltaje del LDO Interno (VDD_SDIO)" y la "Sincronización del Esclavo SDIO" después del arranque.
+* El módulo integra una memoria flash SPI de 3.3 V, por lo que el pin MTDI no puede configurarse en 1 cuando el módulo se enciende.

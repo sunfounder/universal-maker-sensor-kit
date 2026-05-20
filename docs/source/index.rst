@@ -51,33 +51,6 @@ Sumérgete en el mundo de la innovación electrónica hoy con nuestro Universal 
 
 Si tienes alguna pregunta o ideas interesantes, no dudes en enviarnos un correo electrónico a service@sunfounder.com.
 
-.. * :ref:`Sobre el idioma de visualización`
-
-* :ref:`Índice de contenidos`
-
-* :ref:`Aviso de derechos de autor`
-
-
-.. Sobre el idioma de visualización
-.. ----------------------------------
-
-.. .. note::
-
-..     Además del inglés, estamos trabajando en otros idiomas para este curso. 
-..     Por favor, contacta a service@sunfounder.com si estás interesado en ayudar, 
-..     y te daremos un producto gratis a cambio. 
-
-
-.. Actualmente, el tutorial en línea está disponible en inglés, alemán y japonés. Haz clic en el icono **Leer los Documentos** en la esquina inferior izquierda de la página para cambiar el idioma de visualización.
-
-.. .. image:: img/translation.png
-..     :align: center
-
-.. .. raw:: html
-
-..     <br/>
-
-
 Índice de contenidos
 --------------------------------
 

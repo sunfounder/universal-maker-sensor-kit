@@ -44,7 +44,7 @@ html_context = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
@@ -545,8 +545,7 @@ rst_epilog += """
 
 .. |link_umsk| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-universal-maker-sensor-kit?_pos=2&_sid=c060003fa&_ss=r" target="_blank">Universal Maker Sensor Kit</a>    
-    
+    <a href="https://www.sunfounder.com/products/esp32-board" target="_blank">BUY</a>    
 
 """
 

@@ -39,11 +39,7 @@ Para programar el microcontrolador ESP32, necesitamos instalar el paquete de la 
 
 **Subir el Código**
 
-#. Ahora, conecta el ESP32 WROOM 32E a tu computadora usando un cable Micro USB. 
-
-   .. image:: img/plugin_esp32.png
-       :width: 80%
-       :align: center
+#. Ahora, conecta la placa ESP32 a tu computadora.
 
 #. Luego selecciona la placa correcta, **ESP32 Dev Module**, haciendo clic en **Herramientas** -> **Placa** -> **esp32**.
 
