@@ -1,0 +1,14 @@
+[project]
+name = "docs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sphinx>=9.0.0",
+    "sphinx-copybutton>=0.5.2",
+    "sphinx-rtd-theme>=0.5.1",
+]
+
+[project.scripts]
+make-pdfs = "make_pdfs:main"
